@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP_NEW.DAL", "ERP_NEW.DAL\ERP_NEW.DAL.csproj", "{933B3464-BBA3-4FD1-9A94-A0F9936B5786}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP_NEW.BLL", "ERP_NEW.BLL\ERP_NEW.BLL.csproj", "{8AC81DFE-DD85-4373-B7FC-247C4E63B675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERP_NEW.GUI", "DXApplication1\ERP_NEW.GUI\ERP_NEW.GUI.csproj", "{96CAA00F-315C-44C6-9896-AE7F94518B44}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://server-tfs:8080/tfs/oldprojects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DXApplication1\\ERP_NEW.GUI\\ERP_NEW.GUI.csproj
+		SccProjectName1 = DXApplication1/ERP_NEW.GUI
+		SccLocalPath1 = DXApplication1\\ERP_NEW.GUI
+		SccProjectUniqueName2 = ERP_NEW.BLL\\ERP_NEW.BLL.csproj
+		SccProjectName2 = ERP_NEW.BLL
+		SccLocalPath2 = ERP_NEW.BLL
+		SccProjectUniqueName3 = ERP_NEW.DAL\\ERP_NEW.DAL.csproj
+		SccProjectName3 = ERP_NEW.DAL
+		SccLocalPath3 = ERP_NEW.DAL
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{933B3464-BBA3-4FD1-9A94-A0F9936B5786}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{933B3464-BBA3-4FD1-9A94-A0F9936B5786}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{933B3464-BBA3-4FD1-9A94-A0F9936B5786}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{933B3464-BBA3-4FD1-9A94-A0F9936B5786}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC81DFE-DD85-4373-B7FC-247C4E63B675}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC81DFE-DD85-4373-B7FC-247C4E63B675}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC81DFE-DD85-4373-B7FC-247C4E63B675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC81DFE-DD85-4373-B7FC-247C4E63B675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96CAA00F-315C-44C6-9896-AE7F94518B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96CAA00F-315C-44C6-9896-AE7F94518B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96CAA00F-315C-44C6-9896-AE7F94518B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96CAA00F-315C-44C6-9896-AE7F94518B44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

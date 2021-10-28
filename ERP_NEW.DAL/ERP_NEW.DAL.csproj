@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{933B3464-BBA3-4FD1-9A94-A0F9936B5786}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP_NEW.DAL</RootNamespace>
+    <AssemblyName>ERP_NEW.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Calendar.NET">
+      <HintPath>C:\Users\ponomarev_a\Desktop\Calendar.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Firebird, Version=5.7.0.0, Culture=neutral, PublicKeyToken=42d22d092898e5f8, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Firebird.5.7.0\lib\net40-client\EntityFramework.Firebird.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.7.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.7.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Barcode, Version=1.4.0.16040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Barcode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DataExport, Version=3.5.135.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DataExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DataExport.ResourceMgr, Version=1.6.20.4040, Culture=neutral, PublicKeyToken=4bc1500157862925, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DataExport.ResourceMgr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=5.9.8.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Doc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DocViewer.Forms, Version=2.4.1.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DocViewer.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.6.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.9.99.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Forms, Version=2.11.46.15340, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.PdfViewer.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=2.8.5.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=7.12.14.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.XLS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\EF\ERP_Context.cs" />
+    <Compile Include="Entities\Models\AccessRights.cs" />
+    <Compile Include="Entities\Models\AccessScheduleEntity.cs" />
+    <Compile Include="Entities\Models\AccountClothes.cs" />
+    <Compile Include="Entities\Models\AccountClothesMaterials.cs" />
+    <Compile Include="Entities\Models\AccountingOperation.cs" />
+    <Compile Include="Entities\Models\AccountsType.cs" />
+    <Compile Include="Entities\Models\AgreementOrder.cs" />
+    <Compile Include="Entities\Models\AgreementOrderPurpose.cs" />
+    <Compile Include="Entities\Models\AgreementOrderScan.cs" />
+    <Compile Include="Entities\Models\Agreements.cs" />
+    <Compile Include="Entities\Models\AgreementsType.cs" />
+    <Compile Include="Entities\Models\Calculation.cs" />
+    <Compile Include="Entities\Models\CalculationMaterials.cs" />
+    <Compile Include="Entities\Models\Delivery.cs" />
+    <Compile Include="Entities\Models\AgreementDocuments.cs" />
+    <Compile Include="Entities\Models\DeliveryOrder.cs" />
+    <Compile Include="Entities\Models\DeliveryOrdersDetails.cs" />
+    <Compile Include="Entities\Models\DeliveryPaymentType.cs" />
+    <Compile Include="Entities\Models\EmployeesDetailsStandart.cs" />
+    <Compile Include="Entities\Models\ExpendituresStoreHouses.cs" />
+    <Compile Include="Entities\Models\ExpenditureStoreHouse.cs" />
+    <Compile Include="Entities\Models\Expenditures_Accountant.cs" />
+    <Compile Include="Entities\Models\FixedAssetsMaterials.cs" />
+    <Compile Include="Entities\Models\FixedAssetsOrderRegistration.cs" />
+    <Compile Include="Entities\Models\GetOSVkvartal_ForChess.cs" />
+    <Compile Include="Entities\Models\MTSAuthorizationUsers.cs" />
+    <Compile Include="Entities\Models\MTSCreateDetals.cs" />
+    <Compile Include="Entities\Models\MTSGost.cs" />
+    <Compile Include="Entities\Models\MTSGuages.cs" />
+    <Compile Include="Entities\Models\MTSMaterials.cs" />
+    <Compile Include="Entities\Models\MTSMeasure.cs" />
+    <Compile Include="Entities\Models\MTSNomenclatureGroupsOld.cs" />
+    <Compile Include="Entities\Models\MTSNomenclaturesOld.cs" />
+    <Compile Include="Entities\Models\MTSPurchasedProducts.cs" />
+    <Compile Include="Entities\Models\MTSSpecifications.cs" />
+    <Compile Include="Entities\Models\PaintingWorks.cs" />
+    <Compile Include="Entities\Models\ReceiptDetails.cs" />
+    <Compile Include="Entities\Models\Region.cs" />
+    <Compile Include="Entities\Models\RequestLog.cs" />
+    <Compile Include="Entities\Models\RequestLogContractors.cs" />
+    <Compile Include="Entities\QueryModels\AccountClothesJournal.cs" />
+    <Compile Include="Entities\QueryModels\AccountOrders.cs" />
+    <Compile Include="Entities\QueryModels\AgreementJournal.cs" />
+    <Compile Include="Entities\Models\Balance_Account.cs" />
+    <Compile Include="Entities\Models\Bank_Payments.cs" />
+    <Compile Include="Entities\Models\BusinessCards.cs" />
+    <Compile Include="Entities\Models\BusinessCardPhotos.cs" />
+    <Compile Include="Entities\Models\BusinessCardsFactory.cs" />
+    <Compile Include="Entities\Models\BusinessTrips.cs" />
+    <Compile Include="Entities\Models\BusinessTripsDecree.cs" />
+    <Compile Include="Entities\Models\BusinessTripsDecreeDetails.cs" />
+    <Compile Include="Entities\Models\BusinessTripsDetails.cs" />
+    <Compile Include="Entities\Models\BusinessTripsOrderCust.cs" />
+    <Compile Include="Entities\Models\BusinessTripsPayment.cs" />
+    <Compile Include="Entities\Models\BusinessTripsPaymentVat.cs" />
+    <Compile Include="Entities\Models\BusinessTripsPrepayment.cs" />
+    <Compile Include="Entities\Models\BusinessTripsPurpose.cs" />
+    <Compile Include="Entities\Models\BusinessTripsReport.cs" />
+    <Compile Include="Entities\Models\CalcWithBuyers.cs" />
+    <Compile Include="Entities\Models\CalcWithBuyersPaymentVat.cs" />
+    <Compile Include="Entities\Models\CalcWithBuyersSpec.cs" />
+    <Compile Include="Entities\Models\CashBookAdditionalType.cs" />
+    <Compile Include="Entities\Models\CashBookBasisType.cs" />
+    <Compile Include="Entities\Models\CashBookContractor.cs" />
+    <Compile Include="Entities\Models\CashBookPage.cs" />
+    <Compile Include="Entities\Models\CashBookRecordType.cs" />
+    <Compile Include="Entities\Models\CashPayments.cs" />
+    <Compile Include="Entities\Models\CashPrepayments.cs" />
+    <Compile Include="Entities\Models\CashBookRecord.cs" />
+    <Compile Include="Entities\Models\City.cs" />
+    <Compile Include="Entities\Models\Accounts.cs" />
+    <Compile Include="Entities\Models\Colors.cs" />
+    <Compile Include="Entities\Models\CustomerOrderPayments.cs" />
+    <Compile Include="Entities\Models\CustomerOrderPrepayments.cs" />
+    <Compile Include="Entities\Models\CustomerOrdersForCWB.cs" />
+    <Compile Include="Entities\Models\DictionaryCPV.cs" />
+    <Compile Include="Entities\Models\DictionaryDKPP.cs" />
+    <Compile Include="Entities\Models\DictionaryUKTV.cs" />
+    <Compile Include="Entities\Models\EmployeeVisitSchedule.cs" />
+    <Compile Include="Entities\Models\FixedAssetsGroup.cs" />
+    <Compile Include="Entities\Models\FixedAssetsOrder.cs" />
+    <Compile Include="Entities\Models\Invoices.cs" />
+    <Compile Include="Entities\Models\Invoices_Notes.cs" />
+    <Compile Include="Entities\Models\Invoice_Requirement_Materials.cs" />
+    <Compile Include="Entities\Models\Invoice_Requirement_Orders.cs" />
+    <Compile Include="Entities\Models\Nomenclatures.cs" />
+    <Compile Include="Entities\Models\Nomenclature_Groups.cs" />
+    <Compile Include="Entities\Models\Orders.cs" />
+    <Compile Include="Entities\Models\PackingListDetail.cs" />
+    <Compile Include="Entities\Models\Periods.cs" />
+    <Compile Include="Entities\Models\Receipts.cs" />
+    <Compile Include="Entities\Models\Registries.cs" />
+    <Compile Include="Entities\Models\SettlementTypes.cs" />
+    <Compile Include="Entities\Models\ControlChecks.cs" />
+    <Compile Include="Entities\Models\CustomerOrderAssemblies.cs" />
+    <Compile Include="Entities\Models\CustomerOrderSpecifications.cs" />
+    <Compile Include="Entities\Models\EmployeeCertificates.cs" />
+    <Compile Include="Entities\Models\MtsAdditCalculations.cs" />
+    <Compile Include="Entities\Models\MtsAssemblies.cs" />
+    <Compile Include="Entities\Models\MtsAssemblyDetails.cs" />
+    <Compile Include="Entities\Models\MtsCreatedDetails.cs" />
+    <Compile Include="Entities\Models\MTSDetalsProcessing.cs" />
+    <Compile Include="Entities\Models\MTSDetails.cs" />
+    <Compile Include="Entities\Models\MtsDocuments.cs" />
+    <Compile Include="Entities\Models\MtsGosts.cs" />
+    <Compile Include="Entities\Models\MtsModifications.cs" />
+    <Compile Include="Entities\Models\MtsNomenclatureGroups.cs" />
+    <Compile Include="Entities\Models\MtsNomenclatures.cs" />
+    <Compile Include="Entities\Models\MtsSpecificationsTest.cs" />
+    <Compile Include="Entities\Models\PackingListMaterials.cs" />
+    <Compile Include="Entities\Models\DocumentTypes.cs" />
+    <Compile Include="Entities\Models\DefectActReplies.cs" />
+    <Compile Include="Entities\Models\PackingLists.cs" />
+    <Compile Include="Entities\Models\DefectActs.cs" />
+    <Compile Include="Entities\Models\ContactKinds.cs" />
+    <Compile Include="Entities\Models\ContractorContactAddress.cs" />
+    <Compile Include="Entities\Models\ContactPersonAddress.cs" />
+    <Compile Include="Entities\Models\ContactPersons.cs" />
+    <Compile Include="Entities\Models\ContactTypes.cs" />
+    <Compile Include="Entities\Models\ContractorContactPersons.cs" />
+    <Compile Include="Entities\Models\Contractors.cs" />
+    <Compile Include="Entities\Models\ContractorTypes.cs" />
+    <Compile Include="Entities\Models\Country.cs" />
+    <Compile Include="Entities\Models\Currency.cs" />
+    <Compile Include="Entities\Models\Currency_Rates.cs" />
+    <Compile Include="Entities\Models\CustomerOrders.cs" />
+    <Compile Include="Entities\Models\Departments.cs" />
+    <Compile Include="Entities\Models\Employees.cs" />
+    <Compile Include="Entities\Models\EmployeesDetails.cs" />
+    <Compile Include="Entities\Models\EntityPhotos.cs" />
+    <Compile Include="Entities\Models\ProductCategories.cs" />
+    <Compile Include="Entities\Models\ProfessionGroups.cs" />
+    <Compile Include="Entities\Models\Professions.cs" />
+    <Compile Include="Entities\Models\ProfessionsCases.cs" />
+    <Compile Include="Entities\Models\ProjectDetailExecutors.cs" />
+    <Compile Include="Entities\Models\ProjectDetails.cs" />
+    <Compile Include="Entities\Models\ReceiptCertificates.cs" />
+    <Compile Include="Entities\Models\ShipmentLists.cs" />
+    <Compile Include="Entities\Models\Storehouses.cs" />
+    <Compile Include="Entities\Models\Suppliers.cs" />
+    <Compile Include="Entities\Models\Tasks.cs" />
+    <Compile Include="Entities\Models\ToolActMaterials.cs" />
+    <Compile Include="Entities\Models\ToolActs.cs" />
+    <Compile Include="Entities\Models\Units.cs" />
+    <Compile Include="Entities\Models\UserRoles.cs" />
+    <Compile Include="Entities\Models\Users.cs" />
+    <Compile Include="Entities\Models\UserTasks.cs" />
+    <Compile Include="Entities\Models\Vat.cs" />
+    <Compile Include="Entities\Models\WeldAttestationPersons.cs" />
+    <Compile Include="Entities\Models\WeldAttestations.cs" />
+    <Compile Include="Entities\Models\WeldCertificates.cs" />
+    <Compile Include="Entities\Models\WeldPersonsWps.cs" />
+    <Compile Include="Entities\Models\WeldStampJournal.cs" />
+    <Compile Include="Entities\Models\WeldStamps.cs" />
+    <Compile Include="Entities\Models\WeldWps.cs" />
+    <Compile Include="Entities\QueryModels\AccountClothesInfo.cs" />
+    <Compile Include="Entities\Models\AgreementTypeDocuments.cs" />
+    <Compile Include="Entities\QueryModels\AgreementOrderJournal.cs" />
+    <Compile Include="Entities\QueryModels\BankPaymentsInfo.cs" />
+    <Compile Include="Entities\QueryModels\BankPaymentsSelect.cs" />
+    <Compile Include="Entities\QueryModels\BusinessTripsJournal.cs" />
+    <Compile Include="Entities\QueryModels\BusinessTripsPrepaymentJournal.cs" />
+    <Compile Include="Entities\QueryModels\CalcWithBuyersInfo.cs" />
+    <Compile Include="Entities\QueryModels\CashBookBalance.cs" />
+    <Compile Include="Entities\QueryModels\CashBookRecordJournal.cs" />
+    <Compile Include="Entities\QueryModels\CashPaymentsInfo.cs" />
+    <Compile Include="Entities\QueryModels\CashPrepaymentsInfo.cs" />
+    <Compile Include="Entities\QueryModels\OrderReceipFromQuery.cs" />
+    <Compile Include="Entities\QueryModels\ContractPayments.cs" />
+    <Compile Include="Entities\QueryModels\CustomerOrderForWelding.cs" />
+    <Compile Include="Entities\QueryModels\DeliveryStoreRemainsReceipt.cs" />
+    <Compile Include="Entities\QueryModels\EmployeesInfoNonPhoto.cs" />
+    <Compile Include="Entities\QueryModels\EmployeesInfoOnlyWithWeldStamp.cs" />
+    <Compile Include="Entities\QueryModels\ExpenditureInfo.cs" />
+    <Compile Include="Entities\QueryModels\ExpendituresStoreHousesInfo.cs" />
+    <Compile Include="Entities\QueryModels\ExpenditureStoreHouseInfo.cs" />
+    <Compile Include="Entities\QueryModels\ExpenditureTotalPrice.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderArchiveJournal.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderJournal.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderJournalPrint.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderListMaterialsJournal.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderMaterialsPrintJournal.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsOrderRegJournal.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsReportRegisterCh1.cs" />
+    <Compile Include="Entities\QueryModels\FixedAssetsReportRegisterCh2.cs" />
+    <Compile Include="Entities\QueryModels\InputFixedAssetsForGroup.cs" />
+    <Compile Include="Entities\QueryModels\InputFixedAssetsForQuarter.cs" />
+    <Compile Include="Entities\QueryModels\InvoicesFixedAssetsInfo.cs" />
+    <Compile Include="Entities\QueryModels\InvoicesInfo.cs" />
+    <Compile Include="Entities\QueryModels\LastIdInvoicesReqGen.cs" />
+    <Compile Include="Entities\QueryModels\LastIdInvoicesReqMatGen.cs" />
+    <Compile Include="Entities\QueryModels\LastIdOrderGen.cs" />
+    <Compile Include="Entities\QueryModels\LastIdReceiptGen.cs" />
+    <Compile Include="Entities\QueryModels\MaterialsForToolActs.cs" />
+    <Compile Include="Entities\QueryModels\DeliveryContractorDebts.cs" />
+    <Compile Include="Entities\QueryModels\DeliveryOrders.cs" />
+    <Compile Include="Entities\QueryModels\DeliveryPayments.cs" />
+    <Compile Include="Entities\QueryModels\DeliveryStoreRemains.cs" />
+    <Compile Include="Entities\QueryModels\EmployeePhoto.cs" />
+    <Compile Include="Entities\QueryModels\EmployeesForWeld.cs" />
+    <Compile Include="Entities\QueryModels\EmployeesInfo.cs" />
+    <Compile Include="Entities\QueryModels\ExpenditureByOrders.cs" />
+    <Compile Include="Entities\QueryModels\InvoiceRequirementExpenditureInfo.cs" />
+    <Compile Include="Entities\QueryModels\InvoiceRequirementMaterialsInfo.cs" />
+    <Compile Include="Entities\QueryModels\MaterialsForAccountClothes.cs" />
+    <Compile Include="Entities\QueryModels\MSTrialBalanceByAccounts.cs" />
+    <Compile Include="Entities\QueryModels\MtsAssembliesCustomerInfo.cs" />
+    <Compile Include="Entities\QueryModels\MtsAssembliesInfo.cs" />
+    <Compile Include="Entities\QueryModels\MtsDetailsInfo.cs" />
+    <Compile Include="Entities\QueryModels\MtsSpecificationTreeInfo.cs" />
+    <Compile Include="Entities\QueryModels\OrderForDetalsContractor.cs" />
+    <Compile Include="Entities\QueryModels\OrdersInfo.cs" />
+    <Compile Include="Entities\QueryModels\PackingListsJournal.cs" />
+    <Compile Include="Entities\QueryModels\PaintingWorksJournal.cs" />
+    <Compile Include="Entities\QueryModels\ReceiptJournal.cs" />
+    <Compile Include="Entities\QueryModels\Responsible.cs" />
+    <Compile Include="Entities\QueryModels\StoreHouseReceiptProject.cs" />
+    <Compile Include="Entities\QueryModels\ReceiptStoreHouses.cs" />
+    <Compile Include="Entities\QueryModels\RemainsNomenclature.cs" />
+    <Compile Include="Entities\QueryModels\RequestLogJournal.cs" />
+    <Compile Include="Entities\QueryModels\StoreHouseRemains.cs" />
+    <Compile Include="Entities\QueryModels\ToolActMaterialsJournal.cs" />
+    <Compile Include="Entities\QueryModels\UserDetails.cs" />
+    <Compile Include="Entities\QueryModels\UsersInfo.cs" />
+    <Compile Include="Entities\QueryModels\WeldAttestationPersonsInfo.cs" />
+    <Compile Include="Entities\QueryModels\WeldAttestationTreeInfo.cs" />
+    <Compile Include="Entities\QueryModels\WeldStampJournalInfo.cs" />
+    <Compile Include="Entities\QueryModels\ReceiptOrders.cs" />
+    <Compile Include="Entities\ReportModel\BankPaymentsReportForCustomBill.cs" />
+    <Compile Include="Entities\ReportModel\BankPaymentsReportTrialBalance.cs" />
+    <Compile Include="Entities\ReportModel\BankPaymentsReportTrialBalanceAll313.cs" />
+    <Compile Include="Entities\ReportModel\BankPaymentsReportTrialBalanceFull.cs" />
+    <Compile Include="Entities\ReportModel\BankPaymentsReportTrialBalanceQuarter.cs" />
+    <Compile Include="Entities\ReportModel\BeginCredit.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsPaymentStatement.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportByAccounts.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportByCurrency.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportByDepartments.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportByEmployees.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportPaymentsByAccountId.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportPaymentsByPeriod.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportPrepaymentsByAccountShort.cs" />
+    <Compile Include="Entities\ReportModel\BusinessTripsReportPrepaymentsByAccountId.cs" />
+    <Compile Include="Entities\ReportModel\CalcWithBuyersReport.cs" />
+    <Compile Include="Entities\ReportModel\CalcWithBuyersShortReport.cs" />
+    <Compile Include="Entities\ReportModel\CashBookRecordJournalByYear.cs" />
+    <Compile Include="Entities\ReportModel\CashPaymentsPeriodBalance.cs" />
+    <Compile Include="Entities\ReportModel\CashPaymentsReportByAccounts.cs" />
+    <Compile Include="Entities\ReportModel\CashPaymentsSaldoBalance.cs" />
+    <Compile Include="Entities\ReportModel\ContractorVat.cs" />
+    <Compile Include="Entities\ReportModel\DetalsReportByOperationContractors.cs" />
+    <Compile Include="Entities\ReportModel\ExpenditureForProjectReport.cs" />
+    <Compile Include="Entities\ReportModel\FixedAssetsOrderByGroupShortReport.cs" />
+    <Compile Include="Entities\ReportModel\FixedAssetsOrderReportStrait.cs" />
+    <Compile Include="Entities\ReportModel\GetBPDetalsReportByCon.cs" />
+    <Compile Include="Entities\ReportModel\MSPaymentsWithoutVat.cs" />
+    <Compile Include="Entities\ReportModel\MsReconciliation.cs" />
+    <Compile Include="Entities\ReportModel\MsReconciliation681_36.cs" />
+    <Compile Include="Entities\ReportModel\MsTrialBalance.cs" />
+    <Compile Include="Entities\ReportModel\MsTrialBalanceByAccountsCurrency.cs" />
+    <Compile Include="Entities\ReportModel\MsTrialBalanceCurrency.cs" />
+    <Compile Include="Entities\ReportModel\StoreHouseInventory.cs" />
+    <Compile Include="Entities\ReportModel\StoreHouseTrialBalance.cs" />
+    <Compile Include="Entities\ReportModel\TrialBalanceByAccountsReport.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

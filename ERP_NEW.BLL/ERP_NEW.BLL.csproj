@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8AC81DFE-DD85-4373-B7FC-247C4E63B675}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ERP_NEW.BLL</RootNamespace>
+    <AssemblyName>ERP_NEW.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Calendar.NET">
+      <HintPath>C:\Users\ponomarev_a\Desktop\Calendar.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.6.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.7.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Nager.Date, Version=1.22.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.7\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Barcode, Version=1.4.0.16040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Barcode.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DataExport, Version=3.5.135.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DataExport.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DataExport.ResourceMgr, Version=1.6.20.4040, Culture=neutral, PublicKeyToken=4bc1500157862925, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DataExport.ResourceMgr.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Doc, Version=5.9.8.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Doc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.DocViewer.Forms, Version=2.4.1.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.DocViewer.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.6.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.License.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.9.99.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Pdf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.PdfViewer.Forms, Version=2.11.46.15340, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.PdfViewer.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.Presentation, Version=2.8.5.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.Presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=7.12.14.15040, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.Office.2.15\lib\net40\Spire.XLS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SpreadsheetGear">
+      <HintPath>..\packages\SpreadsheetGear.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DTO\ModelsDTO\CalculationDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CalculationMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EmployeesDetailsStandartDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PaintingWorksDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\ContractorVatDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccessRightsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccessScheduleEntityDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccountClothesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccountClothesMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccountingOperationDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccountsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AccountsTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementOrderDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementOrderPurposeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementOrderScanDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementsTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DeliveryDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DeliveryOrderDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DeliveryOrdersDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DeliveryPaymentTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ExpedinturesAccountantDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ExpendituresStoreHousesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\FixedAssetsMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\FixedAssetsOrderRegistrationDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSAuthorizationUsersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSCreateDetalsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSGostDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSGuagesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSMeasureDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSNomenclatureGroupsOldDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSNomenclaturesOldDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSPurchasedProductsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSSpecificationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ReceiptDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\RegionDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\RequestLogContractorsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\RequestLogDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BeginCreditDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\DetalsReportByOperationContractorsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\FixedAssetsOrderByGroupShortReportDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\FixedAssetsOrderReportStraitDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\GetBPDetalsReportByConDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MSPaymentsWithoutVatDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\PaymentDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\ReportInvoiceDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementDocumentsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\ResponsibleDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\SpecificationPrintModelDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\StoreHouseInventoryDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\StoreHouseTrialBalanceDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\AccountOrdersDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\AgreementJournalDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\Balance_AccountDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\Bank_PaymentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessCardDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessCardPhotosDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessCardsFactoryDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsDecreeDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsDecreeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsOrderCustDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsPaymentDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsPaymentVatDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsPrepaymentDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsPurposeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\BusinessTripsReportDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CalcWithBuyersPaymentVatDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CalcWithBuyersSpecDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookAdditionalTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookBasisTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookContractorDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookPageDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookRecordDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBookRecordTypeDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashPaymentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashPrepaymentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CityDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ColorsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ControlChecksDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CalcWithBuyersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrderAssembliesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrderPaymentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrderPrepaymentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrdersForCWBDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrderSpecificationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DictionaryCPVDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DictionaryDKPPDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DictionaryUKTVDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EmployeeCertificatesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EmployeeVisitScheduleDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\FixedAssetsGroupDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\FixedAssetsOrderDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\InvoiceRequirementMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\InvoiceRequirementOrdersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsAdditCalculationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsAssembliesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsAssemblyDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsCreatedDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSDetalsProcessingDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsDocumentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsGostsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsModificationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsNomenclatureGroupsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsSpecificationsTestDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsNomenclaturesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\NomenclatureGroupsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\NomenclaturesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\OrdersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PackingListDetailDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PackingListMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DocumentTypesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DefectActRepliesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PackingListsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DefectActsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContactKindsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContactPersonAddressDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContactPersonsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContactTypesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContractorContactAddressDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContractorContactPersonsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContractorsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ContractorTypesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CountryDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CurrencyDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\Currency_RatesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CustomerOrdersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\DepartmentsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EmployeesDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EmployeesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\EntityPhotosDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PaymentImportModelDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\PeriodsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ProductCategoriesDTOcs.cs" />
+    <Compile Include="DTO\ModelsDTO\ProfessionGroupsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ProfessionsCasesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ProfessionsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ProjectDetailExecutorsDTO..cs" />
+    <Compile Include="DTO\ModelsDTO\ProjectDetailsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ReceiptCertificatesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ReceiptsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\RegistriesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\SettlementTypesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ShipmentListsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\StorehousesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\SuppliersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\TasksDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ToolActMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\ToolActsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\UnitsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\UserRolesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\UsersDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\AgreementTypeDocumentsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\AgreementOrderJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CustomerOrderForWeldingDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\DeliveryStoreRemainsReceiptDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureForProjectReportDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpendituresStoreHousesInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureStoreHouseInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureTotalPriceDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderArchiveJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderJournalPrintDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderListMaterialsJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderMaterialsPrintJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsOrderRegJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsReportRegisterCh1DTO.cs" />
+    <Compile Include="DTO\SelectedDTO\FixedAssetsReportRegisterCh2DTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InputFixedAssetsForGroupDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InputFixedAssetsForQuarterDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoicesFixedAssetsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoicesSortDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\LastIdInvoicesReqGenDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\LastIdInvoicesReqMatGenDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\LastIdOrderGenDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\LastIdReceiptGenDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MonthDetailsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MSTrialBalanceByAccountsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MtsAssembliesCustomerInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\OrderForDetalsContractorDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\OrderReceipFromQueryDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\PaintingWorksJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ReceiptJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\StoreHouseReceiptProjectDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\RemainsNomenclatureDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\RequestLogJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\TrialBalanceByAccountsReportDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\UserTasksDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\VatDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldAttestationPersonsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldAttestationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldCertificatesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldPersonsWpsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldStampJournalDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldStampsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\WeldWpsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BankPaymentsReportForCustomBillDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BankPaymentsReportTrialBalanceAll313DTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BankPaymentsReportTrialBalanceDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BankPaymentsReportTrialBalanceFullDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BankPaymentsReportTrialBalanceQuarterDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsPaymentStatementDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportByAccountsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportByCurrencyDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportByDepartmentsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportByEmployeesDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportPaymentsByAccountIdDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportPaymentsByPeriodDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportPrepaymentsByAccountShortDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\BusinessTripsReportPrepaymentsByAccountIdDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CalcWithBuyersReportDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CalcWithBuyersShortReportDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CashBookRecordJournalByYearDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CashPaymentsPeriodBalanceDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CashPaymentsReportByAccountsDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\CashPaymentsSaldoBalanceDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MsReconciliation681_36DTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MsReconciliationDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MsTrialBalanceByAccountsCurrencyDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MsTrialBalanceCurrencyDTO.cs" />
+    <Compile Include="DTO\ReportsDTO\MsTrialBalanceDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\AccountClothesInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\AccountClothesJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\BankPaymentsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\BankPaymentsSelectDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\BusinessTripsJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\BusinessTripsPrepaymentJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CalcWithBuyersInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CashBookBalanceDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CashBookRecordJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CashPaymentsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CashPrepaymentsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ContractPaymentsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\CustomerOrderPaymentsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\DeliveryContractorDebtsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\DeliveryOrdersDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\DeliveryPaymentsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\DeliveryStoreRemainsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeePhotoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeesForWeldDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeesInfoCustomDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeesInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeesInfoNonPhotoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\EmployeesInfoOnlyWithWeldStampDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureByOrdersDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoiceRequirementExpenditureInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoiceRequirementMaterialsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoiceRequirementSelectFixedAssetsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\InvoicesInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MaterialsForAccountClothesDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MaterialsForToolActsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MtsAssembliesInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MtsDetailsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\MtsSpecificationTreeInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\OrdersInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\PackingListsJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ReceiptHistoryOrdersDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ReceiptOrdersDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\StoreHouseRemainsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ToolActMaterialsJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\UserDetailsDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\UsersInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\WeldAttestationPersonsInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\WeldAttestationTreeInfoDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\WeldStampJournalInfoDTO.cs" />
+    <Compile Include="Infrastructure\ADUser.cs" />
+    <Compile Include="Infrastructure\DefinitionPathToServer.cs" />
+    <Compile Include="Infrastructure\LogFile.cs" />
+    <Compile Include="Infrastructure\RuDateAndMoneyConverter.cs" />
+    <Compile Include="Interfaces\IAccountingInvoicesService.cs" />
+    <Compile Include="Interfaces\IAccountingOperationService.cs" />
+    <Compile Include="Interfaces\IAccountsService.cs" />
+    <Compile Include="Interfaces\IBankImportService.cs" />
+    <Compile Include="Interfaces\IBankPaymentsService.cs" />
+    <Compile Include="Interfaces\IBusinessCardService.cs" />
+    <Compile Include="Interfaces\IBusinessTripsService.cs" />
+    <Compile Include="Interfaces\ICalcWithBuyersService.cs" />
+    <Compile Include="Interfaces\ICashBookService.cs" />
+    <Compile Include="Interfaces\ICityService.cs" />
+    <Compile Include="Infrastructure\ObjectBase.cs" />
+    <Compile Include="Infrastructure\PropertyCompare.cs" />
+    <Compile Include="Infrastructure\ServiceModule.cs" />
+    <Compile Include="Infrastructure\Utils.cs" />
+    <Compile Include="Interfaces\ICurrencyService.cs" />
+    <Compile Include="Interfaces\ICustomerOrdersService.cs" />
+    <Compile Include="Interfaces\IDefectActsService.cs" />
+    <Compile Include="Interfaces\IDeliveryService.cs" />
+    <Compile Include="Interfaces\IEmployeesService.cs" />
+    <Compile Include="Interfaces\IContractorsService.cs" />
+    <Compile Include="Interfaces\IDocumentTypesService.cs" />
+    <Compile Include="Interfaces\IFixedAssetsOrderService.cs" />
+    <Compile Include="Interfaces\IInfrastructureService.cs" />
+    <Compile Include="Interfaces\IMarketingService.cs" />
+    <Compile Include="Interfaces\IMtsNomenclaturesService.cs" />
+    <Compile Include="Interfaces\IMtsSpecificationsService.cs" />
+    <Compile Include="Interfaces\IPackingListsService.cs" />
+    <Compile Include="Interfaces\IPeriodService.cs" />
+    <Compile Include="Interfaces\IProjectDetailsService.cs" />
+    <Compile Include="Interfaces\IReceiptCertificateService.cs" />
+    <Compile Include="Interfaces\IReportService.cs" />
+    <Compile Include="Interfaces\IRequestLogService.cs" />
+    <Compile Include="Interfaces\IShipmentListsService.cs" />
+    <Compile Include="Interfaces\IStoreHouseService.cs" />
+    <Compile Include="Interfaces\IUnitsService.cs" />
+    <Compile Include="Interfaces\IUserService.cs" />
+    <Compile Include="Interfaces\IWeldStampsService.cs" />
+    <Compile Include="DTO\ModelsDTO\InvoicesDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\Invoices_NotesDTO.cs" />
+    <Compile Include="NameCaseLib\Core\Core.cs" />
+    <Compile Include="NameCaseLib\Core\LastCache.cs" />
+    <Compile Include="NameCaseLib\Core\Str.cs" />
+    <Compile Include="NameCaseLib\Core\Word.cs" />
+    <Compile Include="NameCaseLib\Core\WordArray.cs" />
+    <Compile Include="NameCaseLib\NCL\Gender.cs" />
+    <Compile Include="NameCaseLib\NCL\GenderProbability.cs" />
+    <Compile Include="NameCaseLib\NCL\LettersMask.cs" />
+    <Compile Include="NameCaseLib\NCL\NamePart.cs" />
+    <Compile Include="NameCaseLib\NCL\Padeg.cs" />
+    <Compile Include="NameCaseLib\Ru.cs" />
+    <Compile Include="NameCaseLib\Ua.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Services\AccountingInvoicesService.cs" />
+    <Compile Include="Services\AccountingOperationService.cs" />
+    <Compile Include="Services\AccountsService.cs" />
+    <Compile Include="Services\BankImportService.cs" />
+    <Compile Include="Services\BankPaymentsService.cs" />
+    <Compile Include="Services\BusinessCardService.cs" />
+    <Compile Include="Services\BusinessTripsService.cs" />
+    <Compile Include="Services\CalcWithBuyersService.cs" />
+    <Compile Include="Services\CashBookService.cs" />
+    <Compile Include="Services\CityService.cs" />
+    <Compile Include="Services\ContractorsService.cs" />
+    <Compile Include="Services\CurrencyService.cs" />
+    <Compile Include="Services\CustomerOrdersService.cs" />
+    <Compile Include="Services\DefectActsService.cs" />
+    <Compile Include="Services\DeliveryService.cs" />
+    <Compile Include="Services\DocumentTypesService.cs" />
+    <Compile Include="Services\EmployeesService.cs" />
+    <Compile Include="Services\FixedAssetsOrderService.cs" />
+    <Compile Include="Services\InfrastructureService.cs" />
+    <Compile Include="Services\MarketingService.cs" />
+    <Compile Include="Services\MtsNomenclaturesService.cs" />
+    <Compile Include="Services\MtsSpecificationsService.cs" />
+    <Compile Include="Services\PackingListsService.cs" />
+    <Compile Include="Services\PeriodService.cs" />
+    <Compile Include="Services\ProjectDetailsService.cs" />
+    <Compile Include="Services\ReceiptCertificateService.cs" />
+    <Compile Include="Services\ReportService.cs" />
+    <Compile Include="Services\RequestLogService.cs" />
+    <Compile Include="Services\ShipmentListsService.cs" />
+    <Compile Include="Services\StoreHouseService.cs" />
+    <Compile Include="Services\UnitsService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\WeldStampsService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ERP_NEW.DAL\ERP_NEW.DAL.csproj">
+      <Project>{933b3464-bba3-4fd1-9a94-a0f9936b5786}</Project>
+      <Name>ERP_NEW.DAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NLog.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
