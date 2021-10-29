@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -42,7 +42,7 @@
             this.beginMonthEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMonth1 = new DevExpress.XtraScheduler.UI.RepositoryItemMonth();
             this.barStaticItem3 = new DevExpress.XtraBars.BarStaticItem();
-            this.endYearEdit = new DevExpress.XtraBars.BarEditItem();
+            this.EndYearEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.endMonthEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemMonth2 = new DevExpress.XtraScheduler.UI.RepositoryItemMonth();
@@ -267,7 +267,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.beginYearEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.beginMonthEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.barStaticItem3);
-            this.ribbonPageGroup1.ItemLinks.Add(this.endYearEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.EndYearEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.endMonthEdit);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Період";
@@ -297,6 +297,7 @@
             this.beginYearEdit.ItemAppearance.Normal.Options.UseFont = true;
             this.beginYearEdit.Name = "beginYearEdit";
             this.beginYearEdit.EditValueChanged += new System.EventHandler(this.beginYearEdit_EditValueChanged);
+            this.beginYearEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.beginYearEdit_ItemClick);
             // 
             // repositoryItemDateEdit1
             // 
@@ -311,6 +312,8 @@
             this.repositoryItemDateEdit1.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.repositoryItemDateEdit1.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearView;
             this.repositoryItemDateEdit1.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView;
+            this.repositoryItemDateEdit1.EditValueChanged += new System.EventHandler(this.repositoryItemDateEdit1_EditValueChanged);
+            this.repositoryItemDateEdit1.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.repositoryItemDateEdit1_EditValueChanging);
             // 
             // beginMonthEdit
             // 
@@ -344,20 +347,20 @@
             this.barStaticItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barStaticItem3.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
-            // endYearEdit
+            // EndYearEdit
             // 
-            this.endYearEdit.Caption = "рік      ";
-            this.endYearEdit.Edit = this.repositoryItemDateEdit2;
-            this.endYearEdit.EditWidth = 100;
-            this.endYearEdit.Id = 7;
-            this.endYearEdit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.endYearEdit.ItemAppearance.Hovered.Options.UseFont = true;
-            this.endYearEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.endYearEdit.ItemAppearance.Normal.Options.UseFont = true;
-            this.endYearEdit.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.endYearEdit.ItemInMenuAppearance.Normal.Options.UseFont = true;
-            this.endYearEdit.Name = "endYearEdit";
-            this.endYearEdit.EditValueChanged += new System.EventHandler(this.endYearEdit_EditValueChanged);
+            this.EndYearEdit.Caption = "рік      ";
+            this.EndYearEdit.Edit = this.repositoryItemDateEdit2;
+            this.EndYearEdit.EditWidth = 100;
+            this.EndYearEdit.Id = 7;
+            this.EndYearEdit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.EndYearEdit.ItemAppearance.Hovered.Options.UseFont = true;
+            this.EndYearEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EndYearEdit.ItemAppearance.Normal.Options.UseFont = true;
+            this.EndYearEdit.ItemInMenuAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.EndYearEdit.ItemInMenuAppearance.Normal.Options.UseFont = true;
+            this.EndYearEdit.Name = "EndYearEdit";
+            this.EndYearEdit.EditValueChanged += new System.EventHandler(this.endYearEdit_EditValueChanged);
             // 
             // repositoryItemDateEdit2
             // 
@@ -372,6 +375,7 @@
             this.repositoryItemDateEdit2.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.repositoryItemDateEdit2.VistaCalendarInitialViewStyle = DevExpress.XtraEditors.VistaCalendarInitialViewStyle.YearView;
             this.repositoryItemDateEdit2.VistaCalendarViewStyle = DevExpress.XtraEditors.VistaCalendarViewStyle.YearsGroupView;
+            this.repositoryItemDateEdit2.EditValueChanged += new System.EventHandler(this.repositoryItemDateEdit2_EditValueChanged);
             // 
             // endMonthEdit
             // 
@@ -798,9 +802,9 @@
             this.gridLookUpEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Додати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Редагувати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "Поновити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "Додати", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "Редагувати", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "Поновити", null, null, true)});
             this.gridLookUpEdit1.Properties.ImmediatePopup = true;
             this.gridLookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.gridLookUpEdit1.Properties.PopupFormSize = new System.Drawing.Size(667, 0);
@@ -2173,7 +2177,7 @@
         private DevExpress.XtraBars.BarEditItem beginMonthEdit;
         private DevExpress.XtraScheduler.UI.RepositoryItemMonth repositoryItemMonth1;
         private DevExpress.XtraBars.BarStaticItem barStaticItem3;
-        private DevExpress.XtraBars.BarEditItem endYearEdit;
+        private DevExpress.XtraBars.BarEditItem EndYearEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
         private DevExpress.XtraBars.BarEditItem endMonthEdit;
         private DevExpress.XtraScheduler.UI.RepositoryItemMonth repositoryItemMonth2;
