@@ -53,13 +53,13 @@ namespace ERP_NEW.GUI.Accounting
             InitializeComponent();
 
             beginYearEdit.EditValue = DateTime.Now;
-            EndYearEdit.EditValue = DateTime.Now;
+            endYearEdit.EditValue = DateTime.Now;
 
             beginMonthEdit.EditValue = DateTime.Now.Month;
             endMonthEdit.EditValue = DateTime.Now.Month;
 
             _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
-            _endDate = new DateTime(((DateTime)EndYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+            _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
 
             accountService = Program.kernel.Get<IAccountsService>();
 
@@ -99,41 +99,56 @@ namespace ERP_NEW.GUI.Accounting
         {
             if (beginYearEdit.EditValue != null && beginMonthEdit.EditValue != null)
             {
-            //    s.EditValue = beginYearEdit.EditValue;
-            //    //repositoryItemDateEdit2 = repositoryItemDateEdit1;
-                _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
-                EndYearEdit.EditValue = beginYearEdit.EditValue;
-              
+                endYearEdit.BeginUpdate();
 
+                //_beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
 
-                //= beginYearEdit.EditValue;
-                //    _endDate = new DateTime(((DateTime)s.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+                endYearEdit.EditValue = beginYearEdit.EditValue;
+                endYearEdit.PerformClick();
+                beginYearEdit.PerformClick();
+
+                ribbonControl1.Focus();
+
+                endYearEdit.EndUpdate();
+
             }
         }
 
         private void beginMonthEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (beginYearEdit.EditValue != null && beginMonthEdit.EditValue != null)
+            if (beginMonthEdit.EditValue != null && endMonthEdit.EditValue != null)
             {
-                _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+                //_beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+                //endMonthEdit.EditValue = beginMonthEdit.EditValue;
+                //_endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+
+                endMonthEdit.BeginUpdate();
+
+                //_beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+
                 endMonthEdit.EditValue = beginMonthEdit.EditValue;
-                _endDate = new DateTime(((DateTime)EndYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+                endMonthEdit.PerformClick();
+                beginMonthEdit.PerformClick();
+
+                ribbonControl1.Focus();
+
+                endMonthEdit.EndUpdate();
             }
 
         }
 
         private void endYearEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (EndYearEdit.EditValue != null && endMonthEdit.EditValue != null)
-                _endDate = new DateTime(((DateTime)EndYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+            if (endYearEdit.EditValue != null && endMonthEdit.EditValue != null)
+                _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
             //_endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
 
         }
 
         private void endMonthEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (EndYearEdit.EditValue != null && endMonthEdit.EditValue != null)
-                _endDate = new DateTime(((DateTime)EndYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+            if (endYearEdit.EditValue != null && endMonthEdit.EditValue != null)
+                _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
             //_endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
 
         }
@@ -467,7 +482,7 @@ namespace ERP_NEW.GUI.Accounting
                         DateTime beginDate;
                         DateTime endDate;
                         beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
-                        endDate = new DateTime(((DateTime)EndYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
+                        endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
 
                         if (!reportService.GetDetalsReportByOperationContractors(beginDate, 1, 1, 1, 15, 16, endDate,
                             (int)contractorsEdit.EditValue, beginDate, endDate))
@@ -635,7 +650,7 @@ namespace ERP_NEW.GUI.Accounting
             reportService = Program.kernel.Get<IReportService>();
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
             BindingSource fixedAssetsReportStraitBS = new BindingSource();
-            if (beginYearEdit.EditValue.ToString() != EndYearEdit.EditValue.ToString() || beginMonthEdit.EditValue.ToString() != endMonthEdit.EditValue.ToString())
+            if (beginYearEdit.EditValue.ToString() != endYearEdit.EditValue.ToString() || beginMonthEdit.EditValue.ToString() != endMonthEdit.EditValue.ToString())
             {
                 MessageBox.Show("Выбран неверный период. \n Выберите только один месяц.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -661,7 +676,7 @@ namespace ERP_NEW.GUI.Accounting
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
             BindingSource fixedAssetsReportStraitBS = new BindingSource();
 
-            if (beginYearEdit.EditValue.ToString() != EndYearEdit.EditValue.ToString() || beginMonthEdit.EditValue.ToString() != endMonthEdit.EditValue.ToString())
+            if (beginYearEdit.EditValue.ToString() != endYearEdit.EditValue.ToString() || beginMonthEdit.EditValue.ToString() != endMonthEdit.EditValue.ToString())
             {
                 MessageBox.Show("Выбран неверный период. \n Выберите только один месяц.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -1218,23 +1233,6 @@ namespace ERP_NEW.GUI.Accounting
 
                 return;
             }
-        }
-
-        private void repositoryItemDateEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-            //s.EditValue = beginYearEdit.EditValue;
-        }
-
-        private void repositoryItemDateEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-            //s.EditValue = beginYearEdit.EditValue;
-        }
-
-        private void repositoryItemDateEdit1_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
-        {
-           
-         //   EndYearEdit.EditValue = beginYearEdit.EditValue;
-          
         }
 
         private void beginYearEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
