@@ -663,9 +663,14 @@ namespace ERP_NEW.GUI
                 case "converterItem":
                     ConverterFm converterFm = new ConverterFm(userTasksDTO);
                     converterFm.Text = "Конвертер";
-                    //converterFm.MdiParent = this;
                     converterFm.Show();
                     break;
+                case "certificatePassItem":
+
+                    //кнопка для новых сертификатов;
+                    
+                    break;
+
 
                     
 
