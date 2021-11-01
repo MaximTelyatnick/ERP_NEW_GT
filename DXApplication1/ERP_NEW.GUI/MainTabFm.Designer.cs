@@ -30,107 +30,107 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement318 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement304 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement305 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement306 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement307 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement308 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement311 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement309 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement310 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement312 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement313 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement314 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement315 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement316 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement317 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement323 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement319 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement320 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement321 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement322 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement329 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement324 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement325 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement326 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement327 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement328 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement334 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement330 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement331 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement332 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement333 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement339 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement335 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement336 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement337 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement338 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement342 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement340 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement341 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement349 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement343 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement344 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement345 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement346 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement347 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement348 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement356 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement350 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement351 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement352 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement353 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement354 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement355 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement365 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement357 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement358 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement359 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement360 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement361 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement362 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement363 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement364 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement395 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement366 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement367 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement368 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement369 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement373 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement370 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement371 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement372 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement383 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement374 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement375 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement376 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement377 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement378 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement379 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement380 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement381 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement382 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement384 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement388 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement385 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement386 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement387 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement389 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement390 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement391 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement393 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement394 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement392 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement396 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement397 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement398 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement399 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement400 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement401 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement402 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement403 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement404 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement116 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement102 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement104 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement105 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement106 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement109 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement107 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement108 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement110 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement111 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement112 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement113 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement114 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement115 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement121 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement117 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement118 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement119 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement120 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement127 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement122 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement123 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement124 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement125 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement126 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement132 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement128 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement129 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement130 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement131 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement137 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement133 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement134 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement135 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement136 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement140 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement138 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement139 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement147 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement141 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement142 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement143 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement144 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement145 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement146 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement154 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement148 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement149 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement150 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement151 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement152 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement153 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement163 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement155 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement156 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement157 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement158 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement159 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement160 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement161 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement162 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement193 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement164 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement165 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement166 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement167 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement171 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement168 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement169 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement170 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement181 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement172 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement173 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement174 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement175 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement176 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement177 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement178 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement179 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement180 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement182 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement186 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement183 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement184 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement185 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement187 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement188 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement189 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement192 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement190 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement191 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement194 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement195 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement196 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement197 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement198 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement199 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement200 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement201 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement202 = new DevExpress.XtraEditors.TileItemElement();
             this.menuNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.accountingCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.accountingOrderItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -220,8 +220,8 @@
             this.timeSheetItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.visitSheduleItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.infrastructureItem = new DevExpress.XtraBars.Navigation.TileNavItem();
-            this.converterItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.palitraItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
+            this.converterItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.infoCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.manualBookItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.manualBookAccountantItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -330,10 +330,10 @@
             // 
             // 
             this.accountingCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement318.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement318.ImageToTextIndent = 2;
-            tileItemElement318.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.accountingCategory.Tile.Elements.Add(tileItemElement318);
+            tileItemElement116.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement116.ImageToTextIndent = 2;
+            tileItemElement116.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            this.accountingCategory.Tile.Elements.Add(tileItemElement116);
             this.accountingCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingCategory.Tile.ShowDropDownButton = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -353,10 +353,10 @@
             this.accountingOrderItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingOrderItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingOrderItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement304.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement304.Image")));
-            tileItemElement304.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement304.Text = "Надходження";
-            this.accountingOrderItem.Tile.Elements.Add(tileItemElement304);
+            tileItemElement102.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement102.Image")));
+            tileItemElement102.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement102.Text = "Надходження";
+            this.accountingOrderItem.Tile.Elements.Add(tileItemElement102);
             this.accountingOrderItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingOrderItem.Tile.Name = "tileBarItem1";
             // 
@@ -374,15 +374,15 @@
             this.accountingOrderCurrencyItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingOrderCurrencyItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingOrderCurrencyItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement305.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement305.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement305.Text = "";
-            tileItemElement306.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement306.Image")));
-            tileItemElement306.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement306.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement306.Text = "Надходження (рах. 632)";
-            this.accountingOrderCurrencyItem.Tile.Elements.Add(tileItemElement305);
-            this.accountingOrderCurrencyItem.Tile.Elements.Add(tileItemElement306);
+            tileItemElement103.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement103.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement103.Text = "";
+            tileItemElement104.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement104.Image")));
+            tileItemElement104.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement104.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement104.Text = "Надходження (рах. 632)";
+            this.accountingOrderCurrencyItem.Tile.Elements.Add(tileItemElement103);
+            this.accountingOrderCurrencyItem.Tile.Elements.Add(tileItemElement104);
             this.accountingOrderCurrencyItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingOrderCurrencyItem.Tile.Name = "accountingOrderCurrencyItemm";
             // 
@@ -400,13 +400,13 @@
             this.expendituresItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.expendituresItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.expendituresItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement307.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement307.Text = "";
-            tileItemElement308.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement308.Image")));
-            tileItemElement308.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement308.Text = "Списання";
-            this.expendituresItem.Tile.Elements.Add(tileItemElement307);
-            this.expendituresItem.Tile.Elements.Add(tileItemElement308);
+            tileItemElement105.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement105.Text = "";
+            tileItemElement106.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement106.Image")));
+            tileItemElement106.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement106.Text = "Списання";
+            this.expendituresItem.Tile.Elements.Add(tileItemElement105);
+            this.expendituresItem.Tile.Elements.Add(tileItemElement106);
             this.expendituresItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.expendituresItem.Tile.Name = "tileBarItem2";
             // 
@@ -427,10 +427,10 @@
             this.fixedAssetsOrderItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.fixedAssetsOrderItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.fixedAssetsOrderItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement311.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement311.Image")));
-            tileItemElement311.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement311.Text = "Засоби підприємства";
-            this.fixedAssetsOrderItem.Tile.Elements.Add(tileItemElement311);
+            tileItemElement109.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement109.Image")));
+            tileItemElement109.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement109.Text = "Засоби підприємства";
+            this.fixedAssetsOrderItem.Tile.Elements.Add(tileItemElement109);
             this.fixedAssetsOrderItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.fixedAssetsOrderItem.Tile.Name = "tileBarItem3";
             // 
@@ -443,12 +443,12 @@
             // 
             // 
             this.fixedAssetsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement309.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement309.Image")));
-            tileItemElement309.MaxWidth = 50;
-            tileItemElement309.Text = "Основні засоби";
-            tileItemElement309.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            tileItemElement309.Width = 50;
-            this.fixedAssetsSubItem.Tile.Elements.Add(tileItemElement309);
+            tileItemElement107.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement107.Image")));
+            tileItemElement107.MaxWidth = 50;
+            tileItemElement107.Text = "Основні засоби";
+            tileItemElement107.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement107.Width = 50;
+            this.fixedAssetsSubItem.Tile.Elements.Add(tileItemElement107);
             this.fixedAssetsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.fixedAssetsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -461,14 +461,14 @@
             // 
             // 
             this.archiveSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement310.Appearance.Normal.Options.UseTextOptions = true;
-            tileItemElement310.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
-            tileItemElement310.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement310.Image")));
-            tileItemElement310.MaxWidth = 50;
-            tileItemElement310.Text = "Архів основних засобів";
-            tileItemElement310.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            tileItemElement310.Width = 50;
-            this.archiveSubItem.Tile.Elements.Add(tileItemElement310);
+            tileItemElement108.Appearance.Normal.Options.UseTextOptions = true;
+            tileItemElement108.Appearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.Word;
+            tileItemElement108.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement108.Image")));
+            tileItemElement108.MaxWidth = 50;
+            tileItemElement108.Text = "Архів основних засобів";
+            tileItemElement108.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileItemElement108.Width = 50;
+            this.archiveSubItem.Tile.Elements.Add(tileItemElement108);
             this.archiveSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.archiveSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -486,10 +486,10 @@
             this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.invoiceRequirementAccountItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement312.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement312.Image")));
-            tileItemElement312.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement312.Text = "Вимоги";
-            this.invoiceRequirementAccountItem.Tile.Elements.Add(tileItemElement312);
+            tileItemElement110.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement110.Image")));
+            tileItemElement110.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement110.Text = "Вимоги";
+            this.invoiceRequirementAccountItem.Tile.Elements.Add(tileItemElement110);
             this.invoiceRequirementAccountItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.invoiceRequirementAccountItem.Tile.Name = "tileBarItem4";
             // 
@@ -508,10 +508,10 @@
             this.taxAccountingItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.taxAccountingItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.taxAccountingItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement313.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement313.Image")));
-            tileItemElement313.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement313.Text = "Податковий облік";
-            this.taxAccountingItem.Tile.Elements.Add(tileItemElement313);
+            tileItemElement111.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement111.Image")));
+            tileItemElement111.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement111.Text = "Податковий облік";
+            this.taxAccountingItem.Tile.Elements.Add(tileItemElement111);
             this.taxAccountingItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.taxAccountingItem.Tile.Name = "tileBarItem1";
             // 
@@ -530,10 +530,10 @@
             this.calcWithBuyersItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.calcWithBuyersItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.calcWithBuyersItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement314.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement314.Image")));
-            tileItemElement314.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement314.Text = "Розрахунки з покупцями та замовниками";
-            this.calcWithBuyersItem.Tile.Elements.Add(tileItemElement314);
+            tileItemElement112.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement112.Image")));
+            tileItemElement112.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement112.Text = "Розрахунки з покупцями та замовниками";
+            this.calcWithBuyersItem.Tile.Elements.Add(tileItemElement112);
             this.calcWithBuyersItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.calcWithBuyersItem.Tile.Name = "tileBarItem1";
             // 
@@ -551,10 +551,10 @@
             this.bankPaymentsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.bankPaymentsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.bankPaymentsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement315.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement315.Image")));
-            tileItemElement315.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement315.Text = "Банківські операції";
-            this.bankPaymentsItem.Tile.Elements.Add(tileItemElement315);
+            tileItemElement113.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement113.Image")));
+            tileItemElement113.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement113.Text = "Банківські операції";
+            this.bankPaymentsItem.Tile.Elements.Add(tileItemElement113);
             this.bankPaymentsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.bankPaymentsItem.Tile.Name = "tileBarItem1";
             // 
@@ -576,11 +576,11 @@
             this.cashBookItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.cashBookItem.Tile.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
             this.cashBookItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement316.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement316.Image")));
-            tileItemElement316.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement316.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement316.Text = "Касова книга";
-            this.cashBookItem.Tile.Elements.Add(tileItemElement316);
+            tileItemElement114.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement114.Image")));
+            tileItemElement114.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement114.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement114.Text = "Касова книга";
+            this.cashBookItem.Tile.Elements.Add(tileItemElement114);
             this.cashBookItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookItem.Tile.Name = "tileBarItem1";
             // 
@@ -599,11 +599,11 @@
             this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingReportItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement317.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement317.Image")));
-            tileItemElement317.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement317.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement317.Text = "Звіти";
-            this.accountingReportItem.Tile.Elements.Add(tileItemElement317);
+            tileItemElement115.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement115.Image")));
+            tileItemElement115.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement115.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement115.Text = "Звіти";
+            this.accountingReportItem.Tile.Elements.Add(tileItemElement115);
             this.accountingReportItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingReportItem.Tile.Name = "tileBarItem1";
             // 
@@ -632,9 +632,9 @@
             // 
             // 
             this.travelCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement323.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement323.ImageToTextIndent = 2;
-            this.travelCategory.Tile.Elements.Add(tileItemElement323);
+            tileItemElement121.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement121.ImageToTextIndent = 2;
+            this.travelCategory.Tile.Elements.Add(tileItemElement121);
             this.travelCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.travelCategory.Tile.ShowDropDownButton = DevExpress.Utils.DefaultBoolean.True;
             // 
@@ -653,11 +653,11 @@
             this.businessTripsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.businessTripsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.businessTripsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement319.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement319.Image")));
-            tileItemElement319.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement319.Text = "Посвідчення";
-            tileItemElement319.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
-            this.businessTripsItem.Tile.Elements.Add(tileItemElement319);
+            tileItemElement117.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement117.Image")));
+            tileItemElement117.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement117.Text = "Посвідчення";
+            tileItemElement117.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
+            this.businessTripsItem.Tile.Elements.Add(tileItemElement117);
             this.businessTripsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.businessTripsItem.Tile.Name = "tileBarItem5";
             // 
@@ -675,10 +675,10 @@
             this.businessTripsDecreeItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.businessTripsDecreeItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.businessTripsDecreeItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement320.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement320.Image")));
-            tileItemElement320.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement320.Text = "Накази";
-            this.businessTripsDecreeItem.Tile.Elements.Add(tileItemElement320);
+            tileItemElement118.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement118.Image")));
+            tileItemElement118.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement118.Text = "Накази";
+            this.businessTripsDecreeItem.Tile.Elements.Add(tileItemElement118);
             this.businessTripsDecreeItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.businessTripsDecreeItem.Tile.Name = "tileBarItem6";
             // 
@@ -697,10 +697,10 @@
             this.tripPaymentsJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.tripPaymentsJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.tripPaymentsJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement321.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement321.Image")));
-            tileItemElement321.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement321.Text = "Журнал авансів і звітів";
-            this.tripPaymentsJournalItem.Tile.Elements.Add(tileItemElement321);
+            tileItemElement119.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement119.Image")));
+            tileItemElement119.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement119.Text = "Журнал авансів і звітів";
+            this.tripPaymentsJournalItem.Tile.Elements.Add(tileItemElement119);
             this.tripPaymentsJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.tripPaymentsJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -719,10 +719,10 @@
             this.cashPaymentsJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.cashPaymentsJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.cashPaymentsJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement322.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement322.Image")));
-            tileItemElement322.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement322.Text = "Журнал господарських потреб";
-            this.cashPaymentsJournalItem.Tile.Elements.Add(tileItemElement322);
+            tileItemElement120.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement120.Image")));
+            tileItemElement120.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement120.Text = "Журнал господарських потреб";
+            this.cashPaymentsJournalItem.Tile.Elements.Add(tileItemElement120);
             this.cashPaymentsJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashPaymentsJournalItem.Tile.Name = "tileBarItem2";
             // 
@@ -750,9 +750,9 @@
             // 
             // 
             this.agreementsCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement329.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement329.ImageToTextIndent = 2;
-            this.agreementsCategory.Tile.Elements.Add(tileItemElement329);
+            tileItemElement127.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement127.ImageToTextIndent = 2;
+            this.agreementsCategory.Tile.Elements.Add(tileItemElement127);
             this.agreementsCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // customerOrdersItem
@@ -769,10 +769,10 @@
             this.customerOrdersItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.customerOrdersItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.customerOrdersItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement324.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement324.Image")));
-            tileItemElement324.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement324.Text = "Закази";
-            this.customerOrdersItem.Tile.Elements.Add(tileItemElement324);
+            tileItemElement122.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement122.Image")));
+            tileItemElement122.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement122.Text = "Закази";
+            this.customerOrdersItem.Tile.Elements.Add(tileItemElement122);
             this.customerOrdersItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.customerOrdersItem.Tile.Name = "tileBarItem1";
             // 
@@ -790,11 +790,11 @@
             this.contractPaymentItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.contractPaymentItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.contractPaymentItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement325.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement325.Image")));
-            tileItemElement325.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement325.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement325.Text = "Надходження і витрати";
-            this.contractPaymentItem.Tile.Elements.Add(tileItemElement325);
+            tileItemElement123.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement123.Image")));
+            tileItemElement123.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement123.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement123.Text = "Надходження і витрати";
+            this.contractPaymentItem.Tile.Elements.Add(tileItemElement123);
             this.contractPaymentItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.contractPaymentItem.Tile.Name = "tileBarItem1";
             // 
@@ -812,11 +812,11 @@
             this.agreementJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.agreementJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.agreementJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement326.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement326.Image")));
-            tileItemElement326.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement326.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement326.Text = "Журнал договорів";
-            this.agreementJournalItem.Tile.Elements.Add(tileItemElement326);
+            tileItemElement124.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement124.Image")));
+            tileItemElement124.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement124.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement124.Text = "Журнал договорів";
+            this.agreementJournalItem.Tile.Elements.Add(tileItemElement124);
             this.agreementJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.agreementJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -834,10 +834,10 @@
             this.agreementOrderJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.agreementOrderJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.agreementOrderJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement327.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement327.Image")));
-            tileItemElement327.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement327.Text = "Рахунки";
-            this.agreementOrderJournalItem.Tile.Elements.Add(tileItemElement327);
+            tileItemElement125.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement125.Image")));
+            tileItemElement125.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement125.Text = "Рахунки";
+            this.agreementOrderJournalItem.Tile.Elements.Add(tileItemElement125);
             this.agreementOrderJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.agreementOrderJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -858,12 +858,12 @@
             this.requestLogItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.requestLogItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.requestLogItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement328.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement328.Image")));
-            tileItemElement328.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement328.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement328.Text = "Журнал реєстрації запитів замовників";
-            tileItemElement328.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            this.requestLogItem.Tile.Elements.Add(tileItemElement328);
+            tileItemElement126.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement126.Image")));
+            tileItemElement126.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement126.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement126.Text = "Журнал реєстрації запитів замовників";
+            tileItemElement126.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            this.requestLogItem.Tile.Elements.Add(tileItemElement126);
             this.requestLogItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.requestLogItem.Tile.Name = "requestLogItem";
             // 
@@ -890,9 +890,9 @@
             // 
             // 
             this.mtsCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement334.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement334.ImageToTextIndent = 2;
-            this.mtsCategory.Tile.Elements.Add(tileItemElement334);
+            tileItemElement132.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement132.ImageToTextIndent = 2;
+            this.mtsCategory.Tile.Elements.Add(tileItemElement132);
             this.mtsCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // mtsItem
@@ -909,10 +909,10 @@
             this.mtsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.mtsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.mtsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement330.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement330.Image")));
-            tileItemElement330.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement330.Text = "Матерільні специфікації";
-            this.mtsItem.Tile.Elements.Add(tileItemElement330);
+            tileItemElement128.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement128.Image")));
+            tileItemElement128.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement128.Text = "Матерільні специфікації";
+            this.mtsItem.Tile.Elements.Add(tileItemElement128);
             this.mtsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.mtsItem.Tile.Name = "tileBarItem1";
             // 
@@ -931,11 +931,11 @@
             this.journalAssembliesItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.journalAssembliesItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.journalAssembliesItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement331.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement331.Image")));
-            tileItemElement331.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement331.Text = "Журнал реєстрації виробів";
-            tileItemElement331.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            this.journalAssembliesItem.Tile.Elements.Add(tileItemElement331);
+            tileItemElement129.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement129.Image")));
+            tileItemElement129.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement129.Text = "Журнал реєстрації виробів";
+            tileItemElement129.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.journalAssembliesItem.Tile.Elements.Add(tileItemElement129);
             this.journalAssembliesItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.journalAssembliesItem.Tile.Name = "tileBarItem1";
             // 
@@ -962,11 +962,11 @@
             this.journalAssembliesFromCustomerItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.journalAssembliesFromCustomerItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.journalAssembliesFromCustomerItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement332.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement332.Image")));
-            tileItemElement332.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement332.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement332.Text = "Журнал реєстрації виробів (замовник)";
-            this.journalAssembliesFromCustomerItem.Tile.Elements.Add(tileItemElement332);
+            tileItemElement130.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement130.Image")));
+            tileItemElement130.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement130.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement130.Text = "Журнал реєстрації виробів (замовник)";
+            this.journalAssembliesFromCustomerItem.Tile.Elements.Add(tileItemElement130);
             this.journalAssembliesFromCustomerItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.journalAssembliesFromCustomerItem.Tile.Name = "journalAssembliesFromCustomerItem";
             // 
@@ -988,12 +988,12 @@
             this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.mtsSpecificationOldItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.mtsSpecificationOldItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement333.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement333.Image")));
-            tileItemElement333.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement333.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement333.Text = "Довідник матеріальних специфікацій";
-            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement333);
-            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement333);
+            tileItemElement131.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement131.Image")));
+            tileItemElement131.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement131.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement131.Text = "Довідник матеріальних специфікацій";
+            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement131);
+            this.mtsSpecificationOldItem.Tile.Elements.Add(tileItemElement131);
             this.mtsSpecificationOldItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.mtsSpecificationOldItem.Tile.Name = "mtsSpecificationOldIte";
             // 
@@ -1022,9 +1022,9 @@
             // 
             // 
             this.procuctionCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement339.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement339.ImageToTextIndent = 2;
-            this.procuctionCategory.Tile.Elements.Add(tileItemElement339);
+            tileItemElement137.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement137.ImageToTextIndent = 2;
+            this.procuctionCategory.Tile.Elements.Add(tileItemElement137);
             this.procuctionCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // executorsItem
@@ -1042,11 +1042,11 @@
             this.executorsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.executorsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.executorsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement335.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement335.Image")));
-            tileItemElement335.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement335.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement335.Text = "Зварювальні роботи";
-            this.executorsItem.Tile.Elements.Add(tileItemElement335);
+            tileItemElement133.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement133.Image")));
+            tileItemElement133.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement133.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement133.Text = "Зварювальні роботи";
+            this.executorsItem.Tile.Elements.Add(tileItemElement133);
             this.executorsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.executorsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1062,10 +1062,10 @@
             this.productionInvoicesItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.DodgerBlue;
             this.productionInvoicesItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.productionInvoicesItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement336.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement336.Image")));
-            tileItemElement336.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement336.Text = "Надходження (виробництво)";
-            this.productionInvoicesItem.Tile.Elements.Add(tileItemElement336);
+            tileItemElement134.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement134.Image")));
+            tileItemElement134.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement134.Text = "Надходження (виробництво)";
+            this.productionInvoicesItem.Tile.Elements.Add(tileItemElement134);
             this.productionInvoicesItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.productionInvoicesItem.Tile.Name = "tileBarItem1";
             // 
@@ -1083,11 +1083,11 @@
             this.expendituresStorehouseItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.DodgerBlue;
             this.expendituresStorehouseItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.expendituresStorehouseItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement337.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement337.Image")));
-            tileItemElement337.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement337.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement337.Text = "Списання (виробництво)";
-            this.expendituresStorehouseItem.Tile.Elements.Add(tileItemElement337);
+            tileItemElement135.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement135.Image")));
+            tileItemElement135.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement135.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement135.Text = "Списання (виробництво)";
+            this.expendituresStorehouseItem.Tile.Elements.Add(tileItemElement135);
             this.expendituresStorehouseItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.expendituresStorehouseItem.Tile.Name = "expendituresStorehouseItemm";
             // 
@@ -1105,11 +1105,11 @@
             this.paintingWorksItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.DodgerBlue;
             this.paintingWorksItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.paintingWorksItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement338.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement338.Image")));
-            tileItemElement338.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement338.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement338.Text = "Журнал малярних робіт";
-            this.paintingWorksItem.Tile.Elements.Add(tileItemElement338);
+            tileItemElement136.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement136.Image")));
+            tileItemElement136.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement136.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement136.Text = "Журнал малярних робіт";
+            this.paintingWorksItem.Tile.Elements.Add(tileItemElement136);
             this.paintingWorksItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.paintingWorksItem.Tile.Name = "tileBarItem1";
             // 
@@ -1136,9 +1136,9 @@
             // 
             // 
             this.marketingCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement342.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement342.ImageToTextIndent = 2;
-            this.marketingCategory.Tile.Elements.Add(tileItemElement342);
+            tileItemElement140.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement140.ImageToTextIndent = 2;
+            this.marketingCategory.Tile.Elements.Add(tileItemElement140);
             this.marketingCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // packingItem
@@ -1160,11 +1160,11 @@
             this.packingItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.packingItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.packingItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement340.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement340.Image")));
-            tileItemElement340.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement340.Text = "Журнал пакувальних листів";
-            tileItemElement340.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            this.packingItem.Tile.Elements.Add(tileItemElement340);
+            tileItemElement138.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement138.Image")));
+            tileItemElement138.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement138.Text = "Журнал пакувальних листів";
+            tileItemElement138.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.packingItem.Tile.Elements.Add(tileItemElement138);
             this.packingItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.packingItem.Tile.Name = "tileBarItem1";
             // 
@@ -1185,11 +1185,11 @@
             this.shipmentItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.shipmentItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.shipmentItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement341.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement341.Image")));
-            tileItemElement341.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement341.Text = "Документи на відвантаження";
-            tileItemElement341.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            this.shipmentItem.Tile.Elements.Add(tileItemElement341);
+            tileItemElement139.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement139.Image")));
+            tileItemElement139.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement139.Text = "Документи на відвантаження";
+            tileItemElement139.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.shipmentItem.Tile.Elements.Add(tileItemElement139);
             this.shipmentItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.shipmentItem.Tile.Name = "tileBarItem1";
             // 
@@ -1221,9 +1221,9 @@
             // 
             // 
             this.deliveryCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement349.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement349.ImageToTextIndent = 2;
-            this.deliveryCategory.Tile.Elements.Add(tileItemElement349);
+            tileItemElement147.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement147.ImageToTextIndent = 2;
+            this.deliveryCategory.Tile.Elements.Add(tileItemElement147);
             this.deliveryCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // deliveryOrdersItem
@@ -1241,10 +1241,10 @@
             this.deliveryOrdersItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryOrdersItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryOrdersItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement343.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement343.Image")));
-            tileItemElement343.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement343.Text = "Надходження матеріалів";
-            this.deliveryOrdersItem.Tile.Elements.Add(tileItemElement343);
+            tileItemElement141.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement141.Image")));
+            tileItemElement141.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement141.Text = "Надходження матеріалів";
+            this.deliveryOrdersItem.Tile.Elements.Add(tileItemElement141);
             this.deliveryOrdersItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryOrdersItem.Tile.Name = "tileBarItem1";
             // 
@@ -1264,10 +1264,10 @@
             this.deliveryPaymentsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryPaymentsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryPaymentsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement344.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement344.Image")));
-            tileItemElement344.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement344.Text = "Платежі";
-            this.deliveryPaymentsItem.Tile.Elements.Add(tileItemElement344);
+            tileItemElement142.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement142.Image")));
+            tileItemElement142.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement142.Text = "Платежі";
+            this.deliveryPaymentsItem.Tile.Elements.Add(tileItemElement142);
             this.deliveryPaymentsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryPaymentsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1286,11 +1286,11 @@
             this.deliveryContractorDebtsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryContractorDebtsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryContractorDebtsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement345.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement345.Image")));
-            tileItemElement345.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement345.Text = "Заборгованість по контрагентам";
-            tileItemElement345.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            this.deliveryContractorDebtsItem.Tile.Elements.Add(tileItemElement345);
+            tileItemElement143.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement143.Image")));
+            tileItemElement143.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement143.Text = "Заборгованість по контрагентам";
+            tileItemElement143.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            this.deliveryContractorDebtsItem.Tile.Elements.Add(tileItemElement143);
             this.deliveryContractorDebtsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryContractorDebtsItem.Tile.Name = "tileBarItem2";
             // 
@@ -1310,10 +1310,10 @@
             this.deliveryStoreRemainsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryStoreRemainsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryStoreRemainsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement346.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement346.Image")));
-            tileItemElement346.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement346.Text = "Залишки на складі";
-            this.deliveryStoreRemainsItem.Tile.Elements.Add(tileItemElement346);
+            tileItemElement144.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement144.Image")));
+            tileItemElement144.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement144.Text = "Залишки на складі";
+            this.deliveryStoreRemainsItem.Tile.Elements.Add(tileItemElement144);
             this.deliveryStoreRemainsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryStoreRemainsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1332,11 +1332,11 @@
             this.deliveryStoreRemainsReceiptItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryStoreRemainsReceiptItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryStoreRemainsReceiptItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement347.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement347.Image")));
-            tileItemElement347.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement347.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement347.Text = "Залишки на складі за надходженнями";
-            this.deliveryStoreRemainsReceiptItem.Tile.Elements.Add(tileItemElement347);
+            tileItemElement145.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement145.Image")));
+            tileItemElement145.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement145.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement145.Text = "Залишки на складі за надходженнями";
+            this.deliveryStoreRemainsReceiptItem.Tile.Elements.Add(tileItemElement145);
             this.deliveryStoreRemainsReceiptItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryStoreRemainsReceiptItem.Tile.Name = "tileBarItem1";
             // 
@@ -1355,10 +1355,10 @@
             this.deliveryOrderTTNItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.deliveryOrderTTNItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.deliveryOrderTTNItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement348.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement348.Image")));
-            tileItemElement348.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement348.Text = "Журнал ТТН";
-            this.deliveryOrderTTNItem.Tile.Elements.Add(tileItemElement348);
+            tileItemElement146.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement146.Image")));
+            tileItemElement146.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement146.Text = "Журнал ТТН";
+            this.deliveryOrderTTNItem.Tile.Elements.Add(tileItemElement146);
             this.deliveryOrderTTNItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryOrderTTNItem.Tile.Name = "deliveryOrderTTNIt";
             // 
@@ -1388,9 +1388,9 @@
             // 
             // 
             this.otkCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement356.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement356.ImageToTextIndent = 2;
-            this.otkCategory.Tile.Elements.Add(tileItemElement356);
+            tileItemElement154.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement154.ImageToTextIndent = 2;
+            this.otkCategory.Tile.Elements.Add(tileItemElement154);
             this.otkCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // certificateItem
@@ -1409,11 +1409,11 @@
             this.certificateItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.certificateItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.certificateItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement350.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement350.Image")));
-            tileItemElement350.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement350.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement350.Text = "Сертифікати та паспорти";
-            this.certificateItem.Tile.Elements.Add(tileItemElement350);
+            tileItemElement148.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement148.Image")));
+            tileItemElement148.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement148.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement148.Text = "Сертифікати та паспорти";
+            this.certificateItem.Tile.Elements.Add(tileItemElement148);
             this.certificateItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.certificateItem.Tile.Name = "tileBarItem8";
             // 
@@ -1432,10 +1432,10 @@
             this.expenditureOrdersItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.expenditureOrdersItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.expenditureOrdersItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement351.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement351.Image")));
-            tileItemElement351.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement351.Text = "Списання за проектами";
-            this.expenditureOrdersItem.Tile.Elements.Add(tileItemElement351);
+            tileItemElement149.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement149.Image")));
+            tileItemElement149.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement149.Text = "Списання за проектами";
+            this.expenditureOrdersItem.Tile.Elements.Add(tileItemElement149);
             this.expenditureOrdersItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.expenditureOrdersItem.Tile.Name = "tileBarItem1";
             // 
@@ -1454,11 +1454,11 @@
             this.defectActsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.defectActsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.defectActsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement352.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement352.Image")));
-            tileItemElement352.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement352.Text = "Гарантійні зобов\'язання";
-            tileItemElement352.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.defectActsItem.Tile.Elements.Add(tileItemElement352);
+            tileItemElement150.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement150.Image")));
+            tileItemElement150.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement150.Text = "Гарантійні зобов\'язання";
+            tileItemElement150.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.defectActsItem.Tile.Elements.Add(tileItemElement150);
             this.defectActsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.defectActsItem.Tile.Name = "tileBarItem2";
             // 
@@ -1477,10 +1477,10 @@
             this.weldAttestationItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.weldAttestationItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.weldAttestationItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement353.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement353.Image")));
-            tileItemElement353.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement353.Text = "Журнал атестації";
-            this.weldAttestationItem.Tile.Elements.Add(tileItemElement353);
+            tileItemElement151.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement151.Image")));
+            tileItemElement151.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement151.Text = "Журнал атестації";
+            this.weldAttestationItem.Tile.Elements.Add(tileItemElement151);
             this.weldAttestationItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.weldAttestationItem.Tile.Name = "weldAttestationItem";
             // 
@@ -1499,10 +1499,10 @@
             this.weldAttestationPersonItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.weldAttestationPersonItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.weldAttestationPersonItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement354.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement354.Image")));
-            tileItemElement354.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement354.Text = "Журнал видачі клейм";
-            this.weldAttestationPersonItem.Tile.Elements.Add(tileItemElement354);
+            tileItemElement152.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement152.Image")));
+            tileItemElement152.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement152.Text = "Журнал видачі клейм";
+            this.weldAttestationPersonItem.Tile.Elements.Add(tileItemElement152);
             this.weldAttestationPersonItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.weldAttestationPersonItem.Tile.Name = "tileBarItem1";
             // 
@@ -1521,10 +1521,10 @@
             this.controlCheckJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.controlCheckJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.controlCheckJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement355.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement355.Image")));
-            tileItemElement355.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement355.Text = "Приймально- сдавальні накладні";
-            this.controlCheckJournalItem.Tile.Elements.Add(tileItemElement355);
+            tileItemElement153.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement153.Image")));
+            tileItemElement153.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement153.Text = "Приймально- сдавальні накладні";
+            this.controlCheckJournalItem.Tile.Elements.Add(tileItemElement153);
             this.controlCheckJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.controlCheckJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -1557,9 +1557,9 @@
             // 
             // 
             this.storeHouseCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement365.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement365.ImageToTextIndent = 2;
-            this.storeHouseCategory.Tile.Elements.Add(tileItemElement365);
+            tileItemElement163.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement163.ImageToTextIndent = 2;
+            this.storeHouseCategory.Tile.Elements.Add(tileItemElement163);
             this.storeHouseCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // receiptOrdersItem
@@ -1577,10 +1577,10 @@
             this.receiptOrdersItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.receiptOrdersItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.receiptOrdersItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement357.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement357.Image")));
-            tileItemElement357.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement357.Text = "Надходження";
-            this.receiptOrdersItem.Tile.Elements.Add(tileItemElement357);
+            tileItemElement155.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement155.Image")));
+            tileItemElement155.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement155.Text = "Надходження";
+            this.receiptOrdersItem.Tile.Elements.Add(tileItemElement155);
             this.receiptOrdersItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.receiptOrdersItem.Tile.Name = "tileBarItem1";
             // 
@@ -1599,10 +1599,10 @@
             this.storeHouseReceiptsJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.storeHouseReceiptsJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.storeHouseReceiptsJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement358.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement358.Image")));
-            tileItemElement358.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement358.Text = "Журнал надходжень";
-            this.storeHouseReceiptsJournalItem.Tile.Elements.Add(tileItemElement358);
+            tileItemElement156.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement156.Image")));
+            tileItemElement156.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement156.Text = "Журнал надходжень";
+            this.storeHouseReceiptsJournalItem.Tile.Elements.Add(tileItemElement156);
             this.storeHouseReceiptsJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storeHouseReceiptsJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -1621,10 +1621,10 @@
             this.invoiceRequirementItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.invoiceRequirementItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.invoiceRequirementItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement359.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement359.Image")));
-            tileItemElement359.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement359.Text = "Вимоги";
-            this.invoiceRequirementItem.Tile.Elements.Add(tileItemElement359);
+            tileItemElement157.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement157.Image")));
+            tileItemElement157.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement157.Text = "Вимоги";
+            this.invoiceRequirementItem.Tile.Elements.Add(tileItemElement157);
             this.invoiceRequirementItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.invoiceRequirementItem.Tile.Name = "tileBarItem2";
             // 
@@ -1643,10 +1643,10 @@
             this.accountClothesItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountClothesItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountClothesItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement360.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement360.Image")));
-            tileItemElement360.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement360.Text = "Облік спецодягу";
-            this.accountClothesItem.Tile.Elements.Add(tileItemElement360);
+            tileItemElement158.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement158.Image")));
+            tileItemElement158.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement158.Text = "Облік спецодягу";
+            this.accountClothesItem.Tile.Elements.Add(tileItemElement158);
             this.accountClothesItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountClothesItem.Tile.Name = "tileBarItem3";
             // 
@@ -1664,10 +1664,10 @@
             this.accountClothesJournalItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountClothesJournalItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountClothesJournalItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement361.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement361.Image")));
-            tileItemElement361.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement361.Text = "Журнал обліку спецодягу";
-            this.accountClothesJournalItem.Tile.Elements.Add(tileItemElement361);
+            tileItemElement159.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement159.Image")));
+            tileItemElement159.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement159.Text = "Журнал обліку спецодягу";
+            this.accountClothesJournalItem.Tile.Elements.Add(tileItemElement159);
             this.accountClothesJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountClothesJournalItem.Tile.Name = "tileBarItem1";
             // 
@@ -1685,10 +1685,10 @@
             this.storeHouseRemainsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.storeHouseRemainsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.storeHouseRemainsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement362.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement362.Image")));
-            tileItemElement362.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement362.Text = "Залишки на складі";
-            this.storeHouseRemainsItem.Tile.Elements.Add(tileItemElement362);
+            tileItemElement160.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement160.Image")));
+            tileItemElement160.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement160.Text = "Залишки на складі";
+            this.storeHouseRemainsItem.Tile.Elements.Add(tileItemElement160);
             this.storeHouseRemainsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storeHouseRemainsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1706,10 +1706,10 @@
             this.toolActsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.toolActsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.toolActsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement363.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement363.Image")));
-            tileItemElement363.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement363.Text = "Акти списання інструменту";
-            this.toolActsItem.Tile.Elements.Add(tileItemElement363);
+            tileItemElement161.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement161.Image")));
+            tileItemElement161.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement161.Text = "Акти списання інструменту";
+            this.toolActsItem.Tile.Elements.Add(tileItemElement161);
             this.toolActsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.toolActsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1727,10 +1727,10 @@
             this.storehouseTTNItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.storehouseTTNItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.storehouseTTNItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement364.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement364.Image")));
-            tileItemElement364.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement364.Text = "Журнал ТТН";
-            this.storehouseTTNItem.Tile.Elements.Add(tileItemElement364);
+            tileItemElement162.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement162.Image")));
+            tileItemElement162.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement162.Text = "Журнал ТТН";
+            this.storehouseTTNItem.Tile.Elements.Add(tileItemElement162);
             this.storehouseTTNItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storehouseTTNItem.Tile.Name = "tileBarItem1";
             // 
@@ -1765,9 +1765,9 @@
             // 
             // 
             this.classifiersCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement395.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement395.ImageToTextIndent = 2;
-            this.classifiersCategory.Tile.Elements.Add(tileItemElement395);
+            tileItemElement193.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement193.ImageToTextIndent = 2;
+            this.classifiersCategory.Tile.Elements.Add(tileItemElement193);
             this.classifiersCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // employeesInfoItem
@@ -1785,11 +1785,11 @@
             this.employeesInfoItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.employeesInfoItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.employeesInfoItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement366.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement366.Image")));
-            tileItemElement366.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
-            tileItemElement366.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement366.Text = "Співробітники";
-            this.employeesInfoItem.Tile.Elements.Add(tileItemElement366);
+            tileItemElement164.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement164.Image")));
+            tileItemElement164.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.Manual;
+            tileItemElement164.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement164.Text = "Співробітники";
+            this.employeesInfoItem.Tile.Elements.Add(tileItemElement164);
             this.employeesInfoItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.employeesInfoItem.Tile.Name = "tileBarItem1";
             // 
@@ -1808,10 +1808,10 @@
             this.contractorsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.contractorsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.contractorsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement367.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement367.Image")));
-            tileItemElement367.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement367.Text = "Контрагенти";
-            this.contractorsItem.Tile.Elements.Add(tileItemElement367);
+            tileItemElement165.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement165.Image")));
+            tileItemElement165.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement165.Text = "Контрагенти";
+            this.contractorsItem.Tile.Elements.Add(tileItemElement165);
             this.contractorsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.contractorsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1829,10 +1829,10 @@
             this.weldWpsItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.weldWpsItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.weldWpsItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement368.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement368.Image")));
-            tileItemElement368.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement368.Text = "WPS";
-            this.weldWpsItem.Tile.Elements.Add(tileItemElement368);
+            tileItemElement166.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement166.Image")));
+            tileItemElement166.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement166.Text = "WPS";
+            this.weldWpsItem.Tile.Elements.Add(tileItemElement166);
             this.weldWpsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.weldWpsItem.Tile.Name = "tileBarItem1";
             // 
@@ -1850,10 +1850,10 @@
             this.weldStampItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.weldStampItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.weldStampItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement369.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement369.Image")));
-            tileItemElement369.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement369.Text = "Клейма";
-            this.weldStampItem.Tile.Elements.Add(tileItemElement369);
+            tileItemElement167.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement167.Image")));
+            tileItemElement167.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement167.Text = "Клейма";
+            this.weldStampItem.Tile.Elements.Add(tileItemElement167);
             this.weldStampItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.weldStampItem.Tile.Name = "tileBarItem1";
             // 
@@ -1876,10 +1876,10 @@
             this.mtsClassificationItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.mtsClassificationItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.mtsClassificationItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement373.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement373.Image")));
-            tileItemElement373.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement373.Text = "МТ класифікатори";
-            this.mtsClassificationItem.Tile.Elements.Add(tileItemElement373);
+            tileItemElement171.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement171.Image")));
+            tileItemElement171.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement171.Text = "МТ класифікатори";
+            this.mtsClassificationItem.Tile.Elements.Add(tileItemElement171);
             this.mtsClassificationItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.mtsClassificationItem.Tile.Name = "mtsClassificationItem";
             // 
@@ -1893,11 +1893,11 @@
             // 
             this.materialsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.materialsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement370.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement370.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement370.Text = "Матеріали";
-            tileItemElement370.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.materialsSubItem.Tile.Elements.Add(tileItemElement370);
+            tileItemElement168.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement168.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement168.Text = "Матеріали";
+            tileItemElement168.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.materialsSubItem.Tile.Elements.Add(tileItemElement168);
             this.materialsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.materialsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -1911,11 +1911,11 @@
             // 
             this.gostsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.gostsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement371.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement371.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement371.Text = "ГОСТ, ТУ";
-            tileItemElement371.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.gostsSubItem.Tile.Elements.Add(tileItemElement371);
+            tileItemElement169.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement169.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement169.Text = "ГОСТ, ТУ";
+            tileItemElement169.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.gostsSubItem.Tile.Elements.Add(tileItemElement169);
             this.gostsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.gostsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -1929,11 +1929,11 @@
             // 
             this.unitsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.unitsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement372.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement372.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement372.Text = "Од. вимірювання";
-            tileItemElement372.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
-            this.unitsSubItem.Tile.Elements.Add(tileItemElement372);
+            tileItemElement170.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement170.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement170.Text = "Од. вимірювання";
+            tileItemElement170.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomLeft;
+            this.unitsSubItem.Tile.Elements.Add(tileItemElement170);
             this.unitsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.unitsSubItem.Tile.Name = "tileBarItem1";
             this.unitsSubItem.Tile.RowCount = 2;
@@ -1963,10 +1963,10 @@
             this.accountingClasificationItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingClasificationItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingClasificationItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement383.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement383.Image")));
-            tileItemElement383.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement383.Text = "Бухгалтерія";
-            this.accountingClasificationItem.Tile.Elements.Add(tileItemElement383);
+            tileItemElement181.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement181.Image")));
+            tileItemElement181.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement181.Text = "Бухгалтерія";
+            this.accountingClasificationItem.Tile.Elements.Add(tileItemElement181);
             this.accountingClasificationItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingClasificationItem.Tile.Name = "tileBarItem1";
             // 
@@ -1980,9 +1980,9 @@
             // 
             this.accountsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.accountsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement374.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement374.Text = "Рахунки";
-            this.accountsSubItem.Tile.Elements.Add(tileItemElement374);
+            tileItemElement172.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement172.Text = "Рахунки";
+            this.accountsSubItem.Tile.Elements.Add(tileItemElement172);
             this.accountsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -1996,9 +1996,9 @@
             // 
             this.periodsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.periodsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement375.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement375.Text = "Періоди";
-            this.periodsSubItem.Tile.Elements.Add(tileItemElement375);
+            tileItemElement173.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement173.Text = "Періоди";
+            this.periodsSubItem.Tile.Elements.Add(tileItemElement173);
             this.periodsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.periodsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2012,9 +2012,9 @@
             // 
             this.dictionaryUKTVSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.dictionaryUKTVSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement376.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement376.Text = "Довідник УКТЗ ЄД (2017)";
-            this.dictionaryUKTVSubItem.Tile.Elements.Add(tileItemElement376);
+            tileItemElement174.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement174.Text = "Довідник УКТЗ ЄД (2017)";
+            this.dictionaryUKTVSubItem.Tile.Elements.Add(tileItemElement174);
             this.dictionaryUKTVSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.dictionaryUKTVSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2028,9 +2028,9 @@
             // 
             this.dictionaryDKPPSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.dictionaryDKPPSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement377.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement377.Text = "Довідник ДК 016-2010";
-            this.dictionaryDKPPSubItem.Tile.Elements.Add(tileItemElement377);
+            tileItemElement175.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement175.Text = "Довідник ДК 016-2010";
+            this.dictionaryDKPPSubItem.Tile.Elements.Add(tileItemElement175);
             this.dictionaryDKPPSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.dictionaryDKPPSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2044,9 +2044,9 @@
             // 
             this.dictionaryCPVSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.dictionaryCPVSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement378.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement378.Text = "Довідник ДК 021:2015";
-            this.dictionaryCPVSubItem.Tile.Elements.Add(tileItemElement378);
+            tileItemElement176.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement176.Text = "Довідник ДК 021:2015";
+            this.dictionaryCPVSubItem.Tile.Elements.Add(tileItemElement176);
             this.dictionaryCPVSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.dictionaryCPVSubItem.Tile.Name = "tileBarItem2";
             // 
@@ -2059,9 +2059,9 @@
             // 
             // 
             this.cashBookSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement379.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement379.Text = "Журнал Підстав";
-            this.cashBookSubItem.Tile.Elements.Add(tileItemElement379);
+            tileItemElement177.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement177.Text = "Журнал Підстав";
+            this.cashBookSubItem.Tile.Elements.Add(tileItemElement177);
             this.cashBookSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2074,9 +2074,9 @@
             // 
             // 
             this.cashBookContractorSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement380.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement380.Text = "Журнал касових контрагентів";
-            this.cashBookContractorSubItem.Tile.Elements.Add(tileItemElement380);
+            tileItemElement178.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement178.Text = "Журнал касових контрагентів";
+            this.cashBookContractorSubItem.Tile.Elements.Add(tileItemElement178);
             this.cashBookContractorSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookContractorSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2089,9 +2089,9 @@
             // 
             // 
             this.cashBookAdditionalSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement381.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement381.Text = "Журнал касових додатків";
-            this.cashBookAdditionalSubItem.Tile.Elements.Add(tileItemElement381);
+            tileItemElement179.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement179.Text = "Журнал касових додатків";
+            this.cashBookAdditionalSubItem.Tile.Elements.Add(tileItemElement179);
             this.cashBookAdditionalSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookAdditionalSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2104,9 +2104,9 @@
             // 
             // 
             this.deliverySubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement382.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement382.Text = "Журнал перевізників";
-            this.deliverySubItem.Tile.Elements.Add(tileItemElement382);
+            tileItemElement180.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement180.Text = "Журнал перевізників";
+            this.deliverySubItem.Tile.Elements.Add(tileItemElement180);
             this.deliverySubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliverySubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2125,10 +2125,10 @@
             this.citiesItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.citiesItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.citiesItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement384.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement384.Image")));
-            tileItemElement384.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement384.Text = "Населені пункти";
-            this.citiesItem.Tile.Elements.Add(tileItemElement384);
+            tileItemElement182.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement182.Image")));
+            tileItemElement182.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement182.Text = "Населені пункти";
+            this.citiesItem.Tile.Elements.Add(tileItemElement182);
             this.citiesItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.citiesItem.Tile.Name = "tileBarItem1";
             // 
@@ -2150,10 +2150,10 @@
             this.storehouseClasificationItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.storehouseClasificationItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.storehouseClasificationItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement388.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement388.Image")));
-            tileItemElement388.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement388.Text = "Складські класифікатори";
-            this.storehouseClasificationItem.Tile.Elements.Add(tileItemElement388);
+            tileItemElement186.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement186.Image")));
+            tileItemElement186.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement186.Text = "Складські класифікатори";
+            this.storehouseClasificationItem.Tile.Elements.Add(tileItemElement186);
             this.storehouseClasificationItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storehouseClasificationItem.Tile.Name = "tileBarItem1";
             // 
@@ -2166,9 +2166,9 @@
             // 
             // 
             this.storeMaterialsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement385.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement385.Text = "Матеріали";
-            this.storeMaterialsSubItem.Tile.Elements.Add(tileItemElement385);
+            tileItemElement183.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement183.Text = "Матеріали";
+            this.storeMaterialsSubItem.Tile.Elements.Add(tileItemElement183);
             this.storeMaterialsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storeMaterialsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2181,9 +2181,9 @@
             // 
             // 
             this.storehouseSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement386.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement386.Text = "Склади";
-            this.storehouseSubItem.Tile.Elements.Add(tileItemElement386);
+            tileItemElement184.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement184.Text = "Склади";
+            this.storehouseSubItem.Tile.Elements.Add(tileItemElement184);
             this.storehouseSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.storehouseSubItem.Tile.Name = "tileBarItem2";
             // 
@@ -2196,10 +2196,10 @@
             // 
             // 
             this.deliveryNameSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement387.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement387.Text = "Перевізники";
-            tileItemElement387.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.deliveryNameSubItem.Tile.Elements.Add(tileItemElement387);
+            tileItemElement185.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement185.Text = "Перевізники";
+            tileItemElement185.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            this.deliveryNameSubItem.Tile.Elements.Add(tileItemElement185);
             this.deliveryNameSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.deliveryNameSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2217,11 +2217,11 @@
             this.businessCardItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.businessCardItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.businessCardItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement389.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement389.Image")));
-            tileItemElement389.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement389.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement389.Text = "Візитки";
-            this.businessCardItem.Tile.Elements.Add(tileItemElement389);
+            tileItemElement187.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement187.Image")));
+            tileItemElement187.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement187.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement187.Text = "Візитки";
+            this.businessCardItem.Tile.Elements.Add(tileItemElement187);
             this.businessCardItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.businessCardItem.Tile.Name = "tileBarItem1";
             // 
@@ -2240,10 +2240,10 @@
             this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.timeSheetItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement390.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement390.Image")));
-            tileItemElement390.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement390.Text = "Табель обліку робочого часу";
-            this.timeSheetItem.Tile.Elements.Add(tileItemElement390);
+            tileItemElement188.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement188.Image")));
+            tileItemElement188.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement188.Text = "Табель обліку робочого часу";
+            this.timeSheetItem.Tile.Elements.Add(tileItemElement188);
             this.timeSheetItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.timeSheetItem.Tile.Name = "tileBarItem1";
             // 
@@ -2262,10 +2262,10 @@
             this.visitSheduleItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.visitSheduleItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.visitSheduleItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement391.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement391.Image")));
-            tileItemElement391.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement391.Text = "Графік відвідувань";
-            this.visitSheduleItem.Tile.Elements.Add(tileItemElement391);
+            tileItemElement189.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement189.Image")));
+            tileItemElement189.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement189.Text = "Графік відвідувань";
+            this.visitSheduleItem.Tile.Elements.Add(tileItemElement189);
             this.visitSheduleItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.visitSheduleItem.Tile.Name = "tileBarItem1";
             // 
@@ -2277,22 +2277,6 @@
             this.infrastructureItem.Name = "infrastructureItem";
             this.infrastructureItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
             this.infrastructureItem.OwnerCollection = this.classifiersCategory.Items;
-            // 
-            // converterItem
-            // 
-            this.converterItem.Caption = "Конвертер";
-            this.converterItem.Name = "converterItem";
-            this.converterItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            // 
-            // 
-            // 
-            this.converterItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement393.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement393.Image")));
-            tileItemElement393.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement393.Text = "Конвертер";
-            this.converterItem.Tile.Elements.Add(tileItemElement393);
-            this.converterItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.converterItem.Tile.Name = "tileBarItem1";
             this.infrastructureItem.SubItems.AddRange(new DevExpress.XtraBars.Navigation.TileNavSubItem[] {
             this.palitraItem,
             this.converterItem});
@@ -2309,12 +2293,12 @@
             this.infrastructureItem.Tile.AppearanceItem.Pressed.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.infrastructureItem.Tile.AppearanceItem.Pressed.Options.UseFont = true;
             this.infrastructureItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement394.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement394.Image")));
-            tileItemElement394.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement394.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement394.Text = "Інфраструктура";
-            tileItemElement394.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
-            this.infrastructureItem.Tile.Elements.Add(tileItemElement394);
+            tileItemElement192.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement192.Image")));
+            tileItemElement192.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement192.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement192.Text = "Інфраструктура";
+            tileItemElement192.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopRight;
+            this.infrastructureItem.Tile.Elements.Add(tileItemElement192);
             this.infrastructureItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.infrastructureItem.Tile.Name = "tileBarItem1";
             // 
@@ -2327,13 +2311,29 @@
             // 
             // 
             this.palitraItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement392.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement392.Image")));
-            tileItemElement392.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement392.Text = "Палитра";
-            tileItemElement392.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            this.palitraItem.Tile.Elements.Add(tileItemElement392);
+            tileItemElement190.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement190.Image")));
+            tileItemElement190.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement190.Text = "Палитра";
+            tileItemElement190.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
+            this.palitraItem.Tile.Elements.Add(tileItemElement190);
             this.palitraItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.palitraItem.Tile.Name = "palitraItemmm";
+            // 
+            // converterItem
+            // 
+            this.converterItem.Caption = "Конвертер";
+            this.converterItem.Name = "converterItem";
+            this.converterItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            // 
+            // 
+            // 
+            this.converterItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement191.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement191.Image")));
+            tileItemElement191.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement191.Text = "Конвертер";
+            this.converterItem.Tile.Elements.Add(tileItemElement191);
+            this.converterItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.converterItem.Tile.Name = "tileBarItem1";
             // 
             // infoCategory
             // 
@@ -2365,10 +2365,10 @@
             // 
             // 
             this.manualBookItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement396.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement396.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement396.Text = "Керівництво оператора ERP (загальне)";
-            this.manualBookItem.Tile.Elements.Add(tileItemElement396);
+            tileItemElement194.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement194.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement194.Text = "Керівництво оператора ERP (загальне)";
+            this.manualBookItem.Tile.Elements.Add(tileItemElement194);
             this.manualBookItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.manualBookItem.Tile.Name = "tileBarItem1";
             // 
@@ -2382,10 +2382,10 @@
             // 
             // 
             this.manualBookAccountantItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement397.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement397.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement397.Text = "Керівництво оператора ERP (бухгалтерия)";
-            this.manualBookAccountantItem.Tile.Elements.Add(tileItemElement397);
+            tileItemElement195.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement195.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement195.Text = "Керівництво оператора ERP (бухгалтерия)";
+            this.manualBookAccountantItem.Tile.Elements.Add(tileItemElement195);
             this.manualBookAccountantItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.manualBookAccountantItem.Tile.Name = "tileBarItem1";
             // 
@@ -2403,10 +2403,10 @@
             this.manualBdItem.Tile.AppearanceItem.Normal.Options.UseTextOptions = true;
             this.manualBdItem.Tile.AppearanceItem.Normal.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.manualBdItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement398.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
-            tileItemElement398.Text = "Керівництво оператора БД";
-            tileItemElement398.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            this.manualBdItem.Tile.Elements.Add(tileItemElement398);
+            tileItemElement196.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.BottomRight;
+            tileItemElement196.Text = "Керівництво оператора БД";
+            tileItemElement196.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            this.manualBdItem.Tile.Elements.Add(tileItemElement196);
             this.manualBdItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.manualBdItem.Tile.Name = "tileBarItem1";
             // 
@@ -2446,8 +2446,8 @@
             // 
             // 
             this.tileNavItem1.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement399.Text = "tileNavItem1";
-            this.tileNavItem1.Tile.Elements.Add(tileItemElement399);
+            tileItemElement197.Text = "tileNavItem1";
+            this.tileNavItem1.Tile.Elements.Add(tileItemElement197);
             this.tileNavItem1.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.tileNavItem1.Tile.Name = "tileBarItem1";
             // 
@@ -2460,8 +2460,8 @@
             // 
             // 
             this.citiesSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement400.Text = "Населені пункти";
-            this.citiesSubItem.Tile.Elements.Add(tileItemElement400);
+            tileItemElement198.Text = "Населені пункти";
+            this.citiesSubItem.Tile.Elements.Add(tileItemElement198);
             this.citiesSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.citiesSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -2474,8 +2474,8 @@
             // 
             // 
             this.tileNavSubItem1.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement401.Text = "tileNavSubItem1";
-            this.tileNavSubItem1.Tile.Elements.Add(tileItemElement401);
+            tileItemElement199.Text = "tileNavSubItem1";
+            this.tileNavSubItem1.Tile.Elements.Add(tileItemElement199);
             this.tileNavSubItem1.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // tileNavSubItem2
@@ -2487,8 +2487,8 @@
             // 
             // 
             this.tileNavSubItem2.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement402.Text = "tileNavSubItem2";
-            this.tileNavSubItem2.Tile.Elements.Add(tileItemElement402);
+            tileItemElement200.Text = "tileNavSubItem2";
+            this.tileNavSubItem2.Tile.Elements.Add(tileItemElement200);
             this.tileNavSubItem2.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // layoutControl1
@@ -2585,8 +2585,8 @@
             // 
             // 
             this.tileNavSubItem3.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement403.Text = "tileNavSubItem3";
-            this.tileNavSubItem3.Tile.Elements.Add(tileItemElement403);
+            tileItemElement201.Text = "tileNavSubItem3";
+            this.tileNavSubItem3.Tile.Elements.Add(tileItemElement201);
             this.tileNavSubItem3.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // tileNavSubItem4
@@ -2598,8 +2598,8 @@
             // 
             // 
             this.tileNavSubItem4.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement404.Text = "tileNavSubItem4";
-            this.tileNavSubItem4.Tile.Elements.Add(tileItemElement404);
+            tileItemElement202.Text = "tileNavSubItem4";
+            this.tileNavSubItem4.Tile.Elements.Add(tileItemElement202);
             this.tileNavSubItem4.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
             // splitContainerControl
