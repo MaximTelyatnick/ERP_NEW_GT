@@ -101,7 +101,7 @@ namespace ERP_NEW.GUI.Accounting
             {
                 endYearEdit.BeginUpdate();
 
-                //_beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+               
 
                 endYearEdit.EditValue = beginYearEdit.EditValue;
                 endYearEdit.PerformClick();
@@ -110,6 +110,9 @@ namespace ERP_NEW.GUI.Accounting
                 ribbonControl1.Focus();
 
                 endYearEdit.EndUpdate();
+
+                _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+                _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
 
             }
         }
@@ -124,7 +127,7 @@ namespace ERP_NEW.GUI.Accounting
 
                 endMonthEdit.BeginUpdate();
 
-                //_beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+               
 
                 endMonthEdit.EditValue = beginMonthEdit.EditValue;
                 endMonthEdit.PerformClick();
@@ -133,6 +136,9 @@ namespace ERP_NEW.GUI.Accounting
                 ribbonControl1.Focus();
 
                 endMonthEdit.EndUpdate();
+
+                _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
+                _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)endMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
             }
 
         }
