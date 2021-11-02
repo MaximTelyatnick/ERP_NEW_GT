@@ -12801,24 +12801,27 @@ namespace ERP_NEW.BLL.Services
                
                 for (int j = 1; j <= days; j++)
                 {
-                    if (j == 15)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.DodgerBlue;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
 
-                    if (j == 30)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "8";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
+                    // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
+
+                    //if (j == 15)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
+
+                    //if (j == 30)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
 
                     int startCell = j + 4;
 
