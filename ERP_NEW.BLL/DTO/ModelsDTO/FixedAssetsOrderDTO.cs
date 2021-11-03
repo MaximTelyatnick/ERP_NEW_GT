@@ -7,7 +7,7 @@ using ERP_NEW.BLL.Infrastructure;
 
 namespace ERP_NEW.BLL.DTO.ModelsDTO
 {
-    public class FixedAssetsOrderDTO : ObjectBase
+    public class FixedAssetsOrderDTO : ObjectBase, ICloneable
     {
         public int Id { get; set; }
         public int Id_Parent { get; set; }
@@ -40,6 +40,11 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
 
         public string BalAccountNum { get; set; }
         public string DebitNum { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
     }
 }

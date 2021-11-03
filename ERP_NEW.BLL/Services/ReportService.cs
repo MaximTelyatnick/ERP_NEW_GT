@@ -12682,15 +12682,7 @@ namespace ERP_NEW.BLL.Services
                     cells[vsS[currentColumn + i] + "5" + ":" + vsS[currentColumn + i] + "8"].Interior.Color = Color.DodgerBlue;
                 
                 }
-                
-
-
-                //           cells["" + (startWith + source.Count) + ":" + (startWith + source.Count)].Delete();
             }
-
-            //cells[vsS[25] + "5" + ":" + vsS[25] + "8"].Interior.Color = Color.DodgerBlue;//ВРЕМЕННО!
-            //cells[vsS[30] + "5" + ":" + vsS[30] + "8"].Interior.Color = Color.White;//ВРЕМЕННО!
-
 
             for (int i = 0; i < recCount; i++)
             {
@@ -12699,8 +12691,6 @@ namespace ERP_NEW.BLL.Services
             string FullNameWithoutProfession = "";
             int depId = 0;
 
-            //SpreadsheetGear.IRange cellsa = Worksheet.Cells[1,200];
-            //cellsa.Merge();
 
             for (int i = 0; i < source.Count; i++)
             {
@@ -12788,7 +12778,6 @@ namespace ERP_NEW.BLL.Services
                         Сells[source.Count + 15, 2].Value = "Вуцело С. Г.";
                         break;
                 }
-
 
                 cells["" + startWith + ":" + startWith].Insert();
                 int indexOfChar = source[i].FullName.IndexOf('(');

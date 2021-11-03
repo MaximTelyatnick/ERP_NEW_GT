@@ -422,6 +422,7 @@
     <Compile Include="Infrastructure\PropertyCompare.cs" />
     <Compile Include="Infrastructure\ServiceModule.cs" />
     <Compile Include="Infrastructure\Utils.cs" />
+    <Compile Include="Interfaces\IClonable.cs" />
     <Compile Include="Interfaces\ICurrencyService.cs" />
     <Compile Include="Interfaces\ICustomerOrdersService.cs" />
     <Compile Include="Interfaces\IDefectActsService.cs" />
