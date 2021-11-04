@@ -75,7 +75,8 @@ namespace ERP_NEW.GUI.Accounting
             regionEdit.Text = model.RegionName;
             supplierEdit.Text = model.SupplierName;
             operatingPersonEdit.Text = model.OperatingPersonName;
-            dateEdit.EditValue = "01.01.1900";//DateTime.Now.Date;
+            //dateEdit.EditValue = "01.01.1900";//DateTime.Now.Date;
+            dateEdit.EditValue = null;
             balanceAccountEdit.Text = model.BalanceAccountNum;
 
             idGroup = model.Group_Id;
@@ -121,6 +122,8 @@ namespace ERP_NEW.GUI.Accounting
             newOperatingPersonLookUp.Properties.ValueMember = "EmployeeID";
             newOperatingPersonLookUp.Properties.DisplayMember = "FullName";
             newOperatingPersonLookUp.Properties.NullText = "";// "Немає данних";
+
+            ControlValidation();
         }
 
         #region Method's
@@ -230,7 +233,7 @@ namespace ERP_NEW.GUI.Accounting
                         {
                             FixedAssetsOrder_Id = idNewModel,
                             Expenditures_Id = item.Expenditures_Id,
-                            Fixed_Account_Id = item.Fixed_Account_Id,
+                            Fixed_Account_Id = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountId, //item.Fixed_Account_Id,
                             FixedPrice = item.FixedPrice,
                             Description = item.Description,
                             MaterialsDate = item.MaterialsDate,
@@ -275,6 +278,15 @@ namespace ERP_NEW.GUI.Accounting
             amountOfChange += (operatingPersonEdit.Text == newOperatingPersonLookUp.Text) ? 0 : 1;
 
             #endregion
+
+            DateTime lastDayInCurrentMonth = new DateTime(((DateTime)dateEdit.EditValue).Year, ((DateTime)dateEdit.EditValue).Month, 1).AddMonths(1).AddDays(-1);
+
+            if ((DateTime)dateEdit.EditValue != lastDayInCurrentMonth)
+            {
+                MessageBox.Show("Необхідно вказати останній день місяця для переміщення основного засобу!");
+                return;
+            }
+
             if (amountOfChange > 0)
             {
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
