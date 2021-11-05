@@ -179,6 +179,7 @@
             this.receiptsCertificateVGrid.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.receiptsCertificateVGrid.BandsInterval = 5;
             this.receiptsCertificateVGrid.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.receiptsCertificateVGrid.Cursor = System.Windows.Forms.Cursors.SizeWE;
             this.receiptsCertificateVGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.receiptsCertificateVGrid.FindPanelVisible = true;
             this.receiptsCertificateVGrid.Font = new System.Drawing.Font("Tahoma", 8.25F);
@@ -289,6 +290,7 @@
             this.supplierName,
             this.storekeeperName,
             this.otkName});
+            this.receipt.Expanded = false;
             this.receipt.Name = "receipt";
             this.receipt.Properties.Caption = "Надходження";
             this.receipt.Properties.ImageIndex = 0;
@@ -382,6 +384,7 @@
             this.quantity,
             this.measure,
             this.storehouseName});
+            this.material.Expanded = false;
             this.material.Name = "material";
             this.material.Properties.Caption = "Матеріал";
             this.material.Properties.ImageIndex = 1;

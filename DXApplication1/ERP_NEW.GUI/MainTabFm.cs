@@ -666,9 +666,12 @@ namespace ERP_NEW.GUI
                     converterFm.Show();
                     break;
                 case "certificatePassItem":
-
+                    CertificatePassFm certificatePassFm = new CertificatePassFm(userTasksDTO);
+                    certificatePassFm.Text = "Сертифікати/паспорт";
+                    certificatePassFm.MdiParent = this;
+                    certificatePassFm.Show();
                     //кнопка для новых сертификатов;
-                    
+
                     break;
 
 

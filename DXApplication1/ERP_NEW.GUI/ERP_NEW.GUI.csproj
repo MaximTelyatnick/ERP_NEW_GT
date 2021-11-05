@@ -1364,6 +1364,12 @@
     <Compile Include="MainTabFm.Designer.cs">
       <DependentUpon>MainTabFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OTK\CertificatePassFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OTK\CertificatePassFm.Designer.cs">
+      <DependentUpon>CertificatePassFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="OTK\ControlCheckJournalFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2206,6 +2212,9 @@
       <DependentUpon>MainTabFm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="OTK\CertificatePassFm.resx">
+      <DependentUpon>CertificatePassFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OTK\ControlCheckJournalFm.resx">
       <DependentUpon>ControlCheckJournalFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2294,6 +2303,7 @@
     <EmbeddedResource Include="OTK\ReceiptCertificatesFm.resx">
       <DependentUpon>ReceiptCertificatesFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
