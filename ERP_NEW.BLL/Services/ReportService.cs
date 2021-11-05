@@ -12682,15 +12682,7 @@ namespace ERP_NEW.BLL.Services
                     cells[vsS[currentColumn + i] + "5" + ":" + vsS[currentColumn + i] + "8"].Interior.Color = Color.DodgerBlue;
                 
                 }
-                
-
-
-                //           cells["" + (startWith + source.Count) + ":" + (startWith + source.Count)].Delete();
             }
-
-            //cells[vsS[25] + "5" + ":" + vsS[25] + "8"].Interior.Color = Color.DodgerBlue;//ВРЕМЕННО!
-            //cells[vsS[30] + "5" + ":" + vsS[30] + "8"].Interior.Color = Color.White;//ВРЕМЕННО!
-
 
             for (int i = 0; i < recCount; i++)
             {
@@ -12699,8 +12691,6 @@ namespace ERP_NEW.BLL.Services
             string FullNameWithoutProfession = "";
             int depId = 0;
 
-            //SpreadsheetGear.IRange cellsa = Worksheet.Cells[1,200];
-            //cellsa.Merge();
 
             for (int i = 0; i < source.Count; i++)
             {
@@ -12789,7 +12779,6 @@ namespace ERP_NEW.BLL.Services
                         break;
                 }
 
-
                 cells["" + startWith + ":" + startWith].Insert();
                 int indexOfChar = source[i].FullName.IndexOf('(');
                 FullNameWithoutProfession = source[i].FullName.Substring(0, indexOfChar);
@@ -12801,24 +12790,27 @@ namespace ERP_NEW.BLL.Services
                
                 for (int j = 1; j <= days; j++)
                 {
-                    if (j == 15)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.DodgerBlue;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
 
-                    if (j == 30)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "8";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
+                    // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
+
+                    //if (j == 15)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
+
+                    //if (j == 30)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
 
                     int startCell = j + 4;
 

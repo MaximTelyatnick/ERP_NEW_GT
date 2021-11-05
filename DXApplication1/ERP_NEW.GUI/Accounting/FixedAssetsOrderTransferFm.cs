@@ -33,6 +33,7 @@ namespace ERP_NEW.GUI.Accounting
         private IAccountsService accountsService;
         private IEmployeesService employeesService;
         private IEmployeesService opEmployeesService;
+        private FixedAssetsOrderDTO oldModel;
         const short transfer = 1;
         int idGroup = 0;
 
@@ -59,6 +60,10 @@ namespace ERP_NEW.GUI.Accounting
         public FixedAssetsOrderTransferFm(FixedAssetsOrderDTO model, List<FixedAssetsMaterialsDTO> sourceMaterials)
         {
             InitializeComponent();
+
+             oldModel = (FixedAssetsOrderDTO)model.Clone();
+
+
             updateFixedAssetsOrderBS.DataSource = ItemUpdate = model;
             materialsList = sourceMaterials;
             LoadData();
@@ -70,7 +75,8 @@ namespace ERP_NEW.GUI.Accounting
             regionEdit.Text = model.RegionName;
             supplierEdit.Text = model.SupplierName;
             operatingPersonEdit.Text = model.OperatingPersonName;
-            dateEdit.EditValue = "01.01.1900";//DateTime.Now.Date;
+            //dateEdit.EditValue = "01.01.1900";//DateTime.Now.Date;
+            dateEdit.EditValue = null;
             balanceAccountEdit.Text = model.BalanceAccountNum;
 
             idGroup = model.Group_Id;
@@ -116,6 +122,8 @@ namespace ERP_NEW.GUI.Accounting
             newOperatingPersonLookUp.Properties.ValueMember = "EmployeeID";
             newOperatingPersonLookUp.Properties.DisplayMember = "FullName";
             newOperatingPersonLookUp.Properties.NullText = "";// "Немає данних";
+
+            ControlValidation();
         }
 
         #region Method's
@@ -147,43 +155,50 @@ namespace ERP_NEW.GUI.Accounting
                 try
                 {
                     fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
-                    FixedAssetsOrderDTO updateModel = new FixedAssetsOrderDTO()
-                    {
-                        EndRecordDate = (DateTime)dateEdit.EditValue,
-                        FixedCardStatus = transfer,
-                        GroupName = groupEdit.Text,
-                        Group_Id = idGroup,
-                        InventoryName = ((FixedAssetsOrderDTO)ItemUpdate).InventoryName,
-                        InventoryNumber = ((FixedAssetsOrderDTO)ItemUpdate).InventoryNumber,
-                        UsefulMonth = ((FixedAssetsOrderDTO)ItemUpdate).UsefulMonth,
-                        FixedAccountNum = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountNum,
-                        RegionName = ((FixedAssetsOrderDTO)ItemUpdate).RegionName,
-                        SupplierName = ((FixedAssetsOrderDTO)ItemUpdate).SupplierName,
-                        OperatingPersonName = ((FixedAssetsOrderDTO)ItemUpdate).OperatingPersonName,
-                        BeginRecordDate = ((FixedAssetsOrderDTO)ItemUpdate).BeginRecordDate,
-                        Balance_Account_Id = ((FixedAssetsOrderDTO)ItemUpdate).Balance_Account_Id,
-                        FixedAccountId = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountId,
-                        OperatingPerson_Id = ((FixedAssetsOrderDTO)ItemUpdate).OperatingPerson_Id,
-                        Region_Id = ((FixedAssetsOrderDTO)ItemUpdate).Region_Id,
-                        Supplier_Id = ((FixedAssetsOrderDTO)ItemUpdate).Supplier_Id,
-                        BalanceAccountNum = ((FixedAssetsOrderDTO)ItemUpdate).BalanceAccountNum,
-                        PeriodAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodAmortization,
-                        IncreasePrice = ((FixedAssetsOrderDTO)ItemUpdate).IncreasePrice,
-                        PeriodYearAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodYearAmortization,
-                        TotalPrice = ((FixedAssetsOrderDTO)ItemUpdate).TotalPrice,
-                        BeginPrice = ((FixedAssetsOrderDTO)ItemUpdate).BeginPrice,
-                        BeginDate = ((FixedAssetsOrderDTO)ItemUpdate).BeginDate,
-                        CurrentPrice = ((FixedAssetsOrderDTO)ItemUpdate).CurrentPrice,
-                        CurrentAmortization = ((FixedAssetsOrderDTO)ItemUpdate).CurrentAmortization,
-                        Id = ((FixedAssetsOrderDTO)ItemUpdate).Id,
-                        Id_Parent = ((FixedAssetsOrderDTO)ItemUpdate).Id_Parent
-                    };
-                    fixedAssetsOrderService.FixedAssetsOrderUpdate(updateModel);
+                    //FixedAssetsOrderDTO updateModel = new FixedAssetsOrderDTO()
+                    //{
+                    //    EndRecordDate = (DateTime)dateEdit.EditValue,
+                    //    FixedCardStatus = transfer,
+                    //    GroupName = groupEdit.Text,
+                    //    Group_Id = idGroup,
+
+                    //    InventoryName = ((FixedAssetsOrderDTO)ItemUpdate).InventoryName,
+                    //    InventoryNumber = ((FixedAssetsOrderDTO)ItemUpdate).InventoryNumber,
+                    //    UsefulMonth = ((FixedAssetsOrderDTO)ItemUpdate).UsefulMonth,
+                    //    FixedAccountNum = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountNum,
+                    //    RegionName = ((FixedAssetsOrderDTO)ItemUpdate).RegionName,
+                    //    SupplierName = ((FixedAssetsOrderDTO)ItemUpdate).SupplierName,
+                    //    OperatingPersonName = ((FixedAssetsOrderDTO)ItemUpdate).OperatingPersonName,
+                    //    BeginRecordDate = ((FixedAssetsOrderDTO)ItemUpdate).BeginRecordDate,
+                    //    Balance_Account_Id = ((FixedAssetsOrderDTO)ItemUpdate).Balance_Account_Id,
+                    //    FixedAccountId = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountId,
+                    //    OperatingPerson_Id = ((FixedAssetsOrderDTO)ItemUpdate).OperatingPerson_Id,
+                    //    Region_Id = ((FixedAssetsOrderDTO)ItemUpdate).Region_Id,
+                    //    Supplier_Id = ((FixedAssetsOrderDTO)ItemUpdate).Supplier_Id,
+                    //    BalanceAccountNum = ((FixedAssetsOrderDTO)ItemUpdate).BalanceAccountNum,
+                    //    PeriodAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodAmortization,
+                    //    IncreasePrice = ((FixedAssetsOrderDTO)ItemUpdate).IncreasePrice,
+                    //    PeriodYearAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodYearAmortization,
+                    //    TotalPrice = ((FixedAssetsOrderDTO)ItemUpdate).TotalPrice,
+                    //    BeginPrice = ((FixedAssetsOrderDTO)ItemUpdate).BeginPrice,
+                    //    BeginDate = ((FixedAssetsOrderDTO)ItemUpdate).BeginDate,
+                    //    CurrentPrice = ((FixedAssetsOrderDTO)ItemUpdate).CurrentPrice,
+                    //    CurrentAmortization = ((FixedAssetsOrderDTO)ItemUpdate).CurrentAmortization,
+                    //    Id = ((FixedAssetsOrderDTO)ItemUpdate).Id,
+                    //    Id_Parent = ((FixedAssetsOrderDTO)ItemUpdate).Id_Parent
+                    //};
+
+                    oldModel.EndRecordDate = (DateTime)dateEdit.EditValue;
+                    oldModel.FixedCardStatus = transfer;
+                    oldModel.GroupName = groupEdit.Text;
+                    oldModel.Group_Id = idGroup;
+
+                    fixedAssetsOrderService.FixedAssetsOrderUpdate(oldModel);
 
                     FixedAssetsOrderDTO newModel = new FixedAssetsOrderDTO()
                     {
-                        InventoryName = updateModel.InventoryName,
-                        InventoryNumber = updateModel.InventoryNumber,
+                        InventoryName = ((FixedAssetsOrderDTO)ItemUpdate).InventoryName,
+                        InventoryNumber = ((FixedAssetsOrderDTO)ItemUpdate).InventoryNumber,
                         GroupName = newGroupLookUp.Text,
                         UsefulMonth = (int)newUsefulMonthNumeric.Value,
                         FixedAccountNum = newFixedAccountLookUp.Text,//
@@ -191,25 +206,25 @@ namespace ERP_NEW.GUI.Accounting
                         SupplierName = newSupplierLookUp.Text,
                         OperatingPersonName = newOperatingPersonLookUp.Text,
                         BeginRecordDate = (DateTime)dateEdit.DateTime.AddDays(1),
-                        Balance_Account_Id = updateModel.Balance_Account_Id,
-                        FixedAccountId = updateModel.FixedAccountId,//for list materials
+                        Balance_Account_Id = ((FixedAssetsOrderDTO)ItemUpdate).Balance_Account_Id,
+                        FixedAccountId = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountId,//for list materials
                         Group_Id = (int)newGroupLookUp.EditValue,
-                        OperatingPerson_Id = updateModel.OperatingPerson_Id,
+                        OperatingPerson_Id = ((FixedAssetsOrderDTO)ItemUpdate).OperatingPerson_Id,
                         Region_Id = (int)newRegionLookUp.EditValue,
-                        Supplier_Id = updateModel.Supplier_Id,
+                        Supplier_Id = ((FixedAssetsOrderDTO)ItemUpdate).Supplier_Id,
                         BalanceAccountNum = newBalanceAccountLookUp.Text,
-                        PeriodAmortization = updateModel.PeriodAmortization,//
-                        IncreasePrice = updateModel.IncreasePrice,
-                        PeriodYearAmortization = updateModel.PeriodYearAmortization,//
-                        TotalPrice = updateModel.TotalPrice,
-                        BeginPrice = updateModel.BeginPrice,
-                        BeginDate = updateModel.BeginDate,
-                        CurrentPrice = updateModel.CurrentPrice,//
-                        CurrentAmortization = updateModel.CurrentAmortization,//
-                        Id_Parent = updateModel.Id
+                        PeriodAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodAmortization,//
+                        IncreasePrice = ((FixedAssetsOrderDTO)ItemUpdate).IncreasePrice,
+                        PeriodYearAmortization = ((FixedAssetsOrderDTO)ItemUpdate).PeriodYearAmortization,//
+                        TotalPrice = ((FixedAssetsOrderDTO)ItemUpdate).TotalPrice,
+                        BeginPrice = ((FixedAssetsOrderDTO)ItemUpdate).BeginPrice,
+                        BeginDate = ((FixedAssetsOrderDTO)ItemUpdate).BeginDate,
+                        CurrentPrice = ((FixedAssetsOrderDTO)ItemUpdate).CurrentPrice,//
+                        CurrentAmortization = ((FixedAssetsOrderDTO)ItemUpdate).CurrentAmortization,//
+                        Id_Parent = oldModel.Id
                     };
                     var idNewModel = fixedAssetsOrderService.FixedAssetsOrderCreate(newModel);
-                    materialsList.Select(s => { s.FixedAssetsOrder_Id = updateModel.Id; return s; }).ToList();
+                    materialsList.Select(s => { s.FixedAssetsOrder_Id = oldModel.Id; return s; }).ToList();
 
                     foreach (var item in materialsList)
                     {
@@ -218,7 +233,7 @@ namespace ERP_NEW.GUI.Accounting
                         {
                             FixedAssetsOrder_Id = idNewModel,
                             Expenditures_Id = item.Expenditures_Id,
-                            Fixed_Account_Id = item.Fixed_Account_Id,
+                            Fixed_Account_Id = ((FixedAssetsOrderDTO)ItemUpdate).FixedAccountId, //item.Fixed_Account_Id,
                             FixedPrice = item.FixedPrice,
                             Description = item.Description,
                             MaterialsDate = item.MaterialsDate,
@@ -263,6 +278,15 @@ namespace ERP_NEW.GUI.Accounting
             amountOfChange += (operatingPersonEdit.Text == newOperatingPersonLookUp.Text) ? 0 : 1;
 
             #endregion
+
+            DateTime lastDayInCurrentMonth = new DateTime(((DateTime)dateEdit.EditValue).Year, ((DateTime)dateEdit.EditValue).Month, 1).AddMonths(1).AddDays(-1);
+
+            if ((DateTime)dateEdit.EditValue != lastDayInCurrentMonth)
+            {
+                MessageBox.Show("Необхідно вказати останній день місяця для переміщення основного засобу!");
+                return;
+            }
+
             if (amountOfChange > 0)
             {
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

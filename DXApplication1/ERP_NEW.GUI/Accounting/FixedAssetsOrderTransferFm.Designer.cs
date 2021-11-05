@@ -484,8 +484,8 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEdit.Size = new System.Drawing.Size(100, 20);
             this.dateEdit.TabIndex = 1;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не вказано дату";
             conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             conditionValidationRule1.Value1 = new System.DateTime(1990, 1, 1, 15, 0, 23, 0);
             this.dxValidationProvider.SetValidationRule(this.dateEdit, conditionValidationRule1);
