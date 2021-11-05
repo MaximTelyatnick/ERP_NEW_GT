@@ -405,6 +405,13 @@ namespace ERP_NEW.GUI.Accounting
         }
         private void transferFixeAssetsBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
+
+            if(((FixedAssetsOrderJournalDTO)ItemJournal).EndRecordDate != null)
+            {
+                MessageBox.Show("Не можливо перемістити основний засіб, який було переміщено раніше! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             FixedAssetsOrderDTO model = new FixedAssetsOrderDTO()
             {
                 Id = ((FixedAssetsOrderJournalDTO)ItemJournal).Id,
