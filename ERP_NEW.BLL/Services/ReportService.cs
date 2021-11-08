@@ -13308,10 +13308,10 @@ namespace ERP_NEW.BLL.Services
 
 
                 string allpath = path + subpath + "\"";//@"D:\TimeSheet_" + currentDate.Year
-                Workbook.SaveAs(path + "Табель обліку робочого часу  за " + ToMonthName(currentDate) + " " + nameDepart + ".xls", FileFormat.Excel8);
+                Workbook.SaveAs(path + "Табель обліку робочого часу  за " + ToMonthName(currentDate) + " "+currentDate.Date.Year.ToString() + " року " + nameDepart + ".xls", FileFormat.Excel8);
 
                 Process process = new Process();
-                process.StartInfo.Arguments = "\"" + path + "Табель обліку робочого часу  за " + ToMonthName(currentDate) + " " + nameDepart + ".xls" + "\"";
+                process.StartInfo.Arguments = "\"" + path + "Табель обліку робочого часу  за " + ToMonthName(currentDate) + " " + currentDate.Date.Year.ToString() + " року " + nameDepart + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
 
