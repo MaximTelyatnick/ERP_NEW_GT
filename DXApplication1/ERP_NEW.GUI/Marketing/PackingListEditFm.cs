@@ -179,11 +179,11 @@ namespace ERP_NEW.GUI.Marketing
         private string GetLastNumber()
         {
             var allNumberPackingLists = packingListsService.GetPackingLists().OrderByDescending(x => Decimal.
-                Parse(x.PackingNumber.Replace('/', ','))).FirstOrDefault(x => x.PackingDate.Year == DateTime.Now.Year);
+                Parse(x.PackingNumber.Replace('.', ','))).FirstOrDefault(x => x.PackingDate.Year == DateTime.Now.Year);
 
             if (allNumberPackingLists != null)
             {
-                decimal lastNumberPackingLists = Decimal.Parse(allNumberPackingLists.PackingNumber.Replace('/', ','));
+                decimal lastNumberPackingLists = Decimal.Parse(allNumberPackingLists.PackingNumber.Replace('.', ','));
                 allNumberPackingLists.PackingNumber = (Math.Truncate(lastNumberPackingLists) + 1).ToString();
                 return allNumberPackingLists.PackingNumber;
             }

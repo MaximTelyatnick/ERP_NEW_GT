@@ -287,6 +287,12 @@ namespace ERP_NEW.GUI.Accounting
                 return;
             }
 
+            if ((DateTime)dateEdit.EditValue == null)
+            {
+                MessageBox.Show("Необхідно вказати місяць переміщення основного засобу!");
+                return;
+            }
+
             if (amountOfChange > 0)
             {
                 if (MessageBox.Show("Зберегти зміни?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
