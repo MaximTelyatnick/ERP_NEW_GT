@@ -23,7 +23,7 @@ namespace ERP_NEW.GUI.MTS
         private IMtsSpecificationsService mtsSpecificationsService;
         private BindingSource detailsBS = new BindingSource();
         private BindingSource createDetailsBS = new BindingSource();
-        private MTSSpecificationsDTO specificDTO = new MTSSpecificationsDTO();
+        private MTSSpecificationssDTO specificDTO = new MTSSpecificationssDTO();
         private MTSDetailsDTO detailDTO = new MTSDetailsDTO();
 
         private ObjectBase Item

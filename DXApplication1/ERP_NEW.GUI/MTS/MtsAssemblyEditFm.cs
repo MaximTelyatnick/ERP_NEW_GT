@@ -138,19 +138,19 @@ namespace ERP_NEW.GUI.MTS
                     ((MtsAssembliesDTO)Item).AssemblyStatus = 1;
                     ((MtsAssembliesDTO)Item).Id = mtsSpecificationsService.CreateAssembly((MtsAssembliesDTO)mtsAssembliesBS.Current);
 
-                    //MtsSpecificationsTestDTO model = new MtsSpecificationsTestDTO()
-                    //{
-                    //    ParentId = null,
-                    //    AssemblyId = ((MtsAssembliesDTO)Item).Id,
-                    //    DateAdded = DateTime.Now,
-                    //    Quantity = 1,
-                    //    UserId = ((MtsAssembliesDTO)Item).UserId
-                    //};
+                    MtsSpecificationsDTO model = new MtsSpecificationsDTO()
+                    {
+                        ParentId = null,
+                        AssemblyId = ((MtsAssembliesDTO)Item).Id,
+                        DateAdded = DateTime.Now,
+                        Quantity = 1,
+                        UserId = ((MtsAssembliesDTO)Item).UserId
+                    };
 
-                    //long idSpec = mtsSpecificationsService.CreateSpecification(model);
-                    //model.Id = idSpec;
-                    //model.RootId = idSpec;
-                    //mtsSpecificationsService.UpdateSpecification(model);
+                    long idSpec = mtsSpecificationsService.CreateSpecification(model);
+                    model.Id = idSpec;
+                    model.RootId = idSpec;
+                    mtsSpecificationsService.UpdateSpecification(model);
                 }
                 else
                 {

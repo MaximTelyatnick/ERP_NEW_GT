@@ -24,7 +24,7 @@ namespace ERP_NEW.BLL.Services
         private IRepository<MtsGosts> mtsGosts;
         private IRepository<Units> units;
         private IRepository<MtsAdditCalculations> mtsAdditCalculations;
-        private IRepository<MtsSpecificationsTest> mtsSpecifications;
+        private IRepository<MtsSpecifications> mtsSpecifications;
 
         private IMapper mapper;
 
@@ -36,7 +36,7 @@ namespace ERP_NEW.BLL.Services
             mtsAdditCalculations = Database.GetRepository<MtsAdditCalculations>();
             mtsGosts = Database.GetRepository<MtsGosts>();
             units = Database.GetRepository<Units>();
-            mtsSpecifications = Database.GetRepository<MtsSpecificationsTest>();
+            mtsSpecifications = Database.GetRepository<MtsSpecifications>();
 
             var config = new MapperConfiguration(cfg =>
              {

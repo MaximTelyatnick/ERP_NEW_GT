@@ -130,7 +130,7 @@ namespace ERP_NEW.GUI.MTS
             assembliesInfoVGrid.DataSource = assemblyInfoBS;
         }
 
-        private void EditMtsSpecification(Utils.Operation operation, MtsSpecificationsTestDTO model)
+        private void EditMtsSpecification(Utils.Operation operation, MtsSpecificationsDTO model)
         {
             using (MtsSpecificationEditFm mtsSpecificationEditFm = new MtsSpecificationEditFm(operation, model))
             {
@@ -203,7 +203,7 @@ namespace ERP_NEW.GUI.MTS
         {
             if (specificationTreeBS.Count > 0)
             {
-                EditMtsSpecification(Utils.Operation.Add, new MtsSpecificationsTestDTO() { RootId = ((MtsSpecificationTreeInfoDTO)specificationTreeBS.Current).RootId });
+                EditMtsSpecification(Utils.Operation.Add, new MtsSpecificationsDTO() { RootId = ((MtsSpecificationTreeInfoDTO)specificationTreeBS.Current).RootId });
             }
         }
 
@@ -213,7 +213,7 @@ namespace ERP_NEW.GUI.MTS
             {
                 MtsSpecificationTreeInfoDTO item = (MtsSpecificationTreeInfoDTO)specificationTreeBS.Current;
 
-                MtsSpecificationsTestDTO model = new MtsSpecificationsTestDTO()
+                MtsSpecificationsDTO model = new MtsSpecificationsDTO()
                 {
                     Id = item.Id,
                     ParentId = item.ParentId,

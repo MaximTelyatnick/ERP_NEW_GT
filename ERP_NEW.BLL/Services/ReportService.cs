@@ -18686,7 +18686,7 @@ namespace ERP_NEW.BLL.Services
 
         #region Mts specification
 
-        public bool SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList)
+        public bool SpecificationProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList)
         {
             #region summaryValues
 
@@ -18904,7 +18904,7 @@ namespace ERP_NEW.BLL.Services
             return true;
         }
 
-        public bool MapTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, bool sortByDrawing, int quantity = 1)
+        public bool MapTechProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, bool sortByDrawing, int quantity = 1)
         {
 
             mtsSpecification.QUANTITY = mtsSpecification.QUANTITY * quantity;
@@ -18993,7 +18993,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         //печать спецификации
-        public bool PrintTechProcessSpecification(MTSSpecificationsDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece)
+        public bool PrintTechProcessSpecification(MTSSpecificationssDTO mtsSpecification, List<SpecificationPrintModelDTO> dataSource, decimal scrap, decimal shawing, decimal weightOfWorkpiece)
         {
             try
             {
@@ -19319,7 +19319,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         //печать карты техпроцесса
-        public bool PrintMapTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
+        public bool PrintMapTechProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
         {
             try
             {
@@ -19507,7 +19507,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         //печать карты маршрутного техпроцесса
-        public bool PrintMapRouteTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
+        public bool PrintMapRouteTechProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> dataSource)
         {
             try
             {

@@ -22,8 +22,8 @@ namespace ERP_NEW.GUI.MTS
         private BindingSource specificationBS = new BindingSource();
         private BindingSource specificationListBS = new BindingSource();
 
-        private List<MTSSpecificationsDTO> specificationList = new List<MTSSpecificationsDTO>();
-        private List<MTSSpecificationsDTO> deleteSpecificationList = new List<MTSSpecificationsDTO>();
+        private List<MTSSpecificationssDTO> specificationList = new List<MTSSpecificationssDTO>();
+        private List<MTSSpecificationssDTO> deleteSpecificationList = new List<MTSSpecificationssDTO>();
 
         private Utils.Operation operation;
 
@@ -38,7 +38,7 @@ namespace ERP_NEW.GUI.MTS
         }
 
 
-        public MtsSpecificationOldDetailsFm(MTSSpecificationsDTO model, Utils.Operation operation)
+        public MtsSpecificationOldDetailsFm(MTSSpecificationssDTO model, Utils.Operation operation)
         {
             InitializeComponent();
 
@@ -59,9 +59,9 @@ namespace ERP_NEW.GUI.MTS
             dateEdit.DataBindings.Add("EditValue", specificationBS, "CREATION_DATE", true, DataSourceUpdateMode.OnPropertyChanged);
 
 
-            ((MTSSpecificationsDTO)Item).QUANTITY = 1;
-            ((MTSSpecificationsDTO)Item).CREATION_DATE = DateTime.Now;
-            ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 1;
+            ((MTSSpecificationssDTO)Item).QUANTITY = 1;
+            ((MTSSpecificationssDTO)Item).CREATION_DATE = DateTime.Now;
+            ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_ID = 1;
 
         }
 
@@ -105,9 +105,9 @@ namespace ERP_NEW.GUI.MTS
             }
         }
 
-        public MTSSpecificationsDTO Return()
+        public MTSSpecificationssDTO Return()
         {
-            return (MTSSpecificationsDTO)Item;
+            return (MTSSpecificationssDTO)Item;
         }
 
         private void deleteSpecDetailBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -121,7 +121,7 @@ namespace ERP_NEW.GUI.MTS
             specificationGridView.EndDataUpdate();
         }
 
-        private bool FindDublicate(MTSSpecificationsDTO model)
+        private bool FindDublicate(MTSSpecificationssDTO model)
         {
             mtsService = Program.kernel.Get<IMtsSpecificationsService>();
             return mtsService.GetAllSpecificationOld().Any(s => s.NAME== model.NAME  && s.ID != model.ID);
@@ -131,7 +131,7 @@ namespace ERP_NEW.GUI.MTS
         {
             this.Item.EndEdit();
 
-            if (FindDublicate((MTSSpecificationsDTO)this.Item))
+            if (FindDublicate((MTSSpecificationssDTO)this.Item))
             {
                 MessageBox.Show("Специфікація з такою назвою вже існує!", "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
@@ -152,18 +152,18 @@ namespace ERP_NEW.GUI.MTS
             try
             {
 
-                ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = string.Join(";", specificationList.Select(slt => slt.NAME));
-                ((MTSSpecificationsDTO)Item).COMPILATION_NAMES += ";";
-                ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = string.Join(";", specificationList.Select(slt => slt.DRAWING));
-                ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS += ";";
-                ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = string.Join(";", specificationList.Select(slt => slt.QUANTITY));
-                ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES += ";";
+                ((MTSSpecificationssDTO)Item).COMPILATION_NAMES = string.Join(";", specificationList.Select(slt => slt.NAME));
+                ((MTSSpecificationssDTO)Item).COMPILATION_NAMES += ";";
+                ((MTSSpecificationssDTO)Item).COMPILATION_DRAWINGS = string.Join(";", specificationList.Select(slt => slt.DRAWING));
+                ((MTSSpecificationssDTO)Item).COMPILATION_DRAWINGS += ";";
+                ((MTSSpecificationssDTO)Item).COMPILATION_QUANTITIES = string.Join(";", specificationList.Select(slt => slt.QUANTITY));
+                ((MTSSpecificationssDTO)Item).COMPILATION_QUANTITIES += ";";
 
-                ((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
+                ((MTSSpecificationssDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationssDTO)Item);
 
                 foreach (var item in specificationList)
                 {
-                   var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                   var detailsSpecific = mtsService.GetAllDetailsSpecificShort(((MTSSpecificationssDTO)item).ID);
 
                     if (detailsSpecific != null)
                     {
@@ -172,14 +172,14 @@ namespace ERP_NEW.GUI.MTS
                         foreach (var itemDetailSpecific in detailsSpecific)
                         {
                             mtsDetailsList.Add(itemDetailSpecific);
-                            mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsDetailsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationssDTO)Item).ID;
                             mtsDetailsList.Last().QUANTITY = mtsDetailsList.Last().QUANTITY * item.QUANTITY;
                             mtsDetailsList.Last().TIME_OF_ADD = DateTime.Now;
                         }
                         mtsService.MTSDetailsCreateRange(mtsDetailsList);
                     }
 
-                    var detailsSpecificBuy = mtsService.GetBuysDetalSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecificBuy = mtsService.GetBuysDetalSpecificShort(((MTSSpecificationssDTO)item).ID);
 
                     if (detailsSpecificBuy != null)
                     {
@@ -188,14 +188,14 @@ namespace ERP_NEW.GUI.MTS
                         foreach (var itemDetailSpecificBuy in detailsSpecificBuy)
                         {
                             mtsPurchasedList.Add(itemDetailSpecificBuy);
-                            mtsPurchasedList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsPurchasedList.Last().SPECIFICATIONS_ID = ((MTSSpecificationssDTO)Item).ID;
                             mtsPurchasedList.Last().QUANTITY = mtsPurchasedList.Last().QUANTITY * item.QUANTITY;
                             mtsPurchasedList.Last().TIME_OF_ADD = DateTime.Now;
                         }
                         mtsService.MTSPurchasedProductsCreateRange(mtsPurchasedList);
                     }
 
-                    var detailsSpecificMaterials = mtsService.GetMaterialsSpecificShort(((MTSSpecificationsDTO)item).ID);
+                    var detailsSpecificMaterials = mtsService.GetMaterialsSpecificShort(((MTSSpecificationssDTO)item).ID);
 
                     if (detailsSpecificMaterials != null)
                     {
@@ -204,7 +204,7 @@ namespace ERP_NEW.GUI.MTS
                         foreach (var itemDetailsSpecificMaterials in detailsSpecificMaterials)
                         {
                             mtsMaterialsList.Add(itemDetailsSpecificMaterials);
-                            mtsMaterialsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationsDTO)Item).ID;
+                            mtsMaterialsList.Last().SPECIFICATIONS_ID = ((MTSSpecificationssDTO)Item).ID;
                             mtsMaterialsList.Last().QUANTITY = mtsMaterialsList.Last().QUANTITY * item.QUANTITY;
                             mtsMaterialsList.Last().TIME_OF_ADD = DateTime.Now;
                         }

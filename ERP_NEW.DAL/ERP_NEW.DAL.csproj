@@ -148,7 +148,7 @@
     <Compile Include="Entities\Models\MTSNomenclatureGroupsOld.cs" />
     <Compile Include="Entities\Models\MTSNomenclaturesOld.cs" />
     <Compile Include="Entities\Models\MTSPurchasedProducts.cs" />
-    <Compile Include="Entities\Models\MTSSpecifications.cs" />
+    <Compile Include="Entities\Models\MTSSpecificationss.cs" />
     <Compile Include="Entities\Models\PaintingWorks.cs" />
     <Compile Include="Entities\Models\ReceiptDetails.cs" />
     <Compile Include="Entities\Models\Region.cs" />
@@ -222,7 +222,7 @@
     <Compile Include="Entities\Models\MtsModifications.cs" />
     <Compile Include="Entities\Models\MtsNomenclatureGroups.cs" />
     <Compile Include="Entities\Models\MtsNomenclatures.cs" />
-    <Compile Include="Entities\Models\MtsSpecificationsTest.cs" />
+    <Compile Include="Entities\Models\MtsSpecifications.cs" />
     <Compile Include="Entities\Models\PackingListMaterials.cs" />
     <Compile Include="Entities\Models\DocumentTypes.cs" />
     <Compile Include="Entities\Models\DefectActReplies.cs" />

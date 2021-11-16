@@ -46,7 +46,7 @@ namespace ERP_NEW.GUI.MTS
             }
         }
 
-        public MtsSpecificationEditFm(Utils.Operation operation, MtsSpecificationsTestDTO model)
+        public MtsSpecificationEditFm(Utils.Operation operation, MtsSpecificationsDTO model)
         {
             InitializeComponent();
             this.operation = operation;
@@ -73,10 +73,10 @@ namespace ERP_NEW.GUI.MTS
 
             if (this.operation == Utils.Operation.Update)
             {
-                designerEdit.EditValue = ((MtsSpecificationsTestDTO)Item).DesignerId;
-                assemblieParentEdit.EditValue = ((MtsSpecificationsTestDTO)Item).ParentId;
+                designerEdit.EditValue = ((MtsSpecificationsDTO)Item).DesignerId;
+                assemblieParentEdit.EditValue = ((MtsSpecificationsDTO)Item).ParentId;
 
-                if (((MtsSpecificationsTestDTO)Item).ParentId == null)
+                if (((MtsSpecificationsDTO)Item).ParentId == null)
                 {
                     assemblieParentEdit.Enabled = false;
                     drawingTBox.Enabled = false;
@@ -93,11 +93,11 @@ namespace ERP_NEW.GUI.MTS
             {
                 designerEdit.EditValue = null;
                 assemblieParentEdit.EditValue = null;
-                ((MtsSpecificationsTestDTO)Item).DateAdded = DateTime.Today;
-                ((MtsSpecificationsTestDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
-                ((MtsSpecificationsTestDTO)Item).UserName = UserService.AuthorizatedUser.Fio;
+                ((MtsSpecificationsDTO)Item).DateAdded = DateTime.Today;
+                ((MtsSpecificationsDTO)Item).UserId = UserService.AuthorizatedUser.UserId;
+                ((MtsSpecificationsDTO)Item).UserName = UserService.AuthorizatedUser.Fio;
 
-                if (((MtsSpecificationsTestDTO)Item).ParentId == null)
+                if (((MtsSpecificationsDTO)Item).ParentId == null)
                 {
                     SetValidationRuleForAssemblyParentEdit();
                 }
@@ -113,8 +113,8 @@ namespace ERP_NEW.GUI.MTS
             employeesService = Program.kernel.Get<IEmployeesService>();
 
             employeesBS.DataSource = employeesService.GetEmployeesWorking();
-            mtsRootAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesByRoot(((MtsSpecificationsTestDTO)Item).RootId);
-            mtsSpecificationBS.DataSource = mtsSpecificationsService.GetMtsAssemblyById(((MtsSpecificationsTestDTO)Item).AssemblyId ?? 0);
+            mtsRootAssembliesBS.DataSource = mtsSpecificationsService.GetMtsAssembliesByRoot(((MtsSpecificationsDTO)Item).RootId);
+            mtsSpecificationBS.DataSource = mtsSpecificationsService.GetMtsAssemblyById(((MtsSpecificationsDTO)Item).AssemblyId ?? 0);
         }
 
         private void SetValidationRuleForAssemblyParentEdit()
@@ -128,9 +128,9 @@ namespace ERP_NEW.GUI.MTS
             assemblyValidationProvider.SetValidationRule(assemblieParentEdit, rule);
         }
 
-        public MtsSpecificationsTestDTO Return()
+        public MtsSpecificationsDTO Return()
         {
-            return (MtsSpecificationsTestDTO)Item;
+            return (MtsSpecificationsDTO)Item;
         }
 
         private bool FindDublicate(MtsAssembliesDTO model)

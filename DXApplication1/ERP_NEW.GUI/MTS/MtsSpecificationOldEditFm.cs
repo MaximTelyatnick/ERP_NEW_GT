@@ -24,7 +24,7 @@ namespace ERP_NEW.GUI.MTS
         private BindingSource specificationBS = new BindingSource();
         public UserTasksDTO userTaskDTO = new UserTasksDTO();
 
-        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationsDTO model, UserTasksDTO userTaskDTO)
+        public MtsSpecificationOldEditFm(Utils.Operation operation, MTSSpecificationssDTO model, UserTasksDTO userTaskDTO)
         {
             InitializeComponent();
             this.operation = operation;
@@ -55,14 +55,14 @@ namespace ERP_NEW.GUI.MTS
              mtsService = Program.kernel.Get<IMtsSpecificationsService>();
              switch (this.userTaskDTO.UserId)
              {
-                 case 1: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Калайда Н.Б.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 1;
+                 case 1: ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_NAME = "Калайда Н.Б.";
+                     ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_ID = 1;
                      break;
-                 case 4: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Петрова Л.Г.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 4;
+                 case 4: ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_NAME = "Петрова Л.Г.";
+                     ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_ID = 4;
                      break;
-                 case 52: ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_NAME = "Литвиненко Є.С.";
-                     ((MTSSpecificationsDTO)Item).AUTHORIZATION_USERS_ID = 105;
+                 case 52: ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_NAME = "Литвиненко Є.С.";
+                     ((MTSSpecificationssDTO)Item).AUTHORIZATION_USERS_ID = 105;
                      break;
              }
              if (quantityEdit.Text.Length <= 5)
@@ -71,20 +71,20 @@ namespace ERP_NEW.GUI.MTS
                  {
                      if (operation == Utils.Operation.Add)
                      {
-                         ((MTSSpecificationsDTO)Item).CREATION_DATE = (DateTime)dateEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).NAME = nameSpecificationEdit.Text;
-                         ((MTSSpecificationsDTO)Item).DRAWING = drawingEdit.Text;
-                         ((MTSSpecificationsDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
-                         ((MTSSpecificationsDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationsDTO)Item);
-                         ((MTSSpecificationsDTO)Item).COMPILATION_NAMES = "";
-                         ((MTSSpecificationsDTO)Item).COMPILATION_DRAWINGS = "";
-                         ((MTSSpecificationsDTO)Item).COMPILATION_QUANTITIES = "";
-                         ((MTSSpecificationsDTO)Item).SET_COLOR = 0;
+                         ((MTSSpecificationssDTO)Item).CREATION_DATE = (DateTime)dateEdit.EditValue;
+                         ((MTSSpecificationssDTO)Item).NAME = nameSpecificationEdit.Text;
+                         ((MTSSpecificationssDTO)Item).DRAWING = drawingEdit.Text;
+                         ((MTSSpecificationssDTO)Item).WEIGHT = (decimal)weightEdit.EditValue;
+                         ((MTSSpecificationssDTO)Item).QUANTITY = (int)quantityEdit.EditValue;
+                         ((MTSSpecificationssDTO)Item).ID = mtsService.MTSSpecificationCreate((MTSSpecificationssDTO)Item);
+                         ((MTSSpecificationssDTO)Item).COMPILATION_NAMES = "";
+                         ((MTSSpecificationssDTO)Item).COMPILATION_DRAWINGS = "";
+                         ((MTSSpecificationssDTO)Item).COMPILATION_QUANTITIES = "";
+                         ((MTSSpecificationssDTO)Item).SET_COLOR = 0;
                          
                      }
                      else
-                         mtsService.MTSSpecificationUpdate((MTSSpecificationsDTO)Item);
+                         mtsService.MTSSpecificationUpdate((MTSSpecificationssDTO)Item);
              return true;           
              }
             else
@@ -99,9 +99,9 @@ namespace ERP_NEW.GUI.MTS
                 return false;
             }
         }
-        public MTSSpecificationsDTO Return()
+        public MTSSpecificationssDTO Return()
         {
-            return ((MTSSpecificationsDTO)Item);
+            return ((MTSSpecificationssDTO)Item);
         }
         #endregion
 
