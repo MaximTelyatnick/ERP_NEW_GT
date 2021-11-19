@@ -56,24 +56,20 @@
   <summary>Командировки</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      <strong>Описание вкладки</strong>
+      <p>Учет командировок командируемого персонала, создание приказов и удостоверений на командировку, виплата аванса, суточных. Ведение командировочных расходов.</p>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      Меню
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <img src="Screenshots/businnes_trips_menu_form.jpg">
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>Удостоверения</li>
+    <li>Приказы</li>
+    <li>Основные средства</li>
+    <li>Журнал авансов и отчётов</li>
+    <li>Журнал хозяйственных нужд</li>
   </ol>
 </details>
 
