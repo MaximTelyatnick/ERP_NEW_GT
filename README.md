@@ -3,15 +3,6 @@
 
 
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -41,7 +32,7 @@
   <ol>
     <li>
       <strong>Описание вкладки</strong>
-      <p>Бух учет предприятия: приходы, списания, банковские операции, расчеты с заказчиками, ведение касовой книги, основных средств предприятия.</p>
+      <p>Бух учет предприятия: приходы, списания, банковские операции, расчеты с заказчиками, ведение касовой книги, основных средств предприятия.
 
     </li>
     <li>
