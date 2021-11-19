@@ -40,16 +40,15 @@
   <summary>Бух. учет</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#about-the-account">Описание вкладки</a>
       <ul>
         <li><a href="#built-with">Built With</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#getting-started">Меню</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <img src="Screenshots/icon.png" alt="Logo" width="80" height="80">
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
