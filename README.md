@@ -41,14 +41,13 @@
   <ol>
     <li>
       <a href="#about-the-account">Описание вкладки</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
+      Бух учет предприятия: приходы, списания, банковские операции, расчеты с заказчиками, ведение касовой книги, основных средств предприятия.
+      <button>GG </button>
     </li>
     <li>
       <a href="#getting-started">Меню</a>
       <ul>
-        <img src="Screenshots/icon.png" alt="Logo" width="80" height="80">
+        <img src="Screenshots/account_menu_form.jpg">
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
