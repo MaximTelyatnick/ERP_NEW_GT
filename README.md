@@ -35,17 +35,20 @@
       <p>Бух учет предприятия: приходы, списания, банковские операции, расчеты с заказчиками, ведение касовой книги, основных средств предприятия.</p>
     </li>
     <li>
-      <a href="#getting-started">Меню</a>
+      Меню
       <ul>
         <img src="Screenshots/account_menu_form.jpg">
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li>Приходы</li>
+    <li>Списание</li>
+    <li>Основные средства</li>
+    <li>Требования</li>
+    <li>Налоговый учёт</li>
+    <li>Расчеты с покупателями и заказчиками</li>
+    <li>Банковские операции</li>
+    <li>Кассовая книга</li>
+    <li>Отчёты</li>
   </ol>
 </details>
 
