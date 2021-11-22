@@ -105,7 +105,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/customer_orders_menu_form.jpg">
       </ul>
     </li>
     <li>Материальные спецыфикации</li>
@@ -126,7 +126,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/project_menu_form.jpg">
       </ul>
     </li>
     <li>Сварочные работы</li>
@@ -147,7 +147,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/purchase_menu.jpg">
       </ul>
     </li>
     <li>Журнал упаковочных листов</li>
@@ -187,7 +187,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/technical_control_menu.jpg">
       </ul>
     </li>
     <li>Сертификаты и паспорта</li>
