@@ -76,7 +76,7 @@
 ### Создано при помощи
 
 При разработке приложения использовались следующие инструменты и технологии:
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+
 
 * [Entity Framework](https://docs.microsoft.com/en-us/ef/?ranMID=46131&ranEAID=a1LgFw09t88&ranSiteID=a1LgFw09t88-hlluP1_OXfxgOwFLJlEmrQ&epi=a1LgFw09t88-hlluP1_OXfxgOwFLJlEmrQ&irgwc=1&OCID=AID2200057_aff_7806_1243925&tduid=%28ir__69bg1pxcickf6zoxfl9yvpgsmf2xoyl6stjahgn300%29%287806%29%281243925%29%28a1LgFw09t88-hlluP1_OXfxgOwFLJlEmrQ%29%28%29&irclickid=_69bg1pxcickf6zoxfl9yvpgsmf2xoyl6stjahgn300)
 * [Firebird](http://www.firebirdsql.org/)
