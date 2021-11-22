@@ -521,7 +521,7 @@
             this.orderNumberTBox.Name = "orderNumberTBox";
             this.orderNumberTBox.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.orderNumberTBox.Properties.Appearance.Options.UseFont = true;
-            this.orderNumberTBox.Properties.Mask.EditMask = "([1-9])(\\.([0-9][0-9]|[0-9][0-9][0-9]|[0-9][0-9][0-9][0-9])){2}";
+            this.orderNumberTBox.Properties.Mask.EditMask = "([1-9])(\\.([0-9][0-9]|[0-9][0-9][0-9]|[0-9][0-9][0-9][0-9])){2}\\.?([0-9])";
             this.orderNumberTBox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.orderNumberTBox.Properties.Mask.ShowPlaceHolders = false;
             this.orderNumberTBox.Size = new System.Drawing.Size(226, 20);
