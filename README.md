@@ -267,5 +267,15 @@
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [DevExpress](https://www.devexpress.com/)
 
+<!-- CONTACT -->
+## Контакты
+
+Mail - <a href="mailto:maxtel011395@gmail.com">maxtel011395@gmail.com</a>
+
+
+Project Link: [https://github.com/MaximTelyatnick/ERP_NEW_GT](https://github.com/MaximTelyatnick/ERP_NEW_GT)
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
