@@ -109,7 +109,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/project_menu_form.jpg">
+        <img src="Screenshots/production_menu.jpg">
       </ul>
     </li>
     <li>Сварочные работы</li>
@@ -148,7 +148,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/purchase_menu.jpg">
       </ul>
     </li>
     <li>Приход материалов</li>
@@ -193,10 +193,54 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/storehouse_menu.jpg">
       </ul>
     </li>
     <li>Приходы</li>
+    <li>Требования</li>
+    <li>Учёт спецодежды</li>
+    <li>Журнал учёта спецодежды</li>
+    <li>Остатки на складе</li>
+    <li>Журнал товарно-транспортных накладных</li>
+
+  </ol>
+</details>
+
+</details>
+
+<details>
+  <summary>Класификаторы</summary>
+  <ol>
+    <li>
+      <strong>Описание вкладки</strong>
+      <p>Учет командировок командируемого персонала, создание приказов и удостоверений на командировку, виплата аванса, суточных. Ведение командировочных расходов.</p>
+    </li>
+    <li>
+      Меню
+      <ul>
+        <img src="Screenshots/storehouse_menu.jpg">
+      </ul>
+    </li>
+    
+    <li>Сотрудники</li>
+    <li>Контрагенты</li>
+    <li>WPS</li>
+    <li>Клейма</li>
+    <li>
+     <details> 
+      МТ класификаторы
+      <ul>
+        Материалы
+      </ul>
+       <ul>
+        Госты
+      </ul>
+       <ul>
+        Единицы измерения
+      </ul>
+       
+      </details>
+    </li>
     <li>Требования</li>
     <li>Учёт спецодежды</li>
     <li>Журнал учёта спецодежды</li>
