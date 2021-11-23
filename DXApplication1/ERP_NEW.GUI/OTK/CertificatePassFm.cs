@@ -175,7 +175,7 @@ namespace ERP_NEW.GUI.OTK
 
         private void contextMenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
-            if (e.ClickedItem.Text != "Редагувати" && e.ClickedItem.Text != "Додати")
+            if (e.ClickedItem.Text != "Белый")
             {
                 long id = (long)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId;
                 certificateDTO = receiptCertificateService.GetCertificate(id);
@@ -195,14 +195,14 @@ namespace ERP_NEW.GUI.OTK
             }
             else
             {
-                if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId != null)
-                {
-                    editCertificate(Utils.Operation.Update);
-                }
-                else
-                {
-                    MessageBox.Show("Сертифікат не закріплений за вибраним надходженням!");
-                }
+                certificatePassGrid.BeginUpdate();
+                long id = (long)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId;
+                certificateDTO = receiptCertificateService.GetCertificate(id);
+                certificateDTO.ColorId = null;
+                receiptCertificateService.UpdateCertificate(certificateDTO);
+
+                ((OrdersInfoDTO)ordersBS.Current).ColorName = e.ClickedItem.ToolTipText;
+                certificatePassGrid.EndUpdate();
             }
         }
 
@@ -229,6 +229,20 @@ namespace ERP_NEW.GUI.OTK
             }
         }
 
+        private void bandedGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
+            {
+                editBtn.Enabled = false;
+                contextMenuStrip.Enabled = false;
+            }
+            else
+            {
+                editBtn.Enabled = true;
+                contextMenuStrip.Enabled = true;
+            }
+        }
+
         private void bandedGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView gv = sender as GridView;
@@ -237,12 +251,7 @@ namespace ERP_NEW.GUI.OTK
                 string currentRowColor = gv.GetRowCellValue(e.RowHandle, "ColorName").ToString();
                 e.Appearance.BackColor = Color.FromName(currentRowColor);
             }
-            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
-            {
-                editBtn.Enabled = false;
-            }
-            else
-                editBtn.Enabled = true;
+            
 
         }
     }
