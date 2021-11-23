@@ -29,5 +29,6 @@ namespace ERP_NEW.BLL.DTO.SelectedDTO
 
         public decimal? UnitPrice { get; set; }
         public decimal? TotalPrice { get; set; }
+        public string ColorName { get; set; }
     }
 }

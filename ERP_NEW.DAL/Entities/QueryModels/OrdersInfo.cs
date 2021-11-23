@@ -28,5 +28,6 @@ namespace ERP_NEW.DAL.Entities.QueryModels
         public string FileName { get; set; }
         public string ManufacturerInfo { get; set; }
         public string Description { get; set; }
+        public string ColorName { get; set; }
     }
 }

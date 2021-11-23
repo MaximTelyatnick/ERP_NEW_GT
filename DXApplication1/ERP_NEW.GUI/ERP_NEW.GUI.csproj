@@ -2470,6 +2470,7 @@
     <None Include="Resources\greenSquareIcon.ico" />
     <None Include="Resources\orangeSquareIcon.ico" />
     <None Include="Resources\redSquareIcon.ico" />
+    <None Include="Resources\Edit_Add.png" />
     <Content Include="Temp\Templates\AccountClothesJournalTemplate.xls" />
     <Content Include="Temp\Templates\AccountJournalTemplate.xlsx" />
     <Content Include="Temp\Templates\AccountJournalWriteOffTemplate.xls" />

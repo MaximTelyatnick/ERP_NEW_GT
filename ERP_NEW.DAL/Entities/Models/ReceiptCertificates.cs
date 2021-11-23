@@ -16,5 +16,6 @@ namespace ERP_NEW.DAL.Entities.Models
         public string Description { get; set; }
         public byte[] CertificateScanTwo { get; set; }
         public string FileNameTwo { get; set; }
+        public int? ColorId { get; set; }
     }
 }

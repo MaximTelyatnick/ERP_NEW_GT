@@ -14,5 +14,6 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public string Description { get; set; }
         public byte[] CertificateScanTwo { get; set; }
         public string FileNameTwo { get; set; }
+        public int? ColorId { get; set; }
     }
 }

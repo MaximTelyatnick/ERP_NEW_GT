@@ -36,12 +36,13 @@
             this.endDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.showBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.addBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.certificatePassGrid = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.addStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bandedGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.receipt = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.InvoiceNum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -49,7 +50,9 @@
             this.ReceiptNum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.OrderDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.VendorName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.VendorSrn = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.SupplierName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.StorekeeperName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.OtkName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -66,6 +69,7 @@
             this.Description = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.InformationRow = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.ColorName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -81,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.certificatePassGrid)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
@@ -93,9 +99,11 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.beginDateEdit,
             this.endDateEdit,
-            this.showBtn});
+            this.showBtn,
+            this.addBtn,
+            this.editBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -143,13 +151,31 @@
             // 
             // showBtn
             // 
-            this.showBtn.Caption = "Пошук";
-            this.showBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("showBtn.Glyph")));
+            this.showBtn.Caption = "Відобразити";
             this.showBtn.Id = 3;
+            this.showBtn.ImageUri.Uri = "Apply";
             this.showBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("showBtn.LargeGlyph")));
             this.showBtn.Name = "showBtn";
             this.showBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.showBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showBtn_ItemClick);
+            // 
+            // addBtn
+            // 
+            this.addBtn.Caption = "Додати сертифікат";
+            this.addBtn.Id = 4;
+            this.addBtn.ImageUri.Uri = "Add";
+            this.addBtn.Name = "addBtn";
+            this.addBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.addBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addBtn_ItemClick);
+            // 
+            // editBtn
+            // 
+            this.editBtn.Caption = "Редагувати сертифікати";
+            this.editBtn.Id = 5;
+            this.editBtn.ImageUri.Uri = "Edit";
+            this.editBtn.Name = "editBtn";
+            this.editBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.editBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -163,18 +189,24 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.beginDateEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.endDateEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.showBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.addBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.editBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // certificatePassGrid
             // 
             this.certificatePassGrid.ContextMenuStrip = this.contextMenuStrip;
             this.certificatePassGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.certificatePassGrid.EmbeddedNavigator.Appearance.Options.UseTextOptions = true;
+            this.certificatePassGrid.EmbeddedNavigator.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.certificatePassGrid.Location = new System.Drawing.Point(0, 95);
             this.certificatePassGrid.MainView = this.bandedGridView;
             this.certificatePassGrid.MenuManager = this.ribbonControl1;
             this.certificatePassGrid.Name = "certificatePassGrid";
             this.certificatePassGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemPictureEdit1});
+            this.repositoryItemPictureEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemMemoEdit1});
             this.certificatePassGrid.Size = new System.Drawing.Size(1345, 371);
             this.certificatePassGrid.TabIndex = 5;
             this.certificatePassGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -183,37 +215,31 @@
             // contextMenuStrip
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addStripMenuItem,
-            this.editStripMenuItem});
+            this.toolStripSeparator1});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(135, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 32);
+            this.contextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_ItemClicked);
             // 
-            // addStripMenuItem
+            // toolStripSeparator1
             // 
-            this.addStripMenuItem.Image = global::ERP_NEW.GUI.Accounting.Resources.Add_16x16;
-            this.addStripMenuItem.Name = "addStripMenuItem";
-            this.addStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.addStripMenuItem.Text = "Додати";
-            this.addStripMenuItem.Click += new System.EventHandler(this.addStripMenuItem_Click);
-            // 
-            // editStripMenuItem
-            // 
-            this.editStripMenuItem.Image = global::ERP_NEW.GUI.XRDesignRibbonControllerResources.RibbonUserDesigner_Edit;
-            this.editStripMenuItem.Name = "editStripMenuItem";
-            this.editStripMenuItem.Size = new System.Drawing.Size(134, 22);
-            this.editStripMenuItem.Text = "Редагувати";
-            this.editStripMenuItem.Click += new System.EventHandler(this.editStripMenuItem_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // bandedGridView
             // 
             this.bandedGridView.Appearance.BandPanel.BackColor = System.Drawing.Color.Bisque;
             this.bandedGridView.Appearance.BandPanel.Options.UseBackColor = true;
+            this.bandedGridView.Appearance.HideSelectionRow.Options.UseTextOptions = true;
+            this.bandedGridView.Appearance.HideSelectionRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.bandedGridView.Appearance.Row.Options.UseTextOptions = true;
             this.bandedGridView.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.bandedGridView.AppearancePrint.Row.Options.UseTextOptions = true;
+            this.bandedGridView.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.bandedGridView.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.receipt,
             this.material,
             this.certificate});
+            this.bandedGridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.bandedGridView.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.InvoiceNum,
             this.InvoiceDate,
@@ -233,12 +259,18 @@
             this.CertificateDate,
             this.ManufactureInfo,
             this.Description,
-            this.InformationRow});
+            this.InformationRow,
+            this.ColorName});
             this.bandedGridView.GridControl = this.certificatePassGrid;
             this.bandedGridView.Name = "bandedGridView";
             this.bandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.bandedGridView.OptionsFind.AlwaysVisible = true;
+            this.bandedGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.bandedGridView.OptionsView.RowAutoHeight = true;
+            this.bandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.bandedGridView.OptionsView.ShowFooter = true;
+            this.bandedGridView.RowSeparatorHeight = 2;
+            this.bandedGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView_RowCellStyle);
             this.bandedGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.bandedGridView_CustomUnboundColumnData);
             this.bandedGridView.DoubleClick += new System.EventHandler(this.bandedGridView_DoubleClick);
             // 
@@ -263,98 +295,174 @@
             this.receipt.Columns.Add(this.OtkName);
             this.receipt.Name = "receipt";
             this.receipt.VisibleIndex = 0;
-            this.receipt.Width = 675;
+            this.receipt.Width = 703;
             // 
             // InvoiceNum
             // 
+            this.InvoiceNum.AppearanceCell.Options.UseTextOptions = true;
+            this.InvoiceNum.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.InvoiceNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.InvoiceNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InvoiceNum.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceNum.Caption = "№ накладної";
             this.InvoiceNum.FieldName = "InvoiceNum";
             this.InvoiceNum.Name = "InvoiceNum";
             this.InvoiceNum.OptionsColumn.AllowFocus = false;
+            this.InvoiceNum.OptionsColumn.FixedWidth = true;
             this.InvoiceNum.OptionsColumn.ReadOnly = true;
+            this.InvoiceNum.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.InvoiceNum.Visible = true;
+            this.InvoiceNum.Width = 74;
             // 
             // InvoiceDate
             // 
+            this.InvoiceDate.AppearanceCell.Options.UseTextOptions = true;
+            this.InvoiceDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InvoiceDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.InvoiceDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InvoiceDate.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceDate.Caption = "Дата накладної";
             this.InvoiceDate.FieldName = "InvoiceDate";
             this.InvoiceDate.Name = "InvoiceDate";
             this.InvoiceDate.OptionsColumn.AllowFocus = false;
+            this.InvoiceDate.OptionsColumn.FixedWidth = true;
             this.InvoiceDate.OptionsColumn.ReadOnly = true;
+            this.InvoiceDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.InvoiceDate.Visible = true;
+            this.InvoiceDate.Width = 61;
             // 
             // ReceiptNum
             // 
+            this.ReceiptNum.AppearanceHeader.Options.UseTextOptions = true;
+            this.ReceiptNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ReceiptNum.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ReceiptNum.Caption = "№ надходження";
             this.ReceiptNum.FieldName = "ReceiptNum";
             this.ReceiptNum.Name = "ReceiptNum";
             this.ReceiptNum.OptionsColumn.AllowFocus = false;
+            this.ReceiptNum.OptionsColumn.FixedWidth = true;
             this.ReceiptNum.OptionsColumn.ReadOnly = true;
+            this.ReceiptNum.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.ReceiptNum.Visible = true;
+            this.ReceiptNum.Width = 78;
             // 
             // OrderDate
             // 
             this.OrderDate.AppearanceCell.Options.UseTextOptions = true;
+            this.OrderDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.OrderDate.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.OrderDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.OrderDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OrderDate.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.OrderDate.Caption = "Дата надходження";
             this.OrderDate.FieldName = "OrderDate";
             this.OrderDate.Name = "OrderDate";
             this.OrderDate.OptionsColumn.AllowFocus = false;
+            this.OrderDate.OptionsColumn.FixedWidth = true;
             this.OrderDate.OptionsColumn.ReadOnly = true;
+            this.OrderDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.OrderDate.Visible = true;
+            this.OrderDate.Width = 61;
             // 
             // VendorName
             // 
+            this.VendorName.AppearanceCell.Options.HighPriority = true;
             this.VendorName.AppearanceCell.Options.UseTextOptions = true;
-            this.VendorName.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.VendorName.AppearanceCell.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
             this.VendorName.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.VendorName.AppearanceHeader.Options.UseTextOptions = true;
+            this.VendorName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.VendorName.AppearanceHeader.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
             this.VendorName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.VendorName.AutoFillDown = true;
             this.VendorName.Caption = "Контрагент";
+            this.VendorName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.VendorName.FieldName = "VendorName";
+            this.VendorName.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.VendorName.Name = "VendorName";
             this.VendorName.OptionsColumn.AllowFocus = false;
+            this.VendorName.OptionsColumn.FixedWidth = true;
             this.VendorName.OptionsColumn.ReadOnly = true;
+            this.VendorName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.VendorName.Visible = true;
+            this.VendorName.Width = 100;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // VendorSrn
             // 
+            this.VendorSrn.AppearanceCell.Options.UseTextOptions = true;
+            this.VendorSrn.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.VendorSrn.AppearanceHeader.Options.UseTextOptions = true;
+            this.VendorSrn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.VendorSrn.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.VendorSrn.Caption = "Код ЄД РПОУ";
+            this.VendorSrn.ColumnEdit = this.repositoryItemTextEdit1;
             this.VendorSrn.FieldName = "VendorSrn";
             this.VendorSrn.Name = "VendorSrn";
             this.VendorSrn.OptionsColumn.AllowFocus = false;
+            this.VendorSrn.OptionsColumn.FixedWidth = true;
             this.VendorSrn.OptionsColumn.ReadOnly = true;
+            this.VendorSrn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.VendorSrn.Visible = true;
+            this.VendorSrn.Width = 55;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.Appearance.Options.UseTextOptions = true;
+            this.repositoryItemTextEdit1.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.repositoryItemTextEdit1.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.repositoryItemTextEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // SupplierName
             // 
+            this.SupplierName.AppearanceHeader.Options.UseTextOptions = true;
+            this.SupplierName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.SupplierName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.SupplierName.Caption = "Постачальник";
+            this.SupplierName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.SupplierName.FieldName = "SupplierName";
             this.SupplierName.Name = "SupplierName";
             this.SupplierName.OptionsColumn.AllowFocus = false;
+            this.SupplierName.OptionsColumn.FixedWidth = true;
             this.SupplierName.OptionsColumn.ReadOnly = true;
+            this.SupplierName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.SupplierName.Visible = true;
+            this.SupplierName.Width = 114;
             // 
             // StorekeeperName
             // 
+            this.StorekeeperName.AppearanceHeader.Options.UseTextOptions = true;
+            this.StorekeeperName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.StorekeeperName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.StorekeeperName.Caption = "Комірник";
+            this.StorekeeperName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.StorekeeperName.FieldName = "StorekeeperName";
             this.StorekeeperName.Name = "StorekeeperName";
             this.StorekeeperName.OptionsColumn.AllowFocus = false;
+            this.StorekeeperName.OptionsColumn.FixedWidth = true;
             this.StorekeeperName.OptionsColumn.ReadOnly = true;
+            this.StorekeeperName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.StorekeeperName.Visible = true;
+            this.StorekeeperName.Width = 100;
             // 
             // OtkName
             // 
+            this.OtkName.AppearanceHeader.Options.UseTextOptions = true;
+            this.OtkName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OtkName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.OtkName.Caption = "ОТК";
             this.OtkName.FieldName = "OtkName";
             this.OtkName.Name = "OtkName";
             this.OtkName.OptionsColumn.AllowFocus = false;
+            this.OtkName.OptionsColumn.FixedWidth = true;
             this.OtkName.OptionsColumn.ReadOnly = true;
+            this.OtkName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.OtkName.Visible = true;
+            this.OtkName.Width = 60;
             // 
             // material
             // 
@@ -373,56 +481,87 @@
             this.material.Columns.Add(this.StorehouseName);
             this.material.Name = "material";
             this.material.VisibleIndex = 1;
-            this.material.Width = 375;
+            this.material.Width = 313;
             // 
             // Nomenclature
             // 
             this.Nomenclature.AppearanceCell.Options.UseTextOptions = true;
             this.Nomenclature.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Nomenclature.AppearanceHeader.Options.UseTextOptions = true;
+            this.Nomenclature.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Nomenclature.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Nomenclature.Caption = "Наменклатурний №";
             this.Nomenclature.FieldName = "Nomenclature";
             this.Nomenclature.Name = "Nomenclature";
             this.Nomenclature.OptionsColumn.AllowFocus = false;
+            this.Nomenclature.OptionsColumn.FixedWidth = true;
             this.Nomenclature.OptionsColumn.ReadOnly = true;
+            this.Nomenclature.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.Nomenclature.Visible = true;
+            this.Nomenclature.Width = 80;
             // 
             // NomenclatureName
             // 
+            this.NomenclatureName.AppearanceHeader.Options.UseTextOptions = true;
+            this.NomenclatureName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.NomenclatureName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.NomenclatureName.Caption = "Найменування";
             this.NomenclatureName.FieldName = "NomenclatureName";
             this.NomenclatureName.Name = "NomenclatureName";
             this.NomenclatureName.OptionsColumn.AllowFocus = false;
+            this.NomenclatureName.OptionsColumn.FixedWidth = true;
             this.NomenclatureName.OptionsColumn.ReadOnly = true;
+            this.NomenclatureName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.NomenclatureName.Visible = true;
+            this.NomenclatureName.Width = 80;
             // 
             // Quantity
             // 
-            this.Quantity.Caption = "Кількість";
+            this.Quantity.AppearanceHeader.Options.UseTextOptions = true;
+            this.Quantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Quantity.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.Quantity.Caption = "К-сть";
             this.Quantity.FieldName = "Quantity";
             this.Quantity.Name = "Quantity";
             this.Quantity.OptionsColumn.AllowFocus = false;
+            this.Quantity.OptionsColumn.FixedWidth = true;
             this.Quantity.OptionsColumn.ReadOnly = true;
+            this.Quantity.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.Quantity.Visible = true;
+            this.Quantity.Width = 45;
             // 
             // Measure
             // 
+            this.Measure.AppearanceCell.Options.UseTextOptions = true;
+            this.Measure.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Measure.AppearanceHeader.Options.UseTextOptions = true;
+            this.Measure.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Measure.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Measure.Caption = "Од. вимір.";
             this.Measure.FieldName = "Measure";
             this.Measure.Name = "Measure";
             this.Measure.OptionsColumn.AllowFocus = false;
+            this.Measure.OptionsColumn.FixedWidth = true;
             this.Measure.OptionsColumn.ReadOnly = true;
+            this.Measure.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.Measure.Visible = true;
+            this.Measure.Width = 38;
             // 
             // StorehouseName
             // 
+            this.StorehouseName.AppearanceHeader.Options.UseTextOptions = true;
+            this.StorehouseName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.StorehouseName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.StorehouseName.Caption = "Склад";
+            this.StorehouseName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.StorehouseName.FieldName = "StorehouseName";
             this.StorehouseName.Name = "StorehouseName";
             this.StorehouseName.OptionsColumn.AllowFocus = false;
+            this.StorehouseName.OptionsColumn.FixedWidth = true;
             this.StorehouseName.OptionsColumn.ReadOnly = true;
+            this.StorehouseName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.StorehouseName.Visible = true;
+            this.StorehouseName.Width = 70;
             // 
             // certificate
             // 
@@ -441,46 +580,76 @@
             this.certificate.MinWidth = 30;
             this.certificate.Name = "certificate";
             this.certificate.VisibleIndex = 2;
-            this.certificate.Width = 375;
+            this.certificate.Width = 266;
             // 
             // CertificateNumber
             // 
+            this.CertificateNumber.AppearanceHeader.Options.UseTextOptions = true;
+            this.CertificateNumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CertificateNumber.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.CertificateNumber.Caption = "№ сертифіката";
             this.CertificateNumber.FieldName = "CertificateNumber";
             this.CertificateNumber.Name = "CertificateNumber";
             this.CertificateNumber.OptionsColumn.AllowFocus = false;
+            this.CertificateNumber.OptionsColumn.FixedWidth = true;
             this.CertificateNumber.OptionsColumn.ReadOnly = true;
+            this.CertificateNumber.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.CertificateNumber.Visible = true;
+            this.CertificateNumber.Width = 72;
             // 
             // CertificateDate
             // 
+            this.CertificateDate.AppearanceCell.Options.UseTextOptions = true;
+            this.CertificateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CertificateDate.AppearanceHeader.Options.UseTextOptions = true;
+            this.CertificateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CertificateDate.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.CertificateDate.Caption = "Дата";
             this.CertificateDate.FieldName = "CertificateDate";
             this.CertificateDate.Name = "CertificateDate";
             this.CertificateDate.OptionsColumn.AllowFocus = false;
+            this.CertificateDate.OptionsColumn.FixedWidth = true;
             this.CertificateDate.OptionsColumn.ReadOnly = true;
+            this.CertificateDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.CertificateDate.Visible = true;
+            this.CertificateDate.Width = 55;
             // 
             // ManufactureInfo
             // 
+            this.ManufactureInfo.AppearanceHeader.Options.UseTextOptions = true;
+            this.ManufactureInfo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.ManufactureInfo.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ManufactureInfo.Caption = "Виробник";
             this.ManufactureInfo.FieldName = "ManufactureInfo";
             this.ManufactureInfo.Name = "ManufactureInfo";
             this.ManufactureInfo.OptionsColumn.AllowFocus = false;
+            this.ManufactureInfo.OptionsColumn.FixedWidth = true;
             this.ManufactureInfo.OptionsColumn.ReadOnly = true;
+            this.ManufactureInfo.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.ManufactureInfo.Visible = true;
+            this.ManufactureInfo.Width = 58;
             // 
             // Description
             // 
+            this.Description.AppearanceHeader.Options.UseTextOptions = true;
+            this.Description.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Description.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Description.Caption = "Додаткова інф.";
             this.Description.FieldName = "Description";
             this.Description.Name = "Description";
             this.Description.OptionsColumn.AllowFocus = false;
+            this.Description.OptionsColumn.FixedWidth = true;
             this.Description.OptionsColumn.ReadOnly = true;
+            this.Description.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.Description.ToolTip = "Додаткова інформація";
             this.Description.Visible = true;
+            this.Description.Width = 44;
             // 
             // InformationRow
             // 
+            this.InformationRow.AppearanceHeader.Options.UseTextOptions = true;
+            this.InformationRow.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InformationRow.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InformationRow.Caption = "Файл";
             this.InformationRow.ColumnEdit = this.repositoryItemPictureEdit1;
             this.InformationRow.FieldName = "fff";
@@ -488,17 +657,24 @@
             this.InformationRow.ImageAlignment = System.Drawing.StringAlignment.Center;
             this.InformationRow.Name = "InformationRow";
             this.InformationRow.OptionsColumn.AllowFocus = false;
+            this.InformationRow.OptionsColumn.FixedWidth = true;
             this.InformationRow.OptionsColumn.ReadOnly = true;
             this.InformationRow.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.InformationRow.Visible = true;
+            this.InformationRow.Width = 37;
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            this.repositoryItemPictureEdit1.NullText = "Зображення відсутнє";
+            this.repositoryItemPictureEdit1.NullText = "...";
             this.repositoryItemPictureEdit1.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.Image;
             this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
             this.repositoryItemPictureEdit1.DoubleClick += new System.EventHandler(this.repositoryItemPictureEdit1_DoubleClick);
+            // 
+            // ColorName
+            // 
+            this.ColorName.FieldName = "ColorName";
+            this.ColorName.Name = "ColorName";
             // 
             // tabFormDefaultManager1
             // 
@@ -561,7 +737,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "CertificatePassFm";
-            this.Text = "CertificatePassFm";
+            this.Text = "Класифікатори і паспорти";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -570,6 +746,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.certificatePassGrid)).EndInit();
             this.contextMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabFormDefaultManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
@@ -616,11 +794,15 @@
         private DevExpress.Utils.ImageCollection imageCollection;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn InformationRow;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
-        private System.Windows.Forms.ToolStripMenuItem addStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editStripMenuItem;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand receipt;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand material;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand certificate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private DevExpress.XtraBars.BarButtonItem addBtn;
+        private DevExpress.XtraBars.BarButtonItem editBtn;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ColorName;
     }
 }
