@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -240,8 +241,8 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -1382,17 +1383,19 @@
             this.certificatePassItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
             this.certificatePassItem.OwnerCollection = this.otkCategory.Items;
             // 
+            // tileBarItem1
             // 
-            // 
+            this.certificatePassItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
             this.certificatePassItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.certificatePassItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.certificatePassItem.Tile.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
             this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseForeColor = true;
             this.certificatePassItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             tileItemElement53.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement53.Image")));
             tileItemElement53.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
             tileItemElement53.Text = "Сертифікати та паспорти";
-            tileItemElement53.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
             this.certificatePassItem.Tile.Elements.Add(tileItemElement53);
             this.certificatePassItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.certificatePassItem.Tile.Name = "tileBarItem1";
