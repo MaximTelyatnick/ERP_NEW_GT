@@ -220,8 +220,7 @@
       <ul>
         <img src="Screenshots/storehouse_menu.jpg">
       </ul>
-    </li>
-    
+    </li> 
     <li>Сотрудники</li>
     <li>Контрагенты</li>
     <li>WPS</li>
