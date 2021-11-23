@@ -13,7 +13,7 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-## Про прогармный продукт
+## Про программный продукт
 
 Программный продукт разработан для введения учета данных на малых предприятиях.
 <p>Состоит из следующих модулей:</p>
@@ -265,6 +265,12 @@
   </ol>
 </details>
 
+## Как использовать
+
+* [Руководство по эксплуатации программы](https://github.com/MaximTelyatnick/ERP_NEW_GT/blob/master/DXApplication1/ERP_NEW.GUI/Temp/Pdf/OperatorERPmanual.pdf)
+* [Развертка и описание базы данных](https://github.com/MaximTelyatnick/ERP_NEW_GT/blob/master/DXApplication1/ERP_NEW.GUI/Temp/Pdf/OperatorDbManual.xls)
+
+
 ## Создано при помощи
 
 При разработке приложения использовались следующие инструменты и технологии:
@@ -279,8 +285,6 @@
 ## Контакты
 
 Mail - <a href="mailto:maxtel011395@gmail.com">maxtel011395@gmail.com</a>
-
-
 Project Link: [https://github.com/MaximTelyatnick/ERP_NEW_GT](https://github.com/MaximTelyatnick/ERP_NEW_GT)
 
 
