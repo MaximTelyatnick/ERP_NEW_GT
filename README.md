@@ -1,5 +1,8 @@
-<div id="top"></div>
 | README.md |
+|:---|
+
+<div id="top"></div>
+
 
 
 
@@ -8,7 +11,8 @@
     <img src="Screenshots/icon.png" alt="Logo" width="80" height="80">
   </a>
 </div>
-<h1 align="center">CRM система малого предприятия</h1>
+<h3 align="center">CRM система малого предприятия</h1>
+<br> 
 
 
 <!-- TABLE OF CONTENTS -->
