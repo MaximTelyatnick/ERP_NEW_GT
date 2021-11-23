@@ -234,6 +234,7 @@
             this.bandedGridView.Appearance.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.bandedGridView.AppearancePrint.Row.Options.UseTextOptions = true;
             this.bandedGridView.AppearancePrint.Row.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.bandedGridView.BandPanelRowHeight = 40;
             this.bandedGridView.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
             this.receipt,
             this.material,
@@ -294,8 +295,10 @@
             this.receipt.Columns.Add(this.StorekeeperName);
             this.receipt.Columns.Add(this.OtkName);
             this.receipt.Name = "receipt";
+            this.receipt.OptionsBand.AllowMove = false;
+            this.receipt.OptionsBand.FixedWidth = true;
             this.receipt.VisibleIndex = 0;
-            this.receipt.Width = 703;
+            this.receipt.Width = 694;
             // 
             // InvoiceNum
             // 
@@ -455,7 +458,7 @@
             this.StorekeeperName.OptionsColumn.ReadOnly = true;
             this.StorekeeperName.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.StorekeeperName.Visible = true;
-            this.StorekeeperName.Width = 100;
+            this.StorekeeperName.Width = 91;
             // 
             // OtkName
             // 
@@ -489,6 +492,7 @@
             this.material.Columns.Add(this.Measure);
             this.material.Columns.Add(this.StorehouseName);
             this.material.Name = "material";
+            this.material.OptionsBand.FixedWidth = true;
             this.material.VisibleIndex = 1;
             this.material.Width = 313;
             // 
@@ -593,6 +597,7 @@
             this.certificate.Columns.Add(this.InformationRow);
             this.certificate.MinWidth = 30;
             this.certificate.Name = "certificate";
+            this.certificate.OptionsBand.FixedWidth = true;
             this.certificate.VisibleIndex = 2;
             this.certificate.Width = 266;
             // 
@@ -756,7 +761,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "CertificatePassFm";
-            this.Text = "Класифікатори і паспорти";
+            this.Text = "Сертифікати і паспорти";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
@@ -814,14 +819,14 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn InformationRow;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand receipt;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand material;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand certificate;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private DevExpress.XtraBars.BarButtonItem addBtn;
         private DevExpress.XtraBars.BarButtonItem editBtn;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ColorName;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand receipt;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand material;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand certificate;
     }
 }
