@@ -45,23 +45,23 @@
 
 <details>
   <summary>Командировки</summary>
-  <ol>
+  <ul>
     <li>
       <strong>Описание вкладки</strong>
       <p>Учет командировок командируемого персонала, создание приказов и удостоверений на командировку, виплата аванса, суточных. Ведение командировочных расходов.</p>
     </li>
     <li>
       Меню
+      <img src="Screenshots/businnes_trips_menu_form.jpg">
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <li>Удостоверения</li>
+        <li>Приказы</li>
+        <li>Основные средства</li>
+        <li>Журнал авансов и отчётов</li>
+        <li>Журнал хозяйственных нужд</li>
       </ul>
     </li>
-    <li>Удостоверения</li>
-    <li>Приказы</li>
-    <li>Основные средства</li>
-    <li>Журнал авансов и отчётов</li>
-    <li>Журнал хозяйственных нужд</li>
-  </ol>
+  </ul>
 </details>
 
 <details>
@@ -284,8 +284,8 @@
 <!-- CONTACT -->
 ## Контакты
 
-Mail - <a href="mailto:maxtel011395@gmail.com">maxtel011395@gmail.com</a>
-Project Link: [https://github.com/MaximTelyatnick/ERP_NEW_GT](https://github.com/MaximTelyatnick/ERP_NEW_GT)
+<p>Mail - <a href="mailto:maxtel011395@gmail.com">maxtel011395@gmail.com</a></p>
+<p>Project Link: [https://github.com/MaximTelyatnick/ERP_NEW_GT](https://github.com/MaximTelyatnick/ERP_NEW_GT)</p>
 
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
