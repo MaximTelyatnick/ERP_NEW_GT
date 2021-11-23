@@ -6,6 +6,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
+  <div align="center">
+  <a href="https://github.com/MaximTelyatnick/TechnicalProcessControlg">
+    <img src="Screenshots/icon.png" alt="Logo" width="80" height="80">
+  </a>
   <h3 align="center">CRM система малого предприятия</h3>
 </div>
 
