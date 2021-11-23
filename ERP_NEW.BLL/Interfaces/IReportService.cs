@@ -146,9 +146,9 @@ namespace ERP_NEW.BLL.Interfaces
         bool PrintRequstLog(List<RequestLogJournalDTO> dataSource, string path);
         IEnumerable<CalcWithBuyersShortReportDTO> GetCWBShortForSaldo(DateTime startDate, DateTime endDate, int accountId, string accountNum);
 
-        bool MapTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, bool sortByDrawing, int quantity = 1);
-        bool PrintMapRouteTechProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> dataSource);
-        bool SpecificationProcess(MTSSpecificationsDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
+        bool MapTechProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, bool sortByDrawing, int quantity = 1);
+        bool PrintMapRouteTechProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> dataSource);
+        bool SpecificationProcess(MTSSpecificationssDTO mtsSpecification, List<MTSDetailsDTO> mtsDetailsList, List<MTSPurchasedProductsDTO> mtsBuyDetailsList, List<MTSMaterialsDTO> mtsMaterialsList);
 
         void CreatePackingListTemplate(PackingListsJournalDTO source);
 

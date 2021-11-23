@@ -24,8 +24,8 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<MtsAssembliesCustomerInfoDTO> GetJournalAssembliesWithCustomerOrders();
 
 
-        IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOld();
-        IEnumerable<MTSSpecificationsDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate);
+        IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOld();
+        IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate);
         //IEnumerable<MTSCreateDetalsDTO> GetAllDetailsSpecific(int spesificId);
         IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId);
         IEnumerable<MTSPurchasedProductsDTO> GetBuysDetalSpecific(int spesificId);
@@ -46,12 +46,12 @@ namespace ERP_NEW.BLL.Interfaces
         void UpdateAssembly(MtsAssembliesDTO mtsAssembly);
         bool DeleteAssembly(long id);
         
-        long CreateSpecification(MtsSpecificationsTestDTO mtsSpecification);
-        void UpdateSpecification(MtsSpecificationsTestDTO mtsSpecification);
+        long CreateSpecification(MtsSpecificationsDTO mtsSpecification);
+        void UpdateSpecification(MtsSpecificationsDTO mtsSpecification);
         bool DeleteSpecification(long id);
 
-        int MTSSpecificationCreate(MTSSpecificationsDTO mtsSpecificationDTO);
-        void MTSSpecificationUpdate(MTSSpecificationsDTO mtsSpecificationDTO);
+        int MTSSpecificationCreate(MTSSpecificationssDTO mtsSpecificationDTO);
+        void MTSSpecificationUpdate(MTSSpecificationssDTO mtsSpecificationDTO);
         bool MTSSpecificationDelete(int id);
 
         int MTSCreateDetailsCreate(MTSCreateDetalsDTO mtsCreateDetalsDTO);

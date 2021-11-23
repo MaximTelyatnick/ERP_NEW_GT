@@ -210,7 +210,7 @@ namespace ERP_NEW.DAL.EF
 
         public DbSet<MtsAdditCalculations> MtsAdditCalculations { get; set; }
         public DbSet<MtsAssemblies> MtsAssemblies { get; set; }
-        public DbSet<MtsSpecificationsTest> MtsSpecifications { get; set; }
+        public DbSet<MtsSpecifications> MtsSpecifications { get; set; }
         public DbSet<MtsNomenclatures> MtsNomenclatures { get; set; }
         public DbSet<MtsNomenclatureGroups> MtsNomenclatureGroups { get; set; }
         public DbSet<MtsGosts> MtsGosts { get; set; }
@@ -229,7 +229,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<MSTrialBalanceByAccounts> MSTrialBalanceByAccounts { get;set; }
         
 
-        public DbSet<MTSSpecifications> MTSSpecificationsOld { get; set; }
+        public DbSet<MTSSpecificationss> MTSSpecificationsOld { get; set; }
         public DbSet<MTSAuthorizationUsers> MTSAuthorizationUsers { get; set; }
         public DbSet<MTSCreateDetals> MTSCreateDetals { get; set; }
         public DbSet<MTSGost> MTSGost { get; set; }

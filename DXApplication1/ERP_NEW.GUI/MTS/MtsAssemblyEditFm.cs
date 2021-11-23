@@ -138,7 +138,7 @@ namespace ERP_NEW.GUI.MTS
                     ((MtsAssembliesDTO)Item).AssemblyStatus = 1;
                     ((MtsAssembliesDTO)Item).Id = mtsSpecificationsService.CreateAssembly((MtsAssembliesDTO)mtsAssembliesBS.Current);
 
-                    MtsSpecificationsTestDTO model = new MtsSpecificationsTestDTO()
+                    MtsSpecificationsDTO model = new MtsSpecificationsDTO()
                     {
                         ParentId = null,
                         AssemblyId = ((MtsAssembliesDTO)Item).Id,

@@ -169,7 +169,7 @@
     <Compile Include="DTO\ModelsDTO\MTSNomenclatureGroupsOldDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSNomenclaturesOldDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MTSPurchasedProductsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MTSSpecificationsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MTSSpecificationssDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ReceiptDetailsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\RegionDTO.cs" />
     <Compile Include="DTO\ModelsDTO\RequestLogContractorsDTO.cs" />
@@ -242,7 +242,7 @@
     <Compile Include="DTO\ModelsDTO\MtsGostsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsModificationsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsNomenclatureGroupsDTO.cs" />
-    <Compile Include="DTO\ModelsDTO\MtsSpecificationsTestDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\MtsSpecificationsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\MtsNomenclaturesDTO.cs" />
     <Compile Include="DTO\ModelsDTO\NomenclatureGroupsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\NomenclaturesDTO.cs" />

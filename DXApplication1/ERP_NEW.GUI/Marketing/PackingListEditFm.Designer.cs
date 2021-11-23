@@ -144,8 +144,6 @@
             // 
             this.packingNumberTBox.Location = new System.Drawing.Point(8, 44);
             this.packingNumberTBox.Name = "packingNumberTBox";
-            this.packingNumberTBox.Properties.Mask.EditMask = "n0";
-            this.packingNumberTBox.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.packingNumberTBox.Properties.MaxLength = 20;
             this.packingNumberTBox.Size = new System.Drawing.Size(74, 20);
             this.packingNumberTBox.TabIndex = 1;

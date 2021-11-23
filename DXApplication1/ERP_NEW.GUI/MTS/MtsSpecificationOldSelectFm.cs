@@ -17,7 +17,7 @@ namespace ERP_NEW.GUI.MTS
     public partial class MtsSpecificationOldSelectFm : DevExpress.XtraEditors.XtraForm
     {
 
-        private List<MTSSpecificationsDTO> mtsSpecificationsList = new List<MTSSpecificationsDTO>();
+        private List<MTSSpecificationssDTO> mtsSpecificationsList = new List<MTSSpecificationssDTO>();
         private IMtsSpecificationsService mtsService;
         private BindingSource specificBS = new BindingSource();
 
@@ -35,7 +35,7 @@ namespace ERP_NEW.GUI.MTS
             specificGrid.DataSource = specificBS;
         }
 
-        public List<MTSSpecificationsDTO> Return()
+        public List<MTSSpecificationssDTO> Return()
         {
             return mtsSpecificationsList;
         }
@@ -45,7 +45,7 @@ namespace ERP_NEW.GUI.MTS
             specificGridView.PostEditor();
 
 
-            mtsSpecificationsList = ((List<MTSSpecificationsDTO>)specificBS.DataSource).Where(s => s.Selected).ToList();
+            mtsSpecificationsList = ((List<MTSSpecificationssDTO>)specificBS.DataSource).Where(s => s.Selected).ToList();
             if (mtsSpecificationsList.Count > 0)
             {
                 DialogResult = DialogResult.OK;
