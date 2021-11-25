@@ -203,6 +203,7 @@ namespace ERP_NEW.GUI.OTK
 
                 ((OrdersInfoDTO)ordersBS.Current).ColorName = e.ClickedItem.ToolTipText;
                 certificatePassGrid.EndUpdate();
+                
             }
         }
 

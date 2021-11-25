@@ -1,59 +1,70 @@
+| README.md |
+|:---|
+
 <div id="top"></div>
 
 
 
 
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
-  <h3 align="center">CRM система малого предприятия</h3>
+  <a href="https://github.com/MaximTelyatnick/TechnicalProcessControlg">
+    <img src="Screenshots/icon.png" alt="Logo" width="80" height="80">
+  </a>
 </div>
+<h3 align="center">CRM система малого предприятия</h1>
+<br> 
+
 
 <!-- TABLE OF CONTENTS -->
+## Про программный продукт
+
+Программный продукт разработан для введения учета данных на малых предприятиях.
+<p>Состоит из следующих модулей:</p>
 <details>
   <summary>Бух. учет</summary>
-  <ol>
+  <ul>
     <li>
       <strong>Описание вкладки</strong>
       <p>Бух учет предприятия: приходы, списания, банковские операции, расчеты с заказчиками, ведение касовой книги, основных средств предприятия.</p>
     </li>
     <li>
-      Меню
-      <ul>
+      Меню     
         <img src="Screenshots/account_menu_form.jpg">
+      <ul> 
+        <li>Приходы</li>
+        <li>Списание</li>
+        <li>Основные средства</li>
+        <li>Требования</li>
+        <li>Налоговый учёт</li>
+        <li>Расчеты с покупателями и заказчиками</li>
+        <li>Банковские операции</li>
+        <li>Кассовая книга</li>
+        <li>Отчёты</li>      
       </ul>
     </li>
-    <li>Приходы</li>
-    <li>Списание</li>
-    <li>Основные средства</li>
-    <li>Требования</li>
-    <li>Налоговый учёт</li>
-    <li>Расчеты с покупателями и заказчиками</li>
-    <li>Банковские операции</li>
-    <li>Кассовая книга</li>
-    <li>Отчёты</li>
-  </ol>
+    
+  </ul>
 </details>
 
 <details>
   <summary>Командировки</summary>
-  <ol>
+  <ul>
     <li>
       <strong>Описание вкладки</strong>
       <p>Учет командировок командируемого персонала, создание приказов и удостоверений на командировку, виплата аванса, суточных. Ведение командировочных расходов.</p>
     </li>
     <li>
       Меню
+      <img src="Screenshots/businnes_trips_menu_form.jpg">
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <li>Удостоверения</li>
+        <li>Приказы</li>
+        <li>Основные средства</li>
+        <li>Журнал авансов и отчётов</li>
+        <li>Журнал хозяйственных нужд</li>
       </ul>
     </li>
-    <li>Удостоверения</li>
-    <li>Приказы</li>
-    <li>Основные средства</li>
-    <li>Журнал авансов и отчётов</li>
-    <li>Журнал хозяйственных нужд</li>
-  </ol>
+  </ul>
 </details>
 
 <details>
@@ -109,7 +120,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/project_menu_form.jpg">
+        <img src="Screenshots/production_menu.jpg">
       </ul>
     </li>
     <li>Сварочные работы</li>
@@ -148,7 +159,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/purchase_menu.jpg">
       </ul>
     </li>
     <li>Приход материалов</li>
@@ -193,7 +204,7 @@
     <li>
       Меню
       <ul>
-        <img src="Screenshots/businnes_trips_menu_form.jpg">
+        <img src="Screenshots/storehouse_menu.jpg">
       </ul>
     </li>
     <li>Приходы</li>
@@ -206,7 +217,64 @@
   </ol>
 </details>
 
-### Создано при помощи
+</details>
+
+<details>
+  <summary>Класификаторы</summary>
+  <ol>
+    <li>
+      <strong>Описание вкладки</strong>
+      <p>Учет командировок командируемого персонала, создание приказов и удостоверений на командировку, виплата аванса, суточных. Ведение командировочных расходов.</p>
+    </li>
+    <li>
+      Меню
+      <ul>
+        <img src="Screenshots/class_menu.jpg">
+      </ul>
+    </li> 
+    <li>Сотрудники</li>
+    <li>Контрагенты</li>
+    <li>WPS</li>
+    <li>Клейма</li>
+    <li>
+      МТ класификаторы
+      <ul>
+        <li>Материалы</li>
+        <li>Госты</li>
+        <li>Единицы измерения</li>
+      </ul>   
+    </li>
+    <li>Бухгалтерия
+      <ul>
+        <li>Счета</li>
+        <li>Периоды</li>
+        <li>Словарь УКТЗ ЄД</li>
+        <li>Словарь ДК 016-2010</li>
+        <li>Словарь ДК 021:2015</li>
+        <li>Журнал условий</li>
+        <li>Журнал касовіх контрагентов</li>
+        <li>Журнал перевозчиков</li>
+      </ul>
+    </li>
+    <li>Складские класификаторі
+    <ul>
+        <li>Материалы</li>
+        <li>Склады</li>
+        <li>Перевозчики</li>
+      </ul>
+    </li>
+    <li>Визитки</li>
+    <li>Табель</li>
+  </ol>
+</details>
+
+## Как использовать
+
+* [Руководство по эксплуатации программы](https://github.com/MaximTelyatnick/ERP_NEW_GT/blob/master/DXApplication1/ERP_NEW.GUI/Temp/Pdf/OperatorERPmanual.pdf)
+* [Развертка и описание базы данных](https://github.com/MaximTelyatnick/ERP_NEW_GT/blob/master/DXApplication1/ERP_NEW.GUI/Temp/Pdf/OperatorDbManual.xls)
+
+
+## Создано при помощи
 
 При разработке приложения использовались следующие инструменты и технологии:
 
@@ -215,6 +283,12 @@
 * [Firebird](http://www.firebirdsql.org/)
 * [Visual Studio Code](https://code.visualstudio.com/)
 * [DevExpress](https://www.devexpress.com/)
+
+<!-- CONTACT -->
+## Контакты
+
+<p>Mail - <a href="mailto:maxtel011395@gmail.com">maxtel011395@gmail.com</a></p>
+<p>Project Link: [https://github.com/MaximTelyatnick/ERP_NEW_GT](https://github.com/MaximTelyatnick/ERP_NEW_GT)</p>
 
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
