@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificatePassFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.beginDateEdit = new DevExpress.XtraBars.BarEditItem();
@@ -40,7 +41,7 @@
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.certificatePassGrid = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bandedGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.receipt = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -74,7 +75,7 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -299,11 +300,12 @@
             this.receipt.OptionsBand.AllowSize = false;
             this.receipt.OptionsBand.FixedWidth = true;
             this.receipt.VisibleIndex = 0;
-            this.receipt.Width = 694;
+            this.receipt.Width = 666;
             // 
             // InvoiceNum
             // 
             this.InvoiceNum.AppearanceCell.Options.UseTextOptions = true;
+            this.InvoiceNum.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.InvoiceNum.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceNum.AppearanceHeader.Options.UseTextOptions = true;
             this.InvoiceNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -333,7 +335,7 @@
             this.InvoiceDate.OptionsColumn.ReadOnly = true;
             this.InvoiceDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.InvoiceDate.Visible = true;
-            this.InvoiceDate.Width = 61;
+            this.InvoiceDate.Width = 55;
             // 
             // ReceiptNum
             // 
@@ -348,7 +350,7 @@
             this.ReceiptNum.OptionsColumn.ReadOnly = true;
             this.ReceiptNum.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.ReceiptNum.Visible = true;
-            this.ReceiptNum.Width = 78;
+            this.ReceiptNum.Width = 65;
             // 
             // OrderDate
             // 
@@ -366,7 +368,7 @@
             this.OrderDate.OptionsColumn.ReadOnly = true;
             this.OrderDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.OrderDate.Visible = true;
-            this.OrderDate.Width = 61;
+            this.OrderDate.Width = 57;
             // 
             // VendorName
             // 
@@ -411,7 +413,7 @@
             this.VendorSrn.OptionsColumn.ReadOnly = true;
             this.VendorSrn.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.VendorSrn.Visible = true;
-            this.VendorSrn.Width = 55;
+            this.VendorSrn.Width = 50;
             // 
             // repositoryItemTextEdit1
             // 
@@ -455,6 +457,8 @@
             // 
             // OtkName
             // 
+            this.OtkName.AppearanceCell.Options.UseTextOptions = true;
+            this.OtkName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.OtkName.AppearanceHeader.Options.UseTextOptions = true;
             this.OtkName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.OtkName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -486,11 +490,14 @@
             this.material.Name = "material";
             this.material.OptionsBand.FixedWidth = true;
             this.material.VisibleIndex = 1;
-            this.material.Width = 313;
+            this.material.Width = 305;
             // 
             // Nomenclature
             // 
+            this.Nomenclature.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
+            this.Nomenclature.AppearanceCell.Options.UseBackColor = true;
             this.Nomenclature.AppearanceCell.Options.UseTextOptions = true;
+            this.Nomenclature.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.Nomenclature.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Nomenclature.AppearanceHeader.Options.UseTextOptions = true;
             this.Nomenclature.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -507,6 +514,10 @@
             // 
             // NomenclatureName
             // 
+            this.NomenclatureName.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
+            this.NomenclatureName.AppearanceCell.Options.UseBackColor = true;
+            this.NomenclatureName.AppearanceCell.Options.UseTextOptions = true;
+            this.NomenclatureName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.NomenclatureName.AppearanceHeader.Options.UseTextOptions = true;
             this.NomenclatureName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NomenclatureName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -522,6 +533,8 @@
             // 
             // Quantity
             // 
+            this.Quantity.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
+            this.Quantity.AppearanceCell.Options.UseBackColor = true;
             this.Quantity.AppearanceHeader.Options.UseTextOptions = true;
             this.Quantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Quantity.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -533,10 +546,12 @@
             this.Quantity.OptionsColumn.ReadOnly = true;
             this.Quantity.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.Quantity.Visible = true;
-            this.Quantity.Width = 45;
+            this.Quantity.Width = 37;
             // 
             // Measure
             // 
+            this.Measure.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
+            this.Measure.AppearanceCell.Options.UseBackColor = true;
             this.Measure.AppearanceCell.Options.UseTextOptions = true;
             this.Measure.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.Measure.AppearanceHeader.Options.UseTextOptions = true;
@@ -554,6 +569,8 @@
             // 
             // StorehouseName
             // 
+            this.StorehouseName.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
+            this.StorehouseName.AppearanceCell.Options.UseBackColor = true;
             this.StorehouseName.AppearanceHeader.Options.UseTextOptions = true;
             this.StorehouseName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.StorehouseName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -586,10 +603,12 @@
             this.certificate.Name = "certificate";
             this.certificate.OptionsBand.FixedWidth = true;
             this.certificate.VisibleIndex = 2;
-            this.certificate.Width = 266;
+            this.certificate.Width = 293;
             // 
             // CertificateNumber
             // 
+            this.CertificateNumber.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
+            this.CertificateNumber.AppearanceCell.Options.UseBackColor = true;
             this.CertificateNumber.AppearanceHeader.Options.UseTextOptions = true;
             this.CertificateNumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CertificateNumber.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -605,6 +624,8 @@
             // 
             // CertificateDate
             // 
+            this.CertificateDate.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
+            this.CertificateDate.AppearanceCell.Options.UseBackColor = true;
             this.CertificateDate.AppearanceCell.Options.UseTextOptions = true;
             this.CertificateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CertificateDate.AppearanceHeader.Options.UseTextOptions = true;
@@ -618,10 +639,12 @@
             this.CertificateDate.OptionsColumn.ReadOnly = true;
             this.CertificateDate.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.CertificateDate.Visible = true;
-            this.CertificateDate.Width = 55;
+            this.CertificateDate.Width = 40;
             // 
             // ManufactureInfo
             // 
+            this.ManufactureInfo.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
+            this.ManufactureInfo.AppearanceCell.Options.UseBackColor = true;
             this.ManufactureInfo.AppearanceCell.Options.UseTextOptions = true;
             this.ManufactureInfo.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ManufactureInfo.AppearanceHeader.Options.UseTextOptions = true;
@@ -636,10 +659,12 @@
             this.ManufactureInfo.OptionsColumn.ReadOnly = true;
             this.ManufactureInfo.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.ManufactureInfo.Visible = true;
-            this.ManufactureInfo.Width = 58;
+            this.ManufactureInfo.Width = 105;
             // 
             // Description
             // 
+            this.Description.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
+            this.Description.AppearanceCell.Options.UseBackColor = true;
             this.Description.AppearanceHeader.Options.UseTextOptions = true;
             this.Description.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Description.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -656,6 +681,8 @@
             // 
             // InformationRow
             // 
+            this.InformationRow.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
+            this.InformationRow.AppearanceCell.Options.UseBackColor = true;
             this.InformationRow.AppearanceHeader.Options.UseTextOptions = true;
             this.InformationRow.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.InformationRow.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -672,7 +699,7 @@
             this.InformationRow.OptionsColumn.ReadOnly = true;
             this.InformationRow.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.InformationRow.Visible = true;
-            this.InformationRow.Width = 37;
+            this.InformationRow.Width = 32;
             // 
             // repositoryItemPictureEdit1
             // 
