@@ -189,19 +189,23 @@ namespace ERP_NEW.GUI.OTK
                 //LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
 
 
-
+                
                 certificatePassGrid.EndUpdate();
 
             }
             else
             {
+              
+                
                 certificatePassGrid.BeginUpdate();
                 long id = (long)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId;
                 certificateDTO = receiptCertificateService.GetCertificate(id);
                 certificateDTO.ColorId = null;
                 receiptCertificateService.UpdateCertificate(certificateDTO);
-
+        
                 ((OrdersInfoDTO)ordersBS.Current).ColorName = e.ClickedItem.ToolTipText;
+                  LoadDate(beginDate, endDate);
+              //  certificatePassGrid.Refresh();
                 certificatePassGrid.EndUpdate();
                 
             }
@@ -241,17 +245,20 @@ namespace ERP_NEW.GUI.OTK
             {
                 editBtn.Enabled = true;
                 contextMenuStrip.Enabled = true;
+
+               
             }
         }
 
         private void bandedGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView gv = sender as GridView;
-            if (gv.GetRowCellValue(e.RowHandle, "ColorName") != null)
+            if (gv.GetRowCellValue(e.RowHandle, "ColorName") != null) 
             {
                 string currentRowColor = gv.GetRowCellValue(e.RowHandle, "ColorName").ToString();
                 e.Appearance.BackColor = Color.FromName(currentRowColor);
             }
+            
             
 
         }
