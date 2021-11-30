@@ -33,16 +33,16 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.journalValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.beginDateEdit = new DevExpress.XtraEditors.DateEdit();
+            this.responsiblePersonEdit = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.weldStampEdit = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.responsiblePersonEdit = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.weldStampEdit = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.endDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -69,14 +69,6 @@
             this.journalValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.journalValidationProvider_ValidationFailed);
             this.journalValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.journalValidationProvider_ValidationSucceeded);
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 102);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(62, 13);
-            this.labelControl2.TabIndex = 39;
-            this.labelControl2.Text = "Дата видачі";
-            // 
             // beginDateEdit
             // 
             this.beginDateEdit.EditValue = null;
@@ -87,41 +79,13 @@
             this.beginDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.beginDateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.beginDateEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.beginDateEdit.Size = new System.Drawing.Size(141, 20);
             this.beginDateEdit.TabIndex = 35;
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
             conditionValidationRule1.ErrorText = "Виберіть дату видачі";
             this.journalValidationProvider.SetValidationRule(this.beginDateEdit, conditionValidationRule1);
             this.beginDateEdit.EditValueChanged += new System.EventHandler(this.beginDateEdit_EditValueChanged);
-            // 
-            // validateLbl
-            // 
-            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
-            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(12, 202);
-            this.validateLbl.Name = "validateLbl";
-            this.validateLbl.Size = new System.Drawing.Size(249, 13);
-            this.validateLbl.TabIndex = 38;
-            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(315, 233);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 37;
-            this.cancelBtn.Text = "Відміна";
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(234, 233);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 36;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // responsiblePersonEdit
             // 
@@ -158,14 +122,6 @@
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(12, 12);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(51, 13);
-            this.labelControl8.TabIndex = 58;
-            this.labelControl8.Text = "Працівник";
-            // 
             // weldStampEdit
             // 
             this.weldStampEdit.Location = new System.Drawing.Point(12, 76);
@@ -199,6 +155,51 @@
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 102);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(62, 13);
+            this.labelControl2.TabIndex = 39;
+            this.labelControl2.Text = "Дата видачі";
+            // 
+            // validateLbl
+            // 
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(12, 202);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 38;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelBtn.Location = new System.Drawing.Point(315, 233);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.TabIndex = 37;
+            this.cancelBtn.Text = "Відміна";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(234, 233);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 36;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(12, 12);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(51, 13);
+            this.labelControl8.TabIndex = 58;
+            this.labelControl8.Text = "Працівник";
+            // 
             // labelControl1
             // 
             this.labelControl1.Location = new System.Drawing.Point(12, 57);
@@ -218,6 +219,7 @@
             // endDateEdit
             // 
             this.endDateEdit.EditValue = null;
+            this.endDateEdit.EnterMoveNextControl = true;
             this.endDateEdit.Location = new System.Drawing.Point(12, 166);
             this.endDateEdit.Name = "endDateEdit";
             this.endDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -225,6 +227,7 @@
             this.endDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.endDateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.endDateEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.endDateEdit.Size = new System.Drawing.Size(141, 20);
             this.endDateEdit.TabIndex = 62;
             // 
