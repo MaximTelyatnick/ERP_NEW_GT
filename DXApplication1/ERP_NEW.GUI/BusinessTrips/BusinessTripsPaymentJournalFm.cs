@@ -994,30 +994,53 @@ namespace ERP_NEW.GUI.BusinessTrips
             
         }
 
-        
+        private void bstReportPaymentsBy473_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                splashScreenManager.ShowWaitForm();
 
-        
-            
-            
-            //try
-            //{
-            //    splashScreenManager.ShowWaitForm();
+                reportService = Program.kernel.Get<IReportService>();
 
-            //    reportService = Program.kernel.Get<IReportService>();
+                if (!reportService.GetBSTReportPrepaymentsByAccountId((DateTime)beginReportDateEdit.EditValue, (DateTime)endReportDateEdit.EditValue, 176, "473"))
+                    MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //    if (!reportService.GetBSTPaymentStatement((DateTime)paymentStatementDateEdit.EditValue, (DateTime)paymentStatementDateEdit.EditValue))
-            //        MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                splashScreenManager.CloseWaitForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //    splashScreenManager.CloseWaitForm();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                splashScreenManager.CloseWaitForm();
 
-            //    splashScreenManager.CloseWaitForm();
+                return;
+            }
+        }
 
-            //    return;
-            //}
+
+
+
+
+
+        //try
+        //{
+        //    splashScreenManager.ShowWaitForm();
+
+        //    reportService = Program.kernel.Get<IReportService>();
+
+        //    if (!reportService.GetBSTPaymentStatement((DateTime)paymentStatementDateEdit.EditValue, (DateTime)paymentStatementDateEdit.EditValue))
+        //        MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //    splashScreenManager.CloseWaitForm();
+        //}
+        //catch (Exception ex)
+        //{
+        //    MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        //    splashScreenManager.CloseWaitForm();
+
+        //    return;
+        //}
         //}
 
         //private void businessTripsGridView_RowStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowStyleEventArgs e)
@@ -1040,6 +1063,6 @@ namespace ERP_NEW.GUI.BusinessTrips
         //    //}
         //}
 
-      
+
     }
 }

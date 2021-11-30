@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusinessTripsPaymentJournalFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -44,7 +45,7 @@
             this.refreshBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bstCurrencyPeriod = new DevExpress.XtraBars.BarButtonGroup();
             this.reportBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.reportMenu = new DevExpress.XtraBars.PopupMenu();
+            this.reportMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.bstOSVReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bstCurrencyPeriodBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bstDocumentsReportBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -107,7 +108,7 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.standaloneBarDockControl2 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.prepaymentsGrid = new DevExpress.XtraGrid.GridControl();
-            this.colorContextMenu = new System.Windows.Forms.ContextMenuStrip();
+            this.colorContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.prepaymentsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.selectedCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.prepaymentRepository = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
@@ -132,7 +133,7 @@
             this.accountNumCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.paymentSumCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
-            this.barManager = new DevExpress.XtraBars.BarManager();
+            this.barManager = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.addPrepaymentBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editPrepaymentBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -149,8 +150,9 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
+            this.bstReportPaymentsBy473 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -232,9 +234,10 @@
             this.paymentStatementBtn,
             this.paymentStatementDateEdit,
             this.bstReportPaymentsBy313,
-            this.bstReportPaymentsBy3112});
+            this.bstReportPaymentsBy3112,
+            this.bstReportPaymentsBy473});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 33;
+            this.ribbonControl1.MaxItemId = 34;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -417,6 +420,7 @@
             this.reportMenu.ItemLinks.Add(this.bstEmployeesReportBtn);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy23);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy63);
+            this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy473);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy6412);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy313);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy3112);
@@ -1750,6 +1754,13 @@
             this.barEditItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barEditItem1.Name = "barEditItem1";
             // 
+            // bstReportPaymentsBy473
+            // 
+            this.bstReportPaymentsBy473.Caption = "Звіт по рахунку 473";
+            this.bstReportPaymentsBy473.Id = 33;
+            this.bstReportPaymentsBy473.Name = "bstReportPaymentsBy473";
+            this.bstReportPaymentsBy473.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy473_ItemClick);
+            // 
             // BusinessTripsPaymentJournalFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1935,5 +1946,6 @@
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy313;
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy3112;
         private DevExpress.XtraBars.BarButtonItem editPaymantAccountBtn;
+        private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy473;
     }
 }

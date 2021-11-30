@@ -286,7 +286,7 @@ namespace ERP_NEW.GUI.Accounting
             accountingInvoicesValidationProvider.Validate((Control)sender);
         }
 
-        private bool a, c, s, o, k, l, m;
+        public bool a, c, s, o, k, l, m;
         private void nameContaractorlookUpEdit_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)

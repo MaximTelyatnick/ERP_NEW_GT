@@ -670,7 +670,12 @@ namespace ERP_NEW.GUI
                     certificatePassFm.Text = "Сертифікати/паспорт";
                     certificatePassFm.MdiParent = this;
                     certificatePassFm.Show();
-                    //кнопка для новых сертификатов;
+                    break;
+                //кнопка для новых сертификатов;
+
+                case "deliveryNameSubItem":
+                    
+                    //кнопка для журнала перевозчиков;
 
                     break;
 
