@@ -43,7 +43,7 @@ namespace ERP_NEW.GUI.OTK
 
             splashScreenManager.ShowWaitForm();
 
-            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, LaidOffCheckItem.Checked);
 
             splashScreenManager.CloseWaitForm();
         }
@@ -57,10 +57,15 @@ namespace ERP_NEW.GUI.OTK
             deleteBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
         }
 
-        private void LoadJournalData(DateTime beginDate, DateTime endDate)
+        private void LoadJournalData(DateTime beginDate, DateTime endDate, bool personJob)
         {
             weldStampsService = Program.kernel.Get<IWeldStampsService>();
-            journalBS.DataSource = weldStampsService.GetWeldStampJournalByPeriod(beginDate, endDate);
+
+            if(personJob)
+                journalBS.DataSource = weldStampsService.GetWeldStampJournalByPeriod(beginDate, endDate);
+            else
+                journalBS.DataSource = weldStampsService.GetWeldStampJournalByPeriod(beginDate, endDate).Where(bd=>bd.EndDate == null).ToList();
+
             journalGrid.DataSource = journalBS;
         }
 
@@ -72,9 +77,7 @@ namespace ERP_NEW.GUI.OTK
                 {
                     int return_Id = weldStampJournalEditFm.Return();
                     journalGridView.BeginDataUpdate();
-
-                    LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
-
+                    LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, LaidOffCheckItem.Checked);
                     journalGridView.EndDataUpdate();
                     int rowHandle = journalGridView.LocateByValue("Id", return_Id);
                     journalGridView.FocusedRowHandle = rowHandle;
@@ -91,7 +94,7 @@ namespace ERP_NEW.GUI.OTK
             splashScreenManager.ShowWaitForm();
             
             journalGridView.BeginDataUpdate();
-            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, LaidOffCheckItem.Checked);
             journalGridView.EndDataUpdate();
             
             splashScreenManager.CloseWaitForm();
@@ -137,12 +140,24 @@ namespace ERP_NEW.GUI.OTK
             splashScreenManager.ShowWaitForm();
 
             journalGridView.BeginDataUpdate();
-            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+            LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, LaidOffCheckItem.Checked);
             journalGridView.EndDataUpdate();
 
             splashScreenManager.CloseWaitForm();
         }
 
+        private void barCheckItem1_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+
+                journalGridView.BeginDataUpdate();
+                LoadJournalData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, LaidOffCheckItem.Checked);
+                journalGridView.EndDataUpdate();
+
+        }
+
         #endregion
+
+ 
+        
     }
 }

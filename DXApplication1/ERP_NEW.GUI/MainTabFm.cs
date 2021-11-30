@@ -674,7 +674,10 @@ namespace ERP_NEW.GUI
                 //кнопка для новых сертификатов;
 
                 case "deliveryNameSubItem":
-                    
+                    DeliveryFm deliveryNameFm = new DeliveryFm(userTasksDTO);
+                    deliveryNameFm.Text = "Журнал перевізників";
+                    deliveryNameFm.MdiParent = this;
+                    deliveryNameFm.Show();
                     //кнопка для журнала перевозчиков;
 
                     break;

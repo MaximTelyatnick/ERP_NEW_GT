@@ -57,6 +57,8 @@
             this.beginDateCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.endDateCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.LaidOffCheckItem = new DevExpress.XtraBars.BarCheckItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -79,9 +81,11 @@
             this.addBtn,
             this.editBtn,
             this.deleteBtn,
-            this.refreshBtn});
+            this.refreshBtn,
+            this.barButtonItem1,
+            this.LaidOffCheckItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 8;
+            this.ribbonControl1.MaxItemId = 10;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -209,6 +213,7 @@
             // 
             this.ribbonPageGroup3.AllowTextClipping = false;
             this.ribbonPageGroup3.ItemLinks.Add(this.refreshBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.LaidOffCheckItem);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Функції";
             // 
@@ -380,6 +385,23 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Включаючи звільнених";
+            this.barButtonItem1.Id = 8;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // LaidOffCheckItem
+            // 
+            this.LaidOffCheckItem.BindableChecked = true;
+            this.LaidOffCheckItem.Caption = "вкл. звільнених";
+            this.LaidOffCheckItem.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.LaidOffCheckItem.Checked = true;
+            this.LaidOffCheckItem.Id = 9;
+            this.LaidOffCheckItem.Name = "LaidOffCheckItem";
+            this.LaidOffCheckItem.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.LaidOffCheckItem.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barCheckItem1_CheckedChanged);
+            // 
             // WeldStampJournalFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,5 +457,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn beginDateCol;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn endDateCol;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarCheckItem LaidOffCheckItem;
     }
 }
