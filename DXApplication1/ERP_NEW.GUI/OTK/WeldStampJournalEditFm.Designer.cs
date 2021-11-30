@@ -33,25 +33,25 @@
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.journalValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.beginDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
-            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.responsiblePersonEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.weldStampEdit = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.endDateEdit = new DevExpress.XtraEditors.DateEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.weldStampEdit = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.validateLbl = new DevExpress.XtraEditors.LabelControl();
+            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.endDateEdit = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.journalValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beginDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.beginDateEdit.Properties)).BeginInit();
@@ -69,14 +69,6 @@
             this.journalValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.journalValidationProvider_ValidationFailed);
             this.journalValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.journalValidationProvider_ValidationSucceeded);
             // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 102);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(62, 13);
-            this.labelControl2.TabIndex = 39;
-            this.labelControl2.Text = "Дата видачі";
-            // 
             // beginDateEdit
             // 
             this.beginDateEdit.EditValue = null;
@@ -93,35 +85,6 @@
             conditionValidationRule1.ErrorText = "Виберіть дату видачі";
             this.journalValidationProvider.SetValidationRule(this.beginDateEdit, conditionValidationRule1);
             this.beginDateEdit.EditValueChanged += new System.EventHandler(this.beginDateEdit_EditValueChanged);
-            // 
-            // validateLbl
-            // 
-            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
-            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(12, 202);
-            this.validateLbl.Name = "validateLbl";
-            this.validateLbl.Size = new System.Drawing.Size(249, 13);
-            this.validateLbl.TabIndex = 38;
-            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
-            // 
-            // cancelBtn
-            // 
-            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(315, 233);
-            this.cancelBtn.Name = "cancelBtn";
-            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-            this.cancelBtn.TabIndex = 37;
-            this.cancelBtn.Text = "Відміна";
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
-            // 
-            // saveBtn
-            // 
-            this.saveBtn.Location = new System.Drawing.Point(234, 233);
-            this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
-            this.saveBtn.TabIndex = 36;
-            this.saveBtn.Text = "Зберегти";
-            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // responsiblePersonEdit
             // 
@@ -157,99 +120,6 @@
             this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView2.OptionsView.ShowAutoFilterRow = true;
             this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(12, 12);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(51, 13);
-            this.labelControl8.TabIndex = 58;
-            this.labelControl8.Text = "Працівник";
-            // 
-            // weldStampEdit
-            // 
-            this.weldStampEdit.Location = new System.Drawing.Point(12, 76);
-            this.weldStampEdit.Name = "weldStampEdit";
-            this.weldStampEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
-            this.weldStampEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.weldStampEdit.Properties.ImmediatePopup = true;
-            this.weldStampEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
-            this.weldStampEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
-            this.weldStampEdit.Properties.View = this.gridView1;
-            this.weldStampEdit.Size = new System.Drawing.Size(380, 20);
-            this.weldStampEdit.TabIndex = 61;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "Виберіть клеймо";
-            conditionValidationRule3.Value1 = 0;
-            this.journalValidationProvider.SetValidationRule(this.weldStampEdit, conditionValidationRule3);
-            this.weldStampEdit.EditValueChanged += new System.EventHandler(this.weldStampEdit_EditValueChanged);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2});
-            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
-            this.gridView1.OptionsFind.AlwaysVisible = true;
-            this.gridView1.OptionsFind.SearchInPreview = true;
-            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.gridView1.OptionsView.ShowAutoFilterRow = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // labelControl1
-            // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 57);
-            this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(37, 13);
-            this.labelControl1.TabIndex = 60;
-            this.labelControl1.Text = "Клеймо";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 147);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(89, 13);
-            this.labelControl3.TabIndex = 63;
-            this.labelControl3.Text = "Дата повернення";
-            // 
-            // endDateEdit
-            // 
-            this.endDateEdit.EditValue = null;
-            this.endDateEdit.Location = new System.Drawing.Point(12, 166);
-            this.endDateEdit.Name = "endDateEdit";
-            this.endDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.endDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.endDateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
-            this.endDateEdit.Size = new System.Drawing.Size(141, 20);
-            this.endDateEdit.TabIndex = 62;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Номер";
-            this.gridColumn1.FieldName = "StampNumber";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 150;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Дата";
-            this.gridColumn2.FieldName = "StampDate";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 155;
             // 
             // gridColumn4
             // 
@@ -293,6 +163,137 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 3;
+            // 
+            // weldStampEdit
+            // 
+            this.weldStampEdit.Location = new System.Drawing.Point(12, 76);
+            this.weldStampEdit.Name = "weldStampEdit";
+            this.weldStampEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.weldStampEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.weldStampEdit.Properties.ImmediatePopup = true;
+            this.weldStampEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.weldStampEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
+            this.weldStampEdit.Properties.View = this.gridView1;
+            this.weldStampEdit.Size = new System.Drawing.Size(380, 20);
+            this.weldStampEdit.TabIndex = 61;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule3.ErrorText = "Виберіть клеймо";
+            conditionValidationRule3.Value1 = 0;
+            this.journalValidationProvider.SetValidationRule(this.weldStampEdit, conditionValidationRule3);
+            this.weldStampEdit.EditValueChanged += new System.EventHandler(this.weldStampEdit_EditValueChanged);
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.SearchInPreview = true;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Номер";
+            this.gridColumn1.FieldName = "StampNumber";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 150;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Дата";
+            this.gridColumn2.FieldName = "StampDate";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 155;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(12, 102);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(62, 13);
+            this.labelControl2.TabIndex = 39;
+            this.labelControl2.Text = "Дата видачі";
+            // 
+            // validateLbl
+            // 
+            this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
+            this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
+            this.validateLbl.Location = new System.Drawing.Point(12, 202);
+            this.validateLbl.Name = "validateLbl";
+            this.validateLbl.Size = new System.Drawing.Size(249, 13);
+            this.validateLbl.TabIndex = 38;
+            this.validateLbl.Text = "*Для збереження, заповніть всі обов\'язкові поля";
+            // 
+            // cancelBtn
+            // 
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelBtn.Location = new System.Drawing.Point(315, 233);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(75, 23);
+            this.cancelBtn.TabIndex = 37;
+            this.cancelBtn.Text = "Відміна";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Location = new System.Drawing.Point(234, 233);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.TabIndex = 36;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(12, 12);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(51, 13);
+            this.labelControl8.TabIndex = 58;
+            this.labelControl8.Text = "Працівник";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Location = new System.Drawing.Point(12, 57);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(37, 13);
+            this.labelControl1.TabIndex = 60;
+            this.labelControl1.Text = "Клеймо";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(12, 147);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(89, 13);
+            this.labelControl3.TabIndex = 63;
+            this.labelControl3.Text = "Дата повернення";
+            // 
+            // endDateEdit
+            // 
+            this.endDateEdit.EditValue = null;
+            this.endDateEdit.Location = new System.Drawing.Point(12, 166);
+            this.endDateEdit.Name = "endDateEdit";
+            this.endDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.endDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.endDateEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.endDateEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.endDateEdit.Size = new System.Drawing.Size(141, 20);
+            this.endDateEdit.TabIndex = 62;
             // 
             // WeldStampJournalEditFm
             // 
