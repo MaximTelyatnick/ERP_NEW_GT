@@ -30,7 +30,7 @@ namespace ERP_NEW.GUI.Tools
 
             userService = Program.kernel.Get<IUserService>();
             _roleId = roleId;
-            source = userService.GetUsers().Where(s => s.UserRoleId != roleId).ToList();
+            source = userService.GetUsers().Where(s => s.UserRoleId != roleId && s.UserId == null).ToList();
             usersByRolesBS.DataSource = source;
             usersByRolesGrid.DataSource = usersByRolesBS;
         }

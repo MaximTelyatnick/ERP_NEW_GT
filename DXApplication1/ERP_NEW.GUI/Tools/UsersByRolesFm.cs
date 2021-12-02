@@ -102,6 +102,12 @@ namespace ERP_NEW.GUI.Tools
         {
             if (userTasksBS.Count > 0)
             {
+                if (userService.GetUsers().Any(srch => srch.UserRoleId == ((UserTasksDTO)userTasksBS.Current).UserRoleId))
+                {
+                    MessageBox.Show("Перед видаленням пункту меню, необхідно видалити усіх користувачів!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (MessageBox.Show("Видалити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (this.userService.UserTaskDeleteById(((UserTasksDTO)userTasksBS.Current).UserTaskId))
