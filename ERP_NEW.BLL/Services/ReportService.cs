@@ -15860,7 +15860,7 @@ namespace ERP_NEW.BLL.Services
                 Сells["C" + startWith].Borders[BordersIndex.EdgeRight].Weight = BorderWeight.Medium;
 
                 Сells["D" + startWith].Value = reportList[i].RemainsQuantityBegin;
-                Сells["D" + startWith].NumberFormat = "### ### ##0.0000";
+                Сells["D" + startWith].NumberFormat = "### ### ##0.000000";
                 Сells["D" + startWith].Borders.LineStyle = LineStyle.Continous;
                 Сells["D" + startWith].Font.Size = fontSize;
 
@@ -15891,7 +15891,7 @@ namespace ERP_NEW.BLL.Services
                 Сells["I" + startWith].Borders[BordersIndex.EdgeRight].Weight = BorderWeight.Medium;
 
                 Сells["J" + startWith].Value = reportList[i].RemainsQuantityEnd;
-                Сells["J" + startWith].NumberFormat = "### ### ##0.0000";
+                Сells["J" + startWith].NumberFormat = "### ### ##0.000000";
                 Сells["J" + startWith].Borders.LineStyle = LineStyle.Continous;
                 Сells["J" + startWith].Font.Size = fontSize;
 
