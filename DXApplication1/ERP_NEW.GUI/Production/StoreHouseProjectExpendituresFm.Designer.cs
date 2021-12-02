@@ -116,6 +116,7 @@
             this.priceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.accCheckCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
@@ -123,7 +124,6 @@
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit2 = new DevExpress.XtraEditors.PictureEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
-            this.accCheckCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -919,14 +919,19 @@
             this.accCheckCol});
             this.expendituresGridView.GridControl = this.expendituresGrid;
             this.expendituresGridView.GroupCount = 1;
+            this.expendituresGridView.GroupFormat = "{0:### ### ##0.00}";
             this.expendituresGridView.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", this.quantityCol, "Всього по заказу = {0:0.######}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PRICE", this.priceCol, " {0:0.######}"),
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, null, this.quantityCol, "Всього по заказу =")});
             this.expendituresGridView.Name = "expendituresGridView";
             this.expendituresGridView.OptionsBehavior.AlignGroupSummaryInGroupRow = DevExpress.Utils.DefaultBoolean.True;
             this.expendituresGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.expendituresGridView.OptionsMenu.ShowGroupSummaryEditorItem = true;
             this.expendituresGridView.OptionsPrint.PrintGroupFooter = false;
             this.expendituresGridView.OptionsView.ShowAutoFilterRow = true;
             this.expendituresGridView.OptionsView.ShowFooter = true;
+            this.expendituresGridView.OptionsView.ShowGroupedColumns = true;
+            this.expendituresGridView.OptionsView.ShowGroupPanel = false;
             this.expendituresGridView.OptionsView.ShowPreview = true;
             this.expendituresGridView.OptionsView.WaitAnimationOptions = DevExpress.XtraEditors.WaitAnimationOptions.Indicator;
             this.expendituresGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
@@ -1154,6 +1159,8 @@
             this.priceCol.Name = "priceCol";
             this.priceCol.OptionsColumn.AllowEdit = false;
             this.priceCol.OptionsColumn.AllowFocus = false;
+            this.priceCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PRICE", "{0:### ### ##0.00}")});
             this.priceCol.Visible = true;
             this.priceCol.VisibleIndex = 7;
             this.priceCol.Width = 105;
@@ -1178,6 +1185,14 @@
             this.repositoryItemCheckEdit.Name = "repositoryItemCheckEdit";
             this.repositoryItemCheckEdit.CheckedChanged += new System.EventHandler(this.repositoryItemCheckEdit_CheckedChanged);
             this.repositoryItemCheckEdit.CheckStateChanged += new System.EventHandler(this.repositoryItemCheckEdit_CheckStateChanged);
+            // 
+            // accCheckCol
+            // 
+            this.accCheckCol.MinWidth = 16;
+            this.accCheckCol.Name = "accCheckCol";
+            this.accCheckCol.Visible = true;
+            this.accCheckCol.VisibleIndex = 13;
+            this.accCheckCol.Width = 16;
             // 
             // imageCollection
             // 
@@ -1249,14 +1264,6 @@
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
             this.pictureEdit1.Size = new System.Drawing.Size(26, 25);
             this.pictureEdit1.TabIndex = 0;
-            // 
-            // accCheckCol
-            // 
-            this.accCheckCol.MinWidth = 16;
-            this.accCheckCol.Name = "accCheckCol";
-            this.accCheckCol.Visible = true;
-            this.accCheckCol.VisibleIndex = 13;
-            this.accCheckCol.Width = 16;
             // 
             // StoreHouseProjectExpendituresFm
             // 
