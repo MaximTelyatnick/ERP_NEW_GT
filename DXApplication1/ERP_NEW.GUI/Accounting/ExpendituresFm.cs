@@ -18,6 +18,7 @@ using DevExpress.XtraPrinting;
 using System.IO;
 using DevExpress.Export;
 using DevExpress.XtraGrid.Views.Grid;
+using ERP_NEW.GUI.OTK;
 
 namespace ERP_NEW.GUI.Accounting
 {
@@ -422,6 +423,13 @@ namespace ERP_NEW.GUI.Accounting
             EditExpedintures(model, Utils.Operation.Custom, userTasksDTO);
         }
 
-        #endregion    
+        #endregion
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+          
+           ExpenditureByOrdersFm expenditureByOrdersFm = new ExpenditureByOrdersFm();
+            expenditureByOrdersFm.Show();
+        }
     }
 }

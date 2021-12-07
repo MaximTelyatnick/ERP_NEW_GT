@@ -582,10 +582,5 @@ namespace ERP_NEW.GUI.Production
 
 
         }
-
-        
-
-
-
     }
 }

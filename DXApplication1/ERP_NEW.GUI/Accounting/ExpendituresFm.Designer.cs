@@ -114,6 +114,7 @@
             this.bandedGridColumn22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.expendituresRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -150,9 +151,10 @@
             this.periodBtn,
             this.showStorehouseExpBtn,
             this.editOrderBtn,
-            this.showBadRowBtn});
+            this.showBadRowBtn,
+            this.barButtonItem1});
             this.expendituresRibbon.Location = new System.Drawing.Point(0, 0);
-            this.expendituresRibbon.MaxItemId = 2;
+            this.expendituresRibbon.MaxItemId = 3;
             this.expendituresRibbon.Name = "expendituresRibbon";
             this.expendituresRibbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -407,6 +409,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.reportBtn);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem1);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Функції";
             // 
@@ -1354,6 +1357,14 @@
             this.panelControl1.Size = new System.Drawing.Size(1762, 465);
             this.panelControl1.TabIndex = 8;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Списання за проєктами";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ImageUri.Uri = "Edit";
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ExpendituresFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1470,5 +1481,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand id;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
