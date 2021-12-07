@@ -139,6 +139,7 @@
             this.decreeItemMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.expFixeAssetsBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.fixedAssessOrderTab)).BeginInit();
             this.fixedAssessOrderTab.SuspendLayout();
             this.fixedAssestsTabPage.SuspendLayout();
@@ -238,9 +239,10 @@
             this.regJournalOrderBtn,
             this.journalOrderBtn,
             this.ribbonGalleryBarItem1,
-            this.actWriteOffBtn});
+            this.actWriteOffBtn,
+            this.expFixeAssetsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -461,6 +463,7 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.soldFixeAssetsBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.transferFixeAssetsBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.regJournalOrderBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.expFixeAssetsBtn);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Операції із засобами";
             // 
@@ -1643,6 +1646,14 @@
             this.imageCollection.Images.SetKeyName(2, "32_bullet-red.png");
             this.imageCollection.Images.SetKeyName(3, "32_bullet-blue.png");
             // 
+            // expFixeAssetsBtn
+            // 
+            this.expFixeAssetsBtn.Caption = "Списання";
+            this.expFixeAssetsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("expFixeAssetsBtn.Glyph")));
+            this.expFixeAssetsBtn.Id = 3;
+            this.expFixeAssetsBtn.Name = "expFixeAssetsBtn";
+            this.expFixeAssetsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // FixedAssetsOrderFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1805,6 +1816,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem actWriteOffBtn;
-
+        private DevExpress.XtraBars.BarButtonItem expFixeAssetsBtn;
     }
 }

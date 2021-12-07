@@ -9,5 +9,6 @@ namespace ERP_NEW.DAL.Entities.Models
         [Key]
         public int RoleId { get; set; }
         public string RoleName { get; set; }
+        public int? DepartmentId { get; set; }
     }
 }

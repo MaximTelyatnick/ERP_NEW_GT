@@ -114,6 +114,12 @@ namespace ERP_NEW.GUI.Accounting
                     e.Appearance.BackColor = Color.LightBlue;
                     e.Appearance.BackColor2 = Color.SteelBlue;
                 }
+                if (gv.GetRowCellValue(e.RowHandle, "OperationStatus") != null && gv.GetRowCellValue(e.RowHandle, "OperationStatus").Equals(4))//transfer
+                {
+                    e.Appearance.BackColor = Color.LightSalmon;
+                    e.Appearance.BackColor2 = Color.LightYellow;
+                }
+
             }
         }
     }
