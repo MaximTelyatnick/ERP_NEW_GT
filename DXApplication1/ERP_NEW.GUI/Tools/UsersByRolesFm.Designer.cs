@@ -34,6 +34,7 @@
             this.userRolesGrid = new DevExpress.XtraGrid.GridControl();
             this.userRolesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.roleNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.departCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.standaloneBarDockControl4 = new DevExpress.XtraBars.StandaloneBarDockControl();
@@ -64,7 +65,6 @@
             this.tasksEditItem = new DevExpress.XtraBars.BarButtonItem();
             this.taskDeleteItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.departCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -145,6 +145,14 @@
             this.roleNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.roleNameCol.Visible = true;
             this.roleNameCol.VisibleIndex = 0;
+            // 
+            // departCol
+            // 
+            this.departCol.Caption = "Відділ";
+            this.departCol.FieldName = "DepartmentName";
+            this.departCol.Name = "departCol";
+            this.departCol.Visible = true;
+            this.departCol.VisibleIndex = 1;
             // 
             // splitContainerControl2
             // 
@@ -496,14 +504,6 @@
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.Size = new System.Drawing.Size(1423, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
-            // 
-            // departCol
-            // 
-            this.departCol.Caption = "Отдел";
-            this.departCol.FieldName = "DepartmentName";
-            this.departCol.Name = "departCol";
-            this.departCol.Visible = true;
-            this.departCol.VisibleIndex = 1;
             // 
             // UsersByRolesFm
             // 

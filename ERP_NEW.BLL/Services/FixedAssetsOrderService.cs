@@ -245,7 +245,8 @@ namespace ERP_NEW.BLL.Services
                         fam.Flag == 0 ? 0 :
                         fam.Flag == 1 ? 1 :
                         fam.Flag == 2 ? 2 :
-                        fam.Flag == 3 ? 3 : -1),
+                        fam.Flag == 3 ? 3 :
+                        fam.Flag == 4 ? 4 : -1),
                       MaterialsDate = fam.MaterialsDate,
                       SoldPrice = fam.SoldPrice,
                       Description = fam.Description,
@@ -271,7 +272,8 @@ namespace ERP_NEW.BLL.Services
                        fam.Flag == 0 ? "Основний засіб" :
                        fam.Flag == 1 ? "Збільшення вартості" :
                        fam.Flag == 2 ? "Корегуввання" :
-                       fam.Flag == 3 ? "Корегування початкової вартості" : "---")
+                       fam.Flag == 3 ? "Корегування початкової вартості" :
+                       fam.Flag == 4 ? "Списання": "---")
 
 
                   });
@@ -312,7 +314,12 @@ namespace ERP_NEW.BLL.Services
                 return false;
 
         }
-        
+
+        public FixedAssetsOrderRegistrationDTO GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(int id, int type)
+        {
+            return mapper.Map<FixedAssetsOrderRegistration, FixedAssetsOrderRegistrationDTO>(fixedAssetsOrderRegistration.GetAll().SingleOrDefault(s => s.FixedAssetsOrderId == id && s.StatusTypeOrder == type));
+        }
+
 
 
 
@@ -368,9 +375,9 @@ namespace ERP_NEW.BLL.Services
                 return false;
             }
         }
+        #endregion  
 
-
-        //
+        #region FixedAccestsOrderRegistration CRUD method's
         public int FixedAssetsOrderRegistrationCreate(FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistrationDTO)
         {
             var createFixedAssetsOrderRegistration = fixedAssetsOrderRegistration.Create(mapper.Map<FixedAssetsOrderRegistration>(fixedAssetsOrderRegistrationDTO));
@@ -397,6 +404,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         #endregion
+        
         #region FixedAssetsOrderReport
 
         public IEnumerable<FixedAssetsOrderReportStraitDTO> GetFixedAssetsReportStrait(DateTime endDate)

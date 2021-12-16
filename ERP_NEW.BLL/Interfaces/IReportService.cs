@@ -117,11 +117,14 @@ namespace ERP_NEW.BLL.Interfaces
         void PrintInventoryCardForSoftware(FixedAssetsOrderJournalDTO model);
         void PrintFixedAssetsOrderAct(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource);
         void PrintFixedAssetsOrderActWriteOff(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, int monthSource, int yearSource);
+
+        void PrintFixedAssetsOrderExpenditureAct(FixedAssetsOrderArchiveJournalDTO model, FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistration = null);
         void PrintFixedAssetsOrderActForSoftware(FixedAssetsOrderJournalDTO model);
         void FixedAssetsDecreeInput(FixedAssetsOrderRegJournalDTO model, List<FixedAssetsMaterialsDTO> modelMaterials);
         void FixedAssetsDecreeAddedPrice(FixedAssetsOrderRegJournalDTO model, FixedAssetsMaterialsDTO modelMaterials);
         void PrintFixedAssetsOrderActForSaleSoftWare(FixedAssetsOrderRegJournalDTO model);
         void PrintFixedAssetsDecreeSold(FixedAssetsOrderRegJournalDTO model);
+        void PrintFixedAssetsDecreeExpenditure(FixedAssetsOrderRegJournalDTO model);
         void PrintAllJournalFixedAssetsOder(List<FixedAssetsOrderRegJournalDTO> modelList, DateTime beginDate, DateTime endDate);
         void FixedAssetsReportStrait(List<FixedAssetsOrderReportStraitDTO> model, DateTime startDate, DateTime endDate, Boolean Zero);
         void FixedAssetsReportGroupShort(List<FixedAssetsOrderByGroupShortReportDTO> model, DateTime startDate, DateTime endDate);

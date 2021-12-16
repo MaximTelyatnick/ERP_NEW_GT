@@ -223,6 +223,21 @@ namespace ERP_NEW.GUI.Accounting
                 }
             }
         }
+
+        private void ExpenditureFixedAssetsOrder(FixedAssetsOrderDTO model, List<FixedAssetsMaterialsDTO> materialsListSource)
+        {
+            using (FixedAssetsOrderExpenFm fixedAssetsOrderExpen = new FixedAssetsOrderExpenFm(model, materialsListSource))
+            {
+                if (fixedAssetsOrderExpen.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    FixedAssetsOrderDTO return_Id = fixedAssetsOrderExpen.ReturnInt();
+                    LoadFixedAssetsOrder();
+                    int rowHandle = fixedAssetsOrderGridView.LocateByValue("Id", return_Id.Id);
+                    fixedAssetsOrderGridView.FocusedRowHandle = rowHandle;
+                }
+            }
+        }
+
         private void TransferFixedAssetsOrder(FixedAssetsOrderDTO model, List<FixedAssetsMaterialsDTO> materialsListSource)
         {
             using (FixedAssetsOrderTransferFm fixedAssetsOrderTransferFm = new FixedAssetsOrderTransferFm(model, materialsListSource))
@@ -583,7 +598,7 @@ namespace ERP_NEW.GUI.Accounting
                     e.Appearance.BackColor = Color.LightBlue;
                     e.Appearance.BackColor2 = Color.SteelBlue;
                 }
-                if (gv.GetRowCellValue(e.RowHandle, "OperationStatus") != null && gv.GetRowCellValue(e.RowHandle, "OperationStatus").Equals(4))//transfer
+                if (gv.GetRowCellValue(e.RowHandle, "OperationStatus") != null && gv.GetRowCellValue(e.RowHandle, "OperationStatus").Equals(4))//expenditure
                 {
                     e.Appearance.BackColor = Color.Yellow;
                     e.Appearance.BackColor2 = Color.Orange;
@@ -673,6 +688,7 @@ namespace ERP_NEW.GUI.Accounting
                         break;
 
                     case 2:
+                    case 4:
                         allMaterailsList.Where(a => a.FixedAssetsOrder_Id == orderId).ToList().ForEach(r => r.SoldPrice = null);
                         FixedAssetsMaterialsDTO newModelMaterials = new FixedAssetsMaterialsDTO()
                         {
@@ -748,6 +764,8 @@ namespace ERP_NEW.GUI.Accounting
                                                     };
                                     fixedAssetsOrderService.FixedAssetsOrderUpdate(newModelFixedOrderForSale);
                                 }
+
+
                             }
                         }
                         break;
@@ -784,6 +802,7 @@ namespace ERP_NEW.GUI.Accounting
 
                         //break;
                 }
+                LoadFixedAssetsOrderArchive((DateTime)beginDateArchiveEdit.EditValue, (DateTime)endDateArchiveEdit.EditValue);
             }
         }
         #endregion
@@ -819,37 +838,154 @@ namespace ERP_NEW.GUI.Accounting
         {
                  new FixedAssetsOrderAddJournalFm(model, modelArchive,rezTagTabPage,fixedAssetsOrderMaterialsBS,firstDay,lastDay).Show();
         }
-        private void RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
+
+        private void expFixeAssetsBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            new FixedAssetsOrderAddJournalFm(model, modelArchive, rezTagTabPage, fixedAssetsOrderMaterialsBS,beginDateArchive,endDateArchive).Show();
+            FixedAssetsOrderDTO model = new FixedAssetsOrderDTO()
+            {
+                Id = ((FixedAssetsOrderJournalDTO)ItemJournal).Id,
+                Id_Parent = ((FixedAssetsOrderJournalDTO)ItemJournal).Id_Parent,
+                Balance_Account_Id = ((FixedAssetsOrderJournalDTO)ItemJournal).Balance_Account_Id,
+                BeginDate = ((FixedAssetsOrderJournalDTO)ItemJournal).BeginDate,
+                CurrentAmortization = ((FixedAssetsOrderJournalDTO)ItemJournal).CurrentAmortization,
+                CurrentPrice = ((FixedAssetsOrderJournalDTO)ItemJournal).CurrentPrice,
+                FixedAccountId = ((FixedAssetsOrderJournalDTO)ItemJournal).FixedAccountId,
+                FixedAccountNum = ((FixedAssetsOrderJournalDTO)ItemJournal).FixedAccountNum,
+                Group_Id = ((FixedAssetsOrderJournalDTO)ItemJournal).GroupId,
+                GroupName = ((FixedAssetsOrderJournalDTO)ItemJournal).GroupName,
+                UsefulMonth = ((FixedAssetsOrderJournalDTO)ItemJournal).UsefulMonth,
+                IncreasePrice = ((FixedAssetsOrderJournalDTO)ItemJournal).IncreasePrice,
+                InventoryName = ((FixedAssetsOrderJournalDTO)ItemJournal).InventoryName,
+                InventoryNumber = ((FixedAssetsOrderJournalDTO)ItemJournal).InventoryNumber,
+                OperatingPerson_Id = ((FixedAssetsOrderJournalDTO)ItemJournal).OperatingPerson_Id,
+                OperatingPersonName = ((FixedAssetsOrderJournalDTO)ItemJournal).OperatingPersonName,
+                PeriodAmortization = ((FixedAssetsOrderJournalDTO)ItemJournal).PeriodAmortization,
+                PeriodYearAmortization = ((FixedAssetsOrderJournalDTO)ItemJournal).PeriodYearAmortization,
+                Region_Id = ((FixedAssetsOrderJournalDTO)ItemJournal).Region_Id,
+                RegionName = ((FixedAssetsOrderJournalDTO)ItemJournal).RegionName,
+                Supplier_Id = ((FixedAssetsOrderJournalDTO)ItemJournal).SupplierId,
+                SupplierName = ((FixedAssetsOrderJournalDTO)ItemJournal).SupplierName,
+                TotalPrice = ((FixedAssetsOrderJournalDTO)ItemJournal).TotalPrice,
+                BeginRecordDate = ((FixedAssetsOrderJournalDTO)ItemJournal).BeginRecordDate,
+                EndRecordDate = ((FixedAssetsOrderJournalDTO)ItemJournal).EndRecordDate,
+                FixedCardStatus = ((FixedAssetsOrderJournalDTO)ItemJournal).FixedCardStatus,
+                BeginPrice = ((FixedAssetsOrderJournalDTO)ItemJournal).BeginPrice,
+                BalanceAccountNum = ((FixedAssetsOrderJournalDTO)ItemJournal).BalanceAccountNum
+            };
+            ExpenditureFixedAssetsOrder((FixedAssetsOrderDTO)model, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
+        }
+
+        private void printActExpenditureBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+
+            if (fixedAssetsOrderArchiveBS.Count > 0)
+            {
+
+                FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
+                if (currentFixedAssetsOrderReg == null)
+                {
+                    if (MessageBox.Show("Не сформовано наказ, створити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            FixedAssetsOrderJournalDTO newModel = ConvertArchiveJournalToJournal();
+                            RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+                else
+                    PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+            }
+            else MessageBox.Show("Оберіть основний засіб! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
 
+        public void PrintFixedAssetsOrderExpenditureAct(FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistration)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            short group = (short)(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId);
+            switch (group)
+            {
+                case 10:
+                case 2:
+                    reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, fixedAssetsOrderRegistration);
+                    break;
+                default:
+                    reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, fixedAssetsOrderRegistration);
+                    break;
+            }
+        }
+
+        //private void RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
+        //{
+        //    new FixedAssetsOrderAddJournalFm(model, modelArchive, rezTagTabPage, fixedAssetsOrderMaterialsBS,beginDateArchive,endDateArchive).Show();
+        //}
+
+        private void RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
+        {
+            using (FixedAssetsOrderAddJournalFm fixedAssetsOrderAddJournalFm = new FixedAssetsOrderAddJournalFm(model, modelArchive, rezTagTabPage, fixedAssetsOrderMaterialsBS, beginDateArchive, endDateArchive))
+            {
+                if (fixedAssetsOrderAddJournalFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    
+
+                }
+            }
+        }
+
+
+        public FixedAssetsOrderJournalDTO ConvertArchiveJournalToJournal()
+        {
+            FixedAssetsOrderJournalDTO newModel = new FixedAssetsOrderJournalDTO()
+            {
+                Balance_Account_Id = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).Balance_Account_Id,
+                BalanceAccountNum = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BalanceAccountNum,
+                FixedCardStatus = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).FixedCardStatus,
+                GroupId = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).GroupId,
+                GroupName = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).GroupName,
+                InventoryName = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).InventoryName,
+                InventoryNumber = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).InventoryNumber,
+                Id = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).Id,
+                BeginRecordDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BeginRecordDate,
+                BeginDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BeginDate,
+                EndRecordDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).EndRecordDate,
+                SupplierName = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).SupplierName
+            };
+
+            return newModel;
+        }
 
         private void regArchiveBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (fixedAssetsOrderArchiveBS.Count != 0 && ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).OperationStatus!=1)
             {
+                if(fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4)!=null)
+                {
+                    MessageBox.Show("Основний засіб вже списано наказом на списання!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                if (fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 3) != null)
+                {
+                    MessageBox.Show("Основний засіб вже списано наказом на продаж!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 try
                 {
-                    FixedAssetsOrderJournalDTO newModel = new FixedAssetsOrderJournalDTO()
-                    {
-                        Balance_Account_Id = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).Balance_Account_Id,
-                        BalanceAccountNum = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BalanceAccountNum,
-                        FixedCardStatus = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).FixedCardStatus,
-                        GroupId = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).GroupId,
-                        GroupName = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).GroupName,
-                        InventoryName = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).InventoryName,
-                        InventoryNumber = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).InventoryNumber,
-                        Id = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).Id,
-                        BeginRecordDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BeginRecordDate,
-                        BeginDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).BeginDate,
-                        EndRecordDate = ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).EndRecordDate,
-                         SupplierName=((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).SupplierName
-                        
- 
-
-                    };
+                    FixedAssetsOrderJournalDTO newModel = ConvertArchiveJournalToJournal();
                     RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
                 }
                 catch (Exception ex)
@@ -857,7 +993,7 @@ namespace ERP_NEW.GUI.Accounting
                     MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else MessageBox.Show("Помилка! Необхідно обрати картку з полем Продаж!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else MessageBox.Show("Помилка! Необхідно обрати картку з полем продаж або списання!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void fixedAssessOrderTab_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)

@@ -252,8 +252,12 @@
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.cancelBtn);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FixedAssetsOrderExpenFm";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Списання основного засобу";
             ((System.ComponentModel.ISupportInitialize)(this.soldFixedAssetsOrderGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soldFixedAssetsOrderGridView)).EndInit();
