@@ -181,9 +181,17 @@ namespace ERP_NEW.BLL.Infrastructure
             }
         }
 
-        
-        
-        
+        public enum FixedAssetsDecreeType
+        {
+            Add,
+            Increase,
+            Sold,
+            Expenditure
+        };
+
+
+
+
 
     }
 }

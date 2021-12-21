@@ -33,8 +33,8 @@
     <ProductName>ERP Techvagonmash</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Корпоративна інформаційна система</SuiteName>
-    <MinimumRequiredVersion>1.0.0.433</MinimumRequiredVersion>
-    <ApplicationRevision>434</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.436</MinimumRequiredVersion>
+    <ApplicationRevision>437</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -545,6 +545,12 @@
     </Compile>
     <Compile Include="Accounting\FixedAssetsOrderEditFm.Designer.cs">
       <DependentUpon>FixedAssetsOrderEditFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\FixedAssetsOrderExpenFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\FixedAssetsOrderExpenFm.Designer.cs">
+      <DependentUpon>FixedAssetsOrderExpenFm.cs</DependentUpon>
     </Compile>
     <Compile Include="Accounting\FixedAssetsOrderFm.cs">
       <SubType>Form</SubType>
@@ -1801,6 +1807,9 @@
     <EmbeddedResource Include="Accounting\FixedAssetsOrderEditFm.resx">
       <DependentUpon>FixedAssetsOrderEditFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\FixedAssetsOrderExpenFm.resx">
+      <DependentUpon>FixedAssetsOrderExpenFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounting\FixedAssetsOrderFm.resx">
       <DependentUpon>FixedAssetsOrderFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2529,6 +2538,8 @@
     <Content Include="Temp\Templates\PackingListTemplate.xls" />
     <Content Include="Temp\Templates\ChessTemplate.xls" />
     <Content Include="Temp\Pdf\OperatorDbManual.xls" />
+    <Content Include="Temp\Templates\FixedAssetsOrderActExpenditure.xls" />
+    <Content Include="Temp\Templates\FixedAssetsDecreeExpenditureTemplate.xls" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

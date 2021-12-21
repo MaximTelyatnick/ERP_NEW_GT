@@ -136,7 +136,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void Delete()
         {
-            if (MessageBox.Show("Видалити рахунок під номером " + ((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).FixedAssetsOrderId + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Видалити рахунок під номером " + ((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).NumberOrder + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (fixedAssetsOrderService.FixedAssetsOrderRegistrationDelete(((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).Id))
                 {
@@ -156,23 +156,47 @@ namespace ERP_NEW.GUI.Accounting
             var currentRowMaterials = (FixedAssetsMaterialsDTO)fixedAssetsOrderMaterialsBS.Current;
             short group = (short)(((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).GroupId);
             List<FixedAssetsMaterialsDTO> materialsList = fixedAssetsOrderMaterialsBS.DataSource as List<FixedAssetsMaterialsDTO>; ;
-            if (currentRow.StatusTypeOrder == 1)
-                reportService.FixedAssetsDecreeInput(currentRow, materialsList);
-            if (currentRow.StatusTypeOrder == 2)
-                if (currentRowMaterials.Flag==1)
-                    reportService.FixedAssetsDecreeAddedPrice(currentRow, currentRowMaterials);
-                else MessageBox.Show(" Обрано не вірний матеріал! \n Виберіть матеріл, який збільшив вартість основного засобу.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);           
-            if (currentRow.StatusTypeOrder == 3)
-                switch (currentRow.GroupId)//group)
-                {
-                    case 10:
-                    case 2:
-                        reportService.PrintFixedAssetsOrderActForSaleSoftWare(currentRow);
-                        break;
-                    default:
-                        reportService.PrintFixedAssetsDecreeSold((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current);
-                        break;
-                }
+            switch (currentRow.StatusTypeOrder )     
+            {
+                case 1:
+                    reportService.FixedAssetsDecreeInput(currentRow, materialsList);
+                    break;
+                case 2:
+                    if (currentRowMaterials.Flag == 1)
+                        reportService.FixedAssetsDecreeAddedPrice(currentRow, currentRowMaterials);
+                    else MessageBox.Show(" Обрано не вірний матеріал! \n Виберіть матеріл, який збільшив вартість основного засобу.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 3:
+                    switch (currentRow.GroupId)//group)
+                    {
+                        case 10:
+                        case 2:
+                            reportService.PrintFixedAssetsOrderActForSaleSoftWare(currentRow);
+                            break;
+                        default:
+                            reportService.PrintFixedAssetsDecreeSold((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current);
+                            break;
+                    }
+                    break;
+                case 4:
+                    reportService.PrintFixedAssetsDecreeExpenditure((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current);
+                    break;
+                default:
+                    break;
+            }
+
+
+            //if (currentRow.StatusTypeOrder == 1)
+            //    reportService.FixedAssetsDecreeInput(currentRow, materialsList);
+            //if (currentRow.StatusTypeOrder == 2)
+            //    if (currentRowMaterials.Flag==1)
+            //        reportService.FixedAssetsDecreeAddedPrice(currentRow, currentRowMaterials);
+            //    else MessageBox.Show(" Обрано не вірний матеріал! \n Виберіть матеріл, який збільшив вартість основного засобу.", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);           
+            //if (currentRow.StatusTypeOrder == 3)
+                
+            //if (currentRow.StatusTypeOrder == 4)
+                
+                
         }
         private void fixedAssetsMaterialsJournalGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
@@ -214,17 +238,23 @@ namespace ERP_NEW.GUI.Accounting
             GridView gv = sender as GridView;
             if (e.Column.Name == "typeOrderCol")
             {
-                if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(2))//sale
+                if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(2))//increase
                 {
-                    e.Appearance.BackColor = Color.LawnGreen;
-                    e.Appearance.BackColor2 = Color.Green;
+                    e.Appearance.BackColor = Color.Aquamarine;
+                    e.Appearance.BackColor2 = Color.MediumAquamarine;
                 }
                 if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(1))//transfer
                 {
-                    e.Appearance.BackColor = Color.LightCyan;
-                    e.Appearance.BackColor2 = Color.SkyBlue;
+                    e.Appearance.BackColor = Color.LightBlue;
+                    e.Appearance.BackColor2 = Color.SteelBlue;
+
                 }
-                if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(3))//transfer
+                if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(3))//sale
+                {
+                    e.Appearance.BackColor = Color.LightGreen;
+                    e.Appearance.BackColor2 = Color.Green;
+                }
+                if (gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder") != null && gv.GetRowCellValue(e.RowHandle, "StatusTypeOrder").Equals(4))//expenditure
                 {
                     e.Appearance.BackColor = Color.Yellow;
                     e.Appearance.BackColor2 = Color.Orange;

@@ -28,7 +28,8 @@ namespace ERP_NEW.GUI.Accounting
         List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsList=new List<FixedAssetsMaterialsDTO>();
         private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();
         private IFixedAssetsOrderService fixedAssetsOrderService;
-      //  List<FixedAssetsOrderJournalDTO> jour;
+        private FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistrationsave = new FixedAssetsOrderRegistrationDTO();
+        //  List<FixedAssetsOrderJournalDTO> jour;
         DateTime beginDate, endDate;
         string InvNumber;
                 
@@ -60,19 +61,25 @@ namespace ERP_NEW.GUI.Accounting
         {
             InitializeComponent();
             fixedAssetsOrderJournalBS.DataSource = model;
-            
-        //    jour = fixedAssetsOrderJournalBS.DataSource as List<FixedAssetsOrderJournalDTO>;
-            beginDate = new DateTime(2011, 1, 1);//beginDateInput;
+
+            //    jour = fixedAssetsOrderJournalBS.DataSource as List<FixedAssetsOrderJournalDTO>;
+            //beginDate = new DateTime(2011, 1, 1);//beginDateInput;
+            beginDate = model.EndRecordDate!=null ? (DateTime)model.EndRecordDate : new DateTime(2011, 1, 1);
             endDate = endDateInput;
 
             fixedAssetsOrderArchiveBS.DataSource = modelArchive;
             fixedAssetsOrderMaterialsList=modelMaterialsList;
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
             nameFixedAssetsOrder.Text = model.InventoryName;
-            dateLabel.Text = modelMaterialsList[0].ExpDate.Value.ToShortDateString();
+            dateLabel.Text = rezTagTabPage == "1" ? beginDate.ToShortDateString() : modelMaterialsList[0].ExpDate.Value.ToShortDateString();
             rezTab = rezTagTabPage;
             InvNumber = model.InventoryNumber;
         }
+        public BusinessTripsDTO Return()
+        {
+            return ((BusinessTripsDTO)Item);
+        }
+
 
         int posNumber;// = (int)
 
@@ -126,7 +133,8 @@ namespace ERP_NEW.GUI.Accounting
                                                 StatusTypeOrder = rezRadioBtn,
                                                 BeginPrice = ((FixedAssetsOrderJournalDTO)Item).BeginPrice
                                             };
-                                        fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                        newModel.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                        fixedAssetsOrderRegistrationsave = newModel;
                                         return true;
                                     }
 
@@ -143,7 +151,8 @@ namespace ERP_NEW.GUI.Accounting
                                         StatusTypeOrder = rezRadioBtn,
                                         BeginPrice = ((FixedAssetsOrderJournalDTO)Item).BeginPrice
                                     };
-                                    fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                    newModel.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                    fixedAssetsOrderRegistrationsave = newModel;
                                     return true;
                                 }
 
@@ -160,7 +169,25 @@ namespace ERP_NEW.GUI.Accounting
                                             BeginDate = ((FixedAssetsOrderJournalDTO)Item).BeginDate,
                                             Supplier_Id = ((FixedAssetsOrderJournalDTO)Item).SupplierId
                                         };
-                                    fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                    newModel.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                    fixedAssetsOrderRegistrationsave = newModel;
+                                    return true;
+                                }
+                                else if (rezRadioBtn == 4)//expenditure
+                                {
+                                    FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
+                                    {
+                                        FixedAssetsOrderId = ((FixedAssetsOrderJournalDTO)Item).Id,
+                                        NumberOrder = numberOrderEdit.Text,
+                                        DateOrder = ((FixedAssetsOrderJournalDTO)Item).BeginDate,
+                                        TypeOrder = findTypeOrder,
+                                        StatusTypeOrder = rezRadioBtn,
+                                        BeginPrice = ((FixedAssetsOrderJournalDTO)Item).BeginPrice,
+                                        BeginDate = ((FixedAssetsOrderJournalDTO)Item).BeginDate,
+                                        Supplier_Id = ((FixedAssetsOrderJournalDTO)Item).SupplierId
+                                    };
+                                    newModel.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                    fixedAssetsOrderRegistrationsave = newModel;
                                     return true;
                                 }
                             }
@@ -179,7 +206,8 @@ namespace ERP_NEW.GUI.Accounting
                                     TransferPrice = ((FixedAssetsOrderArchiveJournalDTO)ItemArchive).TransferPrice,
                                     Supplier_Id = ((FixedAssetsOrderArchiveJournalDTO)ItemArchive).SupplierId
                                 };
-                                fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModelArchive);
+                                newModelArchive.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModelArchive);
+                                fixedAssetsOrderRegistrationsave = newModelArchive;
                                 return true;
                             }
 
@@ -198,7 +226,8 @@ namespace ERP_NEW.GUI.Accounting
         {
             if (Save())
             {
-                Close();
+                DialogResult = DialogResult.OK;
+                this.Close();
                 MessageBox.Show(findTypeOrder+ "№  "+ numberOrderEdit.Text + " успішно створений!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
@@ -223,7 +252,11 @@ namespace ERP_NEW.GUI.Accounting
                     findTypeOrder = "Наказ на збільшення вартості";
                     break;
                 case 2: rezRadioBtn = 3;
-                    findTypeOrder = "Наказ на продаж/списання";
+                    findTypeOrder = "Наказ на продаж";
+                    break;
+                case 3:
+                    rezRadioBtn = 4;
+                    findTypeOrder = "Наказ на списання";
                     break;
                 default: findTypeOrder = "";
                     rezRadioBtn = 1;
@@ -240,11 +273,13 @@ namespace ERP_NEW.GUI.Accounting
                     edit.Properties.Items[0].Enabled = true;
                     edit.Properties.Items[1].Enabled = true;
                     edit.Properties.Items[2].Enabled = false;
+                    edit.Properties.Items[3].Enabled = false;
                     break;
                 case "1":
                     edit.Properties.Items[0].Enabled = false;
                     edit.Properties.Items[1].Enabled = false;
                     edit.Properties.Items[2].Enabled = true;
+                    edit.Properties.Items[3].Enabled = true;
                     break;
             }
         }

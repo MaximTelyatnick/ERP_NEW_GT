@@ -56,7 +56,7 @@
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(369, 235);
+            this.panelControl1.Size = new System.Drawing.Size(369, 242);
             this.panelControl1.TabIndex = 0;
             // 
             // dateLabel
@@ -93,7 +93,8 @@
             this.orderRadioGroup.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem("1", "Наказ на введення", true, ((short)(1))),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("2", "Наказ на збільшення вартості", true, ((short)(2))),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("3", "Наказ на продаж/списання", true, ((short)(3)))});
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("3", "Наказ на продаж", true, ((short)(3))),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(4, "Наказ на списання", true, 4)});
             this.orderRadioGroup.Size = new System.Drawing.Size(345, 96);
             this.orderRadioGroup.TabIndex = 6;
             this.orderRadioGroup.SelectedIndexChanged += new System.EventHandler(this.orderRadioGroup_SelectedIndexChanged);
@@ -110,7 +111,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(282, 200);
+            this.cancelBtn.Location = new System.Drawing.Point(282, 208);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 3;
@@ -119,7 +120,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(201, 200);
+            this.saveBtn.Location = new System.Drawing.Point(201, 208);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 2;
@@ -128,7 +129,7 @@
             // 
             // numberOrderEdit
             // 
-            this.numberOrderEdit.Location = new System.Drawing.Point(99, 171);
+            this.numberOrderEdit.Location = new System.Drawing.Point(99, 177);
             this.numberOrderEdit.Name = "numberOrderEdit";
             this.numberOrderEdit.Properties.Mask.EditMask = "d";
             this.numberOrderEdit.Size = new System.Drawing.Size(258, 20);
@@ -137,7 +138,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.labelControl1.Location = new System.Drawing.Point(12, 174);
+            this.labelControl1.Location = new System.Drawing.Point(12, 180);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(77, 14);
             this.labelControl1.TabIndex = 0;
@@ -147,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 235);
+            this.ClientSize = new System.Drawing.Size(369, 242);
             this.Controls.Add(this.panelControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

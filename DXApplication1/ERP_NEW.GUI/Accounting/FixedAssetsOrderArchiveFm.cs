@@ -35,6 +35,7 @@ namespace ERP_NEW.GUI.Accounting
     public partial class FixedAssetsOrderArchiveFm : DevExpress.XtraEditors.XtraForm
     {
         private IFixedAssetsOrderService fixedAssetsOrderService;
+        private IReportService reportService;
         private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();    
         private DateTime beginDateArchive, endDateArchive;
         private UserTasksDTO userTasksDTO;
@@ -99,6 +100,27 @@ namespace ERP_NEW.GUI.Accounting
                 }
             }
         }
+
+        private void printActExpenBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            if (fixedAssetsOrderArchiveBS.Count > 0)
+            {
+                short group = (short)(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId);
+                switch (group)
+                {
+                    case 10:
+                    case 2:
+                        reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current);
+                        break;
+                    default:
+                        reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current);
+                        break;
+                }
+            }
+            else MessageBox.Show("Оберіть основний засіб! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
         private void fixedAssetsArchiveGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)
         {
             GridView gv = sender as GridView;
@@ -114,6 +136,12 @@ namespace ERP_NEW.GUI.Accounting
                     e.Appearance.BackColor = Color.LightBlue;
                     e.Appearance.BackColor2 = Color.SteelBlue;
                 }
+                if (gv.GetRowCellValue(e.RowHandle, "OperationStatus") != null && gv.GetRowCellValue(e.RowHandle, "OperationStatus").Equals(4))//expenditure
+                {
+                    e.Appearance.BackColor = Color.LightSalmon;
+                    e.Appearance.BackColor2 = Color.LightYellow;
+                }
+
             }
         }
     }

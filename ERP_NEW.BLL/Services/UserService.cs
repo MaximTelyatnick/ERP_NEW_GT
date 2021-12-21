@@ -26,6 +26,7 @@ namespace ERP_NEW.BLL.Services
         private IRepository<UserTasks> userTasks;
         private IRepository<AccessRights> accessRights;
         private IRepository<Tasks> tasks;
+        private IRepository<Departments> departments;
 
         private IMapper mapper;
         
@@ -42,6 +43,7 @@ namespace ERP_NEW.BLL.Services
             userTasks = Database.GetRepository<UserTasks>();
             tasks = Database.GetRepository<Tasks>();
             accessRights = Database.GetRepository<AccessRights>();
+            departments = Database.GetRepository<Departments>();
             
             var config = new MapperConfiguration(cfg =>
             {
@@ -56,6 +58,7 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<Tasks, TasksDTO>();
                 cfg.CreateMap<TasksDTO, Tasks>();
                 cfg.CreateMap<AccessRights, AccessRightsDTO>();
+                cfg.CreateMap<Departments, DepartmentsDTO>();
             });
 
             mapper = config.CreateMapper();
@@ -178,7 +181,18 @@ namespace ERP_NEW.BLL.Services
 
         public IEnumerable<UserRolesDTO> GetUserRoles()
         {
-            return mapper.Map<IEnumerable<UserRoles>, List<UserRolesDTO>>(userRoles.GetAll());
+            var query = (from t in userRoles.GetAll()
+                         join dp in departments.GetAll() on t.DepartmentId equals dp.DepartmentID into dpp
+                         from dp in dpp.DefaultIfEmpty()
+                         select new UserRolesDTO
+                         {
+                              RoleId = t.RoleId,
+                               DepartmentId = dp.DepartmentID,
+                                RoleName = t.RoleName,
+                                 DepartmentName = dp.Name
+                         }).ToList();
+
+            return query;
         }
 
         public IEnumerable<TasksDTO> GetTasks(int roleId)

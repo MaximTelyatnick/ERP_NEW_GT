@@ -682,8 +682,14 @@ namespace ERP_NEW.GUI
 
                     break;
 
-
+                case "logItem":
                     
+                    //кнопка для логера;
+
+                    break;
+
+
+
 
                 default:
                     break;

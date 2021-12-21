@@ -36,9 +36,12 @@
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.showArchiveBtn = new DevExpress.XtraBars.BarButtonItem();
             this.printCardBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.printActExpenBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.fixedAssetsArchiveGrid = new DevExpress.XtraGrid.GridControl();
             this.fixedAssetsArchiveGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -71,9 +74,11 @@
             this.beginDateArchiveEdit,
             this.endDateArchiveEdit,
             this.showArchiveBtn,
-            this.printCardBtn});
+            this.printCardBtn,
+            this.printActExpenBtn,
+            this.barButtonItem1});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 8;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -139,11 +144,28 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.printCardBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printCardBtn_ItemClick);
             // 
+            // printActExpenBtn
+            // 
+            this.printActExpenBtn.Caption = "Друк акту на списання";
+            this.printActExpenBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("printActExpenBtn.Glyph")));
+            this.printActExpenBtn.Id = 6;
+            this.printActExpenBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printActExpenBtn.LargeGlyph")));
+            this.printActExpenBtn.Name = "printActExpenBtn";
+            this.printActExpenBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printActExpenBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printActExpenBtn_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
+            this.ribbonPageGroup2,
+            this.ribbonPageGroup3});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -160,6 +182,12 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.printCardBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Керування архівом";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.printActExpenBtn);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Акти";
             // 
             // fixedAssetsArchiveGrid
             // 
@@ -439,5 +467,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private DevExpress.XtraGrid.Columns.GridColumn operationStatus;
+        private DevExpress.XtraBars.BarButtonItem printActExpenBtn;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

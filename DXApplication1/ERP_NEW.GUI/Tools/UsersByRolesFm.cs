@@ -44,6 +44,8 @@ namespace ERP_NEW.GUI.Tools
             userService = Program.kernel.Get<IUserService>();
             userRolesBS.DataSource = userService.GetUserRoles().ToList();
             userRolesGrid.DataSource = userRolesBS;
+
+            userRolesGridView.ExpandAllGroups();
         }
 
         private void userRolesGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

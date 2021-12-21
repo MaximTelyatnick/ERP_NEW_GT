@@ -14049,6 +14049,87 @@ namespace ERP_NEW.BLL.Services
             catch (System.ComponentModel.Win32Exception) { MessageBox.Show("Не знайдений Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
         }
 
+        public void PrintFixedAssetsOrderExpenditureAct(FixedAssetsOrderArchiveJournalDTO model, FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistration = null)
+        {
+            string templateName = " ";
+            templateName = @"\Templates\FixedAssetsOrderActExpenditure.xls";
+            var Workbook = Factory.GetWorkbook(GeneratedReportsDir + templateName);
+
+            //SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\ContractorsVat.xls");
+            var Worksheet = Workbook.Worksheets[0];
+            var Сells = Worksheet.Cells;
+            IRange cells = Worksheet.Cells;
+
+            List<FixedAssetsMaterialsDTO> newMaterialsList = new List<FixedAssetsMaterialsDTO>();
+            decimal sumPrice = 0;
+
+            int rows = 120;
+            int cols = 31;
+            DateTime dt = DateTime.Now;
+
+            cells[1, 1, rows, cols].Replace("{currYear}", dt.Year.ToString(), LookAt.Part, SearchOrder.ByRows, false);
+            cells[1, 1, rows, cols].Replace("{currDate}", dt.ToShortDateString(), LookAt.Part, SearchOrder.ByRows, false);
+
+            cells["AI16"].Value = dt.ToShortDateString();
+            cells["B30"].Value = model.RegionName.ToString();
+            cells["M30"].Value = model.SoldPrice;
+            cells["P30"].Value = model.TransferPrice;
+            cells["S30"].Value = model.InventoryNumber.ToString();
+            cells["X30"].Value = model.BalanceAccountNum.ToString();
+            cells["AI30"].Value =   model.BeginDate.Year;
+            cells["AL30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;
+            cells["AR30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;
+            //if (materialsListSource.Count > 0)
+            //{
+            //    newMaterialsList = materialsListSource.Where(x => x.Flag < 2).ToList();
+            //    sumPrice = Math.Round(newMaterialsList.Where(r => r.Flag < 2).Select(s => s.FixedPrice).Sum(), 2);
+            //    float percentUsefullMonth = (100 / (Convert.ToInt16(model.UsefulMonth) / 12));
+
+            //    cells["M32"].Value = model.InventoryName.ToString() + "   ";
+            //    cells["O27"].Value = model.InventoryNumber;
+            //    cells["D27"].Value = model.BalanceAccountNum;
+            //    cells["R27"].Value = model.FixedAccountNum;
+            //    cells["V27"].Value = percentUsefullMonth.ToString() + "%";
+
+            //    cells["N27"].Value = sumPrice;
+            //    cells["N27"].NumberFormat = "### ### ##0.00";
+            //    cells["C27"].Value = model.RegionName;
+
+            //    int materialRows = 44;
+            //    int count = newMaterialsList.Count;
+            //    cells[materialRows + ":" + (materialRows + count)].Insert();
+            //    cells["A43:AC43"].Copy(cells["A" + materialRows + ":AC" + (materialRows + count - 1)], PasteType.Formats, PasteOperation.None, false, false);
+
+            //    foreach (var item in newMaterialsList)
+            //    {
+            //        cells["B" + materialRows].Value = item.Name;
+            //        cells["G" + materialRows].Value = item.Nomenclature;
+            //        cells["M" + materialRows].Value = "";
+            //        cells["Q" + materialRows].NumberFormat = "YYYY";
+            //        cells["Q" + materialRows].Value = item.ExpDate;
+            //        cells["T" + materialRows].NumberFormat = "MM.YYYY";
+            //        cells["T" + materialRows].Value = item.ExpDate;
+            //        cells["Y" + materialRows].Value = "";
+            //        cells["B" + materialRows].RowHeight = 30;
+            //        materialRows++;
+            //    };
+            //}
+
+            try
+            {
+                Worksheet.SaveAs(GeneratedReportsDir + "Акт списання інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);
+
+                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Акт списання інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls" + "\"";
+                process.StartInfo.FileName = "Excel.exe";
+                process.Start();
+            }
+            catch (System.IO.IOException) { MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            catch (System.ComponentModel.Win32Exception) { MessageBox.Show("Не знайдений Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+        }
+
+
         public void PrintFixedAssetsOrderActWriteOff(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, int monthSource, int yearSource)
         {
             DateTime expDateMaterial = new DateTime();
@@ -14369,7 +14450,7 @@ namespace ERP_NEW.BLL.Services
 
         public void PrintFixedAssetsDecreeSold(FixedAssetsOrderRegJournalDTO model)
         {
-            string templateName = @"\Templates\FixedAssetsDecreeSoldTemplate.xls";
+            string templateName = @"\Templates\FixedAssetsDecreeExpenditureTemplate.xls";
             SpreadsheetGear.IWorkbook workbook = SpreadsheetGear.Factory.GetWorkbook(GeneratedReportsDir + templateName);
             var pad = new Ua();
 
@@ -14422,6 +14503,69 @@ namespace ERP_NEW.BLL.Services
 
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Наказ на продаж № 00-00-00-інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls" + "\"";
+                process.StartInfo.FileName = "Excel.exe";
+                process.Start();
+            }
+            catch (System.IO.IOException) { MessageBox.Show("Документ уже открыт!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            catch (System.ComponentModel.Win32Exception) { MessageBox.Show("Не найден Microsoft Excel!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
+        }
+
+        public void PrintFixedAssetsDecreeExpenditure(FixedAssetsOrderRegJournalDTO model)
+        {
+            string templateName = @"\Templates\FixedAssetsDecreeExpenditureTemplate.xls";
+            SpreadsheetGear.IWorkbook workbook = SpreadsheetGear.Factory.GetWorkbook(GeneratedReportsDir + templateName);
+            var pad = new Ua();
+
+            SpreadsheetGear.IWorksheet worksheet = workbook.Worksheets[0];
+            SpreadsheetGear.IRange cells = worksheet.Cells;
+
+            // Add in cell date, month, year
+            cells["B7"].HorizontalAlignment = HAlign.Center;
+            cells["D7"].HorizontalAlignment = HAlign.Center;
+            cells["F7"].HorizontalAlignment = HAlign.Center;
+
+            string s = ((DateTime)model.DateOrder).Month.ToString();
+            int month = Int32.Parse(s);
+            string rez = RuDateAndMoneyConverter.MonthName(month, Utils.TextCase.Genitive);
+            cells["B" + 7].Value = ((DateTime)model.DateOrder).Day.ToString();
+            cells["D" + 7].Value = rez;
+            cells["F" + 7].Value = ((DateTime)model.DateOrder).Year.ToString();
+            cells["J" + 7].Value = model.NumberOrder;
+
+            for (int i = 13; i < 27; i++)
+            {
+                cells["B" + i].HorizontalAlignment = HAlign.Left;
+                cells["A" + i].HorizontalAlignment = HAlign.Center;
+            }
+            cells["B" + 15].HorizontalAlignment = HAlign.Center;
+            cells["B" + 23].HorizontalAlignment = HAlign.Center;
+
+            cells["A" + 9].HorizontalAlignment = HAlign.Left;
+            cells["A" + 9].Value = "« Про списання замортизованих основних засобів " + model.InventoryName +
+                " інвентарний № " + model.InventoryNumber + " »";
+            cells["A" + 14].Value = " 1 . ";
+            cells["B" + 14].Value = "Списати замортизований " + model.InventoryName + ":";
+            cells["B" + 15].Value = "інвентарний № " + model.InventoryNumber + " . ";
+            cells["A" + 17].Value = " 2 . ";
+            cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
+            cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
+
+            cells["A" + 20].Value = " 3 . ";
+            cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
+            cells["B" + 21].Value = "бухгалтерські операції при продажу та при знятті ";
+            cells["B" + 22].Value = "Основних засобів з бухгалтерського обліку:";
+            cells["B" + 23].Value = "інвентарний № " + model.InventoryNumber + " . ";
+            cells["A" + 25].Value = " 4 . ";
+            cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
+            cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
+
+            try
+            {
+                worksheet.SaveAs(GeneratedReportsDir + "Наказ на списання № 00-00-00-інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);
+
+                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Наказ на списання № 00-00-00-інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
             }

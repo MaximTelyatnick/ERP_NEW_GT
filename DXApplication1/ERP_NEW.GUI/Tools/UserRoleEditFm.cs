@@ -19,7 +19,10 @@ namespace ERP_NEW.GUI.Tools
     {
 
         private IUserService userService;
+        private IEmployeesService employeesService;
+
         private BindingSource userRoleBS = new BindingSource();
+        private BindingSource departmentBS = new BindingSource();
         private Utils.Operation _operation;
 
         private ObjectBase Item
@@ -36,11 +39,21 @@ namespace ERP_NEW.GUI.Tools
         public UserRoleEditFm(Utils.Operation operation, UserRolesDTO userRole)
         {
             InitializeComponent();
+            employeesService = Program.kernel.Get<IEmployeesService>();
 
             _operation = operation;
             userRoleBS.DataSource = Item = userRole;
 
             roleNameTBox.DataBindings.Add("EditValue", userRoleBS, "RoleName");
+
+            departmentBS.DataSource = employeesService.GetDepartments().ToList();
+            departmentEdit.DataBindings.Add("EditValue", userRoleBS, "DepartmentId", true, DataSourceUpdateMode.OnPropertyChanged);
+            departmentEdit.Properties.DataSource = departmentBS;
+            departmentEdit.Properties.ValueMember = "DepartmentID";
+            departmentEdit.Properties.DisplayMember = "Name";
+            departmentEdit.Properties.NullText = "";
+
+            ControlValidation();
         }
 
         # region Metod's
@@ -58,6 +71,16 @@ namespace ERP_NEW.GUI.Tools
         private bool ControlValidation()
         {
             return userRoleValidationProvider.Validate();
+        }
+
+        private void departmentEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            userRoleValidationProvider.Validate((Control)sender);
+        }
+
+        private void roleNameTBox_EditValueChanged(object sender, EventArgs e)
+        {
+            userRoleValidationProvider.Validate((Control)sender);
         }
 
         private bool IsDuplicateRecord(string roleName)
@@ -119,6 +142,8 @@ namespace ERP_NEW.GUI.Tools
             this.Item.CancelEdit();
             this.Close();
         }
+
+
 
         #endregion
 

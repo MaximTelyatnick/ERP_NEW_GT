@@ -55,6 +55,7 @@
             this.journalOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.actWriteOffBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.expFixeAssetsBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -131,9 +132,11 @@
             this.endDateArchiveEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit5 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.regArchiveBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.printActExpenditureBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.decreeItemMenu = new DevExpress.XtraBars.PopupMenu(this.components);
@@ -238,9 +241,10 @@
             this.regJournalOrderBtn,
             this.journalOrderBtn,
             this.ribbonGalleryBarItem1,
-            this.actWriteOffBtn});
+            this.actWriteOffBtn,
+            this.expFixeAssetsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -430,6 +434,15 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.actWriteOffBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.actWriteOffBtn_ItemClick);
             // 
+            // expFixeAssetsBtn
+            // 
+            this.expFixeAssetsBtn.Caption = "Списання";
+            this.expFixeAssetsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("expFixeAssetsBtn.Glyph")));
+            this.expFixeAssetsBtn.Id = 3;
+            this.expFixeAssetsBtn.Name = "expFixeAssetsBtn";
+            this.expFixeAssetsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.expFixeAssetsBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.expFixeAssetsBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -460,6 +473,7 @@
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.soldFixeAssetsBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.transferFixeAssetsBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.expFixeAssetsBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.regJournalOrderBtn);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Операції із засобами";
@@ -1483,9 +1497,10 @@
             this.printArchiceBtn,
             this.beginDateArchiveEdit,
             this.endDateArchiveEdit,
-            this.regArchiveBtn});
+            this.regArchiveBtn,
+            this.printActExpenditureBtn});
             this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl2.MaxItemId = 12;
+            this.ribbonControl2.MaxItemId = 13;
             this.ribbonControl2.Name = "ribbonControl2";
             this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
@@ -1580,11 +1595,22 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.regArchiveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.regArchiveBtn_ItemClick);
             // 
+            // printActExpenditureBtn
+            // 
+            this.printActExpenditureBtn.Caption = "Друк акту на списання";
+            this.printActExpenditureBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("printActExpenditureBtn.Glyph")));
+            this.printActExpenditureBtn.Id = 12;
+            this.printActExpenditureBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printActExpenditureBtn.LargeGlyph")));
+            this.printActExpenditureBtn.Name = "printActExpenditureBtn";
+            this.printActExpenditureBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printActExpenditureBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printActExpenditureBtn_ItemClick);
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup5,
-            this.ribbonPageGroup7});
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup8});
             this.ribbonPage2.Name = "ribbonPage2";
             this.ribbonPage2.Text = "ribbonPage2";
             // 
@@ -1603,6 +1629,12 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.regArchiveBtn);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Керування архівом";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.printActExpenditureBtn);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Акти";
             // 
             // repositoryItemDateEdit2
             // 
@@ -1805,6 +1837,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem actWriteOffBtn;
-
+        private DevExpress.XtraBars.BarButtonItem expFixeAssetsBtn;
+        private DevExpress.XtraBars.BarButtonItem printActExpenditureBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }

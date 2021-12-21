@@ -34,6 +34,7 @@
             this.userRolesGrid = new DevExpress.XtraGrid.GridControl();
             this.userRolesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.roleNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.departCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.standaloneBarDockControl4 = new DevExpress.XtraBars.StandaloneBarDockControl();
@@ -119,12 +120,15 @@
             // userRolesGridView
             // 
             this.userRolesGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.roleNameCol});
+            this.roleNameCol,
+            this.departCol});
             this.userRolesGridView.GridControl = this.userRolesGrid;
+            this.userRolesGridView.GroupCount = 1;
             this.userRolesGridView.Name = "userRolesGridView";
             this.userRolesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.userRolesGridView.OptionsView.ShowAutoFilterRow = true;
-            this.userRolesGridView.OptionsView.ShowGroupPanel = false;
+            this.userRolesGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.departCol, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.userRolesGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.userRolesGridView_FocusedRowChanged);
             // 
             // roleNameCol
@@ -141,6 +145,14 @@
             this.roleNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.roleNameCol.Visible = true;
             this.roleNameCol.VisibleIndex = 0;
+            // 
+            // departCol
+            // 
+            this.departCol.Caption = "Відділ";
+            this.departCol.FieldName = "DepartmentName";
+            this.departCol.Name = "departCol";
+            this.departCol.Visible = true;
+            this.departCol.VisibleIndex = 1;
             // 
             // splitContainerControl2
             // 
@@ -564,5 +576,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn priceAttributeCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraBars.BarButtonItem tasksEditItem;
+        private DevExpress.XtraGrid.Columns.GridColumn departCol;
     }
 }
