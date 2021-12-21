@@ -139,6 +139,7 @@
     <Compile Include="Entities\Models\FixedAssetsMaterials.cs" />
     <Compile Include="Entities\Models\FixedAssetsOrderRegistration.cs" />
     <Compile Include="Entities\Models\GetOSVkvartal_ForChess.cs" />
+    <Compile Include="Entities\Models\Log.cs" />
     <Compile Include="Entities\Models\MTSAuthorizationUsers.cs" />
     <Compile Include="Entities\Models\MTSCreateDetals.cs" />
     <Compile Include="Entities\Models\MTSGost.cs" />

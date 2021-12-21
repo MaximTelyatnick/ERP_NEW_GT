@@ -15818,6 +15818,11 @@ namespace ERP_NEW.BLL.Services
             //var Workbook = Factory.GetWorkbook(TemplatesDir + "TrialBalance.xls");
             var Worksheet = Workbook.Worksheets[0];
             var Сells = Worksheet.Cells;
+            // закрепление панели в эксель
+            Worksheet.WindowInfo.ScrollRow = 0;
+            Worksheet.WindowInfo.SplitRows = 10;
+            Worksheet.WindowInfo.FreezePanes = true;
+            //
 
             int fontSize = 18;
 

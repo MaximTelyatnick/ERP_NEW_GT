@@ -17,7 +17,7 @@ namespace ERP_NEW.BLL.DTO.SelectedDTO
         public decimal? UnitPrice { get; set; }
         public decimal? TotalPrice { get; set; }
         public decimal? ReceiptQuantity { get; set; }
-        public decimal? Remains { get; set; }
+        public decimal Remains { get; set; }
         public decimal? ExpPrice { get; set; }
         public decimal? Quantity { get; set; }
         public DateTime? ExpDate { get; set; }

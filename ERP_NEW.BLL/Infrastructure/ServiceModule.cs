@@ -46,6 +46,7 @@ namespace ERP_NEW.BLL.Infrastructure
             Bind<IRequestLogService>().To<RequestLogService>();
             Bind<IMarketingService>().To<MarketingService>();
             Bind<IInfrastructureService>().To<InfrastructureService>();
+            Bind<ILogService>().To<LogService>();
         }
     }
 }

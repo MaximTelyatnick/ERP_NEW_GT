@@ -114,6 +114,7 @@
             this.expAccountantCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.unitPriceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.priceCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Remains = new DevExpress.XtraGrid.Columns.GridColumn();
             this.checkCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.accCheckCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -915,6 +916,7 @@
             this.expAccountantCol,
             this.unitPriceCol,
             this.priceCol,
+            this.Remains,
             this.checkCol,
             this.accCheckCol});
             this.expendituresGridView.GridControl = this.expendituresGrid;
@@ -1165,6 +1167,16 @@
             this.priceCol.VisibleIndex = 7;
             this.priceCol.Width = 105;
             // 
+            // Remains
+            // 
+            this.Remains.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.Remains.AppearanceHeader.Options.UseFont = true;
+            this.Remains.Caption = "Кількість(залишок)";
+            this.Remains.FieldName = "Remains";
+            this.Remains.Name = "Remains";
+            this.Remains.Visible = true;
+            this.Remains.VisibleIndex = 13;
+            // 
             // checkCol
             // 
             this.checkCol.AppearanceHeader.Image = ((System.Drawing.Image)(resources.GetObject("checkCol.AppearanceHeader.Image")));
@@ -1191,7 +1203,7 @@
             this.accCheckCol.MinWidth = 16;
             this.accCheckCol.Name = "accCheckCol";
             this.accCheckCol.Visible = true;
-            this.accCheckCol.VisibleIndex = 13;
+            this.accCheckCol.VisibleIndex = 14;
             this.accCheckCol.Width = 16;
             // 
             // imageCollection
@@ -1410,5 +1422,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn customerOrderNumberCol;
         private DevExpress.XtraGrid.Columns.GridColumn priceCol;
         private DevExpress.XtraGrid.Columns.GridColumn accCheckCol;
+        private DevExpress.XtraGrid.Columns.GridColumn Remains;
     }
 }

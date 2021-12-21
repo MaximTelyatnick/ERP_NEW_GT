@@ -204,6 +204,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<LastIdOrderGen> LastIdOrderGen { get; set; }
         public DbSet<LastIdInvoicesReqGen> LastIdInvoicesReqGen { get; set; }
         public DbSet<LastIdInvoicesReqMatGen> LastIdInvoicesReqMatGen { get; set; }
+        public DbSet<Log> Log { get; set; }
 
         //M
         //public DbSet<MaterialsForAccountClothes> MaterialsForAccountClothes { get; set; }

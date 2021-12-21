@@ -93,7 +93,9 @@ namespace ERP_NEW.GUI.Production
                         ReceiptNum = item.ReceiptNum,
                         RealExpDate = item.RealExpDate,
                         ProdCustomerNumber = item.ProdCustomerNumber,
-                        Selected = false
+                        Selected = false,
+                        Remains=item.Remains
+                        
                     });  
             }
             return expendituresAccountantList;
