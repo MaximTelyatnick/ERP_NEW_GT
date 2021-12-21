@@ -136,7 +136,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void Delete()
         {
-            if (MessageBox.Show("Видалити рахунок під номером " + ((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).FixedAssetsOrderId + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Видалити рахунок під номером " + ((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).NumberOrder + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (fixedAssetsOrderService.FixedAssetsOrderRegistrationDelete(((FixedAssetsOrderRegJournalDTO)fixedAssetsOrderRegJournalBS.Current).Id))
                 {

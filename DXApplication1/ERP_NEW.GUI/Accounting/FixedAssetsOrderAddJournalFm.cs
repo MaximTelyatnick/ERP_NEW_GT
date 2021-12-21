@@ -61,16 +61,17 @@ namespace ERP_NEW.GUI.Accounting
         {
             InitializeComponent();
             fixedAssetsOrderJournalBS.DataSource = model;
-            
-        //    jour = fixedAssetsOrderJournalBS.DataSource as List<FixedAssetsOrderJournalDTO>;
-            beginDate = new DateTime(2011, 1, 1);//beginDateInput;
+
+            //    jour = fixedAssetsOrderJournalBS.DataSource as List<FixedAssetsOrderJournalDTO>;
+            //beginDate = new DateTime(2011, 1, 1);//beginDateInput;
+            beginDate = model.EndRecordDate!=null ? (DateTime)model.EndRecordDate : new DateTime(2011, 1, 1);
             endDate = endDateInput;
 
             fixedAssetsOrderArchiveBS.DataSource = modelArchive;
             fixedAssetsOrderMaterialsList=modelMaterialsList;
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
             nameFixedAssetsOrder.Text = model.InventoryName;
-            dateLabel.Text = modelMaterialsList[0].ExpDate.Value.ToShortDateString();
+            dateLabel.Text = rezTagTabPage == "1" ? beginDate.ToShortDateString() : modelMaterialsList[0].ExpDate.Value.ToShortDateString();
             rezTab = rezTagTabPage;
             InvNumber = model.InventoryNumber;
         }
@@ -172,7 +173,7 @@ namespace ERP_NEW.GUI.Accounting
                                     fixedAssetsOrderRegistrationsave = newModel;
                                     return true;
                                 }
-                                else if (rezRadioBtn == 4)//sale
+                                else if (rezRadioBtn == 4)//expenditure
                                 {
                                     FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
                                     {

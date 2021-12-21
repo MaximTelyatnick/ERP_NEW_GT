@@ -327,6 +327,25 @@ namespace ERP_NEW.GUI.Accounting
 
         private void fixedAssetsOrderGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (((FixedAssetsOrderJournalDTO)ItemJournal).EndRecordDate != null)
+            {
+                deleteBtn.Enabled = false;
+                editBtn.Enabled = false;
+                soldFixeAssetsBtn.Enabled = false;
+                expFixeAssetsBtn.Enabled = false;
+                transferFixeAssetsBtn.Enabled = false;
+            }
+            else
+            {
+                deleteBtn.Enabled = true;
+                editBtn.Enabled = true;
+                soldFixeAssetsBtn.Enabled = true;
+                expFixeAssetsBtn.Enabled = true;
+                transferFixeAssetsBtn.Enabled = true;
+            }
+            
+
+
             if (check == 0)
             {
                 if (fixedAssetsOrderBS.Count > 0 && fixedAssetsOrderBS != null)
@@ -384,6 +403,12 @@ namespace ERP_NEW.GUI.Accounting
 
         private void soldFixeAssetsBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if(((FixedAssetsOrderJournalDTO)ItemJournal).EndRecordDate!=null)
+            {
+                MessageBox.Show("Не можливо продати основний засіб який було раніше списано, продано, або переміщено! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             FixedAssetsOrderDTO model = new FixedAssetsOrderDTO()
                 {
                     Id = ((FixedAssetsOrderJournalDTO)ItemJournal).Id,
