@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpendituresFm));
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.expendituresRibbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barStaticItem2 = new DevExpress.XtraBars.BarStaticItem();
             this.beginYearEdit = new DevExpress.XtraBars.BarEditItem();
@@ -50,6 +50,7 @@
             this.showStorehouseExpBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.showBadRowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,7 +58,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             this.expendituresGrid = new DevExpress.XtraGrid.GridControl();
             this.expenditureBandedGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.id = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -114,7 +115,6 @@
             this.bandedGridColumn22 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.expendituresRibbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -375,6 +375,14 @@
             this.showBadRowBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.showBadRowBtn.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Списання за проєктами";
+            this.barButtonItem1.Id = 2;
+            this.barButtonItem1.ImageUri.Uri = "Edit";
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -451,6 +459,9 @@
             // expendituresGrid
             // 
             this.expendituresGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            gridLevelNode1.RelationName = "Level1";
+            this.expendituresGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.expendituresGrid.Location = new System.Drawing.Point(2, 2);
             this.expendituresGrid.MainView = this.expenditureBandedGridView;
             this.expendituresGrid.MenuManager = this.expendituresRibbon;
@@ -525,7 +536,7 @@
             this.id.OptionsBand.AllowMove = false;
             this.id.OptionsBand.AllowPress = false;
             this.id.VisibleIndex = 0;
-            this.id.Width = 911;
+            this.id.Width = 917;
             // 
             // orderDateCol
             // 
@@ -543,7 +554,7 @@
             this.orderDateCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "OrderDate", "Всього:   {0}")});
             this.orderDateCol.Visible = true;
-            this.orderDateCol.Width = 63;
+            this.orderDateCol.Width = 62;
             // 
             // receiptNumCol
             // 
@@ -559,7 +570,7 @@
             this.receiptNumCol.OptionsColumn.AllowEdit = false;
             this.receiptNumCol.OptionsColumn.AllowFocus = false;
             this.receiptNumCol.Visible = true;
-            this.receiptNumCol.Width = 67;
+            this.receiptNumCol.Width = 66;
             // 
             // debitAccountNum
             // 
@@ -575,7 +586,7 @@
             this.debitAccountNum.OptionsColumn.AllowEdit = false;
             this.debitAccountNum.OptionsColumn.AllowFocus = false;
             this.debitAccountNum.Visible = true;
-            this.debitAccountNum.Width = 79;
+            this.debitAccountNum.Width = 78;
             // 
             // nomenclatureCol
             // 
@@ -592,7 +603,7 @@
             this.nomenclatureCol.OptionsColumn.AllowEdit = false;
             this.nomenclatureCol.OptionsColumn.AllowFocus = false;
             this.nomenclatureCol.Visible = true;
-            this.nomenclatureCol.Width = 92;
+            this.nomenclatureCol.Width = 91;
             // 
             // nameCol
             // 
@@ -608,7 +619,7 @@
             this.nameCol.OptionsColumn.AllowEdit = false;
             this.nameCol.OptionsColumn.AllowFocus = false;
             this.nameCol.Visible = true;
-            this.nameCol.Width = 196;
+            this.nameCol.Width = 197;
             // 
             // measureCol
             // 
@@ -624,7 +635,7 @@
             this.measureCol.OptionsColumn.AllowEdit = false;
             this.measureCol.OptionsColumn.AllowFocus = false;
             this.measureCol.Visible = true;
-            this.measureCol.Width = 60;
+            this.measureCol.Width = 59;
             // 
             // balanceAccountNumCol
             // 
@@ -640,7 +651,7 @@
             this.balanceAccountNumCol.OptionsColumn.AllowEdit = false;
             this.balanceAccountNumCol.OptionsColumn.AllowFocus = false;
             this.balanceAccountNumCol.Visible = true;
-            this.balanceAccountNumCol.Width = 65;
+            this.balanceAccountNumCol.Width = 64;
             // 
             // quantityReceiptnCol
             // 
@@ -658,7 +669,7 @@
             this.quantityReceiptnCol.OptionsColumn.AllowEdit = false;
             this.quantityReceiptnCol.OptionsColumn.AllowFocus = false;
             this.quantityReceiptnCol.Visible = true;
-            this.quantityReceiptnCol.Width = 58;
+            this.quantityReceiptnCol.Width = 57;
             // 
             // totalPriceCol
             // 
@@ -676,7 +687,7 @@
             this.totalPriceCol.OptionsColumn.AllowEdit = false;
             this.totalPriceCol.OptionsColumn.AllowFocus = false;
             this.totalPriceCol.Visible = true;
-            this.totalPriceCol.Width = 72;
+            this.totalPriceCol.Width = 71;
             // 
             // uniPriceCol
             // 
@@ -694,7 +705,7 @@
             this.uniPriceCol.OptionsColumn.AllowEdit = false;
             this.uniPriceCol.OptionsColumn.AllowFocus = false;
             this.uniPriceCol.Visible = true;
-            this.uniPriceCol.Width = 159;
+            this.uniPriceCol.Width = 172;
             // 
             // expIdCol
             // 
@@ -727,7 +738,7 @@
             this.gridBand2.Columns.Add(this.expenditureTypeCol);
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 794;
+            this.gridBand2.Width = 825;
             // 
             // expDateCol
             // 
@@ -743,7 +754,7 @@
             this.expDateCol.OptionsColumn.AllowEdit = false;
             this.expDateCol.OptionsColumn.AllowFocus = false;
             this.expDateCol.Visible = true;
-            this.expDateCol.Width = 62;
+            this.expDateCol.Width = 63;
             // 
             // unitPriceCol
             // 
@@ -761,7 +772,7 @@
             this.unitPriceCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Quantity", "{0:### ### ##0.#####}")});
             this.unitPriceCol.Visible = true;
-            this.unitPriceCol.Width = 51;
+            this.unitPriceCol.Width = 74;
             // 
             // expPriceCol
             // 
@@ -781,7 +792,7 @@
             this.expPriceCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "ExpPrice", "{0:### ### ##0.00}")});
             this.expPriceCol.Visible = true;
-            this.expPriceCol.Width = 84;
+            this.expPriceCol.Width = 83;
             // 
             // remainsCol
             // 
@@ -800,7 +811,7 @@
             this.remainsCol.OptionsColumn.AllowEdit = false;
             this.remainsCol.OptionsColumn.AllowFocus = false;
             this.remainsCol.Visible = true;
-            this.remainsCol.Width = 92;
+            this.remainsCol.Width = 91;
             // 
             // projectCol
             // 
@@ -816,7 +827,7 @@
             this.projectCol.OptionsColumn.AllowEdit = false;
             this.projectCol.OptionsColumn.AllowFocus = false;
             this.projectCol.Visible = true;
-            this.projectCol.Width = 102;
+            this.projectCol.Width = 101;
             // 
             // storeHouseExpCustomerOrderCol
             // 
@@ -831,7 +842,7 @@
             this.storeHouseExpCustomerOrderCol.OptionsColumn.AllowEdit = false;
             this.storeHouseExpCustomerOrderCol.OptionsColumn.AllowFocus = false;
             this.storeHouseExpCustomerOrderCol.Visible = true;
-            this.storeHouseExpCustomerOrderCol.Width = 99;
+            this.storeHouseExpCustomerOrderCol.Width = 98;
             // 
             // employeeCol
             // 
@@ -843,7 +854,7 @@
             this.employeeCol.OptionsColumn.AllowEdit = false;
             this.employeeCol.OptionsColumn.AllowFocus = false;
             this.employeeCol.Visible = true;
-            this.employeeCol.Width = 72;
+            this.employeeCol.Width = 71;
             // 
             // creditAccountNumCol
             // 
@@ -859,7 +870,7 @@
             this.creditAccountNumCol.OptionsColumn.AllowEdit = false;
             this.creditAccountNumCol.OptionsColumn.AllowFocus = false;
             this.creditAccountNumCol.Visible = true;
-            this.creditAccountNumCol.Width = 82;
+            this.creditAccountNumCol.Width = 81;
             // 
             // dateCheckCol
             // 
@@ -874,6 +885,7 @@
             this.dateCheckCol.OptionsColumn.AllowEdit = false;
             this.dateCheckCol.OptionsColumn.AllowFocus = false;
             this.dateCheckCol.Visible = true;
+            this.dateCheckCol.Width = 74;
             // 
             // expenditureTypeCol
             // 
@@ -889,6 +901,7 @@
             this.expenditureTypeCol.OptionsColumn.AllowEdit = false;
             this.expenditureTypeCol.OptionsColumn.AllowFocus = false;
             this.expenditureTypeCol.Visible = true;
+            this.expenditureTypeCol.Width = 89;
             // 
             // repositoryItemCheckEdit1
             // 
@@ -1356,14 +1369,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1762, 465);
             this.panelControl1.TabIndex = 8;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Списання за проєктами";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageUri.Uri = "Edit";
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // ExpendituresFm
             // 

@@ -17,6 +17,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public decimal QUANTITY { get; set; }
         public decimal PRICE { get; set; }
         public decimal UnitPrice { get; set; }
+        public decimal Remains { get; set; }
         public DateTime? EXP_DATE { get; set; }
         public DateTime? RealExpDate { get; set; }
         public string PROJECT_NUM { get; set; }

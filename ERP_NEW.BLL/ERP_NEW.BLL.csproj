@@ -138,6 +138,7 @@
     <Compile Include="DTO\ModelsDTO\EmployeesDetailsStandartDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
     <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\LogDTO.cs" />
     <Compile Include="DTO\ModelsDTO\PaintingWorksDTO.cs" />
     <Compile Include="DTO\ReportsDTO\ContractorVatDTO.cs" />
     <Compile Include="DTO\ModelsDTO\AccessRightsDTO.cs" />
@@ -432,6 +433,7 @@
     <Compile Include="Interfaces\IDocumentTypesService.cs" />
     <Compile Include="Interfaces\IFixedAssetsOrderService.cs" />
     <Compile Include="Interfaces\IInfrastructureService.cs" />
+    <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Interfaces\IMarketingService.cs" />
     <Compile Include="Interfaces\IMtsNomenclaturesService.cs" />
     <Compile Include="Interfaces\IMtsSpecificationsService.cs" />
@@ -485,6 +487,7 @@
     <Compile Include="Services\EmployeesService.cs" />
     <Compile Include="Services\FixedAssetsOrderService.cs" />
     <Compile Include="Services\InfrastructureService.cs" />
+    <Compile Include="Services\LogService.cs" />
     <Compile Include="Services\MarketingService.cs" />
     <Compile Include="Services\MtsNomenclaturesService.cs" />
     <Compile Include="Services\MtsSpecificationsService.cs" />
