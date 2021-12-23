@@ -887,6 +887,18 @@
     <Compile Include="Classifiers\InfoFormFm.Designer.cs">
       <DependentUpon>InfoFormFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classifiers\LogFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classifiers\LogFm.Designer.cs">
+      <DependentUpon>LogFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classifiers\LogEditFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classifiers\LogEditFm.Designer.cs">
+      <DependentUpon>LogEditFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classifiers\MtsGostEditFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1978,6 +1990,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Classifiers\InfoFormFm.resx">
       <DependentUpon>InfoFormFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classifiers\LogFm.resx">
+      <DependentUpon>LogFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Classifiers\LogEditFm.resx">
+      <DependentUpon>LogEditFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Classifiers\MtsGostEditFm.resx">
       <DependentUpon>MtsGostEditFm.cs</DependentUpon>
