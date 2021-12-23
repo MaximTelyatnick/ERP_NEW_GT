@@ -12,6 +12,8 @@ namespace ERP_NEW.DAL.Entities.Models
         public int EmployeeId { get; set; }
         public int UserRoleId { get; set; }
 
+        public bool? Online { get; set; }
+
         [ForeignKey("UserRoleId")]
         public UserRoles UserRoles { get; set; }
     }
