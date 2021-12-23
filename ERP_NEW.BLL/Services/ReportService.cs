@@ -15319,7 +15319,7 @@ namespace ERP_NEW.BLL.Services
             {
                 cells["A" + currentRow].Value = "Всього: " + accountValue;
                 cells["A" + currentRow].HorizontalAlignment = HAlign.Left;
-                cells["A" + currentRow + ":J" + currentRow].Interior.Color = Color.DeepSkyBlue;
+                cells["A" + currentRow + ":N" + currentRow].Interior.Color = Color.DeepSkyBlue;
                 cells["B" + currentRow].Value = "=SUM(B" + starRowFormula + ":B" + (currentRow - 1) + ")";
                 cells["C" + currentRow].Value = "=SUM(C" + starRowFormula + ":C" + (currentRow - 1) + ")";
                 cells["D" + currentRow].Value = "=SUM(D" + starRowFormula + ":D" + (currentRow - 1) + ")";
@@ -15328,8 +15328,12 @@ namespace ERP_NEW.BLL.Services
                 cells["G" + currentRow].Value = "=SUM(G" + starRowFormula + ":G" + (currentRow - 1) + ")";
                 cells["H" + currentRow].Value = "=SUM(H" + starRowFormula + ":H" + (currentRow - 1) + ")";
                 cells["I" + currentRow].Value = "=SUM(I" + starRowFormula + ":I" + (currentRow - 1) + ")";
+                cells["J" + currentRow].Value = "=SUM(J" + starRowFormula + ":J" + (currentRow - 1) + ")";
+                cells["K" + currentRow].Value = "=SUM(K" + starRowFormula + ":K" + (currentRow - 1) + ")";
+                cells["L" + currentRow].Value = "=SUM(L" + starRowFormula + ":L" + (currentRow - 1) + ")";
+                cells["M" + currentRow].Value = "=SUM(M" + starRowFormula + ":M" + (currentRow - 1) + ")";
 
-                cells["J" + currentRow].Value = "=SUM(B" + currentRow + ",D" + currentRow + ",F" + currentRow + ",H" + currentRow + ")";
+                cells["N" + currentRow].Value = "=SUM(B" + currentRow + ",E" + currentRow + ",H" + currentRow + ",K" + currentRow + ")";
             };
 
             int captionPosition = 6;
@@ -15356,13 +15360,17 @@ namespace ERP_NEW.BLL.Services
                 cells["A" + currentPosition].Value = model[i].GroupName;
                 cells["B" + currentPosition].Value = model[i].FirstQuarterSum;
                 cells["C" + currentPosition].Value = model[i].FirstQuarterSumSold;
-                cells["D" + currentPosition].Value = model[i].SecondQuarterSum;
-                cells["E" + currentPosition].Value = model[i].SecondQuarterSumSold;
-                cells["F" + currentPosition].Value = model[i].ThirdQuarterSum;
-                cells["G" + currentPosition].Value = model[i].ThirdQuarterSumSold;
-                cells["H" + currentPosition].Value = model[i].FourthQuarterSum;
-                cells["I" + currentPosition].Value = model[i].FourthQuarterSumSold;
-                cells["J" + currentPosition].Value = "=SUM(B" + currentPosition + ",D" + currentPosition + ",F" + currentPosition + ",H" + currentPosition + ")";
+                cells["D" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["E" + currentPosition].Value = model[i].SecondQuarterSum;
+                cells["F" + currentPosition].Value = model[i].SecondQuarterSumSold;
+                cells["G" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["H" + currentPosition].Value = model[i].ThirdQuarterSum;
+                cells["I" + currentPosition].Value = model[i].ThirdQuarterSumSold;
+                cells["J" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["K" + currentPosition].Value = model[i].FourthQuarterSum;
+                cells["L" + currentPosition].Value = model[i].FourthQuarterSumSold;
+                cells["M" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["N" + currentPosition].Value = "=SUM(B" + currentPosition + ",D" + currentPosition + ",F" + currentPosition + ",H" + currentPosition + ")";
 
                 currentPosition++;
             }
@@ -15372,20 +15380,25 @@ namespace ERP_NEW.BLL.Services
 
             cells["A" + currentPosition].Value = "Сума: ";
             cells["A" + currentPosition].HorizontalAlignment = HAlign.Left;
-            cells["A" + currentPosition + ":J" + currentPosition].Interior.Color = Color.LightGreen;
+            cells["A" + currentPosition + ":N" + currentPosition].Interior.Color = Color.LightGreen;
 
             cells["B" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FirstQuarterSum);
-            cells["C" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSumSold);
-            cells["D" + currentPosition].Value = model.AsEnumerable().Sum(x => x.SecondQuarterSum);
-            cells["E" + currentPosition].Value = model.AsEnumerable().Sum(x => x.SecondQuarterSumSold);
-            cells["F" + currentPosition].Value = model.AsEnumerable().Sum(x => x.ThirdQuarterSum);
-            cells["G" + currentPosition].Value = model.AsEnumerable().Sum(x => x.ThirdQuarterSumSold);
-            cells["H" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSum);
-            cells["I" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSumSold);
-            cells["J" + currentPosition].Value = "=SUM(B" + currentPosition + ",D" + currentPosition + ",F" + currentPosition + ",H" + currentPosition + ")";
+            cells["C" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FirstQuarterSumSold);
+            cells["D" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FirstQuarterSumExpen);
+            cells["E" + currentPosition].Value = model.AsEnumerable().Sum(x => x.SecondQuarterSum);
+            cells["F" + currentPosition].Value = model.AsEnumerable().Sum(x => x.SecondQuarterSumSold);
+            cells["G" + currentPosition].Value = model.AsEnumerable().Sum(x => x.SecondQuarterSumExpen);
+            cells["H" + currentPosition].Value = model.AsEnumerable().Sum(x => x.ThirdQuarterSum);
+            cells["I" + currentPosition].Value = model.AsEnumerable().Sum(x => x.ThirdQuarterSumSold);
+            cells["J" + currentPosition].Value = model.AsEnumerable().Sum(x => x.ThirdQuarterSumExpen);
+            cells["K" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSum);
+            cells["L" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSumSold);
+            cells["M" + currentPosition].Value = model.AsEnumerable().Sum(x => x.FourthQuarterSumExpen);
 
-            cells["A" + startPosition + ":J" + currentPosition].Borders.LineStyle = LineStyle.Continous;
-            cells["B" + startPosition + ":J" + currentPosition].NumberFormat = "### ### ##0.00";
+            cells["N" + currentPosition].Value = "=SUM(B" + currentPosition + ",E" + currentPosition + ",H" + currentPosition + ",K" + currentPosition + ")";
+
+            cells["A" + startPosition + ":N" + currentPosition].Borders.LineStyle = LineStyle.Continous;
+            cells["B" + startPosition + ":N" + currentPosition].NumberFormat = "### ### ##0.00";
 
             PrintSignatures(cells, currentPosition + 3);
 

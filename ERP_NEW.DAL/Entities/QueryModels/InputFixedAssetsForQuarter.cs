@@ -17,12 +17,16 @@ namespace ERP_NEW.DAL.Entities.QueryModels
         public string GroupName { get; set; }
         public decimal FirstQuarterSum { get; set; }
         public decimal FirstQuarterSumSold { get; set; }
+        public decimal FirstQuarterSumExpen { get; set; }
         public decimal SecondQuarterSum { get; set; }
         public decimal SecondQuarterSumSold { get; set; }
+        public decimal SecondQuarterSumExpen { get; set; }
         public decimal ThirdQuarterSum { get; set; }
         public decimal ThirdQuarterSumSold { get; set; }
+        public decimal ThirdQuarterSumExpen { get; set; }
         public decimal FourthQuarterSum { get; set; }
         public decimal FourthQuarterSumSold { get; set; }
+        public decimal FourthQuarterSumExpen { get; set; }
 
     }
 }
