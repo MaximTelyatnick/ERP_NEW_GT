@@ -720,8 +720,12 @@ namespace ERP_NEW.GUI
                     break;
 
                 case "logItem":
-                    
+
                     //кнопка для логера;
+                    LogFm logFm= new LogFm(userTasksDTO);
+                    logFm.Text = "Журнал п";
+                    logFm.MdiParent = this;
+                    logFm.Show();
 
                     break;
 
