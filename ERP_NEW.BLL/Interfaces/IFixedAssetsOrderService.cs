@@ -34,7 +34,7 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<InputFixedAssetsForQuarterDTO> GetInputFixedForQuarter(DateTime beginDate, DateTime endDate);
         IEnumerable<FixedAssetsOrderReportStraitDTO> GetInventoryFixedAssetsForGroups(DateTime endDate);
 
-        FixedAssetsOrderRegistrationDTO GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(int id, int type);
+        FixedAssetsOrderRegistrationDTO GetByFixedAssetsOrderId(int id, int type);
 
         int FixedAssetsOrderCreate(FixedAssetsOrderDTO fixedAssetsOrderDTO);
         void FixedAssetsOrderUpdate(FixedAssetsOrderDTO fixedAssetsOrderDTO);

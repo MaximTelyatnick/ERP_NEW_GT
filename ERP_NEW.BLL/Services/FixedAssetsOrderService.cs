@@ -315,7 +315,7 @@ namespace ERP_NEW.BLL.Services
 
         }
 
-        public FixedAssetsOrderRegistrationDTO GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(int id, int type)
+        public FixedAssetsOrderRegistrationDTO GetByFixedAssetsOrderId(int id, int type)
         {
             return mapper.Map<FixedAssetsOrderRegistration, FixedAssetsOrderRegistrationDTO>(fixedAssetsOrderRegistration.GetAll().SingleOrDefault(s => s.FixedAssetsOrderId == id && s.StatusTypeOrder == type));
         }

@@ -40,6 +40,7 @@ using DevExpress.Skins;
 using DevExpress.LookAndFeel;
 using System.Diagnostics;
 using System.Deployment.Application;
+using Microsoft.Win32;
 
 namespace ERP_NEW.GUI
 {
@@ -59,6 +60,13 @@ namespace ERP_NEW.GUI
             elementGlyph.Glyph.Image = null;
             elementGlyph.Color.BackColor = Color.Transparent;
             LookAndFeelHelper.ForceDefaultLookAndFeelChanged();
+            // SystemEvents.DisplaySettingsChanged += new
+            //EventHandler(SystemEvents_DisplaySettingsChanged);
+
+            // SystemEvents.SessionEnding += new
+            //  SessionEndingEventHandler(SystemEvents_SessionEndingEventHandler);
+
+            Microsoft.Win32.SystemEvents.SessionEnded += new Microsoft.Win32.SessionEndedEventHandler(SystemEvents_SessionEnded);
 
             userService = Program.kernel.Get<IUserService>();
             documentManager.MdiParent = this;
@@ -89,7 +97,36 @@ namespace ERP_NEW.GUI
             departmentLabel.Text = userInfo.DepartmentName;
             
             UserAccessMenu();
+            UserOnline();
+
+
            
+        }
+
+
+
+        void SystemEvents_SessionEnded(object sender, Microsoft.Win32.SessionEndedEventArgs e)
+        {
+            //MessageBox.Show("SessionEnded fired");
+
+
+
+
+            //if (!mainWindow.dBSaved) mainWindow.SaveDb(Form1.settings.dBPath);
+            //if (mainWindow.index != null) mainWindow.SaveIndex(Form1.settings.indexPath);
+            UserOffline();
+            Microsoft.Win32.SystemEvents.SessionEnded -= new Microsoft.Win32.SessionEndedEventHandler(SystemEvents_SessionEnded);
+            Application.Exit();
+        }
+
+        private void UserOnline()
+        {
+            userService.UserUpdateState(userInfo.UserId, true);
+        }
+
+        private void UserOffline()
+        {
+            userService.UserUpdateState(userInfo.UserId, false);
         }
 
         private byte[] PhotoSource(UserDetailsDTO source)
@@ -814,6 +851,7 @@ namespace ERP_NEW.GUI
 
         private void MainTabFm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            UserOffline();
             foreach (string FileName in Directory.GetFiles(Utils.HomePath + @"\Temp\"))
             {
                 try

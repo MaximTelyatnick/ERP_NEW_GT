@@ -33,8 +33,8 @@
     <ProductName>ERP Techvagonmash</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Корпоративна інформаційна система</SuiteName>
-    <MinimumRequiredVersion>1.0.0.436</MinimumRequiredVersion>
-    <ApplicationRevision>437</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.437</MinimumRequiredVersion>
+    <ApplicationRevision>438</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -2312,7 +2312,6 @@
     <EmbeddedResource Include="OTK\ReceiptCertificatesFm.resx">
       <DependentUpon>ReceiptCertificatesFm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

@@ -19,6 +19,9 @@ namespace ERP_NEW.BLL.Interfaces
         bool UserRoleDeleteById(int? id);
 
         void UsersUpdateRange(List<UsersDTO> users);
+        int UserCreate(UsersDTO udto);
+        void UserUpdate(UsersDTO udto);
+        void UserUpdateState(int userId, bool state);
         bool UserDeleteById(int? id);
 
         void UserTasksCreateRange(List<UserTasksDTO> userTasks);

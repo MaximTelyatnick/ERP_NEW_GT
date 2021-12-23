@@ -908,7 +908,7 @@ namespace ERP_NEW.GUI.Accounting
             if (fixedAssetsOrderArchiveBS.Count > 0)
             {
 
-                FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
+                FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
                 if (currentFixedAssetsOrderReg == null)
                 {
                     if (MessageBox.Show("Не сформовано наказ, створити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -916,7 +916,7 @@ namespace ERP_NEW.GUI.Accounting
                         try
                         {
                             FixedAssetsOrderJournalDTO newModel = ConvertArchiveJournalToJournal();
-                            RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
+                            currentFixedAssetsOrderReg = RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
                         }
                         catch (Exception ex)
                         {
@@ -958,15 +958,14 @@ namespace ERP_NEW.GUI.Accounting
         //    new FixedAssetsOrderAddJournalFm(model, modelArchive, rezTagTabPage, fixedAssetsOrderMaterialsBS,beginDateArchive,endDateArchive).Show();
         //}
 
-        private void RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
+        private FixedAssetsOrderRegistrationDTO RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
         {
             using (FixedAssetsOrderAddJournalFm fixedAssetsOrderAddJournalFm = new FixedAssetsOrderAddJournalFm(model, modelArchive, rezTagTabPage, fixedAssetsOrderMaterialsBS, beginDateArchive, endDateArchive))
             {
                 if (fixedAssetsOrderAddJournalFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    
-
-                }
+                    return fixedAssetsOrderAddJournalFm.Return();
+                else
+                    return null;
             }
         }
 
@@ -996,13 +995,13 @@ namespace ERP_NEW.GUI.Accounting
         {
             if (fixedAssetsOrderArchiveBS.Count != 0 && ((FixedAssetsOrderArchiveJournalDTO)ItemJournalArchive).OperationStatus!=1)
             {
-                if(fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4)!=null)
+                if(fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4)!=null)
                 {
                     MessageBox.Show("Основний засіб вже списано наказом на списання!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                if (fixedAssetsOrderService.GetBusinessTripsPrepaymentGetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 3) != null)
+                if (fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 3) != null)
                 {
                     MessageBox.Show("Основний засіб вже списано наказом на продаж!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
