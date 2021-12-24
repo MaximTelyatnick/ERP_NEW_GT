@@ -15381,13 +15381,13 @@ namespace ERP_NEW.BLL.Services
                 cells["D" + currentPosition].Value = model[i].FirstQuarterSumExpen;
                 cells["E" + currentPosition].Value = model[i].SecondQuarterSum;
                 cells["F" + currentPosition].Value = model[i].SecondQuarterSumSold;
-                cells["G" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["G" + currentPosition].Value = model[i].SecondQuarterSumExpen;
                 cells["H" + currentPosition].Value = model[i].ThirdQuarterSum;
                 cells["I" + currentPosition].Value = model[i].ThirdQuarterSumSold;
-                cells["J" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["J" + currentPosition].Value = model[i].ThirdQuarterSumExpen;
                 cells["K" + currentPosition].Value = model[i].FourthQuarterSum;
                 cells["L" + currentPosition].Value = model[i].FourthQuarterSumSold;
-                cells["M" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["M" + currentPosition].Value = model[i].FourthQuarterSumExpen;
                 cells["N" + currentPosition].Value = "=SUM(B" + currentPosition + ",D" + currentPosition + ",F" + currentPosition + ",H" + currentPosition + ")";
 
                 currentPosition++;
