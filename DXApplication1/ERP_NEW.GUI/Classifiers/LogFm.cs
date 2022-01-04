@@ -24,19 +24,16 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource employeeBS = new BindingSource();
         private UserTasksDTO _userTasksDTO;
         private EmployeesDetailsDTO employeesDetalDTO;
+        private object logEditFm;
         public LogFm(UserTasksDTO userTasksDTO)
         {
-
             InitializeComponent();
-
             _userTasksDTO = userTasksDTO;
-
             LoadDate();
         }
         private void LoadDate()
         {
             splashScreenManager.ShowWaitForm();
-
             logService = Program.kernel.Get<ILogService>();
             logBS.DataSource = logService.GetLogs();
             logGridControl.DataSource = logBS;
@@ -45,43 +42,51 @@ namespace ERP_NEW.GUI.Classifiers
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            if (MessageBox.Show("Видалити користувача  " + ((LogDTO)logBS.Current).EmployeeName + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (logService.LogDelete(((LogDTO)logBS.Current).Id))
+                {
+                    logGridView.BeginUpdate();
+                    LoadDate();
+                    logGridView.EndUpdate();
+                    logGridControl.Refresh();
+                }
+            }
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            LogDTO model = ((LogDTO)logBS.Current);
+            using (LogEditFm logEditFm = new LogEditFm(Utils.Operation.Add, model))
+            {
+                if (logEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    logGridView.BeginDataUpdate();
+                    LoadDate();
+                    logGridView.EndDataUpdate();
+                }
+            }
         }
 
         private void EditButtonItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if( logBS.Count > 0)
-            {
-
-                EmployeesDetailsDTO model =  ((EmployeesDetailsDTO)employeeBS.Current);
-                LogDTO newmodel = new LogDTO()
+            if (logBS.Count > 0)
+            {            
+                LogDTO model = ((LogDTO)logBS.Current);              
+                using (LogEditFm logEditFm = new LogEditFm(Utils.Operation.Update, model))
                 {
-                    EmployeeName = model.FirstName,
-
-
-
-                };
-                editButton(Utils.Operation.Update, newmodel);
+                    if (logEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        logGridView.BeginDataUpdate();
+                        LoadDate();
+                        logGridView.EndDataUpdate();
+                    }
+                }
             }
-
         }
         private void editButton(Utils.Operation operation, LogDTO model)
         {
-            using (LogEditFm packingListEditFm = new LogEditFm(operation, model))
-            {
-                
-                  
-
-                  
-
-                  
-                
-            }
+        
 
         }
     }
