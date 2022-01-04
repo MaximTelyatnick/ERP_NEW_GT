@@ -8,5 +8,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public decimal EmployeeNumber { get; set; }
         public int EmployeeId { get; set; }
         public int UserRoleId { get; set; }
+
+        public bool? Online { get; set; }
     }
 }

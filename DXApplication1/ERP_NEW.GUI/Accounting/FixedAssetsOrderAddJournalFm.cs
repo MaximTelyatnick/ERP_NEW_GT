@@ -28,6 +28,7 @@ namespace ERP_NEW.GUI.Accounting
         List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsList=new List<FixedAssetsMaterialsDTO>();
         private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();
         private IFixedAssetsOrderService fixedAssetsOrderService;
+        private FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO();
         private FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistrationsave = new FixedAssetsOrderRegistrationDTO();
         //  List<FixedAssetsOrderJournalDTO> jour;
         DateTime beginDate, endDate;
@@ -75,9 +76,9 @@ namespace ERP_NEW.GUI.Accounting
             rezTab = rezTagTabPage;
             InvNumber = model.InventoryNumber;
         }
-        public BusinessTripsDTO Return()
+        public FixedAssetsOrderRegistrationDTO Return()
         {
-            return ((BusinessTripsDTO)Item);
+            return newModel;
         }
 
 
@@ -124,7 +125,7 @@ namespace ERP_NEW.GUI.Accounting
                                     {
                                         //  var qq = jour.Where(el => el.FixedAccountId != fao);
 
-                                        FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
+                                        newModel = new FixedAssetsOrderRegistrationDTO()
                                             {
                                                 FixedAssetsOrderId = ((FixedAssetsOrderJournalDTO)Item).Id,
                                                 NumberOrder = numberOrderEdit.Text,
@@ -142,7 +143,7 @@ namespace ERP_NEW.GUI.Accounting
 
                                 else if (rezRadioBtn == 1)//vvedenia
                                 {
-                                    FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
+                                    newModel = new FixedAssetsOrderRegistrationDTO()
                                     {
                                         FixedAssetsOrderId = ((FixedAssetsOrderJournalDTO)Item).Id,
                                         NumberOrder = numberOrderEdit.Text,
@@ -158,7 +159,7 @@ namespace ERP_NEW.GUI.Accounting
 
                                 else if (rezRadioBtn == 3)//sale
                                 {
-                                    FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
+                                    newModel = new FixedAssetsOrderRegistrationDTO()
                                         {
                                             FixedAssetsOrderId = ((FixedAssetsOrderJournalDTO)Item).Id,
                                             NumberOrder = numberOrderEdit.Text,
@@ -175,7 +176,7 @@ namespace ERP_NEW.GUI.Accounting
                                 }
                                 else if (rezRadioBtn == 4)//expenditure
                                 {
-                                    FixedAssetsOrderRegistrationDTO newModel = new FixedAssetsOrderRegistrationDTO()
+                                    newModel = new FixedAssetsOrderRegistrationDTO()
                                     {
                                         FixedAssetsOrderId = ((FixedAssetsOrderJournalDTO)Item).Id,
                                         NumberOrder = numberOrderEdit.Text,
@@ -193,7 +194,7 @@ namespace ERP_NEW.GUI.Accounting
                             }
                             if (rezTab == "1")//archiv
                             {
-                                FixedAssetsOrderRegistrationDTO newModelArchive = new FixedAssetsOrderRegistrationDTO()
+                                newModel = new FixedAssetsOrderRegistrationDTO()
                                 {
                                     NumberOrder = numberOrderEdit.Text,
                                     DateOrder = ((FixedAssetsOrderArchiveJournalDTO)ItemArchive).EndRecordDate,
@@ -206,8 +207,8 @@ namespace ERP_NEW.GUI.Accounting
                                     TransferPrice = ((FixedAssetsOrderArchiveJournalDTO)ItemArchive).TransferPrice,
                                     Supplier_Id = ((FixedAssetsOrderArchiveJournalDTO)ItemArchive).SupplierId
                                 };
-                                newModelArchive.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModelArchive);
-                                fixedAssetsOrderRegistrationsave = newModelArchive;
+                                newModel.Id = fixedAssetsOrderService.FixedAssetsOrderRegistrationCreate(newModel);
+                                fixedAssetsOrderRegistrationsave = newModel;
                                 return true;
                             }
 

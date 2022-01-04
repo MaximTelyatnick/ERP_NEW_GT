@@ -295,6 +295,29 @@ namespace ERP_NEW.BLL.Services
             }
         }
 
+        public int UserCreate(UsersDTO udto)
+        {
+            var newUser = users.Create(mapper.Map<Users>(udto));
+            return newUser.UserId;
+        }
+
+
+        public void UserUpdate(UsersDTO udto)
+        {
+            var usersUpdate = users.GetAll().SingleOrDefault(c => c.UserId == udto.UserId);
+
+            users.Update(mapper.Map<UsersDTO, Users>(udto, usersUpdate));
+        }
+
+        public void UserUpdateState(int userId, bool state)
+        {
+            var usersUpdate = users.GetAll().SingleOrDefault(c => c.UserId == userId);
+            usersUpdate.Online = state;
+            users.Update(usersUpdate);
+        }
+
+
+
         public void Dispose()
         {
             Database.Dispose();

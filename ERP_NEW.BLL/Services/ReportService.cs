@@ -14059,6 +14059,9 @@ namespace ERP_NEW.BLL.Services
             var Worksheet = Workbook.Worksheets[0];
             var Сells = Worksheet.Cells;
             IRange cells = Worksheet.Cells;
+            var WorksheetSecond = Workbook.Worksheets[1];
+            var СellsSecond = WorksheetSecond.Cells;
+            IRange cellsSecond = WorksheetSecond.Cells;
 
             List<FixedAssetsMaterialsDTO> newMaterialsList = new List<FixedAssetsMaterialsDTO>();
             decimal sumPrice = 0;
@@ -14079,6 +14082,21 @@ namespace ERP_NEW.BLL.Services
             cells["AI30"].Value =   model.BeginDate.Year;
             cells["AL30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;
             cells["AR30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;
+            cellsSecond["H7"].Value = model.BeginDate.Day.ToString();
+            cellsSecond["J7"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Genitive) + " " + model.BeginDate.Year.ToString() + "р.";
+            cellsSecond["E3"].Value = model.InventoryName;
+
+            cells["AE12"].Value = "\""+dt.Day+"\"    " + RuDateAndMoneyConverter.MonthName(dt.Month, Utils.TextCase.Genitive).ToString() + "  " + dt.Year +"р.";
+
+            if (fixedAssetsOrderRegistration!=null)
+            {
+                cells["AE16"].Value = fixedAssetsOrderRegistration.NumberOrder;
+                cells["AI16"].Value = fixedAssetsOrderRegistration.DateOrder.Value.ToShortDateString();
+                cellsSecond["N1"].Value = fixedAssetsOrderRegistration.DateOrder.Value.Day.ToString();
+                cellsSecond["P1"].Value = RuDateAndMoneyConverter.MonthName(fixedAssetsOrderRegistration.DateOrder.Value.Month, Utils.TextCase.Genitive) + " " + fixedAssetsOrderRegistration.DateOrder.Value.Year.ToString() + "р.";
+                cellsSecond["W1"].Value = fixedAssetsOrderRegistration.NumberOrder;
+            }
+
             //if (materialsListSource.Count > 0)
             //{
             //    newMaterialsList = materialsListSource.Where(x => x.Flag < 2).ToList();
@@ -15363,13 +15381,13 @@ namespace ERP_NEW.BLL.Services
                 cells["D" + currentPosition].Value = model[i].FirstQuarterSumExpen;
                 cells["E" + currentPosition].Value = model[i].SecondQuarterSum;
                 cells["F" + currentPosition].Value = model[i].SecondQuarterSumSold;
-                cells["G" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["G" + currentPosition].Value = model[i].SecondQuarterSumExpen;
                 cells["H" + currentPosition].Value = model[i].ThirdQuarterSum;
                 cells["I" + currentPosition].Value = model[i].ThirdQuarterSumSold;
-                cells["J" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["J" + currentPosition].Value = model[i].ThirdQuarterSumExpen;
                 cells["K" + currentPosition].Value = model[i].FourthQuarterSum;
                 cells["L" + currentPosition].Value = model[i].FourthQuarterSumSold;
-                cells["M" + currentPosition].Value = model[i].FirstQuarterSumExpen;
+                cells["M" + currentPosition].Value = model[i].FourthQuarterSumExpen;
                 cells["N" + currentPosition].Value = "=SUM(B" + currentPosition + ",D" + currentPosition + ",F" + currentPosition + ",H" + currentPosition + ")";
 
                 currentPosition++;
