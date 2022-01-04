@@ -81,7 +81,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             splashScreenManager.ShowWaitForm();
 
             contractorService = Program.kernel.Get<IContractorsService>();
-            agreementOrdersBS.DataSource = contractorService.GetAgreementOrderJournal(beginDate, endDate).OrderByDescending(bdsm=>bdsm.AgreementOrderDate);
+            agreementOrdersBS.DataSource = contractorService.GetAgreementOrderJournal(beginDate, endDate).OrderByDescending(bdsm=>bdsm.AgreementOrderDate).ToList();
             agreementOrderGrid.DataSource = agreementOrdersBS;
 
             splashScreenManager.CloseWaitForm();
@@ -151,7 +151,7 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void agreementOrderGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            if (agreementOrdersBS.Count > 1)
+            if (e.ListSourceRowIndex > -1)
             {
                 AgreementOrderJournalDTO item = (AgreementOrderJournalDTO)agreementOrdersBS[e.ListSourceRowIndex];
 
