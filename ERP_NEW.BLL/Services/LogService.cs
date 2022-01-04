@@ -50,7 +50,8 @@ namespace ERP_NEW.BLL.Services
                               EmployeeId = c.EmployeeId,
                               TaskId = t.TaskId,
                               TaskCaption = t.TaskCaption,
-                              EmployeeName =( co.LastName + ' ' + co.FirstName+' ' + co.MiddleName),
+                             
+                             EmployeeName =( co.LastName + " " + co.FirstName+" " + co.MiddleName),
                               RecDate = c.RecDate,
                               RecTime = c.RecTime,
                               OperationType = c.OperationType

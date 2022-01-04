@@ -171,7 +171,13 @@ namespace ERP_NEW.BLL.Services
             return result;
             
         }
-        
+
+        public IEnumerable<TasksDTO> GetTasksAll()
+        {
+
+            return mapper.Map<IEnumerable<Tasks>, List<TasksDTO>>(tasks.GetAll()).OrderBy(s => s.TaskId);
+        }
+
         public IEnumerable<UsersInfoDTO> GetUsers()
         {
             string procName = @"select * from ""GetAllUsersInfo""";
@@ -293,5 +299,36 @@ namespace ERP_NEW.BLL.Services
         {
             Database.Dispose();
         }
+
+     
+        
+
+        public void TasksCreate(TasksDTO tskdto)
+        {
+            var newtask = tasks.Create(mapper.Map<Tasks>(tskdto));
+          //  return newtask.TaskId;
+        }
+        public void TasksUpdate(TasksDTO tskdto)
+        {
+            var etasks = tasks.GetAll().SingleOrDefault(t => t.TaskId == tskdto.TaskId);
+            tasks.Update(mapper.Map<TasksDTO, Tasks>(tskdto, etasks));
+
+        }
+        public bool TasksDeleteById(int? tasksId)
+        {
+            try
+            {
+                var deltasks = tasks.GetAll().SingleOrDefault(c => c.TaskId == tasksId.Value);
+                tasks.Delete(deltasks);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+        }
+
     }
+
 }

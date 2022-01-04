@@ -15,8 +15,8 @@ namespace ERP_NEW.DAL.Entities.Models
      //   public string FormName { get; set; }
         public int TaskId { get; set; }
         public string OperationType { get; set; }
-        public DateTime RecDate { get; set; }
-        public DateTime RecTime { get; set; }
+        public DateTime? RecDate { get; set; }
+        public DateTime? RecTime { get; set; }
 
     }
 }

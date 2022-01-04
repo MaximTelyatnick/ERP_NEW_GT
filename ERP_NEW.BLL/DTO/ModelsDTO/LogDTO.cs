@@ -15,7 +15,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int TaskId { get; set; }
         public string EmployeeName { get; set; }
         public string OperationType { get; set; }
-        public DateTime RecDate { get; set; }
-        public DateTime RecTime { get; set; }
+        public DateTime? RecDate { get; set; }
+        public DateTime? RecTime { get; set; }
     }
 }
