@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesDetailFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.notWorkingEmployeesBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -35,6 +36,7 @@
             this.seasonLayOffAnalyzatorBtn = new DevExpress.XtraBars.BarButtonItem();
             this.employeesCounterEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.workingEmployeesOnlineBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -59,6 +61,7 @@
             this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.item1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesInfoGrid)).BeginInit();
@@ -83,9 +86,10 @@
             this.notWorkingEmployeesBtn,
             this.workingEmployeesBtn,
             this.seasonLayOffAnalyzatorBtn,
-            this.employeesCounterEdit});
+            this.employeesCounterEdit,
+            this.workingEmployeesOnlineBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 5;
+            this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -162,6 +166,15 @@
             this.repositoryItemTextEdit1.AutoHeight = false;
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
+            // workingEmployeesOnlineBtn
+            // 
+            this.workingEmployeesOnlineBtn.Caption = "Працівники процюючі онлайн";
+            this.workingEmployeesOnlineBtn.Glyph = global::ERP_NEW.GUI.XRDesignRibbonControllerResources.RibbonUserDesigner_WindowsLarge;
+            this.workingEmployeesOnlineBtn.Id = 5;
+            this.workingEmployeesOnlineBtn.Name = "workingEmployeesOnlineBtn";
+            this.workingEmployeesOnlineBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.workingEmployeesOnlineBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.workingEmployeesOnlineBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -175,6 +188,7 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.workingEmployeesBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.notWorkingEmployeesBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.workingEmployeesOnlineBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Функции";
             // 
@@ -509,6 +523,12 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Interval = 15000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // EmployeesDetailFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -570,5 +590,7 @@
         private DevExpress.XtraGrid.Views.Layout.LayoutViewField layoutViewField_layoutViewColumn6_1;
         private DevExpress.XtraGrid.Views.Layout.LayoutViewCard layoutViewCard1;
         private DevExpress.XtraLayout.EmptySpaceItem item1;
+        private DevExpress.XtraBars.BarButtonItem workingEmployeesOnlineBtn;
+        private System.Windows.Forms.Timer timer;
     }
 }

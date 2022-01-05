@@ -21,6 +21,7 @@ namespace ERP_NEW.BLL.Interfaces
 
         IEnumerable<EmployeesInfoDTO> GetEmployeeHistory(decimal employeeNumber);
         IEnumerable<EmployeesInfoDTO> GetEmployeesWorking();
+        IEnumerable<EmployeesInfoDTO> GetEmployeesWorkingOnline();
         IEnumerable<EmployeesInfoDTO> GetEmployeesNotWorking();
         IEnumerable<EmployeesInfoOnlyWithWeldStampDTO> GetEmployeesWorkingWithWeldStamp();
         IEnumerable<EmployeesInfoNonPhotoDTO> GetEmployeesWorkingNonPhoto();

@@ -21,7 +21,8 @@ namespace ERP_NEW.GUI.GodMode
         public IEmployeesService employeesService;
         public BindingSource employeesBS = new BindingSource();
         public BindingSource employeeHistoryBS = new BindingSource();
-
+        public bool online;
+        public int flag=0;
         List<EmployeesInfoDTO> employeesList;
 
         public EmployeesDetailFm()
@@ -32,6 +33,7 @@ namespace ERP_NEW.GUI.GodMode
 
         private void notWorkingEmployeesBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            flag = 1;
             LoadData(false);
         }
 
@@ -44,7 +46,12 @@ namespace ERP_NEW.GUI.GodMode
 
             employeesService = Program.kernel.Get<IEmployeesService>();
             if (working)
-                employeesList = employeesService.GetEmployeesWorking().ToList();
+            {
+                if (online)  //to write 04.01
+                    employeesList = employeesService.GetEmployeesWorkingOnline().ToList();
+                else
+                    employeesList = employeesService.GetEmployeesWorking().ToList();
+            }
             else
                 employeesList = employeesService.GetEmployeesNotWorking().ToList();
 
@@ -78,6 +85,7 @@ namespace ERP_NEW.GUI.GodMode
             employeesInfoGrid.Focus();
 
             employeesInfoGridView.FindFilterText = " ";
+           
         }
 
         public byte[] Resizer(byte[] imageByte, int rows, int columns)
@@ -110,6 +118,7 @@ namespace ERP_NEW.GUI.GodMode
 
         private void workingEmployeesBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            flag = 0;
             LoadData(true);
         }
 
@@ -153,6 +162,29 @@ namespace ERP_NEW.GUI.GodMode
         private void flyoutPanelControl_Click(object sender, EventArgs e)
         {
             //flyoutPanel1.HidePopup();
+        }
+
+        private void workingEmployeesOnlineBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            flag = 2;
+            online = true;
+            LoadData(true);
+            online = false;
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            if (flag == 0)
+                LoadData(true);
+            if (flag == 1)
+                LoadData(false);
+            if (flag==2)
+            {
+                online = true;
+                LoadData(true);
+            }
+              
+
         }
     }
 
