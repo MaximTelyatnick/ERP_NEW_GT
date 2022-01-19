@@ -52,6 +52,7 @@
             this.bstEmployeesReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy23 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy63 = new DevExpress.XtraBars.BarButtonItem();
+            this.bstReportPaymentsBy473 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy6412 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy313 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy3112 = new DevExpress.XtraBars.BarButtonItem();
@@ -152,7 +153,7 @@
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.bstReportPaymentsBy473 = new DevExpress.XtraBars.BarButtonItem();
+            this.bstReportPaymentsBy474 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -235,9 +236,10 @@
             this.paymentStatementDateEdit,
             this.bstReportPaymentsBy313,
             this.bstReportPaymentsBy3112,
-            this.bstReportPaymentsBy473});
+            this.bstReportPaymentsBy473,
+            this.bstReportPaymentsBy474});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 34;
+            this.ribbonControl1.MaxItemId = 35;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -421,6 +423,7 @@
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy23);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy63);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy473);
+            this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy474);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy6412);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy313);
             this.reportMenu.ItemLinks.Add(this.bstReportPaymentsBy3112);
@@ -469,6 +472,13 @@
             this.bstReportPaymentsBy63.Id = 23;
             this.bstReportPaymentsBy63.Name = "bstReportPaymentsBy63";
             this.bstReportPaymentsBy63.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy63_ItemClick);
+            // 
+            // bstReportPaymentsBy473
+            // 
+            this.bstReportPaymentsBy473.Caption = "Звіт по рахунку 473";
+            this.bstReportPaymentsBy473.Id = 33;
+            this.bstReportPaymentsBy473.Name = "bstReportPaymentsBy473";
+            this.bstReportPaymentsBy473.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy473_ItemClick);
             // 
             // bstReportPaymentsBy6412
             // 
@@ -1754,12 +1764,12 @@
             this.barEditItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barEditItem1.Name = "barEditItem1";
             // 
-            // bstReportPaymentsBy473
+            // bstReportPaymentsBy474
             // 
-            this.bstReportPaymentsBy473.Caption = "Звіт по рахунку 473";
-            this.bstReportPaymentsBy473.Id = 33;
-            this.bstReportPaymentsBy473.Name = "bstReportPaymentsBy473";
-            this.bstReportPaymentsBy473.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy473_ItemClick);
+            this.bstReportPaymentsBy474.Caption = "Звіт по рахунку 474";
+            this.bstReportPaymentsBy474.Id = 34;
+            this.bstReportPaymentsBy474.Name = "bstReportPaymentsBy474";
+            this.bstReportPaymentsBy474.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy474_ItemClick);
             // 
             // BusinessTripsPaymentJournalFm
             // 
@@ -1947,5 +1957,6 @@
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy3112;
         private DevExpress.XtraBars.BarButtonItem editPaymantAccountBtn;
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy473;
+        private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy474;
     }
 }

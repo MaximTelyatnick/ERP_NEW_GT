@@ -1002,7 +1002,30 @@ namespace ERP_NEW.GUI.BusinessTrips
 
                 reportService = Program.kernel.Get<IReportService>();
 
-                if (!reportService.GetBSTReportPrepaymentsByAccountId((DateTime)beginReportDateEdit.EditValue, (DateTime)endReportDateEdit.EditValue, 176, "473"))
+                if (!reportService.GetBSTReportPaymentsByAccountId((DateTime)beginReportDateEdit.EditValue, (DateTime)endReportDateEdit.EditValue, 176, "473"))
+                    MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+
+                return;
+            }
+        }
+
+        private void bstReportPaymentsBy474_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                splashScreenManager.ShowWaitForm();
+
+                reportService = Program.kernel.Get<IReportService>();
+
+                if (!reportService.GetBSTReportPaymentsByAccountId((DateTime)beginReportDateEdit.EditValue, (DateTime)endReportDateEdit.EditValue, 134, "474"))
                     MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 splashScreenManager.CloseWaitForm();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -242,8 +243,8 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -1127,7 +1128,7 @@
             this.marketingCategory.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.marketingCategory.AppearanceSelected.BackColor = System.Drawing.Color.Gainsboro;
             this.marketingCategory.AppearanceSelected.Options.UseBackColor = true;
-            this.marketingCategory.Caption = "Збутап";
+            this.marketingCategory.Caption = "Збут";
             this.marketingCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("marketingCategory.Glyph")));
             this.marketingCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.packingItem,
