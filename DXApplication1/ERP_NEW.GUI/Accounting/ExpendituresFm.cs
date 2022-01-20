@@ -343,7 +343,7 @@ namespace ERP_NEW.GUI.Accounting
             var optionXls = new XlsExportOptionsEx();
 
             optionXls.SheetName = "Списання матеріалів";
-            optionXls.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Text;
+            optionXls.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Value;
             optionXls.ShowColumnHeaders = DevExpress.Utils.DefaultBoolean.True;
             optionXls.ExportType = ExportType.WYSIWYG;
             expenditureBandedGridView.OptionsPrint.AutoWidth = false;
