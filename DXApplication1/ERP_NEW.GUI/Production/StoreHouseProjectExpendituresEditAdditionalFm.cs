@@ -356,7 +356,7 @@ namespace ERP_NEW.GUI.Production
             splashScreenManager.ShowWaitForm();
 
             //expenditureStoreHouseInfoList = storeHouseService.GetExpendituresStoreHousesInfoByPeriod(beginDate, endDate).ToList();
-            expenditureStoreHouseInfoList = storeHouseService.GetExpenditureJournalByPeriod(beginDate, endDate).Where(srch => srch.ExpenditureType == true).ToList();
+            expenditureStoreHouseInfoList = storeHouseService.GetExpenditureJournalByPeriod(beginDate, endDate).Where(srch => srch.ExpenditureType == true).OrderByDescending(ord => ord.Id).ToList();
             expenditureStoreHouseList = ConvertToExpenditureList(expenditureStoreHouseInfoList);
             expendituresBS.DataSource = expenditureStoreHouseList;
             expenditureFullGrid.DataSource = expendituresBS;
