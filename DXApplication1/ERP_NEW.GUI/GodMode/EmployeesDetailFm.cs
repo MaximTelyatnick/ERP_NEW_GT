@@ -33,6 +33,7 @@ namespace ERP_NEW.GUI.GodMode
 
         private void notWorkingEmployeesBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            timer.Enabled = false;
             flag = 1;
             LoadData(false);
         }
@@ -118,7 +119,9 @@ namespace ERP_NEW.GUI.GodMode
 
         private void workingEmployeesBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            timer.Enabled = false;//вимкнути таймер
             flag = 0;
+            online = false;
             LoadData(true);
         }
 
@@ -166,6 +169,7 @@ namespace ERP_NEW.GUI.GodMode
 
         private void workingEmployeesOnlineBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            timer.Enabled = true;//увімкнути таймер
             flag = 2;
             online = true;
             LoadData(true);
@@ -174,17 +178,14 @@ namespace ERP_NEW.GUI.GodMode
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            if (flag == 0)
-                LoadData(true);
-            if (flag == 1)
-                LoadData(false);
+          
             if (flag==2)
             {
                 online = true;
                 LoadData(true);
             }
               
-
+           
         }
     }
 
@@ -207,6 +208,7 @@ namespace ERP_NEW.GUI.GodMode
             return base.GetLocalizedString(id);
         }
     }
+
 
     #endregion
 }
