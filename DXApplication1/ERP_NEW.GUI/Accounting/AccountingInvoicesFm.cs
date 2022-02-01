@@ -406,76 +406,18 @@ namespace ERP_NEW.GUI.Accounting
 
         private void invoicesToExcelBut_ItemClick(object sender, ItemClickEventArgs e)
         {
-            splashScreenManager.ShowWaitForm();
-            if (accountingInvoicesBS.Count != 0)
-            {
-                reportService = Program.kernel.Get<IReportService>();
+            //splashScreenManager.ShowWaitForm();
+            //if (accountingInvoicesBS.Count != 0)
+            //{
+            //    reportService = Program.kernel.Get<IReportService>();
 
-                reportService.PrintAccountingInvoices(ViewToDataTable());             
-            }
+            //    reportService.PrintAccountingInvoices(ViewToDataTable());             
+            //}
 
-            splashScreenManager.CloseWaitForm();
+            //splashScreenManager.CloseWaitForm();
         }
 
-        private List<InvoicesDTO> ViewToDataTable()
-        {
-            CriteriaOperator op = accountingInvoicesGridView.ActiveFilterCriteria;
-            string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op).ToString();
-
-            string replace_string;
-            string replaceable_string;
-
-            string[] testCol = new string[] { "Month_Current", "Month_Invoice", "Invoice_Number", "Contractor_Id", "Bal_Name", "Price", "Vat", "Non_Taxable", "Total_Price", "Vat_Check", "Inv_Note_Name" };//, "tinCol", "priceCol", "vatCol", "nonTaxableCol", "totalPriceCol", "balNameCol", "vatCheckCol", "invNoteNameCol" };
-            for (int i = 0; i < testCol.Length; i++)
-            {
-                replace_string = "Convert([" + testCol[i] + "], 'System.String') like";
-                replaceable_string = "[" + testCol[i] + "] like";
-                filterString = filterString.Replace(replaceable_string, replace_string);
-            }
-
-            IEnumerable<InvoicesDTO> lst = (IEnumerable<InvoicesDTO>)accountingInvoicesBS.DataSource;
-            DataTable dt = ToDataTable<InvoicesDTO>(lst);
-            DataView dv = new DataView(dt);
-
-            List<InvoicesDTO> rows = new List<InvoicesDTO>();
-
-            dv.RowFilter = filterString;
-
-            DataTable table = dv.ToTable();
-
-            List<InvoicesDTO> invoicesInfoSortList = (from DataRow row in table.Rows
-
-                                                      select new InvoicesDTO
-                                                      {
-                                                          Id = Convert.ToInt32(row["Id"]),
-                                                          Month_Current = Convert.ToDateTime(row["Month_Current"]),
-                                                          Month_Invoice = Convert.ToDateTime(row["Month_Invoice"]),
-                                                          Invoice_Number = Convert.ToString(row["Invoice_Number"]),
-                                                          Contractor_Id = (row["Contractor_Id"] is System.DBNull) ? (int?)0 : Convert.ToInt32(row["Contractor_Id"]),
-                                                          Balance_Account_Id = (row["Balance_Account_Id"] is System.DBNull) ? (int?)0 : Convert.ToInt32(row["Balance_Account_Id"]),
-                                                          Price = (row["Price"] is System.DBNull) ? (Decimal?)0.00m : Convert.ToDecimal(row["Price"]),
-                                                          Vat = (row["Vat"] is System.DBNull) ? (Decimal?)0.00m : Convert.ToDecimal(row["Vat"]),
-                                                          Non_Taxable = (row["Non_Taxable"] is System.DBNull) ? (Decimal?)0.00m : Convert.ToDecimal(row["Non_Taxable"]),
-                                                          Total_Price = (row["Total_Price"] is System.DBNull) ? (Decimal?)0.00m : Convert.ToDecimal(row["Total_Price"]),
-                                                          Color_Id = (row["Color_Id"] is System.DBNull) ? (int?)0 : Convert.ToInt32(row["Color_Id"]),
-                                                          Vat_Check = (row["Vat_Check"] is System.DBNull) ? (Decimal?)0.00m : Convert.ToDecimal(row["Vat_Check"]),
-                                                          Note_Id = (row["Note_Id"] is System.DBNull) ? (int?)0 : Convert.ToInt32(row["Note_Id"]),
-                                                          Registry_Id = (row["Registry_Id"] is System.DBNull) ? (int?)0 : Convert.ToInt32(row["Registry_Id"]),
-                                                          Date_Of_Correction = (row["Date_Of_Correction"] is System.DBNull) ? (DateTime?)DateTime.Now : Convert.ToDateTime(row["Date_Of_Correction"]),
-                                                          Number_Of_Correction = Convert.ToString(row["Number_Of_Correction"]),
-                                                          Tin = Convert.ToString(row["Tin"]),
-                                                          Contractor_Name = Convert.ToString(row["Contractor_Name"]),
-                                                          Color_Name = Convert.ToString(row["Color_Name"]),
-                                                          Bal_Name = Convert.ToString(row["Bal_Name"]),
-                                                          Inv_Note_Name = Convert.ToString(row["Inv_Note_Name"]),
-                                                          Region_Name = Convert.ToString(row["Region_Name"]),
-                                                          Selected = Convert.ToBoolean(row["Selected"])
-
-                                                      }).ToList();
-
-
-            return invoicesInfoSortList;
-        }
+        
 
         private void repositoryDateCheckRadioGroup_EditValueChanged(object sender, EventArgs e)
         {
