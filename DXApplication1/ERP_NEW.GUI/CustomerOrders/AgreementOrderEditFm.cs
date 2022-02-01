@@ -381,6 +381,8 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void agreementOrderDateEdit_EditValueChanged(object sender, EventArgs e)
         {
+            DateTime datValue =  (DateTime)agreementOrderDateEdit.EditValue;
+            ((AgreementOrderDTO)Item).AgreementOrderNumber = contractorsService.GetAgreementOrderLastNumber(datValue);   //(DateTime.Now);
             dxValidationProvider.Validate((Control)sender);
         }
 

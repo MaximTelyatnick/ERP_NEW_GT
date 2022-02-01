@@ -346,8 +346,11 @@ namespace ERP_NEW.BLL.Services
         public string GetAgreementOrderLastNumber(DateTime date)
         {
 
+            //var agreementOrderCurrentyear = mapper.Map<IEnumerable<AgreementOrder>, List<AgreementOrderDTO>>(agreementOrder.GetAll()).OrderByDescending(x => Decimal.
+            //     Parse(x.AgreementOrderNumber.Replace('/', ','))).FirstOrDefault(x => x.AgreementOrderDate.Value.Year == date.Year);
+          
             var agreementOrderCurrentyear = mapper.Map<IEnumerable<AgreementOrder>, List<AgreementOrderDTO>>(agreementOrder.GetAll()).OrderByDescending(x => Decimal.
-                Parse(x.AgreementOrderNumber.Replace('/', ','))).FirstOrDefault(x => x.AgreementOrderDate.Value.Year == date.Year);
+                 Parse(x.AgreementOrderNumber.Replace('/', ','))).FirstOrDefault(x => x.AgreementOrderDate.Value.Year == date.Year && x.Id != 196 && x.Id !=195);
 
             if (agreementOrderCurrentyear != null)
             {
