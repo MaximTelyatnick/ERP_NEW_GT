@@ -2332,7 +2332,7 @@ namespace ERP_NEW.BLL.Services
                     cells[startRow + currentRow, DateCol + 9].Value = rowData[i].CityName_UA;
                     cells[startRow + currentRow, DateCol + 9].HorizontalAlignment = HAlign.Center;
 
-                    File.AppendAllText("D:\\log.txt", rowData[i].Fio.ToString()+" ");
+                    //File.AppendAllText("D:\\log.txt", rowData[i].Fio.ToString()+" ");
                 //    File.AppendAllText("D:\\log.txt", "\n");
                 }
                

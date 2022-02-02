@@ -48,10 +48,10 @@
             this.orderDateCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.prepaymentCustomerOrderCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.paymentCustomerOrderCurrencyCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.prepaymentCustomerOrderCurrencyCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.paymentCustomerOrderCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.prepaymentCustomerOrderCurrencyCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.paymentCustomerOrderCurrencyCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.directionCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.statusPaymentRepository = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -63,6 +63,8 @@
             this.currencyCodeCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.exportToXlsBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -81,9 +83,10 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.beginDateEdit,
             this.endDateEdit,
-            this.showBtn});
+            this.showBtn,
+            this.exportToXlsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -141,7 +144,8 @@
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -311,18 +315,18 @@
             this.prepaymentCustomerOrderCol.Visible = true;
             this.prepaymentCustomerOrderCol.Width = 97;
             // 
-            // paymentCustomerOrderCurrencyCol
+            // prepaymentCustomerOrderCurrencyCol
             // 
-            this.paymentCustomerOrderCurrencyCol.Caption = "Сума у валюті";
-            this.paymentCustomerOrderCurrencyCol.DisplayFormat.FormatString = "### ### ##0.00";
-            this.paymentCustomerOrderCurrencyCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.paymentCustomerOrderCurrencyCol.FieldName = "PaymentCurrency";
-            this.paymentCustomerOrderCurrencyCol.Name = "paymentCustomerOrderCurrencyCol";
-            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowEdit = false;
-            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowFocus = false;
-            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.paymentCustomerOrderCurrencyCol.Visible = true;
-            this.paymentCustomerOrderCurrencyCol.Width = 99;
+            this.prepaymentCustomerOrderCurrencyCol.Caption = "Сума у валюті";
+            this.prepaymentCustomerOrderCurrencyCol.DisplayFormat.FormatString = "### ### ##0.00";
+            this.prepaymentCustomerOrderCurrencyCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.prepaymentCustomerOrderCurrencyCol.FieldName = "PrepaymentCurrency";
+            this.prepaymentCustomerOrderCurrencyCol.Name = "prepaymentCustomerOrderCurrencyCol";
+            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowEdit = false;
+            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowFocus = false;
+            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.prepaymentCustomerOrderCurrencyCol.Visible = true;
+            this.prepaymentCustomerOrderCurrencyCol.Width = 90;
             // 
             // gridBand5
             // 
@@ -350,18 +354,18 @@
             this.paymentCustomerOrderCol.Visible = true;
             this.paymentCustomerOrderCol.Width = 84;
             // 
-            // prepaymentCustomerOrderCurrencyCol
+            // paymentCustomerOrderCurrencyCol
             // 
-            this.prepaymentCustomerOrderCurrencyCol.Caption = "Сума у валюті";
-            this.prepaymentCustomerOrderCurrencyCol.DisplayFormat.FormatString = "### ### ##0.00";
-            this.prepaymentCustomerOrderCurrencyCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.prepaymentCustomerOrderCurrencyCol.FieldName = "PrepaymentCurrency";
-            this.prepaymentCustomerOrderCurrencyCol.Name = "prepaymentCustomerOrderCurrencyCol";
-            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowEdit = false;
-            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowFocus = false;
-            this.prepaymentCustomerOrderCurrencyCol.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
-            this.prepaymentCustomerOrderCurrencyCol.Visible = true;
-            this.prepaymentCustomerOrderCurrencyCol.Width = 90;
+            this.paymentCustomerOrderCurrencyCol.Caption = "Сума у валюті";
+            this.paymentCustomerOrderCurrencyCol.DisplayFormat.FormatString = "### ### ##0.00";
+            this.paymentCustomerOrderCurrencyCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.paymentCustomerOrderCurrencyCol.FieldName = "PaymentCurrency";
+            this.paymentCustomerOrderCurrencyCol.Name = "paymentCustomerOrderCurrencyCol";
+            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowEdit = false;
+            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowFocus = false;
+            this.paymentCustomerOrderCurrencyCol.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
+            this.paymentCustomerOrderCurrencyCol.Visible = true;
+            this.paymentCustomerOrderCurrencyCol.Width = 99;
             // 
             // gridBand3
             // 
@@ -515,6 +519,22 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.exportToXlsBtn);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroup2.Text = "Звіти";
+            // 
+            // exportToXlsBtn
+            // 
+            this.exportToXlsBtn.Caption = "Экспорт в Xls";
+            this.exportToXlsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("exportToXlsBtn.Glyph")));
+            this.exportToXlsBtn.Id = 4;
+            this.exportToXlsBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("exportToXlsBtn.LargeGlyph")));
+            this.exportToXlsBtn.Name = "exportToXlsBtn";
+            this.exportToXlsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.exportToXlsBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.exportToXlsBtn_ItemClick);
+            // 
             // ContractPaymentsJournalFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -573,5 +593,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn paymentCustomerOrderCol;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn prepaymentCustomerOrderCurrencyCol;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
+        private DevExpress.XtraBars.BarButtonItem exportToXlsBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }
