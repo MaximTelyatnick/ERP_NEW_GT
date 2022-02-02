@@ -107,6 +107,7 @@ namespace ERP_NEW.GUI.Accounting
             if (fixedAssetsOrderArchiveBS.Count > 0)
             {
                 short group = (short)(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId);
+                int? expenditureAccount = fixedAssetsOrderService.GetFixedAssetsMaterialsByFixedAssetsId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id).First().Id;
                 switch (group)
                 {
                     case 10:
