@@ -36,6 +36,8 @@ namespace ERP_NEW.BLL.Interfaces
 
         FixedAssetsOrderRegistrationDTO GetByFixedAssetsOrderId(int id, int type);
 
+        IEnumerable<FixedAssetsMaterialsDTO> GetFixedAssetsMaterialsByFixedAssetsId(int fixedAssetsId);
+
         int FixedAssetsOrderCreate(FixedAssetsOrderDTO fixedAssetsOrderDTO);
         void FixedAssetsOrderUpdate(FixedAssetsOrderDTO fixedAssetsOrderDTO);
         bool FixedAssetsOrderDelete(int id);

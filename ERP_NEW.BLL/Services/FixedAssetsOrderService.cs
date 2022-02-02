@@ -296,6 +296,11 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<IEnumerable<FixedAssetsMaterials>, List<FixedAssetsMaterialsDTO>>(fixedAssetsMaterials.GetAll());
         }
 
+        public IEnumerable<FixedAssetsMaterialsDTO> GetFixedAssetsMaterialsByFixedAssetsId(int fixedAssetsId)
+        {
+            return mapper.Map<IEnumerable<FixedAssetsMaterials>, List<FixedAssetsMaterialsDTO>>(fixedAssetsMaterials.GetAll().Where(srt => srt.FixedAssetsOrder_Id == fixedAssetsId));
+        }
+
         public IEnumerable<RegionDTO> GetRegion()
         {
             return mapper.Map<IEnumerable<Region>, List<RegionDTO>>(region.GetAll());
