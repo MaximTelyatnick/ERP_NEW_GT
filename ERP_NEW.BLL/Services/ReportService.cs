@@ -14788,7 +14788,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 7].Value = ((DateTime)model.DateOrder).Day.ToString();
             cells["D" + 7].Value = rez;
             cells["F" + 7].Value = ((DateTime)model.DateOrder).Year.ToString();
-            cells["J" + 7].Value = model.NumberOrder;
+            cells["N" + 7].Value = model.NumberOrder;
 
             for (int i = 13; i < 27; i++)
             {
@@ -14797,13 +14797,15 @@ namespace ERP_NEW.BLL.Services
             }
             cells["B" + 15].HorizontalAlignment = HAlign.Center;
             cells["B" + 23].HorizontalAlignment = HAlign.Center;
+            cells["A" + 10].HorizontalAlignment = HAlign.Left;
+            cells["A" + 15].HorizontalAlignment = HAlign.Left;
 
             cells["A" + 9].HorizontalAlignment = HAlign.Left;
-            cells["A" + 9].Value = "« Про списання замортизованих основних засобів " + model.InventoryName +
-                " інвентарний № " + model.InventoryNumber + " »";
+            cells["A" + 9].Value = "« Про списання замортизованих основних засобів " ;
+            cells["A" + 10].Value =  model.InventoryName +  " інвентарний № " + model.InventoryNumber + " »";
             cells["A" + 14].Value = " 1 . ";
-            cells["B" + 14].Value = "Списати замортизований " + model.InventoryName + ":";
-            cells["B" + 15].Value = "інвентарний № " + model.InventoryNumber + " . ";
+            cells["B" + 14].Value = "Списати замортизований, морально застарілий";
+            cells["B" + 15].Value = " "+ model.InventoryName + ": інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 17].Value = " 2 . ";
             cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
             cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
@@ -14812,7 +14814,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
             cells["B" + 21].Value = "бухгалтерські операції при продажу та при знятті ";
             cells["B" + 22].Value = "Основних засобів з бухгалтерського обліку:";
-            cells["B" + 23].Value = "інвентарний № " + model.InventoryNumber + " . ";
+            cells["B" + 23].Value = " "+ model.InventoryName+ "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
             cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
