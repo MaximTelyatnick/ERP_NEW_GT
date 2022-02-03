@@ -1246,6 +1246,30 @@ namespace ERP_NEW.GUI.Accounting
 
         }
 
+        private void expenditureByContractorsReportBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                splashScreenManager.ShowWaitForm();
+
+                reportService = Program.kernel.Get<IReportService>();
+
+                if (!reportService.GetExpenditureByContractorByPeriod(_beginDate, _endDate))
+                    MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+
+                return;
+            }
+        
+    }
+
         private void chessBtn_Click(object sender, EventArgs e)
             {
             testChess();

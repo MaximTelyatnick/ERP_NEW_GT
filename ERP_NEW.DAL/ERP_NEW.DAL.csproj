@@ -367,6 +367,7 @@
     <Compile Include="Entities\ReportModel\ContractorVat.cs" />
     <Compile Include="Entities\ReportModel\DetalsReportByOperationContractors.cs" />
     <Compile Include="Entities\ReportModel\ExpenditureForProjectReport.cs" />
+    <Compile Include="Entities\ReportModel\ExpenditureForProjectReportByContractor.cs" />
     <Compile Include="Entities\ReportModel\FixedAssetsOrderByGroupShortReport.cs" />
     <Compile Include="Entities\ReportModel\FixedAssetsOrderReportStrait.cs" />
     <Compile Include="Entities\ReportModel\GetBPDetalsReportByCon.cs" />

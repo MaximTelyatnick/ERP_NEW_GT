@@ -295,6 +295,7 @@
     <Compile Include="DTO\SelectedDTO\AgreementOrderJournalDTO.cs" />
     <Compile Include="DTO\SelectedDTO\CustomerOrderForWeldingDTO.cs" />
     <Compile Include="DTO\SelectedDTO\DeliveryStoreRemainsReceiptDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\ExpenditureForProjectReportByContractorDTO.cs" />
     <Compile Include="DTO\SelectedDTO\ExpenditureForProjectReportDTO.cs" />
     <Compile Include="DTO\SelectedDTO\ExpenditureInfoDTO.cs" />
     <Compile Include="DTO\SelectedDTO\ExpendituresStoreHousesInfoDTO.cs" />

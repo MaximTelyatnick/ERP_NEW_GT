@@ -61,6 +61,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.expenditureByContractorsReportBtn = new System.Windows.Forms.Button();
             this.storeHouseInventoryReportBtn = new System.Windows.Forms.Button();
             this.expenditureByProjectReportBtn = new System.Windows.Forms.Button();
             this.storeHouseTrialBalanceAccountReportBtn = new System.Windows.Forms.Button();
@@ -569,6 +570,7 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.expenditureByContractorsReportBtn);
             this.xtraTabPage1.Controls.Add(this.storeHouseInventoryReportBtn);
             this.xtraTabPage1.Controls.Add(this.expenditureByProjectReportBtn);
             this.xtraTabPage1.Controls.Add(this.storeHouseTrialBalanceAccountReportBtn);
@@ -577,6 +579,24 @@
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.xtraTabPage1.Size = new System.Drawing.Size(619, 317);
             this.xtraTabPage1.Text = "Обороти";
+            // 
+            // expenditureByContractorsReportBtn
+            // 
+            this.expenditureByContractorsReportBtn.AutoSize = true;
+            this.expenditureByContractorsReportBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.expenditureByContractorsReportBtn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.expenditureByContractorsReportBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.expenditureByContractorsReportBtn.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.expenditureByContractorsReportBtn.ForeColor = System.Drawing.Color.Black;
+            this.expenditureByContractorsReportBtn.Location = new System.Drawing.Point(5, 177);
+            this.expenditureByContractorsReportBtn.Margin = new System.Windows.Forms.Padding(70, 30, 30, 30);
+            this.expenditureByContractorsReportBtn.Name = "expenditureByContractorsReportBtn";
+            this.expenditureByContractorsReportBtn.Padding = new System.Windows.Forms.Padding(30, 10, 10, 10);
+            this.expenditureByContractorsReportBtn.Size = new System.Drawing.Size(609, 43);
+            this.expenditureByContractorsReportBtn.TabIndex = 5;
+            this.expenditureByContractorsReportBtn.Text = "Списання за контрагентами";
+            this.expenditureByContractorsReportBtn.UseVisualStyleBackColor = false;
+            this.expenditureByContractorsReportBtn.Click += new System.EventHandler(this.expenditureByContractorsReportBtn_Click);
             // 
             // storeHouseInventoryReportBtn
             // 
@@ -2300,5 +2320,6 @@
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
         private System.Windows.Forms.Button cashbookTrialBalanceBtn;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private System.Windows.Forms.Button expenditureByContractorsReportBtn;
     }
 }

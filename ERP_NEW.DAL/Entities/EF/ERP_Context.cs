@@ -168,6 +168,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<ExpenditureStoreHouse> ExpenditureStoreHouse { get; set; }
         public DbSet<ExpendituresStoreHousesInfo> ExpendituresStoreHousesInfo { get; set; }
         public DbSet<ExpenditureStoreHouseInfo> ExpenditureStoreHouseInfo { get; set; }
+        public DbSet<ExpenditureForProjectReportByContractor> ExpenditureForProjectReportByContractor { get; set; }
 
         //F
         public DbSet<FixedAssetsGroup> FixedAssetsGroup { get; set; }

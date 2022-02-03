@@ -88,6 +88,7 @@ namespace ERP_NEW.BLL.Services
         private IRepository<StoreHouseInventory> storeHouseInventory;
         private IRepository<TrialBalanceByAccountsReport> trialBalanceByAccountsReport;
         private IRepository<ExpenditureForProjectReport> expenditureForProjectReport;
+        private IRepository<ExpenditureForProjectReportByContractor> expenditureForProjectReportByContractor;
         private IFixedAssetsOrderService fixedAssetsOrderService;
         private IRepository<FixedAssetsOrderJournalPrint> fixedAssetsOrderJournalPrint;
         private IRepository<ORDERS> orders;
@@ -131,6 +132,7 @@ namespace ERP_NEW.BLL.Services
             contractors = Database.GetRepository<Contractors>();
             contractorsVat = Database.GetRepository<ContractorVat>();
             expenditureForProjectReport = Database.GetRepository<ExpenditureForProjectReport>();
+            expenditureForProjectReportByContractor = Database.GetRepository<ExpenditureForProjectReportByContractor>();
             bankPayments = Database.GetRepository<Bank_Payments>();
             bankPaymentsReportTrialBalance = Database.GetRepository<BankPaymentsReportTrialBalance>();
             bankPaymentsReportForCustomBill = Database.GetRepository<BankPaymentsReportForCustomBill>();
@@ -199,6 +201,7 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<ContractorVatDTO, ContractorVat>();
                 cfg.CreateMap<ORDERS, OrdersDTO>();
                 cfg.CreateMap<ExpenditureForProjectReport, ExpenditureForProjectReportDTO>();
+                cfg.CreateMap<ExpenditureForProjectReportByContractor, ExpenditureForProjectReportByContractorDTO>();
                 cfg.CreateMap<MsTrialBalanceCurrency, MsTrialBalanceCurrencyDTO>();
                 cfg.CreateMap<MsTrialBalance, MsTrialBalanceDTO>();
                 cfg.CreateMap<MsReconciliation, MsReconciliationDTO>();
@@ -6150,6 +6153,22 @@ namespace ERP_NEW.BLL.Services
             return PrintExpendituresForProjectsByPeriod(dataSource, startDate.Date.ToShortDateString(), endDate.Date.ToShortDateString());
         }
 
+        public bool GetExpenditureByContractorByPeriod(DateTime startDate, DateTime endDate)
+        {
+            FbParameter[] Parameters =
+                {
+                    new FbParameter("StartDate", startDate),
+                    new FbParameter("EndDate", endDate),
+                };
+
+            string procName = @"select * from ""SHReportExpenditureByContractor""(@StartDate, @EndDate)";
+
+
+            var dataSource = mapper.Map<IEnumerable<ExpenditureForProjectReportByContractor>, List<ExpenditureForProjectReportByContractorDTO>>(expenditureForProjectReportByContractor.SQLExecuteProc(procName, Parameters));
+
+            return PrintExpendituresForContractorByPeriod(dataSource, startDate.Date.ToShortDateString(), endDate.Date.ToShortDateString());
+        }
+
         public bool PrintExpendituresForProjectsByPeriod(List<ExpenditureForProjectReportDTO> reportList, string StartDate, string EndDate)
         {
             SpreadsheetGear.IWorkbook Workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\ExpendituresForProjects.xls");
@@ -6354,6 +6373,226 @@ namespace ERP_NEW.BLL.Services
 
                 Process process = new Process();
                 process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Реєстр на списання за період з " + StartDate + " по " + EndDate + ".xls" + "\"";
+                process.StartInfo.FileName = "Excel.exe";
+                process.Start();
+                return true;
+            }
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                MessageBox.Show("Не знайдено програму Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+        }
+
+        public bool PrintExpendituresForContractorByPeriod(List<ExpenditureForProjectReportByContractorDTO> reportList, string StartDate, string EndDate)
+        {
+            SpreadsheetGear.IWorkbook Workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\ExpendituresForProjects.xls");
+            var Worksheet = Workbook.Worksheets[0];
+            var Cells = Worksheet.Cells;
+
+            var Worksheet1 = Workbook.Worksheets[1];
+            var Cells1 = Worksheet1.Cells;
+
+            int captionPosition = 6;
+            int startWith1 = captionPosition + 1;
+
+            int fontSize = 12;
+
+            int startWith = captionPosition + 1;
+            int a = 0;
+
+            Cells1["A" + captionPosition].Value += StartDate + " по " + EndDate;
+
+            for (int i = 0; i < reportList.Count; i++)
+            {
+                if (i == 0 || reportList[i].ContractorName.ToString().Trim() != reportList[i - 1].ContractorName.ToString().Trim())
+                {
+                    a = 0;
+                    startWith++;
+                    Cells["D" + startWith + ":" + "F" + startWith].Merge();
+                    Cells["D" + startWith].Value = "Cтверджую";
+                    Cells["D" + startWith].Font.Size = 14;
+                    Cells["D" + startWith].Font.Bold = true;
+                    Cells["D" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    startWith++;
+                    Cells["D" + startWith + ":" + "F" + startWith].Merge();
+                    Cells["D" + startWith + ":" + "F" + startWith].Value = "_______________________________";
+                    Cells["D" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    startWith++;
+                    Cells["D" + startWith + ":" + "F" + startWith].Merge();
+                    Cells["D" + startWith + ":" + "F" + startWith].Value = "_______________________________";
+                    Cells["D" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    startWith++;
+                    Cells["A" + startWith + ":" + "G" + startWith].Merge();
+                    Cells["A" + startWith + ":" + "G" + startWith].Value = "Реєстр";
+                    Cells["A" + startWith + ":" + "G" + startWith].Font.Size = 16;
+                    Cells["A" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    startWith++;
+                    Cells["A" + startWith + ":" + "G" + startWith].Merge();
+                    Cells["A" + startWith + ":" + "G" + startWith].Value = "на списання матеріалів";
+                    Cells["A" + startWith].Font.Size = 14;
+                    Cells["A" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    startWith++;
+                    Cells["A" + startWith + ":" + "G" + startWith].Merge();
+                    Cells["A" + startWith + ":" + "G" + startWith].Value = "за контрагентом " + reportList[i].ContractorName.ToString().Trim() + " за період " + StartDate.ToString() + "-" + EndDate.ToString();
+                    Cells["A" + startWith].Font.Size = 14;
+                    Cells["A" + startWith].HorizontalAlignment = HAlign.Center;
+                    //
+                    //
+                    startWith++;
+                    Cells["A" + startWith].Value = "№ п/п";
+                    Cells["A" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["A" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["A" + startWith].Font.Bold = true;
+                    //
+                    Cells["B" + startWith].Value = "Ном. номер";
+                    Cells["B" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["B" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["B" + startWith].Font.Bold = true;
+                    //
+                    Cells["C" + startWith].Value = "Найменування матеріалу";
+                    Cells["C" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["C" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["C" + startWith].Font.Bold = true;
+                    //
+                    Cells["D" + startWith].Value = "Од. вим.";
+                    Cells["D" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["D" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["D" + startWith].Font.Bold = true;
+                    //
+                    Cells["E" + startWith].Value = "Кіл-ть";
+                    Cells["E" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["E" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["E" + startWith].Font.Bold = true;
+                    //
+                    Cells["F" + startWith].Value = "Ціна за од.";
+                    Cells["F" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["F" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["F" + startWith].Font.Bold = true;
+                    //
+                    Cells["G" + startWith].Value = "Сума";
+                    Cells["G" + startWith].HorizontalAlignment = HAlign.Center;
+                    Cells["G" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["G" + startWith].Font.Bold = true;
+                }
+
+                a++;
+                startWith++;
+                Cells["A" + startWith].Value = a;
+                Cells["A" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["A" + startWith].Font.Size = fontSize;
+
+                Cells["B" + startWith].Value = reportList[i].Nomenclature;
+                Cells["B" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["B" + startWith].Font.Size = fontSize;
+
+                Cells["C" + startWith].Value = reportList[i].Name;
+                Cells["C" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["C" + startWith].Font.Size = fontSize;
+
+                Cells["D" + startWith].Value = reportList[i].Measure;
+                Cells["D" + startWith].HorizontalAlignment = HAlign.Center;
+                Cells["D" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["D" + startWith].Font.Size = fontSize;
+
+                Cells["E" + startWith].Value = reportList[i].Quantity;
+                Cells["E" + startWith].NumberFormat = "### ##0.0##";
+                Cells["E" + startWith].HorizontalAlignment = HAlign.Right;
+                Cells["E" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["E" + startWith].Font.Size = fontSize;
+
+                Cells["F" + startWith].Value = reportList[i].UnitPrice;
+                Cells["F" + startWith].NumberFormat = "### ### ##0.00";
+                Cells["F" + startWith].HorizontalAlignment = HAlign.Right;
+                Cells["F" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["F" + startWith].Font.Size = fontSize;
+
+                Cells["G" + startWith].Value = reportList[i].Price;
+                Cells["G" + startWith].NumberFormat = "### ### ##0.00";
+                Cells["G" + startWith].HorizontalAlignment = HAlign.Right;
+                Cells["G" + startWith].Borders.LineStyle = LineStyle.Continous;
+                Cells["G" + startWith].Font.Size = fontSize;
+
+                if ((i < reportList.Count - 1 && reportList[i].ContractorName.ToString() != reportList[i + 1].ContractorName.ToString() || i == reportList.Count - 1))
+                {
+                    startWith++;
+                    Cells["A" + startWith + ":" + "F" + startWith].Merge();
+                    Cells["A" + startWith].Font.Size = fontSize;
+
+                    Cells["A" + startWith].Value = "Разом по " + reportList[i].ContractorName.ToString() + ":";
+                    Cells["A" + startWith].Font.Bold = true;
+                    Cells["A" + startWith].Font.Size = fontSize;
+
+                    Cells["G" + startWith].Formula = SetFormula("G", (startWith - a), "G", (startWith - 1), "SUM");
+                    Cells["G" + startWith].NumberFormat = "### ### ##0.00";
+                    Cells["G" + startWith].Font.Bold = true;
+                    Cells["G" + startWith].Interior.Color = Color.LightGreen;
+                    Cells["G" + startWith].Font.Size = fontSize;
+
+                    Cells["A" + startWith + ":" + "G" + startWith].Borders.LineStyle = LineStyle.Continous;
+                    Cells["A" + startWith].Font.Size = fontSize;
+
+                    //
+                    //
+                    startWith1++;
+                    Cells1["A" + startWith1].Value = reportList[i].ContractorName.ToString();
+                    Cells1["A" + startWith1].Borders.LineStyle = LineStyle.Continous;
+                    Cells1["B" + startWith1].Value = Math.Round(Convert.ToDouble(Cells["G" + startWith].Value.ToString()), 2);
+                    Cells1["B" + startWith1].NumberFormat = "### ### ##0.00";
+                    Cells1["B" + startWith1].HorizontalAlignment = HAlign.Right;
+                    Cells1["B" + startWith1].Borders.LineStyle = LineStyle.Continous;
+                    //
+                    //
+
+                    startWith++;
+                    // Page Break
+                    SetPageBreak(Worksheet, startWith, 0);
+                }
+            }
+
+            //
+            startWith1++;
+            Cells1["A" + startWith1].Value = "Разом:";
+            Cells1["A" + startWith1].Font.Bold = true;
+            Cells1["A" + startWith1].Borders.LineStyle = LineStyle.Continous;
+            Cells1["B" + startWith1].Formula = SetFormula("B", 3, "B", (startWith1 - 1), "SUM");
+            Cells1["B" + startWith1].NumberFormat = "### ### ##0.00";
+            Cells1["B" + startWith1].Font.Bold = true;
+            Cells1["B" + startWith1].HorizontalAlignment = HAlign.Right;
+            Cells1["B" + startWith1].Interior.Color = Color.LightGreen;
+            Cells1["B" + startWith1].Borders.LineStyle = LineStyle.Continous;
+            //
+            startWith1++;
+            Cells1["A" + startWith1].Value = "Разом по контрагентам:";
+            Cells1["A" + startWith1].Font.Bold = true;
+            Cells1["A" + startWith1].Borders.LineStyle = LineStyle.Continous;
+            Cells1["B" + startWith1].Formula = "=B" + (startWith1 - 1) + "-B3";
+            Cells1["B" + startWith1].NumberFormat = "### ### ##0.00";
+            Cells1["B" + startWith1].Font.Bold = true;
+            Cells1["B" + startWith1].HorizontalAlignment = HAlign.Right;
+            Cells1["B" + startWith1].Interior.Color = Color.LightGreen;
+            Cells1["B" + startWith1].Borders.LineStyle = LineStyle.Continous;
+            //
+
+            PrintSignatures(Cells, startWith + 3);
+            PrintSignatures(Cells1, startWith1 + 3);
+
+            try
+            {
+                Workbook.SaveAs(GeneratedReportsDir + "Реєстр на списання по контаргентам за період з " + StartDate + " по " + EndDate + ".xls", FileFormat.Excel8);
+
+                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Реєстр на списання по контаргентам за період з " + StartDate + " по " + EndDate + ".xls" + "\"";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
                 return true;
