@@ -311,17 +311,33 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        #endregion
-
         private void printTrialSaldoBalanceBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            reportService = Program.kernel.Get<IReportService>();
+            if (firstReportDateEdit.EditValue != null || lastReportDateEdit.EditValue != null)
+                reportService.GetCashBookTrialBalanceByAccounts((DateTime)firstReportDateEdit.EditValue, (DateTime)lastReportDateEdit.EditValue);
+            else
+                MessageBox.Show("Не вказана дата");
+        }
 
-                reportService = Program.kernel.Get<IReportService>();
+        private void endDayPriceEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            if ((decimal)endDayPriceEdit.EditValue > 10000)
+            {
+                endDayPriceEdit.ItemAppearance.Normal.ForeColor = Color.Red;
+                endDayPriceEdit.ItemAppearance.Hovered.ForeColor = Color.Red;
+                endDayPriceEdit.ItemAppearance.Pressed.ForeColor = Color.Red;
+            }
+            else
+            {
+                endDayPriceEdit.ItemAppearance.Normal.ForeColor = Color.Black;
+                endDayPriceEdit.ItemAppearance.Hovered.ForeColor = Color.Black;
+                endDayPriceEdit.ItemAppearance.Pressed.ForeColor = Color.Black;
+            }
+        }
 
-                if (firstReportDateEdit.EditValue != null || lastReportDateEdit.EditValue != null)
-                    reportService.GetCashBookTrialBalanceByAccounts((DateTime)firstReportDateEdit.EditValue, (DateTime)lastReportDateEdit.EditValue);
-                else
-                    MessageBox.Show("Не вказана дата");
-        }  
+        #endregion
+
+
     }
 }

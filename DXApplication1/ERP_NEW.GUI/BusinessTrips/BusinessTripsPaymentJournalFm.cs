@@ -35,6 +35,7 @@ namespace ERP_NEW.GUI.BusinessTrips
         private BindingSource paymentsBS = new BindingSource();
 
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
+        private List<BusinessTripsOrderCustDTO> businessTripsCustOrderList = new List<BusinessTripsOrderCustDTO>();
 
         private UserTasksDTO _userTasksDTO;
         private DateTime _beginDate;
@@ -1052,26 +1053,40 @@ namespace ERP_NEW.GUI.BusinessTrips
             if (customerOrderEdit.EditValue != null)
             {
 
-                splashScreenManager.ShowWaitForm();
+                //splashScreenManager.ShowWaitForm();
 
                 businessTripsGridView.PostEditor();
 
                 businessTripsGridView.BeginDataUpdate();
 
+                List<BusinessTripsPrepaymentJournalDTO> businessTripsPrepaymentJournalDTO = (List<BusinessTripsPrepaymentJournalDTO>)businessTripsBS.DataSource;
+                var customerOrder = repositoryItemGridLookUpEdit.GetRowByKeyValue((int)customerOrderEdit.EditValue);
+                var checkItems = businessTripsPrepaymentJournalDTO.Where(t => t.Check == true);
 
-                List<BusinessTripsPrepaymentJournalDTO> selectedItem  = ((List<BusinessTripsPrepaymentJournalDTO>)businessTripsBS.DataSource).Where(s => (bool)s.Check).ToList();
-                if (selectedItem.Count > 0)
+                //List<BusinessTripsPrepaymentJournalDTO> selectedItem  = ((List<BusinessTripsPrepaymentJournalDTO>)businessTripsBS.DataSource).Where(s => (bool)s.Check == true).ToList();
+                if (checkItems.Count() > 0)
                 {
-                    foreach (var item in selectedItem)
+                    foreach (var item in checkItems)
                     {
-                        
+                        BusinessTripsOrderCustDTO businessTripsOrderCustDTO = new BusinessTripsOrderCustDTO()
+                        {
+                            ID = 0,
+                            BusinessTripsId = item.BusinessTripsID,
+                            CustomerOrderId = (int)((CustomerOrdersDTO)customerOrder).Id,
+                            UserId = _userTasksDTO.UserId
+                        };
+
+                        businessTripsService.BusinessTripsOrderCustCreate(businessTripsOrderCustDTO);
+
                     }
+
+                    LoadDataByPeriod(_beginDate, _endDate);
                 }
 
                 else { MessageBox.Show("Не обрано відрядження!"); }
 
 
-                var bdsm = repositoryItemGridLookUpEdit.GetRowByKeyValue((int)customerOrderEdit.EditValue);
+                
 
                 decimal d = 0;
 
@@ -1082,7 +1097,7 @@ namespace ERP_NEW.GUI.BusinessTrips
 
                 businessTripsGridView.EndDataUpdate();
 
-                splashScreenManager.CloseWaitForm();
+                //splashScreenManager.CloseWaitForm();
             }
             else
             {

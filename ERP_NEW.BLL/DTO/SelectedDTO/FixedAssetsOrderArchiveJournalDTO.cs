@@ -35,5 +35,7 @@ namespace ERP_NEW.BLL.DTO.SelectedDTO
         public string OperationName { get; set; }
         public string SelectedCard { get; set; }
         public string NameGenitive { get; set; }
+
+        public string ExpenditureAccount { get; set; }
     }
 }

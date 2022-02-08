@@ -383,6 +383,7 @@
             this.endDayPriceEdit.ItemAppearance.Normal.Options.UseFont = true;
             this.endDayPriceEdit.ItemAppearance.Normal.Options.UseForeColor = true;
             this.endDayPriceEdit.Name = "endDayPriceEdit";
+            this.endDayPriceEdit.EditValueChanged += new System.EventHandler(this.endDayPriceEdit_EditValueChanged);
             // 
             // repositoryItemTextEdit2
             // 

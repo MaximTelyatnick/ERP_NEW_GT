@@ -14304,6 +14304,7 @@ namespace ERP_NEW.BLL.Services
 
             List<FixedAssetsMaterialsDTO> newMaterialsList = new List<FixedAssetsMaterialsDTO>();
             decimal sumPrice = 0;
+            float percentUsefullMonth = (100 / (Convert.ToInt16(model.UsefulMonth) / 12));
 
             int rows = 120;
             int cols = 31;
@@ -14312,12 +14313,17 @@ namespace ERP_NEW.BLL.Services
             cells[1, 1, rows, cols].Replace("{currYear}", dt.Year.ToString(), LookAt.Part, SearchOrder.ByRows, false);
             cells[1, 1, rows, cols].Replace("{currDate}", dt.ToShortDateString(), LookAt.Part, SearchOrder.ByRows, false);
 
+            
+            //cells["V27"].Value = percentUsefullMonth.ToString() + "%";
+
             cells["AI16"].Value = dt.ToShortDateString();
-            cells["B30"].Value = model.RegionName.ToString();
+            //cells["B30"].Value = model.RegionName.ToString();
+            cells["B30"].Value =  $"НВП \"Техвагонмаш\"";
             cells["M30"].Value = model.SoldPrice;
             cells["P30"].Value = model.TransferPrice;
             cells["S30"].Value = model.InventoryNumber.ToString();
-            cells["X30"].Value = model.BalanceAccountNum.ToString();
+            cells["X30"].Value = model.ExpenditureAccount;
+            cells["AA30"].Value = percentUsefullMonth.ToString() + "%";
             cells["AI30"].Value =   model.BeginDate.Year;
             cells["AL30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;
             cells["AR30"].Value = RuDateAndMoneyConverter.MonthName(model.BeginDate.Month, Utils.TextCase.Nominative).ToString() + " " + model.BeginDate.Year;

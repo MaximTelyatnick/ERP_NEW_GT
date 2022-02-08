@@ -22,6 +22,8 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public DateTime BeginDate { get; set; }
         public decimal? BeginPrice { get; set; }
         public int? Supplier_Id { get; set; }
+
+        public string FixedAssetsExpenditureAccount { get; set; }
         public int Pos { get; set; }
 
   

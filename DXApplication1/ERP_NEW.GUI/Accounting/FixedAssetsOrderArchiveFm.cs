@@ -35,10 +35,15 @@ namespace ERP_NEW.GUI.Accounting
     public partial class FixedAssetsOrderArchiveFm : DevExpress.XtraEditors.XtraForm
     {
         private IFixedAssetsOrderService fixedAssetsOrderService;
+        private IAccountsService accountsService;
         private IReportService reportService;
-        private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();    
+        private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();
+        private BindingSource fixedAssetsOrderMaterialsBS = new BindingSource();
+
         private DateTime beginDateArchive, endDateArchive;
         private UserTasksDTO userTasksDTO;
+
+        private List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialList = new List<FixedAssetsMaterialsDTO>();
 
         public FixedAssetsOrderArchiveFm(UserTasksDTO userTasksDTO)
         {
@@ -62,6 +67,14 @@ namespace ERP_NEW.GUI.Accounting
             fixedAssetsArchiveGrid.DataSource = fixedAssetsOrderArchiveBS;
             fixedAssetsArchiveGridView.EndDataUpdate();
             splashScreenManager.CloseWaitForm();
+        }
+
+        private void LoadMaterials(int fixedAssetsOrderId)
+        {
+
+            fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+            fixedAssetsOrderMaterialsBS.DataSource = fixedAssetsOrderService.GetFixedAssestMaterials(fixedAssetsOrderId, endDateArchive);
+            fixedAssetsOrderMaterialList = fixedAssetsOrderMaterialsBS.DataSource as List<FixedAssetsMaterialsDTO>;
         }
         private void showArchiveBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -101,25 +114,136 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
+        //fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+
+        //    if (fixedAssetsOrderArchiveBS.Count > 0)
+        //    {
+
+        //        FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
+        //        if (currentFixedAssetsOrderReg == null)
+        //        {
+        //            if (MessageBox.Show("Не сформовано наказ, створити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+        //            {
+        //                try
+        //                {
+        //                    FixedAssetsOrderJournalDTO newModel = ConvertArchiveJournalToJournal();
+        //currentFixedAssetsOrderReg = RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
+        //                }
+        //                catch (Exception ex)
+        //                {
+        //                    MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //                }
+
+        //                PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+        //            }
+        //            else
+        //            {
+        //                return;
+        //            }
+        //        }
+        //        else
+        //            PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+        //    }
+        //    else MessageBox.Show("Оберіть основний засіб! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+        private FixedAssetsOrderRegistrationDTO RegistrationArchive(FixedAssetsOrderJournalDTO model, FixedAssetsOrderArchiveJournalDTO modelArchive, List<FixedAssetsMaterialsDTO> fixedAssetsOrderMaterialsBS)
+        {
+            using (FixedAssetsOrderAddJournalFm fixedAssetsOrderAddJournalFm = new FixedAssetsOrderAddJournalFm(model, modelArchive, "2", fixedAssetsOrderMaterialsBS, beginDateArchive, endDateArchive))
+            {
+                if (fixedAssetsOrderAddJournalFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    return fixedAssetsOrderAddJournalFm.Return();
+                else
+                    return null;
+            }
+        }
+
         private void printActExpenBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             reportService = Program.kernel.Get<IReportService>();
+            accountsService = Program.kernel.Get<IAccountsService>();
             if (fixedAssetsOrderArchiveBS.Count > 0)
             {
                 short group = (short)(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId);
-                int? expenditureAccount = fixedAssetsOrderService.GetFixedAssetsMaterialsByFixedAssetsId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id).First().Id;
-                switch (group)
+
+                // получаем счет списания материалов 
+                string expenditureAccount="";
+                int? expenditureAccountId = fixedAssetsOrderService.GetFixedAssetsMaterialsByFixedAssetsId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id).First().Fixed_Account_Id;
+                if (expenditureAccountId != null)
+                    expenditureAccount = accountsService.GetAllAccounts().FirstOrDefault(srch => srch.Id == expenditureAccountId).Num;
+                ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).ExpenditureAccount = expenditureAccount;
+
+                FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
+                if (currentFixedAssetsOrderReg == null)
                 {
-                    case 10:
-                    case 2:
-                        reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current);
-                        break;
-                    default:
-                        reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current);
-                        break;
+                    // currentFixedAssetsOrderReg = fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
+                    if (MessageBox.Show("Не сформовано наказ, створити?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            FixedAssetsOrderJournalDTO newModel = ConvertArchiveJournalToJournal();
+                            currentFixedAssetsOrderReg = RegistrationArchive(newModel, (FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource);
+                            
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+                    }
+                    else
+                    {
+                        return;
+                    }
                 }
+                else
+                    PrintFixedAssetsOrderExpenditureAct(currentFixedAssetsOrderReg);
+                
             }
             else MessageBox.Show("Оберіть основний засіб! ", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        public void PrintFixedAssetsOrderExpenditureAct(FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistration)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            short group = (short)(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId);
+            switch (group)
+            {
+                case 10:
+                case 2:
+                    reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, fixedAssetsOrderRegistration);
+                    break;
+                default:
+                    reportService.PrintFixedAssetsOrderExpenditureAct((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current, fixedAssetsOrderRegistration);
+                    break;
+            }
+        }
+
+        public FixedAssetsOrderJournalDTO ConvertArchiveJournalToJournal()
+        {
+            FixedAssetsOrderJournalDTO newModel = new FixedAssetsOrderJournalDTO()
+            {
+                Balance_Account_Id = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Balance_Account_Id,
+                BalanceAccountNum = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).BalanceAccountNum,
+                FixedCardStatus = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).FixedCardStatus,
+                GroupId = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupId,
+                GroupName = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).GroupName,
+                InventoryName = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).InventoryName,
+                InventoryNumber = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).InventoryNumber,
+                Id = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id,
+                BeginRecordDate = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).BeginRecordDate,
+                BeginDate = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).BeginDate,
+                EndRecordDate = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).EndRecordDate,
+                SupplierName = ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).SupplierName
+            };
+
+            return newModel;
+        }
+
+        private void fixedAssetsArchiveGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (fixedAssetsOrderArchiveBS.Count > 0 && fixedAssetsOrderArchiveBS != null)
+                LoadMaterials(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id);
         }
 
         private void fixedAssetsArchiveGridView_RowCellStyle(object sender, RowCellStyleEventArgs e)

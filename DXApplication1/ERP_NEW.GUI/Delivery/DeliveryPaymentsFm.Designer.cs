@@ -109,6 +109,7 @@
             this.deliveryPaymentsGridView.OptionsView.ShowFooter = true;
             this.deliveryPaymentsGridView.OptionsView.ShowGroupPanel = false;
             this.deliveryPaymentsGridView.CellMerge += new DevExpress.XtraGrid.Views.Grid.CellMergeEventHandler(this.deliveryPaymentsGridView_CellMerge);
+            this.deliveryPaymentsGridView.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.deliveryPaymentsGridView_CustomSummaryCalculate);
             // 
             // gridBand1
             // 
@@ -311,10 +312,13 @@
             this.paymentPriceCol.DisplayFormat.FormatString = "{0:### ### ##0.00}";
             this.paymentPriceCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.paymentPriceCol.FieldName = "PaymentPrice";
+            this.paymentPriceCol.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.paymentPriceCol.Name = "paymentPriceCol";
             this.paymentPriceCol.OptionsColumn.AllowEdit = false;
+            this.paymentPriceCol.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.paymentPriceCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PaymentPrice", "{0:### ### ##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom)});
+            this.paymentPriceCol.Tag = ((short)(1));
             this.paymentPriceCol.Visible = true;
             this.paymentPriceCol.Width = 61;
             // 
@@ -331,7 +335,7 @@
             this.paymentPriceCurrencyCol.Name = "paymentPriceCurrencyCol";
             this.paymentPriceCurrencyCol.OptionsColumn.AllowEdit = false;
             this.paymentPriceCurrencyCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PaymentPriceCurrency", "{0:### ### ##0.00}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "CustomerOrderCurrencyPrice", "{0:### ### ##0.00}")});
             this.paymentPriceCurrencyCol.Visible = true;
             this.paymentPriceCurrencyCol.Width = 65;
             // 
