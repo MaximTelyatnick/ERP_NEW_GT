@@ -1,24 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using ERP_NEW.BLL.Interfaces;
-using ERP_NEW.BLL.Services;
-using ERP_NEW.BLL.DTO;
 using ERP_NEW.BLL.DTO.ModelsDTO;
 using ERP_NEW.BLL.DTO.SelectedDTO;
 using Ninject;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraPrinting;
-using DevExpress.XtraPrintingLinks;
 using System.IO;
-
+using DevExpress.XtraGrid;
+using DevExpress.Data;
 
 namespace ERP_NEW.GUI.Delivery
 {
@@ -61,8 +51,9 @@ namespace ERP_NEW.GUI.Delivery
             gridBand3.Visible = (userTasksDTO.PriceAttribute == 1);
             customerOrderCurrencyPriceCol.Visible = (userTasksDTO.PriceAttribute == 1);
             сustomerOrderPriceCol.Visible = (userTasksDTO.PriceAttribute == 1);
-
         }
+
+        #region Event's
 
         private void showPaymentsForDate_Click(object sender, EventArgs e)
         {
@@ -123,18 +114,18 @@ namespace ERP_NEW.GUI.Delivery
                         }
                         catch
                         {
-                            String msg = "The file could not be opened." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                            String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
                             MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
-                        String msg = "The file could not be saved." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
-                        MessageBox.Show(msg, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        String msg = "Не можливо зберегти файл." + Environment.NewLine + Environment.NewLine + "Path: " + exportFilePath;
+                        MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-     
+
         }
 
         private void deliveryPaymentsGridView_CellMerge(object sender, CellMergeEventArgs e)
@@ -152,5 +143,61 @@ namespace ERP_NEW.GUI.Delivery
                 }
             }
         }
+
+        decimal totalPrice = 0;
+        decimal totalPriceCurrency = 0;
+        private void deliveryPaymentsGridView_CustomSummaryCalculate(object sender, DevExpress.Data.CustomSummaryEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.IsTotalSummary && (e.Item as GridSummaryItem).FieldName == "PaymentPrice")
+            {
+                GridSummaryItem item = e.Item as GridSummaryItem;
+                if (item.FieldName == "PaymentPrice")
+                {
+                    switch (e.SummaryProcess)
+                    {
+                        case CustomSummaryProcess.Start:
+                            totalPrice = 0;
+                            break;
+                        case CustomSummaryProcess.Calculate:
+                            decimal customerOrderPrice = (decimal)view.GetRowCellValue(e.RowHandle, "CustomerOrderPrice");
+                            if (customerOrderPrice > 0)
+                                totalPrice += customerOrderPrice;
+                            else
+                                totalPrice += (decimal)e.FieldValue;
+                            break;
+                        case CustomSummaryProcess.Finalize:
+                            e.TotalValue = totalPrice;
+                            break;
+                    }
+                }
+            }
+            if (e.IsTotalSummary && (e.Item as GridSummaryItem).FieldName == "PaymentPriceCurrency")
+            {
+                GridSummaryItem item = e.Item as GridSummaryItem;
+                if (item.FieldName == "PaymentPriceCurrency")
+                {
+                    switch (e.SummaryProcess)
+                    {
+                        case CustomSummaryProcess.Start:
+                            totalPriceCurrency = 0;
+                            break;
+                        case CustomSummaryProcess.Calculate:
+                            decimal customerOrderCurrencyPrice = (decimal)view.GetRowCellValue(e.RowHandle, "CustomerOrderCurrencyPrice");
+                            if (customerOrderCurrencyPrice > 0)
+                                totalPriceCurrency += customerOrderCurrencyPrice;
+                            else
+                                totalPriceCurrency += (decimal)e.FieldValue;
+                            break;
+                        case CustomSummaryProcess.Finalize:
+                            e.TotalValue = totalPriceCurrency;
+                            break;
+                    }
+                }
+            }
+        }
+
+        #endregion
+
     }
 }
