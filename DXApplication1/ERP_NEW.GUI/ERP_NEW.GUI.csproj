@@ -72,10 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CE3B1C2D18A220A8392BCE62BF7F7ADB43EB46B4</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F2ECC73605AFA7018611D051A16DBC0EE78DC3CA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_3_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -2330,7 +2330,6 @@
     <EmbeddedResource Include="OTK\ReceiptCertificatesFm.resx">
       <DependentUpon>ReceiptCertificatesFm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -2432,9 +2431,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ERP_NEW.GUI_1_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_2_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
