@@ -56,6 +56,7 @@
             this.repositoryItemCheckEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.editOrderCheckItem = new DevExpress.XtraBars.BarCheckItem();
             this.editOrderBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.expenditureByCustomerOrderRepBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -190,7 +191,7 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
-            this.expenditureByCustomerOrderRepBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.exportToXlsBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
@@ -294,9 +295,10 @@
             this.editOrderEdit,
             this.editOrderCheckItem,
             this.editOrderBtn,
-            this.expenditureByCustomerOrderRepBtn});
+            this.expenditureByCustomerOrderRepBtn,
+            this.exportToXlsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(2, -2);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -505,6 +507,16 @@
             this.editOrderBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.editOrderBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editOrderBtn_ItemClick);
             // 
+            // expenditureByCustomerOrderRepBtn
+            // 
+            this.expenditureByCustomerOrderRepBtn.Caption = "Реєстр на списання по заказу";
+            this.expenditureByCustomerOrderRepBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("expenditureByCustomerOrderRepBtn.Glyph")));
+            this.expenditureByCustomerOrderRepBtn.Id = 5;
+            this.expenditureByCustomerOrderRepBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("expenditureByCustomerOrderRepBtn.LargeGlyph")));
+            this.expenditureByCustomerOrderRepBtn.Name = "expenditureByCustomerOrderRepBtn";
+            this.expenditureByCustomerOrderRepBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.expenditureByCustomerOrderRepBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.expenditureByCustomerOrderRepBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -547,6 +559,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.expenditureByCustomerOrderRepBtn);
+            this.ribbonPageGroup4.ItemLinks.Add(this.exportToXlsBtn);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Звіти";
             // 
@@ -596,7 +609,6 @@
             this.enableColumn});
             this.customerOrdersGridView.GridControl = this.customerOrdersGrid;
             this.customerOrdersGridView.Name = "customerOrdersGridView";
-            this.customerOrdersGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.customerOrdersGridView.OptionsView.ShowAutoFilterRow = true;
             this.customerOrdersGridView.OptionsView.ShowFooter = true;
             this.customerOrdersGridView.OptionsView.ShowGroupPanel = false;
@@ -934,7 +946,6 @@
             this.sumCurrencyPriceCol});
             this.specofocationGridView.GridControl = this.specificationGrid;
             this.specofocationGridView.Name = "specofocationGridView";
-            this.specofocationGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specofocationGridView.OptionsView.ShowAutoFilterRow = true;
             this.specofocationGridView.OptionsView.ShowFooter = true;
             this.specofocationGridView.OptionsView.ShowGroupPanel = false;
@@ -1102,7 +1113,6 @@
             this.invoiceNumCol});
             this.expenditureBandedGridView.GridControl = this.expendituresGrid;
             this.expenditureBandedGridView.Name = "expenditureBandedGridView";
-            this.expenditureBandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.expenditureBandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.expenditureBandedGridView.OptionsView.ShowFooter = true;
             this.expenditureBandedGridView.OptionsView.ShowGroupPanel = false;
@@ -1587,7 +1597,6 @@
             this.currencyNameCol});
             this.paymentsGridView.GridControl = this.paymentsGrid;
             this.paymentsGridView.Name = "paymentsGridView";
-            this.paymentsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.paymentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.paymentsGridView.OptionsView.ShowFooter = true;
             this.paymentsGridView.OptionsView.ShowGroupPanel = false;
@@ -1779,7 +1788,6 @@
             this.prepaymentCurrencyNameCol});
             this.prepaymentsGridView.GridControl = this.prepaymentsGrid;
             this.prepaymentsGridView.Name = "prepaymentsGridView";
-            this.prepaymentsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.prepaymentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.prepaymentsGridView.OptionsView.ShowFooter = true;
             this.prepaymentsGridView.OptionsView.ShowGroupPanel = false;
@@ -1983,7 +1991,6 @@
             this.nameAssCol});
             this.assembliesGridView.GridControl = this.assembliesGrid;
             this.assembliesGridView.Name = "assembliesGridView";
-            this.assembliesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.assembliesGridView.OptionsView.ShowAutoFilterRow = true;
             this.assembliesGridView.OptionsView.ShowGroupPanel = false;
             // 
@@ -2402,15 +2409,15 @@
             this.imageCollection1.InsertGalleryImage("delete_32x32.png", "grayscaleimages/edit/delete_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("grayscaleimages/edit/delete_32x32.png"), 1);
             this.imageCollection1.Images.SetKeyName(1, "delete_32x32.png");
             // 
-            // expenditureByCustomerOrderRepBtn
+            // exportToXlsBtn
             // 
-            this.expenditureByCustomerOrderRepBtn.Caption = "Реєстр на списання по заказу";
-            this.expenditureByCustomerOrderRepBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("expenditureByCustomerOrderRepBtn.Glyph")));
-            this.expenditureByCustomerOrderRepBtn.Id = 5;
-            this.expenditureByCustomerOrderRepBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("expenditureByCustomerOrderRepBtn.LargeGlyph")));
-            this.expenditureByCustomerOrderRepBtn.Name = "expenditureByCustomerOrderRepBtn";
-            this.expenditureByCustomerOrderRepBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.expenditureByCustomerOrderRepBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.expenditureByCustomerOrderRepBtn_ItemClick);
+            this.exportToXlsBtn.Caption = "Експорт в xls";
+            this.exportToXlsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("exportToXlsBtn.Glyph")));
+            this.exportToXlsBtn.Id = 6;
+            this.exportToXlsBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("exportToXlsBtn.LargeGlyph")));
+            this.exportToXlsBtn.Name = "exportToXlsBtn";
+            this.exportToXlsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.exportToXlsBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.exportToXlsBtn_ItemClick);
             // 
             // CustomerOrdersFm
             // 
@@ -2651,5 +2658,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem expenditureByCustomerOrderRepBtn;
+        private DevExpress.XtraBars.BarButtonItem exportToXlsBtn;
     }
 }

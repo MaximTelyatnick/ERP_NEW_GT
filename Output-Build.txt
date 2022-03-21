@@ -1,0 +1,131 @@
+﻿1>------ Build started: Project: ERP_NEW.BLL, Configuration: Release Any CPU ------
+1>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Calendar.NET". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors.
+1>  ERP_NEW.BLL -> C:\Program\ERP_NEW_GT\ERP_NEW.BLL\bin\Release\ERP_NEW.BLL.dll
+2>------ Build started: Project: ERP_NEW.GUI, Configuration: Release Any CPU ------
+2>  No way to resolve conflict between "DevExpress.Pdf.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" and "DevExpress.Pdf.v16.1.Core, Version=16.1.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a". Choosing "DevExpress.Pdf.v16.1.Core, Version=16.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" arbitrarily.
+2>  Consider app.config remapping of assembly "DevExpress.Pdf.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.Pdf.v16.1.Core.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.Data.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.Data.v16.1.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.XtraBars.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.XtraBars.v16.1.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.Utils.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.Utils.v16.1.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.Sparkline.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.Sparkline.v16.1.Core.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.Printing.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.Printing.v16.1.Core.dll] to solve conflict and get rid of warning.
+2>  Consider app.config remapping of assembly "DevExpress.XtraEditors.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a" from Version "16.1.2.0" [] to Version "16.1.4.0" [C:\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.XtraEditors.v16.1.dll] to solve conflict and get rid of warning.
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(1820,5): warning MSB3276: Found conflicts between different versions of the same dependent assembly. Please set the "AutoGenerateBindingRedirects" property to true in the project file. For more information, see http://go.microsoft.com/fwlink/?LinkId=294190.
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\OTK\WeldAttestationFm.cs(221,123,221,124): warning CS0642: Possible mistaken empty statement
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessTrips\BusinessTripsFm.cs(15,7,15,13): warning CS0105: The using directive for 'System' appeared previously in this namespace
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\AccountsFm.cs(21,7,21,13): warning CS0105: The using directive for 'System' appeared previously in this namespace
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CitiesFm.cs(21,7,21,13): warning CS0105: The using directive for 'System' appeared previously in this namespace
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\ProjectExetutersEditFm.cs(9,7,9,13): warning CS0105: The using directive for 'System' appeared previously in this namespace
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\StoreHouse\StoreHouseFm.cs(21,7,21,13): warning CS0105: The using directive for 'System' appeared previously in this namespace
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingOrdersFm.cs(301,21,301,28): warning CS0108: 'AccountingOrdersFm.Dispose()' hides inherited member 'Component.Dispose()'. Use the new keyword if hiding was intended.
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\PaintingWorksFm.cs(55,22,55,26): warning CS0108: 'PaintingWorksFm.Load()' hides inherited member 'Form.Load'. Use the new keyword if hiding was intended.
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Marketing\PackingListsFm.cs(195,21,195,49): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Marketing\PackingListsFm.cs(206,21,206,44): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingInvoicesFm.cs(124,13,124,52): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ReportsFm.cs(1361,30,1361,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingInvoicesFm.cs(654,17,654,27): warning CS0618: 'CriteriaOperator.operator true(CriteriaOperator)' is obsolete: 'Please replace == operator with ReferenceEquals, != with !ReferenceEquals (or use | and & operators instead of || and && in the simplified criteria syntax)'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\StoreHouse\StoreHouseOrdersFm.cs(134,54,134,67): warning CS0472: The result of the expression is always 'false' since a value of type 'bool' is never equal to 'null' of type 'bool?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingOrdersFm.cs(680,30,680,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresFm.cs(377,30,377,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresFm.cs(386,21,386,29): warning CS0168: The variable 'valueCur' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresFm.cs(387,21,387,29): warning CS0168: The variable 'valueInv' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\FixedAssetsOrderEditFm.cs(465,21,465,36): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresEditFm.cs(1123,18,1123,45): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresEditFm.cs(1125,21,1125,48): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\VisitScheduleFm.cs(174,22,174,35): warning CS0168: The variable 'correctlyTime' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Delivery\DeliveryOrdersFm.cs(63,13,63,48): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessTrips\BusinessTripsStatementPaymentSelectFm.cs(58,13,58,54): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\RenameCityEditFm.cs(74,30,74,31): warning CS0168: The variable 'e' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\MainTabFm.cs(831,34,831,36): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectFm.cs(57,13,57,52): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresFm.cs(146,13,146,51): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresFm.cs(151,13,151,53): warning CS0618: 'RepositoryItemPopupBase.Properties' is obsolete: 'Please remove the 'Properties.' string from the call.'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CashBookAdditionalFm.cs(115,25,115,87): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\ConverterFm.cs(61,30,61,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\BasisJournalFm.cs(115,25,115,77): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\ConverterFm.cs(153,22,153,24): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresFm.cs(541,59,541,95): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\ConverterFm.cs(188,30,188,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CashBookContractorFm.cs(114,25,114,83): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\CustomerOrders\AgreementJournalDocEditFm.cs(129,21,129,55): warning CS0252: Possible unintended reference comparison; to get a value comparison, cast the left hand side to type 'string'
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\CustomerOrders\AgreementJournalDocEditFm.cs(146,30,146,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\CustomerOrders\AgreementJournalEditFm.cs(238,30,238,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\EmployeesEditFm.cs(376,13,376,19): warning CS0162: Unreachable code detected
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessTrips\BusinessTripsPaymentJournalFm.cs(1091,25,1091,26): warning CS0219: The variable 'd' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\CustomerOrders\ContractPaymentsJournalFm.cs(187,30,187,32): warning CS0168: The variable 'ex' is declared but never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\RenameCityEditFm.cs(28,33,28,43): warning CS0169: The field 'RenameCityEditFm._operation' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CityEditFm.cs(30,30,30,43): warning CS0169: The field 'CityEditFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\LogFm.cs(27,24,27,33): warning CS0169: The field 'LogFm.logEditFm' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresEditAdditionalFm.cs(39,33,39,42): warning CS0649: Field 'StoreHouseProjectExpendituresEditAdditionalFm.operation' is never assigned to, and will always have its default value
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\RenameCityEditFm.cs(27,30,27,43): warning CS0169: The field 'RenameCityEditFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectFm.cs(27,24,27,43): warning CS0169: The field 'StoreHouseProjectFm.nomenclatureCurrent' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\AccountsEditFm.cs(29,30,29,43): warning CS0169: The field 'AccountsEditFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CashBookContractorFm.cs(36,30,36,43): warning CS0169: The field 'CashBookContractorFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresEditAdditionalFm.cs(26,34,26,49): warning CS0169: The field 'StoreHouseProjectExpendituresEditAdditionalFm.accountsService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessCard\BusinessCardFm.Designer.cs(860,80,860,112): warning CS0169: The field 'BusinessCardFm.repositoryItemRichEditStyleEdit1' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Marketing\PackingListCustomerSelectFm.cs(20,43,20,67): warning CS0169: The field 'PackingListCustomerSelectFm.mtsSpecificationsService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessTrips\BusinessTripsPurposeEditFm.cs(22,30,22,43): warning CS0169: The field 'BusinessTripsPurposeEditFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ReportsFm.cs(32,35,32,51): warning CS0169: The field 'ReportsFm.employeesService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresEditAdditionalFm.cs(40,35,40,45): warning CS0169: The field 'StoreHouseProjectExpendituresEditAdditionalFm.expendType' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\OTK\CertificatePassFm.cs(31,24,31,38): warning CS0169: The field 'CertificatePassFm.informationRow' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingInvoicesFm.cs(51,26,51,34): warning CS0649: Field 'AccountingInvoicesFm.nullDate' is never assigned to, and will always have its default value
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\MtsNomenclatureEditFm.cs(28,31,28,43): warning CS0649: Field 'MtsNomenclatureEditFm.unitsService' is never assigned to, and will always have its default value null
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\AccountingOrdersEditFm.cs(29,32,29,45): warning CS0169: The field 'AccountingOrdersEditFm.periodService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\PalitraEditFm.cs(26,28,26,33): warning CS0169: The field 'PalitraEditFm.model' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\MTS\MtsSpecificationFm.cs(28,42,28,65): warning CS0169: The field 'MtsSpecificationFm.mtsNomenclaturesService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\TimeSheetFm.cs(39,21,39,28): warning CS0169: The field 'TimeSheetFm.rezForm' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\DictionaryUktvFm.cs(24,30,24,43): warning CS0169: The field 'DictionaryUktvFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\DictionaryDkppFm.cs(23,30,23,43): warning CS0169: The field 'DictionaryDkppFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\BusinessCard\BusinessCardPhotoFm.cs(20,24,20,33): warning CS0169: The field 'BusinessCardPhotoFm.imageData' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\LogFm.cs(26,37,26,54): warning CS0169: The field 'LogFm.employeesDetalDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\CashBookAdditionalFm.cs(35,30,35,43): warning CS0169: The field 'CashBookAdditionalFm._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\FixedAssetsOrderAddJournalFm.cs(85,13,85,22): warning CS0169: The field 'FixedAssetsOrderAddJournalFm.posNumber' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\LogEditFm.cs(28,24,28,29): warning CS0169: The field 'LogEditFm.model' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectFm.cs(24,32,24,45): warning CS0169: The field 'StoreHouseProjectFm.reportService' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\BasisJournalEditFM.cs(27,30,27,43): warning CS0169: The field 'BasisJournalEditFM._userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\MTS\MtsSpecificationOldFm.cs(44,30,44,42): warning CS0169: The field 'MtsSpecificationOldFm.userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\MainTabFm.cs(884,22,884,34): warning CS0169: The field 'MainTabFm.userTasksDTO' is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresEditFm.cs(54,18,54,37): warning CS0414: The field 'ExpendituresEditFm.totalPriceColFilter' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\ExpendituresEditFm.cs(53,18,53,35): warning CS0414: The field 'ExpendituresEditFm.quantityColFilter' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Production\StoreHouseProjectExpendituresEditAdditionalFm.cs(49,25,49,40): warning CS0414: The field 'StoreHouseProjectExpendituresEditAdditionalFm.expPriceGeneral' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Classifiers\DictionaryDkppFm.cs(25,22,25,26): warning CS0414: The field 'DictionaryDkppFm.flag' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\CashBookFm.cs(35,25,35,38): warning CS0414: The field 'CashBookFm.beginDayPrice' is assigned but its value is never used
+2>C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\Accounting\CashBookFm.cs(36,25,36,36): warning CS0414: The field 'CashBookFm.endDayPrice' is assigned but its value is never used
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.office.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.richedit.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtragrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtralayout.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtraprinting.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtrascheduler.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtrascheduler.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtratreelist.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "de\devexpress.xtraverticalgrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.office.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.richedit.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtragrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtralayout.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtraprinting.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtrascheduler.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtrascheduler.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtratreelist.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "es\devexpress.xtraverticalgrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.office.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.richedit.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtragrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtralayout.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtraprinting.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtrascheduler.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtrascheduler.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtratreelist.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ja\devexpress.xtraverticalgrid.v16.1.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ru\devexpress.office.v16.1.core.resources".
+2>C:\Program Files (x86)\MSBuild\14.0\bin\Microsoft.Common.CurrentVersion.targets(3624,5): warning MSB3331: Unable to apply publish properties for item "ru\devexpress.richedit.v16.1.core.resources".
+2>  ERP_NEW.GUI -> C:\Program\ERP_NEW_GT\DXApplication1\ERP_NEW.GUI\bin\Release\ERP_NEW.GUI.exe
+Building ERP_NEW.GUI...
+3>------ Publish started: Project: ERP_NEW.GUI, Configuration: Release Any CPU ------
+Connecting to '\\SERVER-TFS\Publish\ERP\'...
+Publishing files...
+Publish success.
+\\SERVER-TFS\Publish\ERP\
+========== Build: 2 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========
+========== Publish: 1 succeeded, 0 failed, 0 skipped ==========

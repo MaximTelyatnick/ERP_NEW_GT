@@ -21,6 +21,7 @@ using System;
 using System.Diagnostics;
 using ERP_NEW.BLL.Infrastructure;
 using DevExpress.XtraEditors.Repository;
+using DevExpress.Export;
 
 namespace ERP_NEW.GUI.CustomerOrders
 {
@@ -649,5 +650,47 @@ namespace ERP_NEW.GUI.CustomerOrders
             }
         }
 
+        private void exportToXlsBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            string exportFilePath = Utils.HomePath + @"\Temp\Закази за період з "+ ((DateTime)beginDateEditItem.EditValue).ToShortDateString() + " по "+ ((DateTime)endDateEditItem.EditValue).ToShortDateString() + ".xls";
+            var optionXls = new XlsExportOptionsEx();
+
+            optionXls.SheetName = "Закази";
+            optionXls.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Value;
+            optionXls.ShowColumnHeaders = DevExpress.Utils.DefaultBoolean.True;
+            optionXls.ExportType = ExportType.WYSIWYG;
+            customerOrdersGridView.OptionsPrint.AutoWidth = false;
+            customerOrdersGridView.BestFitColumns();
+
+            string fileExtenstion = new FileInfo(exportFilePath).Extension;
+
+            try
+            {
+                customerOrdersGrid.ExportToXls(exportFilePath, optionXls);
+
+                if (File.Exists(exportFilePath))
+                {
+                    try
+                    {
+                        System.Diagnostics.Process.Start(exportFilePath);
+                    }
+                    catch
+                    {
+                        String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Шлях: " + exportFilePath;
+                        MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Шлях: " + exportFilePath;
+                    MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Файл вже відкрито! Закрийте файл!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
