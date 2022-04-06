@@ -168,6 +168,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<ExpenditureStoreHouse> ExpenditureStoreHouse { get; set; }
         public DbSet<ExpendituresStoreHousesInfo> ExpendituresStoreHousesInfo { get; set; }
         public DbSet<ExpenditureStoreHouseInfo> ExpenditureStoreHouseInfo { get; set; }
+        public DbSet<ExpenditureForProjectReportByContractor> ExpenditureForProjectReportByContractor { get; set; }
 
         //F
         public DbSet<FixedAssetsGroup> FixedAssetsGroup { get; set; }
@@ -336,7 +337,7 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
+                DataSource = "server-tfs",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
@@ -348,7 +349,7 @@ namespace ERP_NEW.DAL.EF
             #if DEBUG
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
+                DataSource = "server-tfs",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",

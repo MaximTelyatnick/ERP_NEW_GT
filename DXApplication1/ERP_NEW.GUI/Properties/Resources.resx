@@ -163,9 +163,9 @@
   <data name="weld_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\weld_321.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ERP_NEW_GUI" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <!--<data name="ERP_NEW_GUI" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ERP_NEW.GUI.psess;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
+  </data>-->
   <data name="cleartablestyle_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cleartablestyle_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

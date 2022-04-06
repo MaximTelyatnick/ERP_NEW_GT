@@ -100,6 +100,8 @@ namespace ERP_NEW.BLL.Interfaces
         void GetPaymentsReport(List<ReportInvoiceDTO> invoices, List<PaymentDTO> payments, IEnumerable<BeginCreditDTO> beginCredit);
 
         bool GetExpenditureForProjectByPeriod(DateTime startDate, DateTime endDate);
+
+        bool GetExpenditureByContractorByPeriod(DateTime startDate, DateTime endDate);
         bool ExpendituresForProject(List<ExpedinturesAccountantDTO> source, DateTime startDate, DateTime endDate);
         bool ExpendituresForProject(List<ExpenditureInfoDTO> source);
         bool ExpendituresForProjectWithTotalPrice(List<ExpedinturesAccountantDTO> source, DateTime startDate, DateTime endDate, bool materialPrint);

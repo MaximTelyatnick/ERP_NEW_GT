@@ -221,16 +221,6 @@ namespace ERP_NEW.GUI.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] ERP_NEW_GUI {
-            get {
-                object obj = ResourceManager.GetObject("ERP_NEW_GUI", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon favicon__2_ {

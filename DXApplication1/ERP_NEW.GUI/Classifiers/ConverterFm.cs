@@ -120,13 +120,13 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
     {
         excelWorkSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
         excelWorkSheet.Columns[i].AutoFit();
-        if (converterPrgsBar.Value < converterPrgsBar.Maximum)  
-        {
-            converterPrgsBar.Value++;
-            int percent = (int)(((double)converterPrgsBar.Value / (double)converterPrgsBar.Maximum) * 100);
-            converterPrgsBar.CreateGraphics().DrawString(percent.ToString() + "%", new System.Drawing.Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(converterPrgsBar.Width / 2 - 10, converterPrgsBar.Height / 2 - 7));  
-            System.Windows.Forms.Application.DoEvents();  
-        }  
+        //if (converterPrgsBar.Value < converterPrgsBar.Maximum)  
+        //{
+        //    converterPrgsBar.Value++;
+        //    int percent = (int)(((double)converterPrgsBar.Value / (double)converterPrgsBar.Maximum) * 100);
+        //    converterPrgsBar.CreateGraphics().DrawString(percent.ToString() + "%", new System.Drawing.Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(converterPrgsBar.Width / 2 - 10, converterPrgsBar.Height / 2 - 7));  
+        //    System.Windows.Forms.Application.DoEvents();  
+        //}  
     }
     Range range = excelWorkSheet.get_Range(vsS[0] + 1, vsS[(table.Columns.Count-1)] + (table.Rows.Count+1));
     range.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
@@ -139,13 +139,13 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
             {
                 excelWorkSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
             }
-            if (converterPrgsBar.Value < converterPrgsBar.Maximum)
-            {
-                converterPrgsBar.Value++;
-                int percent = (int)(((double)converterPrgsBar.Value / (double)converterPrgsBar.Maximum) * 100);
-                converterPrgsBar.CreateGraphics().DrawString(percent.ToString() + "%", new System.Drawing.Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(converterPrgsBar.Width / 2 - 10, converterPrgsBar.Height / 2 - 7));
-                System.Windows.Forms.Application.DoEvents();
-            }
+            //if (converterPrgsBar.Value < converterPrgsBar.Maximum)
+            //{
+            //    converterPrgsBar.Value++;
+            //    int percent = (int)(((double)converterPrgsBar.Value / (double)converterPrgsBar.Maximum) * 100);
+            //    converterPrgsBar.CreateGraphics().DrawString(percent.ToString() + "%", new System.Drawing.Font("Arial", (float)8.25, FontStyle.Regular), Brushes.Black, new PointF(converterPrgsBar.Width / 2 - 10, converterPrgsBar.Height / 2 - 7));
+            //    System.Windows.Forms.Application.DoEvents();
+            //}
         }
         excel.Visible = true;
         excel.DisplayAlerts = true;  
@@ -157,7 +157,7 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
   //  book.Close(true);  
  //   excel.Quit();    
     book.SaveAs(path+@"\"+XlfileName);
-    Marshal.ReleaseComObject(book);  
+    //Marshal.ReleaseComObject(book);  
     Marshal.ReleaseComObject(book);  
     Marshal.ReleaseComObject(excel);    
 }  
@@ -225,6 +225,9 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
 
         public XlBorderWeight xlMedium { get; set; }
 
-       
+        private void converterTxtName_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
+        }
     }
 }

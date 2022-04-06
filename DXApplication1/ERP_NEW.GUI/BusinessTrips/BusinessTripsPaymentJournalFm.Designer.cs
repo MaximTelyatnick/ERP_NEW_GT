@@ -53,6 +53,7 @@
             this.bstReportPaymentsBy23 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy63 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy473 = new DevExpress.XtraBars.BarButtonItem();
+            this.bstReportPaymentsBy474 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy6412 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy313 = new DevExpress.XtraBars.BarButtonItem();
             this.bstReportPaymentsBy3112 = new DevExpress.XtraBars.BarButtonItem();
@@ -76,6 +77,11 @@
             this.paymentStatementBtn = new DevExpress.XtraBars.BarButtonItem();
             this.paymentStatementDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit6 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.customerOrderAtachEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.customerOrderEdit = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemGridLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.orderNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -83,7 +89,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.businessTripsGrid = new DevExpress.XtraGrid.GridControl();
+            this.За = new DevExpress.XtraGrid.GridControl();
             this.businessTripsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.fullNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.accountNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -153,7 +159,6 @@
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.bstReportPaymentsBy474 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -173,11 +178,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMonth3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.businessTripsGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.За)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessTripsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkRepository)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -237,9 +244,11 @@
             this.bstReportPaymentsBy313,
             this.bstReportPaymentsBy3112,
             this.bstReportPaymentsBy473,
-            this.bstReportPaymentsBy474});
+            this.bstReportPaymentsBy474,
+            this.customerOrderAtachEdit,
+            this.customerOrderEdit});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 35;
+            this.ribbonControl1.MaxItemId = 37;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -254,7 +263,8 @@
             this.repositoryItemTextEdit2,
             this.repositoryItemDateEdit5,
             this.repositoryItemMonth3,
-            this.repositoryItemDateEdit6});
+            this.repositoryItemDateEdit6,
+            this.repositoryItemGridLookUpEdit});
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribbonControl1.Size = new System.Drawing.Size(1684, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
@@ -480,6 +490,13 @@
             this.bstReportPaymentsBy473.Name = "bstReportPaymentsBy473";
             this.bstReportPaymentsBy473.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy473_ItemClick);
             // 
+            // bstReportPaymentsBy474
+            // 
+            this.bstReportPaymentsBy474.Caption = "Звіт по рахунку 474";
+            this.bstReportPaymentsBy474.Id = 34;
+            this.bstReportPaymentsBy474.Name = "bstReportPaymentsBy474";
+            this.bstReportPaymentsBy474.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy474_ItemClick);
+            // 
             // bstReportPaymentsBy6412
             // 
             this.bstReportPaymentsBy6412.Caption = "Звіт по рахунку 641/2";
@@ -700,6 +717,56 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit6.Name = "repositoryItemDateEdit6";
             // 
+            // customerOrderAtachEdit
+            // 
+            this.customerOrderAtachEdit.Caption = "Прикріпити заказ";
+            this.customerOrderAtachEdit.Glyph = ((System.Drawing.Image)(resources.GetObject("customerOrderAtachEdit.Glyph")));
+            this.customerOrderAtachEdit.Id = 35;
+            this.customerOrderAtachEdit.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("customerOrderAtachEdit.LargeGlyph")));
+            this.customerOrderAtachEdit.Name = "customerOrderAtachEdit";
+            this.customerOrderAtachEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.customerOrderAtachEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.customerOrderAtachEdit_ItemClick);
+            // 
+            // customerOrderEdit
+            // 
+            this.customerOrderEdit.Caption = "Заказ ";
+            this.customerOrderEdit.Edit = this.repositoryItemGridLookUpEdit;
+            this.customerOrderEdit.EditWidth = 130;
+            this.customerOrderEdit.Id = 36;
+            this.customerOrderEdit.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customerOrderEdit.ItemAppearance.Hovered.Options.UseFont = true;
+            this.customerOrderEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customerOrderEdit.ItemAppearance.Normal.Options.UseFont = true;
+            this.customerOrderEdit.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.customerOrderEdit.ItemAppearance.Pressed.Options.UseFont = true;
+            this.customerOrderEdit.Name = "customerOrderEdit";
+            // 
+            // repositoryItemGridLookUpEdit
+            // 
+            this.repositoryItemGridLookUpEdit.AutoHeight = false;
+            this.repositoryItemGridLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemGridLookUpEdit.Name = "repositoryItemGridLookUpEdit";
+            this.repositoryItemGridLookUpEdit.View = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.orderNumberCol});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // orderNumberCol
+            // 
+            this.orderNumberCol.Caption = "Заказ";
+            this.orderNumberCol.FieldName = "OrderNumber";
+            this.orderNumberCol.Name = "orderNumberCol";
+            this.orderNumberCol.Visible = true;
+            this.orderNumberCol.VisibleIndex = 0;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -730,6 +797,8 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.periodBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.customerOrderEditBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.markedBusinessTripsBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.customerOrderEdit);
+            this.ribbonPageGroup2.ItemLinks.Add(this.customerOrderAtachEdit);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Функції";
             // 
@@ -771,7 +840,7 @@
             this.groupControl2.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
             this.groupControl2.AppearanceCaption.Options.UseFont = true;
             this.groupControl2.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl2.Controls.Add(this.businessTripsGrid);
+            this.groupControl2.Controls.Add(this.За);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
@@ -779,18 +848,18 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Відрядження";
             // 
-            // businessTripsGrid
+            // За
             // 
-            this.businessTripsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.businessTripsGrid.Location = new System.Drawing.Point(2, 20);
-            this.businessTripsGrid.MainView = this.businessTripsGridView;
-            this.businessTripsGrid.MenuManager = this.ribbonControl1;
-            this.businessTripsGrid.Name = "businessTripsGrid";
-            this.businessTripsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.За.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.За.Location = new System.Drawing.Point(2, 20);
+            this.За.MainView = this.businessTripsGridView;
+            this.За.MenuManager = this.ribbonControl1;
+            this.За.Name = "За";
+            this.За.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.checkRepository});
-            this.businessTripsGrid.Size = new System.Drawing.Size(1680, 302);
-            this.businessTripsGrid.TabIndex = 0;
-            this.businessTripsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.За.Size = new System.Drawing.Size(1680, 302);
+            this.За.TabIndex = 0;
+            this.За.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.businessTripsGridView});
             // 
             // businessTripsGridView
@@ -815,7 +884,7 @@
             this.docDatePaymentCol,
             this.identNumberCol,
             this.selectionCol});
-            this.businessTripsGridView.GridControl = this.businessTripsGrid;
+            this.businessTripsGridView.GridControl = this.За;
             this.businessTripsGridView.Name = "businessTripsGridView";
             this.businessTripsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.businessTripsGridView.OptionsSelection.MultiSelect = true;
@@ -1095,12 +1164,19 @@
             // 
             // selectionCol
             // 
+            this.selectionCol.AppearanceHeader.Image = ((System.Drawing.Image)(resources.GetObject("selectionCol.AppearanceHeader.Image")));
+            this.selectionCol.AppearanceHeader.Options.UseImage = true;
+            this.selectionCol.AppearanceHeader.Options.UseTextOptions = true;
+            this.selectionCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.selectionCol.Caption = " ";
             this.selectionCol.ColumnEdit = this.checkRepository;
             this.selectionCol.FieldName = "Check";
+            this.selectionCol.Image = ((System.Drawing.Image)(resources.GetObject("selectionCol.Image")));
+            this.selectionCol.ImageAlignment = System.Drawing.StringAlignment.Center;
             this.selectionCol.Name = "selectionCol";
-            this.selectionCol.OptionsColumn.AllowEdit = false;
-            this.selectionCol.OptionsColumn.AllowFocus = false;
+            this.selectionCol.OptionsColumn.ShowCaption = false;
+            this.selectionCol.Visible = true;
+            this.selectionCol.VisibleIndex = 16;
             this.selectionCol.Width = 36;
             // 
             // checkRepository
@@ -1764,13 +1840,6 @@
             this.barEditItem1.ItemAppearance.Normal.Options.UseFont = true;
             this.barEditItem1.Name = "barEditItem1";
             // 
-            // bstReportPaymentsBy474
-            // 
-            this.bstReportPaymentsBy474.Caption = "Звіт по рахунку 474";
-            this.bstReportPaymentsBy474.Id = 34;
-            this.bstReportPaymentsBy474.Name = "bstReportPaymentsBy474";
-            this.bstReportPaymentsBy474.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.bstReportPaymentsBy474_ItemClick);
-            // 
             // BusinessTripsPaymentJournalFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1803,11 +1872,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMonth3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.businessTripsGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.За)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.businessTripsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkRepository)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
@@ -1838,7 +1909,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraGrid.GridControl businessTripsGrid;
+        private DevExpress.XtraGrid.GridControl За;
         private DevExpress.XtraGrid.Views.Grid.GridView businessTripsGridView;
         private DevExpress.XtraTab.XtraTabControl paymentsTab;
         private DevExpress.XtraTab.XtraTabPage prepaymentPage;
@@ -1958,5 +2029,10 @@
         private DevExpress.XtraBars.BarButtonItem editPaymantAccountBtn;
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy473;
         private DevExpress.XtraBars.BarButtonItem bstReportPaymentsBy474;
+        private DevExpress.XtraBars.BarButtonItem customerOrderAtachEdit;
+        private DevExpress.XtraBars.BarEditItem customerOrderEdit;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn orderNumberCol;
     }
 }

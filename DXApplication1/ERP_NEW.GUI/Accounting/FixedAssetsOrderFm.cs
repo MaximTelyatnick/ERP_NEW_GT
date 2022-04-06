@@ -38,6 +38,8 @@ namespace ERP_NEW.GUI.Accounting
         private UserTasksDTO userTasksDTO;
         private IFixedAssetsOrderService fixedAssetsOrderService;
         private IReportService reportService;
+        private IAccountsService accountsService;
+
         private BindingSource fixedAssetsOrderBS = new BindingSource();
         private BindingSource fixedAssetsOrderMaterialsBS = new BindingSource();
         private BindingSource fixedAssetsOrderArchiveBS = new BindingSource();
@@ -902,11 +904,18 @@ namespace ERP_NEW.GUI.Accounting
 
         private void printActExpenditureBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+            reportService = Program.kernel.Get<IReportService>();
+            accountsService = Program.kernel.Get<IAccountsService>();
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
 
             if (fixedAssetsOrderArchiveBS.Count > 0)
             {
+                // получаем счет списания материалов 
+                string expenditureAccount = "";
+                int? expenditureAccountId = fixedAssetsOrderService.GetFixedAssetsMaterialsByFixedAssetsId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id).First().Fixed_Account_Id;
+                if (expenditureAccountId != null)
+                    expenditureAccount = accountsService.GetAllAccounts().FirstOrDefault(srch => srch.Id == expenditureAccountId).Num;
+                ((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).ExpenditureAccount = expenditureAccount;
 
                 FixedAssetsOrderRegistrationDTO currentFixedAssetsOrderReg = fixedAssetsOrderService.GetByFixedAssetsOrderId(((FixedAssetsOrderArchiveJournalDTO)fixedAssetsOrderArchiveBS.Current).Id, 4);
                 if (currentFixedAssetsOrderReg == null)
