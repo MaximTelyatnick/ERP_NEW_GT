@@ -336,7 +336,7 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-asup",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
@@ -348,7 +348,7 @@ namespace ERP_NEW.DAL.EF
             #if DEBUG
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-tfs",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
