@@ -155,6 +155,7 @@
     <Compile Include="DTO\ModelsDTO\CalculationMaterialsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\EmployeesDetailsStandartDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\FixedAssetsNoAmortDTO.cs" />
     <Compile Include="DTO\ModelsDTO\GetOSVkvartal_ForChessDTO.cs" />
     <Compile Include="DTO\ModelsDTO\LogDTO.cs" />
     <Compile Include="DTO\ModelsDTO\PaintingWorksDTO.cs" />

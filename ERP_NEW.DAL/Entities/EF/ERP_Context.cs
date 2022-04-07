@@ -174,6 +174,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<FixedAssetsGroup> FixedAssetsGroup { get; set; }
         public DbSet<FixedAssetsOrder> FixedAssetsOrder { get; set; }
         public DbSet<FixedAssetsOrderJournal> FixedAssetsOrderJournal { get; set; }
+        public DbSet<FixedAssetsNoAmort> FixedAssetsNoAmort { get; set; }
         public DbSet<FixedAssetsMaterials> FixedAssetsMaterials { get; set; }
         public DbSet<FixedAssetsOrderListMaterialsJournal> FixedAssetsOrderListMaterialsJournal { get; set; }
         public DbSet<FixedAssetsOrderArchiveJournal> FixedAssetsOrderArchiveJournal { get; set; }
@@ -337,7 +338,7 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-tfs",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
@@ -349,7 +350,7 @@ namespace ERP_NEW.DAL.EF
             #if DEBUG
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "server-tfs",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",

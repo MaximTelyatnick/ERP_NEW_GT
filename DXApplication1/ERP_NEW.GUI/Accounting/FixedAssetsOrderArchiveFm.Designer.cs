@@ -218,7 +218,6 @@
             this.fixedAssetsArchiveGridView.GridControl = this.fixedAssetsArchiveGrid;
             this.fixedAssetsArchiveGridView.GroupCount = 1;
             this.fixedAssetsArchiveGridView.Name = "fixedAssetsArchiveGridView";
-            this.fixedAssetsArchiveGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.fixedAssetsArchiveGridView.OptionsPrint.AutoWidth = false;
             this.fixedAssetsArchiveGridView.OptionsView.ShowAutoFilterRow = true;
             this.fixedAssetsArchiveGridView.OptionsView.ShowFooter = true;
