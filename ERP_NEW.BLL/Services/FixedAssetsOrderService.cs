@@ -38,6 +38,7 @@ namespace ERP_NEW.BLL.Services
         private IRepository<Contractors> contractors;
         private IRepository<FixedAssetsOrderListMaterialsJournal> fixedAssetsOrderListMaterialsJournal;
         private IRepository<FixedAssetsOrderArchiveJournal> fixedAssetsOrderArchiveJournal;
+        private IRepository<FixedAssetsNoAmort> fixedAssetsNoAmort;
         private IRepository<Invoice_Requirement_Materials> invoice_Requirement_Materials;
         private IRepository<FixedAssetsOrderMaterialsPrintJournal> fixedAssetsOrderMaterialsPrintJournal;
         private IRepository<FixedAssetsOrderRegistration> fixedAssetsOrderRegistration;
@@ -83,6 +84,7 @@ namespace ERP_NEW.BLL.Services
             fixedAssetsReportRegisterCh2 = Database.GetRepository<FixedAssetsReportRegisterCh2>();
             getInputFixedAssetsForGroup = Database.GetRepository<InputFixedAssetsForGroup>();
             getInputFixedForQuarter = Database.GetRepository<InputFixedAssetsForQuarter>();
+            fixedAssetsNoAmort = Database.GetRepository<FixedAssetsNoAmort>();
 
             getResponsible = Database.GetRepository<Responsible>();
 
@@ -96,6 +98,8 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<FixedAssetsOrderJournalDTO, FixedAssetsOrderJournal>();
                 cfg.CreateMap<FixedAssetsMaterialsDTO, FixedAssetsMaterials>();
                 cfg.CreateMap<FixedAssetsMaterials, FixedAssetsMaterialsDTO>();
+                cfg.CreateMap<FixedAssetsNoAmort, FixedAssetsNoAmortDTO>();
+                cfg.CreateMap<FixedAssetsNoAmortDTO, FixedAssetsNoAmort>();
                 cfg.CreateMap<FixedAssetsOrderListMaterialsJournal, FixedAssetsOrderListMaterialsJournalDTO>();
                 cfg.CreateMap<FixedAssetsOrderArchiveJournal, FixedAssetsOrderArchiveJournalDTO>();
                 cfg.CreateMap<FixedAssetsOrderArchiveJournalDTO, FixedAssetsOrderArchiveJournal>();
@@ -121,6 +125,7 @@ namespace ERP_NEW.BLL.Services
 
                 cfg.CreateMap<Responsible, ResponsibleDTO>();
                 cfg.CreateMap<ResponsibleDTO, Responsible>();
+                
             });
 
             mapper = config.CreateMapper();
@@ -326,7 +331,27 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<FixedAssetsOrderRegistration, FixedAssetsOrderRegistrationDTO>(fixedAssetsOrderRegistration.GetAll().SingleOrDefault(s => s.FixedAssetsOrderId == id && s.StatusTypeOrder == type));
         }
 
+        public IEnumerable<FixedAssetsNoAmortDTO> GetFixedAssestAmortizationDateById(int fixedAssetsOrderId)
+        {
+            var rezult = (
+                from fana in fixedAssetsNoAmort.GetAll()
+                join fo in fixedAssetsOrder.GetAll() on fana.FixedAssetId equals fo.Id into foo
+                from fo in foo.DefaultIfEmpty()
+                where
+                    fana.FixedAssetId == fixedAssetsOrderId
+                select new FixedAssetsNoAmortDTO()
+                {
+                    Id = fana.Id,
+                    Count = fana.Count,
+                    FixedAssetId = fo.Id,
+                    DateNoAmortization = fana.DateNoAmortization,
+                    DateNoAmortizationMonth = fana.DateNoAmortization.Month.ToString(),
+                    DateNoAmortizationYear = fana.DateNoAmortization.Year.ToString()
+                });
 
+            return rezult.ToList();
+            //return mapper.Map<IEnumerable<FixedAssetsNoAmort>, List<FixedAssetsNoAmortDTO>>(fixedAssetsNoAmort.GetAll().Where(srt => srt.FixedAssetId == fixedAssetsOrderId));
+        }
 
 
         #region FixedAccestsOrder CRUD method's
@@ -508,10 +533,35 @@ namespace ERP_NEW.BLL.Services
             string procName = @"select * from ""GetInputFixedAssetsForQuarter""(@BeginDate,@EndDate)";
             return mapper.Map<IEnumerable<InputFixedAssetsForQuarter>, List<InputFixedAssetsForQuarterDTO>>(getInputFixedForQuarter.SQLExecuteProc(procName, Parameters));
         }
-        
-        
+
+
         #endregion
 
+        #region FixedAssetsNoAmort CRUD method's
+
+        public int FixedAssetsNoAmortCreate(FixedAssetsNoAmortDTO fixedAssetsNoAmortDTO)
+        {
+            var createFixedAssetsNoAmort = fixedAssetsNoAmort.Create(mapper.Map<FixedAssetsNoAmort>(fixedAssetsNoAmortDTO));
+            return (int)createFixedAssetsNoAmort.Id;
+        }
+        public void FixedAssetsNoAmortUpdate(FixedAssetsNoAmortDTO fixedAssetsNoAmortDTO)
+        {
+            var updateFixedAssetsNoAmort = fixedAssetsNoAmort.GetAll().SingleOrDefault(c => c.Id == fixedAssetsNoAmortDTO.Id);
+            fixedAssetsNoAmort.Update((mapper.Map<FixedAssetsNoAmortDTO, FixedAssetsNoAmort>(fixedAssetsNoAmortDTO, updateFixedAssetsNoAmort)));
+        }
+        public bool FixedAssetsNoAmortDelete(int id)
+        {
+            try
+            {
+                fixedAssetsNoAmort.Delete(fixedAssetsNoAmort.GetAll().FirstOrDefault(c => c.Id == id));
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
 
 
         public void Dispose()

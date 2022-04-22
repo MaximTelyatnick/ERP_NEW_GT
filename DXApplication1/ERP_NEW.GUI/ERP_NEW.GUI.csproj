@@ -72,10 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F2ECC73605AFA7018611D051A16DBC0EE78DC3CA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>5E5074843D0EEC5EDD935AE3F2CEF678377846A9</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_4_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -550,6 +550,12 @@
     </Compile>
     <Compile Include="Accounting\FixedAssetsOrderArchiveFm.Designer.cs">
       <DependentUpon>FixedAssetsOrderArchiveFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\FixedAssetsOrderCancelAmortizationFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\FixedAssetsOrderCancelAmortizationFm.Designer.cs">
+      <DependentUpon>FixedAssetsOrderCancelAmortizationFm.cs</DependentUpon>
     </Compile>
     <Compile Include="Accounting\FixedAssetsOrderEditCostFm.cs">
       <SubType>Form</SubType>
@@ -1833,6 +1839,9 @@
     <EmbeddedResource Include="Accounting\FixedAssetsOrderArchiveFm.resx">
       <DependentUpon>FixedAssetsOrderArchiveFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\FixedAssetsOrderCancelAmortizationFm.resx">
+      <DependentUpon>FixedAssetsOrderCancelAmortizationFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Accounting\FixedAssetsOrderEditCostFm.resx">
       <DependentUpon>FixedAssetsOrderEditCostFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2455,6 +2464,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ERP_NEW.GUI_4_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

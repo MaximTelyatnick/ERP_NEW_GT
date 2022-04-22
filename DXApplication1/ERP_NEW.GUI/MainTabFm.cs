@@ -784,67 +784,68 @@ namespace ERP_NEW.GUI
    
         private int GetActiveDirectoryUser()
         {
-            var currentDomain = ADUser.CurrentDC(); 
+            return 4;
+            ////var currentDomain = ADUser.CurrentDC(); 
             
-            if (currentDomain != null)
-            {
-                var searchString = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+            ////if (currentDomain != null)
+            ////{
+            ////    var searchString = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
 
-                //Для тестирования чужой учетки на машине разработчика используем строку ниже, верхнюю нужно закоментить!!!
-                //var searchString = "TVAGONM\\{учетка_пользователя}";
-                //var searchString = "TVAGONM\\trocka";
-                var member = searchString.Split('\\');
-                var ulogin = member[1];
-                var uDomen = member[0];
+            ////    //Для тестирования чужой учетки на машине разработчика используем строку ниже, верхнюю нужно закоментить!!!
+            ////    //var searchString = "TVAGONM\\{учетка_пользователя}";
+            ////    //var searchString = "TVAGONM\\trocka";
+            ////    var member = searchString.Split('\\');
+            ////    var ulogin = member[1];
+            ////    var uDomen = member[0];
 
-                var filter = string.Format("(&(ObjectClass={0})(sAMAccountName={1}))", "person", ulogin);
-                var domain = uDomen;
-                var properties = new[] { "fullname" };
+            ////    var filter = string.Format("(&(ObjectClass={0})(sAMAccountName={1}))", "person", ulogin);
+            ////    var domain = uDomen;
+            ////    var properties = new[] { "fullname" };
 
-                var adRoot = new DirectoryEntry("LDAP://" + domain, null, null, AuthenticationTypes.Secure);
-                var searcher = new DirectorySearcher(adRoot)
-                {
-                    SearchScope = SearchScope.Subtree,
-                    ReferralChasing = ReferralChasingOption.All
-                };
-                searcher.PropertiesToLoad.AddRange(properties);
-                searcher.Filter = filter;
-                var result = searcher.FindOne();
-                var directoryEntry = result.GetDirectoryEntry();
-                try
-                {
-                    var lastname = directoryEntry.Properties["sn"][0].ToString();
-                    var firstname = directoryEntry.Properties["givenname"][0].ToString();
-                    var tabnumber = directoryEntry.Properties["description"].Value.ToString();
+            ////    var adRoot = new DirectoryEntry("LDAP://" + domain, null, null, AuthenticationTypes.Secure);
+            ////    var searcher = new DirectorySearcher(adRoot)
+            ////    {
+            ////        SearchScope = SearchScope.Subtree,
+            ////        ReferralChasing = ReferralChasingOption.All
+            ////    };
+            ////    searcher.PropertiesToLoad.AddRange(properties);
+            ////    searcher.Filter = filter;
+            ////    var result = searcher.FindOne();
+            ////    var directoryEntry = result.GetDirectoryEntry();
+            ////    try
+            ////    {
+            ////        var lastname = directoryEntry.Properties["sn"][0].ToString();
+            ////        var firstname = directoryEntry.Properties["givenname"][0].ToString();
+            ////        var tabnumber = directoryEntry.Properties["description"].Value.ToString();
 
-                    if (ulogin == "pozyabin")
-                        return 656;
-                    if (ulogin == "kostirenko")
-                        return 723;
+            ////        if (ulogin == "pozyabin")
+            ////            return 656;
+            ////        if (ulogin == "kostirenko")
+            ////            return 723;
 
 
-                    int userNumber;
-                    bool isParse = int.TryParse(tabnumber, out userNumber);
+            ////        int userNumber;
+            ////        bool isParse = int.TryParse(tabnumber, out userNumber);
 
-                    return (isParse) ? userNumber : 0;      
-                }
-                catch (Exception ex)
-                {
-                    if (ulogin == "krasilnikova")
-                        return 844;
-                    //if (ulogin == "zavorotniy")+
-                    //    return 757;
-                    //if (ulogin == "firsova")
-                    //    return 784;
-                    //else if (ulogin == "bibicheva")
-                    //    return 802;
-                    //else if (ulogin == "zaloilo")
-                    //    return 804;А
+            ////        return (isParse) ? userNumber : 0;      
+            ////    }
+            ////    catch (Exception ex)
+            ////    {
+            ////        if (ulogin == "krasilnikova")
+            ////            return 844;
+            ////        //if (ulogin == "zavorotniy")+
+            ////        //    return 757;
+            ////        //if (ulogin == "firsova")
+            ////        //    return 784;
+            ////        //else if (ulogin == "bibicheva")
+            ////        //    return 802;
+            ////        //else if (ulogin == "zaloilo")
+            ////        //    return 804;А
 
-                    MessageBox.Show("Вам не дозволено працювати в системі. \nПеревірте підключення до мережі або зверніться до адміністратора. \nПользователь: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Warning);              
-                }
-            }
-            return -1;
+            ////        MessageBox.Show("Вам не дозволено працювати в системі. \nПеревірте підключення до мережі або зверніться до адміністратора. \nПользователь: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Warning);              
+            ////    }
+            ////}
+            ////return -1;
         }
 
         private void menuNavPane_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)

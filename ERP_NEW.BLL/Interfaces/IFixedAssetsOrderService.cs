@@ -38,6 +38,8 @@ namespace ERP_NEW.BLL.Interfaces
 
         IEnumerable<FixedAssetsMaterialsDTO> GetFixedAssetsMaterialsByFixedAssetsId(int fixedAssetsId);
 
+        IEnumerable<FixedAssetsNoAmortDTO> GetFixedAssestAmortizationDateById(int fixedAssetsOrderId);
+
         int FixedAssetsOrderCreate(FixedAssetsOrderDTO fixedAssetsOrderDTO);
         void FixedAssetsOrderUpdate(FixedAssetsOrderDTO fixedAssetsOrderDTO);
         bool FixedAssetsOrderDelete(int id);
@@ -49,6 +51,10 @@ namespace ERP_NEW.BLL.Interfaces
         int FixedAssetsOrderRegistrationCreate(FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistrationDTO);
         void FixedAssetsOrderRegistrationUpdate(FixedAssetsOrderRegistrationDTO fixedAssetsOrderRegistrationDTO);
         bool FixedAssetsOrderRegistrationDelete(int id);
+
+        int FixedAssetsNoAmortCreate(FixedAssetsNoAmortDTO fixedAssetsNoAmortDTO);
+        void FixedAssetsNoAmortUpdate(FixedAssetsNoAmortDTO fixedAssetsNoAmortDTO);
+        bool FixedAssetsNoAmortDelete(int id);
 
         IEnumerable<ResponsibleDTO> GetResponsible();
 
