@@ -11378,8 +11378,6 @@ namespace ERP_NEW.BLL.Services
 
             #region Result summary
 
- 
-
             cells["A" + currentPosition + ":" + vsS[startHeaderPosition - 1] + currentPosition].Interior.Color = Color.LightGreen;
             cells["B" + currentPosition].HorizontalAlignment = HAlign.Right;
             cells["B" + currentPosition + ":" + vsS[startHeaderPosition - 1] + currentPosition].Font.Bold = true;
@@ -11425,10 +11423,12 @@ namespace ERP_NEW.BLL.Services
 
             string FlagType;
 
-            if (!report531)
+            if (!report531 && PFlag3!="15")
                 FlagType = "63";
-            else
+            else if(report531)
                 FlagType = "531";
+            else
+                FlagType = "631";
 
             cells["A" + captionPosition + ":" + vsS[startHeaderPosition - 1] + captionPosition].Merge();
             string subName = "Розрахунки з постачальниками та підрядниками";
@@ -12923,6 +12923,11 @@ namespace ERP_NEW.BLL.Services
                 }
             }
 
+            //===========================================================
+            //корректировка апреля
+            weekendDays--;
+            //===========================================================
+
             for (int i = 0; i < recCount; i++)
             {
                 currentPosition++;
@@ -13032,24 +13037,27 @@ namespace ERP_NEW.BLL.Services
 
                     // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
 
-                    //if (j == 15)
-                    //{
-                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.DodgerBlue;
-                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                    //    continue;
-                    //}
+                    if (j == 25)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "НА";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
+                        
+                        continue;
+                    }
 
-                    //if (j == 30)
-                    //{
-                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
-                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                    //    //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                    //    continue;
-                    //}
+                    if (j == 30)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        continue;
+                    }
+
+
 
                     int startCell = j + 4;
 
@@ -13371,8 +13379,11 @@ namespace ERP_NEW.BLL.Services
                         if (((DateSystem.IsWeekend(lastDay, CountryCode.UA) == false)))
                         {
                             cells[vsS[currentColumn + previousDays] + startWith].Value = 7;
+                            
                         }//????
-                        else { cells[vsS[currentColumn + previousDays] + startWith].Value = 7;// "ВC"; 
+                        else if(lastDay.DayOfWeek!= DayOfWeek.Sunday && lastDay.DayOfWeek != DayOfWeek.Monday)
+                        {
+                            cells[vsS[currentColumn + previousDays] + startWith].Value = 7;// "ВC"; 
                         }
                     }
 

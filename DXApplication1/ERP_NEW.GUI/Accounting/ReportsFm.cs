@@ -241,6 +241,10 @@ namespace ERP_NEW.GUI.Accounting
                         reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4, true);
                         //MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
+                    case "631":
+                        reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4);
+                        //MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
                     default:
                         reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4);
                        // MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);

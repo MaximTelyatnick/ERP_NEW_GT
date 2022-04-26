@@ -103,19 +103,19 @@ namespace ERP_NEW.GUI.Accounting
         {
             splashScreenManager.ShowWaitForm();
             fixedAssetsOrderGridView.BeginDataUpdate();
-            fixedAssetsAmortGridView.BeginDataUpdate();
+            //fixedAssetsAmortGridView.BeginDataUpdate();
 
             firstDay = new DateTime(((DateTime)yearEdit.EditValue).Year, (int)monthEdit.EditValue, 1);
             lastDay = new DateTime(((DateTime)yearEdit.EditValue).Year, (int)monthEdit.EditValue, 1).AddMonths(1).AddDays(-1);
             fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
             testFAList = fixedAssetsOrderService.GetFixedAssetsOrderJournal(lastDay).ToList();
             fixedAssetsOrderBS.DataSource = testFAList;
-            fixedAssetsOrderNoAmortBS.DataSource = testFAList;
+            //fixedAssetsOrderNoAmortBS.DataSource = testFAList;
             fixedAssetsOrderGrid.DataSource = fixedAssetsOrderBS;
-            fixedAssetsAmortGrid.DataSource = fixedAssetsOrderNoAmortBS;
+            //fixedAssetsAmortGrid.DataSource = fixedAssetsOrderNoAmortBS;
             fixedAssetsOrderGrid.EndUpdate();
             fixedAssetsOrderGridView.EndDataUpdate();
-            fixedAssetsAmortGridView.EndDataUpdate();
+            //fixedAssetsAmortGridView.EndDataUpdate();
             splashScreenManager.CloseWaitForm();
 
             testFAList = fixedAssetsOrderBS.DataSource as List<FixedAssetsOrderJournalDTO>;
@@ -134,9 +134,9 @@ namespace ERP_NEW.GUI.Accounting
 
         private void LoadAmortizationDate(int fixedAssetsOrderId)
         {
-            fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
-            fixedAssetsOrderAmortizationDateBS.DataSource = fixedAssetsOrderService.GetFixedAssestAmortizationDateById(fixedAssetsOrderId);
-            dateNoAmortGrid.DataSource = fixedAssetsOrderAmortizationDateBS;
+            //fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+            //fixedAssetsOrderAmortizationDateBS.DataSource = fixedAssetsOrderService.GetFixedAssestAmortizationDateById(fixedAssetsOrderId);
+            //dateNoAmortGrid.DataSource = fixedAssetsOrderAmortizationDateBS;
             //testMaterialsList = fixedAssetsOrderMaterialsBS.DataSource as List<FixedAssetsMaterialsDTO>;
         }
 

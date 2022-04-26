@@ -139,39 +139,13 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.repositoryItemDateEdit3 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.amortizationTabPage = new DevExpress.XtraTab.XtraTabPage();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.fixedAssetsAmortGrid = new DevExpress.XtraGrid.GridControl();
             this.amortisationMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.fixedAssetsAmortGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.dateNoAmortGrid = new DevExpress.XtraGrid.GridControl();
+            this.додатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dateMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dateNoAmortGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.monthCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.yearCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.numberCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.видалитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.decreeItemMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.видалитиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.додатиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.fixedAssessOrderTab)).BeginInit();
             this.fixedAssessOrderTab.SuspendLayout();
             this.fixedAssestsTabPage.SuspendLayout();
@@ -206,15 +180,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).BeginInit();
-            this.amortizationTabPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
-            this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fixedAssetsAmortGrid)).BeginInit();
             this.amortisationMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.fixedAssetsAmortGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNoAmortGrid)).BeginInit();
             this.dateMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNoAmortGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.decreeItemMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             this.SuspendLayout();
@@ -233,8 +200,7 @@
             this.fixedAssessOrderTab.TabIndex = 0;
             this.fixedAssessOrderTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.fixedAssestsTabPage,
-            this.arhivTabPage,
-            this.amortizationTabPage});
+            this.arhivTabPage});
             this.fixedAssessOrderTab.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.fixedAssessOrderTab_SelectedPageChanged);
             // 
             // fixedAssestsTabPage
@@ -1692,39 +1658,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit3.Name = "repositoryItemDateEdit3";
             // 
-            // amortizationTabPage
-            // 
-            this.amortizationTabPage.Controls.Add(this.splitContainerControl2);
-            this.amortizationTabPage.Name = "amortizationTabPage";
-            this.amortizationTabPage.Size = new System.Drawing.Size(1372, 654);
-            this.amortizationTabPage.Text = "Амортизація основних засобів";
-            // 
-            // splitContainerControl2
-            // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.fixedAssetsAmortGrid);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.dateNoAmortGrid);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1372, 654);
-            this.splitContainerControl2.SplitterPosition = 1065;
-            this.splitContainerControl2.TabIndex = 0;
-            this.splitContainerControl2.Text = "splitContainerControl2";
-            // 
-            // fixedAssetsAmortGrid
-            // 
-            this.fixedAssetsAmortGrid.ContextMenuStrip = this.amortisationMenu;
-            this.fixedAssetsAmortGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fixedAssetsAmortGrid.Location = new System.Drawing.Point(0, 0);
-            this.fixedAssetsAmortGrid.MainView = this.fixedAssetsAmortGridView;
-            this.fixedAssetsAmortGrid.Name = "fixedAssetsAmortGrid";
-            this.fixedAssetsAmortGrid.Size = new System.Drawing.Size(1065, 654);
-            this.fixedAssetsAmortGrid.TabIndex = 1;
-            this.fixedAssetsAmortGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.fixedAssetsAmortGridView});
-            // 
             // amortisationMenu
             // 
             this.amortisationMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1732,352 +1665,11 @@
             this.amortisationMenu.Name = "amortisationMenu";
             this.amortisationMenu.Size = new System.Drawing.Size(114, 26);
             // 
-            // fixedAssetsAmortGridView
+            // додатиToolStripMenuItem
             // 
-            this.fixedAssetsAmortGridView.ColumnPanelRowHeight = 40;
-            this.fixedAssetsAmortGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn13,
-            this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn16,
-            this.gridColumn17});
-            this.fixedAssetsAmortGridView.GridControl = this.fixedAssetsAmortGrid;
-            this.fixedAssetsAmortGridView.GroupCount = 1;
-            this.fixedAssetsAmortGridView.Name = "fixedAssetsAmortGridView";
-            this.fixedAssetsAmortGridView.OptionsView.ShowAutoFilterRow = true;
-            this.fixedAssetsAmortGridView.OptionsView.ShowFooter = true;
-            this.fixedAssetsAmortGridView.OptionsView.ShowGroupPanel = false;
-            this.fixedAssetsAmortGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn17, DevExpress.Data.ColumnSortOrder.Ascending)});
-            this.fixedAssetsAmortGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.fixedAssetsAmortGridView_FocusedRowChanged);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "selectedCard";
-            this.gridColumn1.FieldName = "SelectedCard";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn2.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn2.Caption = "Інвентарний номер";
-            this.gridColumn2.FieldName = "InventoryNumber";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 0;
-            this.gridColumn2.Width = 88;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn3.Caption = "Найменування";
-            this.gridColumn3.FieldName = "InventoryName";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.OptionsColumn.AllowFocus = false;
-            this.gridColumn3.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            this.gridColumn3.Width = 88;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn4.Caption = "Бал./рах.";
-            this.gridColumn4.FieldName = "BalanceAccountNum";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.OptionsColumn.AllowFocus = false;
-            this.gridColumn4.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            this.gridColumn4.Width = 57;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn5.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn5.Caption = "Відповідальна особа";
-            this.gridColumn5.FieldName = "SupplierName";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.OptionsColumn.AllowFocus = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            this.gridColumn5.Width = 89;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn6.Caption = "Експлуатуюча особа";
-            this.gridColumn6.FieldName = "OperatingPersonName";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.OptionsColumn.AllowFocus = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            this.gridColumn6.Width = 89;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn7.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn7.Caption = "Дата прийняття до обліку";
-            this.gridColumn7.FieldName = "BeginDate";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.OptionsColumn.AllowFocus = false;
-            this.gridColumn7.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn7.OptionsFilter.AllowFilter = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            this.gridColumn7.Width = 98;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn8.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn8.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn8.Caption = "Первинна вартість";
-            this.gridColumn8.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn8.FieldName = "BeginPrice";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.OptionsColumn.AllowFocus = false;
-            this.gridColumn8.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn8.OptionsFilter.AllowFilter = false;
-            this.gridColumn8.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "BeginPrice", "{0:### ### ##0.00}")});
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
-            this.gridColumn8.Width = 89;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn9.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn9.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn9.Caption = "Збільшення вартості";
-            this.gridColumn9.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn9.FieldName = "IncreasePrice";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.OptionsColumn.AllowFocus = false;
-            this.gridColumn9.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn9.OptionsFilter.AllowFilter = false;
-            this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "IncreasePrice", "{0:### ### ##0.00}")});
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
-            this.gridColumn9.Width = 82;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn10.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn10.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn10.Caption = "Поточна вартість";
-            this.gridColumn10.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn10.FieldName = "TotalPrice";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.OptionsColumn.AllowFocus = false;
-            this.gridColumn10.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn10.OptionsFilter.AllowFilter = false;
-            this.gridColumn10.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "TotalPrice", "{0:### ### ##0.00}")});
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
-            this.gridColumn10.Width = 89;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn11.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn11.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn11.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn11.Caption = "Залишкова вартість";
-            this.gridColumn11.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn11.FieldName = "CurrentPrice";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.OptionsColumn.AllowEdit = false;
-            this.gridColumn11.OptionsColumn.AllowFocus = false;
-            this.gridColumn11.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn11.OptionsFilter.AllowFilter = false;
-            this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CurrentPrice", "{0:### ### ##0.00}")});
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
-            this.gridColumn11.Width = 81;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn12.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn12.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn12.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn12.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn12.Caption = "Сума амотизації";
-            this.gridColumn12.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn12.FieldName = "PeriodAmortization";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.OptionsColumn.AllowFocus = false;
-            this.gridColumn12.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn12.OptionsFilter.AllowFilter = false;
-            this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PeriodAmortization", "{0:### ### ##0.00}")});
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 10;
-            this.gridColumn12.Width = 89;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn13.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn13.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn13.Caption = "Амортизація за поточний місяць";
-            this.gridColumn13.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn13.FieldName = "CurrentAmortization";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.OptionsColumn.AllowFocus = false;
-            this.gridColumn13.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn13.OptionsFilter.AllowFilter = false;
-            this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "CurrentAmortization", "{0:### ### ##0.00}")});
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 12;
-            this.gridColumn13.Width = 104;
-            // 
-            // gridColumn14
-            // 
-            this.gridColumn14.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn14.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn14.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn14.Caption = "Амортизація з початку року";
-            this.gridColumn14.DisplayFormat.FormatString = "### ### ##0.00";
-            this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.gridColumn14.FieldName = "PeriodYearAmortization";
-            this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.OptionsColumn.AllowEdit = false;
-            this.gridColumn14.OptionsColumn.AllowFocus = false;
-            this.gridColumn14.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn14.OptionsFilter.AllowFilter = false;
-            this.gridColumn14.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "PeriodYearAmortization", "{0:### ### ##0.00}")});
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 11;
-            this.gridColumn14.Width = 89;
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn15.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn15.Caption = "Термін використання (міс.)";
-            this.gridColumn15.FieldName = "UsefulMonth";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
-            this.gridColumn15.OptionsColumn.AllowFocus = false;
-            this.gridColumn15.OptionsFilter.AllowAutoFilter = false;
-            this.gridColumn15.OptionsFilter.AllowFilter = false;
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 13;
-            this.gridColumn15.Width = 105;
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.gridColumn16.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn16.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn16.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridColumn16.Caption = "Дата зняття з обліку, продажу, переміщення";
-            this.gridColumn16.FieldName = "EndRecordDate";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.OptionsColumn.AllowEdit = false;
-            this.gridColumn16.OptionsColumn.AllowFocus = false;
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 14;
-            this.gridColumn16.Width = 111;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "Група";
-            this.gridColumn17.FieldName = "GroupName";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.OptionsColumn.AllowEdit = false;
-            this.gridColumn17.OptionsColumn.AllowFocus = false;
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 15;
-            // 
-            // dateNoAmortGrid
-            // 
-            this.dateNoAmortGrid.ContextMenuStrip = this.dateMenu;
-            this.dateNoAmortGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateNoAmortGrid.Location = new System.Drawing.Point(0, 0);
-            this.dateNoAmortGrid.MainView = this.dateNoAmortGridView;
-            this.dateNoAmortGrid.MenuManager = this.ribbonControl1;
-            this.dateNoAmortGrid.Name = "dateNoAmortGrid";
-            this.dateNoAmortGrid.Size = new System.Drawing.Size(302, 654);
-            this.dateNoAmortGrid.TabIndex = 0;
-            this.dateNoAmortGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dateNoAmortGridView});
+            this.додатиToolStripMenuItem.Name = "додатиToolStripMenuItem";
+            this.додатиToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.додатиToolStripMenuItem.Text = "Додати";
             // 
             // dateMenu
             // 
@@ -2086,60 +1678,11 @@
             this.dateMenu.Name = "dateMenu";
             this.dateMenu.Size = new System.Drawing.Size(127, 26);
             // 
-            // dateNoAmortGridView
+            // видалитиToolStripMenuItem
             // 
-            this.dateNoAmortGridView.ColumnPanelRowHeight = 40;
-            this.dateNoAmortGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.monthCol,
-            this.yearCol,
-            this.numberCol});
-            this.dateNoAmortGridView.GridControl = this.dateNoAmortGrid;
-            this.dateNoAmortGridView.Name = "dateNoAmortGridView";
-            this.dateNoAmortGridView.OptionsView.ShowAutoFilterRow = true;
-            this.dateNoAmortGridView.OptionsView.ShowFooter = true;
-            this.dateNoAmortGridView.OptionsView.ShowGroupPanel = false;
-            // 
-            // monthCol
-            // 
-            this.monthCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.monthCol.AppearanceHeader.Options.UseFont = true;
-            this.monthCol.AppearanceHeader.Options.UseTextOptions = true;
-            this.monthCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.monthCol.Caption = "Місяць";
-            this.monthCol.FieldName = "DateNoAmortizationMonth";
-            this.monthCol.Name = "monthCol";
-            this.monthCol.OptionsColumn.AllowEdit = false;
-            this.monthCol.OptionsColumn.AllowFocus = false;
-            this.monthCol.Visible = true;
-            this.monthCol.VisibleIndex = 0;
-            // 
-            // yearCol
-            // 
-            this.yearCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.yearCol.AppearanceHeader.Options.UseFont = true;
-            this.yearCol.AppearanceHeader.Options.UseTextOptions = true;
-            this.yearCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.yearCol.Caption = "Рік";
-            this.yearCol.FieldName = "DateNoAmortizationYear";
-            this.yearCol.Name = "yearCol";
-            this.yearCol.OptionsColumn.AllowEdit = false;
-            this.yearCol.OptionsColumn.AllowFocus = false;
-            this.yearCol.Visible = true;
-            this.yearCol.VisibleIndex = 1;
-            // 
-            // numberCol
-            // 
-            this.numberCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numberCol.AppearanceHeader.Options.UseFont = true;
-            this.numberCol.AppearanceHeader.Options.UseTextOptions = true;
-            this.numberCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.numberCol.Caption = "Номер";
-            this.numberCol.FieldName = "Count";
-            this.numberCol.Name = "numberCol";
-            this.numberCol.OptionsColumn.AllowEdit = false;
-            this.numberCol.OptionsColumn.AllowFocus = false;
-            this.numberCol.Visible = true;
-            this.numberCol.VisibleIndex = 2;
+            this.видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
+            this.видалитиToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.видалитиToolStripMenuItem.Text = "Видалити";
             // 
             // decreeItemMenu
             // 
@@ -2161,18 +1704,6 @@
             this.imageCollection.Images.SetKeyName(1, "32_bullet-yellow.png");
             this.imageCollection.Images.SetKeyName(2, "32_bullet-red.png");
             this.imageCollection.Images.SetKeyName(3, "32_bullet-blue.png");
-            // 
-            // видалитиToolStripMenuItem
-            // 
-            this.видалитиToolStripMenuItem.Name = "видалитиToolStripMenuItem";
-            this.видалитиToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
-            this.видалитиToolStripMenuItem.Text = "Видалити";
-            // 
-            // додатиToolStripMenuItem
-            // 
-            this.додатиToolStripMenuItem.Name = "додатиToolStripMenuItem";
-            this.додатиToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
-            this.додатиToolStripMenuItem.Text = "Додати";
             // 
             // FixedAssetsOrderFm
             // 
@@ -2220,15 +1751,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit3)).EndInit();
-            this.amortizationTabPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
-            this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fixedAssetsAmortGrid)).EndInit();
             this.amortisationMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.fixedAssetsAmortGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateNoAmortGrid)).EndInit();
             this.dateMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateNoAmortGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.decreeItemMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             this.ResumeLayout(false);
@@ -2348,32 +1872,6 @@
         private DevExpress.XtraBars.BarButtonItem expFixeAssetsBtn;
         private DevExpress.XtraBars.BarButtonItem printActExpenditureBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
-        private DevExpress.XtraTab.XtraTabPage amortizationTabPage;
-        private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraGrid.GridControl fixedAssetsAmortGrid;
-        private DevExpress.XtraGrid.Views.Grid.GridView fixedAssetsAmortGridView;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.GridControl dateNoAmortGrid;
-        private DevExpress.XtraGrid.Views.Grid.GridView dateNoAmortGridView;
-        private DevExpress.XtraGrid.Columns.GridColumn monthCol;
-        private DevExpress.XtraGrid.Columns.GridColumn yearCol;
-        private DevExpress.XtraGrid.Columns.GridColumn numberCol;
         private System.Windows.Forms.ContextMenuStrip amortisationMenu;
         private System.Windows.Forms.ContextMenuStrip dateMenu;
         private System.Windows.Forms.ToolStripMenuItem додатиToolStripMenuItem;
