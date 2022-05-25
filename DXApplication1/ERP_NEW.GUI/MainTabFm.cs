@@ -822,6 +822,8 @@ namespace ERP_NEW.GUI
                         return 656;
                     if (ulogin == "kostirenko")
                         return 723;
+                    if (ulogin == "asup")
+                        return 690;
 
 
                     int userNumber;

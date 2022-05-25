@@ -72,10 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>F2ECC73605AFA7018611D051A16DBC0EE78DC3CA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>CA3AF06C523AF7864CE47C6F513611A783FCF6FA</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -2464,6 +2464,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ERP_NEW.GUI_1_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_4_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />
