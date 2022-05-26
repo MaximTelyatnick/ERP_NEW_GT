@@ -12926,6 +12926,7 @@ namespace ERP_NEW.BLL.Services
             //===========================================================
             //корректировка апреля
             weekendDays--;
+            weekendDays--;
             //===========================================================
 
             for (int i = 0; i < recCount; i++)
@@ -13037,9 +13038,9 @@ namespace ERP_NEW.BLL.Services
 
                     // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
 
-                    if (j == 25)
+                    if (j == 2)
                     {
-                        cells[vsS[currentColumn + j] + startWith].Value = "НА";
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
                         cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
                         //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
@@ -13047,12 +13048,22 @@ namespace ERP_NEW.BLL.Services
                         continue;
                     }
 
+                    if (j == 9)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        continue;
+                    }
+
                     if (j == 30)
                     {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
                         //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
                         continue;
                     }
