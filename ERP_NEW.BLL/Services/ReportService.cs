@@ -13008,7 +13008,7 @@ namespace ERP_NEW.BLL.Services
                         Сells[source.Count + 15, 2].Value = "Яковенко Н. В. ";
                         break;
                     case 61://договорник
-                        Сells[source.Count + 15, 2].Value = "Дузік О. В. ";
+                        Сells[source.Count + 15, 2].Value = "Залоїло С. О. ";
                         break;
                     case 63://готовая продукция
                         Сells[source.Count + 15, 2].Value = "Костиренко С. В.";

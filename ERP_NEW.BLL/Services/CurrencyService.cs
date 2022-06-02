@@ -79,7 +79,7 @@ namespace ERP_NEW.BLL.Services
                         return rate;
                     };
 
-
+            // https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=20220502&json
             WebClient wb = new WebClient();
             wb.Headers.Add("user-agent", "Only a test");
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -113,7 +113,7 @@ namespace ERP_NEW.BLL.Services
             }
             catch (Exception)
             {
-                return 0;
+                return 1;
             }
         }
 

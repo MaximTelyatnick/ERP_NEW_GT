@@ -142,6 +142,15 @@ namespace ERP_NEW.GUI.Accounting
 
                 contractorCheckEdit.Checked = true;
             }
+            if (_operation == Utils.Operation.Info)
+            {
+                employeesEdit.Enabled = false;
+                currencyConvertEdit.Enabled = false;
+                currencyPriceConvertTBox.Enabled = false;
+                rateConvertTBox.Enabled = false;
+
+                contractorCheckEdit.Checked = true;
+            }
 
 
 
@@ -649,10 +658,25 @@ namespace ERP_NEW.GUI.Accounting
             this.validateLbl.Visible = !isValidate;
         }
 
+
+
+
         #endregion
 
-        
+        private void accountingOperationEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            
+        }
 
-        
+        private void accountingOperationEdit_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (_operation == Utils.Operation.Info)
+            {
+                if (((Bank_PaymentsDTO)Item).AccountingOperationId == 1)
+                    purposeAccountEdit.EditValue = 42;
+                else
+                    purposeAccountEdit.EditValue = 41;
+            }
+        }
     }
 }

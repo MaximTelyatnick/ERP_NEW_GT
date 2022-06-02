@@ -947,6 +947,30 @@ namespace ERP_NEW.GUI.Accounting
 
         #endregion
 
+        private void addTemplateKursBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Bank_PaymentsDTO tempItem = new Bank_PaymentsDTO()
+            {
+                AccountingOperationId = 1,
+                Bank_Account_Id = 24,
+                Contractor_Id = -1,
+                CurrencyId = 1,
+                DateCreate = DateTime.Now,
+                DateUpdate = DateTime.Now,
+                Payment_Date = DateTime.Now,
+                Payment_Document = "Курс",
+                Payment_Price = 0.00m,
+                Payment_PriceCurrency = 0.00m,
+                Purpose = "Курсова різниця",
+                Purpose_Account_Id = 41,
+                Rate = 0.00m,
+                UserId = _userTasksDTO.UserId,
+                VatAccountId = 38,
+                VatPrice = 0.00m
+            };
+
+            EditBankPayment(Utils.Operation.Info, tempItem);
+        }
     }
 
     

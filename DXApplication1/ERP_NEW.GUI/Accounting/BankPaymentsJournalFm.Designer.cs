@@ -108,6 +108,7 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.addTemplateKursBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -160,9 +161,10 @@
             this.excelExportBtn,
             this.addTemplateBtn,
             this.bankTrialBalance313ReportBtn,
-            this.bankTrialBalance333ReportBtn});
+            this.bankTrialBalance333ReportBtn,
+            this.addTemplateKursBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 31;
+            this.ribbonControl1.MaxItemId = 32;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -540,6 +542,7 @@
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.addBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.addTemplateBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.addTemplateKursBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
@@ -610,7 +613,7 @@
             this.addColorToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.ShowItemToolTips = false;
-            this.contextMenuStrip.Size = new System.Drawing.Size(200, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(200, 48);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             this.contextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_ItemClicked);
             // 
@@ -666,7 +669,6 @@
             this.customerOrderCurrencyPriceCol});
             this.bankPaymentsGridView.GridControl = this.bankPaymentsGrid;
             this.bankPaymentsGridView.Name = "bankPaymentsGridView";
-            this.bankPaymentsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.bankPaymentsGridView.OptionsView.AllowCellMerge = true;
             this.bankPaymentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.bankPaymentsGridView.OptionsView.ShowFooter = true;
@@ -1047,6 +1049,16 @@
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
+            // addTemplateKursBtn
+            // 
+            this.addTemplateKursBtn.Caption = "Додати за шаблоном (курсова різниця)";
+            this.addTemplateKursBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addTemplateKursBtn.Glyph")));
+            this.addTemplateKursBtn.Id = 31;
+            this.addTemplateKursBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addTemplateKursBtn.LargeGlyph")));
+            this.addTemplateKursBtn.Name = "addTemplateKursBtn";
+            this.addTemplateKursBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.addTemplateKursBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addTemplateKursBtn_ItemClick);
+            // 
             // BankPaymentsJournalFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1164,5 +1176,6 @@
         private DevExpress.XtraBars.BarButtonItem bankTrialBalance333ReportBtn;
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private System.Windows.Forms.ToolStripMenuItem addColorToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem addTemplateKursBtn;
     }
 }

@@ -17,7 +17,8 @@ namespace ERP_NEW.BLL.Infrastructure
             Add,
             Update,
             Template,
-            Custom
+            Custom, 
+            Info
         };
 
         public enum MouseEvent
