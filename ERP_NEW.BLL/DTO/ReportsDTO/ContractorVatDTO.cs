@@ -15,7 +15,9 @@ namespace ERP_NEW.BLL.DTO
         public decimal SaldoCreditStart { get; set; }
         public decimal DebitVat63 { get; set; }
         public decimal DebitVat631 { get; set; }
+        public decimal DebitVat644 { get; set; }
         public decimal CreditPeriod { get; set; }
+        public decimal CreditPeriod644 { get; set; }
         public decimal SaldoDebitEnd { get; set; }
         public decimal SaldoCreditEnd { get; set; }
     }

@@ -409,7 +409,24 @@ namespace ERP_NEW.GUI.Accounting
                     int cwbVatId = calcWithBuyersService.CalcWithBuyersPaymentVatCreate(cwbVatModel);
 
                     return true;
-                
+
+                case Utils.Operation.Info:
+                    //create BankPayment          
+                    if (convertCheckEdit.Checked && ((Currency_RatesDTO)currencyRatesBS.Current).Currency_Id > 1)
+                    {
+                        ((Currency_RatesDTO)currencyRatesBS.Current).Date = ((Bank_PaymentsDTO)Item).Payment_Date ?? DateTime.Now;
+                        int currencyRatesId = currencyService.CurrencyRatesCreate((Currency_RatesDTO)currencyRatesBS.Current);
+                        ((Bank_PaymentsDTO)Item).CurrencyRatesConvertId = currencyRatesId;
+                    }
+
+                    ((Bank_PaymentsDTO)Item).DateCreate = DateTime.Now;
+                    ((Bank_PaymentsDTO)Item).DateUpdate = DateTime.Now;
+
+                    ((Bank_PaymentsDTO)Item).Id = bankPaymentsService.BankPaymentCreate((Bank_PaymentsDTO)Item);
+
+                    return true;
+
+
                 default:
                     return false;
             }
@@ -670,7 +687,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void accountingOperationEdit_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
-            if (_operation == Utils.Operation.Info)
+            if (_operation == Utils.Operation.Info && (int)purposeAccountEdit.EditValue!=26)
             {
                 if (((Bank_PaymentsDTO)Item).AccountingOperationId == 1)
                     purposeAccountEdit.EditValue = 42;

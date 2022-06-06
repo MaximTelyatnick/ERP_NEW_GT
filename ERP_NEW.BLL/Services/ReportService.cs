@@ -9319,21 +9319,25 @@ namespace ERP_NEW.BLL.Services
                 cells["E" + currentPosition].Value = contractorVatList[i].SaldoCreditStart;
                 cells["F" + currentPosition].Value = contractorVatList[i].DebitVat63;
                 cells["H" + currentPosition].Value = contractorVatList[i].DebitVat631;
-                cells["J" + currentPosition].Value = contractorVatList[i].CreditPeriod;
-                cells["K" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
-                cells["L" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
+                cells["I" + currentPosition].Value = contractorVatList[i].DebitVat644;
+
+                cells["K" + currentPosition].Value = contractorVatList[i].CreditPeriod;
+                cells["L" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
+
+                cells["M" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
+                cells["N" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
 
                 currentPosition++;
                 n++;
             }
 
-            cells["A" + startPosition + ":" + ("L" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
+            cells["A" + startPosition + ":" + ("N" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
 
             cells["C" + currentPosition].Value = "Разом:";
             cells["C" + currentPosition].VerticalAlignment = VAlign.Distributed;
             cells["C" + currentPosition].Font.Bold = true;
-            cells["A" + currentPosition + ":" + "L" + currentPosition].Font.Size = 14;
-            cells["A" + currentPosition + ":" + "L" + currentPosition].Interior.Color = Color.Bisque;
+            cells["A" + currentPosition + ":" + "N" + currentPosition].Font.Size = 14;
+            cells["A" + currentPosition + ":" + "N" + currentPosition].Interior.Color = Color.Bisque;
 
             cells["D" + currentPosition].Value = "=SUM(D" + 4 + ":" + ("D" + (currentPosition - 1)) + ")";
             cells["E" + currentPosition].Value = "=SUM(E" + 4 + ":" + ("E" + (currentPosition - 1)) + ")";
@@ -9343,6 +9347,8 @@ namespace ERP_NEW.BLL.Services
             cells["J" + currentPosition].Value = "=SUM(J" + 4 + ":" + ("J" + (currentPosition - 1)) + ")";
             cells["K" + currentPosition].Value = "=SUM(K" + 4 + ":" + ("K" + (currentPosition - 1)) + ")";
             cells["L" + currentPosition].Value = "=SUM(L" + 4 + ":" + ("L" + (currentPosition - 1)) + ")";
+            cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
+            cells["N" + currentPosition].Value = "=SUM(N" + 4 + ":" + ("N" + (currentPosition - 1)) + ")";
             //cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
 
             PrintSignatures(cells, currentPosition + 3);

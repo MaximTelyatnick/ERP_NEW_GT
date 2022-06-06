@@ -327,7 +327,8 @@ namespace ERP_NEW.GUI.Accounting
                     VatAccountId = item.VatAccountId,
                     VatPrice = item.VatPrice ?? 0.00m,
                     UserId = _userTasksDTO.UserId,
-                    AccountingOperationId = item.AccountingOperationId
+                    AccountingOperationId = item.AccountingOperationId,
+                    ColorId = item.ColorId
                 };
 
                 EditBankPayment(Utils.Operation.Update, model);
@@ -967,6 +968,31 @@ namespace ERP_NEW.GUI.Accounting
                 UserId = _userTasksDTO.UserId,
                 VatAccountId = 38,
                 VatPrice = 0.00m
+            };
+
+            EditBankPayment(Utils.Operation.Info, tempItem);
+        }
+
+        private void addTemplateCorrect644Btn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Bank_PaymentsDTO tempItem = new Bank_PaymentsDTO()
+            {
+                AccountingOperationId = 1,
+                Bank_Account_Id = 26,
+                Contractor_Id = -1,
+                CurrencyId = 1,
+                DateCreate = DateTime.Now,
+                DateUpdate = DateTime.Now,
+                Payment_Date = new DateTime(2021, 12, 01),
+                Payment_Document = "644",
+                Payment_Price = 0.00m,
+                Payment_PriceCurrency = 0.00m,
+                Purpose = "Корегування 644",
+                Purpose_Account_Id = 26,
+                Rate = 0.00m,
+                UserId = _userTasksDTO.UserId,
+                VatPrice = 0.00m,
+                ColorId = 16
             };
 
             EditBankPayment(Utils.Operation.Info, tempItem);
