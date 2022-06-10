@@ -9184,6 +9184,8 @@ namespace ERP_NEW.BLL.Services
             cells["A" + currentPosition].HorizontalAlignment = HAlign.Center;
             cells["A" + currentPosition].Font.Bold = true;
             cells["A" + currentPosition].Value = "Оплати без ПДВ з " + startDate.ToShortDateString() + " по " + endDate.ToShortDateString() + " за " + accountNum;
+
+            
             currentPosition += 2;
 
             for (int i = 0; i < rowData.Count; i++)
@@ -9311,44 +9313,59 @@ namespace ERP_NEW.BLL.Services
                 cells["A" + currentPosition].Value = n;
                 cells["B" + currentPosition].Value = contractorVatList[i].Tin;
                 cells["B" + currentPosition].NumberFormat = "### ### ### ###";
+
                 cells["C" + currentPosition].HorizontalAlignment = HAlign.Center;
                 cells["C" + currentPosition].WrapText = true;
-                cells["C" + currentPosition].Value = contractorVatList[i].Name;
-                cells["C" + currentPosition].Font.Size = 14;
-                cells["D" + currentPosition].Value = contractorVatList[i].SaldoDebitStart;
-                cells["E" + currentPosition].Value = contractorVatList[i].SaldoCreditStart;
-                cells["F" + currentPosition].Value = contractorVatList[i].DebitVat63;
-                cells["H" + currentPosition].Value = contractorVatList[i].DebitVat631;
-                cells["I" + currentPosition].Value = contractorVatList[i].DebitVat644;
+                cells["C" + currentPosition].Value = contractorVatList[i].Srn;
 
-                cells["K" + currentPosition].Value = contractorVatList[i].CreditPeriod;
-                cells["L" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
+                cells["D" + currentPosition].HorizontalAlignment = HAlign.Center;
+                cells["D" + currentPosition].WrapText = true;
+                cells["D" + currentPosition].Value = contractorVatList[i].Name;
+                cells["D" + currentPosition].Font.Size = 14;
 
-                cells["M" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
-                cells["N" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
+                cells["E" + currentPosition].Value = contractorVatList[i].SaldoDebitStart;
+                cells["F" + currentPosition].Value = contractorVatList[i].SaldoCreditStart;
+
+                cells["G" + currentPosition].Value = contractorVatList[i].DebitVat63;
+               
+                cells["I" + currentPosition].Value = contractorVatList[i].DebitVat631;
+                cells["J" + currentPosition].Value = contractorVatList[i].DebitVat644;
+                cells["K" + currentPosition].Value = "=SUM(G" + (currentPosition) +":" + ("J" + (currentPosition)) + ")";
+
+                cells["M" + currentPosition].Value = contractorVatList[i].CreditPeriod;
+                cells["N" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
+
+                cells["O" + currentPosition].Value = "=SUM(L" + (currentPosition) + ":" + ("N" + (currentPosition)) + ")";
+
+                cells["P" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
+                cells["Q" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
 
                 currentPosition++;
                 n++;
             }
 
-            cells["A" + startPosition + ":" + ("N" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
+            cells["A" + startPosition + ":" + ("Q" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
 
             cells["C" + currentPosition].Value = "Разом:";
             cells["C" + currentPosition].VerticalAlignment = VAlign.Distributed;
             cells["C" + currentPosition].Font.Bold = true;
-            cells["A" + currentPosition + ":" + "N" + currentPosition].Font.Size = 14;
-            cells["A" + currentPosition + ":" + "N" + currentPosition].Interior.Color = Color.Bisque;
+            cells["A" + currentPosition + ":" + "Q" + currentPosition].Font.Size = 14;
+            cells["A" + currentPosition + ":" + "Q" + currentPosition].Interior.Color = Color.Bisque;
 
-            cells["D" + currentPosition].Value = "=SUM(D" + 4 + ":" + ("D" + (currentPosition - 1)) + ")";
-            cells["E" + currentPosition].Value = "=SUM(E" + 4 + ":" + ("E" + (currentPosition - 1)) + ")";
-            cells["F" + currentPosition].Value = "=SUM(F" + 4 + ":" + ("F" + (currentPosition - 1)) + ")";
-            cells["H" + currentPosition].Value = "=SUM(H" + 4 + ":" + ("H" + (currentPosition - 1)) + ")";
-            cells["I" + currentPosition].Value = "=SUM(I" + 4 + ":" + ("I" + (currentPosition - 1)) + ")";
-            cells["J" + currentPosition].Value = "=SUM(J" + 4 + ":" + ("J" + (currentPosition - 1)) + ")";
-            cells["K" + currentPosition].Value = "=SUM(K" + 4 + ":" + ("K" + (currentPosition - 1)) + ")";
-            cells["L" + currentPosition].Value = "=SUM(L" + 4 + ":" + ("L" + (currentPosition - 1)) + ")";
-            cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
-            cells["N" + currentPosition].Value = "=SUM(N" + 4 + ":" + ("N" + (currentPosition - 1)) + ")";
+            
+            cells["E" + currentPosition].Value = "=SUM(E" + 10 + ":" + ("E" + (currentPosition - 1)) + ")";
+            cells["F" + currentPosition].Value = "=SUM(F" + 10 + ":" + ("F" + (currentPosition - 1)) + ")";
+            cells["G" + currentPosition].Value = "=SUM(G" + 10 + ":" + ("G" + (currentPosition - 1)) + ")";
+            cells["H" + currentPosition].Value = "=SUM(H" + 10 + ":" + ("H" + (currentPosition - 1)) + ")";
+            cells["I" + currentPosition].Value = "=SUM(I" + 10 + ":" + ("I" + (currentPosition - 1)) + ")";
+            cells["J" + currentPosition].Value = "=SUM(J" + 10 + ":" + ("J" + (currentPosition - 1)) + ")";
+            cells["K" + currentPosition].Value = "=SUM(K" + 10 + ":" + ("K" + (currentPosition - 1)) + ")";
+            cells["L" + currentPosition].Value = "=SUM(L" + 10 + ":" + ("L" + (currentPosition - 1)) + ")";
+            cells["M" + currentPosition].Value = "=SUM(M" + 10 + ":" + ("M" + (currentPosition - 1)) + ")";
+            cells["N" + currentPosition].Value = "=SUM(N" + 10 + ":" + ("N" + (currentPosition - 1)) + ")";
+            cells["O" + currentPosition].Value = "=SUM(O" + 10 + ":" + ("O" + (currentPosition - 1)) + ")";
+            cells["P" + currentPosition].Value = "=SUM(P" + 10 + ":" + ("P" + (currentPosition - 1)) + ")";
+            cells["Q" + currentPosition].Value = "=SUM(Q" + 10 + ":" + ("Q" + (currentPosition - 1)) + ")";
             //cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
 
             PrintSignatures(cells, currentPosition + 3);

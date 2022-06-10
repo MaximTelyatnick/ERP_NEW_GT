@@ -10,6 +10,7 @@ namespace ERP_NEW.BLL.DTO
     {
         public int Id { get; set; }
         public string Tin { get; set; }
+        public string Srn { get; set; }
         public string Name { get; set; }
         public decimal SaldoDebitStart { get; set; }
         public decimal SaldoCreditStart { get; set; }

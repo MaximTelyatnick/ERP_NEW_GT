@@ -142,6 +142,9 @@ namespace ERP_NEW.GUI.Accounting
 
                 contractorCheckEdit.Checked = true;
             }
+
+            accountsBS.DataSource = accountsService.GetAccounts();
+
             if (_operation == Utils.Operation.Info)
             {
                 employeesEdit.Enabled = false;
@@ -150,11 +153,12 @@ namespace ERP_NEW.GUI.Accounting
                 rateConvertTBox.Enabled = false;
 
                 contractorCheckEdit.Checked = true;
+                accountsBS.DataSource = accountsService.GetAccounts().Where(flt=>flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
             }
 
 
 
-            accountsBS.DataSource = accountsService.GetAccounts();
+            
 
             #region DataBinding's
 
