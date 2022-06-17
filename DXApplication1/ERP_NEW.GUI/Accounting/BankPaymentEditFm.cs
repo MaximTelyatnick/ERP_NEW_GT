@@ -153,7 +153,8 @@ namespace ERP_NEW.GUI.Accounting
                 rateConvertTBox.Enabled = false;
 
                 contractorCheckEdit.Checked = true;
-                accountsBS.DataSource = accountsService.GetAccounts().Where(flt=>flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
+                if(model.Purpose_Account_Id != 26)
+                    accountsBS.DataSource = accountsService.GetAccounts().Where(flt=>flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
             }
 
 
