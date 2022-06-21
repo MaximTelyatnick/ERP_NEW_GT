@@ -81,6 +81,10 @@
       <HintPath>..\packages\Nager.Date.1.22.3\lib\net45\Nager.Date.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -153,6 +157,7 @@
   <ItemGroup>
     <Compile Include="DTO\ModelsDTO\CalculationDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CalculationMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CurencyJSONDTO.cs" />
     <Compile Include="DTO\ModelsDTO\EmployeesDetailsStandartDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />
     <Compile Include="DTO\ModelsDTO\FixedAssetsNoAmortDTO.cs" />
