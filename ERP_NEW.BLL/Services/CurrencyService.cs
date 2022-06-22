@@ -16,6 +16,8 @@ using System.IO;
 using System.Globalization;
 using System.Net;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace ERP_NEW.BLL.Services
 {
@@ -65,56 +67,75 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<Currency_RatesDTO>(currency_Rates.GetAll().SingleOrDefault(w => w.Id == id));
         }
 
+
+
+
         public decimal GetCurrencyRateByDate(string currencyName, DateTime rateDate)
         {
             decimal currencyRate = 0.00m;
-            string replaceString = " ";
-
-            Func<string, decimal> getRateFromInnerText =
-                    value =>
-                    {
-                        decimal rate = 0.00m;
-                        string[] buffer = value.Split(new string[] { " " }, StringSplitOptions.None).Where(s => !String.IsNullOrEmpty(s)).ToArray();
-                        rate = Math.Round(Decimal.Parse(buffer[0].ToString(), CultureInfo.InvariantCulture), 6);
-                        return rate;
-                    };
-
-            // https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=USD&date=20220502&json
-            WebClient wb = new WebClient();
-            wb.Headers.Add("user-agent", "Only a test");
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
-            Uri uri = new Uri("http://minfin.com.ua/currency/nbu/" + currencyName + "/" + rateDate.ToString("yyyy-MM-dd") + "/");
+            List<CurencyJSONDTO> account = new List<CurencyJSONDTO>();
             try
             {
-                StreamReader reader = new StreamReader(wb.OpenRead(uri),Encoding.GetEncoding("UTF-8"));
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                Uri uri = new Uri("http://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=" + currencyName + "&date=" + rateDate.ToString("yyyyMMdd") + "&json");
+                string json = new WebClient().DownloadString(uri);
 
-                string html = reader.ReadToEnd();
-
-                HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
-                doc.LoadHtml(html);
-
-                var trNodes = doc.DocumentNode.SelectNodes("//tr");
-
-                if (trNodes.Count != 0)
-                {
-                    foreach (var item in trNodes)
-                    {
-                        var tdNodes = item.ChildNodes.Where(x => x.Name == "td").ToArray();
-                        if (tdNodes.Count() > 0)
-                        {
-                            currencyRate = getRateFromInnerText(Regex.Replace(tdNodes[1].InnerText, @"\r\n?|\n", replaceString));
-                            //currencyRate = getRateFromInnerText(tdNodes[1].InnerText);
-                            if (currencyRate > 0) return currencyRate;
-                        }
-                    }
-                }
-
-                return currencyRate;
+                account = JsonConvert.DeserializeObject<IEnumerable<CurencyJSONDTO>>(json).ToList();
+                return account.FirstOrDefault().Rate;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return 1;
             }
+
+            // старый метод получения курса валют с сайта
+            //         http://minfin.com.ua/
+            //
+            //
+            //Func <string, decimal> getRateFromInnerText =
+            //        value =>
+            //        {
+            //            decimal rate = 0.00m;
+            //            string[] buffer = value.Split(new string[] { " " }, StringSplitOptions.None).Where(s => !String.IsNullOrEmpty(s)).ToArray();
+            //            rate = Math.Round(Decimal.Parse(buffer[0].ToString(), CultureInfo.InvariantCulture), 6);
+            //            return rate;
+            //        };
+
+            //WebClient wb = new WebClient();
+            //wb.Headers.Add("user-agent", "Only a test");
+            ////ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ////Uri uri = new Uri("http://minfin.com.ua/currency/nbu/" + currencyName + "/" + rateDate.ToString("yyyy-MM-dd") + "/");
+            //try
+            //{
+            //    //StreamReader reader = new StreamReader(wb.OpenRead(uri),Encoding.GetEncoding("UTF-8"));
+
+            //    //string html = reader.ReadToEnd();
+
+            //    //HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            //    //doc.LoadHtml(html);
+
+            //    //var trNodes = doc.DocumentNode.SelectNodes("//tr");
+
+            //    //if (trNodes.Count != 0)
+            //    //{
+            //    //    foreach (var item in trNodes)
+            //    //    {
+            //    //        var tdNodes = item.ChildNodes.Where(x => x.Name == "td").ToArray();
+            //    //        if (tdNodes.Count() > 0)
+            //    //        {
+            //    //            currencyRate = getRateFromInnerText(Regex.Replace(tdNodes[1].InnerText, @"\r\n?|\n", replaceString));
+            //    //            //currencyRate = getRateFromInnerText(tdNodes[1].InnerText);
+            //    //            if (currencyRate > 0) return currencyRate;
+            //    //        }
+            //    //    }
+            //    //}
+
+            //    return currencyRate;
+            //}
+            //catch (Exception)
+            //{
+            //    return 1;
+            //}
         }
 
         public int CurrencyRatesCreate(Currency_RatesDTO currencyRate)
