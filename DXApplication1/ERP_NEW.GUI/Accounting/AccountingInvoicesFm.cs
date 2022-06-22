@@ -406,15 +406,16 @@ namespace ERP_NEW.GUI.Accounting
 
         private void invoicesToExcelBut_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //splashScreenManager.ShowWaitForm();
-            //if (accountingInvoicesBS.Count != 0)
-            //{
-            //    reportService = Program.kernel.Get<IReportService>();
+            splashScreenManager.ShowWaitForm();
+            if (accountingInvoicesBS.Count != 0)
+            {
+                reportService = Program.kernel.Get<IReportService>();
 
-            //    reportService.PrintAccountingInvoices(ViewToDataTable());             
-            //}
+                //reportService.PrintAccountingInvoices(ViewToDataTable());
+                reportService.PrintAccountingInvoices(invoicesInfoList);
+            }
 
-            //splashScreenManager.CloseWaitForm();
+            splashScreenManager.CloseWaitForm();
         }
 
         
