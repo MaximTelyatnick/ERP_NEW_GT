@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixedAssetsOrderFm));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.fixedAssessOrderTab = new DevExpress.XtraTab.XtraTabControl();
             this.fixedAssestsTabPage = new DevExpress.XtraTab.XtraTabPage();
@@ -146,6 +146,7 @@
             this.decreeItemMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.printInventoryCardNewBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.fixedAssessOrderTab)).BeginInit();
             this.fixedAssessOrderTab.SuspendLayout();
             this.fixedAssestsTabPage.SuspendLayout();
@@ -248,9 +249,10 @@
             this.journalOrderBtn,
             this.ribbonGalleryBarItem1,
             this.actWriteOffBtn,
-            this.expFixeAssetsBtn});
+            this.expFixeAssetsBtn,
+            this.printInventoryCardNewBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -488,6 +490,7 @@
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.printBtn);
             this.ribbonPageGroup4.ItemLinks.Add(this.printInventoryCardBtn);
+            this.ribbonPageGroup4.ItemLinks.Add(this.printInventoryCardNewBtn);
             this.ribbonPageGroup4.ItemLinks.Add(this.actBtn);
             this.ribbonPageGroup4.ItemLinks.Add(this.actWriteOffBtn);
             this.ribbonPageGroup4.ItemLinks.Add(this.materialsBtn, true);
@@ -1536,13 +1539,13 @@
             this.deleteFromArchiveBtn.Name = "deleteFromArchiveBtn";
             this.deleteFromArchiveBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem1.Appearance.Options.UseImage = true;
-            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
-            toolTipTitleItem1.Text = "Для того щоб видалити з архіву необхідно у вкладці ОЗ обрати такий період, в яком" +
+            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem2.Appearance.Options.UseImage = true;
+            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
+            toolTipTitleItem2.Text = "Для того щоб видалити з архіву необхідно у вкладці ОЗ обрати такий період, в яком" +
     "у поле \"Дата продажу..\" буде порожнє!";
-            superToolTip1.Items.Add(toolTipTitleItem1);
-            this.deleteFromArchiveBtn.SuperTip = superToolTip1;
+            superToolTip2.Items.Add(toolTipTitleItem2);
+            this.deleteFromArchiveBtn.SuperTip = superToolTip2;
             this.deleteFromArchiveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteFromArchiveBtn_ItemClick);
             // 
             // printArchiceBtn
@@ -1704,6 +1707,15 @@
             this.imageCollection.Images.SetKeyName(1, "32_bullet-yellow.png");
             this.imageCollection.Images.SetKeyName(2, "32_bullet-red.png");
             this.imageCollection.Images.SetKeyName(3, "32_bullet-blue.png");
+            // 
+            // printInventoryCardNewBtn
+            // 
+            this.printInventoryCardNewBtn.Caption = "Інвентарна картка обліку";
+            this.printInventoryCardNewBtn.Id = 4;
+            this.printInventoryCardNewBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printInventoryCardNewBtn.LargeGlyph")));
+            this.printInventoryCardNewBtn.Name = "printInventoryCardNewBtn";
+            this.printInventoryCardNewBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printInventoryCardNewBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printInventoryCardNewBtn_ItemClick);
             // 
             // FixedAssetsOrderFm
             // 
@@ -1876,5 +1888,6 @@
         private System.Windows.Forms.ContextMenuStrip dateMenu;
         private System.Windows.Forms.ToolStripMenuItem додатиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem видалитиToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem printInventoryCardNewBtn;
     }
 }

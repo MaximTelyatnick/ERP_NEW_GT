@@ -1002,6 +1002,13 @@ namespace ERP_NEW.GUI.Accounting
                 fixedAssetsOrderAmortizationDateBS.DataSource = null;
         }
 
+        private void printInventoryCardNewBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            // if (check == 0)
+            reportService.PrintFixedAssetsOderNew((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource, lastDay, firstDay);
+        }
+
         public FixedAssetsOrderJournalDTO ConvertArchiveJournalToJournal()
         {
             FixedAssetsOrderJournalDTO newModel = new FixedAssetsOrderJournalDTO()

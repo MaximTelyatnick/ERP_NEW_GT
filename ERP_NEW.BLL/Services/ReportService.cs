@@ -14022,6 +14022,234 @@ namespace ERP_NEW.BLL.Services
 
         #region FixedAssetsOrder report's
 
+
+        public void PrintFixedAssetsOderNew(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, DateTime endDate, DateTime firstDay)
+        {
+            List<FixedAssetsMaterialsDTO> materialsList = new List<FixedAssetsMaterialsDTO>();
+            string typeMaterial = "";
+            string templateName = " ";
+            templateName = @"\Templates\FixedAssetsInventoryCartTemplate.xls";
+
+            var Workbook = Factory.GetWorkbook(GeneratedReportsDir + templateName);
+            var Worksheet = Workbook.Worksheets[0];
+            var Сells = Worksheet.Cells;
+            IRange cells = Worksheet.Cells;
+            
+            string indexRowStr;
+
+            if (model.Id == null)
+            {
+                MessageBox.Show("За обраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            //Head document
+            //cells["B2"].Value = "Карточка основного засобу за період: з " + firstDay.ToShortDateString() + " по " + endDate.ToShortDateString();
+            //cells["B2"].Font.Size = 14;
+            //cells["B2"].Font.Bold = true;
+            //cells["B2"].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            //cells["B2"].VerticalAlignment = SpreadsheetGear.VAlign.Center;
+            //cells["B2:" + "P2"].Merge();
+
+            //Head table1          
+            //indexRowStr = indexRow.ToString();
+            ////ColumnWidth
+            //Worksheet.Cells["B:B"].ColumnWidth = 12.47;
+            //Worksheet.Cells["C:C"].ColumnWidth = 32.9;
+            //Worksheet.Cells["D:D"].ColumnWidth = 16.19;
+            //Worksheet.Cells["E:E"].ColumnWidth = 26.19;
+            //Worksheet.Cells["F:F"].ColumnWidth = 14.86;
+            //Worksheet.Cells["G:G"].ColumnWidth = 13.04;
+            //Worksheet.Cells["H:H"].ColumnWidth = 11.43;
+            //Worksheet.Cells["I:I"].ColumnWidth = 25.43;
+
+            //Worksheet.Cells["J:J"].ColumnWidth = 16.14;
+            //Worksheet.Cells["K:K"].ColumnWidth = 12.33;
+            //Worksheet.Cells["L:L"].ColumnWidth = 13.9;
+            //Worksheet.Cells["M:M"].ColumnWidth = 14.04;
+            //Worksheet.Cells["N:N"].ColumnWidth = 24.43;
+            //Worksheet.Cells["O:O"].ColumnWidth = 24.43;
+            //Worksheet.Cells["P:P"].ColumnWidth = 12.33;
+            //         int rowcount = materialsListSource.Count;
+
+            //TITLE
+            //cells["B" + indexRowStr].Value = "Інвентарний номер";
+            //cells["C" + indexRowStr].Value = "Найменування";
+            //cells["D" + indexRowStr].Value = "Бал./рах.";
+            //cells["E" + indexRowStr].Value = "Відповідальна особа";
+            //cells["F" + indexRowStr].Value = "Термін використання (міс.)";
+            //cells["G" + indexRowStr].Value = "Дата приняття до обліку";
+            //cells["H" + indexRowStr].Value = "Дата зняття з обліку";
+            //cells["I" + indexRowStr].Value = "Група";
+            //cells["J" + indexRowStr].Value = "Первинна вартість";
+            //cells["K" + indexRowStr].Value = "Збільшення вартості";
+            //cells["L" + indexRowStr].Value = "Поточна вартість";
+            //cells["M" + indexRowStr].Value = "Залишкова вартість";
+            //cells["N" + indexRowStr].Value = "Сума амортизації";
+            //cells["O" + indexRowStr].Value = "Амортизація за місяць";
+            cells["N" + 6].Value = model.BeginDate;
+            cells["AA" + 6].Value = model.TotalPrice;
+            cells["A" + 10].Value = model.InventoryName;
+            cells["A" + 14].Value = model.InventoryName;
+
+            int startRow = 20;
+            int indexRow = startRow;
+
+            for (var i = 0; i < materialsListSource.Count; i++)
+            {
+                indexRow++;
+                indexRowStr = indexRow.ToString();
+
+                cells["A" + indexRowStr].Value = materialsListSource[i].Nomenclature!=null? materialsListSource[i].Nomenclature:"" ;//((FixedAssetsMaterialsDTO)fixedAssetsOrderBS[i]).Nomenclature;
+                cells["B" + indexRowStr].Value = materialsListSource[i].OrderNum != null ? materialsListSource[i].OrderNum : ""; 
+                cells["C" + indexRowStr].Value = materialsListSource[i].FixedNum != null ? materialsListSource[i].FixedNum : "";
+                cells["E" + indexRowStr].Value = materialsListSource[i].UnitPrice != null ? materialsListSource[i].UnitPrice.ToString() : "";
+                cells["F" + indexRowStr].Value = materialsListSource[i].AccountNum != null ? materialsListSource[i].AccountNum : "";
+                cells["G" + indexRowStr].Value = materialsListSource[i].OrderNum != null ? materialsListSource[i].OrderNum : "";
+                cells["P" + indexRowStr].Value = materialsListSource[i].ExpDate != null ? materialsListSource[i].ExpDate.Value.ToShortDateString() : "";
+
+                cells["S" + indexRowStr].Value = materialsListSource[i].Nomenclature != null ? materialsListSource[i].Nomenclature : "";
+                cells["T" + indexRowStr].Value = "";
+                cells["U" + indexRowStr].Value = "";
+
+                cells["W" + indexRowStr].Value = materialsListSource[i].ExpDate != null ? materialsListSource[i].ExpDate.Value.Year.ToString() : "";
+
+                //cells["I" + indexRowStr].Value = materialsListSource[i].UnitPrice;
+                //cells["J" + indexRowStr].Value = materialsListSource[i].TotalPrice;
+                //cells["K" + indexRowStr].Value = materialsListSource[i].ExpDate;
+                //cells["L" + indexRowStr].Value = materialsListSource[i].Price;
+                //cells["M" + indexRowStr].Value = materialsListSource[i].FixedPrice;
+                //switch (materialsListSource[i].Flag)
+                //{
+                //    case 0:
+                //        typeMaterial = "Основний засіб";
+                //        break;
+                //    case 1:
+                //        typeMaterial = "Збільшення вартості";
+                //        break;
+                //    case 2:
+                //        typeMaterial = "Корегування";
+                //        break;
+                //    default:
+                //        typeMaterial = "";
+                //        break;
+                //}
+                //cells["N" + indexRowStr].Value = typeMaterial;
+
+                ////Interval I->J
+                //cells["I" + indexRowStr + ":" + "J" + indexRowStr].NumberFormat = "### ### ##0.00";
+                //cells["L" + indexRowStr + ":" + "M" + indexRowStr].NumberFormat = "### ### ##0.00";
+            }
+
+
+            //body table
+
+            //indexRowStr = indexRow.ToString();
+
+
+
+            //cells["B" + indexRowStr].Value = model.InventoryNumber;
+            //cells["C" + indexRowStr].Value = model.InventoryName;
+            //cells["D" + indexRowStr].Value = model.BalanceAccountNum;
+            //cells["E" + indexRowStr].Value = model.SupplierName;
+            //cells["F" + indexRowStr].Value = model.UsefulMonth;
+            //cells["G" + indexRowStr].Value = model.BeginDate;
+            //cells["H" + indexRowStr].Value = model.EndRecordDate;
+            //cells["I" + indexRowStr].Value = model.GroupName;
+            //cells["J" + indexRowStr].Value = model.BeginPrice;
+            //cells["K" + indexRowStr].Value = model.IncreasePrice;
+            //cells["L" + indexRowStr].Value = model.TotalPrice;
+            //cells["M" + indexRowStr].Value = model.CurrentPrice;
+            //cells["N" + indexRowStr].Value = model.PeriodAmortization;
+            //cells["O" + indexRowStr].Value = model.CurrentAmortization;
+            //cells["I" + indexRowStr + ":" + "O" + indexRowStr].NumberFormat = "### ### ##0.00";
+            //cells["L" + indexRowStr + ":" + "M" + indexRowStr].NumberFormat = "### ### ##0.00";
+            //// first row headtable
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].WrapText = true;
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].VerticalAlignment = SpreadsheetGear.VAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "P" + indexRow].Borders.LineStyle = LineStyle.Continous;
+            //// first row headtable
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].WrapText = true;
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "P" + (startRow + 1)].VerticalAlignment = SpreadsheetGear.VAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "P" + indexRow].Borders.LineStyle = LineStyle.Continous;
+
+            ////table 2
+            //indexRow++;
+            //startRow = indexRow++;
+            //indexRowStr = indexRow.ToString();
+            //cells["B" + indexRowStr].Value = "Ном. номер";
+            //cells["C" + indexRowStr].Value = "Найменування";
+            //cells["D" + indexRowStr].Value = "Рах. нарахування амортизації";
+            //cells["E" + indexRowStr].Value = "Номер надходження";
+            //cells["F" + indexRowStr].Value = "Дата надходження";
+            //cells["G" + indexRowStr].Value = "Балансовий рахунок";
+            //cells["H" + indexRowStr].Value = "К-сть";
+            //cells["I" + indexRowStr].Value = "Ціна";
+            //cells["J" + indexRowStr].Value = "Сума";
+            //cells["K" + indexRowStr].Value = "Дата списання";
+            //cells["L" + indexRowStr].Value = "Сума списання";
+            //cells["M" + indexRowStr].Value = "Сумма до обліку";
+            //cells["N" + indexRowStr].Value = "Тип";
+
+            ////body table 2
+            //for (var i = 0; i < materialsListSource.Count; i++)
+            //{
+            //    indexRow++;
+            //    indexRowStr = indexRow.ToString();
+
+            //    cells["B" + indexRowStr].Value = materialsListSource[i].Nomenclature;//((FixedAssetsMaterialsDTO)fixedAssetsOrderBS[i]).Nomenclature;
+            //    cells["C" + indexRowStr].Value = materialsListSource[i].Name;
+            //    cells["D" + indexRowStr].Value = materialsListSource[i].FixedNum;
+            //    cells["E" + indexRowStr].Value = materialsListSource[i].ReceiptNum;
+            //    cells["F" + indexRowStr].Value = materialsListSource[i].OrderDate;
+            //    cells["G" + indexRowStr].Value = materialsListSource[i].OrderNum;
+            //    cells["H" + indexRowStr].Value = materialsListSource[i].Quantity;
+            //    cells["I" + indexRowStr].Value = materialsListSource[i].UnitPrice;
+            //    cells["J" + indexRowStr].Value = materialsListSource[i].TotalPrice;
+            //    cells["K" + indexRowStr].Value = materialsListSource[i].ExpDate;
+            //    cells["L" + indexRowStr].Value = materialsListSource[i].Price;
+            //    cells["M" + indexRowStr].Value = materialsListSource[i].FixedPrice;
+            //    switch (materialsListSource[i].Flag)
+            //    {
+            //        case 0:
+            //            typeMaterial = "Основний засіб";
+            //            break;
+            //        case 1:
+            //            typeMaterial = "Збільшення вартості";
+            //            break;
+            //        case 2:
+            //            typeMaterial = "Корегування";
+            //            break;
+            //        default:
+            //            typeMaterial = "";
+            //            break;
+            //    }
+            //    cells["N" + indexRowStr].Value = typeMaterial;
+
+            //    //Interval I->J
+            //    cells["I" + indexRowStr + ":" + "J" + indexRowStr].NumberFormat = "### ### ##0.00";
+            //    cells["L" + indexRowStr + ":" + "M" + indexRowStr].NumberFormat = "### ### ##0.00";
+            //}
+
+            //cells["B" + (startRow + 1) + ":" + "N" + (startRow + 1)].WrapText = true;
+            //cells["B" + (startRow + 1) + ":" + "N" + (startRow + 1)].HorizontalAlignment = SpreadsheetGear.HAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "N" + (startRow + 1)].VerticalAlignment = SpreadsheetGear.VAlign.Center;
+            //cells["B" + (startRow + 1) + ":" + "N" + indexRow].Borders.LineStyle = LineStyle.Continous;
+            //indexRow = indexRow + 2;
+            //startRow = startRow + materialsListSource.Count + 3;
+            //indexRowStr = indexRow.ToString();
+            try
+            {
+                Workbook.SaveAs(GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber + ".xls", FileFormat.Excel8); Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber + ".xls";
+                process.StartInfo.FileName = "Excel.exe";
+                process.Start();
+            }
+            catch (System.IO.IOException) { MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+        }
+
         public void PrintFixedAssetsOder(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, DateTime endDate, DateTime firstDay)
         {
             List<FixedAssetsMaterialsDTO> materialsList = new List<FixedAssetsMaterialsDTO>();
