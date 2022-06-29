@@ -33,8 +33,8 @@
     <ProductName>ERP Techvagonmash</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Корпоративна інформаційна система</SuiteName>
-    <MinimumRequiredVersion>1.0.0.490</MinimumRequiredVersion>
-    <ApplicationRevision>491</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.491</MinimumRequiredVersion>
+    <ApplicationRevision>492</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

@@ -13061,17 +13061,17 @@ namespace ERP_NEW.BLL.Services
 
                     // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
 
-                    if (j == 2)
+                    if (j == 13)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
                         cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
                         //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
-                        
+
                         continue;
                     }
 
-                    if (j == 9)
+                    if (j == 27)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
@@ -13081,7 +13081,7 @@ namespace ERP_NEW.BLL.Services
                         continue;
                     }
 
-                    if (j == 30)
+                    if (j == 28)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
