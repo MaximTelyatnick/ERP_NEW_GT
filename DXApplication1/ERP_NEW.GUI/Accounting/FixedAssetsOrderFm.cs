@@ -387,6 +387,13 @@ namespace ERP_NEW.GUI.Accounting
 
                     if (fixedAssetsOrderService.FixedAssetsOrderDelete(((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current).Id))
                     {
+                        FixedAssetsOrderDTO oldFixedAssets = fixedAssetsOrderService.GetFixedAssestsOrder().Where(srch => srch.Id == ((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current).Id_Parent).FirstOrDefault();
+                        if (oldFixedAssets != null)
+                        {
+                            oldFixedAssets.EndRecordDate = null;
+                            fixedAssetsOrderService.FixedAssetsOrderUpdate(oldFixedAssets);
+                        }
+                           
                         int rowHandle = fixedAssetsOrderGridView.FocusedRowHandle - 1;
                         fixedAssetsOrderGridView.BeginDataUpdate();
 
