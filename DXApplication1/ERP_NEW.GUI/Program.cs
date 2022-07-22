@@ -41,6 +41,7 @@ namespace ERP_NEW.GUI
             BonusSkins.Register();
 
             SkinManager.EnableFormSkins();
+
             try
             {
                 Application.Run(new MainTabFm());
