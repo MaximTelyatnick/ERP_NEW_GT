@@ -61,9 +61,10 @@ namespace ERP_NEW.BLL.Interfaces
         void PrintBusinessTripDecreeCancel(List<BusinessTripsJournalDTO> source);
         void PrintBusinessTripDecreeProlong(List<BusinessTripsJournalDTO> source);
 
-      
-             
+
         
+
+
         void PrintCustomerOrderInfo(CustomerOrdersDTO curRecord);
 
         void PrintAccountClothesCard(AccountClothesInfoDTO model, List<AccountClothesMaterialsDTO> source);
@@ -116,6 +117,7 @@ namespace ERP_NEW.BLL.Interfaces
         bool PrintTrialBalanceAccounts(List<TrialBalanceByAccountsReportDTO> reportList, string StartDate, string EndDate);
 
         void PrintFixedAssetsOder(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, DateTime endDate, DateTime startDate);
+        void PrintFixedAssetsOderNew(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, DateTime endDate, DateTime firstDay);
         void PrintInventoryCardForSoftware(FixedAssetsOrderJournalDTO model);
         void PrintFixedAssetsOrderAct(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource);
         void PrintFixedAssetsOrderActWriteOff(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, int monthSource, int yearSource);

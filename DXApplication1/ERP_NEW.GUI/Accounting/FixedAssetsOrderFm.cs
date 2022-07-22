@@ -387,6 +387,13 @@ namespace ERP_NEW.GUI.Accounting
 
                     if (fixedAssetsOrderService.FixedAssetsOrderDelete(((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current).Id))
                     {
+                        FixedAssetsOrderDTO oldFixedAssets = fixedAssetsOrderService.GetFixedAssestsOrder().Where(srch => srch.Id == ((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current).Id_Parent).FirstOrDefault();
+                        if (oldFixedAssets != null)
+                        {
+                            oldFixedAssets.EndRecordDate = null;
+                            fixedAssetsOrderService.FixedAssetsOrderUpdate(oldFixedAssets);
+                        }
+                           
                         int rowHandle = fixedAssetsOrderGridView.FocusedRowHandle - 1;
                         fixedAssetsOrderGridView.BeginDataUpdate();
 
@@ -1000,6 +1007,13 @@ namespace ERP_NEW.GUI.Accounting
                 LoadAmortizationDate(((FixedAssetsOrderJournalDTO)fixedAssetsOrderNoAmortBS.Current).Id);
             else
                 fixedAssetsOrderAmortizationDateBS.DataSource = null;
+        }
+
+        private void printInventoryCardNewBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            reportService = Program.kernel.Get<IReportService>();
+            // if (check == 0)
+            reportService.PrintFixedAssetsOderNew((FixedAssetsOrderJournalDTO)fixedAssetsOrderBS.Current, (List<FixedAssetsMaterialsDTO>)fixedAssetsOrderMaterialsBS.DataSource, lastDay, firstDay);
         }
 
         public FixedAssetsOrderJournalDTO ConvertArchiveJournalToJournal()

@@ -966,7 +966,7 @@ namespace ERP_NEW.GUI.Accounting
                 Purpose_Account_Id = 41,
                 Rate = 0.00m,
                 UserId = _userTasksDTO.UserId,
-                VatAccountId = 38,
+                VatAccountId = null,
                 VatPrice = 0.00m
             };
 
