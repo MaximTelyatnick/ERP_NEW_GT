@@ -153,8 +153,8 @@ namespace ERP_NEW.GUI.Accounting
                 rateConvertTBox.Enabled = false;
 
                 contractorCheckEdit.Checked = true;
-                if(model.Purpose_Account_Id != 26)
-                    accountsBS.DataSource = accountsService.GetAccounts().Where(flt=>flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
+                //if(model.Purpose_Account_Id != 26)
+                //    accountsBS.DataSource = accountsService.GetAccounts().Where(flt=>flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
             }
 
 
@@ -220,6 +220,13 @@ namespace ERP_NEW.GUI.Accounting
             currencyConvertEdit.Properties.ValueMember = "Id";
             currencyConvertEdit.Properties.DisplayMember = "Code";
             currencyConvertEdit.Properties.NullText = "Немає данних";
+
+            if (_operation == Utils.Operation.Info)
+            {
+
+                if (model.Purpose_Account_Id != 26)
+                    bankAccountEdit.Properties.DataSource = accountsService.GetAccounts().Where(flt => flt.Num.Contains("312") || flt.Num.Contains("313")).ToList();
+            }
 
             #endregion
 
