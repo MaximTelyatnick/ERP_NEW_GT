@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccountingInvoicesFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.orderFilterEditItem = new DevExpress.XtraBars.BarEditItem();
@@ -59,6 +60,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.periodBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.monthDataExportToXlsBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -71,7 +73,7 @@
             this.sumVatCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sumPriceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.accountingInvoicesGrid = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountingInvoicesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.infoCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -95,7 +97,7 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.employeesEdit = new DevExpress.XtraBars.BarEditItem();
             this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryDateCheckRadioGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMonth1)).BeginInit();
@@ -146,9 +148,10 @@
             this.filterByMonthBut,
             this.monthFilterEdit,
             this.monthFilterGridEdit,
-            this.periodBtn});
+            this.periodBtn,
+            this.monthDataExportToXlsBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -432,7 +435,6 @@
             this.gridColumn2});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
@@ -459,6 +461,16 @@
             this.periodBtn.Name = "periodBtn";
             this.periodBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.periodBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.periodBtn_ItemClick);
+            // 
+            // monthDataExportToXlsBtn
+            // 
+            this.monthDataExportToXlsBtn.Caption = "XLS за місяць";
+            this.monthDataExportToXlsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("monthDataExportToXlsBtn.Glyph")));
+            this.monthDataExportToXlsBtn.Id = 6;
+            this.monthDataExportToXlsBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("monthDataExportToXlsBtn.LargeGlyph")));
+            this.monthDataExportToXlsBtn.Name = "monthDataExportToXlsBtn";
+            this.monthDataExportToXlsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.monthDataExportToXlsBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.monthDataExportToXlsBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -500,6 +512,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.monthFilterGridEdit);
+            this.ribbonPageGroup4.ItemLinks.Add(this.monthDataExportToXlsBtn);
             this.ribbonPageGroup4.ItemLinks.Add(this.filterByMonthBut);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Період за місяць";
@@ -529,7 +542,6 @@
             this.sumPriceCol});
             this.additionalAccountingInvoicesGridView.GridControl = this.additionalAccountingInvoicesGrid;
             this.additionalAccountingInvoicesGridView.Name = "additionalAccountingInvoicesGridView";
-            this.additionalAccountingInvoicesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.additionalAccountingInvoicesGridView.OptionsView.ShowAutoFilterRow = true;
             this.additionalAccountingInvoicesGridView.OptionsView.ShowFooter = true;
             this.additionalAccountingInvoicesGridView.OptionsView.ShowGroupPanel = false;
@@ -604,7 +616,7 @@
             this.AddColorToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
             this.contextMenuStrip.ShowItemToolTips = false;
-            this.contextMenuStrip.Size = new System.Drawing.Size(200, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(200, 26);
             this.contextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip_Opening);
             this.contextMenuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip_ItemClicked);
             // 
@@ -638,7 +650,6 @@
             this.selectedCol});
             this.accountingInvoicesGridView.GridControl = this.accountingInvoicesGrid;
             this.accountingInvoicesGridView.Name = "accountingInvoicesGridView";
-            this.accountingInvoicesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.accountingInvoicesGridView.OptionsView.ShowAutoFilterRow = true;
             this.accountingInvoicesGridView.OptionsView.ShowFooter = true;
             this.accountingInvoicesGridView.OptionsView.ShowGroupPanel = false;
@@ -721,10 +732,13 @@
             this.tinCol.AppearanceHeader.Options.UseTextOptions = true;
             this.tinCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.tinCol.Caption = "ІНН";
+            this.tinCol.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.tinCol.FieldName = "Tin";
+            this.tinCol.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.tinCol.Name = "tinCol";
             this.tinCol.OptionsColumn.AllowEdit = false;
             this.tinCol.OptionsColumn.AllowFocus = false;
+            this.tinCol.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.tinCol.Visible = true;
             this.tinCol.VisibleIndex = 4;
             this.tinCol.Width = 51;
@@ -1055,5 +1069,6 @@
         private DevExpress.XtraBars.BarButtonItem periodBtn;
         private DevExpress.Utils.ImageCollection imageCollection;
         private System.Windows.Forms.ToolStripMenuItem AddColorToolStripMenuItem;
+        private DevExpress.XtraBars.BarButtonItem monthDataExportToXlsBtn;
     }
 }

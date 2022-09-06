@@ -90,7 +90,7 @@ namespace ERP_NEW.BLL.Interfaces
 
         void PrintTimeSheet(List<EmployeesInfoDTO> list, DateTime dateTime);
 
-        void PrintAccountingInvoices(List<InvoicesDTO> sourceList);
+        void PrintAccountingInvoices(List<InvoicesDTO> sourceList, int? month = null);
 
          List<PaymentDTO> GetPayments(DateTime startDate, DateTime endDate);
 

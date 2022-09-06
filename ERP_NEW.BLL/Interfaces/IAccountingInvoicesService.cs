@@ -12,6 +12,7 @@ namespace ERP_NEW.BLL.Interfaces
     {
         IEnumerable<InvoicesDTO> GetInvoicesInfo(DateTime startDate, DateTime endDate);
         IEnumerable<InvoicesDTO> GetInvoices(DateTime startDate, DateTime endDate);
+        IEnumerable<InvoicesDTO> GetInvoicesByMonthInvoice(DateTime startDate, DateTime endDate);
         IEnumerable<Balance_AccountDTO> GetBalaneAccount();
         IEnumerable<RegistriesDTO> GetRegistriesName();
         IEnumerable<Invoices_NotesDTO> GetInvNoteName();

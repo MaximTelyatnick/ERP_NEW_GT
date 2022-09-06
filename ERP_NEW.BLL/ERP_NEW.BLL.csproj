@@ -62,6 +62,10 @@
       <HintPath>C:\Users\ponomarev_a\Desktop\Calendar.NET.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="ERP_NEW.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ERP_NEW.DAL\bin\Debug\ERP_NEW.DAL.dll</HintPath>
+    </Reference>
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.7.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.7.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
       <Private>True</Private>
@@ -527,12 +531,6 @@
     <Compile Include="Services\UnitsService.cs" />
     <Compile Include="Services\UserService.cs" />
     <Compile Include="Services\WeldStampsService.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ERP_NEW.DAL\ERP_NEW.DAL.csproj">
-      <Project>{933b3464-bba3-4fd1-9a94-a0f9936b5786}</Project>
-      <Name>ERP_NEW.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="NLog.config">

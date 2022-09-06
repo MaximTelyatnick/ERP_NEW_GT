@@ -1184,6 +1184,16 @@ namespace ERP_NEW.GUI.Accounting
                 reportService = Program.kernel.Get<IReportService>();
 
                 var accountingInvoices = accountingInvoicesService.GetInvoices(_beginDate, _endDate);
+                //var accountingInvoicesByMonthInvoices = accountingInvoicesService.GetInvoicesByMonthInvoice(_beginDate, _endDate);
+
+                //List<InvoicesDTO> accountingInvoicesList = new List<InvoicesDTO>();
+                //accountingInvoicesList.AddRange(accountingInvoices);
+                //accountingInvoicesList.AddRange(accountingInvoicesByMonthInvoices);
+
+                //var res = accountingInvoicesList.GroupBy(x => x.Id).Select(x => x.First());
+
+
+                //List<InvoicesDTO> accountingInvoicesSortList = accountingInvoicesList.Union(accountingInvoicesList).ToList();
 
                 if (!reportService.GetOperationActByPeriod(_beginDate, _endDate, accountingInvoices))
                     MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);

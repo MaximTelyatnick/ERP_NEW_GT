@@ -120,7 +120,56 @@ namespace ERP_NEW.BLL.Services
             return rezult.OrderBy(o => o.Month_Current).ToList();
         }
 
-     
+        public IEnumerable<InvoicesDTO> GetInvoicesByMonthInvoice(DateTime startDate, DateTime endDate)
+        {
+            if (startDate < minimalDate)
+                startDate = minimalDate;
+
+            var rezult = (from i in invoices.GetAll()
+                          join c in contractors.GetAll() on i.Contractor_Id equals c.Id into con
+                          from c in con.DefaultIfEmpty()
+                          join r in registries.GetAll() on i.Registry_Id equals r.Id into reg
+                          from r in reg.DefaultIfEmpty()
+                          join ins in invoicesNotes.GetAll() on i.Note_Id equals ins.Id into insnot
+                          from ins in insnot.DefaultIfEmpty()
+                          join col in colors.GetAll() on i.Color_Id equals col.Id into cols
+                          from col in cols.DefaultIfEmpty()
+                          join bl in balanceAccount.GetAll() on i.Balance_Account_Id equals bl.Id into blya
+                          from bl in blya.DefaultIfEmpty()
+
+                          where (i.Month_Invoice >= startDate && i.Month_Invoice <= endDate)
+                          select new InvoicesDTO()
+                          {
+                              Id = i.Id,
+                              Month_Current = i.Month_Current,
+                              Month_Invoice = i.Month_Invoice,
+                              Invoice_Number = i.Invoice_Number,
+                              Contractor_Name = c.Name,
+                              Tin = c.Tin != null ? c.Tin : "",
+                              Price = i.Price,
+                              Vat = i.Vat,
+                              Non_Taxable = i.Non_Taxable,
+                              Total_Price = i.Total_Price,
+                              Bal_Name = bl.Name,
+                              Vat_Check = i.Vat_Check,
+                              Inv_Note_Name = ins.Name,
+                              Region_Name = r.Name,
+                              Date_Of_Correction = i.Date_Of_Correction,
+                              Number_Of_Correction = i.Number_Of_Correction,
+                              Balance_Account_Id = bl.Id,
+                              Color_Id = col.Id,
+                              Color_Name = col.Name,
+                              Contractor_Id = c.Id,
+                              Note_Id = ins.Id,
+                              Registry_Id = r.Id,
+                              Selected = i.Date_Of_Correction != null ? true : false
+
+                          }).ToList();
+
+            return rezult.OrderBy(o => o.Month_Current).ToList();
+        }
+
+
 
         public IEnumerable<Balance_AccountDTO> GetBalaneAccount()
         {

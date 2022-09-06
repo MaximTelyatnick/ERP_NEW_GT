@@ -13637,7 +13637,7 @@ namespace ERP_NEW.BLL.Services
 
         #region AccountingInvoices report's
 
-        public void PrintAccountingInvoices(List<InvoicesDTO> sourceList)
+        public void PrintAccountingInvoices(List<InvoicesDTO> sourceList, int? month = null)
         {
             
             string templateName = " ";
@@ -13645,23 +13645,26 @@ namespace ERP_NEW.BLL.Services
 
 
             templateName = @"\Templates\AccountingInvoicesTemplate.xlsx";
-
+            List<InvoicesDTO> sourceListData = new List<InvoicesDTO>();
             SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + templateName);
             SpreadsheetGear.IWorksheet worksheet = workbook.Worksheets[0];
             SpreadsheetGear.IRange cells = worksheet.Cells;
 
-
+            if (month != null)
+                sourceListData = sourceList.Where(srch => srch.Month_Current.Month == month).ToList();
+            else
+                sourceListData = sourceList.ToList();
 
             int count = 1;
             int border = 0;
-            foreach (var item in sourceList)
+            foreach (var item in sourceListData)
             {
               cells[count, 0 ].Value = item.Month_Current;
               cells[count, 1].Value = item.Month_Invoice;
               cells[count, 2].Value = item.Invoice_Number;
               cells[count, 3].Value = item.Contractor_Name;
-              cells[count, 4].Value = item.Tin;
               cells[count, 5].Value = item.Price;
+              cells[count, 4].Value = item.Tin.ToString();
               cells[count, 6].Value = item.Vat;
               cells[count, 7].Value = item.Non_Taxable;
               cells[count, 8].Value = item.Total_Price;
@@ -13685,10 +13688,10 @@ namespace ERP_NEW.BLL.Services
 
             try
             {
-                string pathhhh = Utils.HomePath + @"\D:\";
+                string pathhhh = Utils.HomePath + @"\E:\";
                 string path = "";
                 string subpath = "";
-                path = @"D:\";
+                path = @"E:\";
                 string allpath = path + subpath + "\"";//@"D:\TimeSheet_" + currentDate.Year
                 workbook.SaveAs(path + "Податковий облік" + ".xls", FileFormat.Excel8);
                 Process process = new Process();
@@ -17387,11 +17390,11 @@ namespace ERP_NEW.BLL.Services
 
                 RuDateAndMoneyConverter.MonthName(itemMonth.Date.Month, Utils.TextCase.Nominative);
 
-                cells["A" + startWith + ":R" + startWith].Merge();
-                cells["A" + startWith + ":R" + startWith].Interior.Color = System.Drawing.Color.MistyRose;
-                cells["A" + startWith + ":R" + startWith].Value = RuDateAndMoneyConverter.MonthName(itemMonth.Date.Month, Utils.TextCase.Nominative) + " " + itemMonth.Date.Year + " р.";
-                cells["A" + startWith + ":R" + startWith].HorizontalAlignment = HAlign.Center;
-                cells["A" + startWith + ":R" + startWith].Borders.LineStyle = SpreadsheetGear.LineStyle.Continous;
+                cells["A" + startWith + ":S" + startWith].Merge();
+                cells["A" + startWith + ":S" + startWith].Interior.Color = System.Drawing.Color.MistyRose;
+                cells["A" + startWith + ":S" + startWith].Value = RuDateAndMoneyConverter.MonthName(itemMonth.Date.Month, Utils.TextCase.Nominative) + " " + itemMonth.Date.Year + " р.";
+                cells["A" + startWith + ":S" + startWith].HorizontalAlignment = HAlign.Center;
+                cells["A" + startWith + ":S" + startWith].Borders.LineStyle = SpreadsheetGear.LineStyle.Continous;
 
                 ++startWith;
 
@@ -17400,7 +17403,7 @@ namespace ERP_NEW.BLL.Services
                     List<int> maxCounter = new List<int>();
 
                     var bankPaymantByContractor = bankPaymantData.Where(srt => srt.Contractor_Id == item.Id && srt.Payment_Date.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.Payment_Date).ToList();
-                    var invoiceDataByContractor = invoicesData.Where(srt => srt.Contractor_Id == item.Id && srt.Month_Invoice.Month == itemMonth.Date.Month).OrderBy(ord => ord.Month_Invoice).ToList();
+                    var invoiceDataByContractor = invoicesData.Where(srt => srt.Contractor_Id == item.Id && (srt.Month_Invoice.Month == itemMonth.Date.Month || srt.Month_Current.Month == itemMonth.Date.Month)).OrderBy(ord => ord.Month_Invoice).ToList();
                     var ordersDataByContractor = ordersData.Where(srt => srt.VendorId == item.Id && srt.InvoiceDate.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.InvoiceDate).ToList();
 
                     decimal? invoiceTotalPrice = 0m;
@@ -17421,11 +17424,11 @@ namespace ERP_NEW.BLL.Services
                     if (maxCounter.Max() == 0)
                         continue;
 
-                    cells["A" + startWith + ":R" + startWith].Merge();
-                    cells["A" + startWith + ":R" + startWith].Interior.Color = System.Drawing.Color.PeachPuff;
-                    cells["A" + startWith + ":R" + startWith].Value = item.Name + " " + item.Srn;
-                    cells["A" + startWith + ":R" + startWith].HorizontalAlignment = HAlign.Center;
-                    cells["A" + startWith + ":R" + startWith].Borders.LineStyle = SpreadsheetGear.LineStyle.Continous;
+                    cells["A" + startWith + ":S" + startWith].Merge();
+                    cells["A" + startWith + ":S" + startWith].Interior.Color = System.Drawing.Color.PeachPuff;
+                    cells["A" + startWith + ":S" + startWith].Value = item.Name + " " + item.Srn;
+                    cells["A" + startWith + ":S" + startWith].HorizontalAlignment = HAlign.Center;
+                    cells["A" + startWith + ":S" + startWith].Borders.LineStyle = SpreadsheetGear.LineStyle.Continous;
                     ////////////////////////////////////////////////////////////////////////////////////////////////////
 
                     List<DateTime?> dateOfPayment = bankPaymantByContractor.Select(slc => slc.Payment_Date).ToList();
@@ -17454,14 +17457,16 @@ namespace ERP_NEW.BLL.Services
                          {
                              cells["A" + (startWith + k + 1)].Value = invoicesByDate[k].Invoice_Number;
                              cells["B" + (startWith + k + 1)].Value = invoicesByDate[k].Month_Invoice.ToShortDateString();
-                             cells["C" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["C" + (startWith + k + 1)].Value = invoicesByDate[k].Total_Price;
+                             cells["C" + (startWith + k + 1)].Value = invoicesByDate[k].Month_Current.ToShortDateString();
+
                              cells["D" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["D" + (startWith + k + 1)].Value = invoicesByDate[k].Price;
+                             cells["D" + (startWith + k + 1)].Value = invoicesByDate[k].Total_Price;
                              cells["E" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["E" + (startWith + k + 1)].Value = invoicesByDate[k].Vat;
-                             cells["F" + (startWith + k + 1)].NumberFormat = "";
-                             cells["F" + (startWith + k + 1)].Value = invoicesByDate[k].Bal_Name; // <=====  рахунок пдв сюда 
+                             cells["E" + (startWith + k + 1)].Value = invoicesByDate[k].Price;
+                             cells["F" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
+                             cells["F" + (startWith + k + 1)].Value = invoicesByDate[k].Vat;
+                             cells["G" + (startWith + k + 1)].NumberFormat = "";
+                             cells["G" + (startWith + k + 1)].Value = invoicesByDate[k].Bal_Name; // <=====  рахунок пдв сюда 
 
                              invoiceTotalPrice += invoicesByDate[k].Total_Price;
                              invoicePrice += invoicesByDate[k].Price;
@@ -17470,13 +17475,13 @@ namespace ERP_NEW.BLL.Services
 
                          for (int k = 0; k < bankPaymantsByDate.Count(); ++k)
                          {
-                             cells["N" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Payment_Document;
-                             cells["O" + (startWith + k + 1)].Value = ((DateTime)bankPaymantsByDate[k].Payment_Date).ToShortDateString();
-                             cells["P" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Purpose;
-                             cells["Q" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["Q" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Payment_Price;
+                             cells["O" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Payment_Document;
+                             cells["P" + (startWith + k + 1)].Value = ((DateTime)bankPaymantsByDate[k].Payment_Date).ToShortDateString();
+                             cells["Q" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Purpose;
                              cells["R" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["R" + (startWith + k + 1)].Value = bankPaymantsByDate[k].VatPrice;
+                             cells["R" + (startWith + k + 1)].Value = bankPaymantsByDate[k].Payment_Price;
+                             cells["S" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
+                             cells["S" + (startWith + k + 1)].Value = bankPaymantsByDate[k].VatPrice;
 
                              bankPaymantPaymantPrice += bankPaymantsByDate[k].Payment_Price;
                              bankPaymantVatPrice += bankPaymantsByDate[k].VatPrice;
@@ -17484,19 +17489,19 @@ namespace ERP_NEW.BLL.Services
 
                          for (int k = 0; k < ordersByDate.Count(); ++k)
                          {
-                             cells["G" + (startWith + k + 1)].Value = ordersByDate[k].InvoiceNum;
-                             cells["H" + (startWith + k + 1)].Value = ((DateTime)ordersByDate[k].InvoiceDate).ToShortDateString();
-                             cells["I" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["I" + (startWith + k + 1)].Value = ordersByDate[k].TotalWithVat;
+                             cells["H" + (startWith + k + 1)].Value = ordersByDate[k].InvoiceNum;
+                             cells["I" + (startWith + k + 1)].Value = ((DateTime)ordersByDate[k].InvoiceDate).ToShortDateString();
                              cells["J" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["J" + (startWith + k + 1)].Value = ordersByDate[k].TotalPrice;
+                             cells["J" + (startWith + k + 1)].Value = ordersByDate[k].TotalWithVat;
                              cells["K" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
-                             cells["K" + (startWith + k + 1)].Value = ordersByDate[k].Vat;
-                             cells["L" + (startWith + k + 1)].NumberFormat = "";
-                             cells["L" + (startWith + k + 1)].HorizontalAlignment = HAlign.Center;
-                             cells["L" + (startWith + k + 1)].Value = ordersByDate[k].VatAccountNum; // <=====  рахунок пдв сюда
+                             cells["K" + (startWith + k + 1)].Value = ordersByDate[k].TotalPrice;
+                             cells["L" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
+                             cells["L" + (startWith + k + 1)].Value = ordersByDate[k].Vat;
                              cells["M" + (startWith + k + 1)].NumberFormat = "";
-                             cells["M" + (startWith + k + 1)].Value = ordersByDate[k].AccountNum;
+                             cells["M" + (startWith + k + 1)].HorizontalAlignment = HAlign.Center;
+                             cells["M" + (startWith + k + 1)].Value = ordersByDate[k].VatAccountNum; // <=====  рахунок пдв сюда
+                             cells["N" + (startWith + k + 1)].NumberFormat = "";
+                             cells["N" + (startWith + k + 1)].Value = ordersByDate[k].AccountNum;
                              
                              orderTotalWithWat += ordersByDate[k].TotalWithVat;
                              orderTotalPrice += ordersByDate[k].TotalPrice;
@@ -17520,14 +17525,15 @@ namespace ERP_NEW.BLL.Services
                     {
                         cells["A" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Invoice_Number;
                         cells["B" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Month_Invoice.ToShortDateString();
-                        cells["C" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["C" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Total_Price;
+                        cells["C" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Month_Current.ToShortDateString();
                         cells["D" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["D" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Price;
+                        cells["D" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Total_Price;
                         cells["E" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["E" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Vat;
-                        cells["F" + (startWith + i + 1)].NumberFormat = "";
-                        cells["F" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Bal_Name; // <=====  рахунок пдв сюда 
+                        cells["E" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Price;
+                        cells["F" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
+                        cells["F" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Vat;
+                        cells["G" + (startWith + i + 1)].NumberFormat = "";
+                        cells["G" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Bal_Name; // <=====  рахунок пдв сюда 
 
                         invoiceTotalPrice += invoiceDataByContractor[i].Total_Price;
                         invoicePrice += invoiceDataByContractor[i].Price;
@@ -17536,13 +17542,13 @@ namespace ERP_NEW.BLL.Services
 
                     for (int i = 0; i < bankPaymantByContractor.Count(); ++i)
                     {
-                        cells["N" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Payment_Document;
-                        cells["O" + (startWith + i + 1)].Value = ((DateTime)bankPaymantByContractor[i].Payment_Date).ToShortDateString();
-                        cells["P" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Purpose;
-                        cells["Q" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["Q" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Payment_Price;
+                        cells["O" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Payment_Document;
+                        cells["P" + (startWith + i + 1)].Value = ((DateTime)bankPaymantByContractor[i].Payment_Date).ToShortDateString();
+                        cells["Q" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Purpose;
                         cells["R" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["R" + (startWith + i + 1)].Value = bankPaymantByContractor[i].VatPrice;
+                        cells["R" + (startWith + i + 1)].Value = bankPaymantByContractor[i].Payment_Price;
+                        cells["S" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
+                        cells["S" + (startWith + i + 1)].Value = bankPaymantByContractor[i].VatPrice;
 
                         bankPaymantPaymantPrice += bankPaymantByContractor[i].Payment_Price;
                         bankPaymantVatPrice += bankPaymantByContractor[i].VatPrice;
@@ -17550,19 +17556,19 @@ namespace ERP_NEW.BLL.Services
 
                     for (int i = 0; i < ordersDataByContractor.Count(); ++i)
                     {
-                        cells["G" + (startWith + i + 1)].Value = ordersDataByContractor[i].InvoiceNum;
-                        cells["H" + (startWith + i + 1)].Value = ((DateTime)ordersDataByContractor[i].InvoiceDate).ToShortDateString();
-                        cells["I" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["I" + (startWith + i + 1)].Value = ordersDataByContractor[i].TotalWithVat;
+                        cells["H" + (startWith + i + 1)].Value = ordersDataByContractor[i].InvoiceNum;
+                        cells["I" + (startWith + i + 1)].Value = ((DateTime)ordersDataByContractor[i].InvoiceDate).ToShortDateString();
                         cells["J" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["J" + (startWith + i + 1)].Value = ordersDataByContractor[i].TotalPrice;
+                        cells["J" + (startWith + i + 1)].Value = ordersDataByContractor[i].TotalWithVat;
                         cells["K" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
-                        cells["K" + (startWith + i + 1)].Value = ordersDataByContractor[i].Vat;
-                        cells["L" + (startWith + i + 1)].NumberFormat = "";
-                        cells["L" + (startWith + i + 1)].HorizontalAlignment = HAlign.Center;
-                        cells["L" + (startWith + i + 1)].Value = ordersDataByContractor[i].VatAccountNum; // <=====  рахунок пдв сюда
+                        cells["K" + (startWith + i + 1)].Value = ordersDataByContractor[i].TotalPrice;
+                        cells["L" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
+                        cells["L" + (startWith + i + 1)].Value = ordersDataByContractor[i].Vat;
                         cells["M" + (startWith + i + 1)].NumberFormat = "";
-                        cells["M" + (startWith + i + 1)].Value = ordersDataByContractor[i].AccountNum;
+                        cells["M" + (startWith + i + 1)].HorizontalAlignment = HAlign.Center;
+                        cells["M" + (startWith + i + 1)].Value = ordersDataByContractor[i].VatAccountNum; // <=====  рахунок пдв сюда
+                        cells["N" + (startWith + i + 1)].NumberFormat = "";
+                        cells["N" + (startWith + i + 1)].Value = ordersDataByContractor[i].AccountNum;
 
                         orderTotalWithWat += ordersDataByContractor[i].TotalWithVat;
                         orderTotalPrice += ordersDataByContractor[i].TotalPrice;
@@ -17571,14 +17577,14 @@ namespace ERP_NEW.BLL.Services
 
                     startWith += counterRemains;
 
-                    cells["C" + (startWith + 1)].Value = invoiceTotalPrice;
-                    cells["D" + (startWith + 1)].Value = invoicePrice;
-                    cells["E" + (startWith + 1)].Value = invoiceVat;
-                    cells["I" + (startWith + 1)].Value = orderTotalWithWat;
-                    cells["J" + (startWith + 1)].Value = orderTotalPrice;
-                    cells["K" + (startWith + 1)].Value = orderVat;
-                    cells["Q" + (startWith + 1)].Value = bankPaymantPaymantPrice;
-                    cells["R" + (startWith + 1)].Value = bankPaymantVatPrice;
+                    cells["D" + (startWith + 1)].Value = invoiceTotalPrice;
+                    cells["E" + (startWith + 1)].Value = invoicePrice;
+                    cells["F" + (startWith + 1)].Value = invoiceVat;
+                    cells["J" + (startWith + 1)].Value = orderTotalWithWat;
+                    cells["K" + (startWith + 1)].Value = orderTotalPrice;
+                    cells["L" + (startWith + 1)].Value = orderVat;
+                    cells["R" + (startWith + 1)].Value = bankPaymantPaymantPrice;
+                    cells["S" + (startWith + 1)].Value = bankPaymantVatPrice;
                     
                     invoiceTotaMonthPrice += invoiceTotalPrice;
                     invoiceMonthPrice += invoicePrice;
@@ -17590,22 +17596,22 @@ namespace ERP_NEW.BLL.Services
                     bankPaymantVatMonthPrice += bankPaymantVatPrice;
 
                     cells["A" + (startWith + 1)].Value = "Разом:";
-                    cells["A" + (startWith + 1) + ":R" + (startWith + 1)].Interior.Color = System.Drawing.Color.LightBlue;
+                    cells["A" + (startWith + 1) + ":S" + (startWith + 1)].Interior.Color = System.Drawing.Color.LightBlue;
 
                     startWith += 3;
                 }
 
-                cells["C" + startWith].Value = invoiceTotaMonthPrice;
-                cells["D" + startWith].Value = invoiceMonthPrice;
-                cells["E" + startWith].Value = invoiceMonthVat;
-                cells["I" + startWith].Value = orderTotalMonthWithWat;
-                cells["J" + startWith].Value = orderTotalMonthPrice;
-                cells["K" + startWith].Value = orderMonthVat;
-                cells["Q" + startWith].Value = bankPaymantPaymantMonthPrice;
-                cells["R" + startWith].Value = bankPaymantVatMonthPrice;
+                cells["D" + startWith].Value = invoiceTotaMonthPrice;
+                cells["E" + startWith].Value = invoiceMonthPrice;
+                cells["F" + startWith].Value = invoiceMonthVat;
+                cells["J" + startWith].Value = orderTotalMonthWithWat;
+                cells["K" + startWith].Value = orderTotalMonthPrice;
+                cells["L" + startWith].Value = orderMonthVat;
+                cells["R" + startWith].Value = bankPaymantPaymantMonthPrice;
+                cells["S" + startWith].Value = bankPaymantVatMonthPrice;
 
                 cells["A" + startWith].Value = "Разом за " + RuDateAndMoneyConverter.MonthName(itemMonth.Date.Month, Utils.TextCase.Nominative) + " " + itemMonth.Date.Year + " року:";
-                cells["A" + startWith  + ":R" + startWith].Interior.Color = System.Drawing.Color.LightBlue;
+                cells["A" + startWith  + ":S" + startWith].Interior.Color = System.Drawing.Color.LightBlue;
 
                 startWith += 2;
             }

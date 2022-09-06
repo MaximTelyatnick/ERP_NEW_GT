@@ -721,6 +721,22 @@ namespace ERP_NEW.GUI.Accounting
 
         }
 
+        private void monthDataExportToXlsBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            splashScreenManager.ShowWaitForm();
+            if (accountingInvoicesBS.Count != 0)
+            {
+
+                reportService = Program.kernel.Get<IReportService>();
+                int currentMonth = ((MonthDetailsDTO)repositoryItemGridLookUpEdit.GetRowByKeyValue((int)monthFilterGridEdit.EditValue)).NumberMonth;
+
+                //reportService.PrintAccountingInvoices(ViewToDataTable());
+                reportService.PrintAccountingInvoices(invoicesInfoList, currentMonth);
+            }
+
+            splashScreenManager.CloseWaitForm();
+        }
+
         private void AddColorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (PalitraEditFm palitraEditFm = new PalitraEditFm(Utils.Operation.Add, new ColorsDTO()))
