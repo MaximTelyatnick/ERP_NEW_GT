@@ -12947,8 +12947,8 @@ namespace ERP_NEW.BLL.Services
             }
 
             //===========================================================
-            //корректировка апреля
-            //weekendDays--;
+            //корректировка августа
+            weekendDays--;
             //weekendDays--;
             //===========================================================
 
@@ -13071,47 +13071,47 @@ namespace ERP_NEW.BLL.Services
                     //    continue;
                     //}
 
-                    //if (j == 27)
+                    if (j == 24)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        continue;
+                    }
+
+                    //if (j == 8)
                     //{
-                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "СТ";
                     //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
                     //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                    //    //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
                     //    continue;
                     //}
 
-                    if (j == 8)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "СТ";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        continue;
-                    }
+                    //if (j == 15)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "СТ";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    continue;
+                    //}
 
-                    if (j == 15)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "СТ";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        continue;
-                    }
+                    //if (j == 22)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "СТ";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    continue;
+                    //}
 
-                    if (j == 22)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "СТ";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        continue;
-                    }
-
-                    if (j == 29)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "СТ";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        continue;
-                    }
+                    //if (j == 29)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "СТ";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    continue;
+                    //}
 
 
 

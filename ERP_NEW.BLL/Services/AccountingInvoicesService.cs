@@ -88,7 +88,7 @@ namespace ERP_NEW.BLL.Services
                           join bl in balanceAccount.GetAll() on i.Balance_Account_Id equals bl.Id into blya
                           from bl in blya.DefaultIfEmpty()
 
-                          where (i.Month_Current >= startDate && i.Month_Current <= endDate)
+                          where ((i.Month_Current >= startDate && i.Month_Current <= endDate) || (i.Month_Invoice >= startDate && i.Month_Invoice <= endDate))
                           select new InvoicesDTO()
                           { 
                               Id = i.Id,
