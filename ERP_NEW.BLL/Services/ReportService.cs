@@ -13688,10 +13688,10 @@ namespace ERP_NEW.BLL.Services
 
             try
             {
-                string pathhhh = Utils.HomePath + @"\E:\";
+                string pathhhh = Utils.HomePath + @"\D:\";
                 string path = "";
                 string subpath = "";
-                path = @"E:\";
+                path = @"D:\";
                 string allpath = path + subpath + "\"";//@"D:\TimeSheet_" + currentDate.Year
                 workbook.SaveAs(path + "Податковий облік" + ".xls", FileFormat.Excel8);
                 Process process = new Process();
@@ -14437,8 +14437,8 @@ namespace ERP_NEW.BLL.Services
                 indexRowStr = indexRow.ToString();
             try
             {
-                Workbook.SaveAs(GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber + ".xls", FileFormat.Excel8);                Process process = new Process();
-                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Карточка ОЗ " +model.InventoryNumber+ ".xls";
+                Workbook.SaveAs(GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber.ToString().Replace("/", "_") + ".xls";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
             }

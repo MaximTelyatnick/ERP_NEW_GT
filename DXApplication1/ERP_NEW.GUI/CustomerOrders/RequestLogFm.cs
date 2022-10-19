@@ -422,9 +422,9 @@ namespace ERP_NEW.GUI.CustomerOrders
             //string exportFilePath = @"\\SERVER-TFS\Data\RequestLog\Журнал реєстрації запитів клієнтів" + ".xlsx";
             string exportFilePath;
             exportFilePath = DefinitionPathToServer.DefinitionPath();
-            if (exportFilePath == "server-asup")
-                exportFilePath = @"\\SERVER-ASUP\Data\RequestLog\";
-            else exportFilePath = @"\\SERVER-ASUP\Data\DebugRequestLog\";
+            if (exportFilePath == "SBD1")
+                exportFilePath = @"\\SBD1\Data\RequestLog\";
+            else exportFilePath = @"\\SBD1\Data\DebugRequestLog\";
 
             if (requestLogJournalList.Count > 0)
             {

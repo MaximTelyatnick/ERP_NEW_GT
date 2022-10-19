@@ -726,15 +726,26 @@ namespace ERP_NEW.GUI.Accounting
             splashScreenManager.ShowWaitForm();
             if (accountingInvoicesBS.Count != 0)
             {
+                int? currentMonth = null;
 
                 reportService = Program.kernel.Get<IReportService>();
-                int currentMonth = ((MonthDetailsDTO)repositoryItemGridLookUpEdit.GetRowByKeyValue((int)monthFilterGridEdit.EditValue)).NumberMonth;
+                try
+                {
+                    currentMonth = ((MonthDetailsDTO)repositoryItemGridLookUpEdit.GetRowByKeyValue((int?)monthFilterGridEdit.EditValue)).NumberMonth;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Не обрано номер місяця", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    splashScreenManager.CloseWaitForm();
+                    return;
+                }
+               
 
                 //reportService.PrintAccountingInvoices(ViewToDataTable());
                 reportService.PrintAccountingInvoices(invoicesInfoList, currentMonth);
             }
-
             splashScreenManager.CloseWaitForm();
+
         }
 
         private void AddColorToolStripMenuItem_Click(object sender, EventArgs e)
