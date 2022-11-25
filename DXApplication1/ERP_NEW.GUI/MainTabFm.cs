@@ -795,7 +795,7 @@ namespace ERP_NEW.GUI
 
                 //Для тестирования чужой учетки на машине разработчика используем строку ниже, верхнюю нужно закоментить!!!
                 //var searchString = "TVAGONM\\{учетка_пользователя}";
-                //var searchString = "TVAGONM\\trocka";
+                //var searchString = "dc1.tvm.loc\\lagno";
                 var member = searchString.Split('\\');
                 var ulogin = member[1];
                 var uDomen = member[0];

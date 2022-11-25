@@ -46,6 +46,7 @@
             this.ukrEximItem = new DevExpress.XtraBars.BarButtonItem();
             this.ukrEximBankCurrentItem = new DevExpress.XtraBars.BarButtonItem();
             this.replaceContractorBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.ukrSibItem = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -127,9 +128,10 @@
             this.bankNameItem,
             this.ukrEximItem,
             this.ukrEximBankCurrentItem,
-            this.replaceContractorBtn});
+            this.replaceContractorBtn,
+            this.ukrSibItem});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 17;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -284,6 +286,14 @@
             this.replaceContractorBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.replaceContractorBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.replaceContractorBtn_ItemClick);
             // 
+            // ukrSibItem
+            // 
+            this.ukrSibItem.Caption = "УКРСІББАНК";
+            this.ukrSibItem.Glyph = global::ERP_NEW.GUI.Properties.Resources.ukrsibbank;
+            this.ukrSibItem.Id = 17;
+            this.ukrSibItem.Name = "ukrSibItem";
+            this.ukrSibItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ukrSibItem_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -309,6 +319,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.sberBankItem);
             this.ribbonPageGroup2.ItemLinks.Add(this.bankCreditDneprItem);
             this.ribbonPageGroup2.ItemLinks.Add(this.ukrEximItem);
+            this.ribbonPageGroup2.ItemLinks.Add(this.ukrSibItem);
             this.ribbonPageGroup2.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.TwoRows;
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Гривня";
@@ -443,7 +454,6 @@
             this.checkCol});
             this.importPaymentsGridView.GridControl = this.importPaymentsGrid;
             this.importPaymentsGridView.Name = "importPaymentsGridView";
-            this.importPaymentsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.importPaymentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.importPaymentsGridView.OptionsView.ShowFooter = true;
             this.importPaymentsGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.importPaymentsGridView_RowCellStyle);
@@ -927,5 +937,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand9;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn checkCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit replaceContractorCheckRepository;
+        private DevExpress.XtraBars.BarButtonItem ukrSibItem;
     }
 }

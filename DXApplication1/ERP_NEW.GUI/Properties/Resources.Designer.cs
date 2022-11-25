@@ -383,6 +383,16 @@ namespace ERP_NEW.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ukrsibbank {
+            get {
+                object obj = ResourceManager.GetObject("ukrsibbank", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap weld_32 {
             get {
                 object obj = ResourceManager.GetObject("weld_32", resourceCulture);
