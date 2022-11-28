@@ -89,8 +89,11 @@ namespace ERP_NEW.GUI.Accounting
                 case 109:
                     bankNameItem.Caption = "Банк Кредит Днепр";
                     break;
-                case 133://311/7
+                case 133:// 311/7
                     bankNameItem.Caption = "АТ УКРЕКСІМБАНК";
+                    break;
+                case 244:// 311/8
+                    bankNameItem.Caption = "Укрсиббанк";
                     break;
                 default:
                     bankNameItem.Caption = "";
@@ -734,6 +737,29 @@ namespace ERP_NEW.GUI.Accounting
                         importPaymentsGridView.EndDataUpdate();
                     }
                 }
+            }
+        }
+
+        private void ukrSibItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openDialog.Filter = "Все файлы(*.*)|*.*";
+
+            if (openDialog.ShowDialog() == DialogResult.OK)
+            {
+                splashScreenManager.ShowWaitForm();
+
+                bankImportService = Program.kernel.Get<IBankImportService>();
+
+                try
+                {
+                    LoadBankPaymentData(bankImportService.GetUkrSibBankList(openDialog.FileName), 244);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Не можливо прочитати документ!\n" + ex.Message, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                splashScreenManager.CloseWaitForm();
             }
         }
     }

@@ -100,9 +100,9 @@ namespace ERP_NEW.GUI.CustomerOrders
             contractorsService = Program.kernel.Get<IContractorsService>();
             accountsService = Program.kernel.Get<IAccountsService>();
             sourcePath = DefinitionPathToServer.DefinitionPath();
-            if (sourcePath == "server-asup")
-                sourcePath = @"\\SERVER-ASUP\Data\Journal\";
-            else sourcePath = @"\\SERVER-ASUP\Data\DebugJournal\";
+            if (sourcePath == "SBD1")
+                sourcePath = @"\\SBD1\Data\Journal\";
+            else sourcePath = @"\\SBD1\Data\DebugJournal\";
         }
 
         private string ReturnCurrentDTO(AgreementJournalDTO modelJournal)
@@ -121,7 +121,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             checkCreateDirectory = 0;
             selectedFile = System.IO.Path.GetFileName(renameFileTextEdit.Text);
             nameDirectory = System.IO.Path.GetFileNameWithoutExtension(renameFileTextEdit.Text+".pdf");
-            DirectoryInfo dInfo = new DirectoryInfo(@"\\SERVER-ASUP\Data");
+            DirectoryInfo dInfo = new DirectoryInfo(@"\\SBD1\Data");
             checkAccessToDirectory = 0;
 
             try

@@ -347,18 +347,18 @@ namespace ERP_NEW.DAL.EF
                 ConnectionLifeTime = 900
             };
 
-            #if DEBUG
+#if DEBUG
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
-                Database = "TVM_DB",
+                DataSource = "10.0.0.50",
+                Database = "TVM_DB_TEST",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
                 Pooling = true,
                 ConnectionLifeTime = 900
             };
-            #endif
+#endif
 
             Connection.ConnectionString = csb.ConnectionString;
             Database.SetInitializer<ERP_Context>(null); 

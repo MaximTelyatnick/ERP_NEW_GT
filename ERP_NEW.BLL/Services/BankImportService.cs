@@ -868,5 +868,71 @@ namespace ERP_NEW.BLL.Services
 
             return returnValue;
         }
+
+        public List<PaymentImportModelDTO> GetUkrSibBankList(string filePath)
+        {
+            List<PaymentImportModelDTO> resultList = new List<PaymentImportModelDTO>();
+
+            var Workbook = Factory.GetWorkbook(filePath);
+            var Worksheet = Workbook.Worksheets[0];
+            var Сells = Worksheet.Cells;
+
+            SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(filePath);
+
+            var worksheet = workbook.Worksheets[0];
+            var cells = worksheet.Cells;
+
+            int currentRow = 2; // 1 - header
+
+            string modoficateBancAccount = "311/8";
+
+            if (modoficateBancAccount.Any(c => char.IsLetter(c)))
+                modoficateBancAccount = NumberCrop(modoficateBancAccount);
+
+            while (cells["A" + currentRow].Value != null)
+            {
+                decimal d;
+                DateTime docDate;
+                string value;
+                string formatString;
+
+                bool result = DateTime.TryParse(cells["M" + currentRow].Value.ToString(), out docDate);
+
+                NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+
+                if (cells["N" + currentRow].Value.ToString() != "")
+                {
+                    value = cells["N" + currentRow].Value.ToString().Replace('.', ',');
+                    formatString = Regex.Replace(value, @"[^0-9$,]", "");
+                }
+                else
+                {
+                    value = cells["O" + currentRow].Value.ToString().Replace('.', ',');
+                    formatString = Regex.Replace(value, @"[^0-9$,]", "");
+                }
+
+                if (result)
+                {
+                    resultList.Add(new PaymentImportModelDTO
+                    {
+                        DocumentNum = cells["L" + currentRow].Value.ToString(),
+                        //RecipientName = cells["H" + currentRow].Value.ToString(),
+                        RecipientBankName = cells["H" + currentRow].Value.ToString(),
+                        RecipientBankCode = 351005,
+                        //RecipientBankAccountNum = ulong.Parse(modoficateBancAccount),
+                        Sum = Math.Abs(decimal.TryParse(formatString, out d) ? d : 0),
+                        PaymentCurrencyName = "UAH",
+                        RecipientSrn = "32686844",
+                        RecipientName = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"",
+                        PaymentPurpose = cells["P" + currentRow].Value.ToString().Trim(),
+                        DocumentApplyDate = docDate,
+                        OperationType = (byte)(((cells["N" + currentRow].Value.ToString()) != "") ? 1 : 0)
+                    });
+                }
+
+                ++currentRow;
+            }
+            return resultList;
+        }
     }
 }

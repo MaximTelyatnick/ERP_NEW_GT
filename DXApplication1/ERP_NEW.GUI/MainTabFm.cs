@@ -786,7 +786,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+            //return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
@@ -795,7 +795,7 @@ namespace ERP_NEW.GUI
 
                 //Для тестирования чужой учетки на машине разработчика используем строку ниже, верхнюю нужно закоментить!!!
                 //var searchString = "TVAGONM\\{учетка_пользователя}";
-                //var searchString = "TVAGONM\\trocka";
+                //var searchString = "dc1.tvm.loc\\lagno";
                 var member = searchString.Split('\\');
                 var ulogin = member[1];
                 var uDomen = member[0];

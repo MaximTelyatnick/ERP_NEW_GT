@@ -12947,7 +12947,7 @@ namespace ERP_NEW.BLL.Services
             }
 
             //===========================================================
-            //корректировка августа
+            //корректировка октября
             weekendDays--;
             //weekendDays--;
             //===========================================================
@@ -13071,11 +13071,23 @@ namespace ERP_NEW.BLL.Services
                     //    continue;
                     //}
 
-                    if (j == 24)
+                    if (j == 13)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
                         cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        continue;
+                    }
+
+                    if (j == 14)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
                         //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
                         //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
                         continue;
@@ -13408,9 +13420,9 @@ namespace ERP_NEW.BLL.Services
                     Сells[vsS[days + 24] + startWith].Orientation = 0;
 
                     //style line in table
-                    cells[startWith - 1, j].Borders.LineStyle = LineStyle.None;
-                    cells[startWith - 1, 0].Borders.LineStyle = LineStyle.None;
-                    cells[startWith - 1, j + 22].Borders.LineStyle = LineStyle.None;
+                    //cells[startWith - 1, j].Borders.LineStyle = LineStyle.None;
+                    //cells[startWith - 1, 0].Borders.LineStyle = LineStyle.None;
+                    //cells[startWith - 1, j + 22].Borders.LineStyle = LineStyle.None;
                     cells[startWith - 1, j].Borders.LineStyle = LineStyle.Continuous;
                     cells[startWith - 1, 0].Borders.LineStyle = LineStyle.Continuous;
                     cells[startWith - 1, j + 22].Borders.LineStyle = LineStyle.Continuous;
@@ -13688,10 +13700,10 @@ namespace ERP_NEW.BLL.Services
 
             try
             {
-                string pathhhh = Utils.HomePath + @"\E:\";
+                string pathhhh = Utils.HomePath + @"\D:\";
                 string path = "";
                 string subpath = "";
-                path = @"E:\";
+                path = @"D:\";
                 string allpath = path + subpath + "\"";//@"D:\TimeSheet_" + currentDate.Year
                 workbook.SaveAs(path + "Податковий облік" + ".xls", FileFormat.Excel8);
                 Process process = new Process();
@@ -14437,8 +14449,8 @@ namespace ERP_NEW.BLL.Services
                 indexRowStr = indexRow.ToString();
             try
             {
-                Workbook.SaveAs(GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber + ".xls", FileFormat.Excel8);                Process process = new Process();
-                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Карточка ОЗ " +model.InventoryNumber+ ".xls";
+                Workbook.SaveAs(GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "Карточка ОЗ " + model.InventoryNumber.ToString().Replace("/", "_") + ".xls";
                 process.StartInfo.FileName = "Excel.exe";
                 process.Start();
             }

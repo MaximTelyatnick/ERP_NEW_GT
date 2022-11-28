@@ -17,5 +17,6 @@ namespace ERP_NEW.BLL.Interfaces
         List<PaymentImportModelDTO> GetPoltavaBankCurrencyList(string filePath);
         List<PaymentImportModelDTO> GetSberBankList(string filePath);
         List<PaymentImportModelDTO> GetUkrEximBankList(string filePath);
+        List<PaymentImportModelDTO> GetUkrSibBankList(string filePath);
     }
 }

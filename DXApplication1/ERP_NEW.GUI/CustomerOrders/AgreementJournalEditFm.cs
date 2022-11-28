@@ -116,9 +116,9 @@ namespace ERP_NEW.GUI.CustomerOrders
             contractorsService = Program.kernel.Get<IContractorsService>();
             accountsService = Program.kernel.Get<IAccountsService>();
             homePath = DefinitionPathToServer.DefinitionPath();
-            if (homePath == "server-asup")
-                homePath = @"\\SERVER-ASUP\Data\Journal\";
-            else homePath = @"\\SERVER-ASUP\Data\DebugJournal\";
+            if (homePath == "SBD1")
+                homePath = @"\\SBD1\Data\Journal\";
+            else homePath = @"\\SBD1\Data\DebugJournal\";
         }
 
         public AgreementsDTO Return()
@@ -191,7 +191,7 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void CreteDirectoryAgreement()
         {
-            DirectoryInfo dInfo = new DirectoryInfo(@"\\SERVER-ASUP\Data");
+            DirectoryInfo dInfo = new DirectoryInfo(@"\\SBD1\Data");
            
             string nameJournal = rezNumber;
             string num;
