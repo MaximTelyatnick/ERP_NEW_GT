@@ -31,7 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -41,6 +40,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
@@ -103,8 +103,8 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement68 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement69 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement70 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement81 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement72 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement81 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement73 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement74 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement75 = new DevExpress.XtraEditors.TileItemElement();
@@ -136,13 +136,13 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
             this.menuNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.accountingCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
-            this.invoiceRequirementAccountItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderCurrencyItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.expendituresItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.fixedAssetsOrderItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.fixedAssetsSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.archiveSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
+            this.invoiceRequirementAccountItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.taxAccountingItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.calcWithBuyersItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.bankPaymentsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -316,27 +316,6 @@
             this.accountingCategory.AppearanceSelected.Options.UseBackColor = true;
             this.accountingCategory.Caption = "Бухгалтерський облік";
             this.accountingCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("accountingCategory.Glyph")));
-            // 
-            // invoiceRequirementAccountItem
-            // 
-            this.invoiceRequirementAccountItem.Caption = "Вимоги";
-            this.invoiceRequirementAccountItem.Name = "invoiceRequirementAccountItem";
-            this.invoiceRequirementAccountItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.invoiceRequirementAccountItem.OwnerCollection = this.accountingCategory.Items;
-            // 
-            // 
-            // 
-            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
-            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.invoiceRequirementAccountItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement9.Image")));
-            tileItemElement9.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement9.Text = "Вимоги";
-            this.invoiceRequirementAccountItem.Tile.Elements.Add(tileItemElement9);
-            this.invoiceRequirementAccountItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.invoiceRequirementAccountItem.Tile.Name = "tileBarItem4";
             this.accountingCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.accountingOrderItem,
             this.accountingOrderCurrencyItem,
@@ -497,6 +476,27 @@
             this.archiveSubItem.Tile.Elements.Add(tileItemElement7);
             this.archiveSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.archiveSubItem.Tile.Name = "tileBarItem1";
+            // 
+            // invoiceRequirementAccountItem
+            // 
+            this.invoiceRequirementAccountItem.Caption = "Вимоги";
+            this.invoiceRequirementAccountItem.Name = "invoiceRequirementAccountItem";
+            this.invoiceRequirementAccountItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.invoiceRequirementAccountItem.OwnerCollection = this.accountingCategory.Items;
+            // 
+            // 
+            // 
+            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
+            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.invoiceRequirementAccountItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.invoiceRequirementAccountItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement9.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement9.Image")));
+            tileItemElement9.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement9.Text = "Вимоги";
+            this.invoiceRequirementAccountItem.Tile.Elements.Add(tileItemElement9);
+            this.invoiceRequirementAccountItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.invoiceRequirementAccountItem.Tile.Name = "tileBarItem4";
             // 
             // taxAccountingItem
             // 
@@ -1974,6 +1974,22 @@
             this.accountingClasificationItem.Name = "accountingClasificationItem";
             this.accountingClasificationItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
             this.accountingClasificationItem.OwnerCollection = this.classifiersCategory.Items;
+            // 
+            // accountsSubItem
+            // 
+            this.accountsSubItem.Caption = "Рахунки";
+            this.accountsSubItem.Name = "accountsSubItem";
+            this.accountsSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            // 
+            // 
+            // 
+            this.accountsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.accountsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement72.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement72.Text = "Рахунки";
+            this.accountsSubItem.Tile.Elements.Add(tileItemElement72);
+            this.accountsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.accountsSubItem.Tile.Name = "tileBarItem1";
             this.accountingClasificationItem.SubItems.AddRange(new DevExpress.XtraBars.Navigation.TileNavSubItem[] {
             this.accountsSubItem,
             this.periodsSubItem,
@@ -1999,22 +2015,6 @@
             this.accountingClasificationItem.Tile.Elements.Add(tileItemElement81);
             this.accountingClasificationItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingClasificationItem.Tile.Name = "tileBarItem1";
-            // 
-            // accountsSubItem
-            // 
-            this.accountsSubItem.Caption = "Рахунки";
-            this.accountsSubItem.Name = "accountsSubItem";
-            this.accountsSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            // 
-            // 
-            // 
-            this.accountsSubItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.accountsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement72.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement72.Text = "Рахунки";
-            this.accountsSubItem.Tile.Elements.Add(tileItemElement72);
-            this.accountsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.accountsSubItem.Tile.Name = "tileBarItem1";
             // 
             // periodsSubItem
             // 
@@ -2760,7 +2760,6 @@
         private DevExpress.XtraBars.Navigation.TileNavSubItem materialsSubItem;
         private DevExpress.XtraBars.Navigation.TileNavSubItem unitsSubItem;
         private DevExpress.XtraBars.Navigation.TileNavSubItem citiesSubItem;
-        private DevExpress.XtraBars.Navigation.TileNavSubItem accountsSubItem;
         private DevExpress.XtraBars.Navigation.TileNavItem businessTripsDecreeItem;
         private DevExpress.XtraBars.Navigation.TileNavCategory storeHouseCategory;
         private DevExpress.XtraBars.Navigation.TileNavItem weldWpsItem;
@@ -2848,5 +2847,6 @@
         private DevExpress.XtraBars.Navigation.TileNavItem contractPaymentItem;
         private DevExpress.XtraBars.Navigation.TileNavItem timeSheetItem;
         private DevExpress.XtraBars.Navigation.TileNavItem invoiceRequirementAccountItem;
+        private DevExpress.XtraBars.Navigation.TileNavSubItem accountsSubItem;
     }
 }
