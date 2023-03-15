@@ -18,6 +18,7 @@ namespace ERP_NEW.DAL.Entities.ReportModel
         public decimal SaldoCreditStart { get; set; }
         public decimal DebitVat63 { get; set; }
         public decimal DebitVat631 { get; set; }
+        public decimal DebitVat632 { get; set; }
         public decimal DebitVat644 { get; set; }
         public decimal CreditPeriod { get; set; }
         public decimal CreditPeriod644 { get; set; }
