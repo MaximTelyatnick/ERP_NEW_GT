@@ -72,10 +72,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>CA3AF06C523AF7864CE47C6F513611A783FCF6FA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E3017D1072B6BB83A6A85D42F7FAF44F73F5795A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
