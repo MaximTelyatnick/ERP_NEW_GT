@@ -10072,8 +10072,8 @@ namespace ERP_NEW.BLL.Services
                         cells[vsS[HeaderColumn["Payment_Date"] - 1] + currentPosition].Value = rowData[i].Payment_Date;
                         cells[vsS[HeaderColumn["PeriodPrice"] - 1] + currentPosition].Value = rowData[i].PeriodPrice;
                         cells[vsS[HeaderColumn["Rate"] - 1] + currentPosition].Value = rowData[i].Rate;
-                        if (HeaderColumn.ContainsKey("DebitSum"))
-                        cells[vsS[HeaderColumn["DebitSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
+                        if (HeaderColumn.ContainsKey("DebitSumUSD") || HeaderColumn.ContainsKey("DebitSumEUR") || HeaderColumn.ContainsKey("DebitSumRUB"))
+                            cells[vsS[HeaderColumn["DebitSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
                     }
                     else if (rowData[i].FlagDebitCredit == 2)
                     {

@@ -922,11 +922,13 @@ namespace ERP_NEW.BLL.Services
                         //RecipientBankAccountNum = ulong.Parse(modoficateBancAccount),
                         Sum = Math.Abs(decimal.TryParse(formatString, out d) ? d : 0),
                         PaymentCurrencyName = "UAH",
-                        RecipientSrn = "32686844",
-                        RecipientName = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"",
+                        //RecipientSrn = "32686844",
+                        //RecipientName = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"",
+                        RecipientSrn = cells["J" + currentRow].Value.ToString(),
+                        RecipientName = cells["K" + currentRow].Value.ToString(),
                         PaymentPurpose = cells["P" + currentRow].Value.ToString().Trim(),
                         DocumentApplyDate = docDate,
-                        OperationType = (byte)(((cells["N" + currentRow].Value.ToString()) != "") ? 1 : 0)
+                        OperationType = (byte)(((cells["N" + currentRow].Value.ToString()) != "") ? 0 : 1)
                     });
                 }
 

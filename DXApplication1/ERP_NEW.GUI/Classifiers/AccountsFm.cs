@@ -70,7 +70,8 @@ namespace ERP_NEW.GUI.Classifiers
                     int rowHandle = accountsGridView.FocusedRowHandle - 1;
 
                     accountsGridView.BeginDataUpdate();
-                    accountsService.AccountsDelete(((AccountsDTO)accountsBS.Current).Id);
+                    if (!accountsService.AccountsDelete(((AccountsDTO)accountsBS.Current).Id))
+                        MessageBox.Show("Не можливо видалити рахунок, він задіяний у Бпнківских операціях!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     LoadData();
                     accountsGridView.EndDataUpdate();
 
