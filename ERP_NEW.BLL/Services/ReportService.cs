@@ -9276,7 +9276,7 @@ namespace ERP_NEW.BLL.Services
                     new FbParameter("EndDate", endDate)
                 };
 
-            string procName = @"select * from ""ReportContractorVat""(@StartDate, @EndDate)";
+            string procName = @"select * from ""ReportContractorVatNew""(@StartDate, @EndDate)";
 
             var dataSource = mapper.Map<IEnumerable<ContractorVat>, List<ContractorVatDTO>>(contractorsVat.SQLExecuteProc(procName, Parameters));
 
