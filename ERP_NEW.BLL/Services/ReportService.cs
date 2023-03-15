@@ -9276,7 +9276,7 @@ namespace ERP_NEW.BLL.Services
                     new FbParameter("EndDate", endDate)
                 };
 
-            string procName = @"select * from ""ReportContractorVatt""(@StartDate, @EndDate)";
+            string procName = @"select * from ""ReportContractorVatNew""(@StartDate, @EndDate)";
 
             var dataSource = mapper.Map<IEnumerable<ContractorVat>, List<ContractorVatDTO>>(contractorsVat.SQLExecuteProc(procName, Parameters));
 
@@ -9329,29 +9329,28 @@ namespace ERP_NEW.BLL.Services
                 cells["G" + currentPosition].Value = contractorVatList[i].DebitVat63;
                
                 cells["I" + currentPosition].Value = contractorVatList[i].DebitVat631;
-                cells["J" + currentPosition].Value = contractorVatList[i].DebitVat632;
-                cells["K" + currentPosition].Value = contractorVatList[i].DebitVat644;
-                cells["M" + currentPosition].Value = "=SUM(G" + (currentPosition) +":" + ("K" + (currentPosition)) + ")";
+                cells["J" + currentPosition].Value = contractorVatList[i].DebitVat644;
+                cells["K" + currentPosition].Value = "=SUM(G" + (currentPosition) +":" + ("J" + (currentPosition)) + ")";
 
-                cells["N" + currentPosition].Value = contractorVatList[i].CreditPeriod;
-                cells["O" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
+                cells["M" + currentPosition].Value = contractorVatList[i].CreditPeriod;
+                cells["N" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
 
-                cells["P" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("O" + (currentPosition)) + ")";
+                cells["O" + currentPosition].Value = "=SUM(L" + (currentPosition) + ":" + ("N" + (currentPosition)) + ")";
 
-                cells["Q" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
-                cells["R" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
+                cells["P" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
+                cells["Q" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
 
                 currentPosition++;
                 n++;
             }
 
-            cells["A" + startPosition + ":" + ("R" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
+            cells["A" + startPosition + ":" + ("Q" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
 
             cells["C" + currentPosition].Value = "Разом:";
             cells["C" + currentPosition].VerticalAlignment = VAlign.Distributed;
             cells["C" + currentPosition].Font.Bold = true;
-            cells["A" + currentPosition + ":" + "R" + currentPosition].Font.Size = 14;
-            cells["A" + currentPosition + ":" + "R" + currentPosition].Interior.Color = Color.Bisque;
+            cells["A" + currentPosition + ":" + "Q" + currentPosition].Font.Size = 14;
+            cells["A" + currentPosition + ":" + "Q" + currentPosition].Interior.Color = Color.Bisque;
 
             
             cells["E" + currentPosition].Value = "=SUM(E" + 10 + ":" + ("E" + (currentPosition - 1)) + ")";
@@ -9367,7 +9366,6 @@ namespace ERP_NEW.BLL.Services
             cells["O" + currentPosition].Value = "=SUM(O" + 10 + ":" + ("O" + (currentPosition - 1)) + ")";
             cells["P" + currentPosition].Value = "=SUM(P" + 10 + ":" + ("P" + (currentPosition - 1)) + ")";
             cells["Q" + currentPosition].Value = "=SUM(Q" + 10 + ":" + ("Q" + (currentPosition - 1)) + ")";
-            cells["R" + currentPosition].Value = "=SUM(R" + 10 + ":" + ("R" + (currentPosition - 1)) + ")";
             //cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
 
             PrintSignatures(cells, currentPosition + 3);
