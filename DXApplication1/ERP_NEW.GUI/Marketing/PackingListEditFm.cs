@@ -65,6 +65,7 @@ namespace ERP_NEW.GUI.Marketing
             packingBS.DataSource = Item = model;
 
             packingNumberTBox.DataBindings.Add("EditValue", packingBS, "PackingNumber");
+            packingNumberPartTBox.DataBindings.Add("EditValue", packingBS, "PackingNumberPart");
             packingDateEdit.DataBindings.Add("EditValue", packingBS, "PackingDate");
             descriptionTBox.DataBindings.Add("EditValue", packingBS, "Description");
             descriptionProjectTBox.DataBindings.Add("EditValue", packingBS, "DescriptionProject");

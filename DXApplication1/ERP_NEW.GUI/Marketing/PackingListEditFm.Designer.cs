@@ -39,6 +39,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.packingValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.packingNumberTBox = new DevExpress.XtraEditors.TextEdit();
             this.packingDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -103,6 +104,8 @@
             this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.packingNumberPartTBox = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.packingValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingNumberTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -132,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // packingValidationProvider
@@ -145,7 +149,7 @@
             this.packingNumberTBox.Location = new System.Drawing.Point(8, 44);
             this.packingNumberTBox.Name = "packingNumberTBox";
             this.packingNumberTBox.Properties.MaxLength = 20;
-            this.packingNumberTBox.Size = new System.Drawing.Size(74, 20);
+            this.packingNumberTBox.Size = new System.Drawing.Size(150, 20);
             this.packingNumberTBox.TabIndex = 1;
             this.packingNumberTBox.ToolTip = "Задайте номер пакувального листу";
             conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -158,14 +162,14 @@
             // packingDateEdit
             // 
             this.packingDateEdit.EditValue = null;
-            this.packingDateEdit.Location = new System.Drawing.Point(92, 44);
+            this.packingDateEdit.Location = new System.Drawing.Point(409, 44);
             this.packingDateEdit.Name = "packingDateEdit";
             this.packingDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.packingDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.packingDateEdit.Properties.PopupResizeMode = DevExpress.XtraEditors.Controls.ResizeMode.FrameResize;
-            this.packingDateEdit.Size = new System.Drawing.Size(100, 20);
+            this.packingDateEdit.Size = new System.Drawing.Size(195, 20);
             this.packingDateEdit.TabIndex = 2;
             this.packingDateEdit.ToolTip = "Вкажіть дату пакування";
             conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -176,7 +180,7 @@
             // 
             // responsiblePersonEdit
             // 
-            this.responsiblePersonEdit.Location = new System.Drawing.Point(197, 44);
+            this.responsiblePersonEdit.Location = new System.Drawing.Point(9, 86);
             this.responsiblePersonEdit.Name = "responsiblePersonEdit";
             this.responsiblePersonEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.responsiblePersonEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -187,7 +191,7 @@
             this.responsiblePersonEdit.Properties.PopupFormSize = new System.Drawing.Size(700, 0);
             this.responsiblePersonEdit.Properties.PopupSizeable = false;
             this.responsiblePersonEdit.Properties.View = this.gridView4;
-            this.responsiblePersonEdit.Size = new System.Drawing.Size(407, 20);
+            this.responsiblePersonEdit.Size = new System.Drawing.Size(595, 20);
             this.responsiblePersonEdit.TabIndex = 3;
             this.responsiblePersonEdit.ToolTip = "Оберіть виконавчу особу";
             conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
@@ -205,7 +209,6 @@
             this.gridColumn13});
             this.gridView4.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView4.Name = "gridView4";
-            this.gridView4.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView4.OptionsFind.AlwaysVisible = true;
             this.gridView4.OptionsFind.SearchInPreview = true;
             this.gridView4.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -258,7 +261,7 @@
             // 
             // contractorsEdit
             // 
-            this.contractorsEdit.Location = new System.Drawing.Point(8, 89);
+            this.contractorsEdit.Location = new System.Drawing.Point(8, 131);
             this.contractorsEdit.Name = "contractorsEdit";
             this.contractorsEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -285,7 +288,6 @@
             this.srnCol});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridLookUpEdit1View.OptionsFind.AlwaysVisible = true;
             this.gridLookUpEdit1View.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gridLookUpEdit1View.OptionsFind.SearchInPreview = true;
@@ -318,7 +320,7 @@
             // 
             // destinationEdit
             // 
-            this.destinationEdit.Location = new System.Drawing.Point(8, 136);
+            this.destinationEdit.Location = new System.Drawing.Point(8, 178);
             this.destinationEdit.Name = "destinationEdit";
             this.destinationEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.destinationEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -350,7 +352,6 @@
             this.gridColumn3});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gridView1.OptionsFind.SearchInPreview = true;
@@ -405,11 +406,11 @@
             // 
             // descriptionTBox
             // 
-            this.descriptionTBox.Location = new System.Drawing.Point(8, 185);
+            this.descriptionTBox.Location = new System.Drawing.Point(8, 224);
             this.descriptionTBox.Name = "descriptionTBox";
             this.descriptionTBox.Properties.MaxLength = 200;
             this.descriptionTBox.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.descriptionTBox.Size = new System.Drawing.Size(596, 87);
+            this.descriptionTBox.Size = new System.Drawing.Size(596, 60);
             this.descriptionTBox.TabIndex = 6;
             this.descriptionTBox.ToolTip = "Поле для приміток та коментарів";
             // 
@@ -422,6 +423,8 @@
             this.groupControl1.AppearanceCaption.Options.UseBorderColor = true;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.packingNumberPartTBox);
+            this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.panelControl1);
             this.groupControl1.Controls.Add(this.destinationEdit);
             this.groupControl1.Controls.Add(this.labelControl5);
@@ -438,7 +441,7 @@
             this.groupControl1.Controls.Add(this.descriptionTBox);
             this.groupControl1.Location = new System.Drawing.Point(3, 4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(987, 277);
+            this.groupControl1.Size = new System.Drawing.Size(987, 289);
             this.groupControl1.TabIndex = 34;
             this.groupControl1.Text = "Пакувальний документ";
             // 
@@ -449,15 +452,15 @@
             this.panelControl1.Controls.Add(this.showComplBtn);
             this.panelControl1.Controls.Add(this.pictureComplEdit);
             this.panelControl1.Controls.Add(this.openComplBtn);
-            this.panelControl1.Location = new System.Drawing.Point(610, 23);
+            this.panelControl1.Location = new System.Drawing.Point(614, 25);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(183, 249);
+            this.panelControl1.Size = new System.Drawing.Size(179, 259);
             this.panelControl1.TabIndex = 63;
             // 
             // clearComplBtn
             // 
             this.clearComplBtn.Image = ((System.Drawing.Image)(resources.GetObject("clearComplBtn.Image")));
-            this.clearComplBtn.Location = new System.Drawing.Point(40, 218);
+            this.clearComplBtn.Location = new System.Drawing.Point(39, 231);
             this.clearComplBtn.Name = "clearComplBtn";
             this.clearComplBtn.Size = new System.Drawing.Size(29, 23);
             this.clearComplBtn.TabIndex = 24;
@@ -467,7 +470,7 @@
             // fileNameComplTbox
             // 
             this.fileNameComplTbox.Enabled = false;
-            this.fileNameComplTbox.Location = new System.Drawing.Point(4, 193);
+            this.fileNameComplTbox.Location = new System.Drawing.Point(5, 205);
             this.fileNameComplTbox.Name = "fileNameComplTbox";
             this.fileNameComplTbox.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.fileNameComplTbox.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -477,7 +480,7 @@
             // showComplBtn
             // 
             this.showComplBtn.Image = ((System.Drawing.Image)(resources.GetObject("showComplBtn.Image")));
-            this.showComplBtn.Location = new System.Drawing.Point(75, 218);
+            this.showComplBtn.Location = new System.Drawing.Point(74, 231);
             this.showComplBtn.Name = "showComplBtn";
             this.showComplBtn.Size = new System.Drawing.Size(29, 23);
             this.showComplBtn.TabIndex = 23;
@@ -496,14 +499,14 @@
             this.pictureComplEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureComplEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.pictureComplEdit.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureComplEdit.Size = new System.Drawing.Size(171, 181);
+            this.pictureComplEdit.Size = new System.Drawing.Size(171, 194);
             this.pictureComplEdit.TabIndex = 22;
             // 
             // openComplBtn
             // 
             this.openComplBtn.Image = ((System.Drawing.Image)(resources.GetObject("openComplBtn.Image")));
             this.openComplBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.openComplBtn.Location = new System.Drawing.Point(6, 218);
+            this.openComplBtn.Location = new System.Drawing.Point(4, 231);
             this.openComplBtn.Name = "openComplBtn";
             this.openComplBtn.Size = new System.Drawing.Size(29, 23);
             this.openComplBtn.TabIndex = 4;
@@ -512,7 +515,7 @@
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(13, 117);
+            this.labelControl5.Location = new System.Drawing.Point(9, 159);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(69, 13);
             this.labelControl5.TabIndex = 62;
@@ -520,7 +523,7 @@
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(13, 70);
+            this.labelControl6.Location = new System.Drawing.Point(9, 112);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(48, 13);
             this.labelControl6.TabIndex = 61;
@@ -533,15 +536,15 @@
             this.panelControl2.Controls.Add(this.showBtn);
             this.panelControl2.Controls.Add(this.pictureEdit);
             this.panelControl2.Controls.Add(this.openFileBtn);
-            this.panelControl2.Location = new System.Drawing.Point(799, 23);
+            this.panelControl2.Location = new System.Drawing.Point(799, 25);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(183, 249);
+            this.panelControl2.Size = new System.Drawing.Size(183, 259);
             this.panelControl2.TabIndex = 58;
             // 
             // clearBtn
             // 
             this.clearBtn.Image = ((System.Drawing.Image)(resources.GetObject("clearBtn.Image")));
-            this.clearBtn.Location = new System.Drawing.Point(40, 218);
+            this.clearBtn.Location = new System.Drawing.Point(40, 230);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(29, 23);
             this.clearBtn.TabIndex = 24;
@@ -551,7 +554,7 @@
             // fileNameTbox
             // 
             this.fileNameTbox.Enabled = false;
-            this.fileNameTbox.Location = new System.Drawing.Point(4, 193);
+            this.fileNameTbox.Location = new System.Drawing.Point(4, 205);
             this.fileNameTbox.Name = "fileNameTbox";
             this.fileNameTbox.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.fileNameTbox.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -561,7 +564,7 @@
             // showBtn
             // 
             this.showBtn.Image = ((System.Drawing.Image)(resources.GetObject("showBtn.Image")));
-            this.showBtn.Location = new System.Drawing.Point(75, 218);
+            this.showBtn.Location = new System.Drawing.Point(75, 230);
             this.showBtn.Name = "showBtn";
             this.showBtn.Size = new System.Drawing.Size(29, 23);
             this.showBtn.TabIndex = 23;
@@ -580,14 +583,14 @@
             this.pictureEdit.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Zoom;
             this.pictureEdit.Properties.ZoomAccelerationFactor = 1D;
-            this.pictureEdit.Size = new System.Drawing.Size(171, 181);
+            this.pictureEdit.Size = new System.Drawing.Size(171, 194);
             this.pictureEdit.TabIndex = 22;
             // 
             // openFileBtn
             // 
             this.openFileBtn.Image = ((System.Drawing.Image)(resources.GetObject("openFileBtn.Image")));
             this.openFileBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.openFileBtn.Location = new System.Drawing.Point(6, 218);
+            this.openFileBtn.Location = new System.Drawing.Point(6, 230);
             this.openFileBtn.Name = "openFileBtn";
             this.openFileBtn.Size = new System.Drawing.Size(29, 23);
             this.openFileBtn.TabIndex = 4;
@@ -596,7 +599,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(13, 164);
+            this.labelControl3.Location = new System.Drawing.Point(9, 205);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(45, 13);
             this.labelControl3.TabIndex = 57;
@@ -604,7 +607,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(197, 25);
+            this.labelControl9.Location = new System.Drawing.Point(13, 70);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(86, 13);
             this.labelControl9.TabIndex = 54;
@@ -620,7 +623,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(92, 24);
+            this.labelControl2.Location = new System.Drawing.Point(409, 25);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(58, 13);
             this.labelControl2.TabIndex = 4;
@@ -726,7 +729,6 @@
             this.selectedCol});
             this.customerOrdersGridView.GridControl = this.customerOrdersGrid;
             this.customerOrdersGridView.Name = "customerOrdersGridView";
-            this.customerOrdersGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             // 
             // drawingCol
             // 
@@ -874,6 +876,27 @@
             this.deleteBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteBtn.LargeGlyph")));
             this.deleteBtn.Name = "deleteBtn";
             // 
+            // packingNumberPartTBox
+            // 
+            this.packingNumberPartTBox.Location = new System.Drawing.Point(193, 44);
+            this.packingNumberPartTBox.Name = "packingNumberPartTBox";
+            this.packingNumberPartTBox.Properties.MaxLength = 20;
+            this.packingNumberPartTBox.Size = new System.Drawing.Size(182, 20);
+            this.packingNumberPartTBox.TabIndex = 64;
+            this.packingNumberPartTBox.ToolTip = "Задайте номер пакувального листу";
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Введіть номер документу";
+            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.packingValidationProvider.SetValidationRule(this.packingNumberPartTBox, conditionValidationRule6);
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(193, 25);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(62, 13);
+            this.labelControl7.TabIndex = 65;
+            this.labelControl7.Text = "Номер партії";
+            // 
             // PackingListEditFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -927,6 +950,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -998,5 +1022,7 @@
         private DevExpress.XtraEditors.SimpleButton showComplBtn;
         private DevExpress.XtraEditors.PictureEdit pictureComplEdit;
         private DevExpress.XtraEditors.SimpleButton openComplBtn;
+        private DevExpress.XtraEditors.TextEdit packingNumberPartTBox;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }

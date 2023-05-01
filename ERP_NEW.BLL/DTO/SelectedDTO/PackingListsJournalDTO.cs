@@ -12,6 +12,7 @@ namespace ERP_NEW.BLL.DTO.SelectedDTO
         public int Id { get; set; }
         //public long? MtsAssemblyId { get; set; }
         public string PackingNumber { get; set; }
+        public string PackingNumberPart { get; set; }
         public DateTime PackingDate { get; set; }
         public string Description { get; set; }
         public string DescriptionProject { get; set; }

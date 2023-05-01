@@ -9,6 +9,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
 
         public int Id { get; set; }
         public string PackingNumber { get; set; }
+        public string PackingNumberPart { get; set; }
         public DateTime PackingDate { get; set; }
         public int? OtkPersonId { get; set; }
         public int? ResponsiblePersonId { get; set; }
