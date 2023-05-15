@@ -593,6 +593,11 @@ namespace ERP_NEW.GUI.Marketing
             packingValidationProvider.Validate((Control)sender);
         }
 
+        private void packingNumberPartTBox_TextChanged(object sender, EventArgs e)
+        {
+            packingValidationProvider.Validate((Control)sender);
+        }
+
         #endregion
 
         private void openComplBtn_Click(object sender, EventArgs e)
@@ -666,7 +671,6 @@ namespace ERP_NEW.GUI.Marketing
                 System.Diagnostics.Process.Start(puth + fileName);
             }
         }
-
 
     }
 }

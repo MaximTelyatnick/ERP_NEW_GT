@@ -50,20 +50,15 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.packingListsGrid = new DevExpress.XtraGrid.GridControl();
             this.packingListsGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.packingNumberCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.packingDateCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.responsiblePersonFullNameCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.descriptionCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.transportListScanCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemPictureEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.scanStatusCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
-            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.orderNumberCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.orderDateCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.contractorNameCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -117,6 +112,12 @@
             this.assembliesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.drawingCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameAssCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.packingNumberPartCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand6 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -353,6 +354,7 @@
             this.gridBand3});
             this.packingListsGridView.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.packingNumberCol,
+            this.packingNumberPartCol,
             this.packingDateCol,
             this.responsiblePersonFullNameCol,
             this.scanStatusCol,
@@ -366,7 +368,6 @@
             this.orderDateCol});
             this.packingListsGridView.GridControl = this.packingListsGrid;
             this.packingListsGridView.Name = "packingListsGridView";
-            this.packingListsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.packingListsGridView.OptionsView.AllowCellMerge = true;
             this.packingListsGridView.OptionsView.RowAutoHeight = true;
             this.packingListsGridView.OptionsView.ShowAutoFilterRow = true;
@@ -375,21 +376,6 @@
             this.packingListsGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.packingListsGridView_FocusedRowChanged);
             this.packingListsGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.packingListsGridView_CustomUnboundColumnData);
             this.packingListsGridView.DoubleClick += new System.EventHandler(this.packingListsGridView_DoubleClick);
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridBand1.AppearanceHeader.Options.UseFont = true;
-            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand1.Caption = "Відомості";
-            this.gridBand1.Columns.Add(this.packingNumberCol);
-            this.gridBand1.Columns.Add(this.packingDateCol);
-            this.gridBand1.Columns.Add(this.responsiblePersonFullNameCol);
-            this.gridBand1.Columns.Add(this.descriptionCol);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 614;
             // 
             // packingNumberCol
             // 
@@ -457,32 +443,6 @@
             this.repositoryItemMemoEdit1.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
-            // gridBand2
-            // 
-            this.gridBand2.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridBand2.AppearanceHeader.Options.UseFont = true;
-            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand2.Caption = "Виріб";
-            this.gridBand2.Name = "gridBand2";
-            this.gridBand2.Visible = false;
-            this.gridBand2.VisibleIndex = -1;
-            this.gridBand2.Width = 497;
-            // 
-            // gridBand7
-            // 
-            this.gridBand7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gridBand7.AppearanceHeader.Options.UseFont = true;
-            this.gridBand7.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridBand7.Caption = "Комплектувальний лист";
-            this.gridBand7.Columns.Add(this.transportListScanCol);
-            this.gridBand7.MinWidth = 120;
-            this.gridBand7.Name = "gridBand7";
-            this.gridBand7.VisibleIndex = 1;
-            this.gridBand7.Width = 120;
-            // 
             // transportListScanCol
             // 
             this.transportListScanCol.AppearanceCell.Options.UseTextOptions = true;
@@ -507,21 +467,6 @@
             this.repositoryItemPictureEdit2.NullText = " ";
             this.repositoryItemPictureEdit2.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.Image;
             this.repositoryItemPictureEdit2.ZoomAccelerationFactor = 1D;
-            // 
-            // gridBand6
-            // 
-            this.gridBand6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gridBand6.AppearanceHeader.Options.UseFont = true;
-            this.gridBand6.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridBand6.Caption = "Пакувальний лист";
-            this.gridBand6.Columns.Add(this.scanStatusCol);
-            this.gridBand6.MinWidth = 95;
-            this.gridBand6.Name = "gridBand6";
-            this.gridBand6.RowCount = 2;
-            this.gridBand6.VisibleIndex = 2;
-            this.gridBand6.Width = 95;
             // 
             // scanStatusCol
             // 
@@ -548,23 +493,6 @@
             this.repositoryItemPictureEdit1.PictureStoreMode = DevExpress.XtraEditors.Controls.PictureStoreMode.Image;
             this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
             this.repositoryItemPictureEdit1.DoubleClick += new System.EventHandler(this.repositoryItemPictureEdit1_DoubleClick);
-            // 
-            // gridBand3
-            // 
-            this.gridBand3.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
-            this.gridBand3.AppearanceHeader.Options.UseFont = true;
-            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridBand3.Caption = "Замовник";
-            this.gridBand3.Columns.Add(this.orderNumberCol);
-            this.gridBand3.Columns.Add(this.orderDateCol);
-            this.gridBand3.Columns.Add(this.contractorNameCol);
-            this.gridBand3.Columns.Add(this.countryNameCol);
-            this.gridBand3.Columns.Add(this.cityNameCol);
-            this.gridBand3.Columns.Add(this.descriptionProjectCol);
-            this.gridBand3.Name = "gridBand3";
-            this.gridBand3.VisibleIndex = 3;
-            this.gridBand3.Width = 1012;
             // 
             // orderNumberCol
             // 
@@ -758,7 +686,6 @@
             this.invoiceNumCol});
             this.expenditureBandedGridView.GridControl = this.expendituresGrid;
             this.expenditureBandedGridView.Name = "expenditureBandedGridView";
-            this.expenditureBandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.expenditureBandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.expenditureBandedGridView.OptionsView.ShowFooter = true;
             this.expenditureBandedGridView.OptionsView.ShowGroupPanel = false;
@@ -1202,7 +1129,6 @@
             this.sumCurrencyPriceCol});
             this.specofocationGridView.GridControl = this.specificationGrid;
             this.specofocationGridView.Name = "specofocationGridView";
-            this.specofocationGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specofocationGridView.OptionsView.ShowAutoFilterRow = true;
             this.specofocationGridView.OptionsView.ShowFooter = true;
             this.specofocationGridView.OptionsView.ShowGroupPanel = false;
@@ -1343,7 +1269,6 @@
             this.nameAssCol});
             this.assembliesGridView.GridControl = this.assembliesGrid;
             this.assembliesGridView.Name = "assembliesGridView";
-            this.assembliesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.assembliesGridView.OptionsView.ShowAutoFilterRow = true;
             this.assembliesGridView.OptionsView.ShowGroupPanel = false;
             // 
@@ -1376,6 +1301,93 @@
             this.nameAssCol.Visible = true;
             this.nameAssCol.VisibleIndex = 1;
             this.nameAssCol.Width = 322;
+            // 
+            // packingNumberPartCol
+            // 
+            this.packingNumberPartCol.AppearanceCell.Options.UseTextOptions = true;
+            this.packingNumberPartCol.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.packingNumberPartCol.AppearanceHeader.Options.UseTextOptions = true;
+            this.packingNumberPartCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.packingNumberPartCol.Caption = "Номер партії";
+            this.packingNumberPartCol.FieldName = "PackingNumberPart";
+            this.packingNumberPartCol.Name = "packingNumberPartCol";
+            this.packingNumberPartCol.OptionsColumn.AllowEdit = false;
+            this.packingNumberPartCol.OptionsColumn.AllowFocus = false;
+            this.packingNumberPartCol.Visible = true;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridBand1.AppearanceHeader.Options.UseFont = true;
+            this.gridBand1.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand1.Caption = "Відомості";
+            this.gridBand1.Columns.Add(this.packingNumberCol);
+            this.gridBand1.Columns.Add(this.packingNumberPartCol);
+            this.gridBand1.Columns.Add(this.packingDateCol);
+            this.gridBand1.Columns.Add(this.responsiblePersonFullNameCol);
+            this.gridBand1.Columns.Add(this.descriptionCol);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 689;
+            // 
+            // gridBand2
+            // 
+            this.gridBand2.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridBand2.AppearanceHeader.Options.UseFont = true;
+            this.gridBand2.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand2.Caption = "Виріб";
+            this.gridBand2.Name = "gridBand2";
+            this.gridBand2.Visible = false;
+            this.gridBand2.VisibleIndex = -1;
+            this.gridBand2.Width = 497;
+            // 
+            // gridBand7
+            // 
+            this.gridBand7.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridBand7.AppearanceHeader.Options.UseFont = true;
+            this.gridBand7.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand7.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand7.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridBand7.Caption = "Комплектувальний лист";
+            this.gridBand7.Columns.Add(this.transportListScanCol);
+            this.gridBand7.MinWidth = 120;
+            this.gridBand7.Name = "gridBand7";
+            this.gridBand7.VisibleIndex = 1;
+            this.gridBand7.Width = 120;
+            // 
+            // gridBand6
+            // 
+            this.gridBand6.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.gridBand6.AppearanceHeader.Options.UseFont = true;
+            this.gridBand6.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand6.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand6.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridBand6.Caption = "Пакувальний лист";
+            this.gridBand6.Columns.Add(this.scanStatusCol);
+            this.gridBand6.MinWidth = 95;
+            this.gridBand6.Name = "gridBand6";
+            this.gridBand6.RowCount = 2;
+            this.gridBand6.VisibleIndex = 2;
+            this.gridBand6.Width = 95;
+            // 
+            // gridBand3
+            // 
+            this.gridBand3.AppearanceHeader.FontStyleDelta = System.Drawing.FontStyle.Bold;
+            this.gridBand3.AppearanceHeader.Options.UseFont = true;
+            this.gridBand3.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridBand3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridBand3.Caption = "Замовник";
+            this.gridBand3.Columns.Add(this.orderNumberCol);
+            this.gridBand3.Columns.Add(this.orderDateCol);
+            this.gridBand3.Columns.Add(this.contractorNameCol);
+            this.gridBand3.Columns.Add(this.countryNameCol);
+            this.gridBand3.Columns.Add(this.cityNameCol);
+            this.gridBand3.Columns.Add(this.descriptionProjectCol);
+            this.gridBand3.Name = "gridBand3";
+            this.gridBand3.VisibleIndex = 3;
+            this.gridBand3.Width = 1012;
             // 
             // PackingListsFm
             // 
@@ -1500,11 +1512,12 @@
         private DevExpress.XtraGrid.Views.Grid.GridView assembliesGridView;
         private DevExpress.XtraGrid.Columns.GridColumn drawingCol;
         private DevExpress.XtraGrid.Columns.GridColumn nameAssCol;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn transportListScanCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand1;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn packingNumberPartCol;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand2;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand7;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand6;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand3;
     }

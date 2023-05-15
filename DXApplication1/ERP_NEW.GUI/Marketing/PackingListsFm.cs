@@ -164,6 +164,7 @@ namespace ERP_NEW.BLL.Marketing
                     ResponsiblePersonId = modelJournal.ResponsiblePersonId,
                     PackingDate = modelJournal.PackingDate,
                     PackingNumber = modelJournal.PackingNumber,
+                    PackingNumberPart = modelJournal.PackingNumberPart,
                     PackingListMaterialsId = modelJournal.PackingListMaterialsId,
                     PackingListComplectId = modelJournal.PackingListComplectId,
                     DescriptionProject = modelJournal.DescriptionProject,

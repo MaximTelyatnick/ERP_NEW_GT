@@ -39,7 +39,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.packingValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.packingNumberTBox = new DevExpress.XtraEditors.TextEdit();
             this.packingDateEdit = new DevExpress.XtraEditors.DateEdit();
@@ -58,8 +57,10 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.packingNumberPartTBox = new DevExpress.XtraEditors.TextEdit();
             this.descriptionTBox = new DevExpress.XtraEditors.MemoEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.clearComplBtn = new DevExpress.XtraEditors.SimpleButton();
             this.fileNameComplTbox = new DevExpress.XtraEditors.TextEdit();
@@ -104,8 +105,6 @@
             this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.packingNumberPartTBox = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.packingValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingNumberTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.packingDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -116,6 +115,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinationEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descriptionTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -135,7 +135,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // packingValidationProvider
@@ -404,6 +403,16 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
+            // packingNumberPartTBox
+            // 
+            this.packingNumberPartTBox.Location = new System.Drawing.Point(193, 44);
+            this.packingNumberPartTBox.Name = "packingNumberPartTBox";
+            this.packingNumberPartTBox.Properties.MaxLength = 20;
+            this.packingNumberPartTBox.Size = new System.Drawing.Size(182, 20);
+            this.packingNumberPartTBox.TabIndex = 64;
+            this.packingNumberPartTBox.ToolTip = "Задайте номер пакувального листу";
+            this.packingNumberPartTBox.TextChanged += new System.EventHandler(this.packingNumberPartTBox_TextChanged);
+            // 
             // descriptionTBox
             // 
             this.descriptionTBox.Location = new System.Drawing.Point(8, 224);
@@ -444,6 +453,14 @@
             this.groupControl1.Size = new System.Drawing.Size(987, 289);
             this.groupControl1.TabIndex = 34;
             this.groupControl1.Text = "Пакувальний документ";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(193, 25);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(62, 13);
+            this.labelControl7.TabIndex = 65;
+            this.labelControl7.Text = "Номер партії";
             // 
             // panelControl1
             // 
@@ -876,27 +893,6 @@
             this.deleteBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteBtn.LargeGlyph")));
             this.deleteBtn.Name = "deleteBtn";
             // 
-            // packingNumberPartTBox
-            // 
-            this.packingNumberPartTBox.Location = new System.Drawing.Point(193, 44);
-            this.packingNumberPartTBox.Name = "packingNumberPartTBox";
-            this.packingNumberPartTBox.Properties.MaxLength = 20;
-            this.packingNumberPartTBox.Size = new System.Drawing.Size(182, 20);
-            this.packingNumberPartTBox.TabIndex = 64;
-            this.packingNumberPartTBox.ToolTip = "Задайте номер пакувального листу";
-            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule6.ErrorText = "Введіть номер документу";
-            conditionValidationRule6.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.packingValidationProvider.SetValidationRule(this.packingNumberPartTBox, conditionValidationRule6);
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(193, 25);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(62, 13);
-            this.labelControl7.TabIndex = 65;
-            this.labelControl7.Text = "Номер партії";
-            // 
             // PackingListEditFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -929,6 +925,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinationEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descriptionTBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -950,7 +947,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerOrdersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.packingNumberPartTBox.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
