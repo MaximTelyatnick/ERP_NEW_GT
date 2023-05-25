@@ -9315,6 +9315,7 @@ namespace ERP_NEW.BLL.Services
                 cells["B" + currentPosition].NumberFormat = "### ### ### ###";
 
                 cells["C" + currentPosition].HorizontalAlignment = HAlign.Center;
+
                 cells["C" + currentPosition].WrapText = true;
                 cells["C" + currentPosition].Value = contractorVatList[i].Srn;
 
