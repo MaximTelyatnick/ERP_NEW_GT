@@ -10084,7 +10084,8 @@ namespace ERP_NEW.BLL.Services
                         cells[vsS[HeaderColumn["Invoice_Date"] - 1] + currentPosition].Value = rowData[i].Invoice_Date;
                         cells[vsS[HeaderColumn["PeriodOrderPrice"] - 1] + currentPosition].Value = rowData[i].PeriodPrice;
                         cells[vsS[HeaderColumn["OrderRate"] - 1] + currentPosition].Value = rowData[i].Rate;
-                        cells[vsS[HeaderColumn["CreditSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
+                        if(HeaderColumn.ContainsKey("CreditSumUSD") || HeaderColumn.ContainsKey("CreditSumEUR") || HeaderColumn.ContainsKey("CreditSumRUB"))
+                           cells[vsS[HeaderColumn["CreditSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
                     }
                     if (rowData[i].AccountId > 0)
                     {
@@ -10119,8 +10120,10 @@ namespace ERP_NEW.BLL.Services
                         cells[vsS[HeaderColumn["Invoice_Date"] - 1] + currentPosition].Value = rowData[i].Invoice_Date;
                         cells[vsS[HeaderColumn["PeriodOrderPrice"] - 1] + currentPosition].Value = rowData[i].PeriodPrice;
                         cells[vsS[HeaderColumn["OrderRate"] - 1] + currentPosition].Value = rowData[i].Rate;
-                        if (HeaderColumn.ContainsKey("CreditSum"))
-                        cells[vsS[HeaderColumn["CreditSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
+
+                        //if (HeaderColumn.ContainsKey("CreditSum"))
+                        if (HeaderColumn.ContainsKey("CreditSumUSD") || HeaderColumn.ContainsKey("CreditSumEUR") || HeaderColumn.ContainsKey("CreditSumRUB"))
+                            cells[vsS[HeaderColumn["CreditSum" + rowData[i].CurrencyName] - 1] + currentPosition].Value = rowData[i].PeriodPriceCurrency;
                     }
                     if (rowData[i].AccountId > 0)
                     {
