@@ -9697,7 +9697,7 @@ namespace ERP_NEW.BLL.Services
 
         
 
-        public bool GetMSTrialBalanceByAccountsCurrency(DateTime startDate, DateTime endDate, string accountNum)
+        public bool  GetMSTrialBalanceByAccountsCurrency(DateTime startDate, DateTime endDate, string accountNum)
         {
             FbParameter[] Parameters =
                 {
