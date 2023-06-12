@@ -339,33 +339,52 @@ namespace ERP_NEW.DAL.EF
             csb = new FbConnectionStringBuilder()
             {
                 //DataSource = "localhost",
+                Database = "TVM_DB",
+                UserID = "sysdba",
+                Password = "masterkey",
+                Charset = "UTF8",
+                Pooling = true,
+                ConnectionLifeTime = 900,
+                DataSource = "10.0.0.50",
                 //Database = "TVM_DB",
                 //UserID = "sysdba",
                 //Password = "masterkey",
                 //Charset = "UTF8",
                 //Pooling = true,
                 //ConnectionLifeTime = 900
-                DataSource = "10.0.0.50",
+
+            };
+
+#if DEBUG
+            //csb = new FbConnectionStringBuilder()
+            //{
+            //    DataSource = "10.0.0.50",
+            //    Database = "TVM_DB_TEST",
+            //    UserID = "sysdba",
+            //    Password = "masterkey",
+            //    Charset = "UTF8",
+            //    Pooling = true,
+            //    ConnectionLifeTime = 900
+            //};
+            csb = new FbConnectionStringBuilder()
+            {
+                //DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
                 Pooling = true,
-                ConnectionLifeTime = 900
-
-            };
-
-#if DEBUG
-            csb = new FbConnectionStringBuilder()
-            {
+                ConnectionLifeTime = 900,
                 DataSource = "10.0.0.50",
-                Database = "TVM_DB_TEST",
-                UserID = "sysdba",
-                Password = "masterkey",
-                Charset = "UTF8",
-                Pooling = true,
-                ConnectionLifeTime = 900
+                //Database = "TVM_DB",
+                //UserID = "sysdba",
+                //Password = "masterkey",
+                //Charset = "UTF8",
+                //Pooling = true,
+                //ConnectionLifeTime = 900
+
             };
+
 #endif
 
             Connection.ConnectionString = csb.ConnectionString;
