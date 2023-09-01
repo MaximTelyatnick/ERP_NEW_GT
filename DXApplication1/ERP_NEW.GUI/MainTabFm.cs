@@ -870,6 +870,7 @@ namespace ERP_NEW.GUI
                 }
                 catch { }
             }
+            Application.Exit();
         }
 
         private void toolsBtn_ElementClick(object sender, NavElementEventArgs e)
