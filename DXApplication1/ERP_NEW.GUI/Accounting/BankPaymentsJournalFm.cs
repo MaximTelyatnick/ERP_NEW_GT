@@ -432,11 +432,35 @@ namespace ERP_NEW.GUI.Accounting
             CriteriaOperator op = bankPaymentsGridView.ActiveFilterCriteria;
             string filterString = DevExpress.Data.Filtering.CriteriaToWhereClauseHelper.GetDataSetWhere(op).ToString();
 
-            string replace_string = "Convert([Payment_Date], 'System.String') like";
-            string replaceable_string = "[Payment_Date] like";
+            string replace_string_date = "Convert([Payment_Date], 'System.String') like";
+            string replaceable_string_date = "[Payment_Date] like";
+            string replace_string_debitprice = "Convert([DebitPrice], 'System.String') like";
+            string replaceable_string_debitprice = "[DebitPrice] like";
+            string replace_string_debitpricecurrency = "Convert([DebitPriceCurrency], 'System.String') like";
+            string replaceable_string_debitpricecurrency = "[DebitPriceCurrency] like";
+            string replace_string_creditprice = "Convert([CreditPrice], 'System.String') like";
+            string replaceable_string_creditprice = "[CreditPrice] like";
+            string replace_string_creditPriceCurrency = "Convert([CreditPriceCurrency], 'System.String') like";
+            string replaceable_string_creditPriceCurrency = "[CreditPriceCurrency] like";
+            string replace_string_vatprice = "Convert([VatPrice], 'System.String') like";
+            string replaceable_string_vatprice = "[VatPrice] like";
+            string replace_string_customerorderprice = "Convert([CustomerOrderPrice], 'System.String') like";
+            string replaceable_string_customerorderprice = "[CustomerOrderPrice] like";
+            string replace_string_customerordercurrencyprice = "Convert([CustomerOrderCurrencyPrice], 'System.String') like";
+            string replaceable_string_customerordercurrencyprice = "[CustomerOrderCurrencyPrice] like";
 
 
-            filterString = filterString.Replace(replaceable_string, replace_string);
+
+            filterString = filterString.Replace(replaceable_string_date, replace_string_date);
+            filterString = filterString.Replace(replaceable_string_debitprice, replace_string_debitprice);
+            filterString = filterString.Replace(replaceable_string_debitpricecurrency, replace_string_debitpricecurrency);
+            filterString = filterString.Replace(replaceable_string_creditprice, replace_string_creditprice);
+            filterString = filterString.Replace(replaceable_string_creditPriceCurrency, replace_string_creditPriceCurrency);
+            filterString = filterString.Replace(replaceable_string_vatprice, replace_string_vatprice);
+            filterString = filterString.Replace(replaceable_string_customerorderprice, replace_string_customerorderprice);
+            filterString = filterString.Replace(replaceable_string_customerordercurrencyprice, replace_string_customerordercurrencyprice);
+
+
 
             IEnumerable<BankPaymentsInfoDTO> lst = (IEnumerable<BankPaymentsInfoDTO>)bankPaymentsBS.DataSource;
             DataTable dt = ToDataTable<BankPaymentsInfoDTO>(lst);
@@ -444,7 +468,7 @@ namespace ERP_NEW.GUI.Accounting
 
             List<BankPaymentsInfoDTO> rows = new List<BankPaymentsInfoDTO>();
             
-            dv.RowFilter = filterString;
+            dv.RowFilter = string.Format(filterString);
             
             DataTable table = dv.ToTable();
                         
