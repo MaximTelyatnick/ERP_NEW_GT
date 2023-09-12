@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -93,7 +94,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement60 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement61 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement62 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement94 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement64 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement65 = new DevExpress.XtraEditors.TileItemElement();
@@ -119,6 +119,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement84 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement85 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement87 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement88 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement89 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement93 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement90 = new DevExpress.XtraEditors.TileItemElement();
@@ -196,7 +197,6 @@
             this.toolActsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.storehouseTTNItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.classifiersCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
-            this.timeSheetItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.employeesInfoItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.contractorsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.weldWpsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -221,6 +221,7 @@
             this.storehouseSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.deliveryNameSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.businessCardItem = new DevExpress.XtraBars.Navigation.TileNavItem();
+            this.timeSheetItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.visitSheduleItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.infrastructureItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.palitraItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
@@ -243,8 +244,8 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -1774,28 +1775,6 @@
             this.classifiersCategory.AppearanceSelected.Options.UseBackColor = true;
             this.classifiersCategory.Caption = "Класифікатори";
             this.classifiersCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("classifiersCategory.Glyph")));
-            // 
-            // timeSheetItem
-            // 
-            this.timeSheetItem.Caption = "tileNavItem5";
-            this.timeSheetItem.Glyph = ((System.Drawing.Image)(resources.GetObject("timeSheetItem.Glyph")));
-            this.timeSheetItem.Name = "timeSheetItem";
-            this.timeSheetItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.timeSheetItem.OwnerCollection = this.classifiersCategory.Items;
-            // 
-            // 
-            // 
-            this.timeSheetItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.timeSheetItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.timeSheetItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement88.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement88.Image")));
-            tileItemElement88.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement88.Text = "Табель обліку робочого часу";
-            this.timeSheetItem.Tile.Elements.Add(tileItemElement88);
-            this.timeSheetItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.timeSheetItem.Tile.Name = "tileBarItem1";
             this.classifiersCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.employeesInfoItem,
             this.contractorsItem,
@@ -2276,6 +2255,28 @@
             this.businessCardItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.businessCardItem.Tile.Name = "tileBarItem1";
             // 
+            // timeSheetItem
+            // 
+            this.timeSheetItem.Caption = "tileNavItem5";
+            this.timeSheetItem.Glyph = ((System.Drawing.Image)(resources.GetObject("timeSheetItem.Glyph")));
+            this.timeSheetItem.Name = "timeSheetItem";
+            this.timeSheetItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.timeSheetItem.OwnerCollection = this.classifiersCategory.Items;
+            // 
+            // 
+            // 
+            this.timeSheetItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.timeSheetItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.timeSheetItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.timeSheetItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement88.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement88.Image")));
+            tileItemElement88.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement88.Text = "Табель обліку робочого часу";
+            this.timeSheetItem.Tile.Elements.Add(tileItemElement88);
+            this.timeSheetItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.timeSheetItem.Tile.Name = "tileBarItem1";
+            // 
             // visitSheduleItem
             // 
             this.visitSheduleItem.Caption = "Графік відвідувань";
@@ -2459,9 +2460,12 @@
             // toolsBtn
             // 
             this.toolsBtn.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right;
+            this.toolsBtn.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.toolsBtn.AppearanceSelected.BackColor = System.Drawing.Color.Gainsboro;
             this.toolsBtn.AppearanceSelected.Options.UseBackColor = true;
+            this.toolsBtn.AppearanceSelected.Options.UseForeColor = true;
             this.toolsBtn.Caption = "";
+            this.toolsBtn.Enabled = false;
             this.toolsBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("toolsBtn.Glyph")));
             this.toolsBtn.Name = "toolsBtn";
             this.toolsBtn.Visible = false;
