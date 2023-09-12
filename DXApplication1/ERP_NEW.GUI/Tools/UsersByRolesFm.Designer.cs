@@ -125,7 +125,6 @@
             this.userRolesGridView.GridControl = this.userRolesGrid;
             this.userRolesGridView.GroupCount = 1;
             this.userRolesGridView.Name = "userRolesGridView";
-            this.userRolesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.userRolesGridView.OptionsView.ShowAutoFilterRow = true;
             this.userRolesGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.departCol, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -208,7 +207,6 @@
             this.departmentCol});
             this.usersGridView.GridControl = this.usersGrid;
             this.usersGridView.Name = "usersGridView";
-            this.usersGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.usersGridView.OptionsView.ShowAutoFilterRow = true;
             this.usersGridView.OptionsView.ShowGroupPanel = false;
             // 
@@ -301,7 +299,6 @@
             this.priceAttributeCol});
             this.userTasksGridView.GridControl = this.userTasksGrid;
             this.userTasksGridView.Name = "userTasksGridView";
-            this.userTasksGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.userTasksGridView.OptionsView.ShowAutoFilterRow = true;
             this.userTasksGridView.OptionsView.ShowGroupPanel = false;
             // 
