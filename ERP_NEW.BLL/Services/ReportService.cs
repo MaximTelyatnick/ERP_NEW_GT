@@ -13067,50 +13067,60 @@ namespace ERP_NEW.BLL.Services
 
                     // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
 
-                    //if (j == 13)
-                    //{
-                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
-                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
-
-                    //    continue;
-                    //}
-
-                    if (j == 9)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
-
-                    if (j == 30)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
-
-                    if (j == 17)
+                    if (j == 5)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
                         cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
+
                         continue;
                     }
+
+                    if (j == 28)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "8";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
+
+                        continue;
+                    }
+
+                    //if (j == 9)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
+
+                    //if (j == 30)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
+
+                    //if (j == 17)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    //cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
 
                     //if (j == 8)
                     //{

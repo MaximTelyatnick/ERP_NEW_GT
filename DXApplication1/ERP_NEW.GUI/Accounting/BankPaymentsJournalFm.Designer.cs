@@ -66,6 +66,11 @@
             this.excelExportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addTemplateBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addTemplateKursBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.addTemplateMenuBtn = new DevExpress.XtraBars.BarSubItem();
+            this.addTemplateCorrect644Btn = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -109,11 +114,6 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.addTemplateMenuBtn = new DevExpress.XtraBars.BarSubItem();
-            this.addTemplateCorrect644Btn = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -534,6 +534,45 @@
             this.addTemplateKursBtn.Name = "addTemplateKursBtn";
             this.addTemplateKursBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.addTemplateKursBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addTemplateKursBtn_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 32;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // addTemplateMenuBtn
+            // 
+            this.addTemplateMenuBtn.Caption = "Додати за шаблоном";
+            this.addTemplateMenuBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addTemplateMenuBtn.Glyph")));
+            this.addTemplateMenuBtn.Id = 33;
+            this.addTemplateMenuBtn.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateKursBtn),
+            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateCorrect644Btn)});
+            this.addTemplateMenuBtn.Name = "addTemplateMenuBtn";
+            this.addTemplateMenuBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // addTemplateCorrect644Btn
+            // 
+            this.addTemplateCorrect644Btn.Caption = "Корегування 644";
+            this.addTemplateCorrect644Btn.Glyph = ((System.Drawing.Image)(resources.GetObject("addTemplateCorrect644Btn.Glyph")));
+            this.addTemplateCorrect644Btn.Id = 34;
+            this.addTemplateCorrect644Btn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addTemplateCorrect644Btn.LargeGlyph")));
+            this.addTemplateCorrect644Btn.Name = "addTemplateCorrect644Btn";
+            this.addTemplateCorrect644Btn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addTemplateCorrect644Btn_ItemClick);
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "barButtonItem3";
+            this.barButtonItem3.Id = 35;
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 36;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // ribbonPage1
             // 
@@ -1067,45 +1106,6 @@
             // 
             this.popupMenu1.Name = "popupMenu1";
             this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 32;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // addTemplateMenuBtn
-            // 
-            this.addTemplateMenuBtn.Caption = "Додати за шаблоном";
-            this.addTemplateMenuBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addTemplateMenuBtn.Glyph")));
-            this.addTemplateMenuBtn.Id = 33;
-            this.addTemplateMenuBtn.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateBtn),
-            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateKursBtn),
-            new DevExpress.XtraBars.LinkPersistInfo(this.addTemplateCorrect644Btn)});
-            this.addTemplateMenuBtn.Name = "addTemplateMenuBtn";
-            this.addTemplateMenuBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // addTemplateCorrect644Btn
-            // 
-            this.addTemplateCorrect644Btn.Caption = "Корегування 644";
-            this.addTemplateCorrect644Btn.Glyph = ((System.Drawing.Image)(resources.GetObject("addTemplateCorrect644Btn.Glyph")));
-            this.addTemplateCorrect644Btn.Id = 34;
-            this.addTemplateCorrect644Btn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addTemplateCorrect644Btn.LargeGlyph")));
-            this.addTemplateCorrect644Btn.Name = "addTemplateCorrect644Btn";
-            this.addTemplateCorrect644Btn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addTemplateCorrect644Btn_ItemClick);
-            // 
-            // barButtonItem3
-            // 
-            this.barButtonItem3.Caption = "barButtonItem3";
-            this.barButtonItem3.Id = 35;
-            this.barButtonItem3.Name = "barButtonItem3";
-            // 
-            // barButtonItem4
-            // 
-            this.barButtonItem4.Caption = "barButtonItem4";
-            this.barButtonItem4.Id = 36;
-            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // BankPaymentsJournalFm
             // 

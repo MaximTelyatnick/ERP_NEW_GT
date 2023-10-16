@@ -49,9 +49,7 @@ namespace ERP_NEW.GUI
             catch (Exception ex)
             {
                 MessageBox.Show("Виникла помилка. " + ex.Message, "Інфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //throw;
             }
-            
             
             mutex.Close();
         }
