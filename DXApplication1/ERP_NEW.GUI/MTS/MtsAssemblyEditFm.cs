@@ -109,7 +109,7 @@ namespace ERP_NEW.GUI.MTS
 
             citiesBS.DataSource = cityService.GetCities();
             contractorsBS.DataSource = contractorsService.GetContractors(2); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
-            employeesBS.DataSource = employeesService.GetEmployeesWorking();
+            employeesBS.DataSource = employeesService.GetEmployeesWorkingAll();
 
             splashScreenManager.CloseWaitForm();
         }

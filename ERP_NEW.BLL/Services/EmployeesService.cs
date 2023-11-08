@@ -141,6 +141,14 @@ namespace ERP_NEW.BLL.Services
 
             return mapper.Map<IEnumerable<EmployeesInfo>, List<EmployeesInfoDTO>>(employeesInfo.SQLExecuteProc(procName));
         }
+
+        public IEnumerable<EmployeesInfoDTO> GetEmployeesWorkingAll()
+        {
+            string procName = @"select * from ""GetEmployeesWorkingAll""";
+
+            return mapper.Map<IEnumerable<EmployeesInfo>, List<EmployeesInfoDTO>>(employeesInfo.SQLExecuteProc(procName));
+        }
+
         public IEnumerable<EmployeesInfoDTO> GetEmployeesWorkingOnline()
         {
             string procName = @"select * from ""GetEmployeesWorkingOnline""";
