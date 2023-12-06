@@ -125,5 +125,29 @@ namespace ERP_NEW.GUI.Properties {
                 this["UserUsedSimpleEmployeeForm"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserFolderRoute {
+            get {
+                return ((string)(this["UserFolderRoute"]));
+            }
+            set {
+                this["UserFolderRoute"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ApplicationSkinName {
+            get {
+                return ((string)(this["ApplicationSkinName"]));
+            }
+            set {
+                this["ApplicationSkinName"] = value;
+            }
+        }
     }
 }
