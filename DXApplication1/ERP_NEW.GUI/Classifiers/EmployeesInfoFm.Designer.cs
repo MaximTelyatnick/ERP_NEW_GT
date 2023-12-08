@@ -666,7 +666,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "EmployeesInfoFm";
             this.ShowIcon = false;
-            this.Text = "Співробітники підприємства";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.propertyGridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeesInfoGridView)).EndInit();
