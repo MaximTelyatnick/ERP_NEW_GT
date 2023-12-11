@@ -72,7 +72,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9DBF0F011D04DA13F421B2B86A7D452A9A77855B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>707F59B4B86E4DF68EFFB1C7A4C89EB33ECFB2C3</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>ERP_NEW.GUI_3_TemporaryKey.pfx</ManifestKeyFile>
@@ -918,6 +918,12 @@
     <Compile Include="Classifiers\EmployeesInfoFm.Designer.cs">
       <DependentUpon>EmployeesInfoFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classifiers\EmployeesMiniFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Classifiers\EmployeesMiniFm.Designer.cs">
+      <DependentUpon>EmployeesMiniFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classifiers\InfoFormFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1091,6 +1097,12 @@
     </Compile>
     <Compile Include="Contractors\ContractorEditFm.Designer.cs">
       <DependentUpon>ContractorEditFm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contractors\ContractorFindDuplicateFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractors\ContractorFindDuplicateFm.Designer.cs">
+      <DependentUpon>ContractorFindDuplicateFm.cs</DependentUpon>
     </Compile>
     <Compile Include="Contractors\ContractorsFm.cs">
       <SubType>Form</SubType>
@@ -2035,6 +2047,9 @@
     <EmbeddedResource Include="Classifiers\EmployeesInfoFm.resx">
       <DependentUpon>EmployeesInfoFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Classifiers\EmployeesMiniFm.resx">
+      <DependentUpon>EmployeesMiniFm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Classifiers\InfoFormFm.resx">
       <DependentUpon>InfoFormFm.cs</DependentUpon>
     </EmbeddedResource>
@@ -2121,6 +2136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contractors\ContractorEditFm.resx">
       <DependentUpon>ContractorEditFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractors\ContractorFindDuplicateFm.resx">
+      <DependentUpon>ContractorFindDuplicateFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contractors\ContractorsFm.resx">
       <DependentUpon>ContractorsFm.cs</DependentUpon>

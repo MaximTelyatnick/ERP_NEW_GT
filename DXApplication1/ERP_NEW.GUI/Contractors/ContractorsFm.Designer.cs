@@ -39,6 +39,7 @@
             this.deleteBtn = new DevExpress.XtraBars.BarButtonItem();
             this.refreshBtn = new DevExpress.XtraBars.BarButtonItem();
             this.orderCheckItem = new DevExpress.XtraBars.BarCheckItem();
+            this.dublicateSearchBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -125,9 +126,10 @@
             this.editBtn,
             this.deleteBtn,
             this.refreshBtn,
-            this.orderCheckItem});
+            this.orderCheckItem,
+            this.dublicateSearchBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 7;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -193,6 +195,16 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.orderCheckItem.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.orderCheckItem_CheckedChanged);
             // 
+            // dublicateSearchBtn
+            // 
+            this.dublicateSearchBtn.Caption = "Пошук дублів";
+            this.dublicateSearchBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("dublicateSearchBtn.Glyph")));
+            this.dublicateSearchBtn.Id = 6;
+            this.dublicateSearchBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("dublicateSearchBtn.LargeGlyph")));
+            this.dublicateSearchBtn.Name = "dublicateSearchBtn";
+            this.dublicateSearchBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.dublicateSearchBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dublicateSearchBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -215,6 +227,7 @@
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.orderCheckItem);
+            this.ribbonPageGroup2.ItemLinks.Add(this.dublicateSearchBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Функції";
             // 
@@ -267,7 +280,6 @@
             this.contractorsGridView.GridControl = this.contractorsGrid;
             this.contractorsGridView.GroupCount = 1;
             this.contractorsGridView.Name = "contractorsGridView";
-            this.contractorsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.contractorsGridView.OptionsView.ShowAutoFilterRow = true;
             this.contractorsGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.ownNameCol, DevExpress.Data.ColumnSortOrder.Ascending)});
@@ -411,7 +423,6 @@
             this.contractorContactAddressGridView.GridControl = this.contractorContactAddressGrid;
             this.contractorContactAddressGridView.Name = "contractorContactAddressGridView";
             this.contractorContactAddressGridView.OptionsBehavior.ReadOnly = true;
-            this.contractorContactAddressGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.contractorContactAddressGridView.OptionsDetail.EnableDetailToolTip = true;
             this.contractorContactAddressGridView.OptionsView.ShowGroupPanel = false;
             this.contractorContactAddressGridView.OptionsView.ShowIndicator = false;
@@ -504,7 +515,6 @@
             this.contactPersonAddressGridView.GridControl = this.contactPersonAddressGrid;
             this.contactPersonAddressGridView.Name = "contactPersonAddressGridView";
             this.contactPersonAddressGridView.OptionsBehavior.ReadOnly = true;
-            this.contactPersonAddressGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.contactPersonAddressGridView.OptionsDetail.EnableDetailToolTip = true;
             this.contactPersonAddressGridView.OptionsView.ColumnAutoWidth = true;
             this.contactPersonAddressGridView.OptionsView.ShowGroupPanel = false;
@@ -681,5 +691,6 @@
         private DevExpress.XtraBars.BarButtonItem refreshBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarCheckItem orderCheckItem;
+        private DevExpress.XtraBars.BarButtonItem dublicateSearchBtn;
     }
 }

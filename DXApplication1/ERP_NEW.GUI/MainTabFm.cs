@@ -245,10 +245,18 @@ namespace ERP_NEW.GUI
                     deliveryStoreRemainsFm.Show();
                     break;
                 case "employeesInfoItem":
-                    EmployeesInfoFm employeesInfoFm = new EmployeesInfoFm(userTasksDTO);
-                    employeesInfoFm.Text = "Співробітники";
-                    employeesInfoFm.MdiParent = this;
-                    employeesInfoFm.Show();
+                    if (!Properties.Settings.Default.UserUsedSimpleEmployeeForm)
+                    {
+                        EmployeesInfoFm employeesInfoFm = new EmployeesInfoFm(userTasksDTO);
+                        employeesInfoFm.Text = "Співробітники";
+                        employeesInfoFm.MdiParent = this;
+                        employeesInfoFm.Show();
+                    }else{
+                        EmployeesMiniFm employeesminiFm = new EmployeesMiniFm(userTasksDTO);
+                        employeesminiFm.Text = "Співробітники";
+                        employeesminiFm.MdiParent = this;
+                        employeesminiFm.Show();
+                    }
                     break;
                 case "contractorsItem":
                     ContractorsFm contractorsFm = new ContractorsFm(userTasksDTO);
@@ -786,7 +794,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            // return 690;
+             return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
