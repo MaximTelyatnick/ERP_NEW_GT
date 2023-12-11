@@ -9291,6 +9291,7 @@ namespace ERP_NEW.BLL.Services
                 return false;
             }
 
+
             //List<ContractorVatDTO> contractorVatList = contractorVatData.ToList();
 
 
