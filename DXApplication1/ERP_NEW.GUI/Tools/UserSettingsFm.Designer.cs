@@ -1,0 +1,336 @@
+﻿namespace ERP_NEW.GUI.Tools
+{
+    partial class UserSettingsFm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsFm));
+            this.useSimpleEmmloyeeSwitch = new DevExpress.XtraEditors.ToggleSwitch();
+            this.label1 = new System.Windows.Forms.Label();
+            this.userRouteFolderEdit = new DevExpress.XtraEditors.TextEdit();
+            this.openFileBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.appSkinEdit = new DevExpress.XtraEditors.PopupContainerEdit();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.styleMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.s = new DevExpress.XtraBars.BarButtonItem();
+            this.SkinsLink = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.useHolidaySwitch = new DevExpress.XtraEditors.ToggleSwitch();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // useSimpleEmmloyeeSwitch
+            // 
+            this.useSimpleEmmloyeeSwitch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.useSimpleEmmloyeeSwitch.Location = new System.Drawing.Point(486, 19);
+            this.useSimpleEmmloyeeSwitch.Name = "useSimpleEmmloyeeSwitch";
+            this.useSimpleEmmloyeeSwitch.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.useSimpleEmmloyeeSwitch.Properties.OffText = "Викл";
+            this.useSimpleEmmloyeeSwitch.Properties.OnText = "Вкл";
+            this.useSimpleEmmloyeeSwitch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.useSimpleEmmloyeeSwitch.Size = new System.Drawing.Size(95, 24);
+            this.useSimpleEmmloyeeSwitch.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(258, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Використовувати спрощену форму Співробітники";
+            // 
+            // userRouteFolderEdit
+            // 
+            this.userRouteFolderEdit.Enabled = false;
+            this.userRouteFolderEdit.Location = new System.Drawing.Point(138, 78);
+            this.userRouteFolderEdit.Name = "userRouteFolderEdit";
+            this.userRouteFolderEdit.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.userRouteFolderEdit.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.userRouteFolderEdit.Size = new System.Drawing.Size(343, 20);
+            this.userRouteFolderEdit.TabIndex = 77;
+            // 
+            // openFileBtn
+            // 
+            this.openFileBtn.Image = ((System.Drawing.Image)(resources.GetObject("openFileBtn.Image")));
+            this.openFileBtn.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.openFileBtn.Location = new System.Drawing.Point(487, 76);
+            this.openFileBtn.Name = "openFileBtn";
+            this.openFileBtn.Size = new System.Drawing.Size(29, 23);
+            this.openFileBtn.TabIndex = 76;
+            this.openFileBtn.ToolTip = "Вибрати файл";
+            this.openFileBtn.Click += new System.EventHandler(this.openFileBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Папка звітів";
+            // 
+            // appSkinEdit
+            // 
+            this.appSkinEdit.Cursor = System.Windows.Forms.Cursors.Default;
+            this.appSkinEdit.Location = new System.Drawing.Point(138, 104);
+            this.appSkinEdit.MenuManager = this.barManager1;
+            this.appSkinEdit.Name = "appSkinEdit";
+            this.barManager1.SetPopupContextMenu(this.appSkinEdit, this.styleMenu);
+            this.appSkinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.appSkinEdit.Size = new System.Drawing.Size(413, 20);
+            this.appSkinEdit.TabIndex = 83;
+            this.appSkinEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.appSkinEdit_ButtonClick);
+            // 
+            // barManager1
+            // 
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.s,
+            this.SkinsLink});
+            this.barManager1.MaxItemId = 3;
+            this.barManager1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barManager1_ItemClick);
+            // 
+            // styleMenu
+            // 
+            this.styleMenu.Manager = this.barManager1;
+            this.styleMenu.Name = "styleMenu";
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(594, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 416);
+            this.barDockControlBottom.Size = new System.Drawing.Size(594, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 416);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(594, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 416);
+            // 
+            // s
+            // 
+            this.s.Caption = "barButtonItem1";
+            this.s.Id = 0;
+            this.s.Name = "s";
+            // 
+            // SkinsLink
+            // 
+            this.SkinsLink.Caption = "Skins";
+            this.SkinsLink.Id = 2;
+            this.SkinsLink.Name = "SkinsLink";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // clearBtn
+            // 
+            this.clearBtn.Image = ((System.Drawing.Image)(resources.GetObject("clearBtn.Image")));
+            this.clearBtn.Location = new System.Drawing.Point(522, 76);
+            this.clearBtn.Name = "clearBtn";
+            this.clearBtn.Size = new System.Drawing.Size(29, 23);
+            this.clearBtn.TabIndex = 78;
+            this.clearBtn.ToolTip = "Очистити";
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(594, 416);
+            this.xtraTabControl1.TabIndex = 7;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Controls.Add(this.useHolidaySwitch);
+            this.xtraTabPage1.Controls.Add(this.label4);
+            this.xtraTabPage1.Controls.Add(this.label3);
+            this.xtraTabPage1.Controls.Add(this.clearBtn);
+            this.xtraTabPage1.Controls.Add(this.appSkinEdit);
+            this.xtraTabPage1.Controls.Add(this.openFileBtn);
+            this.xtraTabPage1.Controls.Add(this.userRouteFolderEdit);
+            this.xtraTabPage1.Controls.Add(this.useSimpleEmmloyeeSwitch);
+            this.xtraTabPage1.Controls.Add(this.label1);
+            this.xtraTabPage1.Controls.Add(this.label2);
+            this.xtraTabPage1.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.Image")));
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(588, 385);
+            this.xtraTabPage1.Text = "Налаштування додатку";
+            // 
+            // useHolidaySwitch
+            // 
+            this.useHolidaySwitch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.useHolidaySwitch.Location = new System.Drawing.Point(486, 47);
+            this.useHolidaySwitch.Name = "useHolidaySwitch";
+            this.useHolidaySwitch.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.useHolidaySwitch.Properties.OffText = "Викл";
+            this.useHolidaySwitch.Properties.OnText = "Вкл";
+            this.useHolidaySwitch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.useHolidaySwitch.Size = new System.Drawing.Size(95, 24);
+            this.useHolidaySwitch.TabIndex = 85;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 52);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 13);
+            this.label4.TabIndex = 86;
+            this.label4.Text = "Свята у табелі";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(17, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(88, 13);
+            this.label3.TabIndex = 84;
+            this.label3.Text = "Стиль програми";
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(588, 385);
+            this.xtraTabPage2.Text = "xtraTabPage2";
+            // 
+            // UserSettingsFm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(594, 416);
+            this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "UserSettingsFm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Налаштування користувача";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserSettingsFm_FormClosing);
+            this.Load += new System.EventHandler(this.UserSettingsFm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.styleMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private DevExpress.XtraEditors.ToggleSwitch useSimpleEmmloyeeSwitch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private DevExpress.XtraEditors.TextEdit userRouteFolderEdit;
+        private DevExpress.XtraEditors.SimpleButton openFileBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarLinkContainerItem SkinsLink;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarButtonItem s;
+        private DevExpress.XtraBars.PopupMenu styleMenu;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private DevExpress.XtraEditors.PopupContainerEdit appSkinEdit;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.SimpleButton clearBtn;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private System.Windows.Forms.Label label3;
+        private DevExpress.XtraEditors.ToggleSwitch useHolidaySwitch;
+        private System.Windows.Forms.Label label4;
+    }
+}

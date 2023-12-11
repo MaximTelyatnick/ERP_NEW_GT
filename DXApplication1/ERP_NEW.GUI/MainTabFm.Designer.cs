@@ -2614,6 +2614,7 @@
             this.userFotoEdit.Properties.ZoomAccelerationFactor = 1D;
             this.userFotoEdit.Size = new System.Drawing.Size(75, 63);
             this.userFotoEdit.TabIndex = 0;
+            this.userFotoEdit.Click += new System.EventHandler(this.userFotoEdit_Click);
             // 
             // documentManager
             // 

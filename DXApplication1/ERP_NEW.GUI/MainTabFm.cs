@@ -786,7 +786,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+            // return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
@@ -902,6 +902,12 @@ namespace ERP_NEW.GUI
             userService.TryAuthorize(UserService.AuthorizatedUser.AccountNumber);
 
             UserAccessMenu();
-        }   
+        }
+
+        private void userFotoEdit_Click(object sender, EventArgs e)
+        {
+            UserSettingsFm userSettingsFm = new UserSettingsFm();
+            userSettingsFm.ShowDialog();
+        }
     }
 }

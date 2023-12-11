@@ -3143,18 +3143,18 @@
   </data>
   <data name="toolsBtn.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAZdEVYdFNvZnR3YXJlAEFkb2JlIEltYWdlUmVhZHlxyWU8AAAAMnRFWHRUaXRsZQBDdXN0b21l
-        cjtFbXBsb3llZTtQZXJzb247Q29udGFjdDtVc2VyO0NsaWVudH4RNugAAAH4SURBVFhHxdaxS1VhGMdx
-        QRcHh8BoVWppyL3VEApsCPpjoiFCF8FddHEPGhqFXGxVgoiGIAIlR7FoMEg4/n6H8xze571frw7e6/BZ
-        3vO8z/fcex2caJrmVg0cPF/ZuY5leSe/5H/nWN7LC6E7SfRS3Gi4siHNFbaF7vail+JGw4WnQkHyUmhH
-        K3opbjRc8NdOMfJBaEcreiluNFz4LhQjP4R2tKKX4kbDhb9CMfJbaEcreiluNFyg0GX+Ce1oRS/FjYY7
-        i0KhYXyHdvW9FDca7mwKRYbxHdrV91LcaLizJhQZxndoV99LcaPhzn05EQoRz/oO7ep7KW40XHgjFCOv
-        hHa0opfiRsOFR0Ix4lna0YpeihsNVz4KBUu7Qnd70Utxo+HKgpwJhc3PPEN3e9FLcaNh8ExOpY7/ET+j
-        O0n0Utxo+BJ35bX4J/kkb+We0OyA6KW40XBlEs5qU3CWRC/FjYYLj+WzPCjOav7r/yKepeet6KW4wfCc
-        rMg3id96T6alnp2RA4k531mVeUmz0UtxK4buyJb4/71YWNqXJ+Kv25bkq9Csd3iXd17rBR7KT6FltfMO
-        Pat5p3f3vRQ3PZyVQ6EFN8G7Z6NHL7BeDI/KevToBUb56cNh9OgF6MKNix69wFE9PAJH0Rt4gXHDw3HC
-        w3HCw/FpJi4ACnRMQSftMegAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAABl0RVh0U29m
+        dHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAAydEVYdFRpdGxlAEN1c3RvbWVyO0VtcGxveWVlO1Bl
+        cnNvbjtDb250YWN0O1VzZXI7Q2xpZW50fhE26AAAAfhJREFUWEfF1rFLVWEYx3FBFweHwGhVamnIvdUQ
+        CmwI+mOiIUIXwV10cQ8aGoVcbFWCiIYgAiVHsWgwSDj+fofzHN7nvV+vDt7r8Fne87zP99x7HZxomuZW
+        DRw8X9m5jmV5J7/kf+dY3ssLoTtJ9FLcaLiyIc0VtoXu9qKX4kbDhadCQfJSaEcreiluNFzw104x8kFo
+        Ryt6KW40XPguFCM/hHa0opfiRsOFv0Ix8ltoRyt6KW40XKDQZf4J7WhFL8WNhjuLQqFhfId29b0UNxru
+        bApFhvEd2tX3UtxouLMmFBnGd2hX30txo+HOfTkRChHP+g7t6nspbjRceCMUI6+EdrSil+JGw4VHQjHi
+        WdrRil6KGw1XPgoFS7tCd3vRS3Gj4cqCnAmFzc88Q3d70Utxo2HwTE6ljv8RP6M7SfRS3Gj4Enfltfgn
+        +SRv5Z7Q7IDopbjRcGUSzmpTcJZEL8WNhguP5bM8KM5q/uv/Ip6l563opbjB8JysyDeJ33pPpqWenZED
+        iTnfWZV5SbPRS3Erhu7Ilvj/vVhY2pcn4q/bluSr0Kx3eJd3XusFHspPoWW18w49q3mnd/e9FDc9nJVD
+        oQU3wbtno0cvsF4Mj8p69OgFRvnpw2H06AXowo2LHr3AUT08AkfRG3iBccPDccLDccLD8WkmLgAKdExB
+        J+0x6AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="godModBtn.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

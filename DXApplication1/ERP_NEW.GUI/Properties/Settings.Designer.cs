@@ -12,7 +12,7 @@ namespace ERP_NEW.GUI.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -111,6 +111,42 @@ namespace ERP_NEW.GUI.Properties {
             }
             set {
                 this["PackingListCustonerOrderInfo"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UserUsedSimpleEmployeeForm {
+            get {
+                return ((bool)(this["UserUsedSimpleEmployeeForm"]));
+            }
+            set {
+                this["UserUsedSimpleEmployeeForm"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserFolderRoute {
+            get {
+                return ((string)(this["UserFolderRoute"]));
+            }
+            set {
+                this["UserFolderRoute"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ApplicationSkinName {
+            get {
+                return ((string)(this["ApplicationSkinName"]));
+            }
+            set {
+                this["ApplicationSkinName"] = value;
             }
         }
     }
