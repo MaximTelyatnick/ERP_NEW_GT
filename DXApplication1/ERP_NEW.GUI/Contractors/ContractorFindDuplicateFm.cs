@@ -29,34 +29,40 @@ namespace ERP_NEW.GUI.Contractors
         public ContractorFindDuplicateFm(UserTasksDTO userTaskDTO)
         {
             InitializeComponent();
-            //this.userTasksDTO = userTaskDTO;
+            this.userTasksDTO = userTaskDTO;
 
-            //LoadData();
+            LoadData();
 
-            //contractorsMainEdit.DataBindings.Add("EditValue", contractorsMainBS, "ContractorId", true, DataSourceUpdateMode.OnPropertyChanged);
-            //contractorsMainEdit.Properties.DataSource = contractorsMainBS;
-            //contractorsMainEdit.Properties.ValueMember = "Id";
-            //contractorsMainEdit.Properties.DisplayMember = "Name";
-            //contractorsMainEdit.Properties.NullText = "Немає данних";
+            contractorsMainEdit.DataBindings.Add("EditValue", contractorsMainBS, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
+            contractorsMainEdit.Properties.DataSource = contractorsMainBS;
+            contractorsMainEdit.Properties.ValueMember = "Id";
+            contractorsMainEdit.Properties.DisplayMember = "Name";
+            contractorsMainEdit.Properties.NullText = "Немає данних";
 
-            //contractorsReplaceEdit.DataBindings.Add("EditValue", contractorsReplaceBS, "ContractorId", true, DataSourceUpdateMode.OnPropertyChanged);
-            //contractorsReplaceEdit.Properties.DataSource = contractorsReplaceBS;
-            //contractorsReplaceEdit.Properties.ValueMember = "Id";
-            //contractorsReplaceEdit.Properties.DisplayMember = "Name";
-            //contractorsReplaceEdit.Properties.NullText = "Немає данних";
+            contractorsReplaceEdit.DataBindings.Add("EditValue", contractorsReplaceBS, "Id", true, DataSourceUpdateMode.OnPropertyChanged);
+            contractorsReplaceEdit.Properties.DataSource = contractorsReplaceBS;
+            contractorsReplaceEdit.Properties.ValueMember = "Id";
+            contractorsReplaceEdit.Properties.DisplayMember = "Name";
+            contractorsReplaceEdit.Properties.NullText = "Немає данних";
 
         }
 
         private void LoadData()
         {
-            customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            currencyService = Program.kernel.Get<ICurrencyService>();
             contractorsService = Program.kernel.Get<IContractorsService>();
-            mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
 
             contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);
             
+        }
+
+        private void LoadFullDataByContractorId()
+        {
+            contractorsService = Program.kernel.Get<IContractorsService>();
+
+            contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
+            contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);
+
         }
 
         private void replaceBtn_Click(object sender, EventArgs e)

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorFindDuplicateFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.contractorsMainEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.srnCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contractorsReplaceEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.checkBtn = new DevExpress.XtraEditors.SimpleButton();
             this.replaceBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.srnCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsMainEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsReplaceEdit.Properties)).BeginInit();
@@ -58,7 +58,7 @@
             this.contractorsMainEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsMainEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "Очистити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsMainEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Очистити", null, null, true)});
             this.contractorsMainEdit.Properties.ImmediatePopup = true;
             this.contractorsMainEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsMainEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
@@ -81,6 +81,29 @@
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // nameCol
+            // 
+            this.nameCol.Caption = "Наименування";
+            this.nameCol.FieldName = "Name";
+            this.nameCol.Name = "nameCol";
+            this.nameCol.OptionsColumn.AllowEdit = false;
+            this.nameCol.OptionsColumn.AllowFocus = false;
+            this.nameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.nameCol.Visible = true;
+            this.nameCol.VisibleIndex = 0;
+            this.nameCol.Width = 760;
+            // 
+            // srnCol
+            // 
+            this.srnCol.Caption = "Код ЄРДПОУ";
+            this.srnCol.FieldName = "Srn";
+            this.srnCol.Name = "srnCol";
+            this.srnCol.OptionsColumn.AllowEdit = false;
+            this.srnCol.OptionsColumn.AllowFocus = false;
+            this.srnCol.Visible = true;
+            this.srnCol.VisibleIndex = 1;
+            this.srnCol.Width = 152;
+            // 
             // contractorsReplaceEdit
             // 
             this.contractorsReplaceEdit.Location = new System.Drawing.Point(12, 72);
@@ -88,7 +111,7 @@
             this.contractorsReplaceEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsReplaceEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("gridLookUpEdit1.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Очистити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsReplaceEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Очистити", null, null, true)});
             this.contractorsReplaceEdit.Properties.ImmediatePopup = true;
             this.contractorsReplaceEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsReplaceEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
@@ -110,6 +133,29 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Наименування";
+            this.gridColumn1.FieldName = "Name";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.OptionsColumn.AllowFocus = false;
+            this.gridColumn1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 760;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Код ЄРДПОУ";
+            this.gridColumn2.FieldName = "Srn";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.OptionsColumn.AllowFocus = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 152;
             // 
             // memoEdit1
             // 
@@ -136,6 +182,7 @@
             // 
             // checkBtn
             // 
+            this.checkBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.checkBtn.Location = new System.Drawing.Point(12, 389);
             this.checkBtn.Name = "checkBtn";
             this.checkBtn.Size = new System.Drawing.Size(215, 35);
@@ -151,52 +198,6 @@
             this.replaceBtn.TabIndex = 10;
             this.replaceBtn.Text = "Замінити";
             this.replaceBtn.Click += new System.EventHandler(this.replaceBtn_Click);
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "Наименування";
-            this.gridColumn1.FieldName = "Name";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 760;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Код ЄРДПОУ";
-            this.gridColumn2.FieldName = "Srn";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.OptionsColumn.AllowFocus = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 152;
-            // 
-            // nameCol
-            // 
-            this.nameCol.Caption = "Наименування";
-            this.nameCol.FieldName = "Name";
-            this.nameCol.Name = "nameCol";
-            this.nameCol.OptionsColumn.AllowEdit = false;
-            this.nameCol.OptionsColumn.AllowFocus = false;
-            this.nameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.nameCol.Visible = true;
-            this.nameCol.VisibleIndex = 0;
-            this.nameCol.Width = 760;
-            // 
-            // srnCol
-            // 
-            this.srnCol.Caption = "Код ЄРДПОУ";
-            this.srnCol.FieldName = "Srn";
-            this.srnCol.Name = "srnCol";
-            this.srnCol.OptionsColumn.AllowEdit = false;
-            this.srnCol.OptionsColumn.AllowFocus = false;
-            this.srnCol.Visible = true;
-            this.srnCol.VisibleIndex = 1;
-            this.srnCol.Width = 152;
             // 
             // ContractorFindDuplicateFm
             // 
