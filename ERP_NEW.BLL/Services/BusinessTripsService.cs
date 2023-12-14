@@ -217,7 +217,10 @@ namespace ERP_NEW.BLL.Services
 
             return query.OrderBy(o => o.DecreeDate).ThenBy(o => Decimal.Parse(o.Number.Replace('/', ','))).ToList();
         }
-
+        //public IEnumerable<BusinessTripsDecreeDTO> GetBusinessTrips()
+        //{
+        //    return mapper.Map<IEnumerable<BusinessTripsDecree>, List<BusinessTripsDecreeDTO>>(businessTripsDecree.GetAll());
+        //}
         public IEnumerable<BusinessTripsJournalDTO> GetBusinessTripsByDecree(int decreeId)
         {
             FbParameter[] Parameters =

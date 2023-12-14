@@ -17,6 +17,7 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<ContractorsDTO> GetOwnContractor();
         IEnumerable<ContactPersonsDTO> GetContactPersons(int contractorId);
         bool CheckContractor(ContractorsDTO contractor);
+        IEnumerable<AgreementOrderDTO> GetAgreementOrder();
         IEnumerable<AgreementJournalDTO> GetAgreementJournal(DateTime beginDate, DateTime endDate);
         IEnumerable<AgreementDocumentsDTO> GetAgreementsDocuments();
         IEnumerable<AgreementsTypeDTO> GetAgreementsType();

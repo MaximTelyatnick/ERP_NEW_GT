@@ -10,6 +10,7 @@ namespace ERP_NEW.BLL.Interfaces
 {
     public interface ICalcWithBuyersService
     {
+        IEnumerable<CalcWithBuyersDTO> GetCalcWithBuyers();
         IEnumerable<CalcWithBuyersInfoDTO> GetCalcWithBuyersJournal(DateTime beginDate, DateTime endDate);
         IEnumerable<CalcWithBuyersSpecDTO> GetCalcWithBuyersSpec(int id);
         IEnumerable<CustomerOrdersForCWBDTO> GetCustomerOrdersByCWBId(int id);

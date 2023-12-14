@@ -21,9 +21,20 @@ namespace ERP_NEW.GUI.Contractors
         private ICurrencyService currencyService;
         private IMtsSpecificationsService mtsSpecificationService;
 
+        private IBankPaymentsService bankPaymentsService;
+        private IBusinessTripsService businessTripsService;
+
 
         private BindingSource contractorsMainBS = new BindingSource();
         private BindingSource contractorsReplaceBS = new BindingSource();
+        private List<AgreementOrderDTO> agreementOrderByAgreementId = new List<AgreementOrderDTO>();
+        private List<AgreementOrderDTO> agreementOrderByContractorId = new List<AgreementOrderDTO>();
+        private List<AgreementsDTO> agreementByAgreementId = new List<AgreementsDTO>();
+        private List<AgreementsDTO> agreementByContractorId = new List<AgreementsDTO>();
+        private List<Bank_PaymentsDTO> bankPayments = new List<Bank_PaymentsDTO>();
+        private List<BusinessTripsDTO> businessTripsByContractorId = new List<BusinessTripsDTO>();
+        private List<BusinessTripsDTO> businessTripsByDepartureId = new List<BusinessTripsDTO>();
+
 
         private UserTasksDTO userTasksDTO;
         public ContractorFindDuplicateFm(UserTasksDTO userTaskDTO)
@@ -56,9 +67,21 @@ namespace ERP_NEW.GUI.Contractors
             
         }
 
-        private void LoadFullDataByContractorId()
+        private void LoadFullDataByContractorId(int contractorId)
         {
             contractorsService = Program.kernel.Get<IContractorsService>();
+            bankPaymentsService = Program.kernel.Get<IBankPaymentsService>();
+            businessTripsService = Program.kernel.Get<IBusinessTripsService>();
+
+            //знаходимо усі договори по цьому контрагенту
+            agreementOrderByAgreementId = contractorsService.GetAgreementOrder().Where(srch => srch.AgreementId == contractorId).ToList();
+            agreementOrderByContractorId = contractorsService.GetAgreementOrder().Where(srch => srch.ContractorId == contractorId).ToList();
+            agreementByAgreementId = contractorsService.GetAgreements().Where(srch => srch.AgreementsIdFromContractor == contractorId).ToList();
+            agreementByContractorId = contractorsService.GetAgreements().Where(srch => srch.ContractorId == contractorId).ToList();
+            bankPayments = bankPaymentsService.GetBankPayments().Where(srch => srch.Contractor_Id == contractorId).ToList();
+            businessTripsByContractorId = businessTripsService.GetBusinessTrips().Where(srch => srch.ContractorsID == contractorId).ToList();
+            businessTripsByDepartureId = businessTripsService.GetBusinessTrips().Where(srch => srch.DepartureID == contractorId).ToList();
+
 
             contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);

@@ -68,7 +68,10 @@ namespace ERP_NEW.BLL.Services
         }
 
         #region Get method's
-
+        public IEnumerable<CalcWithBuyersDTO> GetCalcWithBuyers()
+        {
+            return mapper.Map<IEnumerable<CalcWithBuyers>, List<CalcWithBuyersDTO>>(calcWithBuyers.GetAll());
+        }
         public IEnumerable<CalcWithBuyersInfoDTO> GetCalcWithBuyersJournal(DateTime beginDate, DateTime endDate)
         {
             FbParameter[] Parameters =

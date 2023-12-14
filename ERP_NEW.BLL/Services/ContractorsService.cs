@@ -265,6 +265,11 @@ namespace ERP_NEW.BLL.Services
             return result.ToList();
         }
 
+        public IEnumerable<AgreementOrderDTO> GetAgreementOrder()
+        {
+            return mapper.Map<IEnumerable<AgreementOrder>, List<AgreementOrderDTO>>(agreementOrder.GetAll());
+        }
+
         public IEnumerable<AgreementJournalDTO> GetAgreementJournal(DateTime beginDate, DateTime endDate)
         {
             FbParameter[] Parameters =
