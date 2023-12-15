@@ -13849,7 +13849,7 @@ namespace ERP_NEW.BLL.Services
                                   Vendor_Name = c.con.Name,
                                   Vendor_Code = c.con.Tin,
                                   Month_Current = c.inv.Month_Current.ToShortDateString(),
-                                  Month_Invoice = c.inv.Month_Invoice.ToShortDateString(),
+                                  Month_Invoice = ((DateTime)c.inv.Month_Invoice).ToShortDateString(),
                                   Invoice_Number = c.inv.Invoice_Number,
                                   Bez_Nds = c.inv.Price.ToString(),
                                   Nds = c.inv.Vat.ToString(),
@@ -17451,7 +17451,7 @@ namespace ERP_NEW.BLL.Services
                     List<int> maxCounter = new List<int>();
 
                     var bankPaymantByContractor = bankPaymantData.Where(srt => srt.Contractor_Id == item.Id && srt.Payment_Date.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.Payment_Date).ToList();
-                    var invoiceDataByContractor = invoicesData.Where(srt => srt.Contractor_Id == item.Id && (srt.Month_Invoice.Month == itemMonth.Date.Month || srt.Month_Current.Month == itemMonth.Date.Month)).OrderBy(ord => ord.Month_Invoice).ToList();
+                    var invoiceDataByContractor = invoicesData.Where(srt => srt.Contractor_Id == item.Id && (((DateTime)srt.Month_Invoice).Month == itemMonth.Date.Month || srt.Month_Current.Month == itemMonth.Date.Month)).OrderBy(ord => ord.Month_Invoice).ToList();
                     var ordersDataByContractor = ordersData.Where(srt => srt.VendorId == item.Id && srt.InvoiceDate.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.InvoiceDate).ToList();
 
                     decimal? invoiceTotalPrice = 0m;
@@ -17504,7 +17504,7 @@ namespace ERP_NEW.BLL.Services
                          for (int k = 0; k < invoicesByDate.Count(); ++k)
                          {
                              cells["A" + (startWith + k + 1)].Value = invoicesByDate[k].Invoice_Number;
-                             cells["B" + (startWith + k + 1)].Value = invoicesByDate[k].Month_Invoice.ToShortDateString();
+                             cells["B" + (startWith + k + 1)].Value = ((DateTime)invoicesByDate[k].Month_Invoice).ToShortDateString();
                              cells["C" + (startWith + k + 1)].Value = invoicesByDate[k].Month_Current.ToShortDateString();
 
                              cells["D" + (startWith + k + 1)].NumberFormat = "### ### ##0.00";
@@ -17572,7 +17572,7 @@ namespace ERP_NEW.BLL.Services
                     for (int i = 0; i < invoiceDataByContractor.Count(); ++i)
                     {
                         cells["A" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Invoice_Number;
-                        cells["B" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Month_Invoice.ToShortDateString();
+                        cells["B" + (startWith + i + 1)].Value = ((DateTime)invoiceDataByContractor[i].Month_Invoice).ToShortDateString();
                         cells["C" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Month_Current.ToShortDateString();
                         cells["D" + (startWith + i + 1)].NumberFormat = "### ### ##0.00";
                         cells["D" + (startWith + i + 1)].Value = invoiceDataByContractor[i].Total_Price;

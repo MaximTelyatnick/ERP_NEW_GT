@@ -19,7 +19,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int? CpvId { get; set; }
         public int? DkppId { get; set; }
         public int? UktvId { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
         public decimal? TotalPrice { get; set; }
         public string CpvCode { get; set; }

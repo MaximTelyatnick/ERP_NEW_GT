@@ -16,13 +16,15 @@ namespace ERP_NEW.GUI.Contractors
 {
     public partial class ContractorFindDuplicateFm : DevExpress.XtraEditors.XtraForm
     {
-        private ICustomerOrdersService customerOrdersService;
         private IContractorsService contractorsService;
-        private ICurrencyService currencyService;
         private IMtsSpecificationsService mtsSpecificationService;
-
         private IBankPaymentsService bankPaymentsService;
         private IBusinessTripsService businessTripsService;
+        private ICalcWithBuyersService calcWithBuyersService;
+        private ICustomerOrdersService customerOrdersService;
+        private IPackingListsService packingListsService;
+        private IAccountingInvoicesService accountingInvoicesService;
+        private IStoreHouseService storeHouseService;
 
 
         private BindingSource contractorsMainBS = new BindingSource();
@@ -34,7 +36,13 @@ namespace ERP_NEW.GUI.Contractors
         private List<Bank_PaymentsDTO> bankPayments = new List<Bank_PaymentsDTO>();
         private List<BusinessTripsDTO> businessTripsByContractorId = new List<BusinessTripsDTO>();
         private List<BusinessTripsDTO> businessTripsByDepartureId = new List<BusinessTripsDTO>();
-
+        private List<CustomerOrdersDTO> customerOrdersByContractorId = new List<CustomerOrdersDTO>();
+        private List<CustomerOrdersDTO> customerOrdersByAgreementId = new List<CustomerOrdersDTO>();
+        private List<CalcWithBuyersDTO> calcWithBuyersByContractorId = new List<CalcWithBuyersDTO>();
+        private List<InvoicesDTO> invoicesByContractorId = new List<InvoicesDTO>();
+        private List<OrdersDTO> ordersByContractorId = new List<OrdersDTO>();
+        private List<PackingListsDTO> packingListsByContractorId = new List<PackingListsDTO>();
+        private List<MtsAssembliesDTO> mtsAssembliesByContractorId = new List<MtsAssembliesDTO>();
 
         private UserTasksDTO userTasksDTO;
         public ContractorFindDuplicateFm(UserTasksDTO userTaskDTO)
@@ -61,10 +69,33 @@ namespace ERP_NEW.GUI.Contractors
         private void LoadData()
         {
             contractorsService = Program.kernel.Get<IContractorsService>();
+            bankPaymentsService = Program.kernel.Get<IBankPaymentsService>();
+            businessTripsService = Program.kernel.Get<IBusinessTripsService>();
+            customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
+            calcWithBuyersService = Program.kernel.Get<ICalcWithBuyersService>();
+            accountingInvoicesService = Program.kernel.Get<IAccountingInvoicesService>();
+            storeHouseService = Program.kernel.Get<IStoreHouseService>();
+            packingListsService = Program.kernel.Get<IPackingListsService>();
+            mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
 
             contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);
-            
+
+            //agreementOrderByAgreementId = contractorsService.GetAgreementOrder().ToList();
+            //agreementOrderByContractorId = contractorsService.GetAgreementOrder().ToList();
+            //agreementByAgreementId = contractorsService.GetAgreements().ToList();
+            //agreementByContractorId = contractorsService.GetAgreements().ToList();
+            //bankPayments = bankPaymentsService.GetBankPayments().ToList();
+            //businessTripsByContractorId = businessTripsService.GetBusinessTrips().ToList();
+            //businessTripsByDepartureId = businessTripsService.GetBusinessTrips().ToList();
+            //customerOrdersByContractorId = customerOrdersService.GetCustomerOrders().ToList();
+            //customerOrdersByAgreementId = customerOrdersService.GetCustomerOrders().ToList();
+            //calcWithBuyersByContractorId = calcWithBuyersService.GetCalcWithBuyers().ToList();
+            invoicesByContractorId = accountingInvoicesService.GetInvoices().Where(srch => srch.Month_Invoice!=null).ToList();
+            ordersByContractorId = storeHouseService.GetOrders().ToList();
+            packingListsByContractorId = packingListsService.GetPackingLists().ToList();
+            mtsAssembliesByContractorId = mtsSpecificationService.GetAllMtsAssemblies().ToList();
+
         }
 
         private void LoadFullDataByContractorId(int contractorId)
@@ -72,6 +103,12 @@ namespace ERP_NEW.GUI.Contractors
             contractorsService = Program.kernel.Get<IContractorsService>();
             bankPaymentsService = Program.kernel.Get<IBankPaymentsService>();
             businessTripsService = Program.kernel.Get<IBusinessTripsService>();
+            customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
+            calcWithBuyersService = Program.kernel.Get<ICalcWithBuyersService>();
+            accountingInvoicesService = Program.kernel.Get<IAccountingInvoicesService>();
+            storeHouseService = Program.kernel.Get<IStoreHouseService>();
+            packingListsService = Program.kernel.Get<IPackingListsService>();
+            mtsSpecificationService = Program.kernel.Get<IMtsSpecificationsService>();
 
             //знаходимо усі договори по цьому контрагенту
             agreementOrderByAgreementId = contractorsService.GetAgreementOrder().Where(srch => srch.AgreementId == contractorId).ToList();
@@ -81,7 +118,13 @@ namespace ERP_NEW.GUI.Contractors
             bankPayments = bankPaymentsService.GetBankPayments().Where(srch => srch.Contractor_Id == contractorId).ToList();
             businessTripsByContractorId = businessTripsService.GetBusinessTrips().Where(srch => srch.ContractorsID == contractorId).ToList();
             businessTripsByDepartureId = businessTripsService.GetBusinessTrips().Where(srch => srch.DepartureID == contractorId).ToList();
-
+            customerOrdersByContractorId = customerOrdersService.GetCustomerOrders().Where(srch => srch.ContractorId == contractorId).ToList();
+            customerOrdersByAgreementId = customerOrdersService.GetCustomerOrders().Where(srch => srch.AgreementId == contractorId).ToList();
+            calcWithBuyersByContractorId = calcWithBuyersService.GetCalcWithBuyers().Where(srch => srch.ContractorsId == contractorId).ToList();
+            invoicesByContractorId = accountingInvoicesService.GetInvoices().Where(srch => srch.Contractor_Id == contractorId).ToList();
+            ordersByContractorId = storeHouseService.GetOrders().Where(srch => srch.VENDOR_ID == contractorId).ToList();
+            packingListsByContractorId = packingListsService.GetPackingLists().Where(srch => srch.ContractorId == contractorId).ToList();
+            mtsAssembliesByContractorId = mtsSpecificationService.GetAllMtsAssemblies().Where(srch => srch.ContractorId == contractorId).ToList();
 
             contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);

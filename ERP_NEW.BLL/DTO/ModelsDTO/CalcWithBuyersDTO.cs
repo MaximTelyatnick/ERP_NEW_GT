@@ -18,7 +18,9 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int? ContractorsId { get; set; }
         public int? EmployeesId { get; set; }
         public int? CurrencyRatesId { get; set; }
+
+        public string Comment { get; set; }
         public int? AccountingOperationId { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
     }
 }

@@ -71,6 +71,11 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<IEnumerable<Invoices>, List<InvoicesDTO>>(invoices.SQLExecuteProc(procName, Parameters));  
         }
 
+        public IEnumerable<InvoicesDTO> GetInvoices()
+        {
+            return mapper.Map<IEnumerable<Invoices>, List<InvoicesDTO>>(invoices.GetAll());
+        }
+
         public IEnumerable<InvoicesDTO> GetInvoices(DateTime startDate, DateTime endDate)
         {
             if (startDate < minimalDate)
@@ -178,7 +183,7 @@ namespace ERP_NEW.BLL.Services
 
         public bool CheckInvoicesNum(InvoicesDTO invoicesDTO)
         {
-            var allInvoices = mapper.Map<IEnumerable<Invoices>, List<InvoicesDTO>>(invoices.GetAll().Where(bdsm => bdsm.Month_Invoice.Year >= 2011 && bdsm.Month_Current.Year >= 2011));
+            var allInvoices = mapper.Map<IEnumerable<Invoices>, List<InvoicesDTO>>(invoices.GetAll().Where(bdsm => ((DateTime)bdsm.Month_Invoice).Year >= 2011 && bdsm.Month_Current.Year >= 2011));
 
             bool checkInvoicesNumber = allInvoices.Any(bdsm => bdsm.Contractor_Id == invoicesDTO.Contractor_Id && bdsm.Invoice_Number == invoicesDTO.Invoice_Number);
 

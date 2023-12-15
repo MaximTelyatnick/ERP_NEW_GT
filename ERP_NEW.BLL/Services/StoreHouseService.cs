@@ -736,6 +736,11 @@ namespace ERP_NEW.BLL.Services
             return query.ToList();
         }
 
+
+        public IEnumerable<OrdersDTO> GetOrders()
+        {
+            return mapper.Map<IEnumerable<ORDERS>, List<OrdersDTO>>(orders.GetAll());
+        }
         public IEnumerable<OrdersInfoDTO> GetReceiptsByPeriod(DateTime beginDate, DateTime endDate)
         {
             var query = (from r in receipts.GetAll()

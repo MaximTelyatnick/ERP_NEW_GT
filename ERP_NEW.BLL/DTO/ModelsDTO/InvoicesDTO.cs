@@ -12,7 +12,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
     {
         public int Id { get; set; }
         public DateTime Month_Current { get; set; }
-        public DateTime Month_Invoice { get; set; }
+        public DateTime? Month_Invoice { get; set; }
         public string Invoice_Number { get; set; }
         public int? Contractor_Id { get; set; }
         public int? Balance_Account_Id { get; set; }

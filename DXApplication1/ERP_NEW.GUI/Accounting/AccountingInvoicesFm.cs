@@ -94,9 +94,9 @@ namespace ERP_NEW.GUI.Accounting
 
             for (int i = 0; i < invoicesInfoList.Count; ++i)
             {
-                if(!monthList.Select(bdsm=>bdsm.Month).Contains(invoicesInfoList[i].Month_Invoice.Month))
+                if(!monthList.Select(bdsm=>bdsm.Month).Contains(((DateTime)invoicesInfoList[i].Month_Invoice).Month))
                 {
-                    monthList.Add(invoicesInfoList[i].Month_Invoice);
+                    monthList.Add(((DateTime)invoicesInfoList[i].Month_Invoice));
                 }
                 else if (!monthList.Select(bdsm => bdsm.Month).Contains(invoicesInfoList[i].Month_Current.Month))
                 {
@@ -593,7 +593,7 @@ namespace ERP_NEW.GUI.Accounting
 
                 int currentMonth = ((MonthDetailsDTO)repositoryItemGridLookUpEdit.GetRowByKeyValue((int)monthFilterGridEdit.EditValue)).NumberMonth;
 
-                var lst = buffer.Where(bdsm => bdsm.Month_Invoice.Month == currentMonth).ToList();
+                var lst = buffer.Where(bdsm => ((DateTime)bdsm.Month_Invoice).Month == currentMonth).ToList();
 
                 accountingInvoicesBS.DataSource = lst;
 
