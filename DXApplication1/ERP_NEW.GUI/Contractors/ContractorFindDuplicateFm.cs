@@ -112,19 +112,50 @@ namespace ERP_NEW.GUI.Contractors
 
             //знаходимо усі договори по цьому контрагенту
             agreementOrderByAgreementId = contractorsService.GetAgreementOrder().Where(srch => srch.AgreementId == contractorId).ToList();
+
+            if (agreementOrderByAgreementId.Count() > 0)
+                textEdit.Text +=agreementOrderByAgreementId.Count().ToString() + "\n";
+
+
             agreementOrderByContractorId = contractorsService.GetAgreementOrder().Where(srch => srch.ContractorId == contractorId).ToList();
+            if (agreementOrderByContractorId.Count() > 0)
+                textEdit.Text += agreementOrderByContractorId.Count().ToString() + "\n";
             agreementByAgreementId = contractorsService.GetAgreements().Where(srch => srch.AgreementsIdFromContractor == contractorId).ToList();
+            if (agreementByAgreementId.Count() > 0)
+                textEdit.Text += agreementByAgreementId.Count().ToString() + "\n";
             agreementByContractorId = contractorsService.GetAgreements().Where(srch => srch.ContractorId == contractorId).ToList();
+            if (agreementByContractorId.Count() > 0)
+                textEdit.Text += agreementByContractorId.Count().ToString() + "\n";
             bankPayments = bankPaymentsService.GetBankPayments().Where(srch => srch.Contractor_Id == contractorId).ToList();
+            if (bankPayments.Count() > 0)
+                textEdit.Text += bankPayments.Count().ToString() + "\n";
             businessTripsByContractorId = businessTripsService.GetBusinessTrips().Where(srch => srch.ContractorsID == contractorId).ToList();
+            if (businessTripsByContractorId.Count() > 0)
+                textEdit.Text += businessTripsByContractorId.Count().ToString() + "\n";
             businessTripsByDepartureId = businessTripsService.GetBusinessTrips().Where(srch => srch.DepartureID == contractorId).ToList();
+            if (businessTripsByDepartureId.Count() > 0)
+                textEdit.Text += businessTripsByDepartureId.Count().ToString() + "\n";
             customerOrdersByContractorId = customerOrdersService.GetCustomerOrders().Where(srch => srch.ContractorId == contractorId).ToList();
+            if (customerOrdersByContractorId.Count() > 0)
+                textEdit.Text += customerOrdersByContractorId.Count().ToString() + "\n";
             customerOrdersByAgreementId = customerOrdersService.GetCustomerOrders().Where(srch => srch.AgreementId == contractorId).ToList();
+            if (customerOrdersByAgreementId.Count() > 0)
+                textEdit.Text += customerOrdersByAgreementId.Count().ToString() + "\n";
             calcWithBuyersByContractorId = calcWithBuyersService.GetCalcWithBuyers().Where(srch => srch.ContractorsId == contractorId).ToList();
+            if (calcWithBuyersByContractorId.Count() > 0)
+                textEdit.Text += calcWithBuyersByContractorId.Count().ToString() + "\n";
             invoicesByContractorId = accountingInvoicesService.GetInvoices().Where(srch => srch.Contractor_Id == contractorId).ToList();
+            if (invoicesByContractorId.Count() > 0)
+                textEdit.Text += invoicesByContractorId.Count().ToString() + "\n";
             ordersByContractorId = storeHouseService.GetOrders().Where(srch => srch.VENDOR_ID == contractorId).ToList();
+            if (ordersByContractorId.Count() > 0)
+                textEdit.Text += ordersByContractorId.Count().ToString() + "\n";
             packingListsByContractorId = packingListsService.GetPackingLists().Where(srch => srch.ContractorId == contractorId).ToList();
+            if (packingListsByContractorId.Count() > 0)
+                textEdit.Text += packingListsByContractorId.Count().ToString() + "\n";
             mtsAssembliesByContractorId = mtsSpecificationService.GetAllMtsAssemblies().Where(srch => srch.ContractorId == contractorId).ToList();
+            if (mtsAssembliesByContractorId.Count() > 0)
+                textEdit.Text += mtsAssembliesByContractorId.Count().ToString() + "\n";
 
             contractorsMainBS.DataSource = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров, 3 - только договора
             contractorsReplaceBS.DataSource = contractorsService.GetContractors(1);
@@ -138,6 +169,7 @@ namespace ERP_NEW.GUI.Contractors
 
         private void checkBtn_Click(object sender, EventArgs e)
         {
+
             this.Close();
         }
     }
