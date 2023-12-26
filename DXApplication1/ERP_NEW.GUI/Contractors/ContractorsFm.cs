@@ -223,8 +223,6 @@ namespace ERP_NEW.GUI.Contractors
 
         private void dublicateSearchBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-
-            //new ContractorFindDuplicateFm(_userTasksDTO);
             using (ContractorFindDuplicateFm contractorFindDuplicateFm = new ContractorFindDuplicateFm(_userTasksDTO))
             {
                 if (contractorFindDuplicateFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)

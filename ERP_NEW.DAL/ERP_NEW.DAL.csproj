@@ -350,6 +350,7 @@
     <Compile Include="Entities\QueryModels\PaintingWorksJournal.cs" />
     <Compile Include="Entities\QueryModels\ReceiptJournal.cs" />
     <Compile Include="Entities\QueryModels\Responsible.cs" />
+    <Compile Include="Entities\QueryModels\SearchTable.cs" />
     <Compile Include="Entities\QueryModels\StoreHouseReceiptProject.cs" />
     <Compile Include="Entities\QueryModels\ReceiptStoreHouses.cs" />
     <Compile Include="Entities\QueryModels\RemainsNomenclature.cs" />

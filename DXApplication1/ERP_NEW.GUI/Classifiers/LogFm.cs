@@ -35,23 +35,23 @@ namespace ERP_NEW.GUI.Classifiers
         {
             splashScreenManager.ShowWaitForm();
             logService = Program.kernel.Get<ILogService>();
-            logBS.DataSource = logService.GetLogs();
+            //logBS.DataSource = logService.GetLogs();
             logGridControl.DataSource = logBS;
             splashScreenManager.CloseWaitForm();
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Видалити користувача  " + ((LogDTO)logBS.Current).EmployeeName + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (logService.LogDelete(((LogDTO)logBS.Current).Id))
-                {
-                    logGridView.BeginUpdate();
-                    LoadDate();
-                    logGridView.EndUpdate();
-                    logGridControl.Refresh();
-                }
-            }
+            //if (MessageBox.Show("Видалити користувача  " + ((LogDTO)logBS.Current).EmployeeName + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    if (logService.LogDelete(((LogDTO)logBS.Current).Id))
+            //    {
+            //        logGridView.BeginUpdate();
+            //        LoadDate();
+            //        logGridView.EndUpdate();
+            //        logGridControl.Refresh();
+            //    }
+            //}
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

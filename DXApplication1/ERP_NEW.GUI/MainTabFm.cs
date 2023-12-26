@@ -914,8 +914,13 @@ namespace ERP_NEW.GUI
 
         private void userFotoEdit_Click(object sender, EventArgs e)
         {
-            UserSettingsFm userSettingsFm = new UserSettingsFm();
+            UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO);
             userSettingsFm.ShowDialog();
+        }
+
+        private void userFotoEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

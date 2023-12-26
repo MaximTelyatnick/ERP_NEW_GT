@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FixedAssetsOrderFm));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem2 = new DevExpress.Utils.ToolTipTitleItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipTitleItem toolTipTitleItem1 = new DevExpress.Utils.ToolTipTitleItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.fixedAssessOrderTab = new DevExpress.XtraTab.XtraTabControl();
             this.fixedAssestsTabPage = new DevExpress.XtraTab.XtraTabPage();
@@ -56,6 +56,7 @@
             this.ribbonGalleryBarItem1 = new DevExpress.XtraBars.RibbonGalleryBarItem();
             this.actWriteOffBtn = new DevExpress.XtraBars.BarButtonItem();
             this.expFixeAssetsBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.printInventoryCardNewBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -146,7 +147,6 @@
             this.decreeItemMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.printInventoryCardNewBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.fixedAssessOrderTab)).BeginInit();
             this.fixedAssessOrderTab.SuspendLayout();
             this.fixedAssestsTabPage.SuspendLayout();
@@ -209,7 +209,7 @@
             this.fixedAssestsTabPage.AlwaysScrollActiveControlIntoView = false;
             this.fixedAssestsTabPage.Controls.Add(this.splitContainerControl1);
             this.fixedAssestsTabPage.Name = "fixedAssestsTabPage";
-            this.fixedAssestsTabPage.Size = new System.Drawing.Size(1372, 654);
+            this.fixedAssestsTabPage.Size = new System.Drawing.Size(1373, 656);
             this.fixedAssestsTabPage.Tag = "0";
             this.fixedAssestsTabPage.Text = "Основні засоби";
             // 
@@ -223,7 +223,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.tableLayoutPanel1);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1372, 654);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1373, 656);
             this.splitContainerControl1.SplitterPosition = 98;
             this.splitContainerControl1.TabIndex = 0;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -262,7 +262,7 @@
             this.repositoryItemCheckEdit1});
             this.ribbonControl1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2007;
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1372, 95);
+            this.ribbonControl1.Size = new System.Drawing.Size(1373, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // yearEdit
@@ -451,6 +451,15 @@
             this.expFixeAssetsBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.expFixeAssetsBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.expFixeAssetsBtn_ItemClick);
             // 
+            // printInventoryCardNewBtn
+            // 
+            this.printInventoryCardNewBtn.Caption = "Інвентарна картка обліку";
+            this.printInventoryCardNewBtn.Id = 4;
+            this.printInventoryCardNewBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printInventoryCardNewBtn.LargeGlyph")));
+            this.printInventoryCardNewBtn.Name = "printInventoryCardNewBtn";
+            this.printInventoryCardNewBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printInventoryCardNewBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printInventoryCardNewBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -519,7 +528,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.96124F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.03876F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1372, 551);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1373, 552);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panelControl1
@@ -534,9 +543,9 @@
             this.panelControl1.Controls.Add(this.pictureBox2);
             this.panelControl1.Controls.Add(this.pictureBox1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl1.Location = new System.Drawing.Point(3, 519);
+            this.panelControl1.Location = new System.Drawing.Point(3, 520);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1366, 29);
+            this.panelControl1.Size = new System.Drawing.Size(1367, 29);
             this.panelControl1.TabIndex = 2;
             // 
             // labelControl4
@@ -621,7 +630,7 @@
             this.fixedAssetsOrderGrid.Location = new System.Drawing.Point(3, 3);
             this.fixedAssetsOrderGrid.MainView = this.fixedAssetsOrderGridView;
             this.fixedAssetsOrderGrid.Name = "fixedAssetsOrderGrid";
-            this.fixedAssetsOrderGrid.Size = new System.Drawing.Size(1366, 355);
+            this.fixedAssetsOrderGrid.Size = new System.Drawing.Size(1367, 356);
             this.fixedAssetsOrderGrid.TabIndex = 0;
             this.fixedAssetsOrderGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.fixedAssetsOrderGridView});
@@ -963,12 +972,12 @@
             // fixedAssetsMaterialsGrid
             // 
             this.fixedAssetsMaterialsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fixedAssetsMaterialsGrid.Location = new System.Drawing.Point(3, 364);
+            this.fixedAssetsMaterialsGrid.Location = new System.Drawing.Point(3, 365);
             this.fixedAssetsMaterialsGrid.MainView = this.fixedAssetsMaterialsGridView;
             this.fixedAssetsMaterialsGrid.Name = "fixedAssetsMaterialsGrid";
             this.fixedAssetsMaterialsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.fixedAssetsMaterialsGrid.Size = new System.Drawing.Size(1366, 149);
+            this.fixedAssetsMaterialsGrid.Size = new System.Drawing.Size(1367, 149);
             this.fixedAssetsMaterialsGrid.TabIndex = 0;
             this.fixedAssetsMaterialsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.fixedAssetsMaterialsGridView});
@@ -1539,13 +1548,13 @@
             this.deleteFromArchiveBtn.Name = "deleteFromArchiveBtn";
             this.deleteFromArchiveBtn.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            toolTipTitleItem2.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            toolTipTitleItem2.Appearance.Options.UseImage = true;
-            toolTipTitleItem2.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem2.Image")));
-            toolTipTitleItem2.Text = "Для того щоб видалити з архіву необхідно у вкладці ОЗ обрати такий період, в яком" +
+            toolTipTitleItem1.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            toolTipTitleItem1.Appearance.Options.UseImage = true;
+            toolTipTitleItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolTipTitleItem1.Image")));
+            toolTipTitleItem1.Text = "Для того щоб видалити з архіву необхідно у вкладці ОЗ обрати такий період, в яком" +
     "у поле \"Дата продажу..\" буде порожнє!";
-            superToolTip2.Items.Add(toolTipTitleItem2);
-            this.deleteFromArchiveBtn.SuperTip = superToolTip2;
+            superToolTip1.Items.Add(toolTipTitleItem1);
+            this.deleteFromArchiveBtn.SuperTip = superToolTip1;
             this.deleteFromArchiveBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteFromArchiveBtn_ItemClick);
             // 
             // printArchiceBtn
@@ -1707,15 +1716,6 @@
             this.imageCollection.Images.SetKeyName(1, "32_bullet-yellow.png");
             this.imageCollection.Images.SetKeyName(2, "32_bullet-red.png");
             this.imageCollection.Images.SetKeyName(3, "32_bullet-blue.png");
-            // 
-            // printInventoryCardNewBtn
-            // 
-            this.printInventoryCardNewBtn.Caption = "Інвентарна картка обліку";
-            this.printInventoryCardNewBtn.Id = 4;
-            this.printInventoryCardNewBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printInventoryCardNewBtn.LargeGlyph")));
-            this.printInventoryCardNewBtn.Name = "printInventoryCardNewBtn";
-            this.printInventoryCardNewBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.printInventoryCardNewBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printInventoryCardNewBtn_ItemClick);
             // 
             // FixedAssetsOrderFm
             // 

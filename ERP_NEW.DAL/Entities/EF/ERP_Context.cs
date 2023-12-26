@@ -298,6 +298,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<StoreHouseTrialBalance> StoreHouseTrialBalance { get; set; }
         public DbSet<StoreHouseRemains> StoreHouseRemains { get; set; }
         public DbSet<StoreHouseInventory> StoreHouseInventory { get; set; }
+        public DbSet<SearchTable> SearchTable { get; set; }
 
         public DbSet<SUPPLIERS> Suppliers { get; set; }
         //T

@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorFindDuplicateFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.contractorsMainEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -44,11 +44,21 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.checkBtn = new DevExpress.XtraEditors.SimpleButton();
             this.replaceBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
+            this.searchTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.updateTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.updateEdit = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsMainEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsReplaceEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
+            this.xtraTabControl.SuspendLayout();
+            this.searchTabPage.SuspendLayout();
+            this.updateTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updateEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // contractorsMainEdit
@@ -58,7 +68,7 @@
             this.contractorsMainEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsMainEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsMainEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "Очистити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsMainEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Очистити", null, null, true)});
             this.contractorsMainEdit.Properties.ImmediatePopup = true;
             this.contractorsMainEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsMainEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
@@ -111,7 +121,7 @@
             this.contractorsReplaceEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsReplaceEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsReplaceEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Очистити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsReplaceEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Очистити", null, null, true)});
             this.contractorsReplaceEdit.Properties.ImmediatePopup = true;
             this.contractorsReplaceEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsReplaceEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
@@ -159,9 +169,12 @@
             // 
             // textEdit
             // 
-            this.textEdit.Location = new System.Drawing.Point(12, 100);
+            this.textEdit.Location = new System.Drawing.Point(3, 3);
             this.textEdit.Name = "textEdit";
-            this.textEdit.Size = new System.Drawing.Size(439, 283);
+            this.textEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textEdit.Properties.Appearance.Options.UseFont = true;
+            this.textEdit.Properties.ReadOnly = true;
+            this.textEdit.Size = new System.Drawing.Size(427, 249);
             this.textEdit.TabIndex = 6;
             // 
             // labelControl1
@@ -182,6 +195,8 @@
             // 
             // checkBtn
             // 
+            this.checkBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.checkBtn.Appearance.Options.UseFont = true;
             this.checkBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.checkBtn.Location = new System.Drawing.Point(12, 389);
             this.checkBtn.Name = "checkBtn";
@@ -192,6 +207,9 @@
             // 
             // replaceBtn
             // 
+            this.replaceBtn.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.replaceBtn.Appearance.Options.UseFont = true;
+            this.replaceBtn.Enabled = false;
             this.replaceBtn.Location = new System.Drawing.Point(233, 389);
             this.replaceBtn.Name = "replaceBtn";
             this.replaceBtn.Size = new System.Drawing.Size(218, 35);
@@ -199,19 +217,59 @@
             this.replaceBtn.Text = "Замінити";
             this.replaceBtn.Click += new System.EventHandler(this.replaceBtn_Click);
             // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
+            // xtraTabControl
+            // 
+            this.xtraTabControl.Location = new System.Drawing.Point(12, 100);
+            this.xtraTabControl.Name = "xtraTabControl";
+            this.xtraTabControl.SelectedTabPage = this.searchTabPage;
+            this.xtraTabControl.Size = new System.Drawing.Size(439, 283);
+            this.xtraTabControl.TabIndex = 11;
+            this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.searchTabPage,
+            this.updateTabPage});
+            // 
+            // searchTabPage
+            // 
+            this.searchTabPage.Controls.Add(this.textEdit);
+            this.searchTabPage.Name = "searchTabPage";
+            this.searchTabPage.Size = new System.Drawing.Size(433, 255);
+            this.searchTabPage.Text = "Пошук";
+            // 
+            // updateTabPage
+            // 
+            this.updateTabPage.Controls.Add(this.updateEdit);
+            this.updateTabPage.Name = "updateTabPage";
+            this.updateTabPage.Size = new System.Drawing.Size(433, 255);
+            this.updateTabPage.Text = "Оновлення";
+            // 
+            // updateEdit
+            // 
+            this.updateEdit.Location = new System.Drawing.Point(3, 3);
+            this.updateEdit.Name = "updateEdit";
+            this.updateEdit.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.updateEdit.Properties.Appearance.Options.UseFont = true;
+            this.updateEdit.Properties.ReadOnly = true;
+            this.updateEdit.Size = new System.Drawing.Size(427, 249);
+            this.updateEdit.TabIndex = 7;
+            // 
             // ContractorFindDuplicateFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 436);
+            this.Controls.Add(this.xtraTabControl);
             this.Controls.Add(this.replaceBtn);
             this.Controls.Add(this.checkBtn);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.textEdit);
             this.Controls.Add(this.contractorsReplaceEdit);
             this.Controls.Add(this.contractorsMainEdit);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ContractorFindDuplicateFm";
@@ -223,6 +281,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractorsReplaceEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
+            this.xtraTabControl.ResumeLayout(false);
+            this.searchTabPage.ResumeLayout(false);
+            this.updateTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.updateEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,5 +306,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton checkBtn;
         private DevExpress.XtraEditors.SimpleButton replaceBtn;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl;
+        private DevExpress.XtraTab.XtraTabPage searchTabPage;
+        private DevExpress.XtraTab.XtraTabPage updateTabPage;
+        private DevExpress.XtraEditors.MemoEdit updateEdit;
     }
 }

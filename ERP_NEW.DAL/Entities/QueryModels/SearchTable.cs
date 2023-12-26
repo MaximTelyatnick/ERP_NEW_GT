@@ -5,13 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP_NEW.DAL.Entities.Models
+namespace ERP_NEW.DAL.Entities.QueryModels
 {
-    public class Log
+    public class SearchTable
     {
         [Key]
-        public int Id { get; set; }
-        public string Info { get; set; }
-        public int UserId { get; set; }
+        public int RecId { get; set; }
+        public string Table { get; set; }
     }
 }

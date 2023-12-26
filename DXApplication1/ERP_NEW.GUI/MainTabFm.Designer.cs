@@ -2574,7 +2574,7 @@
             this.panelControl1.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.panelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1649, 68);
+            this.panelControl1.Size = new System.Drawing.Size(1648, 68);
             this.panelControl1.TabIndex = 1;
             // 
             // departmentLabel
@@ -2614,6 +2614,7 @@
             this.userFotoEdit.Properties.ZoomAccelerationFactor = 1D;
             this.userFotoEdit.Size = new System.Drawing.Size(75, 63);
             this.userFotoEdit.TabIndex = 0;
+            this.userFotoEdit.EditValueChanged += new System.EventHandler(this.userFotoEdit_EditValueChanged);
             this.userFotoEdit.Click += new System.EventHandler(this.userFotoEdit_Click);
             // 
             // documentManager

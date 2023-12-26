@@ -10,8 +10,10 @@ namespace ERP_NEW.BLL.Interfaces
     public interface ILogService
     {
 
-        IEnumerable<LogDTO> GetLogs();
+       // IEnumerable<LogDTO> GetLogs();
+        int CreateTable();
         int LogCreate(LogDTO logDTO);
+        bool CheckTable(string tableName);
         void LogUpdate(LogDTO logDTO);
         bool LogDelete(int id);
     }

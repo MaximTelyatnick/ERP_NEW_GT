@@ -17,7 +17,8 @@ namespace ERP_NEW.DAL.Interfaces
         /// 
         /// </summary>
         IEnumerable<T> SQLExecuteProc(string executeProcString, params FbParameter[] paramArr);
- 
+        IEnumerable<T> SQLExecute(string executeProcString);
+
         //bool GetExecuteSqlCommand(string str);
         //void SQLExecuteScript(string executeProcString, params FbParameter[] paramArr);
 

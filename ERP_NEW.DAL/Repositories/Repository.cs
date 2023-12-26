@@ -65,6 +65,17 @@ namespace ERP_NEW.DAL.Repositories
             return db.Set<T>().SqlQuery(executeProcString, paramArr);
         }
 
+        public IEnumerable<T> SQLExecute(string executeProcString)
+        {
+            //IEnumerable<T> test =  db.Set<T>().SqlQuery(executeProcString);
+
+            //db.
+            int rezult = db.Database.ExecuteSqlCommand(executeProcString);
+            db.SaveChanges();
+            return db.Set<T>().SqlQuery(executeProcString);
+        }
+
+
 
 
         //public void SQLExecuteScript(string executeProcString, params FbParameter[] paramArr)

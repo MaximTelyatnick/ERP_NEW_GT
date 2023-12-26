@@ -247,7 +247,6 @@
             this.timeSheetDepartmentsGridView.GridControl = this.timeSheetDepartmentsGrid;
             this.timeSheetDepartmentsGridView.GroupRowHeight = 50;
             this.timeSheetDepartmentsGridView.Name = "timeSheetDepartmentsGridView";
-            this.timeSheetDepartmentsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.timeSheetDepartmentsGridView.OptionsView.RowAutoHeight = true;
             this.timeSheetDepartmentsGridView.OptionsView.ShowAutoFilterRow = true;
             this.timeSheetDepartmentsGridView.OptionsView.ShowGroupPanel = false;
@@ -327,7 +326,6 @@
             this.timeSheetProfessionsGridView.GridControl = this.timeSheetProfessionsGrid;
             this.timeSheetProfessionsGridView.GroupRowHeight = 50;
             this.timeSheetProfessionsGridView.Name = "timeSheetProfessionsGridView";
-            this.timeSheetProfessionsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.timeSheetProfessionsGridView.OptionsView.RowAutoHeight = true;
             this.timeSheetProfessionsGridView.OptionsView.ShowGroupPanel = false;
             this.timeSheetProfessionsGridView.RowHeight = 30;

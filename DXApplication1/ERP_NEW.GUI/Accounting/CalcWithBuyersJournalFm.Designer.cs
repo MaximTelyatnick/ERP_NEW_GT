@@ -549,7 +549,6 @@
             this.totalPriceWithVatCol});
             this.calcWithBuyersGridView.GridControl = this.calcWithBuyersGrid;
             this.calcWithBuyersGridView.Name = "calcWithBuyersGridView";
-            this.calcWithBuyersGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.calcWithBuyersGridView.OptionsView.AllowCellMerge = true;
             this.calcWithBuyersGridView.OptionsView.ShowAutoFilterRow = true;
             this.calcWithBuyersGridView.OptionsView.ShowFooter = true;
@@ -881,20 +880,20 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(1362, 252);
+            this.groupControl2.Size = new System.Drawing.Size(1362, 251);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Специфікація";
             // 
             // calcWithBuyersSpecGrid
             // 
             this.calcWithBuyersSpecGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.calcWithBuyersSpecGrid.Location = new System.Drawing.Point(2, 20);
+            this.calcWithBuyersSpecGrid.Location = new System.Drawing.Point(2, 22);
             this.calcWithBuyersSpecGrid.MainView = this.calcWithBuyersSpecGridView;
             this.calcWithBuyersSpecGrid.MenuManager = this.ribbonControl1;
             this.calcWithBuyersSpecGrid.Name = "calcWithBuyersSpecGrid";
             this.calcWithBuyersSpecGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.selectedPaymentRepository});
-            this.calcWithBuyersSpecGrid.Size = new System.Drawing.Size(1358, 230);
+            this.calcWithBuyersSpecGrid.Size = new System.Drawing.Size(1358, 227);
             this.calcWithBuyersSpecGrid.TabIndex = 0;
             this.calcWithBuyersSpecGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.calcWithBuyersSpecGridView});
@@ -919,7 +918,6 @@
             this.detailsCol});
             this.calcWithBuyersSpecGridView.GridControl = this.calcWithBuyersSpecGrid;
             this.calcWithBuyersSpecGridView.Name = "calcWithBuyersSpecGridView";
-            this.calcWithBuyersSpecGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.calcWithBuyersSpecGridView.OptionsView.ShowAutoFilterRow = true;
             this.calcWithBuyersSpecGridView.OptionsView.ShowFooter = true;
             this.calcWithBuyersSpecGridView.OptionsView.ShowGroupPanel = false;

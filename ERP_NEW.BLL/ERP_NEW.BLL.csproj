@@ -352,6 +352,7 @@
     <Compile Include="DTO\SelectedDTO\OrderReceipFromQueryDTO.cs" />
     <Compile Include="DTO\SelectedDTO\PaintingWorksJournalDTO.cs" />
     <Compile Include="DTO\SelectedDTO\ReceiptJournalDTO.cs" />
+    <Compile Include="DTO\SelectedDTO\SearchTableDTO.cs" />
     <Compile Include="DTO\SelectedDTO\StoreHouseReceiptProjectDTO.cs" />
     <Compile Include="DTO\SelectedDTO\RemainsNomenclatureDTO.cs" />
     <Compile Include="DTO\SelectedDTO\RequestLogJournalDTO.cs" />
