@@ -203,6 +203,7 @@
             this.fioCol.Name = "fioCol";
             this.fioCol.OptionsColumn.AllowEdit = false;
             this.fioCol.OptionsColumn.AllowFocus = false;
+            this.fioCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.fioCol.Visible = true;
             this.fioCol.VisibleIndex = 1;
             this.fioCol.Width = 177;
@@ -233,8 +234,6 @@
             this.fotoCol.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.fotoCol.Tag = " ";
             this.fotoCol.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.fotoCol.Visible = true;
-            this.fotoCol.VisibleIndex = 2;
             this.fotoCol.Width = 120;
             // 
             // repositoryItemPictureEdit1
@@ -263,8 +262,9 @@
             this.profCol.Name = "profCol";
             this.profCol.OptionsColumn.AllowEdit = false;
             this.profCol.OptionsColumn.AllowFocus = false;
+            this.profCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.profCol.Visible = true;
-            this.profCol.VisibleIndex = 3;
+            this.profCol.VisibleIndex = 2;
             this.profCol.Width = 177;
             // 
             // repositoryItemMemoEdit1
@@ -292,8 +292,9 @@
             this.departmentCol.Name = "departmentCol";
             this.departmentCol.OptionsColumn.AllowEdit = false;
             this.departmentCol.OptionsColumn.AllowFocus = false;
+            this.departmentCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.departmentCol.Visible = true;
-            this.departmentCol.VisibleIndex = 4;
+            this.departmentCol.VisibleIndex = 3;
             this.departmentCol.Width = 355;
             // 
             // repositoryItemTextEdit2
@@ -322,7 +323,7 @@
             this.dateCol.OptionsColumn.AllowEdit = false;
             this.dateCol.OptionsColumn.AllowFocus = false;
             this.dateCol.Visible = true;
-            this.dateCol.VisibleIndex = 5;
+            this.dateCol.VisibleIndex = 4;
             this.dateCol.Width = 170;
             // 
             // repositoryItemTextEdit1
