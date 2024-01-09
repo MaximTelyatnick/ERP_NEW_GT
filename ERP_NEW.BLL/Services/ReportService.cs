@@ -12987,7 +12987,7 @@ namespace ERP_NEW.BLL.Services
                         Сells[source.Count + 15, 2].Value = "Пархоменко Н. М.";
                         break;
                     case 14://технический
-                        Сells[source.Count + 15, 2].Value = "Дорошенко В. А. ";
+                        Сells[source.Count + 15, 2].Value = "Мамутов О. Р.";
                         break;
                     case 17://плановый
                         Сells[source.Count + 15, 2].Value = "Пінчук М. М. ";
@@ -13094,6 +13094,18 @@ namespace ERP_NEW.BLL.Services
                         continue;
                     }
 
+                    if (j == 31)
+                    {
+                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                        //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                        continue;
+                    }
+
                     //if (j == 9)
                     //{
                     //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
@@ -13188,7 +13200,7 @@ namespace ERP_NEW.BLL.Services
                         if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
                         {
                             cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                            cells[vsS[currentColumn + j - 1] + startWith].Value =  7;//ВРЕМЕННО!
+                            //cells[vsS[currentColumn + j - 1] + startWith].Value =  7;//ВРЕМЕННО!
                           //  cells[vsS[currentColumn + j - 1] + startWith].Interior.Color = Color.DodgerBlue;//ВРЕМЕННО!
                         }
                         else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
@@ -13200,7 +13212,7 @@ namespace ERP_NEW.BLL.Services
                         if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
                         {
                             cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                            cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
+                            //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
                         }
                         else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
                     }
@@ -13210,7 +13222,7 @@ namespace ERP_NEW.BLL.Services
                         if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
                         {
                             cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                            cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
+                            //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
                         }
                         else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
 
@@ -13220,7 +13232,7 @@ namespace ERP_NEW.BLL.Services
                         if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
                         {
                             cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                            cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
+                            //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
                         }
                         else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
 
@@ -13232,7 +13244,7 @@ namespace ERP_NEW.BLL.Services
                             if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
                             {
                                 cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                                cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
+                                //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
 
                                 cells[vsS[currentColumn + j + curcolSut] + startWith].Value = "BC";
                                 cells[vsS[currentColumn + j + curcolSut] + "5" + ":" + vsS[currentColumn + j + curcolSut] + "8"].Interior.Color = Color.DodgerBlue;
@@ -13480,15 +13492,15 @@ namespace ERP_NEW.BLL.Services
 
                     if ((DateSystem.IsPublicHoliday(lastDay, CountryCode.UA)))
                     {
-                        if (((DateSystem.IsWeekend(lastDay, CountryCode.UA) == false)))
-                        {
-                            cells[vsS[currentColumn + previousDays] + startWith].Value = 7;
+                        //if (((DateSystem.IsWeekend(lastDay, CountryCode.UA) == false)))
+                        //{
+                        //    cells[vsS[currentColumn + previousDays] + startWith].Value = 7;
                             
-                        }//????
-                        else if(lastDay.DayOfWeek!= DayOfWeek.Sunday && lastDay.DayOfWeek != DayOfWeek.Monday)
-                        {
-                            cells[vsS[currentColumn + previousDays] + startWith].Value = 7;// "ВC"; 
-                        }
+                        //}//????
+                        //else if(lastDay.DayOfWeek!= DayOfWeek.Sunday && lastDay.DayOfWeek != DayOfWeek.Monday)
+                        //{
+                        //    cells[vsS[currentColumn + previousDays] + startWith].Value = 7;// "ВC"; 
+                        //}
                     }
 
                     else

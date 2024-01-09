@@ -22,7 +22,9 @@ namespace ERP_NEW.GUI
         [STAThread]
         static void Main()
         {
+
             Application.EnableVisualStyles();
+
             Application.SetCompatibleTextRenderingDefault(false);
 
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("uk-UA");

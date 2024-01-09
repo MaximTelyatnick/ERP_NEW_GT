@@ -24,13 +24,16 @@ namespace ERP_NEW.GUI.Classifiers
         public EmployeesEditDetailsFm(EmployeesInfoDTO model)
         {
             InitializeComponent();
+
             this.model = model;
+
+            fioEdit.DataBindings.Add("EditValue", model, "FullName", true, DataSourceUpdateMode.OnPropertyChanged);
             dateEndJobEdit.EditValue = DateTime.Now;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Дата звільнення працівника " +(dateEndJobEdit.DateTime.ToShortDateString()) + " ?", "Збереження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Дата звільнення працівника: "+ model.FullName +" " +(dateEndJobEdit.DateTime.ToShortDateString()) + " ?", "Збереження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (dateEndJobEdit.EditValue == null)
                 {
