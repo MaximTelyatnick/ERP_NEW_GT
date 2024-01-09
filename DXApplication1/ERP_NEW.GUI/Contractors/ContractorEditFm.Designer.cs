@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorEditFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.contractorContactAddressesPage = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -79,6 +79,8 @@
             this.nameTypeCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.detailsCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.contractorValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.activeCheck = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.contractorContactAddressesPage.SuspendLayout();
@@ -100,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorValidationProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl
@@ -128,6 +131,8 @@
             this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
             this.groupControl1.AppearanceCaption.Options.UseFont = true;
             this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
+            this.groupControl1.Controls.Add(this.labelControl7);
+            this.groupControl1.Controls.Add(this.activeCheck);
             this.groupControl1.Controls.Add(this.validateLbl);
             this.groupControl1.Controls.Add(this.cancelBtn);
             this.groupControl1.Controls.Add(this.ownTypeCBox);
@@ -194,10 +199,10 @@
             this.nameTBox.Name = "nameTBox";
             this.nameTBox.Size = new System.Drawing.Size(629, 20);
             this.nameTBox.TabIndex = 0;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Введіть найменування";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.contractorValidationProvider.SetValidationRule(this.nameTBox, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Введіть найменування";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.contractorValidationProvider.SetValidationRule(this.nameTBox, conditionValidationRule1);
             this.nameTBox.TextChanged += new System.EventHandler(this.nameTBox_TextChanged);
             // 
             // labelControl6
@@ -238,10 +243,10 @@
             this.productCategoryEdit.Name = "productCategoryEdit";
             this.productCategoryEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject7, "", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons3"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons2"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("productCategoryEdit.Properties.Buttons3"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
             this.productCategoryEdit.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CategoryName", "Категорія продукції")});
             this.productCategoryEdit.Properties.ShowHeader = false;
@@ -302,7 +307,7 @@
             this.contactPersonAddressPage.Controls.Add(this.groupControl3);
             this.contactPersonAddressPage.Controls.Add(this.groupControl2);
             this.contactPersonAddressPage.Name = "contactPersonAddressPage";
-            this.contactPersonAddressPage.Size = new System.Drawing.Size(797, 524);
+            this.contactPersonAddressPage.Size = new System.Drawing.Size(798, 526);
             this.contactPersonAddressPage.Text = "Контакти";
             // 
             // groupControl3
@@ -595,6 +600,22 @@
             this.contractorValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.contractorValidationProvider_ValidationFailed);
             this.contractorValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.contractorValidationProvider_ValidationSucceeded);
             // 
+            // activeCheck
+            // 
+            this.activeCheck.Location = new System.Drawing.Point(125, 234);
+            this.activeCheck.Name = "activeCheck";
+            this.activeCheck.Properties.Caption = "";
+            this.activeCheck.Size = new System.Drawing.Size(117, 19);
+            this.activeCheck.TabIndex = 62;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(19, 237);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(56, 13);
+            this.labelControl7.TabIndex = 63;
+            this.labelControl7.Text = "Активність";
+            // 
             // ContractorEditFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,6 +654,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorValidationProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -683,5 +705,7 @@
         private DevExpress.XtraEditors.SimpleButton deleteAllBtn;
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider contractorValidationProvider;
         private DevExpress.XtraEditors.LabelControl validateLbl;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.CheckEdit activeCheck;
     }
 }

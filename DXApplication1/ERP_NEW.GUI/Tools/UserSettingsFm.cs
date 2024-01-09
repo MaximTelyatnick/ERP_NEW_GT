@@ -78,7 +78,7 @@ namespace ERP_NEW.GUI.Tools
         private void createLogerTableBtn_Click(object sender, EventArgs e)
         {
             logService.CreateTable();
-            if (logService.CheckTable("Loganus"))
+            if (logService.CheckTable("Log"))
                 MessageBox.Show("Таблицю \"Log\" створено");
             else
                 MessageBox.Show("Таблицю \"Log\" не створено");

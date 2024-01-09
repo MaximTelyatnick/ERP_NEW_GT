@@ -13084,7 +13084,7 @@ namespace ERP_NEW.BLL.Services
                         continue;
                     }
 
-                    if (j == 28)
+                    if (j == 25)
                     {
                         cells[vsS[currentColumn + j] + startWith].Value = "8";
                         cells[vsS[currentColumn + j] + startWith].Font.Bold = true;

@@ -45,8 +45,9 @@ namespace ERP_NEW.GUI.Contractors
             nameTBox.DataBindings.Add("EditValue", contractorBS, "Name");
             tinTBox.DataBindings.Add("EditValue", contractorBS, "Tin");
             srnTBox.DataBindings.Add("EditValue", contractorBS, "Srn");
+            activeCheck.DataBindings.Add("EditValue", contractorBS, "Active");
 
-           
+
             productCategoryEdit.Properties.DataSource = productCategoryBS;
             productCategoryEdit.Properties.ValueMember = "Id";
             productCategoryEdit.Properties.DisplayMember = "CategoryName";

@@ -62,14 +62,15 @@ namespace ERP_NEW.GUI.Contractors
             contractorsService = Program.kernel.Get<IContractorsService>();
             if (orderCheckItem.Checked)
             {
-                var allData = contractorsService.GetContractors(1); // 1 - все данные, 2 - только контрагенты без договоров}
+                var allData = contractorsService.GetContractors(3); // 1 - все данные(только активные), 2 - только контрагенты без договоров (только активные) }
+                                                                    // 3 - все данные(и неактивные), 4 - только контрагенты без договоров (и неактивные тоже)
                 contractorsBS.DataSource = allData;
                 contractorsGrid.DataSource = contractorsBS;
                 contractorsGridView.ExpandAllGroups();
             }
             else
             {
-                var contractors = contractorsService.GetContractors(2); // 1 - все данные, 2 - только контрагенты без договоров
+                var contractors = contractorsService.GetContractors(4); // 1 - все данные, 2 - только контрагенты без договоров
                 contractorsBS.DataSource = contractors;
                 contractorsGrid.DataSource = contractorsBS;
                 contractorsGridView.ExpandAllGroups();

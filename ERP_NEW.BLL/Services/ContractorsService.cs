@@ -127,10 +127,14 @@ namespace ERP_NEW.BLL.Services
                           join c in contractorTypes.GetAll() on u.ContractorTypeId equals c.TypeId into ct
                           from c in ct.DefaultIfEmpty()
                           where (allData == 1
-                                    ? u.Name != null
+                                    ? (u.Name != null && u.Active == true)
                                     : allData == 2
-                                        ? !(u.Name.StartsWith("Дог"))
-                                        : (u.Name.StartsWith("Дог")))
+                                        ? (!(u.Name.StartsWith("Дог")) && u.Active == true)
+                                        : allData == 3
+                                            ? u.Name != null
+                                            : allData == 4
+                                                ? !(u.Name.StartsWith("Дог"))
+                                                : (u.Name.StartsWith("Дог")))
                           orderby u.Name
                           select new ContractorsDTO
                           {
@@ -143,7 +147,8 @@ namespace ERP_NEW.BLL.Services
                               OwnType = u.OwnType,
                               ContractorTypeId = u.ContractorTypeId,
                               ProductCategoryId = u.ProductCategoryId,
-                              TypeName = c.TypeName
+                              TypeName = c.TypeName,
+                               Active = u.Active
                           });
 
             return result.ToList();

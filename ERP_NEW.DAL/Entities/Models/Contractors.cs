@@ -15,6 +15,7 @@ namespace ERP_NEW.DAL.Entities.Models
         public int? OwnType { get; set; }
         public int? ProductCategoryId { get; set; }
         public int? ContractorTypeId { get; set; }
+        public bool Active { get; set; }
 
     }
 }

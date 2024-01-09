@@ -72,7 +72,10 @@ namespace ERP_NEW.BLL.Services
                 string procName = "CREATE TABLE \"Log\" ( " +
                                "\"Id\" INT NOT NULL PRIMARY KEY, " +
                                "\"Info\" VARCHAR(255), " +
-                               "\"UserId\" INT)";
+                               "\"FormName\" VARCHAR(255), " +
+                               "\"UserId\" INT, " +
+                               "\"LogTime\" TIMESTAMP " +
+                               ")\";";
 
                 log.SQLExecute(procName);
 

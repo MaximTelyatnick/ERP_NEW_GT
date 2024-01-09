@@ -53,6 +53,8 @@
             this.сategoryNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ownNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TypeNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.activeCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.contractorContactAddressGrid = new DevExpress.XtraGrid.GridControl();
@@ -80,6 +82,7 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -259,10 +262,12 @@
             // contractorsGrid
             // 
             this.contractorsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractorsGrid.Location = new System.Drawing.Point(2, 20);
+            this.contractorsGrid.Location = new System.Drawing.Point(2, 22);
             this.contractorsGrid.MainView = this.contractorsGridView;
             this.contractorsGrid.Name = "contractorsGrid";
-            this.contractorsGrid.Size = new System.Drawing.Size(1039, 528);
+            this.contractorsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.contractorsGrid.Size = new System.Drawing.Size(1039, 526);
             this.contractorsGrid.TabIndex = 6;
             this.contractorsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorsGridView});
@@ -275,7 +280,8 @@
             this.tinCol,
             this.сategoryNameCol,
             this.ownNameCol,
-            this.TypeNameCol});
+            this.TypeNameCol,
+            this.activeCol});
             this.contractorsGridView.CustomizationFormBounds = new System.Drawing.Rectangle(1226, 538, 210, 172);
             this.contractorsGridView.GridControl = this.contractorsGrid;
             this.contractorsGridView.GroupCount = 1;
@@ -299,7 +305,7 @@
             this.nameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.nameCol.Visible = true;
             this.nameCol.VisibleIndex = 0;
-            this.nameCol.Width = 474;
+            this.nameCol.Width = 475;
             // 
             // srnCol
             // 
@@ -370,7 +376,26 @@
             this.TypeNameCol.OptionsColumn.AllowFocus = false;
             this.TypeNameCol.Visible = true;
             this.TypeNameCol.VisibleIndex = 4;
-            this.TypeNameCol.Width = 90;
+            this.TypeNameCol.Width = 94;
+            // 
+            // activeCol
+            // 
+            this.activeCol.Caption = "Активність";
+            this.activeCol.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.activeCol.FieldName = "Active";
+            this.activeCol.Name = "activeCol";
+            this.activeCol.OptionsColumn.AllowEdit = false;
+            this.activeCol.OptionsColumn.AllowFocus = false;
+            this.activeCol.Visible = true;
+            this.activeCol.VisibleIndex = 5;
+            this.activeCol.Width = 73;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.ReadOnly = true;
             // 
             // splitContainerControl2
             // 
@@ -382,7 +407,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(374, 550);
+            this.splitContainerControl2.Size = new System.Drawing.Size(373, 550);
             this.splitContainerControl2.SplitterPosition = 294;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -397,19 +422,19 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(374, 294);
+            this.groupControl1.Size = new System.Drawing.Size(373, 294);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Детальна інформація";
             // 
             // contractorContactAddressGrid
             // 
             this.contractorContactAddressGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractorContactAddressGrid.Location = new System.Drawing.Point(2, 20);
+            this.contractorContactAddressGrid.Location = new System.Drawing.Point(2, 22);
             this.contractorContactAddressGrid.MainView = this.contractorContactAddressGridView;
             this.contractorContactAddressGrid.Name = "contractorContactAddressGrid";
             this.contractorContactAddressGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.contractorContactAddressGrid.Size = new System.Drawing.Size(370, 272);
+            this.contractorContactAddressGrid.Size = new System.Drawing.Size(369, 270);
             this.contractorContactAddressGrid.TabIndex = 1;
             this.contractorContactAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorContactAddressGridView});
@@ -481,17 +506,17 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(374, 251);
+            this.groupControl2.Size = new System.Drawing.Size(373, 250);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Контактні особи";
             // 
             // contactPersonAddressGrid
             // 
             this.contactPersonAddressGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contactPersonAddressGrid.Location = new System.Drawing.Point(2, 20);
+            this.contactPersonAddressGrid.Location = new System.Drawing.Point(2, 22);
             this.contactPersonAddressGrid.MainView = this.contactPersonAddressGridView;
             this.contactPersonAddressGrid.Name = "contactPersonAddressGrid";
-            this.contactPersonAddressGrid.Size = new System.Drawing.Size(370, 229);
+            this.contactPersonAddressGrid.Size = new System.Drawing.Size(369, 226);
             this.contactPersonAddressGrid.TabIndex = 1;
             this.contactPersonAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contactPersonAddressGridView});
@@ -632,6 +657,7 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contractorsGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -692,5 +718,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.BarCheckItem orderCheckItem;
         private DevExpress.XtraBars.BarButtonItem dublicateSearchBtn;
+        private DevExpress.XtraGrid.Columns.GridColumn activeCol;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
     }
 }
