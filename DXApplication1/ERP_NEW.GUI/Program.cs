@@ -26,7 +26,6 @@ namespace ERP_NEW.GUI
             Application.EnableVisualStyles();
 
             Application.SetCompatibleTextRenderingDefault(false);
-
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("uk-UA");
 
             Localizer.Active = Localizer.CreateDefaultLocalizer();

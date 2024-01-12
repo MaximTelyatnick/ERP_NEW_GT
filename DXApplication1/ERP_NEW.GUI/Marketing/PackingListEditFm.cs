@@ -96,7 +96,8 @@ namespace ERP_NEW.GUI.Marketing
             {
                 case Utils.Operation.Add:
                     ((PackingListsDTO)Item).PackingDate = DateTime.Now;
-                    ((PackingListsDTO)Item).PackingNumber = GetLastNumber();
+                    //((PackingListsDTO)Item).PackingNumber = GetLastNumber();
+                    ((PackingListsDTO)Item).PackingNumber = "";
                     packingMaterialModelPack = new PackingListMaterialsDTO();
                     packingMaterialModelCompl = new PackingListMaterialsDTO();
                     break;
@@ -180,7 +181,7 @@ namespace ERP_NEW.GUI.Marketing
         private string GetLastNumber()
         {
             var allNumberPackingLists = packingListsService.GetPackingLists().OrderByDescending(x => Decimal.
-                Parse(x.PackingNumber.Replace('.', ','))).FirstOrDefault(x => x.PackingDate.Year == DateTime.Now.Year);
+                Parse(x.PackingNumber.Replace('.', ','))).FirstOrDefault();
 
             if (allNumberPackingLists != null)
             {
