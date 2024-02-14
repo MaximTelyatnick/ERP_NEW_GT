@@ -276,6 +276,7 @@ namespace ERP_NEW.DAL.EF
 
         //R
         public DbSet<ReceiptCertificates> ReceiptCertificates { get; set; }
+        public DbSet<ReceiptCertificateDetail> ReceiptCertificateDetail { get; set; }
         public DbSet<RECEIPTS> Receipts { get; set; }
         public DbSet<ReceiptDetails> ReceiptDetails { get; set; }
         public DbSet<ReceiptOrders> ReceiptOrders { get; set; }
@@ -287,8 +288,6 @@ namespace ERP_NEW.DAL.EF
         public DbSet<RequestLog> RequestLog { get; set; }
         public DbSet<RequestLogContractors> RequestLogContractors { get; set; }
         public DbSet<RequestLogJournal> RequestLogJournal { get; set; }
-        public DbSet<StoreHouseReceiptProject> ReceiptStoreHouseProject { get; set; }
-
         public DbSet<Responsible> Responsible { get; set; }
 
         //S
@@ -296,6 +295,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<Storehouses> Storehouses { get; set; }
         public DbSet<SettlementTypes> SettlementTypes { get; set; }
         public DbSet<StoreHouseTrialBalance> StoreHouseTrialBalance { get; set; }
+        public DbSet<StoreHouseReceiptProject> ReceiptStoreHouseProject { get; set; }
         public DbSet<StoreHouseRemains> StoreHouseRemains { get; set; }
         public DbSet<StoreHouseInventory> StoreHouseInventory { get; set; }
         public DbSet<SearchTable> SearchTable { get; set; }
@@ -339,20 +339,20 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                //DataSource = "localhost",
-                //Database = "TVM_DB",
-                //UserID = "sysdba",
-                //Password = "masterkey",
-                //Charset = "UTF8",
-                //Pooling = true,
-                //ConnectionLifeTime = 900,
-                DataSource = "10.0.0.50",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
                 Pooling = true,
-                ConnectionLifeTime = 900
+                ConnectionLifeTime = 900,
+                //DataSource = "10.0.0.50",
+                //Database = "TVM_DB",
+                //UserID = "sysdba",
+                //Password = "masterkey",
+                //Charset = "UTF8",
+                //Pooling = true,
+                //ConnectionLifeTime = 900
 
             };
 

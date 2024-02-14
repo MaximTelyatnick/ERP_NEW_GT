@@ -236,14 +236,14 @@
             // 
             this.searchTabPage.Controls.Add(this.textEdit);
             this.searchTabPage.Name = "searchTabPage";
-            this.searchTabPage.Size = new System.Drawing.Size(433, 255);
+            this.searchTabPage.Size = new System.Drawing.Size(434, 257);
             this.searchTabPage.Text = "Пошук";
             // 
             // updateTabPage
             // 
             this.updateTabPage.Controls.Add(this.updateEdit);
             this.updateTabPage.Name = "updateTabPage";
-            this.updateTabPage.Size = new System.Drawing.Size(433, 255);
+            this.updateTabPage.Size = new System.Drawing.Size(434, 257);
             this.updateTabPage.Text = "Оновлення";
             // 
             // updateEdit

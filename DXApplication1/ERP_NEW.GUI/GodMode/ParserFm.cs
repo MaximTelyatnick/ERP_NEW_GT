@@ -22,6 +22,7 @@ namespace ERP_NEW.GUI.GodMode
         private IAccountsService accountsService;
         private ICustomerOrdersService customerOrdersService;
         private IStoreHouseService storeHouseService;
+        private IReceiptCertificateService receiptCertificateService;
 
         private List<ExpedinturesAccountantDTO> expenditureAccountantList = new List<ExpedinturesAccountantDTO>();
         private List<CustomerOrdersDTO> customerOrdersList = new List<CustomerOrdersDTO>();
@@ -229,6 +230,34 @@ namespace ERP_NEW.GUI.GodMode
 
             MessageBox.Show("Закази оновлено!");
            
+        }
+
+        private void fixedCertificateBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+           
+
+            List<ReceiptCertificatesDTO> receipeCertificatesList = receiptCertificateService.GetCertificates().ToList();
+
+            foreach (var item in receipeCertificatesList)
+            {
+                ReceiptCertificateDetailDTO createModel = new ReceiptCertificateDetailDTO()
+                {
+                    ReceiptCertificateId = item.ReceiptCertificateId,
+                     ReceiptId = item.ReceiptId
+                };
+                try
+                {
+                    createModel.ReceiptCertificateDetailId = receiptCertificateService.CreateCertificateDetail(createModel);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
+            }
+
+            MessageBox.Show("Сертифікати перенесено");
         }
     }
 }

@@ -170,6 +170,7 @@
     <Compile Include="Entities\Models\MTSPurchasedProducts.cs" />
     <Compile Include="Entities\Models\MTSSpecificationss.cs" />
     <Compile Include="Entities\Models\PaintingWorks.cs" />
+    <Compile Include="Entities\Models\ReceiptCertificateDetail.cs" />
     <Compile Include="Entities\Models\ReceiptDetails.cs" />
     <Compile Include="Entities\Models\Region.cs" />
     <Compile Include="Entities\Models\RequestLog.cs" />
@@ -412,6 +413,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DatabaseSQL.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

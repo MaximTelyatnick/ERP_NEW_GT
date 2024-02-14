@@ -38,12 +38,16 @@
             this.showBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.journalShowBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.deleteCertificateBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.addCertificateBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.certificatePassGrid = new DevExpress.XtraGrid.GridControl();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bandedGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
+            this.receipt = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.InvoiceNum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.InvoiceDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.ReceiptNum = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -55,11 +59,13 @@
             this.SupplierName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.StorekeeperName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.OtkName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.material = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.Nomenclature = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.NomenclatureName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.Quantity = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.Measure = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.StorehouseName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.certificate = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.CertificateNumber = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.CertificateDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.ManufactureInfo = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -74,9 +80,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.receipt = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.material = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.certificate = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -101,9 +104,12 @@
             this.endDateEdit,
             this.showBtn,
             this.addBtn,
-            this.editBtn});
+            this.editBtn,
+            this.journalShowBtn,
+            this.deleteCertificateBtn,
+            this.addCertificateBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 6;
+            this.ribbonControl1.MaxItemId = 9;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -161,21 +167,52 @@
             // 
             // addBtn
             // 
-            this.addBtn.Caption = "Додати сертифікат";
+            this.addBtn.Caption = "Прикріпити сертифікат до надходження";
+            this.addBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBtn.Glyph")));
             this.addBtn.Id = 4;
             this.addBtn.ImageUri.Uri = "Add";
+            this.addBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addBtn.LargeGlyph")));
             this.addBtn.Name = "addBtn";
             this.addBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.addBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addBtn_ItemClick);
             // 
             // editBtn
             // 
-            this.editBtn.Caption = "Редагувати сертифікати";
+            this.editBtn.Caption = "Редагувати сертифікат";
             this.editBtn.Id = 5;
             this.editBtn.ImageUri.Uri = "Edit";
             this.editBtn.Name = "editBtn";
             this.editBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.editBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editBtn_ItemClick);
+            // 
+            // journalShowBtn
+            // 
+            this.journalShowBtn.Caption = "Журнал сертифікатів";
+            this.journalShowBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("journalShowBtn.Glyph")));
+            this.journalShowBtn.Id = 6;
+            this.journalShowBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("journalShowBtn.LargeGlyph")));
+            this.journalShowBtn.Name = "journalShowBtn";
+            this.journalShowBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.journalShowBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.journalShowBtn_ItemClick);
+            // 
+            // deleteCertificateBtn
+            // 
+            this.deleteCertificateBtn.Caption = "Відкріпити сертифікат";
+            this.deleteCertificateBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteCertificateBtn.Glyph")));
+            this.deleteCertificateBtn.Id = 7;
+            this.deleteCertificateBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteCertificateBtn.LargeGlyph")));
+            this.deleteCertificateBtn.Name = "deleteCertificateBtn";
+            this.deleteCertificateBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // addCertificateBtn
+            // 
+            this.addCertificateBtn.Caption = "Прикріпити сертифікат до надходження";
+            this.addCertificateBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addCertificateBtn.Glyph")));
+            this.addCertificateBtn.Id = 8;
+            this.addCertificateBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addCertificateBtn.LargeGlyph")));
+            this.addCertificateBtn.Name = "addCertificateBtn";
+            this.addCertificateBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.addCertificateBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addCertificateBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -190,7 +227,10 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.endDateEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.showBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.addBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.addCertificateBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.editBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.deleteCertificateBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.journalShowBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // certificatePassGrid
@@ -264,13 +304,14 @@
             this.ColorName});
             this.bandedGridView.GridControl = this.certificatePassGrid;
             this.bandedGridView.Name = "bandedGridView";
-            this.bandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.bandedGridView.OptionsFind.AlwaysVisible = true;
+            this.bandedGridView.OptionsView.AllowCellMerge = true;
+            this.bandedGridView.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
             this.bandedGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView.OptionsView.RowAutoHeight = true;
             this.bandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.bandedGridView.OptionsView.ShowFooter = true;
-            this.bandedGridView.RowSeparatorHeight = 2;
+            this.bandedGridView.CellMerge += new DevExpress.XtraGrid.Views.Grid.CellMergeEventHandler(this.bandedGridView_CellMerge);
             this.bandedGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.bandedGridView_RowCellStyle);
             this.bandedGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.bandedGridView_FocusedRowChanged);
             this.bandedGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.bandedGridView_CustomUnboundColumnData);
@@ -305,14 +346,17 @@
             // InvoiceNum
             // 
             this.InvoiceNum.AppearanceCell.Options.UseTextOptions = true;
-            this.InvoiceNum.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.InvoiceNum.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InvoiceNum.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.InvoiceNum.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceNum.AppearanceHeader.Options.UseTextOptions = true;
             this.InvoiceNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.InvoiceNum.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceNum.Caption = "№ накладної";
             this.InvoiceNum.FieldName = "InvoiceNum";
+            this.InvoiceNum.ImageAlignment = System.Drawing.StringAlignment.Center;
             this.InvoiceNum.Name = "InvoiceNum";
+            this.InvoiceNum.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.InvoiceNum.OptionsColumn.AllowMove = false;
             this.InvoiceNum.OptionsColumn.FixedWidth = true;
             this.InvoiceNum.OptionsColumn.ReadOnly = true;
@@ -324,12 +368,14 @@
             // 
             this.InvoiceDate.AppearanceCell.Options.UseTextOptions = true;
             this.InvoiceDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.InvoiceDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.InvoiceDate.AppearanceHeader.Options.UseTextOptions = true;
             this.InvoiceDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.InvoiceDate.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.InvoiceDate.Caption = "Дата накладної";
             this.InvoiceDate.FieldName = "InvoiceDate";
             this.InvoiceDate.Name = "InvoiceDate";
+            this.InvoiceDate.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.InvoiceDate.OptionsColumn.AllowMove = false;
             this.InvoiceDate.OptionsColumn.FixedWidth = true;
             this.InvoiceDate.OptionsColumn.ReadOnly = true;
@@ -339,12 +385,15 @@
             // 
             // ReceiptNum
             // 
+            this.ReceiptNum.AppearanceCell.Options.UseTextOptions = true;
+            this.ReceiptNum.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ReceiptNum.AppearanceHeader.Options.UseTextOptions = true;
             this.ReceiptNum.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.ReceiptNum.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ReceiptNum.Caption = "№ надходження";
             this.ReceiptNum.FieldName = "ReceiptNum";
             this.ReceiptNum.Name = "ReceiptNum";
+            this.ReceiptNum.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.True;
             this.ReceiptNum.OptionsColumn.AllowMove = false;
             this.ReceiptNum.OptionsColumn.FixedWidth = true;
             this.ReceiptNum.OptionsColumn.ReadOnly = true;
@@ -356,6 +405,7 @@
             // 
             this.OrderDate.AppearanceCell.Options.UseTextOptions = true;
             this.OrderDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.OrderDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.OrderDate.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
             this.OrderDate.AppearanceHeader.Options.UseTextOptions = true;
             this.OrderDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -375,6 +425,7 @@
             this.VendorName.AppearanceCell.Options.HighPriority = true;
             this.VendorName.AppearanceCell.Options.UseTextOptions = true;
             this.VendorName.AppearanceCell.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
+            this.VendorName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.VendorName.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.VendorName.AppearanceHeader.Options.UseTextOptions = true;
             this.VendorName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -400,6 +451,7 @@
             // VendorSrn
             // 
             this.VendorSrn.AppearanceCell.Options.UseTextOptions = true;
+            this.VendorSrn.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.VendorSrn.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.VendorSrn.AppearanceHeader.Options.UseTextOptions = true;
             this.VendorSrn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -425,6 +477,8 @@
             // 
             // SupplierName
             // 
+            this.SupplierName.AppearanceCell.Options.UseTextOptions = true;
+            this.SupplierName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.SupplierName.AppearanceHeader.Options.UseTextOptions = true;
             this.SupplierName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.SupplierName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -441,6 +495,8 @@
             // 
             // StorekeeperName
             // 
+            this.StorekeeperName.AppearanceCell.Options.UseTextOptions = true;
+            this.StorekeeperName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.StorekeeperName.AppearanceHeader.Options.UseTextOptions = true;
             this.StorekeeperName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.StorekeeperName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -458,7 +514,7 @@
             // OtkName
             // 
             this.OtkName.AppearanceCell.Options.UseTextOptions = true;
-            this.OtkName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.OtkName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.OtkName.AppearanceHeader.Options.UseTextOptions = true;
             this.OtkName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.OtkName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -474,9 +530,11 @@
             // 
             // material
             // 
+            this.material.AppearanceHeader.BackColor = System.Drawing.Color.White;
             this.material.AppearanceHeader.BackColor2 = System.Drawing.Color.Moccasin;
             this.material.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.material.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
+            this.material.AppearanceHeader.Options.UseBackColor = true;
             this.material.AppearanceHeader.Options.UseFont = true;
             this.material.AppearanceHeader.Options.UseForeColor = true;
             this.material.AppearanceHeader.Options.UseTextOptions = true;
@@ -490,14 +548,14 @@
             this.material.Name = "material";
             this.material.OptionsBand.FixedWidth = true;
             this.material.VisibleIndex = 1;
-            this.material.Width = 313;
+            this.material.Width = 305;
             // 
             // Nomenclature
             // 
             this.Nomenclature.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
             this.Nomenclature.AppearanceCell.Options.UseBackColor = true;
             this.Nomenclature.AppearanceCell.Options.UseTextOptions = true;
-            this.Nomenclature.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.Nomenclature.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Nomenclature.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Nomenclature.AppearanceHeader.Options.UseTextOptions = true;
             this.Nomenclature.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -505,6 +563,7 @@
             this.Nomenclature.Caption = "Наменклатурний №";
             this.Nomenclature.FieldName = "Nomenclature";
             this.Nomenclature.Name = "Nomenclature";
+            this.Nomenclature.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Nomenclature.OptionsColumn.AllowMove = false;
             this.Nomenclature.OptionsColumn.FixedWidth = true;
             this.Nomenclature.OptionsColumn.ReadOnly = true;
@@ -517,13 +576,14 @@
             this.NomenclatureName.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
             this.NomenclatureName.AppearanceCell.Options.UseBackColor = true;
             this.NomenclatureName.AppearanceCell.Options.UseTextOptions = true;
-            this.NomenclatureName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.NomenclatureName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.NomenclatureName.AppearanceHeader.Options.UseTextOptions = true;
             this.NomenclatureName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.NomenclatureName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.NomenclatureName.Caption = "Найменування";
             this.NomenclatureName.FieldName = "NomenclatureName";
             this.NomenclatureName.Name = "NomenclatureName";
+            this.NomenclatureName.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.NomenclatureName.OptionsColumn.AllowMove = false;
             this.NomenclatureName.OptionsColumn.FixedWidth = true;
             this.NomenclatureName.OptionsColumn.ReadOnly = true;
@@ -535,12 +595,15 @@
             // 
             this.Quantity.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
             this.Quantity.AppearanceCell.Options.UseBackColor = true;
+            this.Quantity.AppearanceCell.Options.UseTextOptions = true;
+            this.Quantity.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Quantity.AppearanceHeader.Options.UseTextOptions = true;
             this.Quantity.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Quantity.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Quantity.Caption = "К-сть";
             this.Quantity.FieldName = "Quantity";
             this.Quantity.Name = "Quantity";
+            this.Quantity.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Quantity.OptionsColumn.AllowMove = false;
             this.Quantity.OptionsColumn.FixedWidth = true;
             this.Quantity.OptionsColumn.ReadOnly = true;
@@ -554,12 +617,14 @@
             this.Measure.AppearanceCell.Options.UseBackColor = true;
             this.Measure.AppearanceCell.Options.UseTextOptions = true;
             this.Measure.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.Measure.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Measure.AppearanceHeader.Options.UseTextOptions = true;
             this.Measure.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Measure.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Measure.Caption = "Од. вимір.";
             this.Measure.FieldName = "Measure";
             this.Measure.Name = "Measure";
+            this.Measure.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Measure.OptionsColumn.AllowMove = false;
             this.Measure.OptionsColumn.FixedWidth = true;
             this.Measure.OptionsColumn.ReadOnly = true;
@@ -571,6 +636,8 @@
             // 
             this.StorehouseName.AppearanceCell.BackColor = System.Drawing.Color.MintCream;
             this.StorehouseName.AppearanceCell.Options.UseBackColor = true;
+            this.StorehouseName.AppearanceCell.Options.UseTextOptions = true;
+            this.StorehouseName.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.StorehouseName.AppearanceHeader.Options.UseTextOptions = true;
             this.StorehouseName.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.StorehouseName.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -578,6 +645,7 @@
             this.StorehouseName.ColumnEdit = this.repositoryItemMemoEdit1;
             this.StorehouseName.FieldName = "StorehouseName";
             this.StorehouseName.Name = "StorehouseName";
+            this.StorehouseName.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.StorehouseName.OptionsColumn.AllowMove = false;
             this.StorehouseName.OptionsColumn.FixedWidth = true;
             this.StorehouseName.OptionsColumn.ReadOnly = true;
@@ -587,8 +655,13 @@
             // 
             // certificate
             // 
+            this.certificate.AppearanceHeader.BackColor = System.Drawing.Color.Cyan;
+            this.certificate.AppearanceHeader.BackColor2 = System.Drawing.Color.Cyan;
+            this.certificate.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.certificate.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.certificate.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
+            this.certificate.AppearanceHeader.Options.UseBackColor = true;
+            this.certificate.AppearanceHeader.Options.UseBorderColor = true;
             this.certificate.AppearanceHeader.Options.UseFont = true;
             this.certificate.AppearanceHeader.Options.UseForeColor = true;
             this.certificate.AppearanceHeader.Options.UseTextOptions = true;
@@ -603,18 +676,21 @@
             this.certificate.Name = "certificate";
             this.certificate.OptionsBand.FixedWidth = true;
             this.certificate.VisibleIndex = 2;
-            this.certificate.Width = 266;
+            this.certificate.Width = 293;
             // 
             // CertificateNumber
             // 
             this.CertificateNumber.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
             this.CertificateNumber.AppearanceCell.Options.UseBackColor = true;
+            this.CertificateNumber.AppearanceCell.Options.UseTextOptions = true;
+            this.CertificateNumber.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.CertificateNumber.AppearanceHeader.Options.UseTextOptions = true;
             this.CertificateNumber.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CertificateNumber.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.CertificateNumber.Caption = "№ сертифіката";
             this.CertificateNumber.FieldName = "CertificateNumber";
             this.CertificateNumber.Name = "CertificateNumber";
+            this.CertificateNumber.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.CertificateNumber.OptionsColumn.AllowMove = false;
             this.CertificateNumber.OptionsColumn.FixedWidth = true;
             this.CertificateNumber.OptionsColumn.ReadOnly = true;
@@ -628,12 +704,14 @@
             this.CertificateDate.AppearanceCell.Options.UseBackColor = true;
             this.CertificateDate.AppearanceCell.Options.UseTextOptions = true;
             this.CertificateDate.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.CertificateDate.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.CertificateDate.AppearanceHeader.Options.UseTextOptions = true;
             this.CertificateDate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.CertificateDate.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.CertificateDate.Caption = "Дата";
             this.CertificateDate.FieldName = "CertificateDate";
             this.CertificateDate.Name = "CertificateDate";
+            this.CertificateDate.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.CertificateDate.OptionsColumn.AllowMove = false;
             this.CertificateDate.OptionsColumn.FixedWidth = true;
             this.CertificateDate.OptionsColumn.ReadOnly = true;
@@ -646,6 +724,7 @@
             this.ManufactureInfo.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
             this.ManufactureInfo.AppearanceCell.Options.UseBackColor = true;
             this.ManufactureInfo.AppearanceCell.Options.UseTextOptions = true;
+            this.ManufactureInfo.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.ManufactureInfo.AppearanceCell.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.ManufactureInfo.AppearanceHeader.Options.UseTextOptions = true;
             this.ManufactureInfo.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
@@ -654,6 +733,7 @@
             this.ManufactureInfo.ColumnEdit = this.repositoryItemMemoEdit1;
             this.ManufactureInfo.FieldName = "ManufacturerInfo";
             this.ManufactureInfo.Name = "ManufactureInfo";
+            this.ManufactureInfo.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.ManufactureInfo.OptionsColumn.AllowMove = false;
             this.ManufactureInfo.OptionsColumn.FixedWidth = true;
             this.ManufactureInfo.OptionsColumn.ReadOnly = true;
@@ -665,12 +745,15 @@
             // 
             this.Description.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
             this.Description.AppearanceCell.Options.UseBackColor = true;
+            this.Description.AppearanceCell.Options.UseTextOptions = true;
+            this.Description.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.Description.AppearanceHeader.Options.UseTextOptions = true;
             this.Description.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Description.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.Description.Caption = "Додаткова інф.";
             this.Description.FieldName = "Description";
             this.Description.Name = "Description";
+            this.Description.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.Description.OptionsColumn.AllowMove = false;
             this.Description.OptionsColumn.FixedWidth = true;
             this.Description.OptionsColumn.ReadOnly = true;
@@ -683,6 +766,8 @@
             // 
             this.InformationRow.AppearanceCell.BackColor = System.Drawing.Color.LightCyan;
             this.InformationRow.AppearanceCell.Options.UseBackColor = true;
+            this.InformationRow.AppearanceCell.Options.UseTextOptions = true;
+            this.InformationRow.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.InformationRow.AppearanceHeader.Options.UseTextOptions = true;
             this.InformationRow.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.InformationRow.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
@@ -694,6 +779,7 @@
             this.InformationRow.Name = "InformationRow";
             this.InformationRow.OptionsColumn.AllowEdit = false;
             this.InformationRow.OptionsColumn.AllowFocus = false;
+            this.InformationRow.OptionsColumn.AllowMerge = DevExpress.Utils.DefaultBoolean.False;
             this.InformationRow.OptionsColumn.AllowMove = false;
             this.InformationRow.OptionsColumn.FixedWidth = true;
             this.InformationRow.OptionsColumn.ReadOnly = true;
@@ -762,79 +848,6 @@
             // splashScreenManager
             // 
             this.splashScreenManager.ClosingDelay = 500;
-            // 
-            // receipt
-            // 
-            this.receipt.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.receipt.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
-            this.receipt.AppearanceHeader.Options.UseFont = true;
-            this.receipt.AppearanceHeader.Options.UseForeColor = true;
-            this.receipt.AppearanceHeader.Options.UseTextOptions = true;
-            this.receipt.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.receipt.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.receipt.Caption = "Надходження";
-            this.receipt.Columns.Add(this.InvoiceNum);
-            this.receipt.Columns.Add(this.InvoiceDate);
-            this.receipt.Columns.Add(this.ReceiptNum);
-            this.receipt.Columns.Add(this.OrderDate);
-            this.receipt.Columns.Add(this.VendorName);
-            this.receipt.Columns.Add(this.VendorSrn);
-            this.receipt.Columns.Add(this.SupplierName);
-            this.receipt.Columns.Add(this.StorekeeperName);
-            this.receipt.Columns.Add(this.OtkName);
-            this.receipt.Name = "receipt";
-            this.receipt.OptionsBand.AllowMove = false;
-            this.receipt.OptionsBand.AllowSize = false;
-            this.receipt.OptionsBand.FixedWidth = true;
-            this.receipt.VisibleIndex = 0;
-            this.receipt.Width = 694;
-            // 
-            // material
-            // 
-            this.material.AppearanceHeader.BackColor = System.Drawing.Color.White;
-            this.material.AppearanceHeader.BackColor2 = System.Drawing.Color.Moccasin;
-            this.material.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.material.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
-            this.material.AppearanceHeader.Options.UseBackColor = true;
-            this.material.AppearanceHeader.Options.UseFont = true;
-            this.material.AppearanceHeader.Options.UseForeColor = true;
-            this.material.AppearanceHeader.Options.UseTextOptions = true;
-            this.material.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.material.Caption = "Матеріали";
-            this.material.Columns.Add(this.Nomenclature);
-            this.material.Columns.Add(this.NomenclatureName);
-            this.material.Columns.Add(this.Quantity);
-            this.material.Columns.Add(this.Measure);
-            this.material.Columns.Add(this.StorehouseName);
-            this.material.Name = "material";
-            this.material.OptionsBand.FixedWidth = true;
-            this.material.VisibleIndex = 1;
-            this.material.Width = 313;
-            // 
-            // certificate
-            // 
-            this.certificate.AppearanceHeader.BackColor = System.Drawing.Color.Cyan;
-            this.certificate.AppearanceHeader.BackColor2 = System.Drawing.Color.Cyan;
-            this.certificate.AppearanceHeader.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.certificate.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.certificate.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
-            this.certificate.AppearanceHeader.Options.UseBackColor = true;
-            this.certificate.AppearanceHeader.Options.UseBorderColor = true;
-            this.certificate.AppearanceHeader.Options.UseFont = true;
-            this.certificate.AppearanceHeader.Options.UseForeColor = true;
-            this.certificate.AppearanceHeader.Options.UseTextOptions = true;
-            this.certificate.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.certificate.Caption = "Сертифікати";
-            this.certificate.Columns.Add(this.CertificateNumber);
-            this.certificate.Columns.Add(this.CertificateDate);
-            this.certificate.Columns.Add(this.ManufactureInfo);
-            this.certificate.Columns.Add(this.Description);
-            this.certificate.Columns.Add(this.InformationRow);
-            this.certificate.MinWidth = 30;
-            this.certificate.Name = "certificate";
-            this.certificate.OptionsBand.FixedWidth = true;
-            this.certificate.VisibleIndex = 2;
-            this.certificate.Width = 266;
             // 
             // CertificatePassFm
             // 
@@ -915,5 +928,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand receipt;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand material;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand certificate;
+        private DevExpress.XtraBars.BarButtonItem journalShowBtn;
+        private DevExpress.XtraBars.BarButtonItem deleteCertificateBtn;
+        private DevExpress.XtraBars.BarButtonItem addCertificateBtn;
     }
 }

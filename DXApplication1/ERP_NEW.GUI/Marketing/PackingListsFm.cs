@@ -229,7 +229,7 @@ namespace ERP_NEW.BLL.Marketing
         }
 
 
-        private void packingListsGridView_CellMerge(object sender, DevExpress.XtraGrid.Views.Grid.CellMergeEventArgs e)
+        private void packingListsGridView_CellMerge(object sender, CellMergeEventArgs e)
         {
             GridView view = sender as GridView;
             PackingListsJournalDTO model1 = (PackingListsJournalDTO)view.GetRow(e.RowHandle1);

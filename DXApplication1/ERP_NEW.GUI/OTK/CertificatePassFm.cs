@@ -18,6 +18,7 @@ using System.IO;
 using ERP_NEW.GUI.Classifiers;
 using ERP_NEW.BLL.Services;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.BandedGrid;
 
 namespace ERP_NEW.GUI.OTK
 {
@@ -30,12 +31,19 @@ namespace ERP_NEW.GUI.OTK
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
         private object informationRow;
         private DateTime beginDate, endDate;
+        private UserTasksDTO userTasksDTO;
 
 
         public CertificatePassFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
-            this.beginDate = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1); // год - месяц - день
+
+            //ruzView2GridView.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(gridTableOfLessonInSchedule_CustomDrawCell);
+
+            bandedGridView.CellMerge += new CellMergeEventHandler(bandedGridView_CellMerge);
+
+            this.userTasksDTO = userTasksDTO;
+            this.beginDate = new DateTime(DateTime.Today.Year - 1, DateTime.Today.Month, 1); // год - месяц - день
             this.endDate = DateTime.Today;
             beginDateEdit.EditValue = beginDate;
             endDateEdit.EditValue = endDate;
@@ -46,7 +54,8 @@ namespace ERP_NEW.GUI.OTK
         private void LoadDate(DateTime beginDate, DateTime endDate)
         {
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
-            var orders = receiptCertificateService.GetOrdersWithCertificate(beginDate, endDate);
+            //var orders = receiptCertificateService.GetOrdersWithCertificate(beginDate, endDate);
+            var orders = receiptCertificateService.GetOrdersWithCertificateV2(beginDate, endDate);
 
             ordersBS.DataSource = orders;
             certificatePassGrid.DataSource = ordersBS;
@@ -151,15 +160,15 @@ namespace ERP_NEW.GUI.OTK
 
         private void editCertificate(Utils.Operation operation)
         {
-            CertificateEditFm certificateEditFm = new CertificateEditFm(operation, (OrdersInfoDTO)ordersBS.Current);
+            //CertificateEditFm certificateEditFm = new CertificateEditFm(operation, new ReceiptCertificatesDTO {ReceiptCertificateId =  ((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId);
 
-            if (certificateEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                DateTime begin_Date = (DateTime)beginDateEdit.EditValue;
-                DateTime end_Date = (DateTime)endDateEdit.EditValue;
-                LoadDate(begin_Date, end_Date);
-                certificatePassGrid.Focus();
-            }
+            //if (certificateEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    DateTime begin_Date = (DateTime)beginDateEdit.EditValue;
+            //    DateTime end_Date = (DateTime)endDateEdit.EditValue;
+            //    LoadDate(begin_Date, end_Date);
+            //    certificatePassGrid.Focus();
+            //}
         }
 
 
@@ -247,6 +256,33 @@ namespace ERP_NEW.GUI.OTK
                 contextMenuStrip.Enabled = true;
 
                
+            }
+        }
+
+        private void journalShowBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            CertificateJournalFm certificateJournalFm = new CertificateJournalFm(userTasksDTO);
+            certificateJournalFm.ShowDialog();
+        }
+
+        private void addCertificateBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
+            {
+                editCertificate(Utils.Operation.Add);
+            }
+        }
+
+        private void bandedGridView_CellMerge(object sender, CellMergeEventArgs e)
+        {
+            BandedGridView view = sender as BandedGridView;
+            OrdersInfoDTO model1 = (OrdersInfoDTO)view.GetRow(e.RowHandle1);
+            OrdersInfoDTO model2 = (OrdersInfoDTO)view.GetRow(e.RowHandle2);
+
+            if (e.Column.FieldName != "InvoiceNum")
+            {
+                e.Merge = (model1.InvoiceNum == model2.InvoiceNum);
+                e.Handled = true;
             }
         }
 

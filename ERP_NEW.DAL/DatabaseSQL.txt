@@ -1,0 +1,158 @@
+﻿
+/* Создание таблицы ReceiptCertificateDetail */
+CREATE GENERATOR "Seq_ReceiptCertificateDetailId";
+
+CREATE TABLE "ReceiptCertificateDetail" (
+    "ReceiptCertificateDetailId"  BIGINT NOT NULL,
+    "ReceiptCertificateId"  INTEGER,
+    "ReceiptId"             INTEGER
+);
+
+
+/******************************************************************************/
+/***                              Primary Keys                              ***/
+/******************************************************************************/
+
+/*ALTER TABLE "ReceiptCertificateDetail" ADD CONSTRAINT "PK_ReceiptCertificateDetail" PRIMARY KEY ("ReceiptCertificateDetailId");
+
+
+/******************************************************************************/
+/***                              Foreign Keys                              ***/
+/******************************************************************************/
+
+
+
+ALTER TABLE "ReceiptCertificateDetail" ADD CONSTRAINT "FK_ReceiptCertDet_RecCert" FOREIGN KEY ("ReceiptCertificateId") REFERENCES "ReceiptCertificates" ("ReceiptCertificateId");
+
+ALTER TABLE "ReceiptCertificateDetail" ADD CONSTRAINT "FK_ReceiptCertDet_Receipts" FOREIGN KEY ("ReceiptId") REFERENCES RECEIPTS (ID);
+
+
+/* Trigger: "Tr_BIO_ReceiptCertificates" */
+CREATE OR ALTER TRIGGER "Tr_BIO_ReceiptCertificateDetail" FOR "ReceiptCertificateDetail"
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+  NEW."ReceiptCertificateDetailId" = NEXT VALUE FOR "Seq_ReceiptCertificateDetailId";
+end
+
+
+/******************************************************************************/
+/***         Create or alter procedure "GetOrdersWithCertificateV2          ***/
+/******************************************************************************/
+create or alter procedure "GetOrdersWithCertificateV2" (
+    "BeginDate" date,
+    "EndDate" date)
+returns (
+    "ReceiptId" integer,
+    "Quantity" numeric(18,6),
+    "Nomenclature" varchar(12),
+    "NomenclatureName" varchar(200),
+    "Measure" varchar(10),
+    "OrderDate" date,
+    "ReceiptNum" varchar(12),
+    "InvoiceDate" date,
+    "InvoiceNum" varchar(50),
+    "SupplierName" varchar(80),
+    "VendorName" varchar(200),
+    "VendorSrn" varchar(14),
+    "OtkName" varchar(80),
+    "StorekeeperName" varchar(80),
+    "StorehouseName" varchar(50),
+    "ReceiptCertificateId" bigint,
+    "CertificateDate" date,
+    "CertificateNumber" varchar(40),
+    "FileName" varchar(100),
+    "ManufacturerInfo" varchar(200),
+    "Description" varchar(200),
+    "ScanPersence" integer,
+    "FileNameTwo" varchar(100),
+    "ScanPersenceTwo" integer,
+    "ColorName" varchar(20))
+as
+BEGIN
+  FOR
+    SELECT
+        r.ID as "ReceiptId",
+        r.Quantity as "Quantity",
+        n.Nomenclature as "Nomenclature",
+        n.Name as "NomenclatureName",
+        n.Measure as "Measure",
+        o.Order_Date as "OrderDate",
+        o.Receipt_Num as "ReceiptNum",
+        o.Invoice_Date as "InvoiceDate",
+        o.Invoice_Num as "InvoiceNum",
+        Suppliers_Sup.Name AS "SupplierName",
+        c."Name" AS "VendorName",
+        c."Srn" AS "VendorSrn",
+        Suppliers_Otk.Name AS "OtkName",
+        Suppliers_Storekeeper.Name as "StorekeeperName",
+        s."Name" as "StorehouseName",
+        rc."ReceiptCertificateId",
+        rc."CertificateDate",
+        rc."CertificateNumber",
+        rc."FileName",
+        rc."ManufacturerInfo",
+        rc."Description",
+        IIF(CHAR_LENGTH(rc."CertificateScan") > 0, 1, 0) AS "ScanPersence",
+        rc."FileNameTwo",
+        IIF(CHAR_LENGTH(rc."CertificateScan") > 0, 1, 0) AS "ScanPersenceTwo",
+        col."Name" as "ColorName"
+    FROM
+        Orders o
+      LEFT JOIN
+        "Contractors" c ON o.VENDOR_ID = c."Id"
+      LEFT JOIN
+        Suppliers AS Suppliers_Sup ON o.Supplier_Id = Suppliers_Sup.Id
+      LEFT JOIN
+        Suppliers AS Suppliers_Otk ON o."Otk_Id" = Suppliers_Otk.Id
+      LEFT JOIN
+        Suppliers AS Suppliers_Storekeeper ON o."Storekeeper_Id" = Suppliers_Storekeeper.Id
+      LEFT JOIN
+        Receipts r ON o.ID = r.ORDER_ID
+      LEFT JOIN
+        Nomenclatures n ON r.NOMENCLATURE_ID = n.ID
+      LEFT JOIN
+        "Storehouses" s ON r."Storehouse_Id" = s."Id"
+      LEFT JOIN
+        "ReceiptCertificateDetail" rcd ON r.ID = rcd."ReceiptId"
+      LEFT JOIN
+        "ReceiptCertificates" rc ON rcd."ReceiptCertificateId" = rc."ReceiptCertificateId"
+      LEFT JOIN
+        "Colors" col ON rc."ColorId" = col."Id"
+    WHERE
+        (o.Order_Date >= :"BeginDate" AND o.Order_Date <= :"EndDate")
+        /*AND o.Checked = 1*/
+        AND (o."Flag1" = 1 OR o."Flag3" = 1 OR o."Flag4" = -1)
+        AND o.CORRECTION = 0
+    ORDER BY
+        o.Order_Date
+    INTO :"ReceiptId",
+         :"Quantity",
+         :"Nomenclature",
+         :"NomenclatureName",
+         :"Measure",
+         :"OrderDate",
+         :"ReceiptNum",
+         :"InvoiceDate",
+         :"InvoiceNum",
+         :"SupplierName",
+         :"VendorName",
+         :"VendorSrn",
+         :"OtkName",
+         :"StorekeeperName",
+         :"StorehouseName",
+         :"ReceiptCertificateId",
+         :"CertificateDate",
+         :"CertificateNumber",
+         :"FileName",
+         :"ManufacturerInfo",
+         :"Description",
+         :"ScanPersence",
+         :"FileNameTwo",
+         :"ScanPersenceTwo",
+         :"ColorName"
+           DO
+  BEGIN
+    SUSPEND;
+  END
+END^

@@ -17,10 +17,11 @@ using System.IO;
 
 namespace ERP_NEW.BLL.Services
 {
-    public class ReceiptCertificateService : IReceiptCertificateService 
-    { 
+    public class ReceiptCertificateService : IReceiptCertificateService
+    {
         private IUnitOfWork Database { get; set; }
         private IRepository<ReceiptCertificates> receiptCertificate;
+        private IRepository<ReceiptCertificateDetail> receiptCertificateDetail;
         private IRepository<ExpenditureByOrders> expenditureByOrders;
         private IRepository<OrdersInfo> ordersInfo;
         private IMapper mapper;
@@ -29,14 +30,16 @@ namespace ERP_NEW.BLL.Services
         {
             Database = uow;
             receiptCertificate = Database.GetRepository<ReceiptCertificates>();
+            receiptCertificateDetail = Database.GetRepository<ReceiptCertificateDetail>();
             expenditureByOrders = Database.GetRepository<ExpenditureByOrders>();
             ordersInfo = Database.GetRepository<OrdersInfo>();
-           
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<ReceiptCertificates, ReceiptCertificatesDTO>();
                 cfg.CreateMap<ReceiptCertificatesDTO, ReceiptCertificates>();
-
+                cfg.CreateMap<ReceiptCertificateDetail, ReceiptCertificateDetailDTO>();
+                cfg.CreateMap<ReceiptCertificateDetailDTO, ReceiptCertificateDetail>();
                 cfg.CreateMap<OrdersInfo, OrdersInfoDTO>();
                 cfg.CreateMap<ExpenditureByOrders, ExpenditureByOrdersDTO>();
             });
@@ -57,7 +60,20 @@ namespace ERP_NEW.BLL.Services
 
             return mapper.Map<IEnumerable<OrdersInfo>, List<OrdersInfoDTO>>(ordersInfo.SQLExecuteProc(procName, Parameters));
         }
-        
+
+        public IEnumerable<OrdersInfoDTO> GetOrdersWithCertificateV2(DateTime beginDate, DateTime endDate)
+        {
+            FbParameter[] Parameters =
+            {
+                new FbParameter("BeginDate", beginDate),
+                new FbParameter("EndDate", endDate)
+                };
+            string procName = @"select * from ""GetOrdersWithCertificateV2""(@BeginDate,@EndDate)";
+
+            return mapper.Map<IEnumerable<OrdersInfo>, List<OrdersInfoDTO>>(ordersInfo.SQLExecuteProc(procName, Parameters));
+        }
+
+
         public IEnumerable<ExpenditureByOrdersDTO> GetExpenditureByCustomerOrders(DateTime beginDate, DateTime endDate)
         {
             FbParameter[] Parameters =
@@ -69,17 +85,36 @@ namespace ERP_NEW.BLL.Services
 
             return mapper.Map<IEnumerable<ExpenditureByOrders>, List<ExpenditureByOrdersDTO>>(expenditureByOrders.SQLExecuteProc(procName, Parameters));
         }
-        
+
         public ReceiptCertificatesDTO GetCertificate(long id)
         {
-           var record = receiptCertificate.GetAll().SingleOrDefault(r => r.ReceiptCertificateId == id);
+            var record = receiptCertificate.GetAll().SingleOrDefault(r => r.ReceiptCertificateId == id);
 
-           return mapper.Map<ReceiptCertificates, ReceiptCertificatesDTO>(record);
+            return mapper.Map<ReceiptCertificates, ReceiptCertificatesDTO>(record);
         }
 
         public IEnumerable<ReceiptCertificatesDTO> GetCertificates()
         {
-            return mapper.Map<IEnumerable<ReceiptCertificates>, List<ReceiptCertificatesDTO>>(receiptCertificate.GetAll());
+            var result = (from cert in receiptCertificate.GetAll()
+                          select new ReceiptCertificatesDTO()
+                          {
+                              ReceiptCertificateId = cert.ReceiptCertificateId,
+                              CertificateDate = cert.CertificateDate,
+                              CertificateNumber = cert.CertificateNumber,
+                              ReceiptId = cert.ReceiptId,
+                              Description = cert.Description,
+                               FileName = cert.FileName,
+                              ScanCheck = cert.FileName.Length > 0 ? true:false,
+                               ManufacturerInfo = cert.ManufacturerInfo
+                                 
+                          }).ToList();
+            return result;
+        }
+
+
+        public IEnumerable<ReceiptCertificateDetailDTO> GetCertificateDetail()
+        {
+            return mapper.Map<IEnumerable<ReceiptCertificateDetail>, List<ReceiptCertificateDetailDTO>>(receiptCertificateDetail.GetAll());
         }
         #endregion
 
@@ -113,7 +148,37 @@ namespace ERP_NEW.BLL.Services
         }
         #endregion
 
-       private byte[] ObjectToByteArray(object obj)
+        #region ReceiptCertificateDetail CRUD method`s
+
+        public long CreateCertificateDetail(ReceiptCertificateDetailDTO dtomodel)
+        {
+            var record = receiptCertificateDetail.Create(mapper.Map<ReceiptCertificateDetail>(dtomodel));
+            return record.ReceiptCertificateDetailId;
+        }
+
+        public void UpdateCertificateDetail(ReceiptCertificateDetailDTO dtomodel)
+        {
+            var entity = receiptCertificateDetail.GetAll().SingleOrDefault(c => c.ReceiptCertificateDetailId == dtomodel.ReceiptCertificateDetailId);
+            receiptCertificateDetail.Update(mapper.Map<ReceiptCertificateDetailDTO, ReceiptCertificateDetail>(dtomodel, entity));
+        }
+
+        public bool RemoveCertificateDetailId(long id)
+        {
+            try
+            {
+                var delEntity = receiptCertificateDetail.GetAll().SingleOrDefault(c => c.ReceiptCertificateDetailId == id);
+                receiptCertificateDetail.Delete(delEntity);
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        private byte[] ObjectToByteArray(object obj)
         {
             if (obj == null)
                 return null;
@@ -124,7 +189,7 @@ namespace ERP_NEW.BLL.Services
                 return ms.ToArray();
             }
         }
-        
+
         public void Dispose()
         {
             Database.Dispose();

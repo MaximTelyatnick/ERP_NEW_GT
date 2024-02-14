@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExpendituresFm));
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.expendituresRibbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -58,7 +59,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.expendituresGrid = new DevExpress.XtraGrid.GridControl();
             this.expenditureBandedGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
             this.id = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
@@ -506,7 +507,6 @@
             this.expenditureTypeCol});
             this.expenditureBandedGridView.GridControl = this.expendituresGrid;
             this.expenditureBandedGridView.Name = "expenditureBandedGridView";
-            this.expenditureBandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.expenditureBandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.expenditureBandedGridView.OptionsView.ShowFooter = true;
             this.expenditureBandedGridView.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.expenditureBandedGridView_RowCellStyle);
@@ -954,7 +954,6 @@
             this.bandedGridColumn22});
             this.expendituresForExportToXlsGridView.GridControl = this.expendituresForExportToXlsGrid;
             this.expendituresForExportToXlsGridView.Name = "expendituresForExportToXlsGridView";
-            this.expendituresForExportToXlsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.expendituresForExportToXlsGridView.OptionsView.ShowAutoFilterRow = true;
             this.expendituresForExportToXlsGridView.OptionsView.ShowFooter = true;
             this.expendituresForExportToXlsGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {

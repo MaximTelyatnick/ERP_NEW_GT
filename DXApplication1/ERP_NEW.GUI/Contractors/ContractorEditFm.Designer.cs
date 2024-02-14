@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorEditFm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -38,6 +37,8 @@
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.contractorContactAddressesPage = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.activeCheck = new DevExpress.XtraEditors.CheckEdit();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.ownTypeCBox = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -78,14 +79,13 @@
             this.contractorContactAddressGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameTypeCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.detailsCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contractorValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
-            this.activeCheck = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.contractorValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.contractorContactAddressesPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownTypeCBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryEdit.Properties)).BeginInit();
@@ -102,7 +102,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorValidationProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xtraTabControl
@@ -153,6 +152,22 @@
             this.groupControl1.Size = new System.Drawing.Size(779, 510);
             this.groupControl1.TabIndex = 12;
             this.groupControl1.Text = "Контрагент";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(19, 237);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(56, 13);
+            this.labelControl7.TabIndex = 63;
+            this.labelControl7.Text = "Активність";
+            // 
+            // activeCheck
+            // 
+            this.activeCheck.Location = new System.Drawing.Point(125, 234);
+            this.activeCheck.Name = "activeCheck";
+            this.activeCheck.Properties.Caption = "";
+            this.activeCheck.Size = new System.Drawing.Size(117, 19);
+            this.activeCheck.TabIndex = 62;
             // 
             // validateLbl
             // 
@@ -600,22 +615,6 @@
             this.contractorValidationProvider.ValidationFailed += new DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventHandler(this.contractorValidationProvider_ValidationFailed);
             this.contractorValidationProvider.ValidationSucceeded += new DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventHandler(this.contractorValidationProvider_ValidationSucceeded);
             // 
-            // activeCheck
-            // 
-            this.activeCheck.Location = new System.Drawing.Point(125, 234);
-            this.activeCheck.Name = "activeCheck";
-            this.activeCheck.Properties.Caption = "";
-            this.activeCheck.Size = new System.Drawing.Size(117, 19);
-            this.activeCheck.TabIndex = 62;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(19, 237);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(56, 13);
-            this.labelControl7.TabIndex = 63;
-            this.labelControl7.Text = "Активність";
-            // 
             // ContractorEditFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -638,6 +637,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ownTypeCBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nameTBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productCategoryEdit.Properties)).EndInit();
@@ -654,7 +654,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorValidationProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.activeCheck.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -172,15 +172,15 @@ namespace ERP_NEW.GUI.OTK
 
         private void editCertificate(Utils.Operation operation)
         {
-            CertificateEditFm certificateEditFm = new CertificateEditFm(operation, (OrdersInfoDTO)ordersBS.Current);
+            //CertificateEditFm certificateEditFm = new CertificateEditFm(operation, (OrdersInfoDTO)ordersBS.Current);
            
-            if (certificateEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                DateTime begin_Date = (DateTime)beginDateEdit.EditValue;
-                DateTime end_Date = (DateTime)endDateEdit.EditValue;
-                LoadData(begin_Date, end_Date);
-                receiptsCertificateVGrid.Focus();
-            }
+            //if (certificateEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    DateTime begin_Date = (DateTime)beginDateEdit.EditValue;
+            //    DateTime end_Date = (DateTime)endDateEdit.EditValue;
+            //    LoadData(begin_Date, end_Date);
+            //    receiptsCertificateVGrid.Focus();
+            //}
         }
 
         private void rulesBtn_Click(object sender, EventArgs e)

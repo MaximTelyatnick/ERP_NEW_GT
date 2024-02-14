@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -38,7 +37,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
-            this.bankPaymentsValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.bankPaymentsValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.purposeAccountEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.bankAccountEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.paymentDocumentTBox = new DevExpress.XtraEditors.TextEdit();
@@ -596,9 +595,9 @@
             // purposeEdit
             // 
             this.purposeEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.purposeEdit.Location = new System.Drawing.Point(2, 20);
+            this.purposeEdit.Location = new System.Drawing.Point(2, 22);
             this.purposeEdit.Name = "purposeEdit";
-            this.purposeEdit.Size = new System.Drawing.Size(492, 58);
+            this.purposeEdit.Size = new System.Drawing.Size(492, 56);
             this.purposeEdit.TabIndex = 17;
             // 
             // groupControl1

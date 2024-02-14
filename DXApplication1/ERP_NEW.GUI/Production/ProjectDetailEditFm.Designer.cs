@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.assemblyEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.drawingCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.assemblyNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.orderDateCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.orderNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.contractorCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.assemblyDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
@@ -42,22 +46,17 @@
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.closeBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.projectValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.projectValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.orderNumberEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.assemblyDrawingTBox = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.generalAssemblyAsAssemblyCheck = new DevExpress.XtraEditors.CheckEdit();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.drawingCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.assemblyNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.orderDateCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.orderNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contractorCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.assemblyDrawingTBox = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.generalAssemblyAsAssemblyCheck = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assemblyDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -96,12 +95,63 @@
             this.contractorCol});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridLookUpEdit1View.OptionsFind.AlwaysVisible = true;
             this.gridLookUpEdit1View.OptionsFind.SearchInPreview = true;
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // drawingCol
+            // 
+            this.drawingCol.Caption = "Креслення";
+            this.drawingCol.FieldName = "Drawing";
+            this.drawingCol.Name = "drawingCol";
+            this.drawingCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.drawingCol.Visible = true;
+            this.drawingCol.VisibleIndex = 0;
+            // 
+            // assemblyNameCol
+            // 
+            this.assemblyNameCol.Caption = "Проект";
+            this.assemblyNameCol.FieldName = "Name";
+            this.assemblyNameCol.Name = "assemblyNameCol";
+            this.assemblyNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.assemblyNameCol.Visible = true;
+            this.assemblyNameCol.VisibleIndex = 1;
+            this.assemblyNameCol.Width = 300;
+            // 
+            // orderDateCol
+            // 
+            this.orderDateCol.Caption = "Дата";
+            this.orderDateCol.FieldName = "DateCreated";
+            this.orderDateCol.Name = "orderDateCol";
+            this.orderDateCol.OptionsColumn.AllowEdit = false;
+            this.orderDateCol.OptionsColumn.AllowFocus = false;
+            this.orderDateCol.Visible = true;
+            this.orderDateCol.VisibleIndex = 2;
+            this.orderDateCol.Width = 87;
+            // 
+            // orderNumberCol
+            // 
+            this.orderNumberCol.Caption = "№ заказу";
+            this.orderNumberCol.FieldName = "OrderNumber";
+            this.orderNumberCol.Name = "orderNumberCol";
+            this.orderNumberCol.OptionsColumn.AllowEdit = false;
+            this.orderNumberCol.OptionsColumn.AllowFocus = false;
+            this.orderNumberCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.orderNumberCol.Width = 84;
+            // 
+            // contractorCol
+            // 
+            this.contractorCol.Caption = "Контрагент";
+            this.contractorCol.FieldName = "ContractorName";
+            this.contractorCol.Name = "contractorCol";
+            this.contractorCol.OptionsColumn.AllowEdit = false;
+            this.contractorCol.OptionsColumn.AllowFocus = false;
+            this.contractorCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
+            this.contractorCol.Visible = true;
+            this.contractorCol.VisibleIndex = 3;
+            this.contractorCol.Width = 169;
             // 
             // labelControl3
             // 
@@ -230,47 +280,11 @@
             this.gridColumn4});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView1.OptionsFind.AlwaysVisible = true;
             this.gridView1.OptionsFind.SearchInPreview = true;
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // assemblyDrawingTBox
-            // 
-            this.assemblyDrawingTBox.Location = new System.Drawing.Point(12, 166);
-            this.assemblyDrawingTBox.Name = "assemblyDrawingTBox";
-            this.assemblyDrawingTBox.Properties.MaxLength = 20;
-            this.assemblyDrawingTBox.Size = new System.Drawing.Size(883, 20);
-            this.assemblyDrawingTBox.TabIndex = 6;
-            this.assemblyDrawingTBox.TextChanged += new System.EventHandler(this.assemblyDrawingTBox_TextChanged);
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 147);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(63, 13);
-            this.labelControl5.TabIndex = 60;
-            this.labelControl5.Text = "Номер вузла";
-            // 
-            // generalAssemblyAsAssemblyCheck
-            // 
-            this.generalAssemblyAsAssemblyCheck.Location = new System.Drawing.Point(926, 167);
-            this.generalAssemblyAsAssemblyCheck.Name = "generalAssemblyAsAssemblyCheck";
-            this.generalAssemblyAsAssemblyCheck.Properties.Caption = "відсутні вузли";
-            this.generalAssemblyAsAssemblyCheck.Size = new System.Drawing.Size(94, 19);
-            this.generalAssemblyAsAssemblyCheck.TabIndex = 61;
-            this.generalAssemblyAsAssemblyCheck.CheckedChanged += new System.EventHandler(this.generalAssemblyAsAssemblyCheck_CheckedChanged);
-            this.generalAssemblyAsAssemblyCheck.EditValueChanged += new System.EventHandler(this.generalAssemblyAsAssemblyCheck_EditValueChanged);
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 12);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(68, 13);
-            this.labelControl2.TabIndex = 63;
-            this.labelControl2.Text = "Номер заказа";
             // 
             // gridColumn1
             // 
@@ -327,57 +341,40 @@
             this.gridColumn4.VisibleIndex = 3;
             this.gridColumn4.Width = 150;
             // 
-            // drawingCol
+            // assemblyDrawingTBox
             // 
-            this.drawingCol.Caption = "Креслення";
-            this.drawingCol.FieldName = "Drawing";
-            this.drawingCol.Name = "drawingCol";
-            this.drawingCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.drawingCol.Visible = true;
-            this.drawingCol.VisibleIndex = 0;
+            this.assemblyDrawingTBox.Location = new System.Drawing.Point(12, 166);
+            this.assemblyDrawingTBox.Name = "assemblyDrawingTBox";
+            this.assemblyDrawingTBox.Properties.MaxLength = 20;
+            this.assemblyDrawingTBox.Size = new System.Drawing.Size(883, 20);
+            this.assemblyDrawingTBox.TabIndex = 6;
+            this.assemblyDrawingTBox.TextChanged += new System.EventHandler(this.assemblyDrawingTBox_TextChanged);
             // 
-            // assemblyNameCol
+            // labelControl5
             // 
-            this.assemblyNameCol.Caption = "Проект";
-            this.assemblyNameCol.FieldName = "Name";
-            this.assemblyNameCol.Name = "assemblyNameCol";
-            this.assemblyNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.assemblyNameCol.Visible = true;
-            this.assemblyNameCol.VisibleIndex = 1;
-            this.assemblyNameCol.Width = 300;
+            this.labelControl5.Location = new System.Drawing.Point(12, 147);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(63, 13);
+            this.labelControl5.TabIndex = 60;
+            this.labelControl5.Text = "Номер вузла";
             // 
-            // orderDateCol
+            // generalAssemblyAsAssemblyCheck
             // 
-            this.orderDateCol.Caption = "Дата";
-            this.orderDateCol.FieldName = "DateCreated";
-            this.orderDateCol.Name = "orderDateCol";
-            this.orderDateCol.OptionsColumn.AllowEdit = false;
-            this.orderDateCol.OptionsColumn.AllowFocus = false;
-            this.orderDateCol.Visible = true;
-            this.orderDateCol.VisibleIndex = 2;
-            this.orderDateCol.Width = 87;
+            this.generalAssemblyAsAssemblyCheck.Location = new System.Drawing.Point(926, 167);
+            this.generalAssemblyAsAssemblyCheck.Name = "generalAssemblyAsAssemblyCheck";
+            this.generalAssemblyAsAssemblyCheck.Properties.Caption = "відсутні вузли";
+            this.generalAssemblyAsAssemblyCheck.Size = new System.Drawing.Size(94, 19);
+            this.generalAssemblyAsAssemblyCheck.TabIndex = 61;
+            this.generalAssemblyAsAssemblyCheck.CheckedChanged += new System.EventHandler(this.generalAssemblyAsAssemblyCheck_CheckedChanged);
+            this.generalAssemblyAsAssemblyCheck.EditValueChanged += new System.EventHandler(this.generalAssemblyAsAssemblyCheck_EditValueChanged);
             // 
-            // orderNumberCol
+            // labelControl2
             // 
-            this.orderNumberCol.Caption = "№ заказу";
-            this.orderNumberCol.FieldName = "OrderNumber";
-            this.orderNumberCol.Name = "orderNumberCol";
-            this.orderNumberCol.OptionsColumn.AllowEdit = false;
-            this.orderNumberCol.OptionsColumn.AllowFocus = false;
-            this.orderNumberCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.orderNumberCol.Width = 84;
-            // 
-            // contractorCol
-            // 
-            this.contractorCol.Caption = "Контрагент";
-            this.contractorCol.FieldName = "ContractorName";
-            this.contractorCol.Name = "contractorCol";
-            this.contractorCol.OptionsColumn.AllowEdit = false;
-            this.contractorCol.OptionsColumn.AllowFocus = false;
-            this.contractorCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
-            this.contractorCol.Visible = true;
-            this.contractorCol.VisibleIndex = 3;
-            this.contractorCol.Width = 169;
+            this.labelControl2.Location = new System.Drawing.Point(12, 12);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(68, 13);
+            this.labelControl2.TabIndex = 63;
+            this.labelControl2.Text = "Номер заказа";
             // 
             // ProjectDetailEditFm
             // 

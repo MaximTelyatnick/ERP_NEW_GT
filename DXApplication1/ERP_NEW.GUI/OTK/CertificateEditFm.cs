@@ -25,40 +25,41 @@ namespace ERP_NEW.GUI.OTK
     public partial class CertificateEditFm : DevExpress.XtraEditors.XtraForm
     {
         private IReceiptCertificateService receiptCertificateService;
-        private OrdersInfoDTO ordersInfo2;
-        private BindingSource ordersInfoBS = new BindingSource();
+        //private OrdersInfoDTO ordersInfo2;
+        private BindingSource recCertBS = new BindingSource();
         private BindingSource certivicateBS = new BindingSource();
         private Utils.Operation operation;
         private ReceiptCertificatesDTO certificateDTO; 
 
-        public CertificateEditFm(Utils.Operation operation, OrdersInfoDTO ordersInfo)
+        public CertificateEditFm(Utils.Operation operation, ReceiptCertificatesDTO recCertDTO)
         {
             InitializeComponent();
             this.operation = operation;
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
-            ordersInfo2 = ordersInfo;
-            ordersInfoBS.DataSource = ordersInfo2;
-            invoiceNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceNum");
-            invoiceDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceDate");
-            receiptNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "ReceiptNum");
-            orderDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "OrderDate");
-            nomenclatureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Nomenclature");
-            nomenclatureNameTbox.DataBindings.Add("EditValue", ordersInfoBS, "NomenclatureName");
-            quantityTbox.DataBindings.Add("EditValue", ordersInfoBS, "Quantity");
-            measureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Measure");
-            certificateNumberTbox.EditValue = ordersInfo2.CertificateNumber;
-            certificateDateTbox.EditValue = ordersInfo2.CertificateDate;
-            manufacturerInfoMemoEdit.EditValue = ordersInfo2.ManufacturerInfo;
-            descriptionMemoEdit.EditValue = ordersInfo2.Description;
+            //ordersInfo2 = ordersInfo;
+            //ordersInfoBS.DataSource = ordersInfo2;
+            recCertBS.DataSource = recCertDTO;
+            //invoiceNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceNum");
+            //invoiceDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceDate");
+            //receiptNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "ReceiptNum");
+            //orderDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "OrderDate");
+            //nomenclatureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Nomenclature");
+            //nomenclatureNameTbox.DataBindings.Add("EditValue", ordersInfoBS, "NomenclatureName");
+            //quantityTbox.DataBindings.Add("EditValue", ordersInfoBS, "Quantity");
+            //measureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Measure");
+            certificateNumberTbox.EditValue = recCertDTO.CertificateNumber;
+            certificateDateTbox.EditValue = recCertDTO.CertificateDate;
+            manufacturerInfoMemoEdit.EditValue = recCertDTO.ManufacturerInfo;
+            descriptionMemoEdit.EditValue = recCertDTO.Description;
                        
             if (this.operation == Utils.Operation.Add)
             {
                 certificateDateTbox.EditValue = null;
-                certificateDTO = new ReceiptCertificatesDTO() { ReceiptId = ordersInfo2.ReceiptId, CertificateScan = null, CertificateScanTwo = null };
+                certificateDTO = new ReceiptCertificatesDTO() {CertificateScan = null, CertificateScanTwo = null };
             }
             else 
             {
-                certificateDTO = receiptCertificateService.GetCertificate((long)ordersInfo2.ReceiptCertificateId);
+                certificateDTO = receiptCertificateService.GetCertificate((long)recCertDTO.ReceiptCertificateId);
                 pictureEdit.EditValue = certificateDTO.CertificateScan;
 
                 if (pictureEdit.Image == null && certificateDTO.FileName != null)
@@ -111,21 +112,23 @@ namespace ERP_NEW.GUI.OTK
                 MessageBox.Show("Не внесено № сертифікату або дата!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            certificateDTO.ReceiptId = null;
             certificateDTO.CertificateNumber = (string)certificateNumberTbox.EditValue;
             certificateDTO.CertificateDate = (DateTime)certificateDateTbox.EditValue;
             certificateDTO.ManufacturerInfo = (string)manufacturerInfoMemoEdit.EditValue;
             certificateDTO.Description = (string)descriptionMemoEdit.EditValue;
 
-            if (this.operation == Utils.Operation.Add)
-            {
+            if (this.operation == Utils.Operation.Add)           
                 certificateDTO.ReceiptCertificateId = receiptCertificateService.CreateCertificate(certificateDTO);
-            }
             else
-            {
                 receiptCertificateService.UpdateCertificate(certificateDTO);
-            }
 
             this.Close();
+        }
+
+        public ReceiptCertificatesDTO Return()
+        {
+            return (certificateDTO);
         }
 
         private void openFileBtn_Click(object sender, EventArgs e)
