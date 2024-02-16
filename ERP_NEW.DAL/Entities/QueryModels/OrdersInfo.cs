@@ -29,5 +29,6 @@ namespace ERP_NEW.DAL.Entities.QueryModels
         public string ManufacturerInfo { get; set; }
         public string Description { get; set; }
         public string ColorName { get; set; }
+        public int? ReceiptCertificateDetailId { get; set; }
     }
 }

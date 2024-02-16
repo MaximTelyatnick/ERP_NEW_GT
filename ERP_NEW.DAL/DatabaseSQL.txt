@@ -60,6 +60,7 @@ returns (
     "StorehouseName" varchar(50),
     "ReceiptCertificateId" bigint,
     "CertificateDate" date,
+	"CertificateDateEnd" date,
     "CertificateNumber" varchar(40),
     "FileName" varchar(100),
     "ManufacturerInfo" varchar(200),
@@ -89,6 +90,7 @@ BEGIN
         s."Name" as "StorehouseName",
         rc."ReceiptCertificateId",
         rc."CertificateDate",
+        rc."CertificateDateEnd",
         rc."CertificateNumber",
         rc."FileName",
         rc."ManufacturerInfo",
@@ -96,7 +98,8 @@ BEGIN
         IIF(CHAR_LENGTH(rc."CertificateScan") > 0, 1, 0) AS "ScanPersence",
         rc."FileNameTwo",
         IIF(CHAR_LENGTH(rc."CertificateScan") > 0, 1, 0) AS "ScanPersenceTwo",
-        col."Name" as "ColorName"
+        col."Name" as "ColorName",
+        rcd."ReceiptCertificateDetailId" as "ReceiptCertificateDetailId"
     FROM
         Orders o
       LEFT JOIN
@@ -143,6 +146,7 @@ BEGIN
          :"StorehouseName",
          :"ReceiptCertificateId",
          :"CertificateDate",
+         :"CertificateDateEnd",
          :"CertificateNumber",
          :"FileName",
          :"ManufacturerInfo",
@@ -150,9 +154,10 @@ BEGIN
          :"ScanPersence",
          :"FileNameTwo",
          :"ScanPersenceTwo",
-         :"ColorName"
+         :"ColorName",
+         :"ReceiptCertificateDetailId"
            DO
   BEGIN
     SUSPEND;
   END
-END^
+END

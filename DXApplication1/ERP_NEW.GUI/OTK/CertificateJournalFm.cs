@@ -30,6 +30,11 @@ namespace ERP_NEW.GUI.OTK
 
         }
 
+        public ReceiptCertificatesDTO Return()
+        {
+            return ((ReceiptCertificatesDTO)certificatesBS.Current);
+        }
+
         private void LoadDate()
         {
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
@@ -88,6 +93,43 @@ namespace ERP_NEW.GUI.OTK
             }
         }
 
-        
+        private void DeleteReceiptCertificate()
+        {
+            if (certificatesBS.Count != 0)
+            {
+                if (MessageBox.Show("Видалити сертифікат?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+                    int rowHandle = certGridView.FocusedRowHandle - 1;
+                    certGridView.BeginDataUpdate();
+                    receiptCertificateService.RemoveCertificateById(((ReceiptCertificatesDTO)certificatesBS.Current).ReceiptCertificateId);
+                    LoadDate();
+                    certGridView.EndDataUpdate();
+                    certGridView.FocusedRowHandle = (certGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
+                }
+            }
+        }
+
+        private void selectCertificateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        private void deleteCertToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (receiptCertificateService.CheckCertificates(((ReceiptCertificatesDTO)certificatesBS.Current).ReceiptCertificateId))
+            {
+                MessageBox.Show("Сертифікат прикріплено до надходження!", "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Information);   
+            }
+
+            try
+            {
+                DeleteReceiptCertificate();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

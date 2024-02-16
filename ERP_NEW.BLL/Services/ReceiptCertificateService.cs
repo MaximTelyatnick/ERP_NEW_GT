@@ -103,12 +103,20 @@ namespace ERP_NEW.BLL.Services
                               CertificateNumber = cert.CertificateNumber,
                               ReceiptId = cert.ReceiptId,
                               Description = cert.Description,
-                               FileName = cert.FileName,
+                              FileName = cert.FileName,
                               ScanCheck = cert.FileName.Length > 0 ? true:false,
-                               ManufacturerInfo = cert.ManufacturerInfo
+                              ManufacturerInfo = cert.ManufacturerInfo
                                  
                           }).ToList();
             return result;
+        }
+
+        public bool CheckCertificates(long certificateId)
+        {
+            if (receiptCertificateDetail.GetAll().Where(srch => srch.ReceiptCertificateId == certificateId).Count() > 0)
+                return true;
+            else
+                return false;
         }
 
 
@@ -162,7 +170,7 @@ namespace ERP_NEW.BLL.Services
             receiptCertificateDetail.Update(mapper.Map<ReceiptCertificateDetailDTO, ReceiptCertificateDetail>(dtomodel, entity));
         }
 
-        public bool RemoveCertificateDetailId(long id)
+        public bool RemoveCertificateDetailId(int id)
         {
             try
             {

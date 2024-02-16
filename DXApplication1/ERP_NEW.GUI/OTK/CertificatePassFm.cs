@@ -19,6 +19,7 @@ using ERP_NEW.GUI.Classifiers;
 using ERP_NEW.BLL.Services;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.BandedGrid;
+using ERP_NEW.DAL.Entities.Models;
 
 namespace ERP_NEW.GUI.OTK
 {
@@ -54,21 +55,15 @@ namespace ERP_NEW.GUI.OTK
         private void LoadDate(DateTime beginDate, DateTime endDate)
         {
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
-            //var orders = receiptCertificateService.GetOrdersWithCertificate(beginDate, endDate);
-            var orders = receiptCertificateService.GetOrdersWithCertificateV2(beginDate, endDate);
-
+            var orders = receiptCertificateService.GetOrdersWithCertificateV2(beginDate, endDate).OrderByDescending(srch => srch.OrderDate).ToList();
             ordersBS.DataSource = orders;
             certificatePassGrid.DataSource = ordersBS;
-
-            certificatePassGrid.Refresh();
-
+            //certificatePassGrid.Refresh();
         }
 
         private void showBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            splashScreenManager.ShowWaitForm();
-            LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
-            splashScreenManager.CloseWaitForm();
+            
         }
 
         private void bandedGridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
@@ -158,7 +153,7 @@ namespace ERP_NEW.GUI.OTK
 
 
 
-        private void editCertificate(Utils.Operation operation)
+        private void editCertificate(Utils.Operation operation, ReceiptCertificatesDTO receiptCertificatesDTO)
         {
             //CertificateEditFm certificateEditFm = new CertificateEditFm(operation, new ReceiptCertificatesDTO {ReceiptCertificateId =  ((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId);
 
@@ -214,7 +209,6 @@ namespace ERP_NEW.GUI.OTK
         
                 ((OrdersInfoDTO)ordersBS.Current).ColorName = e.ClickedItem.ToolTipText;
                   LoadDate(beginDate, endDate);
-              //  certificatePassGrid.Refresh();
                 certificatePassGrid.EndUpdate();
                 
             }
@@ -222,10 +216,10 @@ namespace ERP_NEW.GUI.OTK
 
         private void addBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
-            {
-                editCertificate(Utils.Operation.Add);
-            }
+            //if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
+            //{
+            //    editCertificate(Utils.Operation.Add);
+            //}
            // else
 
             //    MessageBox.Show("Сертифікат вже закріплений за вибраним надходженням!");
@@ -233,13 +227,26 @@ namespace ERP_NEW.GUI.OTK
 
         private void editBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId != null)
+            CertificateEditFm certificateEditFm = new CertificateEditFm(Utils.Operation.Update, new ReceiptCertificatesDTO()
+            { CertificateDate = (DateTime)((OrdersInfoDTO)ordersBS.Current).CertificateDate,
+             CertificateNumber = ((OrdersInfoDTO)ordersBS.Current).CertificateNumber,
+               Description = ((OrdersInfoDTO)ordersBS.Current).Description,
+                FileName = ((OrdersInfoDTO)ordersBS.Current).FileName,
+                 ManufacturerInfo = ((OrdersInfoDTO)ordersBS.Current).ManufacturerInfo,
+                  ReceiptId = ((OrdersInfoDTO)ordersBS.Current).ReceiptId,
+                   ReceiptCertificateId = (long)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId
+            });
+
+            if (certificateEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                editCertificate(Utils.Operation.Update);
-            }
-            else
-            {
-                MessageBox.Show("Сертифікат не закріплений за вибраним надходженням!");
+                int rowHandle = bandedGridView.FocusedRowHandle;
+                splashScreenManager.ShowWaitForm();
+                bandedGridView.BeginDataUpdate();
+                LoadDate(beginDate, endDate);
+                bandedGridView.EndDataUpdate();
+                bandedGridView.FocusedRowHandle = rowHandle;
+                splashScreenManager.CloseWaitForm();
+                bandedGridView.FocusedRowHandle = rowHandle;
             }
         }
 
@@ -248,11 +255,13 @@ namespace ERP_NEW.GUI.OTK
             if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
             {
                 editBtn.Enabled = false;
+                deleteCertificateBtn.Enabled = false;
                 contextMenuStrip.Enabled = false;
             }
             else
             {
                 editBtn.Enabled = true;
+                deleteCertificateBtn.Enabled = true;
                 contextMenuStrip.Enabled = true;
 
                
@@ -267,10 +276,41 @@ namespace ERP_NEW.GUI.OTK
 
         private void addCertificateBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
+            receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+            CertificateJournalFm certificateJournalFm = new CertificateJournalFm(userTasksDTO);
+
+            if (certificateJournalFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                editCertificate(Utils.Operation.Add);
+                ReceiptCertificatesDTO receiptcertificateReturn = certificateJournalFm.Return();
+                int rowHandle = bandedGridView.FocusedRowHandle;
+                if (MessageBox.Show("Прикріпити сертифікат з номером "+ receiptcertificateReturn.CertificateNumber+ ", до надходження " + ((OrdersInfoDTO)ordersBS.Current).ReceiptNum + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    receiptCertificateService.CreateCertificateDetail(new ReceiptCertificateDetailDTO
+                    {
+                        ReceiptCertificateId = receiptcertificateReturn.ReceiptCertificateId,
+                        ReceiptId = ((OrdersInfoDTO)ordersBS.Current).ReceiptId
+                    });
+                    splashScreenManager.ShowWaitForm();
+                    bandedGridView.BeginDataUpdate();
+                    LoadDate(beginDate, endDate);
+                    bandedGridView.EndDataUpdate();
+                    bandedGridView.FocusedRowHandle = rowHandle;
+                    splashScreenManager.CloseWaitForm();
+                }
+
+
+                //ReceiptCertificatesDTO return_Id = certificateJournalFm.Return();
+                
+                //int rowHandle = bandedGridView.LocateByValue("ReceiptCertificateId", return_Id.ReceiptCertificateId);
+                //bandedGridView.FocusedRowHandle = rowHandle;
             }
+
+
+
+            //if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
+            //{
+            //    editCertificate(Utils.Operation.Add);
+            //}
         }
 
         private void bandedGridView_CellMerge(object sender, CellMergeEventArgs e)
@@ -283,6 +323,28 @@ namespace ERP_NEW.GUI.OTK
             {
                 e.Merge = (model1.InvoiceNum == model2.InvoiceNum);
                 e.Handled = true;
+            }
+        }
+
+        private void showRecBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            splashScreenManager.ShowWaitForm();
+            LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+            splashScreenManager.CloseWaitForm();
+        }
+
+        private void deleteCertificateBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (MessageBox.Show("Відкріпити сертифікат з номером " + ((OrdersInfoDTO)ordersBS.Current).ReceiptNum + ", від надходження " + ((OrdersInfoDTO)ordersBS.Current).ReceiptNum + "?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int rowHandle = bandedGridView.FocusedRowHandle;
+                receiptCertificateService.RemoveCertificateDetailId((int)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateDetailId);
+                splashScreenManager.ShowWaitForm();
+                bandedGridView.BeginDataUpdate();
+                LoadDate(beginDate, endDate);
+                bandedGridView.EndDataUpdate();
+                bandedGridView.FocusedRowHandle = rowHandle;
+                splashScreenManager.CloseWaitForm();
             }
         }
 

@@ -35,12 +35,11 @@
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.endDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.showBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.journalShowBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteCertificateBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addCertificateBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.showRecBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.certificatePassGrid = new DevExpress.XtraGrid.GridControl();
@@ -102,14 +101,13 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.beginDateEdit,
             this.endDateEdit,
-            this.showBtn,
-            this.addBtn,
             this.editBtn,
             this.journalShowBtn,
             this.deleteCertificateBtn,
-            this.addCertificateBtn});
+            this.addCertificateBtn,
+            this.showRecBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 10;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -155,27 +153,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
-            // showBtn
-            // 
-            this.showBtn.Caption = "Відобразити";
-            this.showBtn.Id = 3;
-            this.showBtn.ImageUri.Uri = "Apply";
-            this.showBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("showBtn.LargeGlyph")));
-            this.showBtn.Name = "showBtn";
-            this.showBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.showBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showBtn_ItemClick);
-            // 
-            // addBtn
-            // 
-            this.addBtn.Caption = "Прикріпити сертифікат до надходження";
-            this.addBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBtn.Glyph")));
-            this.addBtn.Id = 4;
-            this.addBtn.ImageUri.Uri = "Add";
-            this.addBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addBtn.LargeGlyph")));
-            this.addBtn.Name = "addBtn";
-            this.addBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.addBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addBtn_ItemClick);
-            // 
             // editBtn
             // 
             this.editBtn.Caption = "Редагувати сертифікат";
@@ -203,6 +180,7 @@
             this.deleteCertificateBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteCertificateBtn.LargeGlyph")));
             this.deleteCertificateBtn.Name = "deleteCertificateBtn";
             this.deleteCertificateBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.deleteCertificateBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteCertificateBtn_ItemClick);
             // 
             // addCertificateBtn
             // 
@@ -213,6 +191,15 @@
             this.addCertificateBtn.Name = "addCertificateBtn";
             this.addCertificateBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.addCertificateBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addCertificateBtn_ItemClick);
+            // 
+            // showRecBtn
+            // 
+            this.showRecBtn.Caption = "Показати";
+            this.showRecBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("showRecBtn.Glyph")));
+            this.showRecBtn.Id = 9;
+            this.showRecBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("showRecBtn.LargeGlyph")));
+            this.showRecBtn.Name = "showRecBtn";
+            this.showRecBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showRecBtn_ItemClick);
             // 
             // ribbonPage1
             // 
@@ -225,8 +212,7 @@
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.beginDateEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.endDateEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.showBtn);
-            this.ribbonPageGroup1.ItemLinks.Add(this.addBtn);
+            this.ribbonPageGroup1.ItemLinks.Add(this.showRecBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.addCertificateBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.editBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.deleteCertificateBtn);
@@ -888,7 +874,6 @@
         private DevExpress.XtraBars.BarEditItem endDateEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem showBtn;
         private DevExpress.XtraGrid.GridControl certificatePassGrid;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn InvoiceNum;
@@ -922,7 +907,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private DevExpress.XtraBars.BarButtonItem addBtn;
         private DevExpress.XtraBars.BarButtonItem editBtn;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn ColorName;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand receipt;
@@ -931,5 +915,6 @@
         private DevExpress.XtraBars.BarButtonItem journalShowBtn;
         private DevExpress.XtraBars.BarButtonItem deleteCertificateBtn;
         private DevExpress.XtraBars.BarButtonItem addCertificateBtn;
+        private DevExpress.XtraBars.BarButtonItem showRecBtn;
     }
 }

@@ -9,6 +9,7 @@ namespace ERP_NEW.DAL.Entities.Models
         public long ReceiptCertificateId { get; set; }
         public int? ReceiptId { get; set; }
         public DateTime CertificateDate { get; set; }
+        public DateTime CertificateDateEnd { get; set; }
         public string CertificateNumber { get; set; }
         public byte[] CertificateScan { get; set; }
         public string FileName { get; set; }

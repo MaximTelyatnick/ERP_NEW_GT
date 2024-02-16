@@ -49,12 +49,14 @@ namespace ERP_NEW.GUI.OTK
             //measureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Measure");
             certificateNumberTbox.EditValue = recCertDTO.CertificateNumber;
             certificateDateTbox.EditValue = recCertDTO.CertificateDate;
+            certificateDateEndTbox.EditValue = recCertDTO.CertificateDateEnd;
             manufacturerInfoMemoEdit.EditValue = recCertDTO.ManufacturerInfo;
             descriptionMemoEdit.EditValue = recCertDTO.Description;
                        
             if (this.operation == Utils.Operation.Add)
             {
                 certificateDateTbox.EditValue = null;
+                certificateDateEndTbox.EditValue = null;
                 certificateDTO = new ReceiptCertificatesDTO() {CertificateScan = null, CertificateScanTwo = null };
             }
             else 
@@ -107,7 +109,7 @@ namespace ERP_NEW.GUI.OTK
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if ((certificateNumberTbox.Text.Trim().Length == 0) || ( certificateDateTbox.Text.Trim().Length == 0)) 
+            if ((certificateNumberTbox.Text.Trim().Length == 0) || ( certificateDateTbox.Text.Trim().Length == 0) || (certificateDateEndTbox.Text.Trim().Length == 0)) 
             {
                 MessageBox.Show("Не внесено № сертифікату або дата!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -115,6 +117,7 @@ namespace ERP_NEW.GUI.OTK
             certificateDTO.ReceiptId = null;
             certificateDTO.CertificateNumber = (string)certificateNumberTbox.EditValue;
             certificateDTO.CertificateDate = (DateTime)certificateDateTbox.EditValue;
+            certificateDTO.CertificateDateEnd = (DateTime)certificateDateEndTbox.EditValue;
             certificateDTO.ManufacturerInfo = (string)manufacturerInfoMemoEdit.EditValue;
             certificateDTO.Description = (string)descriptionMemoEdit.EditValue;
 

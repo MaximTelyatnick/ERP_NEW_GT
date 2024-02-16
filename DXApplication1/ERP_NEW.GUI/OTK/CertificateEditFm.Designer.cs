@@ -71,6 +71,8 @@
             this.showTwoBtn = new DevExpress.XtraEditors.SimpleButton();
             this.pictureTwoEdit = new DevExpress.XtraEditors.PictureEdit();
             this.openFileTwoBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
+            this.certificateDateEndTbox = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateNumberTbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -98,6 +100,8 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileNameTwoTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTwoEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // certificateNumberTbox
@@ -109,6 +113,8 @@
             // 
             // panelControl1
             // 
+            this.panelControl1.Controls.Add(this.labelControl13);
+            this.panelControl1.Controls.Add(this.certificateDateEndTbox);
             this.panelControl1.Controls.Add(this.labelControl12);
             this.panelControl1.Controls.Add(this.labelControl11);
             this.panelControl1.Controls.Add(this.descriptionMemoEdit);
@@ -136,7 +142,7 @@
             this.panelControl1.Controls.Add(this.certificateNumberTbox);
             this.panelControl1.Location = new System.Drawing.Point(2, 7);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(466, 342);
+            this.panelControl1.Size = new System.Drawing.Size(466, 397);
             this.panelControl1.TabIndex = 1;
             // 
             // labelControl12
@@ -145,7 +151,7 @@
             this.labelControl12.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.labelControl12.LineLocation = DevExpress.XtraEditors.LineLocation.Bottom;
             this.labelControl12.LineOrientation = DevExpress.XtraEditors.LabelLineOrientation.Horizontal;
-            this.labelControl12.Location = new System.Drawing.Point(10, 288);
+            this.labelControl12.Location = new System.Drawing.Point(12, 322);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(57, 26);
             this.labelControl12.TabIndex = 24;
@@ -153,7 +159,7 @@
             // 
             // labelControl11
             // 
-            this.labelControl11.Location = new System.Drawing.Point(11, 236);
+            this.labelControl11.Location = new System.Drawing.Point(9, 269);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(48, 13);
             this.labelControl11.TabIndex = 23;
@@ -161,14 +167,14 @@
             // 
             // descriptionMemoEdit
             // 
-            this.descriptionMemoEdit.Location = new System.Drawing.Point(111, 287);
+            this.descriptionMemoEdit.Location = new System.Drawing.Point(110, 321);
             this.descriptionMemoEdit.Name = "descriptionMemoEdit";
             this.descriptionMemoEdit.Size = new System.Drawing.Size(351, 47);
             this.descriptionMemoEdit.TabIndex = 3;
             // 
             // manufacturerInfoMemoEdit
             // 
-            this.manufacturerInfoMemoEdit.Location = new System.Drawing.Point(110, 234);
+            this.manufacturerInfoMemoEdit.Location = new System.Drawing.Point(111, 267);
             this.manufacturerInfoMemoEdit.Name = "manufacturerInfoMemoEdit";
             this.manufacturerInfoMemoEdit.Size = new System.Drawing.Size(351, 47);
             this.manufacturerInfoMemoEdit.TabIndex = 2;
@@ -338,9 +344,9 @@
             // 
             this.labelControl2.Location = new System.Drawing.Point(10, 210);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(29, 13);
+            this.labelControl2.Size = new System.Drawing.Size(71, 13);
             this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "Дата ";
+            this.labelControl2.Text = "Дата початку";
             // 
             // labelControl1
             // 
@@ -373,7 +379,7 @@
             this.panelControl2.Controls.Add(this.openFileBtn);
             this.panelControl2.Location = new System.Drawing.Point(474, 7);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(329, 342);
+            this.panelControl2.Size = new System.Drawing.Size(329, 397);
             this.panelControl2.TabIndex = 2;
             // 
             // clearBtn
@@ -430,18 +436,18 @@
             // saveBtn
             // 
             this.saveBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.saveBtn.Location = new System.Drawing.Point(982, 357);
+            this.saveBtn.Location = new System.Drawing.Point(814, 381);
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(75, 23);
+            this.saveBtn.Size = new System.Drawing.Size(169, 23);
             this.saveBtn.TabIndex = 2;
             this.saveBtn.Text = "Зберегти";
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // closeBtn
             // 
-            this.closeBtn.Location = new System.Drawing.Point(1063, 357);
+            this.closeBtn.Location = new System.Drawing.Point(989, 381);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.Size = new System.Drawing.Size(149, 23);
             this.closeBtn.TabIndex = 3;
             this.closeBtn.Text = "Відміна";
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
@@ -464,7 +470,7 @@
             this.panelControl3.Controls.Add(this.openFileTwoBtn);
             this.panelControl3.Location = new System.Drawing.Point(809, 7);
             this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(329, 342);
+            this.panelControl3.Size = new System.Drawing.Size(329, 368);
             this.panelControl3.TabIndex = 4;
             // 
             // clearTwoBtn
@@ -518,12 +524,32 @@
             this.openFileTwoBtn.ToolTip = "Вибрати файл";
             this.openFileTwoBtn.Click += new System.EventHandler(this.openFileTwoBtn_Click);
             // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(10, 243);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(90, 13);
+            this.labelControl13.TabIndex = 26;
+            this.labelControl13.Text = "Дата завершення";
+            // 
+            // certificateDateEndTbox
+            // 
+            this.certificateDateEndTbox.EditValue = null;
+            this.certificateDateEndTbox.Location = new System.Drawing.Point(111, 241);
+            this.certificateDateEndTbox.Name = "certificateDateEndTbox";
+            this.certificateDateEndTbox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.certificateDateEndTbox.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.certificateDateEndTbox.Size = new System.Drawing.Size(135, 20);
+            this.certificateDateEndTbox.TabIndex = 25;
+            // 
             // CertificateEditFm
             // 
             this.AcceptButton = this.saveBtn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 387);
+            this.ClientSize = new System.Drawing.Size(1145, 416);
             this.Controls.Add(this.panelControl3);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.saveBtn);
@@ -564,6 +590,8 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileNameTwoTBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTwoEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -611,5 +639,7 @@
         private DevExpress.XtraEditors.SimpleButton showTwoBtn;
         private DevExpress.XtraEditors.PictureEdit pictureTwoEdit;
         private DevExpress.XtraEditors.SimpleButton openFileTwoBtn;
+        private DevExpress.XtraEditors.LabelControl labelControl13;
+        private DevExpress.XtraEditors.DateEdit certificateDateEndTbox;
     }
 }

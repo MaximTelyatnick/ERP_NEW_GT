@@ -8,6 +8,7 @@ namespace ERP_NEW.BLL.Interfaces
     public interface IReceiptCertificateService
     {
         ReceiptCertificatesDTO GetCertificate(long id);
+        bool CheckCertificates(long certificateId);
         IEnumerable<ReceiptCertificatesDTO> GetCertificates();
         IEnumerable<ReceiptCertificateDetailDTO> GetCertificateDetail();
         IEnumerable<OrdersInfoDTO> GetOrdersWithCertificate(DateTime beginDate, DateTime endDate);
@@ -20,7 +21,7 @@ namespace ERP_NEW.BLL.Interfaces
 
         long CreateCertificateDetail(ReceiptCertificateDetailDTO dtomodel);
         void UpdateCertificateDetail(ReceiptCertificateDetailDTO dtomodel);
-        bool RemoveCertificateDetailId(long id);
+        bool RemoveCertificateDetailId(int id);
 
         void Dispose();
     }

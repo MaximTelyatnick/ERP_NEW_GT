@@ -36,10 +36,11 @@
             this.addCertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editCertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteCertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectCertificateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.certGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.сertificateNumberCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.certificateDateCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.certificateDateEndCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.manufacturerInfoCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.descriptionCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,7 +50,7 @@
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
-            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true, DevExpress.XtraSplashScreen.SplashFormStartPosition.Manual, new System.Drawing.Point(0, 0));
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.certGrid)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.certGridView)).BeginInit();
@@ -85,9 +86,10 @@
             this.toolStripSeparator1,
             this.addCertToolStripMenuItem,
             this.editCertToolStripMenuItem,
-            this.deleteCertToolStripMenuItem});
+            this.deleteCertToolStripMenuItem,
+            this.selectCertificateToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(208, 76);
+            this.contextMenuStrip.Size = new System.Drawing.Size(208, 98);
             // 
             // toolStripSeparator1
             // 
@@ -119,6 +121,15 @@
             this.deleteCertToolStripMenuItem.Name = "deleteCertToolStripMenuItem";
             this.deleteCertToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.deleteCertToolStripMenuItem.Text = "Видалити сертифікат";
+            this.deleteCertToolStripMenuItem.Click += new System.EventHandler(this.deleteCertToolStripMenuItem_Click);
+            // 
+            // selectCertificateToolStripMenuItem
+            // 
+            this.selectCertificateToolStripMenuItem.Image = global::ERP_NEW.GUI.PrintRibbonControllerResources.RibbonPrintPreview_ZoomLarge;
+            this.selectCertificateToolStripMenuItem.Name = "selectCertificateToolStripMenuItem";
+            this.selectCertificateToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.selectCertificateToolStripMenuItem.Text = "Обрати сертифікат";
+            this.selectCertificateToolStripMenuItem.Click += new System.EventHandler(this.selectCertificateToolStripMenuItem_Click);
             // 
             // certGridView
             // 
@@ -129,17 +140,19 @@
             this.certGridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.сertificateNumberCol,
             this.certificateDateCol,
-            this.gridColumn3,
+            this.certificateDateEndCol,
             this.manufacturerInfoCol,
             this.descriptionCol,
             this.gridColumn1});
             this.certGridView.GridControl = this.certGrid;
             this.certGridView.Name = "certGridView";
-            this.certGridView.OptionsView.AllowCellMerge = true;
+            this.certGridView.OptionsView.AllowGlyphSkinning = true;
+            this.certGridView.OptionsView.AnimationType = DevExpress.XtraGrid.Views.Base.GridAnimationType.AnimateAllContent;
             this.certGridView.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.certGridView.OptionsView.RowAutoHeight = true;
             this.certGridView.OptionsView.ShowAutoFilterRow = true;
             this.certGridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
+            this.certGridView.RowSeparatorHeight = 1;
             this.certGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.certGridView_CustomUnboundColumnData);
             this.certGridView.DoubleClick += new System.EventHandler(this.certGridView_DoubleClick);
             // 
@@ -179,22 +192,23 @@
             this.certificateDateCol.VisibleIndex = 1;
             this.certificateDateCol.Width = 125;
             // 
-            // gridColumn3
+            // certificateDateEndCol
             // 
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gridColumn3.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
-            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn3.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn3.Caption = "Дата завершення дії";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.OptionsColumn.AllowFocus = false;
-            this.gridColumn3.OptionsColumn.AllowMove = false;
-            this.gridColumn3.OptionsColumn.FixedWidth = true;
-            this.gridColumn3.OptionsColumn.ReadOnly = true;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 159;
+            this.certificateDateEndCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.certificateDateEndCol.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
+            this.certificateDateEndCol.AppearanceHeader.Options.UseFont = true;
+            this.certificateDateEndCol.AppearanceHeader.Options.UseForeColor = true;
+            this.certificateDateEndCol.Caption = "Дата завершення дії";
+            this.certificateDateEndCol.FieldName = "CertificateDateEnd";
+            this.certificateDateEndCol.Name = "certificateDateEndCol";
+            this.certificateDateEndCol.OptionsColumn.AllowEdit = false;
+            this.certificateDateEndCol.OptionsColumn.AllowFocus = false;
+            this.certificateDateEndCol.OptionsColumn.AllowMove = false;
+            this.certificateDateEndCol.OptionsColumn.FixedWidth = true;
+            this.certificateDateEndCol.OptionsColumn.ReadOnly = true;
+            this.certificateDateEndCol.Visible = true;
+            this.certificateDateEndCol.VisibleIndex = 2;
+            this.certificateDateEndCol.Width = 159;
             // 
             // manufacturerInfoCol
             // 
@@ -332,7 +346,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView certGridView;
         private DevExpress.XtraGrid.Columns.GridColumn сertificateNumberCol;
         private DevExpress.XtraGrid.Columns.GridColumn certificateDateCol;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn certificateDateEndCol;
         private DevExpress.XtraGrid.Columns.GridColumn manufacturerInfoCol;
         private DevExpress.XtraGrid.Columns.GridColumn descriptionCol;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -348,5 +362,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private System.Windows.Forms.ToolStripMenuItem selectCertificateToolStripMenuItem;
     }
 }
