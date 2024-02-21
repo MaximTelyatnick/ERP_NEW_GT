@@ -209,10 +209,11 @@ namespace ERP_NEW.GUI
             switch (e.Element.Name)
             {
                 case "certificateItem":
-                    ReceiptCertificatesFm receiptCertificatesFm = new ReceiptCertificatesFm(userTasksDTO);
-                    receiptCertificatesFm.Text = "Сертифікати та паспорти";
-                    receiptCertificatesFm.MdiParent = this;
-                    receiptCertificatesFm.Show();
+                    //ReceiptCertificatesFm receiptCertificatesFm = new ReceiptCertificatesFm(userTasksDTO);
+                    //receiptCertificatesFm.Text = "Сертифікати та паспорти";
+                    //receiptCertificatesFm.MdiParent = this;
+                    //receiptCertificatesFm.Show();
+                    MessageBox.Show("Форма більше не підттримується");
                     break;
                 case "expenditureOrdersItem":
                     ExpenditureByOrdersFm expenditureByOrdersFm = new ExpenditureByOrdersFm();
@@ -794,7 +795,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+            //return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
