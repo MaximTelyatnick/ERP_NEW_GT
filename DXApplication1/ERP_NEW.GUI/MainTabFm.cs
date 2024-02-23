@@ -494,7 +494,7 @@ namespace ERP_NEW.GUI
                     businessCardFm.MdiParent = this;
                     businessCardFm.Show();
                     break;
-               case "cashBookItem":
+               case "cashBookBusinessTripsSubItem":
                     CashBookFm cashBookFm = new CashBookFm(userTasksDTO, new CashBooksDTO()
                     {
                         Id = 1,
@@ -504,7 +504,7 @@ namespace ERP_NEW.GUI
                     cashBookFm.MdiParent = this;
                     cashBookFm.Show();
                     break;
-                case "cashBookCookShopItem":
+                case "cashBookCookShopSubItem":
                     CashBookFm cashBookCookShopFm = new CashBookFm(userTasksDTO, new CashBooksDTO()
                     {
                         Id = 2,
@@ -809,7 +809,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+            //return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
