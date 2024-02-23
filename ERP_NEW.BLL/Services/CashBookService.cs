@@ -80,9 +80,9 @@ namespace ERP_NEW.BLL.Services
 
         #region Method's
 
-        public IEnumerable<CashBookPageDTO> GetPageByPeriod(DateTime beginDate, DateTime endDate)
+        public IEnumerable<CashBookPageDTO> GetPageByPeriod(DateTime beginDate, DateTime endDate, int cashBooksId)
         {
-            return mapper.Map<IEnumerable<CashBookPage>, List<CashBookPageDTO>>(cashBookPage.GetAll().Where(w => w.PageDate >= beginDate && w.PageDate <= endDate));
+            return mapper.Map<IEnumerable<CashBookPage>, List<CashBookPageDTO>>(cashBookPage.GetAll().Where(w => w.PageDate >= beginDate && w.PageDate <= endDate && w.CashBookId == cashBooksId));
         }
 
         public IEnumerable<CashBookBasisTypeDTO> GetBasis()
@@ -118,15 +118,16 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<IEnumerable<CashBookRecordJournal>, List<CashBookRecordJournalDTO>>(cashBookRecordJournal.SQLExecuteProc(procName, Parameters));
         }
 
-        public IEnumerable<CashBookBalanceDTO> GetCashBookBalanceByPeriod(DateTime beginDate, DateTime endDate)
+        public IEnumerable<CashBookBalanceDTO> GetCashBookBalanceByPeriod(DateTime beginDate, DateTime endDate, int cashBookId)
         {
             FbParameter[] Parameters =
                 {
                     new FbParameter("BeginDateIn", beginDate),
-                    new FbParameter("EndDateIn", endDate)
+                    new FbParameter("EndDateIn", endDate),
+                    new FbParameter("CashBookId", cashBookId)
                 };
 
-            string procName = @"select * from ""GetCashBookBalance""(@BeginDateIn, @EndDateIn)";
+            string procName = @"select * from ""GetCashBookBalance""(@BeginDateIn, @EndDateIn, @CashBookId)";
 
             return mapper.Map<IEnumerable<CashBookBalance>, List<CashBookBalanceDTO>>(cashBookBalance.SQLExecuteProc(procName, Parameters));
         }

@@ -14,5 +14,6 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int Id { get; set; }
         public DateTime PageDate { get; set; }
         public string PageNumber { get; set; }
+        public int CashBookId { get; set; }
     }
 }

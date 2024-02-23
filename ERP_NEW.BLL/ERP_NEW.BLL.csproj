@@ -161,6 +161,7 @@
   <ItemGroup>
     <Compile Include="DTO\ModelsDTO\CalculationDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CalculationMaterialsDTO.cs" />
+    <Compile Include="DTO\ModelsDTO\CashBooksDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CurencyJSONDTO.cs" />
     <Compile Include="DTO\ModelsDTO\EmployeesDetailsStandartDTO.cs" />
     <Compile Include="DTO\ModelsDTO\ExpenditureStoreHouseDTO.cs" />

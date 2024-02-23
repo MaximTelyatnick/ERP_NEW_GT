@@ -495,13 +495,27 @@ namespace ERP_NEW.GUI
                     businessCardFm.Show();
                     break;
                case "cashBookItem":
-                    CashBookFm cashBookFm = new CashBookFm(userTasksDTO);
-                    cashBookFm.Text = "Касова книга";
+                    CashBookFm cashBookFm = new CashBookFm(userTasksDTO, new CashBooksDTO()
+                    {
+                        Id = 1,
+                        CashBookName = "Каса"
+                    });
+                    cashBookFm.Text = "Касова книга (відрядження)";
                     cashBookFm.MdiParent = this;
                     cashBookFm.Show();
                     break;
+                case "cashBookCookShopItem":
+                    CashBookFm cashBookCookShopFm = new CashBookFm(userTasksDTO, new CashBooksDTO()
+                    {
+                        Id = 2,
+                        CashBookName = "Їдальня"
+                    });
+                    cashBookCookShopFm.Text = "Касова книга (їдальня)";
+                    cashBookCookShopFm.MdiParent = this;
+                    cashBookCookShopFm.Show();
+                    break;
 
-               case "cashBookSubItem":
+                case "cashBookSubItem":
                     BasisJournalFm basisJournalFm = new BasisJournalFm(userTasksDTO);
                     basisJournalFm.Text = "Журнал підстав";
                     basisJournalFm.MdiParent = this;
@@ -795,7 +809,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            //return 690;
+            return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)

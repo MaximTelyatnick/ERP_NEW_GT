@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalcWithBuyersJournalFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -51,7 +50,7 @@
             this.endReportDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit4 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
             this.reportBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.reportMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.reportMenu = new DevExpress.XtraBars.PopupMenu();
             this.calcWithBuyersReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.calcWithBuyersByAccountReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.periodBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -107,7 +106,7 @@
             this.detailsCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.selectedPaymentRepository = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection = new DevExpress.Utils.ImageCollection();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -509,11 +508,11 @@
             // calcWithBuyersGrid
             // 
             this.calcWithBuyersGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.calcWithBuyersGrid.Location = new System.Drawing.Point(2, 20);
+            this.calcWithBuyersGrid.Location = new System.Drawing.Point(2, 22);
             this.calcWithBuyersGrid.MainView = this.calcWithBuyersGridView;
             this.calcWithBuyersGrid.MenuManager = this.ribbonControl1;
             this.calcWithBuyersGrid.Name = "calcWithBuyersGrid";
-            this.calcWithBuyersGrid.Size = new System.Drawing.Size(1358, 310);
+            this.calcWithBuyersGrid.Size = new System.Drawing.Size(1358, 308);
             this.calcWithBuyersGrid.TabIndex = 0;
             this.calcWithBuyersGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.calcWithBuyersGridView});

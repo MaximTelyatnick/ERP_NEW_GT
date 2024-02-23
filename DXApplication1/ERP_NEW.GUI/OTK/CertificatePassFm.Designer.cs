@@ -79,6 +79,7 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -287,7 +288,8 @@
             this.ManufactureInfo,
             this.Description,
             this.InformationRow,
-            this.ColorName});
+            this.ColorName,
+            this.bandedGridColumn1});
             this.bandedGridView.GridControl = this.certificatePassGrid;
             this.bandedGridView.Name = "bandedGridView";
             this.bandedGridView.OptionsFind.AlwaysVisible = true;
@@ -835,6 +837,12 @@
             // 
             this.splashScreenManager.ClosingDelay = 500;
             // 
+            // bandedGridColumn1
+            // 
+            this.bandedGridColumn1.Caption = "bandedGridColumn1";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.Visible = true;
+            // 
             // CertificatePassFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -916,5 +924,6 @@
         private DevExpress.XtraBars.BarButtonItem deleteCertificateBtn;
         private DevExpress.XtraBars.BarButtonItem addCertificateBtn;
         private DevExpress.XtraBars.BarButtonItem showRecBtn;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn bandedGridColumn1;
     }
 }

@@ -100,6 +100,7 @@ namespace ERP_NEW.BLL.Services
                           {
                               ReceiptCertificateId = cert.ReceiptCertificateId,
                               CertificateDate = cert.CertificateDate,
+                               CertificateDateEnd = cert.CertificateDateEnd,
                               CertificateNumber = cert.CertificateNumber,
                               ReceiptId = cert.ReceiptId,
                               Description = cert.Description,

@@ -11,10 +11,10 @@ namespace ERP_NEW.BLL.Interfaces
 {
     public interface ICashBookService
     {
-        IEnumerable<CashBookPageDTO> GetPageByPeriod(DateTime beginDate, DateTime endDate);
+        IEnumerable<CashBookPageDTO> GetPageByPeriod(DateTime beginDate, DateTime endDate, int cashBooksId);
         IEnumerable<CashBookBasisTypeDTO> GetBasis();
         IEnumerable<CashBookRecordJournalDTO> GetCashBookRecords(int cashBookPageId);
-        IEnumerable<CashBookBalanceDTO> GetCashBookBalanceByPeriod(DateTime beginDate, DateTime endDate);
+        IEnumerable<CashBookBalanceDTO> GetCashBookBalanceByPeriod(DateTime beginDate, DateTime endDate, int cashBookId);
         IEnumerable<CashBookRecordTypeDTO> GetCashBookRecordType();
         IEnumerable<CashBookContractorDTO> GetContractors();
         IEnumerable<CashBookPageDTO> GetCashBookPages();

@@ -27,6 +27,7 @@ namespace ERP_NEW.GUI.Accounting
         List<CashBookPageDTO> cashBookPagesList = new List<CashBookPageDTO>();
 
         private UserTasksDTO userTasksDTO;
+        private CashBooksDTO cashBooksDTO;
         private CashBookBalanceDTO cashBookBalanceDTO = new CashBookBalanceDTO();
 
         private DateTime currentDate;
@@ -37,11 +38,12 @@ namespace ERP_NEW.GUI.Accounting
 
 
 
-        public CashBookFm(UserTasksDTO userTasksDTO)
+        public CashBookFm(UserTasksDTO userTasksDTO, CashBooksDTO cashBooksDTO)
         {
             InitializeComponent();
 
             this.userTasksDTO = userTasksDTO;
+            this.cashBooksDTO = cashBooksDTO;
 
             yearEdit.EditValue = DateTime.Now;
 
@@ -65,7 +67,7 @@ namespace ERP_NEW.GUI.Accounting
 
             cashBookService = Program.kernel.Get<ICashBookService>();
             
-            cashBookPagesList = cashBookService.GetPageByPeriod(beginDate, endDate).OrderByDescending(c => c.PageDate).ToList();
+            cashBookPagesList = cashBookService.GetPageByPeriod(beginDate, endDate, cashBooksDTO.Id).OrderByDescending(c => c.PageDate).ToList();
 
             if (cashBookPagesList.Count() > 0)
             {
@@ -137,7 +139,7 @@ namespace ERP_NEW.GUI.Accounting
             }
             
 
-            var balanceByPeriod = cashBookService.GetCashBookBalanceByPeriod(stockDate, currentDate);
+            var balanceByPeriod = cashBookService.GetCashBookBalanceByPeriod(stockDate, currentDate, cashBooksDTO.Id);
 
             cashBookBalanceDTO = balanceByPeriod.FirstOrDefault(bbp => bbp.Id == 1);
             cashBookBalanceDTO.SumBeginDay = cashBookBalanceDTO.FullSaldo;
@@ -291,7 +293,7 @@ namespace ERP_NEW.GUI.Accounting
                 reportService = Program.kernel.Get<IReportService>();
                 cashBookService = Program.kernel.Get<ICashBookService>();
 
-                var balanceByPeriod = cashBookService.GetCashBookBalanceByPeriod(stockDate, (DateTime)firstReportDateEdit.EditValue);
+                var balanceByPeriod = cashBookService.GetCashBookBalanceByPeriod(stockDate, (DateTime)firstReportDateEdit.EditValue, cashBooksDTO.Id);
 
                 cashBookBalanceDTO = balanceByPeriod.FirstOrDefault(bbp => bbp.Id == 1);
 

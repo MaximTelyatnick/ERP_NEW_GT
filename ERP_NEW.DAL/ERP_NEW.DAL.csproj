@@ -145,6 +145,7 @@
     <Compile Include="Entities\Models\AgreementsType.cs" />
     <Compile Include="Entities\Models\Calculation.cs" />
     <Compile Include="Entities\Models\CalculationMaterials.cs" />
+    <Compile Include="Entities\Models\CashBooks.cs" />
     <Compile Include="Entities\Models\Delivery.cs" />
     <Compile Include="Entities\Models\AgreementDocuments.cs" />
     <Compile Include="Entities\Models\DeliveryOrder.cs" />

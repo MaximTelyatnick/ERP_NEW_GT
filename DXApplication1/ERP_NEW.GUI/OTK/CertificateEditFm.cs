@@ -36,17 +36,7 @@ namespace ERP_NEW.GUI.OTK
             InitializeComponent();
             this.operation = operation;
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
-            //ordersInfo2 = ordersInfo;
-            //ordersInfoBS.DataSource = ordersInfo2;
             recCertBS.DataSource = recCertDTO;
-            //invoiceNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceNum");
-            //invoiceDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "InvoiceDate");
-            //receiptNumTbox.DataBindings.Add("EditValue", ordersInfoBS, "ReceiptNum");
-            //orderDateTbox.DataBindings.Add("EditValue", ordersInfoBS, "OrderDate");
-            //nomenclatureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Nomenclature");
-            //nomenclatureNameTbox.DataBindings.Add("EditValue", ordersInfoBS, "NomenclatureName");
-            //quantityTbox.DataBindings.Add("EditValue", ordersInfoBS, "Quantity");
-            //measureTbox.DataBindings.Add("EditValue", ordersInfoBS, "Measure");
             certificateNumberTbox.EditValue = recCertDTO.CertificateNumber;
             certificateDateTbox.EditValue = recCertDTO.CertificateDate;
             certificateDateEndTbox.EditValue = recCertDTO.CertificateDateEnd;
@@ -61,6 +51,10 @@ namespace ERP_NEW.GUI.OTK
             }
             else 
             {
+                if ((((DateTime)certificateDateEndTbox.EditValue).Year - DateTime.Now.Year) > 100)
+                    checkDateEdit.Checked = true;
+                else
+                    checkDateEdit.Checked = false;
                 certificateDTO = receiptCertificateService.GetCertificate((long)recCertDTO.ReceiptCertificateId);
                 pictureEdit.EditValue = certificateDTO.CertificateScan;
 
@@ -287,6 +281,19 @@ namespace ERP_NEW.GUI.OTK
             System.IO.File.WriteAllBytes(puth + fileName, scan);
 
             System.Diagnostics.Process.Start(puth + fileName);
+        }
+
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void checkDateEdit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkDateEdit.Checked)
+                certificateDateEndTbox.EditValue = DateTime.Now.AddYears(1000);
+            else
+                certificateDateEndTbox.EditValue = null;
         }
     }
 }

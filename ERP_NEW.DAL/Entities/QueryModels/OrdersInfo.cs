@@ -6,6 +6,7 @@ namespace ERP_NEW.DAL.Entities.QueryModels
     public class OrdersInfo
     {
         [Key]
+        public int RecId { get; set; }
         public int ReceiptId { get; set; }
         public decimal? Quantity { get; set; }
         public string Nomenclature { get; set; }

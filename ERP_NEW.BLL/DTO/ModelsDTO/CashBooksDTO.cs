@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ERP_NEW.DAL.Entities.Models
+namespace ERP_NEW.BLL.DTO.ModelsDTO
 {
-    public class CashBookPage
+    public class CashBooksDTO
     {
         [Key]
         public int Id { get; set; }
-        public DateTime PageDate { get; set; }
-        public string PageNumber { get; set; }
-        public int CashBookId { get; set; }
+        public string CashBookName { get; set; }
     }
 }

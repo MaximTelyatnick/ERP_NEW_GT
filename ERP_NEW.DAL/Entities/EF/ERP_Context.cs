@@ -103,6 +103,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<CashPrepayments> CashPrepayments { get; set; }
         public DbSet<CashPayments> CashPayments { get; set; }
         public DbSet<CashPrepaymentsInfo> CashPrepaymentsInfo { get; set; }
+        public DbSet<CashBooks> CashBooks { get; set; }
         public DbSet<CashPaymentsInfo> CashPaymentsInfo { get; set; }
         public DbSet<CalcWithBuyers> CalcWithBuyers { get; set; }
         public DbSet<CalcWithBuyersSpec> CalcWithBuyersSpec { get; set; }
@@ -339,20 +340,20 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                //DataSource = "localhost",
-                //Database = "TVM_DB",
-                //UserID = "sysdba",
-                //Password = "masterkey",
-                //Charset = "UTF8",
-                //Pooling = true,
-                //ConnectionLifeTime = 900,
-                DataSource = "10.0.0.50",
+                DataSource = "localhost",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
                 Charset = "UTF8",
                 Pooling = true,
-                ConnectionLifeTime = 900
+                ConnectionLifeTime = 900,
+                //DataSource = "10.0.0.50",
+                //Database = "TVM_DB",
+                //UserID = "sysdba",
+                //Password = "masterkey",
+                //Charset = "UTF8",
+                //Pooling = true,
+                //ConnectionLifeTime = 900
 
             };
 

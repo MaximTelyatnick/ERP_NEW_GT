@@ -60,7 +60,6 @@ returns (
     "StorehouseName" varchar(50),
     "ReceiptCertificateId" bigint,
     "CertificateDate" date,
-	"CertificateDateEnd" date,
     "CertificateNumber" varchar(40),
     "FileName" varchar(100),
     "ManufacturerInfo" varchar(200),
@@ -68,9 +67,12 @@ returns (
     "ScanPersence" integer,
     "FileNameTwo" varchar(100),
     "ScanPersenceTwo" integer,
-    "ColorName" varchar(20))
+    "ColorName" varchar(20),
+    "ReceiptCertificateDetailId" integer,
+    "RecId" integer)
 as
 BEGIN
+"RecId" = 0;
   FOR
     SELECT
         r.ID as "ReceiptId",
@@ -90,7 +92,6 @@ BEGIN
         s."Name" as "StorehouseName",
         rc."ReceiptCertificateId",
         rc."CertificateDate",
-        rc."CertificateDateEnd",
         rc."CertificateNumber",
         rc."FileName",
         rc."ManufacturerInfo",
@@ -146,7 +147,6 @@ BEGIN
          :"StorehouseName",
          :"ReceiptCertificateId",
          :"CertificateDate",
-         :"CertificateDateEnd",
          :"CertificateNumber",
          :"FileName",
          :"ManufacturerInfo",
@@ -158,6 +158,80 @@ BEGIN
          :"ReceiptCertificateDetailId"
            DO
   BEGIN
+  "RecId" = "RecId" + 1;
+    SUSPEND;
+  END
+END
+
+
+
+
+/**************************************************************************************/
+/***         Fixed cashbook form? because need create second cashbook form          ***/
+/**************************************************************************************/
+/******************************************************************************/
+/***                                 Tables                                 ***/
+/******************************************************************************/
+
+
+
+CREATE TABLE "CashBooks" (
+    "Id"            INTEGER NOT NULL,
+    "CashBookName"  VARCHAR(100)
+);
+
+
+/******************************************************************************/
+/***                              Primary Keys                              ***/
+/******************************************************************************/
+
+ALTER TABLE "CashBooks" ADD CONSTRAINT """PK_CASHBOOKS""" PRIMARY KEY ("Id")
+
+ALTER TABLE "CashBookPage"
+ADD "CashBookId" INTEGER DEFAULT '1' NOT NULL;
+
+ALTER TABLE "CashBookPage" ADD CONSTRAINT "FK_CashBookPages_Id" FOREIGN KEY ("CashBookId") REFERENCES "CashBooks" ("Id");
+
+create or alter procedure "GetCashBookBalance" (
+    "StartDate" date,
+    "EndDate" date,
+    "CashBookId" integer)
+returns (
+    "FullSaldo" numeric(18,2),
+    "Id" integer)
+as
+ BEGIN
+  "Id" = 0;
+  FOR
+    SELECT
+    SUM(total."DebitCreditDifference") AS "FullSaldo"
+    FROM
+            (SELECT
+            balance."Id" as "Id",
+            (balance."Debit" - balance."Credit") as  "DebitCreditDifference",
+            balance."Debit" as "Debit",
+            balance."Credit" as "Credit"
+            FROM
+                (SELECT
+                    cbp."Id" as "Id",
+                    SUM(IIF(cbr."CurrencyTypeId" = 0, COALESCE(cbr."Payment", 0), 0)) as "Debit",
+                    SUM(IIF(cbr."CurrencyTypeId" = 1, COALESCE(cbr."Payment", 0), 0)) as "Credit"
+                FROM
+                    "CashBookPage" cbp
+                LEFT JOIN
+                    "CashBookRecord" cbr on cbp."Id" = cbr."CashBookPageId"
+                WHERE
+                    cbp."PageDate" >= :"StartDate" AND cbp."PageDate" < :"EndDate" and cbp."CashBookId" = :"CashBookId"
+                GROUP BY
+                    cbp."Id"
+                ) balance
+
+            ) total
+    INTO
+            :"FullSaldo"
+  DO
+  BEGIN
+    "Id" = "Id" + 1;
     SUSPEND;
   END
 END
