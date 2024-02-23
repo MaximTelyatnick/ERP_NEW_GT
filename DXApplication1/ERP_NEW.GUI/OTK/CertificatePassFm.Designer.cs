@@ -72,6 +72,7 @@
             this.InformationRow = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
             this.ColorName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.tabFormDefaultManager1 = new DevExpress.XtraBars.TabFormDefaultManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -79,7 +80,6 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.bandedGridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
@@ -788,6 +788,12 @@
             this.ColorName.FieldName = "ColorName";
             this.ColorName.Name = "ColorName";
             // 
+            // bandedGridColumn1
+            // 
+            this.bandedGridColumn1.Caption = "bandedGridColumn1";
+            this.bandedGridColumn1.Name = "bandedGridColumn1";
+            this.bandedGridColumn1.Visible = true;
+            // 
             // tabFormDefaultManager1
             // 
             this.tabFormDefaultManager1.DockControls.Add(this.barDockControlTop);
@@ -836,12 +842,6 @@
             // splashScreenManager
             // 
             this.splashScreenManager.ClosingDelay = 500;
-            // 
-            // bandedGridColumn1
-            // 
-            this.bandedGridColumn1.Caption = "bandedGridColumn1";
-            this.bandedGridColumn1.Name = "bandedGridColumn1";
-            this.bandedGridColumn1.Visible = true;
             // 
             // CertificatePassFm
             // 

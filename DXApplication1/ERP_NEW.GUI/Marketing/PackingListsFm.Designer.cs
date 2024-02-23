@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PackingListsFm));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -71,7 +72,7 @@
             this.cityNameCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.descriptionProjectCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.repositoryItemMemoEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
-            this.columnCollection = new DevExpress.Utils.ImageCollection();
+            this.columnCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splitControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
@@ -1186,7 +1187,7 @@
             this.xtraTabPage1.Appearance.Header.Options.UseForeColor = true;
             this.xtraTabPage1.Controls.Add(this.specificationGrid);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(1414, 174);
+            this.xtraTabPage1.Size = new System.Drawing.Size(1413, 173);
             this.xtraTabPage1.Text = "Специфікація до заказу";
             // 
             // specificationGrid
@@ -1195,7 +1196,7 @@
             this.specificationGrid.Location = new System.Drawing.Point(0, 0);
             this.specificationGrid.MainView = this.specofocationGridView;
             this.specificationGrid.Name = "specificationGrid";
-            this.specificationGrid.Size = new System.Drawing.Size(1414, 174);
+            this.specificationGrid.Size = new System.Drawing.Size(1413, 173);
             this.specificationGrid.TabIndex = 8;
             this.specificationGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.specofocationGridView});
@@ -1332,7 +1333,7 @@
             this.xtraTabPage3.Appearance.Header.Options.UseForeColor = true;
             this.xtraTabPage3.Controls.Add(this.assembliesGrid);
             this.xtraTabPage3.Name = "xtraTabPage3";
-            this.xtraTabPage3.Size = new System.Drawing.Size(1414, 174);
+            this.xtraTabPage3.Size = new System.Drawing.Size(1413, 173);
             this.xtraTabPage3.Text = "Складальні одиниці";
             // 
             // assembliesGrid
@@ -1341,7 +1342,7 @@
             this.assembliesGrid.Location = new System.Drawing.Point(0, 0);
             this.assembliesGrid.MainView = this.assembliesGridView;
             this.assembliesGrid.Name = "assembliesGrid";
-            this.assembliesGrid.Size = new System.Drawing.Size(1414, 174);
+            this.assembliesGrid.Size = new System.Drawing.Size(1413, 173);
             this.assembliesGrid.TabIndex = 9;
             this.assembliesGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.assembliesGridView});

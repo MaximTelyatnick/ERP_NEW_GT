@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificateEditFm));
             this.certificateNumberTbox = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.checkDateEdit = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.certificateDateEndTbox = new DevExpress.XtraEditors.DateEdit();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
@@ -57,10 +58,10 @@
             this.showTwoBtn = new DevExpress.XtraEditors.SimpleButton();
             this.pictureTwoEdit = new DevExpress.XtraEditors.PictureEdit();
             this.openFileTwoBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.checkDateEdit = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateNumberTbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.descriptionMemoEdit.Properties)).BeginInit();
@@ -77,7 +78,6 @@
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileNameTwoTBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTwoEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDateEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // certificateNumberTbox
@@ -106,6 +106,15 @@
             this.panelControl1.Size = new System.Drawing.Size(672, 224);
             this.panelControl1.TabIndex = 1;
             this.panelControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl1_Paint);
+            // 
+            // checkDateEdit
+            // 
+            this.checkDateEdit.Location = new System.Drawing.Point(251, 86);
+            this.checkDateEdit.Name = "checkDateEdit";
+            this.checkDateEdit.Properties.Caption = "Безстроковий сертифікат";
+            this.checkDateEdit.Size = new System.Drawing.Size(244, 19);
+            this.checkDateEdit.TabIndex = 27;
+            this.checkDateEdit.CheckedChanged += new System.EventHandler(this.checkDateEdit_CheckedChanged);
             // 
             // labelControl13
             // 
@@ -352,15 +361,6 @@
             this.openFileTwoBtn.ToolTip = "Вибрати файл";
             this.openFileTwoBtn.Click += new System.EventHandler(this.openFileTwoBtn_Click);
             // 
-            // checkDateEdit
-            // 
-            this.checkDateEdit.Location = new System.Drawing.Point(251, 86);
-            this.checkDateEdit.Name = "checkDateEdit";
-            this.checkDateEdit.Properties.Caption = "Безстроковий сертифікат";
-            this.checkDateEdit.Size = new System.Drawing.Size(244, 19);
-            this.checkDateEdit.TabIndex = 27;
-            this.checkDateEdit.CheckedChanged += new System.EventHandler(this.checkDateEdit_CheckedChanged);
-            // 
             // CertificateEditFm
             // 
             this.AcceptButton = this.saveBtn;
@@ -383,6 +383,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateDateEndTbox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.descriptionMemoEdit.Properties)).EndInit();
@@ -399,7 +400,6 @@
             this.panelControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.fileNameTwoTBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureTwoEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkDateEdit.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

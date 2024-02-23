@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorEditFm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -79,7 +80,7 @@
             this.contractorContactAddressGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.nameTypeCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.detailsCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contractorValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.contractorValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
             this.xtraTabControl.SuspendLayout();
             this.contractorContactAddressesPage.SuspendLayout();
@@ -322,7 +323,7 @@
             this.contactPersonAddressPage.Controls.Add(this.groupControl3);
             this.contactPersonAddressPage.Controls.Add(this.groupControl2);
             this.contactPersonAddressPage.Name = "contactPersonAddressPage";
-            this.contactPersonAddressPage.Size = new System.Drawing.Size(798, 526);
+            this.contactPersonAddressPage.Size = new System.Drawing.Size(797, 524);
             this.contactPersonAddressPage.Text = "Контакти";
             // 
             // groupControl3

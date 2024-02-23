@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptCertificatesFm));
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.showOrdersForDate = new DevExpress.XtraEditors.SimpleButton();
@@ -35,7 +36,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.beginDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             this.receiptsCertificateVGrid = new DevExpress.XtraVerticalGrid.VGridControl();
             this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
@@ -69,7 +70,7 @@
             this.row = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.receiptHistoryOrdersDTOBindingSource = new System.Windows.Forms.BindingSource();
+            this.receiptHistoryOrdersDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.endDateEdit.Properties.CalendarTimeProperties)).BeginInit();
