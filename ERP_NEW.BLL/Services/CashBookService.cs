@@ -129,12 +129,14 @@ namespace ERP_NEW.BLL.Services
 
             string procName = @"select * from ""GetCashBookBalance""(@BeginDateIn, @EndDateIn, @CashBookId)";
 
+            var test = cashBookBalance.SQLExecuteProc(procName, Parameters);
+
             return mapper.Map<IEnumerable<CashBookBalance>, List<CashBookBalanceDTO>>(cashBookBalance.SQLExecuteProc(procName, Parameters));
         }
 
-        public IEnumerable<CashBookPageDTO> GetCashBookPages()
+        public IEnumerable<CashBookPageDTO> GetCashBookPages(int cashBookId)
         {
-            return mapper.Map<IEnumerable<CashBookPage>, List<CashBookPageDTO>>(cashBookPage.GetAll());
+            return mapper.Map<IEnumerable<CashBookPage>, List<CashBookPageDTO>>(cashBookPage.GetAll()).Where(srch => srch.CashBookId == cashBookId);
         }
 
 
@@ -143,11 +145,12 @@ namespace ERP_NEW.BLL.Services
             return mapper.Map<IEnumerable<CashBookRecord>, List<CashBookRecordDTO>>(cashBookRecord.GetAll());
         }
 
-        public IEnumerable<CashBookRecordDTO> GetCashBookRecords(DateTime date)
+        public IEnumerable<CashBookRecordDTO> GetCashBookRecords(DateTime date, int cashBookId)
         {
             var result = (from cbr in cashBookRecord.GetAll()
                           join cb in cashBookPage.GetAll() on cbr.CashBookPageId equals cb.Id into cbb
                           from cb in cbb.DefaultIfEmpty()
+                          where cb.CashBookId == cashBookId
                           select new CashBookRecordDTO()
                           {
                             Id = cbr.Id,
@@ -169,9 +172,9 @@ namespace ERP_NEW.BLL.Services
 
         
 
-        public string GetLatestPageNumber(DateTime pageDate)
+        public string GetLatestPageNumber(DateTime pageDate, int cashBookId)
         {
-            var cashBookDto = GetCashBookPages().OrderByDescending(x => Decimal.Parse(x.PageNumber.Replace('/', ','))).FirstOrDefault(x => x.PageDate.Month == pageDate.Month && x.PageDate.Year == pageDate.Year); //DateTime.Today.Year);
+            var cashBookDto = GetCashBookPages(cashBookId).OrderByDescending(x => Decimal.Parse(x.PageNumber.Replace('/', ','))).FirstOrDefault(x => x.PageDate.Month == pageDate.Month && x.PageDate.Year == pageDate.Year); //DateTime.Today.Year);
 
             if (cashBookDto != null)
             {
@@ -184,13 +187,13 @@ namespace ERP_NEW.BLL.Services
             }
         }
 
-        public string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation, List<CashBookRecordJournalDTO> models)
+        public string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation, List<CashBookRecordJournalDTO> models, int cashBookId)
         {
             if (recordCurencyOperation == Utils.CurencyOperationType.Debit)
             {
                 if (models.Count == 0)
                 {
-                    var cashBookDto = GetCashBookRecords(pageDate).OrderByDescending(x => Decimal.Parse(x.DocumentNumber.Replace('/', ','))).FirstOrDefault(x => x.CurrencyTypeId == 0 && pageDate.Year == DateTime.Today.Year);
+                    var cashBookDto = GetCashBookRecords(pageDate, cashBookId).OrderByDescending(x => Decimal.Parse(x.DocumentNumber.Replace('/', ','))).FirstOrDefault(x => x.CurrencyTypeId == 0 && pageDate.Year == DateTime.Today.Year);
 
                     if (cashBookDto != null)
                     {
@@ -221,7 +224,7 @@ namespace ERP_NEW.BLL.Services
 
                 if (models.Count == 0)
                 {
-                    var cashBookDto = GetCashBookRecords(pageDate).OrderByDescending(x => Decimal.Parse(x.DocumentNumber.Replace('/', ','))).FirstOrDefault(x => x.CurrencyTypeId == 1 && pageDate.Year == DateTime.Today.Year);
+                    var cashBookDto = GetCashBookRecords(pageDate, cashBookId).OrderByDescending(x => Decimal.Parse(x.DocumentNumber.Replace('/', ','))).FirstOrDefault(x => x.CurrencyTypeId == 1 && pageDate.Year == DateTime.Today.Year);
 
                     if (cashBookDto != null)
                     {

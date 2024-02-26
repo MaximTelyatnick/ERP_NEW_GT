@@ -58,7 +58,7 @@ namespace ERP_NEW.GUI.Accounting
             if (this.operation == Utils.Operation.Add)
             {
                 ((CashBookPageDTO)Item).PageDate = DateTime.Now;
-                ((CashBookPageDTO)Item).PageNumber = cashBookService.GetLatestPageNumber(((CashBookPageDTO)Item).PageDate);
+                ((CashBookPageDTO)Item).PageNumber = cashBookService.GetLatestPageNumber(((CashBookPageDTO)Item).PageDate, model.CashBookId);
             }
             else
             {
@@ -85,7 +85,7 @@ namespace ERP_NEW.GUI.Accounting
         {
             cashBookService = Program.kernel.Get<ICashBookService>();
 
-            using (CashBookRecordEditFm cashBookRecordEditFm = new CashBookRecordEditFm(operation, model, models, ((CashBookPageDTO)Item).PageDate))
+            using (CashBookRecordEditFm cashBookRecordEditFm = new CashBookRecordEditFm(operation, model, models, ((CashBookPageDTO)Item).PageDate, ((CashBookPageDTO)Item).CashBookId))
             {
                 if (cashBookRecordEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -320,7 +320,7 @@ namespace ERP_NEW.GUI.Accounting
         private void cashBookPageDateEdit_EditValueChanged(object sender, EventArgs e)
         {
             if (cashBookPageDateEdit != null && operation == Utils.Operation.Add)
-                    ((CashBookPageDTO)Item).PageNumber = cashBookService.GetLatestPageNumber((DateTime)cashBookPageDateEdit.EditValue);
+                    ((CashBookPageDTO)Item).PageNumber = cashBookService.GetLatestPageNumber((DateTime)cashBookPageDateEdit.EditValue, ((CashBookPageDTO)Item).CashBookId);
             
             cashBookValidationProvider.Validate((Control)sender);
         }

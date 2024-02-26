@@ -17,12 +17,12 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<CashBookBalanceDTO> GetCashBookBalanceByPeriod(DateTime beginDate, DateTime endDate, int cashBookId);
         IEnumerable<CashBookRecordTypeDTO> GetCashBookRecordType();
         IEnumerable<CashBookContractorDTO> GetContractors();
-        IEnumerable<CashBookPageDTO> GetCashBookPages();
+        IEnumerable<CashBookPageDTO> GetCashBookPages(int cashBookId);
         IEnumerable<CashBookRecordDTO> GetCashBookRecords();
-        IEnumerable<CashBookRecordDTO> GetCashBookRecords(DateTime date);
-        string GetLatestPageNumber(DateTime pageDate);
+        IEnumerable<CashBookRecordDTO> GetCashBookRecords(DateTime date, int cashBookId);
+        string GetLatestPageNumber(DateTime pageDate, int cashBookId);
         IEnumerable<CashBookAdditionalTypeDTO> GetCashBookAdditional();
-        string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation, List<CashBookRecordJournalDTO> models);
+        string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation, List<CashBookRecordJournalDTO> models, int cashBookId);
         string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation);
         
 

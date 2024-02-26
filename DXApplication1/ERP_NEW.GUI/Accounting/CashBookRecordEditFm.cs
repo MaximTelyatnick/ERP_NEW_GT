@@ -34,6 +34,7 @@ namespace ERP_NEW.GUI.Accounting
         private List<CashBookRecordJournalDTO> models;
 
         private CashBookRecordJournalDTO model;
+        private int cashBookId;
 
         private ObjectBase Item
         {
@@ -45,7 +46,7 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        public CashBookRecordEditFm(Utils.Operation operation, CashBookRecordJournalDTO model, List<CashBookRecordJournalDTO> models, DateTime pageDate)
+        public CashBookRecordEditFm(Utils.Operation operation, CashBookRecordJournalDTO model, List<CashBookRecordJournalDTO> models, DateTime pageDate, int cashBookId)
         {
             InitializeComponent();
 
@@ -55,6 +56,7 @@ namespace ERP_NEW.GUI.Accounting
             this.pageDate = pageDate;
             this.models = models;
             this.model = model;
+            this.cashBookId = cashBookId;
 
             cashBookRecordBS.DataSource = Item = model;
 
@@ -132,9 +134,9 @@ namespace ERP_NEW.GUI.Accounting
             if (((CashBookRecordTypeDTO)cashBookOperationEdit.GetSelectedDataRow()) != null && operation == Utils.Operation.Add)
             {
                 if (((CashBookRecordTypeDTO)cashBookOperationEdit.GetSelectedDataRow()).Id == 0)
-                    cashBookRecordDocumentTBox.EditValue = cashBookService.GetLatestRecordDocumentNumber(pageDate, Utils.CurencyOperationType.Debit, models.Where(w => w.CurrencyTypeId == 0).ToList());
+                    cashBookRecordDocumentTBox.EditValue = cashBookService.GetLatestRecordDocumentNumber(pageDate, Utils.CurencyOperationType.Debit, models.Where(w => w.CurrencyTypeId == 0).ToList(), cashBookId);
                 else
-                    cashBookRecordDocumentTBox.EditValue = cashBookService.GetLatestRecordDocumentNumber(pageDate, Utils.CurencyOperationType.Credit, models.Where(w => w.CurrencyTypeId == 1).ToList());
+                    cashBookRecordDocumentTBox.EditValue = cashBookService.GetLatestRecordDocumentNumber(pageDate, Utils.CurencyOperationType.Credit, models.Where(w => w.CurrencyTypeId == 1).ToList(), cashBookId);
             }
             else
             {

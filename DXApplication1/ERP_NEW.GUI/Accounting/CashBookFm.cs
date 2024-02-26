@@ -218,7 +218,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void addBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditCashBookPages(Utils.Operation.Add, new CashBookPageDTO(), new List<CashBookRecordJournalDTO>());
+            EditCashBookPages(Utils.Operation.Add, new CashBookPageDTO() {  CashBookId = cashBooksDTO.Id}, new List<CashBookRecordJournalDTO>());
         }
 
         private void editBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

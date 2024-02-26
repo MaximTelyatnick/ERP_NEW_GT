@@ -274,7 +274,7 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
-            this.logerTabPage.Size = new System.Drawing.Size(588, 385);
+            this.logerTabPage.Size = new System.Drawing.Size(589, 387);
             this.logerTabPage.Text = "Налаштування логеру";
             // 
             // label5
