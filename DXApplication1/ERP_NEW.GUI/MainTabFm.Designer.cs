@@ -29,9 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -46,6 +44,9 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement22 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
@@ -134,11 +135,8 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement104 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement105 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             this.menuNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.accountingCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
-            this.accountingReportItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderCurrencyItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.expendituresItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -150,6 +148,9 @@
             this.calcWithBuyersItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.bankPaymentsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.cashBookItem = new DevExpress.XtraBars.Navigation.TileNavItem();
+            this.cashBookBusinessTripsSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
+            this.cashBookCookShopSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
+            this.accountingReportItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.travelCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.businessTripsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.businessTripsDecreeItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -246,14 +247,12 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.programVersionLbl = new DevExpress.XtraEditors.LabelControl();
-            this.cashBookBusinessTripsSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
-            this.cashBookCookShopSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -320,29 +319,6 @@
             this.accountingCategory.AppearanceSelected.Options.UseBackColor = true;
             this.accountingCategory.Caption = "Бухгалтерський облік";
             this.accountingCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("accountingCategory.Glyph")));
-            // 
-            // accountingReportItem
-            // 
-            this.accountingReportItem.Caption = "Звіти";
-            this.accountingReportItem.Name = "accountingReportItem";
-            this.accountingReportItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.accountingReportItem.OwnerCollection = this.accountingCategory.Items;
-            // 
-            // 
-            // 
-            this.accountingReportItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.accountingReportItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
-            this.accountingReportItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.accountingReportItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
-            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            tileItemElement16.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement16.Text = "Звіти";
-            this.accountingReportItem.Tile.Elements.Add(tileItemElement16);
-            this.accountingReportItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.accountingReportItem.Tile.Name = "tileBarItem1";
             this.accountingCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.accountingOrderItem,
             this.accountingOrderCurrencyItem,
@@ -618,6 +594,57 @@
             this.cashBookItem.Tile.Elements.Add(tileItemElement15);
             this.cashBookItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookItem.Tile.Name = "tileBarItem1";
+            // 
+            // cashBookBusinessTripsSubItem
+            // 
+            this.cashBookBusinessTripsSubItem.Caption = "Касова книга (відрядження)";
+            this.cashBookBusinessTripsSubItem.Name = "cashBookBusinessTripsSubItem";
+            this.cashBookBusinessTripsSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            // 
+            // 
+            // 
+            this.cashBookBusinessTripsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement13.Text = "Касова книга (відрядження)";
+            this.cashBookBusinessTripsSubItem.Tile.Elements.Add(tileItemElement13);
+            this.cashBookBusinessTripsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.cashBookBusinessTripsSubItem.Tile.Name = "tileBarItem1";
+            // 
+            // cashBookCookShopSubItem
+            // 
+            this.cashBookCookShopSubItem.Caption = "Касова книга (їдальня)";
+            this.cashBookCookShopSubItem.Name = "cashBookCookShopSubItem";
+            this.cashBookCookShopSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            // 
+            // 
+            // 
+            this.cashBookCookShopSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement14.Text = "Касова книга (їдальня)";
+            this.cashBookCookShopSubItem.Tile.Elements.Add(tileItemElement14);
+            this.cashBookCookShopSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.cashBookCookShopSubItem.Tile.Name = "tileBarItem2";
+            // 
+            // accountingReportItem
+            // 
+            this.accountingReportItem.Caption = "Звіти";
+            this.accountingReportItem.Name = "accountingReportItem";
+            this.accountingReportItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.accountingReportItem.OwnerCollection = this.accountingCategory.Items;
+            // 
+            // 
+            // 
+            this.accountingReportItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.accountingReportItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
+            this.accountingReportItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.accountingReportItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
+            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            tileItemElement16.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement16.Text = "Звіти";
+            this.accountingReportItem.Tile.Elements.Add(tileItemElement16);
+            this.accountingReportItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.accountingReportItem.Tile.Name = "tileBarItem1";
             // 
             // travelCategory
             // 
@@ -2712,34 +2739,6 @@
             this.programVersionLbl.TabIndex = 4;
             this.programVersionLbl.Text = "Версія програмного забезпечення ";
             // 
-            // cashBookBusinessTripsSubItem
-            // 
-            this.cashBookBusinessTripsSubItem.Caption = "Касова книга (відрядження)";
-            this.cashBookBusinessTripsSubItem.Name = "cashBookBusinessTripsSubItem";
-            this.cashBookBusinessTripsSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            // 
-            // tileBarItem1
-            // 
-            this.cashBookBusinessTripsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement13.Text = "Касова книга (відрядження)";
-            this.cashBookBusinessTripsSubItem.Tile.Elements.Add(tileItemElement13);
-            this.cashBookBusinessTripsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.cashBookBusinessTripsSubItem.Tile.Name = "tileBarItem1";
-            // 
-            // cashBookCookShopSubItem
-            // 
-            this.cashBookCookShopSubItem.Caption = "Касова книга (їдальня)";
-            this.cashBookCookShopSubItem.Name = "cashBookCookShopSubItem";
-            this.cashBookCookShopSubItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            // 
-            // tileBarItem2
-            // 
-            this.cashBookCookShopSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement14.Text = "Касова книга (їдальня)";
-            this.cashBookCookShopSubItem.Tile.Elements.Add(tileItemElement14);
-            this.cashBookCookShopSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.cashBookCookShopSubItem.Tile.Name = "tileBarItem2";
-            // 
             // MainTabFm
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -2753,7 +2752,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainTabFm";
             this.ShowMdiChildCaptionInParentTitle = true;
-            this.Text = " ";
+            this.Text = "а";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainTabFm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
