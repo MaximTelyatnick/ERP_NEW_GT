@@ -84,6 +84,9 @@ namespace ERP_NEW.GUI.Tools
                 MessageBox.Show("Таблицю \"Log\" не створено");
         }
 
-      
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

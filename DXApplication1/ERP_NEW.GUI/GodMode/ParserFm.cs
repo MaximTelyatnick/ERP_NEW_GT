@@ -259,5 +259,31 @@ namespace ERP_NEW.GUI.GodMode
 
             MessageBox.Show("Сертифікати перенесено");
         }
+
+        private void fixedCertificateUserBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            storeHouseService = Program.kernel.Get<IStoreHouseService>();
+            receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+
+            List<ReceiptCertificatesDTO> receipeCertificatesList = receiptCertificateService.GetCertificates().ToList();
+
+            foreach (var item in receipeCertificatesList)
+            {
+                int l = storeHouseService.GetUserIdByReceiptCertId((int)item.ReceiptCertificateId);
+                if (l == 94)
+                {
+                    item.UserId = 50;
+                    receiptCertificateService.UpdateCertificate(item);
+                }
+                else
+                {
+                    item.UserId = 242;
+                    receiptCertificateService.UpdateCertificate(item);
+                }
+
+            }
+
+            MessageBox.Show("Сертифікати перенесено");
+        }
     }
 }

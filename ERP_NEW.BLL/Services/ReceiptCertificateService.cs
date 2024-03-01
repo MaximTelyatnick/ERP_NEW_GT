@@ -23,6 +23,8 @@ namespace ERP_NEW.BLL.Services
         private IRepository<ReceiptCertificates> receiptCertificate;
         private IRepository<ReceiptCertificateDetail> receiptCertificateDetail;
         private IRepository<ExpenditureByOrders> expenditureByOrders;
+        private IRepository<Employees> employees;
+        private IRepository<EmployeesDetails> employeesDetails;
         private IRepository<OrdersInfo> ordersInfo;
         private IMapper mapper;
 
@@ -32,6 +34,8 @@ namespace ERP_NEW.BLL.Services
             receiptCertificate = Database.GetRepository<ReceiptCertificates>();
             receiptCertificateDetail = Database.GetRepository<ReceiptCertificateDetail>();
             expenditureByOrders = Database.GetRepository<ExpenditureByOrders>();
+            employees = Database.GetRepository<Employees>();
+            employeesDetails = Database.GetRepository<EmployeesDetails>();
             ordersInfo = Database.GetRepository<OrdersInfo>();
 
             var config = new MapperConfiguration(cfg =>
@@ -41,6 +45,8 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<ReceiptCertificateDetail, ReceiptCertificateDetailDTO>();
                 cfg.CreateMap<ReceiptCertificateDetailDTO, ReceiptCertificateDetail>();
                 cfg.CreateMap<OrdersInfo, OrdersInfoDTO>();
+                cfg.CreateMap<Employees, EmployeesDTO>();
+                cfg.CreateMap<EmployeesDetails, EmployeesDTO>();
                 cfg.CreateMap<ExpenditureByOrders, ExpenditureByOrdersDTO>();
             });
 
@@ -96,6 +102,10 @@ namespace ERP_NEW.BLL.Services
         public IEnumerable<ReceiptCertificatesDTO> GetCertificates()
         {
             var result = (from cert in receiptCertificate.GetAll()
+                          join emp in employees.GetAll() on cert.UserId equals emp.EmployeeID into empp
+                          from emp in empp.DefaultIfEmpty()
+                          join empDet in employeesDetails.GetAll() on emp.EmployeeID equals empDet.EmployeeID into empDett
+                          from empDet in empDett.DefaultIfEmpty()
                           select new ReceiptCertificatesDTO()
                           {
                               ReceiptCertificateId = cert.ReceiptCertificateId,
@@ -106,11 +116,31 @@ namespace ERP_NEW.BLL.Services
                               Description = cert.Description,
                               FileName = cert.FileName,
                               ScanCheck = cert.FileName.Length > 0 ? true:false,
-                              ManufacturerInfo = cert.ManufacturerInfo
-                                 
+                              ManufacturerInfo = cert.ManufacturerInfo,
+                              UserId = cert.UserId,
+                              UserFio = empDet.LastName+" "+ empDet.FirstName.Substring(0,1)+". "+ empDet.MiddleName.Substring(0, 1)
                           }).ToList();
             return result;
         }
+
+        //from p in businessTripsPrepayment.GetAll()
+        //                  join a in accounts.GetAll() on p.AccountsID equals a.ID into pa
+        //                  from a in pa.DefaultIfEmpty()
+        //                  where p.BusinessTripsDetailsID == btdId
+        //                  select new BusinessTripsPrepaymentDTO()
+        //                  {
+        //    ID = p.ID,
+        //                      BusinessTripsDetailsID = p.BusinessTripsDetailsID,
+        //                      Doc_Date = p.Doc_Date,
+        //                      EmployeesID = p.EmployeesID,
+        //                      AccountsID = p.AccountsID,
+        //                      Prepayment = p.Prepayment,
+        //                      Prepayment_Date = p.Prepayment_Date,
+        //                      UserId = p.UserId,
+        //                      AccountsNum = a.NUM,
+        //                      Selected = false,
+        //                      Check = p.Check
+        //                  }).ToList();
 
         public bool CheckCertificates(long certificateId)
         {

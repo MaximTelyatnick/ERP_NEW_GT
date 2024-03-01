@@ -44,8 +44,9 @@
             this.manufacturerInfoCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
             this.descriptionCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.fileCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.fioCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -74,7 +75,7 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
             this.repositoryItemMemoEdit1});
-            this.certGrid.Size = new System.Drawing.Size(1138, 448);
+            this.certGrid.Size = new System.Drawing.Size(1244, 448);
             this.certGrid.TabIndex = 1;
             this.certGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.certGridView,
@@ -143,7 +144,8 @@
             this.certificateDateEndCol,
             this.manufacturerInfoCol,
             this.descriptionCol,
-            this.gridColumn1});
+            this.fileCol,
+            this.fioCol});
             this.certGridView.GridControl = this.certGrid;
             this.certGridView.Name = "certGridView";
             this.certGridView.OptionsView.AllowGlyphSkinning = true;
@@ -153,6 +155,7 @@
             this.certGridView.OptionsView.ShowAutoFilterRow = true;
             this.certGridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
             this.certGridView.RowSeparatorHeight = 1;
+            this.certGridView.ColumnFilterChanged += new System.EventHandler(this.certGridView_ColumnFilterChanged);
             this.certGridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.certGridView_CustomUnboundColumnData);
             this.certGridView.DoubleClick += new System.EventHandler(this.certGridView_DoubleClick);
             // 
@@ -164,12 +167,15 @@
             this.сertificateNumberCol.AppearanceHeader.Options.UseForeColor = true;
             this.сertificateNumberCol.Caption = "Номер сертифіката";
             this.сertificateNumberCol.FieldName = "CertificateNumber";
+            this.сertificateNumberCol.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.сertificateNumberCol.Name = "сertificateNumberCol";
             this.сertificateNumberCol.OptionsColumn.AllowEdit = false;
             this.сertificateNumberCol.OptionsColumn.AllowFocus = false;
             this.сertificateNumberCol.OptionsColumn.AllowMove = false;
             this.сertificateNumberCol.OptionsColumn.FixedWidth = true;
             this.сertificateNumberCol.OptionsColumn.ReadOnly = true;
+            this.сertificateNumberCol.OptionsEditForm.Caption = "ссс";
+            this.сertificateNumberCol.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
             this.сertificateNumberCol.Visible = true;
             this.сertificateNumberCol.VisibleIndex = 0;
             this.сertificateNumberCol.Width = 144;
@@ -256,35 +262,52 @@
             this.descriptionCol.VisibleIndex = 4;
             this.descriptionCol.Width = 321;
             // 
-            // gridColumn1
+            // fileCol
             // 
-            this.gridColumn1.AppearanceCell.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.gridColumn1.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
-            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Options.UseForeColor = true;
-            this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn1.Caption = "Файл";
-            this.gridColumn1.ColumnEdit = this.repositoryItemPictureEdit1;
-            this.gridColumn1.FieldName = "gridColumn1";
-            this.gridColumn1.ImageAlignment = System.Drawing.StringAlignment.Center;
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.OptionsColumn.AllowFocus = false;
-            this.gridColumn1.OptionsColumn.AllowMove = false;
-            this.gridColumn1.OptionsColumn.FixedWidth = true;
-            this.gridColumn1.OptionsColumn.ReadOnly = true;
-            this.gridColumn1.UnboundType = DevExpress.Data.UnboundColumnType.Object;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 5;
-            this.gridColumn1.Width = 85;
+            this.fileCol.AppearanceCell.Options.UseTextOptions = true;
+            this.fileCol.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fileCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fileCol.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
+            this.fileCol.AppearanceHeader.Options.UseFont = true;
+            this.fileCol.AppearanceHeader.Options.UseForeColor = true;
+            this.fileCol.AppearanceHeader.Options.UseTextOptions = true;
+            this.fileCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.fileCol.Caption = "Файл";
+            this.fileCol.ColumnEdit = this.repositoryItemPictureEdit1;
+            this.fileCol.FieldName = "gridColumn1";
+            this.fileCol.ImageAlignment = System.Drawing.StringAlignment.Center;
+            this.fileCol.Name = "fileCol";
+            this.fileCol.OptionsColumn.AllowEdit = false;
+            this.fileCol.OptionsColumn.AllowFocus = false;
+            this.fileCol.OptionsColumn.AllowMove = false;
+            this.fileCol.OptionsColumn.FixedWidth = true;
+            this.fileCol.OptionsColumn.ReadOnly = true;
+            this.fileCol.UnboundType = DevExpress.Data.UnboundColumnType.Object;
+            this.fileCol.Visible = true;
+            this.fileCol.VisibleIndex = 5;
+            this.fileCol.Width = 85;
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
             this.repositoryItemPictureEdit1.ZoomAccelerationFactor = 1D;
+            // 
+            // fioCol
+            // 
+            this.fioCol.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fioCol.AppearanceHeader.ForeColor = System.Drawing.Color.Navy;
+            this.fioCol.AppearanceHeader.Options.UseFont = true;
+            this.fioCol.AppearanceHeader.Options.UseForeColor = true;
+            this.fioCol.AppearanceHeader.Options.UseTextOptions = true;
+            this.fioCol.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.fioCol.Caption = "Додав сертифікат ";
+            this.fioCol.FieldName = "UserFio";
+            this.fioCol.Name = "fioCol";
+            this.fioCol.OptionsColumn.AllowEdit = false;
+            this.fioCol.OptionsColumn.AllowFocus = false;
+            this.fioCol.OptionsColumn.AllowMove = false;
+            this.fioCol.Visible = true;
+            this.fioCol.VisibleIndex = 6;
             // 
             // repositoryItemTextEdit1
             // 
@@ -320,7 +343,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 448);
+            this.ClientSize = new System.Drawing.Size(1244, 448);
             this.Controls.Add(this.certGrid);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -349,7 +372,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn certificateDateEndCol;
         private DevExpress.XtraGrid.Columns.GridColumn manufacturerInfoCol;
         private DevExpress.XtraGrid.Columns.GridColumn descriptionCol;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn fileCol;
         private DevExpress.Utils.ImageCollection imageCollection;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
@@ -363,5 +386,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
         private System.Windows.Forms.ToolStripMenuItem selectCertificateToolStripMenuItem;
+        private DevExpress.XtraGrid.Columns.GridColumn fioCol;
     }
 }

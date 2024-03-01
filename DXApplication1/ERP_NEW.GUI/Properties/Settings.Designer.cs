@@ -149,5 +149,17 @@ namespace ERP_NEW.GUI.Properties {
                 this["ApplicationSkinName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CertificateJournalFmFilterUserCol {
+            get {
+                return ((string)(this["CertificateJournalFmFilterUserCol"]));
+            }
+            set {
+                this["CertificateJournalFmFilterUserCol"] = value;
+            }
+        }
     }
 }

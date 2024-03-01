@@ -67,6 +67,8 @@ namespace ERP_NEW.BLL.Services
         private IRepository<OrderReceipFromQuery> orderReceipFromQuery;
         private IRepository<Contractors> contractors;
         private IRepository<ReceiptOrders> receiptOrders;
+        private IRepository<ReceiptCertificates> receiptCertificate;
+        private IRepository<ReceiptCertificateDetail> receiptCertificateDetail;
         private IRepository<ToolActs> toolActs;
         private IRepository<ToolActMaterials> toolActMaterials;
         private IRepository<ToolActMaterialsJournal> toolActMaterialsJournal;
@@ -130,6 +132,8 @@ namespace ERP_NEW.BLL.Services
             orderReceipFromQuery = Database.GetRepository<OrderReceipFromQuery>();
             contractors = Database.GetRepository<Contractors>();
             receiptOrders = Database.GetRepository<ReceiptOrders>();
+            receiptCertificate = Database.GetRepository<ReceiptCertificates>();
+            receiptCertificateDetail = Database.GetRepository<ReceiptCertificateDetail>();
             toolActs = Database.GetRepository<ToolActs>();
             toolActMaterials = Database.GetRepository<ToolActMaterials>();
             toolActMaterialsJournal = Database.GetRepository<ToolActMaterialsJournal>();
@@ -211,6 +215,8 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<Nomenclature_Groups, NomenclatureGroupsDTO>();
                 cfg.CreateMap<NomenclatureGroupsDTO, Nomenclature_Groups>();
                 cfg.CreateMap<ReceiptOrders, ReceiptOrdersDTO>();
+                cfg.CreateMap<ReceiptCertificates, ReceiptCertificatesDTO>();
+                cfg.CreateMap<ReceiptCertificateDetail, ReceiptCertificateDetailDTO>();
                 cfg.CreateMap<ToolActs, ToolActsDTO>();
                 cfg.CreateMap<ToolActsDTO, ToolActs>();
                 cfg.CreateMap<ToolActMaterials,ToolActMaterialsDTO>();
@@ -1401,7 +1407,21 @@ namespace ERP_NEW.BLL.Services
             return query.ToList();
         }
 
+        public int GetUserIdByReceiptCertId(int recCertId)
+        {
+            var query = (from recC in receiptCertificate.GetAll()
+                         join recCertD in receiptCertificateDetail.GetAll() on recC.ReceiptCertificateId equals recCertD.ReceiptCertificateId into recCertt
+                         from recCertD in recCertt.DefaultIfEmpty()
+                         join rec in receipts.GetAll() on recCertD.ReceiptId equals rec.ID into recc
+                         from rec in recc.DefaultIfEmpty()
+                         join ord in orders.GetAll() on rec.ORDER_ID equals ord.ID into ordd
+                         from ord in ordd.DefaultIfEmpty()
+                         where (recC.ReceiptCertificateId == recCertId)
+                         let supplierId = ord.SUPPLIER_ID ?? 0 // Use 0 or default value as per your requirement
+                         select supplierId).FirstOrDefault(); // Use FirstOrDefault to get a single result or default
 
+            return query;
+        }
 
 
         #endregion

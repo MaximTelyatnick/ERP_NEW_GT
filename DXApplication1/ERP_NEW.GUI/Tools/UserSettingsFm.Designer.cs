@@ -208,6 +208,7 @@
             this.clearBtn.Size = new System.Drawing.Size(29, 23);
             this.clearBtn.TabIndex = 78;
             this.clearBtn.ToolTip = "Очистити";
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // xtraTabControl1
             // 
@@ -235,7 +236,7 @@
             this.mainTabPage.Controls.Add(this.label2);
             this.mainTabPage.Image = ((System.Drawing.Image)(resources.GetObject("mainTabPage.Image")));
             this.mainTabPage.Name = "mainTabPage";
-            this.mainTabPage.Size = new System.Drawing.Size(589, 387);
+            this.mainTabPage.Size = new System.Drawing.Size(588, 385);
             this.mainTabPage.Text = "Налаштування додатку";
             // 
             // useHolidaySwitch
@@ -274,7 +275,7 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
-            this.logerTabPage.Size = new System.Drawing.Size(589, 387);
+            this.logerTabPage.Size = new System.Drawing.Size(588, 385);
             this.logerTabPage.Text = "Налаштування логеру";
             // 
             // label5

@@ -67,7 +67,7 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<OrdersInfoDTO> GetReceiptsByPeriod(DateTime beginDate, DateTime endDate);
 
         IEnumerable<ReceiptOrdersDTO> GetOrdersByPeriod(DateTime beginDate, DateTime endDate);
-
+       
         IEnumerable<ReceiptsDTO> GetReceiptsByOrderId(int orderId);
 
         IEnumerable<ReceiptJournalDTO> GetReceiptByOrderIdProc(int orderId);
@@ -122,6 +122,7 @@ namespace ERP_NEW.BLL.Interfaces
         //void FakseInsertOrders(int id);
         
         bool GetReceiptsByStoreHouseId(int id);
+        int GetUserIdByReceiptCertId(int recCertId);
 
         int AccountClothesCreate(AccountClothesDTO accountClothesDTO);
         void AccountClothesUpdate(AccountClothesDTO accountClothesDTO);

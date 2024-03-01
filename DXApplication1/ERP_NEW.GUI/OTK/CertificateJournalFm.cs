@@ -12,6 +12,11 @@ using DevExpress.XtraEditors;
 using ERP_NEW.BLL.DTO.ModelsDTO;
 using ERP_NEW.BLL.Interfaces;
 using Ninject;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid;
+using ERP_NEW.GUI.Properties;
 
 namespace ERP_NEW.GUI.OTK
 {
@@ -28,6 +33,7 @@ namespace ERP_NEW.GUI.OTK
             InitializeComponent();
             LoadDate();
 
+            certGridView.SetRowCellValue(GridControl.AutoFilterRowHandle, certGridView.Columns[6], Settings.Default.CertificateJournalFmFilterUserCol);
         }
 
         public ReceiptCertificatesDTO Return()
@@ -130,6 +136,17 @@ namespace ERP_NEW.GUI.OTK
             {
                 MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+
+
+        private void certGridView_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            var value = certGridView.GetRowCellValue(GridControl.AutoFilterRowHandle, certGridView.Columns[6]);
+            if (value == null)
+                value = "";
+            Settings.Default.CertificateJournalFmFilterUserCol = value.ToString();
+            Settings.Default.Save();
         }
     }
 }

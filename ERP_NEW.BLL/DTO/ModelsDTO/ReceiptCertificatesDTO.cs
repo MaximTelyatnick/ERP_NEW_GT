@@ -17,5 +17,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public string FileNameTwo { get; set; }
         public int? ColorId { get; set; }
         public bool ScanCheck { get; set; }
+        public int? UserId { get; set; }
+        public string UserFio { get; set; }
     }
 }
