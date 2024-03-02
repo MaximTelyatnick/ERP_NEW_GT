@@ -19,5 +19,6 @@ namespace ERP_NEW.DAL.Entities.Models
         public string FileNameTwo { get; set; }
         public int? ColorId { get; set; }
         public int? UserId { get; set; }
+        public bool CertificateExpiration { get; set; }
     }
 }

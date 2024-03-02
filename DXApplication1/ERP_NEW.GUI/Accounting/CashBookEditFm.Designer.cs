@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashBookEditFm));
@@ -53,7 +52,7 @@
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.barMenu = new DevExpress.XtraBars.BarManager(this.components);
+            this.barMenu = new DevExpress.XtraBars.BarManager();
             this.specificationBar = new DevExpress.XtraBars.Bar();
             this.addRecordBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editRecordsBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -66,7 +65,7 @@
             this.addAssBrn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteAssBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editAssBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.cashBookValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.cashBookValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cashBookPageDateEdit.Properties.CalendarTimeProperties)).BeginInit();
@@ -163,12 +162,12 @@
             // cashBookRecordsGrid
             // 
             this.cashBookRecordsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cashBookRecordsGrid.Location = new System.Drawing.Point(2, 46);
+            this.cashBookRecordsGrid.Location = new System.Drawing.Point(2, 48);
             this.cashBookRecordsGrid.MainView = this.cashBookRecordsGridView;
             this.cashBookRecordsGrid.Name = "cashBookRecordsGrid";
             this.cashBookRecordsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit});
-            this.cashBookRecordsGrid.Size = new System.Drawing.Size(1083, 400);
+            this.cashBookRecordsGrid.Size = new System.Drawing.Size(1083, 398);
             this.cashBookRecordsGrid.TabIndex = 11;
             this.cashBookRecordsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cashBookRecordsGridView});
@@ -190,7 +189,6 @@
             this.selectionCol});
             this.cashBookRecordsGridView.GridControl = this.cashBookRecordsGrid;
             this.cashBookRecordsGridView.Name = "cashBookRecordsGridView";
-            this.cashBookRecordsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.cashBookRecordsGridView.OptionsView.ShowAutoFilterRow = true;
             this.cashBookRecordsGridView.OptionsView.ShowFooter = true;
             this.cashBookRecordsGridView.OptionsView.ShowGroupPanel = false;
@@ -333,7 +331,7 @@
             // 
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(2, 20);
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(2, 22);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             this.standaloneBarDockControl1.Size = new System.Drawing.Size(1083, 26);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";

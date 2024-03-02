@@ -72,7 +72,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>9DBF0F011D04DA13F421B2B86A7D452A9A77855B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>707F59B4B86E4DF68EFFB1C7A4C89EB33ECFB2C3</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>ERP_NEW.GUI_3_TemporaryKey.pfx</ManifestKeyFile>
@@ -263,7 +263,7 @@
     </Reference>
     <Reference Include="ERP_NEW.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ERP_NEW.DAL\bin\Release\ERP_NEW.DAL.dll</HintPath>
+      <HintPath>..\..\ERP_NEW.BLL\bin\Debug\ERP_NEW.DAL.dll</HintPath>
     </Reference>
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.7.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FirebirdSql.Data.FirebirdClient.5.7.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>

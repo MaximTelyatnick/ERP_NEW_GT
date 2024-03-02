@@ -258,6 +258,7 @@
             this.pictureEdit.Properties.ZoomAccelerationFactor = 1D;
             this.pictureEdit.Size = new System.Drawing.Size(317, 182);
             this.pictureEdit.TabIndex = 22;
+            this.pictureEdit.EditValueChanged += new System.EventHandler(this.pictureEdit_EditValueChanged);
             // 
             // openFileBtn
             // 

@@ -19,5 +19,6 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public bool ScanCheck { get; set; }
         public int? UserId { get; set; }
         public string UserFio { get; set; }
+        public bool CertificateExpiration { get; set; }
     }
 }

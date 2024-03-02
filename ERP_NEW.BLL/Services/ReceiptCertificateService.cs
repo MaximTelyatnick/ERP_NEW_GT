@@ -118,7 +118,9 @@ namespace ERP_NEW.BLL.Services
                               ScanCheck = cert.FileName.Length > 0 ? true:false,
                               ManufacturerInfo = cert.ManufacturerInfo,
                               UserId = cert.UserId,
-                              UserFio = empDet.LastName+" "+ empDet.FirstName.Substring(0,1)+". "+ empDet.MiddleName.Substring(0, 1)
+                              UserFio = empDet.LastName+" "+ empDet.FirstName.Substring(0,1)+". "+ empDet.MiddleName.Substring(0, 1),
+                              CertificateExpiration = cert.CertificateExpiration
+
                           }).ToList();
             return result;
         }

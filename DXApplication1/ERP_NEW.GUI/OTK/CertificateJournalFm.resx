@@ -135,4 +135,21 @@
         BQAAAAAAAAACCw==
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="barButtonItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAASdEVYdFRpdGxlAEZpbmQ7U2VhcmNoO60Hj2IAAAGNSURB
+        VDhPpZFLSwJRFMf9FM5oE+MjhWjf1l20CDQaHR/5ykfMN4jcROnCvkorIdAcZ5yHbQKxPkEhLco2QmCb
+        gdO544QOaiT94AyXe+7/dx/jAIB/1fRjsVXSQr6i1sB69RZUUg1PXgtZbRsLgkBJqwTKOgRPe3BYG0Dk
+        agD+Ug88ORXYrFIxF81hE5CdAyUdwtUBDD++cGoKGR9c9IHNdIHJdvetrAm2ZwLcSd8R7m3hH57fJhAs
+        qsCkpVsra4KtmcBX1MeJ6yeyfinR2iMwKXlkZU1wek5Q0Mbx+moBh1djUp3VAs+Jqm8LOry8T8h6G+QK
+        /oIC7uQvVyC/is1rBnmw4WjuEXG8d/4AG8kOuJJS1cqaYHsmILDZ7hn+LvDmFIhc9iGMxaZlDMskDK6E
+        ZLh5kTcXIwsCApPp7G6mlSZzLI/daSw8tjsh1TGMAjxFvGNQlmSpYBU03xYwDDQvAs2JBsWJ/FoCAs21
+        BSrWAiomAnXU/FxbQHBG78pUrDl2cq0bm+A/tXTy7wWObxqBHOiIvKPPAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>477, 17</value>
+  </metadata>
 </root>

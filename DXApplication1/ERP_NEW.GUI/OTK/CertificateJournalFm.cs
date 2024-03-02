@@ -31,6 +31,7 @@ namespace ERP_NEW.GUI.OTK
         public CertificateJournalFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
+            LoadParam();
             LoadDate();
 
             certGridView.SetRowCellValue(GridControl.AutoFilterRowHandle, certGridView.Columns[6], Settings.Default.CertificateJournalFmFilterUserCol);
@@ -118,7 +119,19 @@ namespace ERP_NEW.GUI.OTK
 
         private void selectCertificateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
+            if ((((ReceiptCertificatesDTO)certificatesBS.Current).CertificateExpiration) && (((ReceiptCertificatesDTO)certificatesBS.Current).CertificateDateEnd < DateTime.Now))
+            {
+                if (MessageBox.Show("Термін дії сертифіката закінчився!\nПрикріпити сертифікат?", "Повідомлення", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    DialogResult = DialogResult.OK;
+                }
+            }
+            else
+            {
+                DialogResult = DialogResult.OK;
+            }
+
+            
         }
 
         private void deleteCertToolStripMenuItem_Click(object sender, EventArgs e)
@@ -147,6 +160,16 @@ namespace ERP_NEW.GUI.OTK
                 value = "";
             Settings.Default.CertificateJournalFmFilterUserCol = value.ToString();
             Settings.Default.Save();
+        }
+
+        private void certGridView_RowStyle(object sender, RowStyleEventArgs e)
+        {
+            if (e.RowHandle > -1)
+            {
+                ReceiptCertificatesDTO item = (ReceiptCertificatesDTO)certGridView.GetRow(e.RowHandle);
+                if ((item.CertificateExpiration) && (item.CertificateDateEnd<DateTime.Now))
+                    e.Appearance.BackColor = Color.MistyRose;
+            }
         }
     }
 }

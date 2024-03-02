@@ -57,6 +57,7 @@ namespace ERP_NEW.GUI.OTK
                     checkDateEdit.Checked = false;
                 certificateDTO = receiptCertificateService.GetCertificate((long)recCertDTO.ReceiptCertificateId);
                 pictureEdit.EditValue = certificateDTO.CertificateScan;
+                checkDateEdit.Checked = !certificateDTO.CertificateExpiration;
 
                 if (pictureEdit.Image == null && certificateDTO.FileName != null)
                 {
@@ -103,24 +104,28 @@ namespace ERP_NEW.GUI.OTK
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            if ((certificateNumberTbox.Text.Trim().Length == 0) || ( certificateDateTbox.Text.Trim().Length == 0) || (certificateDateEndTbox.Text.Trim().Length == 0)) 
+            if ((certificateNumberTbox.Text.Trim().Length == 0) || (certificateDateTbox.Text.Trim().Length == 0) || (certificateDateEndTbox.Text.Trim().Length == 0))
             {
                 MessageBox.Show("Не внесено № сертифікату або дата!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+
             }
-            certificateDTO.ReceiptId = null;
-            certificateDTO.CertificateNumber = (string)certificateNumberTbox.EditValue;
-            certificateDTO.CertificateDate = (DateTime)certificateDateTbox.EditValue;
-            certificateDTO.CertificateDateEnd = (DateTime)certificateDateEndTbox.EditValue;
-            certificateDTO.ManufacturerInfo = (string)manufacturerInfoMemoEdit.EditValue;
-            certificateDTO.Description = (string)descriptionMemoEdit.EditValue;
-
-            if (this.operation == Utils.Operation.Add)           
-                certificateDTO.ReceiptCertificateId = receiptCertificateService.CreateCertificate(certificateDTO);
             else
-                receiptCertificateService.UpdateCertificate(certificateDTO);
+            {
+                certificateDTO.ReceiptId = null;
+                certificateDTO.CertificateNumber = (string)certificateNumberTbox.EditValue;
+                certificateDTO.CertificateDate = (DateTime)certificateDateTbox.EditValue;
+                certificateDTO.CertificateDateEnd = (DateTime)certificateDateEndTbox.EditValue;
+                certificateDTO.ManufacturerInfo = (string)manufacturerInfoMemoEdit.EditValue;
+                certificateDTO.Description = (string)descriptionMemoEdit.EditValue;
+                certificateDTO.CertificateExpiration = !checkDateEdit.Checked;
 
-            this.Close();
+                if (this.operation == Utils.Operation.Add)
+                    certificateDTO.ReceiptCertificateId = receiptCertificateService.CreateCertificate(certificateDTO);
+                else
+                    receiptCertificateService.UpdateCertificate(certificateDTO);
+
+                this.Close();
+            }
         }
 
         public ReceiptCertificatesDTO Return()
@@ -187,6 +192,9 @@ namespace ERP_NEW.GUI.OTK
         private void showBtn_Click(object sender, EventArgs e)
         {
              string fileName = (string) fileNameTbox.EditValue;
+
+
+
              byte[] scan = certificateDTO.CertificateScan;
              string puth = Utils.HomePath + @"\Temp";
 
@@ -294,6 +302,11 @@ namespace ERP_NEW.GUI.OTK
                 certificateDateEndTbox.EditValue = DateTime.Now.AddYears(1000);
             else
                 certificateDateEndTbox.EditValue = null;
+        }
+
+        private void pictureEdit_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

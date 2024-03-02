@@ -264,26 +264,38 @@ namespace ERP_NEW.GUI.GodMode
         {
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+            
 
             List<ReceiptCertificatesDTO> receipeCertificatesList = receiptCertificateService.GetCertificates().ToList();
 
             foreach (var item in receipeCertificatesList)
             {
-                int l = storeHouseService.GetUserIdByReceiptCertId((int)item.ReceiptCertificateId);
-                if (l == 94)
-                {
-                    item.UserId = 50;
-                    receiptCertificateService.UpdateCertificate(item);
-                }
-                else
-                {
-                    item.UserId = 242;
-                    receiptCertificateService.UpdateCertificate(item);
-                }
-
+                UpdateRowCert(item.ReceiptCertificateId);
             }
 
             MessageBox.Show("Сертифікати перенесено");
+        }
+
+        private void UpdateRowCert(long certId)
+        {
+            storeHouseService = Program.kernel.Get<IStoreHouseService>();
+            receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+
+            ReceiptCertificatesDTO cert = receiptCertificateService.GetCertificate(certId);
+
+            int l = storeHouseService.GetUserIdByReceiptCertId((int)cert.ReceiptCertificateId);
+            if (l == 94)
+            {
+                cert.UserId = 50;
+                receiptCertificateService.UpdateCertificate(cert);
+                cert = null;
+            }
+            else
+            {
+                cert.UserId = 242;
+                receiptCertificateService.UpdateCertificate(cert);
+                cert = null;
+            }
         }
     }
 }

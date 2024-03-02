@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsFm));
             this.useSimpleEmmloyeeSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,8 +35,8 @@
             this.openFileBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.appSkinEdit = new DevExpress.XtraEditors.PopupContainerEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.styleMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.styleMenu = new DevExpress.XtraBars.PopupMenu();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +46,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.mainTabPage = new DevExpress.XtraTab.XtraTabPage();
@@ -236,7 +235,7 @@
             this.mainTabPage.Controls.Add(this.label2);
             this.mainTabPage.Image = ((System.Drawing.Image)(resources.GetObject("mainTabPage.Image")));
             this.mainTabPage.Name = "mainTabPage";
-            this.mainTabPage.Size = new System.Drawing.Size(588, 385);
+            this.mainTabPage.Size = new System.Drawing.Size(589, 387);
             this.mainTabPage.Text = "Налаштування додатку";
             // 
             // useHolidaySwitch
@@ -275,7 +274,7 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
-            this.logerTabPage.Size = new System.Drawing.Size(588, 385);
+            this.logerTabPage.Size = new System.Drawing.Size(589, 387);
             this.logerTabPage.Text = "Налаштування логеру";
             // 
             // label5
