@@ -355,10 +355,7 @@ namespace ERP_NEW.GUI.OTK
             {
                 string currentRowColor = gv.GetRowCellValue(e.RowHandle, "ColorName").ToString();
                 e.Appearance.BackColor = Color.FromName(currentRowColor);
-            }
-            
-            
-
+            }   
         }
     }
 }

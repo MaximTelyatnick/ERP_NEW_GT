@@ -53,17 +53,17 @@
             this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.showCertificateExpirationCheck = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.dateStartEdit = new DevExpress.XtraBars.BarEditItem();
+            this.beginDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.dateEndEdit = new DevExpress.XtraBars.BarEditItem();
+            this.endDateEdit = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemDateEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.showCertBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.certGrid)).BeginInit();
             this.contextMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.certGridView)).BeginInit();
@@ -74,12 +74,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             this.SuspendLayout();
             // 
             // certGrid
@@ -365,9 +365,9 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.showCertificateExpirationCheck,
-            this.dateStartEdit,
-            this.dateEndEdit,
-            this.barButtonItem1});
+            this.beginDateEdit,
+            this.endDateEdit,
+            this.showCertBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -382,46 +382,26 @@
             this.ribbonControl1.Size = new System.Drawing.Size(1244, 31);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.dateStartEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.dateEndEdit);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
-            // 
-            // popupMenu1
-            // 
-            this.popupMenu1.Name = "popupMenu1";
-            this.popupMenu1.Ribbon = this.ribbonControl1;
-            // 
             // showCertificateExpirationCheck
             // 
             this.showCertificateExpirationCheck.Caption = "Відображати сертифікати у яких сплив термін дії";
             this.showCertificateExpirationCheck.Edit = this.repositoryItemCheckEdit1;
             this.showCertificateExpirationCheck.Id = 2;
             this.showCertificateExpirationCheck.Name = "showCertificateExpirationCheck";
+            this.showCertificateExpirationCheck.EditValueChanged += new System.EventHandler(this.showCertificateExpirationCheck_EditValueChanged);
             // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
             this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
-            // dateStartEdit
+            // beginDateEdit
             // 
-            this.dateStartEdit.Caption = "З";
-            this.dateStartEdit.Edit = this.repositoryItemDateEdit1;
-            this.dateStartEdit.EditWidth = 100;
-            this.dateStartEdit.Id = 3;
-            this.dateStartEdit.Name = "dateStartEdit";
+            this.beginDateEdit.Caption = "З";
+            this.beginDateEdit.Edit = this.repositoryItemDateEdit1;
+            this.beginDateEdit.EditWidth = 100;
+            this.beginDateEdit.Id = 3;
+            this.beginDateEdit.Name = "beginDateEdit";
             // 
             // repositoryItemDateEdit1
             // 
@@ -432,13 +412,13 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
-            // dateEndEdit
+            // endDateEdit
             // 
-            this.dateEndEdit.Caption = "до   ";
-            this.dateEndEdit.Edit = this.repositoryItemDateEdit2;
-            this.dateEndEdit.EditWidth = 100;
-            this.dateEndEdit.Id = 4;
-            this.dateEndEdit.Name = "dateEndEdit";
+            this.endDateEdit.Caption = "до   ";
+            this.endDateEdit.Edit = this.repositoryItemDateEdit2;
+            this.endDateEdit.EditWidth = 100;
+            this.endDateEdit.Id = 4;
+            this.endDateEdit.Name = "endDateEdit";
             // 
             // repositoryItemDateEdit2
             // 
@@ -449,18 +429,40 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemDateEdit2.Name = "repositoryItemDateEdit2";
             // 
-            // barButtonItem1
+            // showCertBtn
             // 
-            this.barButtonItem1.Caption = "Відобразити";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 5;
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.showCertBtn.Caption = "Відобразити";
+            this.showCertBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("showCertBtn.Glyph")));
+            this.showCertBtn.Id = 5;
+            this.showCertBtn.Name = "showCertBtn";
+            this.showCertBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.showCertBtn_ItemClick);
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.beginDateEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.endDateEdit);
+            this.ribbonPageGroup1.ItemLinks.Add(this.showCertBtn);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
             // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.showCertificateExpirationCheck);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "ribbonPageGroup2";
+            // 
+            // popupMenu1
+            // 
+            this.popupMenu1.Name = "popupMenu1";
+            this.popupMenu1.Ribbon = this.ribbonControl1;
             // 
             // CertificateJournalFm
             // 
@@ -485,12 +487,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -525,11 +527,11 @@
         private DevExpress.XtraBars.PopupMenu popupMenu1;
         private DevExpress.XtraBars.BarEditItem showCertificateExpirationCheck;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraBars.BarEditItem dateStartEdit;
+        private DevExpress.XtraBars.BarEditItem beginDateEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
-        private DevExpress.XtraBars.BarEditItem dateEndEdit;
+        private DevExpress.XtraBars.BarEditItem endDateEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem showCertBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
     }
 }

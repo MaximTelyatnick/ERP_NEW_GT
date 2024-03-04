@@ -23,7 +23,11 @@ namespace ERP_NEW.GUI.OTK
     public partial class CertificateJournalFm : DevExpress.XtraEditors.XtraForm
     {
         private IReceiptCertificateService receiptCertificateService;
+        private IUserService userService;
         private BindingSource certificatesBS = new BindingSource();
+        private UserTasksDTO userTasksDTO;
+        private DateTime beginDate, endDate;
+
         //private ReceiptCertificatesDTO certificateDTO;
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
         private object informationRow;
@@ -31,8 +35,21 @@ namespace ERP_NEW.GUI.OTK
         public CertificateJournalFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
-            LoadParam();
-            LoadDate();
+            this.userTasksDTO = userTasksDTO;
+            this.beginDate = new DateTime(DateTime.Today.Year - 3, DateTime.Today.Month, 1); // год - месяц - день
+            this.endDate = DateTime.Today;
+            beginDateEdit.EditValue = beginDate;
+            endDateEdit.EditValue = endDate;
+
+            showCertificateExpirationCheck.EditValueChanged -= showCertificateExpirationCheck_EditValueChanged;
+
+            showCertificateExpirationCheck.EditValue = Properties.Settings.Default.CertificateJournalFmExpirationCheck;
+
+            showCertificateExpirationCheck.EditValueChanged += showCertificateExpirationCheck_EditValueChanged;
+
+            
+            //CertificateJournalFmExpirationCheck
+            LoadDate(beginDate, endDate, (bool)showCertificateExpirationCheck.EditValue);
 
             certGridView.SetRowCellValue(GridControl.AutoFilterRowHandle, certGridView.Columns[6], Settings.Default.CertificateJournalFmFilterUserCol);
         }
@@ -42,12 +59,12 @@ namespace ERP_NEW.GUI.OTK
             return ((ReceiptCertificatesDTO)certificatesBS.Current);
         }
 
-        private void LoadDate()
+        private void LoadDate(DateTime beginDate, DateTime endDate, bool showExpiration)
         {
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
             //var orders = receiptCertificateService.GetOrdersWithCertificate(beginDate, endDate);
             splashScreenManager.ShowWaitForm();
-            var certs = receiptCertificateService.GetCertificates().OrderByDescending(sort => sort.CertificateDate).ToList();
+            var certs = receiptCertificateService.GetCertificates().Where(show =>show.CertificateExpiration == showExpiration).OrderByDescending(sort => sort.CertificateDate).ToList();
             certificatesBS.DataSource = certs;
             certGrid.DataSource = certificatesBS;
             certGrid.Refresh();
@@ -67,10 +84,15 @@ namespace ERP_NEW.GUI.OTK
 
         private void addCertToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                editCertificate(Utils.Operation.Add, new ReceiptCertificatesDTO());
+            userService = Program.kernel.Get<IUserService>();
+            int employeeId = userService.GetEmployeeIdByUserId(userTasksDTO.UserId);
+            editCertificate(Utils.Operation.Add, new ReceiptCertificatesDTO() {UserId = employeeId });
         }
         private void editCertToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            userService = Program.kernel.Get<IUserService>();
+            int employeeId = userService.GetEmployeeIdByUserId(userTasksDTO.UserId);
+            ((ReceiptCertificatesDTO)certificatesBS.Current).UserId = employeeId;
             editCertificate(Utils.Operation.Update, (ReceiptCertificatesDTO)certificatesBS.Current);
         }
 
@@ -82,7 +104,7 @@ namespace ERP_NEW.GUI.OTK
             {
                 ReceiptCertificatesDTO return_Id = certificateEditFm.Return();
                 certGridView.BeginDataUpdate();
-                LoadDate();
+                LoadDate(beginDate, endDate, (bool)showCertificateExpirationCheck.EditValue);
                 certGridView.EndDataUpdate();
                 int rowHandle = certGridView.LocateByValue("ReceiptCertificateId", return_Id.ReceiptCertificateId);
                 certGridView.FocusedRowHandle = rowHandle;
@@ -110,7 +132,7 @@ namespace ERP_NEW.GUI.OTK
                     int rowHandle = certGridView.FocusedRowHandle - 1;
                     certGridView.BeginDataUpdate();
                     receiptCertificateService.RemoveCertificateById(((ReceiptCertificatesDTO)certificatesBS.Current).ReceiptCertificateId);
-                    LoadDate();
+                    LoadDate(beginDate, endDate, (bool)showCertificateExpirationCheck.EditValue);
                     certGridView.EndDataUpdate();
                     certGridView.FocusedRowHandle = (certGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
                 }
@@ -170,6 +192,18 @@ namespace ERP_NEW.GUI.OTK
                 if ((item.CertificateExpiration) && (item.CertificateDateEnd<DateTime.Now))
                     e.Appearance.BackColor = Color.MistyRose;
             }
+        }
+
+        private void showCertificateExpirationCheck_EditValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CertificateJournalFmExpirationCheck = (bool)showCertificateExpirationCheck.EditValue;
+            Properties.Settings.Default.Save();
+            LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, (bool)showCertificateExpirationCheck.EditValue);
+        }
+
+        private void showCertBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, (bool)showCertificateExpirationCheck.EditValue);
         }
     }
 }

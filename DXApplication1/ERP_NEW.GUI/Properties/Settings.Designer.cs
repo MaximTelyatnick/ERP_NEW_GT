@@ -161,5 +161,17 @@ namespace ERP_NEW.GUI.Properties {
                 this["CertificateJournalFmFilterUserCol"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CertificateJournalFmExpirationCheck {
+            get {
+                return ((bool)(this["CertificateJournalFmExpirationCheck"]));
+            }
+            set {
+                this["CertificateJournalFmExpirationCheck"] = value;
+            }
+        }
     }
 }

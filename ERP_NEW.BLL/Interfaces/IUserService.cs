@@ -7,6 +7,7 @@ namespace ERP_NEW.BLL.Interfaces
 {
     public interface IUserService
     {
+        int GetEmployeeIdByUserId(int userId);
         bool TryAuthorize(decimal empNumber);
 
         IEnumerable<UsersInfoDTO> GetUsers();

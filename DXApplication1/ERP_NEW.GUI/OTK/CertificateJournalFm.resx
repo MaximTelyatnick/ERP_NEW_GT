@@ -136,17 +136,17 @@
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="barButtonItem1.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="showCertBtn.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsIAAA7CARUoSoAAAAASdEVYdFRpdGxlAEZpbmQ7U2VhcmNoO60Hj2IAAAGNSURB
-        VDhPpZFLSwJRFMf9FM5oE+MjhWjf1l20CDQaHR/5ykfMN4jcROnCvkorIdAcZ5yHbQKxPkEhLco2QmCb
-        gdO544QOaiT94AyXe+7/dx/jAIB/1fRjsVXSQr6i1sB69RZUUg1PXgtZbRsLgkBJqwTKOgRPe3BYG0Dk
-        agD+Ug88ORXYrFIxF81hE5CdAyUdwtUBDD++cGoKGR9c9IHNdIHJdvetrAm2ZwLcSd8R7m3hH57fJhAs
-        qsCkpVsra4KtmcBX1MeJ6yeyfinR2iMwKXlkZU1wek5Q0Mbx+moBh1djUp3VAs+Jqm8LOry8T8h6G+QK
-        /oIC7uQvVyC/is1rBnmw4WjuEXG8d/4AG8kOuJJS1cqaYHsmILDZ7hn+LvDmFIhc9iGMxaZlDMskDK6E
-        ZLh5kTcXIwsCApPp7G6mlSZzLI/daSw8tjsh1TGMAjxFvGNQlmSpYBU03xYwDDQvAs2JBsWJ/FoCAs21
-        BSrWAiomAnXU/FxbQHBG78pUrDl2cq0bm+A/tXTy7wWObxqBHOiIvKPPAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wgAADsIBFShKgAAAABJ0RVh0VGl0bGUARmluZDtTZWFyY2g7rQePYgAAAY1JREFUOE+lkUtLAlEUx/0U
+        zmgT4yOFaN/WXbQINBodH/nKR8w3iNxE6cK+Sish0BxnnIdtArE+QSEtyjZCYJuB07njhA5qJP3gDJd7
+        7v93H+MAgH/V9GOxVdJCvqLWwHr1FlRSDU9eC1ltGwuCQEmrBMo6BE97cFgbQORqAP5SDzw5FdisUjEX
+        zWETkJ0DJR3C1QEMP75wagoZH1z0gc10gcl2962sCbZnAtxJ3xHubeEfnt8mECyqwKSlWytrgq2ZwFfU
+        x4nrJ7J+KdHaIzApeWRlTXB6TlDQxvH6agGHV2NSndUCz4mqbws6vLxPyHob5Ar+ggLu5C9XIL+KzWsG
+        ebDhaO4Rcbx3/gAbyQ64klLVyppgeyYgsNnuGf4u8OYUiFz2IYzFpmUMyyQMroRkuHmRNxcjCwICk+ns
+        bqaVJnMsj91pLDy2OyHVMYwCPEW8Y1CWZKlgFTTfFjAMNC8CzYkGxYn8WgICzbUFKtYCKiYCddT8XFtA
+        cEbvylSsOXZyrRub4D+1dPLvBY5vGoEc6Ii8o88AAAAASUVORK5CYII=
 </value>
   </data>
   <metadata name="popupMenu1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

@@ -93,6 +93,13 @@ namespace ERP_NEW.BLL.Services
             return false;
         }
 
+
+        public int GetEmployeeIdByUserId(int userId)
+        {
+            int employeeId = users.GetAll().SingleOrDefault(c => c.UserId == userId).EmployeeId;
+            return employeeId;
+        }
+
         public UsersDTO GetUserByNumber(decimal employeeNumber)
         {
             var user = users.GetAll().SingleOrDefault(c => c.EmployeeNumber == employeeNumber);
