@@ -64,7 +64,12 @@ namespace ERP_NEW.GUI.OTK
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
             //var orders = receiptCertificateService.GetOrdersWithCertificate(beginDate, endDate);
             splashScreenManager.ShowWaitForm();
-            var certs = receiptCertificateService.GetCertificates().Where(show =>show.CertificateExpiration == showExpiration).OrderByDescending(sort => sort.CertificateDate).ToList();
+            List<ReceiptCertificatesDTO> certs = new List<ReceiptCertificatesDTO>();
+            if(showExpiration)
+                certs = receiptCertificateService.GetCertificates().Where(srch => srch.CertificateDate>=beginDate && srch.CertificateDate<= endDate).OrderByDescending(sort => sort.CertificateDate).ToList();
+            else
+                certs = receiptCertificateService.GetCertificates().Where(show => !show.CertificateExpiration && show.CertificateDate>=beginDate && show.CertificateDate<=endDate).OrderByDescending(sort => sort.CertificateDate).ToList();
+
             certificatesBS.DataSource = certs;
             certGrid.DataSource = certificatesBS;
             certGrid.Refresh();

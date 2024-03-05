@@ -35,6 +35,7 @@ namespace ERP_NEW.GUI.OTK
         public CertificateEditFm(Utils.Operation operation, ReceiptCertificatesDTO recCertDTO)
         {
             InitializeComponent();
+            this.operation = operation;
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
             userService = Program.kernel.Get<IUserService>();
 
