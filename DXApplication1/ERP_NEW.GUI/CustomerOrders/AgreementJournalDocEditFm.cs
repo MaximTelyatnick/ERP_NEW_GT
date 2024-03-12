@@ -332,5 +332,23 @@ namespace ERP_NEW.GUI.CustomerOrders
             agreementJournalDocValidationProvider.Validate((Control)sender);
         }
         #endregion
+
+        private void pictureEdit_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void pictureEdit_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                string result = Path.GetFileName(file);
+                nameFileDocEdit.EditValue = result;
+                pictureEdit.Image = imageCollection.Images[1];
+                dbf_File = System.IO.Path.GetFileName(result);
+                renameFileTextEdit.EditValue = System.IO.Path.GetFileNameWithoutExtension(result);
+            }
+        }
     }
 }

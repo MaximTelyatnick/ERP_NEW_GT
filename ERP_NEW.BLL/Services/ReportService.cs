@@ -3351,6 +3351,12 @@ namespace ERP_NEW.BLL.Services
             Сells["L" + 31].Value = cashBookRecordJournalDTO.NameAdditionalType;
             Сells["L" + 31].HorizontalAlignment = HAlign.Center;
 
+            if (cashBookPageDTO.CashBookId == 2)
+            {
+                Сells["AS" + 18].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
+                Сells["N" + 23].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
+                Сells["N" + 23].HorizontalAlignment = HAlign.Center;
+            }
 
 
             try
@@ -3516,7 +3522,12 @@ namespace ERP_NEW.BLL.Services
             
             var dataSourceBody = mapper.Map<IEnumerable<CashPaymentsReportByAccounts>, List<CashPaymentsReportByAccountsDTO>>(cpReportByAccounts.SQLExecuteProc(procName, ParametersAccounts));
 
-            //Saldo body
+            //Filter foe employees, who don't have paymant and prepayment 
+
+            dataSourceBody = dataSourceBody.Where(srch => srch.DebitStart > 0 || srch.DebitEnd > 0 || srch.CreditStart > 0 || srch.CreditEnd > 0 || srch.PaymentPrice > 0 || srch.PrepaymentPrice > 0).ToList();
+
+
+           //Saldo body
 
             FbParameter[] ParametersSaldo =
             {

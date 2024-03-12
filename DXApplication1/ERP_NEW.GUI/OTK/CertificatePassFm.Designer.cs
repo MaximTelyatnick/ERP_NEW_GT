@@ -127,6 +127,7 @@
             this.beginDateEdit.Id = 1;
             this.beginDateEdit.Name = "beginDateEdit";
             this.beginDateEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.beginDateEdit.EditValueChanged += new System.EventHandler(this.beginDateEdit_EditValueChanged);
             // 
             // repositoryItemDateEdit1
             // 
@@ -144,6 +145,7 @@
             this.endDateEdit.Id = 2;
             this.endDateEdit.Name = "endDateEdit";
             this.endDateEdit.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.endDateEdit.EditValueChanged += new System.EventHandler(this.endDateEdit_EditValueChanged);
             // 
             // repositoryItemDateEdit2
             // 
