@@ -1699,7 +1699,7 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
@@ -1919,7 +1919,7 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
@@ -2024,7 +2024,7 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
@@ -3351,12 +3351,14 @@ namespace ERP_NEW.BLL.Services
             Сells["L" + 31].Value = cashBookRecordJournalDTO.NameAdditionalType;
             Сells["L" + 31].HorizontalAlignment = HAlign.Center;
 
-            if (cashBookPageDTO.CashBookId == 2)
-            {
-                Сells["AS" + 18].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
-                Сells["N" + 23].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
-                Сells["N" + 23].HorizontalAlignment = HAlign.Center;
-            }
+            Сells["AS" + 18].Value = cashBookRecordJournalDTO.CashBookContractorName;
+
+            //if (cashBookPageDTO.CashBookId == 2)
+            //{
+            //    Сells["AS" + 18].Value = cashBookRecordJournalDTO.CashBookContractorName;
+            //    //Сells["N" + 23].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
+            //    Сells["N" + 23].HorizontalAlignment = HAlign.Center;
+            //}
 
 
             try
@@ -14923,7 +14925,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = " Термін корисного використання " + years + " " +NumberToYear(Convert.ToInt32(years)) + ".";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = " Контроль за виконанням цього наказу покладаю  ";
-            cells["B" + 26].Value = " на Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = " на Першого заступника директора - Івана Шалаєвського. ";
             try
             {
                 worksheet.SaveAs(GeneratedReportsDir + "Наказ № 00-00-00-інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);
@@ -15026,7 +15028,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = "Термін корисного використання " + years + " " + NumberToYear(Convert.ToInt32(years)) + ".";//RuDateAndMoneyConverter.NumberToYear(Convert.ToInt32(years)) + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора Івана Шалаєвського. ";
 
             try
             {
@@ -15118,7 +15120,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 15].Value = "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 17].Value = " 2 . ";
             cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
-            cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 18].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             cells["A" + 20].Value = " 3 . ";
             cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
@@ -15127,7 +15129,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             try
             {
@@ -15183,7 +15185,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 15].Value = " "+ model.InventoryName + ": інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 17].Value = " 2 . ";
             cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
-            cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 18].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             cells["A" + 20].Value = " 3 . ";
             cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
@@ -15192,7 +15194,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = " "+ model.InventoryName+ "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             try
             {

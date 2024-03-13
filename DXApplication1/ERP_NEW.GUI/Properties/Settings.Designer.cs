@@ -195,5 +195,27 @@ namespace ERP_NEW.GUI.Properties {
                 this["CertificatePassFmEndDate"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificateJournalFmBeginDate {
+            get {
+                return ((global::System.DateTime)(this["CertificateJournalFmBeginDate"]));
+            }
+            set {
+                this["CertificateJournalFmBeginDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificateJournalFmEndDate {
+            get {
+                return ((global::System.DateTime)(this["CertificateJournalFmEndDate"]));
+            }
+            set {
+                this["CertificateJournalFmEndDate"] = value;
+            }
+        }
     }
 }

@@ -402,6 +402,7 @@
             this.beginDateEdit.EditWidth = 100;
             this.beginDateEdit.Id = 3;
             this.beginDateEdit.Name = "beginDateEdit";
+            this.beginDateEdit.EditValueChanged += new System.EventHandler(this.beginDateEdit_EditValueChanged);
             // 
             // repositoryItemDateEdit1
             // 
@@ -419,6 +420,7 @@
             this.endDateEdit.EditWidth = 100;
             this.endDateEdit.Id = 4;
             this.endDateEdit.Name = "endDateEdit";
+            this.endDateEdit.EditValueChanged += new System.EventHandler(this.endDateEdit_EditValueChanged);
             // 
             // repositoryItemDateEdit2
             // 

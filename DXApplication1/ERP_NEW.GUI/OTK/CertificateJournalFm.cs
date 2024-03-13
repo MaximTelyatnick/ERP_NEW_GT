@@ -36,8 +36,17 @@ namespace ERP_NEW.GUI.OTK
         {
             InitializeComponent();
             this.userTasksDTO = userTasksDTO;
-            this.beginDate = new DateTime(DateTime.Today.Year - 3, DateTime.Today.Month, 1); // год - месяц - день
-            this.endDate = DateTime.Today;
+
+            if (Properties.Settings.Default.CertificateJournalFmBeginDate.Year < 2000)
+                this.beginDate = new DateTime(DateTime.Today.Year - 3, DateTime.Today.Month, 1); // год - месяц - день
+            else
+                this.beginDate = Properties.Settings.Default.CertificateJournalFmBeginDate;
+
+            if (Properties.Settings.Default.CertificateJournalFmEndDate.Year < 2000)
+                this.endDate = new DateTime(DateTime.Today.Year + 1, DateTime.Today.Month, DateTime.Today.Day); // год - месяц - день
+            else
+                this.endDate = Properties.Settings.Default.CertificateJournalFmEndDate;
+
             beginDateEdit.EditValue = beginDate;
             endDateEdit.EditValue = endDate;
 
@@ -204,6 +213,18 @@ namespace ERP_NEW.GUI.OTK
             Properties.Settings.Default.CertificateJournalFmExpirationCheck = (bool)showCertificateExpirationCheck.EditValue;
             Properties.Settings.Default.Save();
             LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue, (bool)showCertificateExpirationCheck.EditValue);
+        }
+
+        private void beginDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CertificateJournalFmBeginDate = (DateTime)beginDateEdit.EditValue;
+            Properties.Settings.Default.Save();
+        }
+
+        private void endDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CertificateJournalFmEndDate = (DateTime)endDateEdit.EditValue;
+            Properties.Settings.Default.Save();
         }
 
         private void showCertBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
