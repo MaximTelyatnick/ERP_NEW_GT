@@ -161,5 +161,107 @@ namespace ERP_NEW.GUI.Properties {
                 this["CertificateJournalFmFilterUserCol"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool CertificateJournalFmExpirationCheck {
+            get {
+                return ((bool)(this["CertificateJournalFmExpirationCheck"]));
+            }
+            set {
+                this["CertificateJournalFmExpirationCheck"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificatePassFmBeginDate {
+            get {
+                return ((global::System.DateTime)(this["CertificatePassFmBeginDate"]));
+            }
+            set {
+                this["CertificatePassFmBeginDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificatePassFmEndDate {
+            get {
+                return ((global::System.DateTime)(this["CertificatePassFmEndDate"]));
+            }
+            set {
+                this["CertificatePassFmEndDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificateJournalFmBeginDate {
+            get {
+                return ((global::System.DateTime)(this["CertificateJournalFmBeginDate"]));
+            }
+            set {
+                this["CertificateJournalFmBeginDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime CertificateJournalFmEndDate {
+            get {
+                return ((global::System.DateTime)(this["CertificateJournalFmEndDate"]));
+            }
+            set {
+                this["CertificateJournalFmEndDate"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ReportFmBeginMonth {
+            get {
+                return ((int)(this["ReportFmBeginMonth"]));
+            }
+            set {
+                this["ReportFmBeginMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime ReportFmBeginYear {
+            get {
+                return ((global::System.DateTime)(this["ReportFmBeginYear"]));
+            }
+            set {
+                this["ReportFmBeginYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int ReportFmEndMonth {
+            get {
+                return ((int)(this["ReportFmEndMonth"]));
+            }
+            set {
+                this["ReportFmEndMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime ReportFmEndYear {
+            get {
+                return ((global::System.DateTime)(this["ReportFmEndYear"]));
+            }
+            set {
+                this["ReportFmEndYear"] = value;
+            }
+        }
     }
 }

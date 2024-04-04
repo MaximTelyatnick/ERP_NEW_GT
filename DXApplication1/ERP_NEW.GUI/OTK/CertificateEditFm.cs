@@ -25,6 +25,7 @@ namespace ERP_NEW.GUI.OTK
     public partial class CertificateEditFm : DevExpress.XtraEditors.XtraForm
     {
         private IReceiptCertificateService receiptCertificateService;
+        private IUserService userService;
         //private OrdersInfoDTO ordersInfo2;
         private BindingSource recCertBS = new BindingSource();
         private BindingSource certivicateBS = new BindingSource();
@@ -36,6 +37,8 @@ namespace ERP_NEW.GUI.OTK
             InitializeComponent();
             this.operation = operation;
             receiptCertificateService = Program.kernel.Get<IReceiptCertificateService>();
+            userService = Program.kernel.Get<IUserService>();
+
             recCertBS.DataSource = recCertDTO;
             certificateNumberTbox.EditValue = recCertDTO.CertificateNumber;
             certificateDateTbox.EditValue = recCertDTO.CertificateDate;
@@ -48,6 +51,7 @@ namespace ERP_NEW.GUI.OTK
                 certificateDateTbox.EditValue = null;
                 certificateDateEndTbox.EditValue = null;
                 certificateDTO = new ReceiptCertificatesDTO() {CertificateScan = null, CertificateScanTwo = null };
+                //certificateDTO = userService.GetUserByNumber
             }
             else 
             {
@@ -100,6 +104,7 @@ namespace ERP_NEW.GUI.OTK
                 fileNameTwoTBox.EditValue = certificateDTO.FileNameTwo;
 
             }
+            certificateDTO.UserId = recCertDTO.UserId;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)

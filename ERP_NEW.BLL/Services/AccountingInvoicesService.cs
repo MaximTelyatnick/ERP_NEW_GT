@@ -234,7 +234,7 @@ namespace ERP_NEW.BLL.Services
                 invoices.Delete(invoices.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

@@ -21,9 +21,6 @@ namespace ERP_NEW.GUI.Classifiers
 
         private BindingSource dictionaryTreeBS = new BindingSource();
 
-        private UserTasksDTO _userTasksDTO;
-
-
         public DictionaryUktvFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();

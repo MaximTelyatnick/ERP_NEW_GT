@@ -89,8 +89,6 @@ namespace ERP_NEW.BLL.Services
         private IRepository<TrialBalanceByAccountsReport> trialBalanceByAccountsReport;
         private IRepository<ExpenditureForProjectReport> expenditureForProjectReport;
         private IRepository<ExpenditureForProjectReportByContractor> expenditureForProjectReportByContractor;
-        private IFixedAssetsOrderService fixedAssetsOrderService;
-        private IRepository<FixedAssetsOrderJournalPrint> fixedAssetsOrderJournalPrint;
         private IRepository<ORDERS> orders;
         private IRepository<OrdersInfo> ordersInfo;
         private IRepository<AccountOrders> accountOrders;
@@ -1699,14 +1697,14 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
                 word.Quit(ref missingObj, ref  missingObj, ref missingObj);
@@ -1919,14 +1917,14 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // MessageBox.Show("Документ уже открыт!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
@@ -2024,14 +2022,14 @@ namespace ERP_NEW.BLL.Services
                 }
 
                 InsertLines(4);
-                const string boss = "Валентин Кондрашов";
+                const string boss = "Іван Шалаєвський";
                 str.TypeText("Перший заступник директора                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // MessageBox.Show("Документ уже открыт!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
@@ -3351,6 +3349,14 @@ namespace ERP_NEW.BLL.Services
             Сells["L" + 31].Value = cashBookRecordJournalDTO.NameAdditionalType;
             Сells["L" + 31].HorizontalAlignment = HAlign.Center;
 
+            Сells["AS" + 18].Value = cashBookRecordJournalDTO.CashBookContractorName;
+
+            //if (cashBookPageDTO.CashBookId == 2)
+            //{
+            //    Сells["AS" + 18].Value = cashBookRecordJournalDTO.CashBookContractorName;
+            //    //Сells["N" + 23].Value = "ТОВ \"НВФ \"ТЕХВАГОНМАШ\"";
+            //    Сells["N" + 23].HorizontalAlignment = HAlign.Center;
+            //}
 
 
             try
@@ -3516,7 +3522,12 @@ namespace ERP_NEW.BLL.Services
             
             var dataSourceBody = mapper.Map<IEnumerable<CashPaymentsReportByAccounts>, List<CashPaymentsReportByAccountsDTO>>(cpReportByAccounts.SQLExecuteProc(procName, ParametersAccounts));
 
-            //Saldo body
+            //Filter foe employees, who don't have paymant and prepayment 
+
+            dataSourceBody = dataSourceBody.Where(srch => srch.DebitStart > 0 || srch.DebitEnd > 0 || srch.CreditStart > 0 || srch.CreditEnd > 0 || srch.PaymentPrice > 0 || srch.PrepaymentPrice > 0).ToList();
+
+
+           //Saldo body
 
             FbParameter[] ParametersSaldo =
             {
@@ -7103,7 +7114,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -7288,7 +7299,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -7469,7 +7480,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -14829,24 +14840,18 @@ namespace ERP_NEW.BLL.Services
             {
                 case "103":
                     return "3";
-                    break;
                 case "104":
                 case "104/1":
                     return "4";
-                    break;
                 case "105":
                     return "5";
-                    break;
                 case "106":
                 case "127":
                     return "6";
-                    break;
                 case "109":
                     return "9";
-                    break;
                 default:
                     return "Невідома группа";
-                    break;
             }
         }
 
@@ -14912,7 +14917,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = " Термін корисного використання " + years + " " +NumberToYear(Convert.ToInt32(years)) + ".";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = " Контроль за виконанням цього наказу покладаю  ";
-            cells["B" + 26].Value = " на Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = " на Першого заступника директора - Івана Шалаєвського. ";
             try
             {
                 worksheet.SaveAs(GeneratedReportsDir + "Наказ № 00-00-00-інв.№" + model.InventoryNumber.ToString().Replace("/", "_") + ".xls", FileFormat.Excel8);
@@ -15015,7 +15020,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = "Термін корисного використання " + years + " " + NumberToYear(Convert.ToInt32(years)) + ".";//RuDateAndMoneyConverter.NumberToYear(Convert.ToInt32(years)) + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора Івана Шалаєвського. ";
 
             try
             {
@@ -15107,7 +15112,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 15].Value = "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 17].Value = " 2 . ";
             cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
-            cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 18].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             cells["A" + 20].Value = " 3 . ";
             cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
@@ -15116,7 +15121,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             try
             {
@@ -15172,7 +15177,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 15].Value = " "+ model.InventoryName + ": інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 17].Value = " 2 . ";
             cells["B" + 17].Value = "Відповідальним за продаж призначаю: ";
-            cells["B" + 18].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 18].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             cells["A" + 20].Value = " 3 . ";
             cells["B" + 20].Value = "Головному бухгалтеру Сергієнко Л.В. виконати необхідні ";
@@ -15181,7 +15186,7 @@ namespace ERP_NEW.BLL.Services
             cells["B" + 23].Value = " "+ model.InventoryName+ "інвентарний № " + model.InventoryNumber + " . ";
             cells["A" + 25].Value = " 4 . ";
             cells["B" + 25].Value = "Контроль за виконанням цього наказу покладаю на ";
-            cells["B" + 26].Value = "Першого заступника директора - Кондрашова В.В.. ";
+            cells["B" + 26].Value = "Першого заступника директора - Івана Шалаєвського. ";
 
             try
             {

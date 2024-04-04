@@ -64,7 +64,7 @@ namespace ERP_NEW.BLL.Services
                 units.Delete(units.GetAll().FirstOrDefault(c => c.UnitId == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

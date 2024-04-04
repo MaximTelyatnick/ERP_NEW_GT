@@ -36,8 +36,6 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource departmentBS = new BindingSource();
         private BindingSource employeesInfoBS = new BindingSource();
         private List<EmployeesInfoDTO> returnTimeSheetList = new List<EmployeesInfoDTO>();
-        private int rezForm;
-
 
         public TimeSheetFm(UserTasksDTO userTasksDTO)
         {

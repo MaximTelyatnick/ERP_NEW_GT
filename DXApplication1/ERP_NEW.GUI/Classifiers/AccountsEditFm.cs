@@ -26,7 +26,6 @@ namespace ERP_NEW.GUI.Classifiers
         private IAccountsService accountsService;
         private BindingSource accountsBS = new BindingSource();
         private BindingSource typeAccountsBS = new BindingSource();
-        private UserTasksDTO _userTasksDTO;
         private Utils.Operation _operation;
 
         private ObjectBase Item

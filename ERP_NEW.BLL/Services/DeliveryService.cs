@@ -175,7 +175,7 @@ namespace ERP_NEW.BLL.Services
                 receiptDetails.Delete(receiptDetails.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -194,7 +194,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

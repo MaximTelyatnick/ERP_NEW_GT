@@ -177,7 +177,7 @@ namespace ERP_NEW.BLL.Services
                 calcWithBuyers.Delete(calcWithBuyers.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -216,7 +216,7 @@ namespace ERP_NEW.BLL.Services
                 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -245,7 +245,7 @@ namespace ERP_NEW.BLL.Services
                 calcWithBuyersPaymentVat.Delete(calcWithBuyersPaymentVat.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -268,7 +268,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrdersForCWB.Delete(customerOrdersForCWB.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

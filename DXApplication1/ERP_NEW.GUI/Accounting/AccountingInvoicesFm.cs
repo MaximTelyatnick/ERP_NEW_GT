@@ -49,7 +49,6 @@ namespace ERP_NEW.GUI.Accounting
 
         private DateTime curDate;
         private DateTime nullDate;
-        
         private List<InvoicesDTO> invoicesInfoList = new List<InvoicesDTO>();
         private List<InvoicesSortDTO> invoicesSortList = new List<InvoicesSortDTO>();
 

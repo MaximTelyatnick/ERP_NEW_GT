@@ -44,8 +44,17 @@ namespace ERP_NEW.GUI.OTK
             bandedGridView.CellMerge += new CellMergeEventHandler(bandedGridView_CellMerge);
 
             this.userTasksDTO = userTasksDTO;
-            this.beginDate = new DateTime(DateTime.Today.Year - 1, DateTime.Today.Month, 1); // год - месяц - день
-            this.endDate = DateTime.Today;
+            if (Properties.Settings.Default.CertificatePassFmBeginDate.Year < 2000)
+                this.beginDate = new DateTime(DateTime.Today.Year - 1, DateTime.Today.Month, 1); // год - месяц - день
+            else
+                this.beginDate = Properties.Settings.Default.CertificatePassFmBeginDate;
+
+            if (Properties.Settings.Default.CertificatePassFmEndDate.Year < 2000)
+                this.endDate = new DateTime(DateTime.Today.Year + 1, DateTime.Today.Month, DateTime.Today.Day); // год - месяц - день
+            else
+                this.endDate = Properties.Settings.Default.CertificatePassFmEndDate;
+
+            //this.endDate = DateTime.Today;
             beginDateEdit.EditValue = beginDate;
             endDateEdit.EditValue = endDate;
             LoadDate(beginDate, endDate);
@@ -58,7 +67,6 @@ namespace ERP_NEW.GUI.OTK
             var orders = receiptCertificateService.GetOrdersWithCertificateV2(beginDate, endDate).OrderByDescending(srch => srch.OrderDate).ToList();
             ordersBS.DataSource = orders;
             certificatePassGrid.DataSource = ordersBS;
-            //certificatePassGrid.Refresh();
         }
 
         private void showBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -242,15 +250,15 @@ namespace ERP_NEW.GUI.OTK
                 int rowHandle = bandedGridView.FocusedRowHandle;
                 splashScreenManager.ShowWaitForm();
                 bandedGridView.BeginDataUpdate();
-                LoadDate(beginDate, endDate);
+                LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
                 bandedGridView.EndDataUpdate();
-                bandedGridView.FocusedRowHandle = rowHandle;
                 splashScreenManager.CloseWaitForm();
                 bandedGridView.FocusedRowHandle = rowHandle;
             }
         }
 
-        private void bandedGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+
+        private void CheckAccess (int? receiptCertificateId)
         {
             if (((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId == null)
             {
@@ -263,9 +271,12 @@ namespace ERP_NEW.GUI.OTK
                 editBtn.Enabled = true;
                 deleteCertificateBtn.Enabled = true;
                 contextMenuStrip.Enabled = true;
-
-               
             }
+        }
+
+        private void bandedGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            CheckAccess((int?)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId);
         }
 
         private void journalShowBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -292,9 +303,13 @@ namespace ERP_NEW.GUI.OTK
                     });
                     splashScreenManager.ShowWaitForm();
                     bandedGridView.BeginDataUpdate();
-                    LoadDate(beginDate, endDate);
+                    LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+                    
                     bandedGridView.EndDataUpdate();
+                    bandedGridView.SelectRow(rowHandle);
                     bandedGridView.FocusedRowHandle = rowHandle;
+                    ((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId = receiptcertificateReturn.ReceiptCertificateId;
+                    CheckAccess((int)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId);
                     splashScreenManager.CloseWaitForm();
                 }
 
@@ -341,11 +356,24 @@ namespace ERP_NEW.GUI.OTK
                 receiptCertificateService.RemoveCertificateDetailId((int)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateDetailId);
                 splashScreenManager.ShowWaitForm();
                 bandedGridView.BeginDataUpdate();
-                LoadDate(beginDate, endDate);
+                LoadDate((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
                 bandedGridView.EndDataUpdate();
                 bandedGridView.FocusedRowHandle = rowHandle;
+                CheckAccess((int?)((OrdersInfoDTO)ordersBS.Current).ReceiptCertificateId);
                 splashScreenManager.CloseWaitForm();
             }
+        }
+
+        private void beginDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CertificatePassFmBeginDate = (DateTime)beginDateEdit.EditValue;
+            Properties.Settings.Default.Save();
+        }
+
+        private void endDateEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.CertificatePassFmEndDate = (DateTime)endDateEdit.EditValue;
+            Properties.Settings.Default.Save();
         }
 
         private void bandedGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
@@ -355,10 +383,7 @@ namespace ERP_NEW.GUI.OTK
             {
                 string currentRowColor = gv.GetRowCellValue(e.RowHandle, "ColorName").ToString();
                 e.Appearance.BackColor = Color.FromName(currentRowColor);
-            }
-            
-            
-
+            }   
         }
     }
 }

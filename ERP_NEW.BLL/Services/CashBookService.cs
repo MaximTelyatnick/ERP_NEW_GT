@@ -314,7 +314,7 @@ namespace ERP_NEW.BLL.Services
                 cashBookPage.Delete(cashBookPage.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -348,7 +348,7 @@ namespace ERP_NEW.BLL.Services
                 cashBookRecord.Delete(cashBookRecord.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -367,7 +367,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -396,7 +396,7 @@ namespace ERP_NEW.BLL.Services
                 cashBookBasisType.Delete(cashBookBasisType.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -425,7 +425,7 @@ namespace ERP_NEW.BLL.Services
                 cashBookContractor.Delete(cashBookContractor.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -455,7 +455,7 @@ namespace ERP_NEW.BLL.Services
                 cashBookAdditionalType.Delete(cashBookAdditionalType.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

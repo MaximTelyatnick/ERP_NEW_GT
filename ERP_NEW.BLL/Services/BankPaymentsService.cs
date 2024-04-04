@@ -119,7 +119,7 @@ namespace ERP_NEW.BLL.Services
                 bankPayments.Delete(bankPayments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

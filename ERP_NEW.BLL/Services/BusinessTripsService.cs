@@ -504,7 +504,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsPurpose.Delete(businessTripsPurpose.GetAll().FirstOrDefault(c => c.PurposeID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -533,7 +533,7 @@ namespace ERP_NEW.BLL.Services
                 businessTrips.Delete(businessTrips.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -562,7 +562,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsDecree.Delete(businessTripsDecree.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -602,7 +602,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -631,7 +631,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsDetails.Delete(businessTripsDetails.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -667,7 +667,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsPrepayment.Delete(businessTripsPrepayment.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -685,7 +685,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -720,7 +720,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsPayment.Delete(businessTripsPayment.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -738,7 +738,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -768,7 +768,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsReport.Delete(businessTripsReport.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -798,7 +798,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsPaymentVat.Delete(businessTripsPaymentVat.GetAll().FirstOrDefault(c => c.VatID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -827,7 +827,7 @@ namespace ERP_NEW.BLL.Services
                 businessTripsOrderCust.Delete(businessTripsOrderCust.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -846,7 +846,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -877,7 +877,7 @@ namespace ERP_NEW.BLL.Services
                 cashPrepayments.Delete(cashPrepayments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -910,7 +910,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

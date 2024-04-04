@@ -27,7 +27,6 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource cityBS = new BindingSource();
         private BindingSource countryBS = new BindingSource();
         private BindingSource settlementBS = new BindingSource();
-        private UserTasksDTO _userTasksDTO;
         private Utils.Operation _operation;
         private Utils.Operation operation;
         private CashBookContractorDTO cashBookContractorDTO;

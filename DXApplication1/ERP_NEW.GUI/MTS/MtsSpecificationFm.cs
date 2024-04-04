@@ -25,7 +25,6 @@ namespace ERP_NEW.GUI.MTS
     public partial class MtsSpecificationFm : DevExpress.XtraEditors.XtraForm
     {
         private IMtsSpecificationsService mtsSpecificationsService;
-        private IMtsNomenclaturesService mtsNomenclaturesService;
 
         private BindingSource specificationTreeBS = new BindingSource();
         private BindingSource assembliesBS = new BindingSource();

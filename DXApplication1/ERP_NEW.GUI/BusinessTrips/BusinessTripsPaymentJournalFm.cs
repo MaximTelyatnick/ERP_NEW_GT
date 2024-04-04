@@ -1090,14 +1090,7 @@ namespace ERP_NEW.GUI.BusinessTrips
 
                 decimal d = 0;
 
-
-
- 
-
-
                 businessTripsGridView.EndDataUpdate();
-
-                //splashScreenManager.CloseWaitForm();
             }
             else
             {

@@ -809,7 +809,7 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+            //return 690;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
@@ -856,10 +856,13 @@ namespace ERP_NEW.GUI
 
                     return (isParse) ? userNumber : 0;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     if (ulogin == "krasilnikova")
                         return 844;
+                    if (ulogin == "utyanska")
+                        return 836;
+
                     //if (ulogin == "zavorotniy")+
                     //    return 757;
                     //if (ulogin == "firsova")
@@ -869,7 +872,7 @@ namespace ERP_NEW.GUI
                     //else if (ulogin == "zaloilo")
                     //    return 804;А
 
-                    MessageBox.Show("Вам не дозволено працювати в системі. \nПеревірте підключення до мережі або зверніться до адміністратора. \nПользователь: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Вам не дозволено працювати в системі. \nПеревірте підключення до мережі або зверніться до адміністратора. \nКористувач: " + System.Security.Principal.WindowsIdentity.GetCurrent().Name, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             return -1;
@@ -907,10 +910,9 @@ namespace ERP_NEW.GUI
 
             UserAccessMenu();
         }
-
         //------------
 
-        UserTasksDTO userTasksDTO;
+        UserTasksDTO userTasksDTO = new UserTasksDTO();
         //-------------
         private void godModBtn_ElementClick(object sender, NavElementEventArgs e)
         {

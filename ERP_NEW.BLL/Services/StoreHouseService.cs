@@ -1448,7 +1448,7 @@ namespace ERP_NEW.BLL.Services
                 accountClothes.Delete(accountClothes.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1486,7 +1486,7 @@ namespace ERP_NEW.BLL.Services
                 }
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1535,7 +1535,7 @@ namespace ERP_NEW.BLL.Services
                 invoiceRequirementOrders.Delete(invoiceRequirementOrders.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1591,7 +1591,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1646,7 +1646,7 @@ namespace ERP_NEW.BLL.Services
                 storeHouses.Delete(storeHouses.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1675,7 +1675,7 @@ namespace ERP_NEW.BLL.Services
                 nomenclaturesGroups.Delete(nomenclaturesGroups.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1704,7 +1704,7 @@ namespace ERP_NEW.BLL.Services
                 nomenclatures.Delete(nomenclatures.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1733,7 +1733,7 @@ namespace ERP_NEW.BLL.Services
                 toolActs.Delete(toolActs.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1773,7 +1773,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1826,7 +1826,7 @@ namespace ERP_NEW.BLL.Services
                 var updateOrder = orders.GetAll().SingleOrDefault(c => c.ID == oDTO.ID);
                 orders.Update((mapper.Map<OrdersDTO, ORDERS>(oDTO, updateOrder)));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 if (afterCreate)
                     OrderDelete(oDTO.ID);
@@ -1842,7 +1842,7 @@ namespace ERP_NEW.BLL.Services
                 orders.Delete(orders.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1876,7 +1876,7 @@ namespace ERP_NEW.BLL.Services
                                                                 ", \"Storehouse_Id\" =" + null +
                                                                 " WHERE ID =" + receiptsDTO.ID);                                    
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
@@ -1919,7 +1919,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1939,7 +1939,7 @@ namespace ERP_NEW.BLL.Services
                 receipts.Delete(receipts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1969,7 +1969,7 @@ namespace ERP_NEW.BLL.Services
                 delivery.Delete(delivery.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1996,7 +1996,7 @@ namespace ERP_NEW.BLL.Services
                 deliveryOrder.Delete(deliveryOrder.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -2024,7 +2024,7 @@ namespace ERP_NEW.BLL.Services
                 deliveryOrdersDetails.Delete(deliveryOrdersDetails.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -2068,7 +2068,7 @@ namespace ERP_NEW.BLL.Services
                 vat.Delete(vat.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -2095,7 +2095,7 @@ namespace ERP_NEW.BLL.Services
                 expenditureAccountant.Delete(expenditureAccountant.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -2123,7 +2123,7 @@ namespace ERP_NEW.BLL.Services
                 expendituresStoreHouses.Delete(expendituresStoreHouses.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -2151,7 +2151,7 @@ namespace ERP_NEW.BLL.Services
                 expenditureStoreHouse.Delete(expenditureStoreHouse.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

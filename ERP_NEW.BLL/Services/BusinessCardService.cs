@@ -128,7 +128,7 @@ namespace ERP_NEW.BLL.Services
                 businessCardsFactory.Delete(businessCardsFactory.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -160,7 +160,7 @@ namespace ERP_NEW.BLL.Services
                 businessCard.Delete(businessCard.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -202,7 +202,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

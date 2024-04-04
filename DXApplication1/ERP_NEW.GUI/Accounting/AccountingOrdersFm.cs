@@ -298,11 +298,6 @@ namespace ERP_NEW.GUI.Accounting
             return periodService.GetAllPeriods().Any(p => p.Year == currentDate.Year && p.Month == currentDate.Month);
         }
 
-        public void Dispose()
-        {
-
-        }
-
         #endregion
 
         #region TransformData

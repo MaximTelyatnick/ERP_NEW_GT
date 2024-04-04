@@ -149,7 +149,7 @@ namespace ERP_NEW.BLL.Services
                 calculation.Delete(calculation.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -172,7 +172,7 @@ namespace ERP_NEW.BLL.Services
                 calculationMaterials.Delete(calculationMaterials.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

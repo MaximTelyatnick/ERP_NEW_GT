@@ -423,7 +423,7 @@ namespace ERP_NEW.BLL.Services
                 contractors.Delete(contractors.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -453,7 +453,7 @@ namespace ERP_NEW.BLL.Services
                 productCategories.Delete(productCategories.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -483,7 +483,7 @@ namespace ERP_NEW.BLL.Services
                 contractorContactAddress.Delete(contractorContactAddress.GetAll().FirstOrDefault(c => c.Id == contactAddres.Id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -496,7 +496,7 @@ namespace ERP_NEW.BLL.Services
                 contractorContactAddress.Delete(contractorContactAddress.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -513,7 +513,7 @@ namespace ERP_NEW.BLL.Services
                 var createrecord = contactPersons.Create(mapper.Map<ContactPersons>(contactPerson));
                 return (int)createrecord.Id;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return -1;
             }
@@ -535,7 +535,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -564,7 +564,7 @@ namespace ERP_NEW.BLL.Services
                 contactPersonAddress.Delete(contactPersonAddress.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -584,7 +584,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -613,7 +613,7 @@ namespace ERP_NEW.BLL.Services
                 agreementDocuments.Delete(agreementDocuments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -642,7 +642,7 @@ namespace ERP_NEW.BLL.Services
                 agreementTypeDocuments.Delete(agreementTypeDocuments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -671,7 +671,7 @@ namespace ERP_NEW.BLL.Services
                 agreementType.Delete(agreementType.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -700,7 +700,7 @@ namespace ERP_NEW.BLL.Services
                 agreements.Delete(agreements.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -729,7 +729,7 @@ namespace ERP_NEW.BLL.Services
                 agreementOrder.Delete(agreementOrder.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -758,7 +758,7 @@ namespace ERP_NEW.BLL.Services
                 agreementOrderPurpose.Delete(agreementOrderPurpose.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -787,7 +787,7 @@ namespace ERP_NEW.BLL.Services
                 agreementOrderScan.Delete(agreementOrderScan.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

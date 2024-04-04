@@ -24,7 +24,6 @@ namespace ERP_NEW.GUI.Classifiers
     public partial class BasisJournalEditFM : DevExpress.XtraEditors.XtraForm
     {
         private ICashBookService cashBookService;
-        private UserTasksDTO _userTasksDTO;
         private BindingSource basisBS = new BindingSource();
         private Utils.Operation _operation;
         

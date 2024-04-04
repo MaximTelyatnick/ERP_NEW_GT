@@ -41,7 +41,6 @@ namespace ERP_NEW.GUI.MTS
         private BindingSource detalsSpecificBS = new BindingSource();
         private BindingSource byusDetalsSpecificBS = new BindingSource();
         private BindingSource materialsSpecificBS = new BindingSource();
-        private UserTasksDTO userTasksDTO;
 
         public MtsSpecificationOldFm(UserTasksDTO userTasksDTO)
         {

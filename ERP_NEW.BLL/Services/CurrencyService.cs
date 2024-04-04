@@ -83,7 +83,7 @@ namespace ERP_NEW.BLL.Services
                 account = JsonConvert.DeserializeObject<IEnumerable<CurencyJSONDTO>>(json).ToList();
                 return account.FirstOrDefault().Rate;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 1;
             }
@@ -158,7 +158,7 @@ namespace ERP_NEW.BLL.Services
                 currency_Rates.Delete(currency_Rates.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

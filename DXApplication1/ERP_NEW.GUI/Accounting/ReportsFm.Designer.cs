@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportsFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -299,7 +299,6 @@
             this.beginYearEdit.ItemAppearance.Normal.Options.UseFont = true;
             this.beginYearEdit.Name = "beginYearEdit";
             this.beginYearEdit.EditValueChanged += new System.EventHandler(this.beginYearEdit_EditValueChanged);
-            this.beginYearEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.beginYearEdit_ItemClick);
             // 
             // repositoryItemDateEdit1
             // 
@@ -686,7 +685,7 @@
             this.button12.Dock = System.Windows.Forms.DockStyle.Top;
             this.button12.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button12.ForeColor = System.Drawing.Color.Black;
-            this.button12.Location = new System.Drawing.Point(5, 58);
+            this.button12.Location = new System.Drawing.Point(5, 60);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(609, 44);
             this.button12.TabIndex = 106;
@@ -709,7 +708,7 @@
             this.lookUpEdit1.Properties.PopupWidth = 553;
             this.lookUpEdit1.Properties.ShowHeader = false;
             this.lookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.lookUpEdit1.Size = new System.Drawing.Size(609, 20);
+            this.lookUpEdit1.Size = new System.Drawing.Size(609, 22);
             this.lookUpEdit1.TabIndex = 105;
             // 
             // labelControl2
@@ -745,7 +744,7 @@
             this.button14.Dock = System.Windows.Forms.DockStyle.Top;
             this.button14.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button14.ForeColor = System.Drawing.Color.Black;
-            this.button14.Location = new System.Drawing.Point(5, 176);
+            this.button14.Location = new System.Drawing.Point(5, 182);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(609, 42);
             this.button14.TabIndex = 106;
@@ -759,7 +758,7 @@
             this.button13.Dock = System.Windows.Forms.DockStyle.Top;
             this.button13.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button13.ForeColor = System.Drawing.Color.Black;
-            this.button13.Location = new System.Drawing.Point(5, 134);
+            this.button13.Location = new System.Drawing.Point(5, 140);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(609, 42);
             this.button13.TabIndex = 105;
@@ -770,20 +769,20 @@
             // 
             this.paymentDateEdit.Dock = System.Windows.Forms.DockStyle.Top;
             this.paymentDateEdit.EditValue = null;
-            this.paymentDateEdit.Location = new System.Drawing.Point(5, 114);
+            this.paymentDateEdit.Location = new System.Drawing.Point(5, 118);
             this.paymentDateEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.paymentDateEdit.Name = "paymentDateEdit";
             this.paymentDateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.paymentDateEdit.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.paymentDateEdit.Size = new System.Drawing.Size(609, 20);
+            this.paymentDateEdit.Size = new System.Drawing.Size(609, 22);
             this.paymentDateEdit.TabIndex = 104;
             // 
             // labelControl16
             // 
             this.labelControl16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl16.Location = new System.Drawing.Point(5, 91);
+            this.labelControl16.Location = new System.Drawing.Point(5, 95);
             this.labelControl16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl16.Name = "labelControl16";
             this.labelControl16.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
@@ -794,7 +793,7 @@
             // paymentDocumentTBox
             // 
             this.paymentDocumentTBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.paymentDocumentTBox.Location = new System.Drawing.Point(5, 71);
+            this.paymentDocumentTBox.Location = new System.Drawing.Point(5, 73);
             this.paymentDocumentTBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.paymentDocumentTBox.Name = "paymentDocumentTBox";
             this.paymentDocumentTBox.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
@@ -804,13 +803,13 @@
             this.paymentDocumentTBox.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.paymentDocumentTBox.Properties.AppearanceReadOnly.Options.UseBorderColor = true;
             this.paymentDocumentTBox.Properties.AppearanceReadOnly.Options.UseForeColor = true;
-            this.paymentDocumentTBox.Size = new System.Drawing.Size(609, 20);
+            this.paymentDocumentTBox.Size = new System.Drawing.Size(609, 22);
             this.paymentDocumentTBox.TabIndex = 102;
             // 
             // labelControl3
             // 
             this.labelControl3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelControl3.Location = new System.Drawing.Point(5, 48);
+            this.labelControl3.Location = new System.Drawing.Point(5, 50);
             this.labelControl3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Padding = new System.Windows.Forms.Padding(10, 5, 5, 5);
@@ -827,16 +826,16 @@
             this.gridLookUpEdit1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.gridLookUpEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Додати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Редагувати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "Поновити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "Додати", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, "Редагувати", null, null, true),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject6, "Поновити", null, null, true)});
             this.gridLookUpEdit1.Properties.ImmediatePopup = true;
             this.gridLookUpEdit1.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.gridLookUpEdit1.Properties.PopupFormSize = new System.Drawing.Size(667, 0);
             this.gridLookUpEdit1.Properties.PopupSizeable = false;
             this.gridLookUpEdit1.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.gridLookUpEdit1.Properties.View = this.gridView1;
-            this.gridLookUpEdit1.Size = new System.Drawing.Size(609, 20);
+            this.gridLookUpEdit1.Size = new System.Drawing.Size(609, 22);
             this.gridLookUpEdit1.TabIndex = 100;
             this.gridLookUpEdit1.ToolTipTitle = "Назва організації";
             // 
@@ -1801,7 +1800,7 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Top;
             this.button6.Font = new System.Drawing.Font("Verdana", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button6.ForeColor = System.Drawing.Color.Black;
-            this.button6.Location = new System.Drawing.Point(5, 58);
+            this.button6.Location = new System.Drawing.Point(5, 60);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(605, 39);
             this.button6.TabIndex = 106;
@@ -1821,7 +1820,7 @@
             this.orderNumberEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.orderNumberEdit.Properties.PopupFormSize = new System.Drawing.Size(1000, 0);
             this.orderNumberEdit.Properties.View = this.gridView2;
-            this.orderNumberEdit.Size = new System.Drawing.Size(605, 20);
+            this.orderNumberEdit.Size = new System.Drawing.Size(605, 22);
             this.orderNumberEdit.TabIndex = 169;
             // 
             // gridView2
@@ -2090,6 +2089,7 @@
             this.ShowIcon = false;
             this.Text = "Звіти";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReportsFm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMonth1)).EndInit();

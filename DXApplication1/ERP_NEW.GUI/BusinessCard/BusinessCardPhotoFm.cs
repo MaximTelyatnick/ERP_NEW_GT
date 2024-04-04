@@ -17,28 +17,11 @@ namespace ERP_NEW.GUI.BusinessCard
         
         Image captureImage;
 
-        private byte[] imageData;
-
         public BusinessCardPhotoFm()
         {
             InitializeComponent();
             cameraImageEdit.Visible = false;
-            //if (cameraControl.Device != null)
-            //{
-            //    var maxResolution = (from res in cameraControl.Device.GetAvailiableResolutions()
-            //                         orderby res.Height * res.Width descending
-            //                         select res).FirstOrDefault();
-            //    cameraControl.Device.Resolution = new Size (470, 320);
-            //}
-
-            
         }
-
-        
-
-    
-
-        
 
         private void cameraControl_Click(object sender, EventArgs e)
         {
@@ -83,9 +66,6 @@ namespace ERP_NEW.GUI.BusinessCard
         public Image Return()
         {
             return cameraImageEdit.Image;
-        }
-
-        
-
+        }  
     }
 }
