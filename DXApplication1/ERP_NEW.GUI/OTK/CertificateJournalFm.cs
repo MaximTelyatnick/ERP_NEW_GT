@@ -31,7 +31,7 @@ namespace ERP_NEW.GUI.OTK
         public CertificateJournalFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
-            LoadParam();
+            //LoadParam();
             LoadDate();
 
             certGridView.SetRowCellValue(GridControl.AutoFilterRowHandle, certGridView.Columns[6], Settings.Default.CertificateJournalFmFilterUserCol);
