@@ -23,7 +23,6 @@ namespace ERP_NEW.GUI.Production
         private IStoreHouseService storeHouseService;
         private ICustomerOrdersService customerOrdersService;
         private IPeriodService periodService;
-        private IAccountsService accountsService;
         private IEmployeesService employeesService;
         private ICurrencyService currencyService;
 
@@ -37,7 +36,6 @@ namespace ERP_NEW.GUI.Production
         private BindingSource expendituresBS = new BindingSource();
 
         private Utils.Operation operation;
-        private Utils.ExpendTypes expendType;
         private UserTasksDTO userTasksDTO;
 
         private bool limitActive = false;
@@ -51,8 +49,6 @@ namespace ERP_NEW.GUI.Production
         private DateTime beginDate, endDate;
 
         private List<NomenclaturesDTO> nomenclatureSearch = new List<NomenclaturesDTO>();
-        //private List<ExpendituresStoreHousesDTO> expendituresStoreHouseList = new List<ExpendituresStoreHousesDTO>();
-        //private List<ExpendituresStoreHousesInfoDTO> expendituresStoreHouseInfoList = new List<ExpendituresStoreHousesInfoDTO>();
         private List<ExpedinturesAccountantDTO> expenditureStoreHouseList = new List<ExpedinturesAccountantDTO>();
         private List<ExpenditureInfoDTO> expenditureStoreHouseInfoList = new List<ExpenditureInfoDTO>();
 

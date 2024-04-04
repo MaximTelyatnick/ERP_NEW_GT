@@ -29,7 +29,6 @@ namespace ERP_NEW.GUI.Accounting
         private IReportService reportService;
         private IAccountsService accountService;
         private IFixedAssetsOrderService fixedAssetsOrderService;
-        private IEmployeesService employeesService;
         private IAccountingInvoicesService accountingInvoicesService;
         private IAccountsService accountsService;
         private ICustomerOrdersService customerOrdersService;
@@ -68,21 +67,10 @@ namespace ERP_NEW.GUI.Accounting
             else
                 beginMonthEdit.EditValue = Properties.Settings.Default.ReportFmBeginMonth;
 
-            
-
             if (Properties.Settings.Default.ReportFmEndMonth == 0)
                 endMonthEdit.EditValue = DateTime.Now.Month;
             else
                 endMonthEdit.EditValue = Properties.Settings.Default.ReportFmEndMonth;
-
-            
-
-
-            //beginYearEdit.EditValue = DateTime.Now;
-            //endYearEdit.EditValue = DateTime.Now;
-
-            //beginMonthEdit.EditValue = DateTime.Now.Month;
-            //endMonthEdit.EditValue = DateTime.Now.Month;
 
             _beginDate = new DateTime(((DateTime)beginYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1);
             _endDate = new DateTime(((DateTime)endYearEdit.EditValue).Year, (int)beginMonthEdit.EditValue, 1).AddMonths(1).AddDays(-1);

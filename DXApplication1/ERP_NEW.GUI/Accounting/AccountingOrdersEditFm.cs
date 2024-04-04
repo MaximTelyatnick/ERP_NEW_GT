@@ -26,7 +26,7 @@ namespace ERP_NEW.GUI.Accounting
         private IContractorsService contractorsService;
         private IAccountsService accountService;
         private IUnitsService unitsService;
-        private IPeriodService periodService;
+        //private IPeriodService periodService;
         private ICurrencyService currencyService;
         
         private BindingSource ordersBS = new BindingSource();

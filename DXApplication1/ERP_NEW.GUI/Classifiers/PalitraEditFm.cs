@@ -23,7 +23,6 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource colorsBS = new BindingSource();
 
         private Utils.Operation operation;
-        private ObjectBase model;
 
         private ObjectBase Item
         {

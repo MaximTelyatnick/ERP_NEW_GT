@@ -25,7 +25,6 @@ namespace ERP_NEW.BLL.Services
        private IRepository<CustomerOrders> customerOrders;
        private IRepository<CustomerOrderSpecifications> customerOrderSpecifications;
        private IRepository<CustomerOrderAssemblies> customerOrderAssemblies;
-       private IRepository<EmployeesInfo> employeesInfo;
        private IRepository<ControlChecks> controlChecks;
        private IRepository<Employees> employees;
        private IRepository<EmployeesDetails> employeesDetails;
@@ -378,7 +377,7 @@ namespace ERP_NEW.BLL.Services
                 paintingWorks.Delete(paintingWorks.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -413,7 +412,7 @@ namespace ERP_NEW.BLL.Services
                 projectDetails.Delete(projectDetails.GetAll().FirstOrDefault(c => c.ProjectDetailId == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -442,7 +441,7 @@ namespace ERP_NEW.BLL.Services
                 controlChecks.Delete(controlChecks.GetAll().FirstOrDefault(c => c.ControlCheckId == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -464,7 +463,7 @@ namespace ERP_NEW.BLL.Services
                 projectDetailExecutors.Delete(projectDetailExecutors.GetAll().FirstOrDefault(c => c.ProjectDetailExecutorId == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

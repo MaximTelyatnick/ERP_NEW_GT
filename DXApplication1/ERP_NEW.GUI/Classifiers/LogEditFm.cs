@@ -25,7 +25,6 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource tasksBS = new BindingSource();
 
         private Utils.Operation operation;
-        private LogDTO model;
         private ILogService logService;
         private IEmployeesService employeesService;
         private IUserService userService;

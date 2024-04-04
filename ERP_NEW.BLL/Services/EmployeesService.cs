@@ -246,7 +246,7 @@ namespace ERP_NEW.BLL.Services
                 employees.Delete(employees.GetAll().FirstOrDefault(c => c.EmployeeID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -276,7 +276,7 @@ namespace ERP_NEW.BLL.Services
                 employeesDetails.Delete(employeesDetails.GetAll().FirstOrDefault(c => c.RecordID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -305,7 +305,7 @@ namespace ERP_NEW.BLL.Services
                 employeesDetailsStandart.Delete(employeesDetailsStandart.GetAll().FirstOrDefault(c => c.RecordID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -334,7 +334,7 @@ namespace ERP_NEW.BLL.Services
                 employeePhoto.Delete(employeePhoto.GetAll().FirstOrDefault(c => c.EmployeeID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -363,7 +363,7 @@ namespace ERP_NEW.BLL.Services
                 accessScheduleEntity.Delete(accessScheduleEntity.GetAll().FirstOrDefault(c => c.EntityID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -392,7 +392,7 @@ namespace ERP_NEW.BLL.Services
                 departments.Delete(departments.GetAll().FirstOrDefault(c => c.DepartmentID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -421,7 +421,7 @@ namespace ERP_NEW.BLL.Services
                 professions.Delete(professions.GetAll().FirstOrDefault(c => c.ProfessionID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

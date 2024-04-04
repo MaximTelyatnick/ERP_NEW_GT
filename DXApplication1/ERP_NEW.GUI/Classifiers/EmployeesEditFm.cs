@@ -357,15 +357,6 @@ namespace ERP_NEW.GUI.Classifiers
                         break;
                 }
 
-                //if (deletePackingListDetailsList.Count > 0)
-                //{
-                //    foreach (var item in deletePackingListDetailsList)
-                //    {
-                //        if (item.Id > 0)
-                //            packingListsService.PackingListDetailsDeleteById(item.Id);
-                //    }
-                //}
-
                 return true;
             }
             catch (Exception ex)
@@ -373,7 +364,6 @@ namespace ERP_NEW.GUI.Classifiers
                 MessageBox.Show("При збереженні виникла помилка. " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            return false;
         }
 
         private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)

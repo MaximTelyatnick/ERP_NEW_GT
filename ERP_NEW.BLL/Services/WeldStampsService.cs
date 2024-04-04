@@ -248,7 +248,7 @@ namespace ERP_NEW.BLL.Services
                 weldWps.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -278,7 +278,7 @@ namespace ERP_NEW.BLL.Services
                 weldCertificates.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -308,7 +308,7 @@ namespace ERP_NEW.BLL.Services
                 employeeCertificates.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -338,7 +338,7 @@ namespace ERP_NEW.BLL.Services
                 weldStamps.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -368,7 +368,7 @@ namespace ERP_NEW.BLL.Services
                 weldStampJournal.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             } 
@@ -398,7 +398,7 @@ namespace ERP_NEW.BLL.Services
                 weldAttestations.Delete(delEntity);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             } 
@@ -438,7 +438,7 @@ namespace ERP_NEW.BLL.Services
                 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 return false;
             }
@@ -465,7 +465,7 @@ namespace ERP_NEW.BLL.Services
 
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

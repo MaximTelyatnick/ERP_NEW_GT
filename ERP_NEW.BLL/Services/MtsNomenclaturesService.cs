@@ -194,7 +194,7 @@ namespace ERP_NEW.BLL.Services
                 mtsNomenclatures.Delete(mtsNomenclatures.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -223,7 +223,7 @@ namespace ERP_NEW.BLL.Services
                 mtsNomenclatureGroups.Delete(mtsNomenclatureGroups.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -253,7 +253,7 @@ namespace ERP_NEW.BLL.Services
                 mtsGosts.Delete(mtsGosts.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

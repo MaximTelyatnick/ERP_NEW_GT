@@ -98,7 +98,7 @@ namespace ERP_NEW.BLL.Services
                 requestLog.Delete(requestLog.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -122,7 +122,7 @@ namespace ERP_NEW.BLL.Services
                 requestLogContractors.Delete(requestLogContractors.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

@@ -249,7 +249,7 @@ namespace ERP_NEW.BLL.Services
                 userTasks.Delete(delTasks);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -268,7 +268,7 @@ namespace ERP_NEW.BLL.Services
                 users.Delete(delUser);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -296,7 +296,7 @@ namespace ERP_NEW.BLL.Services
                 userRoles.Delete(delUserRole);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {                
                 return false;
             }
@@ -352,7 +352,7 @@ namespace ERP_NEW.BLL.Services
                 tasks.Delete(deltasks);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

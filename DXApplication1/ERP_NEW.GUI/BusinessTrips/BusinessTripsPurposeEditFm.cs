@@ -19,7 +19,6 @@ namespace ERP_NEW.GUI.BusinessTrips
     public partial class BusinessTripsPurposeEditFm : DevExpress.XtraEditors.XtraForm
     {
         private IBusinessTripsService businessTripsService;
-        private UserTasksDTO _userTasksDTO;
         private Utils.Operation _operation;
         private BindingSource purposeBS = new BindingSource();
 

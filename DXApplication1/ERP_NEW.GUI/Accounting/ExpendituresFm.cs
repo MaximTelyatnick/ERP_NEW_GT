@@ -374,7 +374,7 @@ namespace ERP_NEW.GUI.Accounting
                 }
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Файл вже відкрито! Закрийте файл!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -383,8 +383,6 @@ namespace ERP_NEW.GUI.Accounting
         private void expenditureBandedGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             GridView gv = sender as GridView;
-            Decimal valueCur;
-            Decimal valueInv;
 
             var valueCurrentCreditAcc = gv.GetRowCellValue(e.RowHandle, "CreditAccountNum");
             var valueCurrentCheckDate = gv.GetRowCellValue(e.RowHandle, "ExpenditureCheckDate");

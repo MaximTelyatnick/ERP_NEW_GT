@@ -182,7 +182,7 @@ namespace ERP_NEW.BLL.Services
                 return true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -212,7 +212,7 @@ namespace ERP_NEW.BLL.Services
                 return true;
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

@@ -32,7 +32,6 @@ namespace ERP_NEW.GUI.Classifiers
 
         private ICashBookService cashBookService;
         private BindingSource additionalBS = new BindingSource();
-        private UserTasksDTO _userTasksDTO;
 
         public CashBookAdditionalFm(UserTasksDTO userTasksDTO)
         {

@@ -82,7 +82,7 @@ namespace ERP_NEW.GUI.Accounting
         }
 
 
-        int posNumber;// = (int)
+        //int posNumber;// = (int)
 
         private bool Save()
         {

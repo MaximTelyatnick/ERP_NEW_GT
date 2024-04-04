@@ -33,8 +33,6 @@ namespace ERP_NEW.GUI.Classifiers
 
         private ICashBookService contractorService;
         private BindingSource contractorBS = new BindingSource();
-        private UserTasksDTO _userTasksDTO;
-
         public CashBookContractorFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();

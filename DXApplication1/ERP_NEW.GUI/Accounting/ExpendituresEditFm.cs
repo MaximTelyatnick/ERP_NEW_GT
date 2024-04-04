@@ -50,8 +50,8 @@ namespace ERP_NEW.GUI.Accounting
 
         private bool limitActive = false;
 
-        decimal? quantityColFilter = 0;
-        decimal? totalPriceColFilter = 0;
+        //decimal? quantityColFilter = 0;
+        //decimal? totalPriceColFilter = 0;
 
         private List<NomenclaturesDTO> nomenclatureSearch = new List<NomenclaturesDTO>();
 

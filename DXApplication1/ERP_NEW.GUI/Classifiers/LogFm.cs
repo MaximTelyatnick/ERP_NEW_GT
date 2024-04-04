@@ -23,8 +23,6 @@ namespace ERP_NEW.GUI.Classifiers
         private BindingSource logBS = new BindingSource();
         private BindingSource employeeBS = new BindingSource();
         private UserTasksDTO _userTasksDTO;
-        private EmployeesDetailsDTO employeesDetalDTO;
-        private object logEditFm;
         public LogFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();

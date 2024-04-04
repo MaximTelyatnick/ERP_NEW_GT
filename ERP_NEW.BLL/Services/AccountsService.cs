@@ -127,7 +127,7 @@ namespace ERP_NEW.BLL.Services
                 accounts.Delete(accounts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

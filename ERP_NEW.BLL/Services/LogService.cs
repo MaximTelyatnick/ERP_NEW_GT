@@ -93,7 +93,7 @@ namespace ERP_NEW.BLL.Services
 
                 log.SQLExecute(trgiCreate);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return -1;
             }
@@ -133,7 +133,7 @@ namespace ERP_NEW.BLL.Services
                 log.Delete(log.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

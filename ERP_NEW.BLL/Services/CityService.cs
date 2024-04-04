@@ -106,7 +106,7 @@ namespace ERP_NEW.BLL.Services
                 city.Delete(city.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -135,7 +135,7 @@ namespace ERP_NEW.BLL.Services
                 country.Delete(country.GetAll().FirstOrDefault(c => c.Country_Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

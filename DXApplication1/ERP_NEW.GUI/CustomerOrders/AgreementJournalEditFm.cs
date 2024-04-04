@@ -235,7 +235,7 @@ namespace ERP_NEW.GUI.CustomerOrders
                     }
                 }
             }
-            catch (Exception ex) {
+            catch (Exception) {
                 MessageBox.Show("У вас немає доступу до мережевої папки! Зверніться будь-ласка у відділ АСУП", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 checkAccessToDirectory = 1;
             }

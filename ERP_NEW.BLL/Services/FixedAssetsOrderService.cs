@@ -373,7 +373,7 @@ namespace ERP_NEW.BLL.Services
                 fixedAssetsOrder.Delete(fixedAssetsOrder.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -401,7 +401,7 @@ namespace ERP_NEW.BLL.Services
                 fixedAssetsMaterials.Delete(fixedAssetsMaterials.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -428,7 +428,7 @@ namespace ERP_NEW.BLL.Services
                 fixedAssetsOrderRegistration.Delete(fixedAssetsOrderRegistration.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -556,7 +556,7 @@ namespace ERP_NEW.BLL.Services
                 fixedAssetsNoAmort.Delete(fixedAssetsNoAmort.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

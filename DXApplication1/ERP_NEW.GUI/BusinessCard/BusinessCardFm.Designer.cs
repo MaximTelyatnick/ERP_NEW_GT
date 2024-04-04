@@ -857,7 +857,6 @@
         private DevExpress.XtraBars.BarButtonItem searchContractorBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraEditors.Repository.RepositoryItemSearchControl repositoryItemSearchControl1;
-        private DevExpress.XtraRichEdit.Design.RepositoryItemRichEditStyleEdit repositoryItemRichEditStyleEdit1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemSearchEdit;
         private DevExpress.XtraBars.BarEditItem searchContractorNameEdit;

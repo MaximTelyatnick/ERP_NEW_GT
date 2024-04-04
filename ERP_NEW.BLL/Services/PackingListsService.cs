@@ -144,7 +144,7 @@ namespace ERP_NEW.BLL.Services
                 packingLists.Delete(delPList);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -180,7 +180,7 @@ namespace ERP_NEW.BLL.Services
                 packingListMaterials.Delete(delPList);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -211,7 +211,7 @@ namespace ERP_NEW.BLL.Services
                 packingListDetail.Delete(delPList);
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

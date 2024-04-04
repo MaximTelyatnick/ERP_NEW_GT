@@ -33,8 +33,8 @@ namespace ERP_NEW.GUI.Accounting
         private DateTime currentDate;
         private DateTime stockDate = new DateTime(2018,12,31);
 
-        private decimal beginDayPrice = 0.00m;
-        private decimal endDayPrice = 0.00m;
+        //private decimal beginDayPrice = 0.00m;
+        //private decimal endDayPrice = 0.00m;
 
 
 

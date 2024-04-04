@@ -17,7 +17,6 @@ namespace ERP_NEW.GUI.Marketing
 {
     public partial class PackingListCustomerSelectFm : DevExpress.XtraEditors.XtraForm
     {
-        private IMtsSpecificationsService mtsSpecificationsService;
         private ICustomerOrdersService customerOrdersService;
 
         private List<CustomerOrdersDTO> returnAsemblieList = new List<CustomerOrdersDTO>();
@@ -36,8 +35,6 @@ namespace ERP_NEW.GUI.Marketing
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
 
             List<CustomerOrdersDTO> customOrder = customerOrdersService.GetCustomerOrdersFull().OrderByDescending(ord => ord.OrderDate).ToList();
-
-            //var rez = mtsSpecificationsService.GetJournalAssemblies().OrderByDescending(bdsm => bdsm.DateCreated).ToList();
 
             assembliesBS.DataSource = customOrder;
 

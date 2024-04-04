@@ -829,7 +829,7 @@ namespace ERP_NEW.BLL.Services
                 mtsAssemblies.Delete(mtsAssemblies.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -858,7 +858,7 @@ namespace ERP_NEW.BLL.Services
                 mtsSpecifications.DeleteAll(mtsSpecifications.GetAll().Where(c => c.RootId == rootId));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -887,7 +887,7 @@ namespace ERP_NEW.BLL.Services
                 mtsSpecificationsOld.Delete(mtsSpecificationsOld.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -913,7 +913,7 @@ namespace ERP_NEW.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -939,7 +939,7 @@ namespace ERP_NEW.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -973,7 +973,7 @@ namespace ERP_NEW.BLL.Services
                 mtsPurchasedProducts.Delete(mtsPurchasedProducts.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1007,7 +1007,7 @@ namespace ERP_NEW.BLL.Services
                 mtsMaterials.Delete(mtsMaterials.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -1034,19 +1034,6 @@ namespace ERP_NEW.BLL.Services
             mtsDetails.Update((mapper.Map<MTSDetailsDTO, MTSDetails>(mtsDetailsDTO, updateDetail)));
         }
 
-        //public bool MTSDetailDelete(int id)
-        //{
-        //    try
-        //    {
-        //        mtsDetails.Delete(mtsDetails.GetAll().FirstOrDefault(c => c.ID == id));
-        //        return true;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return false;
-        //    }
-        //}
-
         #endregion
 
         #region MTSCreateDetals CRUD method's
@@ -1070,7 +1057,7 @@ namespace ERP_NEW.BLL.Services
                 mtsCreateDetals.Delete(mtsCreateDetals.GetAll().FirstOrDefault(c => c.ID == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }

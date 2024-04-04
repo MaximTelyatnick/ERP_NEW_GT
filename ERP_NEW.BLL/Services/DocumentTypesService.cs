@@ -67,7 +67,7 @@ namespace ERP_NEW.BLL.Services
                  documentTypes.Delete(documentTypes.GetAll().FirstOrDefault(c => c.DocumentTypeId == id));
                  return true;
              }
-             catch (Exception ex)
+             catch (Exception)
              {
                  return false;
              }

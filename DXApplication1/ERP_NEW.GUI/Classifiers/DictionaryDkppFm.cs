@@ -20,10 +20,6 @@ namespace ERP_NEW.GUI.Classifiers
 
         private BindingSource dictionaryTreeBS = new BindingSource();
 
-        private UserTasksDTO _userTasksDTO;
-
-        private bool flag = false;
-
         public DictionaryDkppFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
@@ -34,7 +30,6 @@ namespace ERP_NEW.GUI.Classifiers
             dictionaryTree.DataSource = dictionaryTreeBS;
             dictionaryTree.KeyFieldName = "Id";
             dictionaryTree.ParentFieldName = "ParentId";
-            //dictionaryTree.ExpandAll();
         }
     }
 }

@@ -89,8 +89,6 @@ namespace ERP_NEW.BLL.Services
         private IRepository<TrialBalanceByAccountsReport> trialBalanceByAccountsReport;
         private IRepository<ExpenditureForProjectReport> expenditureForProjectReport;
         private IRepository<ExpenditureForProjectReportByContractor> expenditureForProjectReportByContractor;
-        private IFixedAssetsOrderService fixedAssetsOrderService;
-        private IRepository<FixedAssetsOrderJournalPrint> fixedAssetsOrderJournalPrint;
         private IRepository<ORDERS> orders;
         private IRepository<OrdersInfo> ordersInfo;
         private IRepository<AccountOrders> accountOrders;
@@ -1706,7 +1704,7 @@ namespace ERP_NEW.BLL.Services
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
                 word.Quit(ref missingObj, ref  missingObj, ref missingObj);
@@ -1926,7 +1924,7 @@ namespace ERP_NEW.BLL.Services
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // MessageBox.Show("Документ уже открыт!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
@@ -2031,7 +2029,7 @@ namespace ERP_NEW.BLL.Services
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
                     word.Visible = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 // MessageBox.Show("Документ уже открыт!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 document.Close(ref falseObj, ref  missingObj, ref missingObj);
@@ -7116,7 +7114,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -7301,7 +7299,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -7482,7 +7480,7 @@ namespace ERP_NEW.BLL.Services
             {
                 Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -14842,24 +14840,18 @@ namespace ERP_NEW.BLL.Services
             {
                 case "103":
                     return "3";
-                    break;
                 case "104":
                 case "104/1":
                     return "4";
-                    break;
                 case "105":
                     return "5";
-                    break;
                 case "106":
                 case "127":
                     return "6";
-                    break;
                 case "109":
                     return "9";
-                    break;
                 default:
                     return "Невідома группа";
-                    break;
             }
         }
 

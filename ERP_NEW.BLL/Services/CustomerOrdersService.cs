@@ -719,7 +719,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrders.Delete(customerOrders.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -753,7 +753,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrderSpecifications.Delete(customerOrderSpecifications.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -782,7 +782,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrderAssemblies.Delete(customerOrderAssemblies.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -805,7 +805,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrderPrepayments.Delete(customerOrderPrepayments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -828,7 +828,7 @@ namespace ERP_NEW.BLL.Services
                 customerOrderPayments.Delete(customerOrderPayments.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
