@@ -52,7 +52,7 @@ namespace ERP_NEW.GUI.Production
             //repositoryItemSearchLookUpEdit.DataSource = employeesService.GetEmployeesWorkingNonPhoto();
             repositoryItemGridLookUpEdit.ValueMember = "Id";
             repositoryItemGridLookUpEdit.DisplayMember = "OrderNumber";
-            repositoryItemGridLookUpEdit.Properties.NullText = "Немає данних";
+            repositoryItemGridLookUpEdit.NullText = "Немає данних";
 
 
             //firstDateEdit.EditValue = firstDay;

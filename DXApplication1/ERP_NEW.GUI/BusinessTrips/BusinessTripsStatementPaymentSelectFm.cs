@@ -55,7 +55,7 @@ namespace ERP_NEW.GUI.BusinessTrips
             repositoryItemSearchLookUpEdit.DataSource = employeesService.GetEmployeesWorkingNonPhoto();
             repositoryItemSearchLookUpEdit.ValueMember = "EmployeeID";
             repositoryItemSearchLookUpEdit.DisplayMember = "FullName";
-            repositoryItemSearchLookUpEdit.Properties.NullText = "Немає данних";
+            repositoryItemSearchLookUpEdit.NullText = "Немає данних";
 
             creditPaymentsBS.DataSource = businesTripsEmployeesWithCreditPaymentList;
             businessTripeStatementGrid.DataSource = creditPaymentsBS;

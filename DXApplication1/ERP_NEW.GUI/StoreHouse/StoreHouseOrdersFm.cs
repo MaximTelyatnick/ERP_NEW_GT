@@ -131,7 +131,7 @@ namespace ERP_NEW.GUI.StoreHouse
             if (model != null)
             {
                 bool State = (bool)((PeriodsDTO)periodService.GetAllPeriods().FirstOrDefault(bdsm => bdsm.Month == beginDate.Month && bdsm.Year == beginDate.Year)).State;
-                SetPeriodOpened(((State == true) || (State == null)) ? false : true);
+                SetPeriodOpened(((State == true)) ? false : true);
             }
             else
             {

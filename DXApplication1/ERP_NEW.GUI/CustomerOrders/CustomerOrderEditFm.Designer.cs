@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerOrderEditFm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -66,7 +65,7 @@
             this.orderDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.orderNumberTBox = new DevExpress.XtraEditors.TextEdit();
-            this.orderValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.orderValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
@@ -78,7 +77,7 @@
             this.sumPriceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.singleCurrencyPriceCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.sumCurrencyPriceCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barMenu = new DevExpress.XtraBars.BarManager(this.components);
+            this.barMenu = new DevExpress.XtraBars.BarManager();
             this.specificationBar = new DevExpress.XtraBars.Bar();
             this.addSpecBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editSpecBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -90,7 +89,7 @@
             this.addAssBrn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteAssBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editAssBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.projectBarManager = new DevExpress.XtraBars.BarManager(this.components);
+            this.projectBarManager = new DevExpress.XtraBars.BarManager();
             this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
@@ -215,7 +214,6 @@
             this.gridColumn4});
             this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView3.OptionsFind.AlwaysVisible = true;
             this.gridView3.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gridView3.OptionsFind.SearchInPreview = true;
@@ -281,7 +279,6 @@
             this.assDateCreatedCol});
             this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridView2.OptionsFind.AlwaysVisible = true;
             this.gridView2.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gridView2.OptionsFind.SearchInPreview = true;
@@ -430,7 +427,6 @@
             this.srnCol});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridLookUpEdit1View.OptionsFind.AlwaysVisible = true;
             this.gridLookUpEdit1View.OptionsFind.FindMode = DevExpress.XtraEditors.FindMode.Always;
             this.gridLookUpEdit1View.OptionsFind.SearchInPreview = true;
@@ -563,7 +559,7 @@
             // 
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.standaloneBarDockControl1.Location = new System.Drawing.Point(2, 20);
+            this.standaloneBarDockControl1.Location = new System.Drawing.Point(2, 22);
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             this.standaloneBarDockControl1.Size = new System.Drawing.Size(941, 26);
             this.standaloneBarDockControl1.Text = "standaloneBarDockControl1";
@@ -594,7 +590,6 @@
             this.sumCurrencyPriceCol});
             this.specificationGridView.GridControl = this.specificationGrid;
             this.specificationGridView.Name = "specificationGridView";
-            this.specificationGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.specificationGridView.OptionsView.ShowAutoFilterRow = true;
             this.specificationGridView.OptionsView.ShowFooter = true;
             this.specificationGridView.OptionsView.ShowGroupPanel = false;

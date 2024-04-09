@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EmployeesInfoFm));
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.propertyGridControl1 = new DevExpress.XtraVerticalGrid.PropertyGridControl();
@@ -47,7 +46,7 @@
             this.beginDateCol = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
             this.layoutViewField_layoutViewColumn1_5 = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             this.employeesInfoGrid = new DevExpress.XtraGrid.GridControl();
-            this.userMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.userMenu = new System.Windows.Forms.ContextMenuStrip();
             this.addEmployeeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editEmployeeItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteEmployeeItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -541,7 +540,7 @@
             this.employeeHistoryGrid.Margin = new System.Windows.Forms.Padding(5);
             this.employeeHistoryGrid.Name = "employeeHistoryGrid";
             this.employeeHistoryGrid.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.employeeHistoryGrid.Size = new System.Drawing.Size(398, 430);
+            this.employeeHistoryGrid.Size = new System.Drawing.Size(398, 429);
             this.employeeHistoryGrid.TabIndex = 0;
             this.employeeHistoryGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.employeeHistoryGridView});

@@ -35,6 +35,9 @@ namespace ERP_NEW.BLL.Services
             customerOrders = Database.GetRepository<CustomerOrders>();
             contractors = Database.GetRepository<Contractors>();
             expenditureAccountant = Database.GetRepository<EXPENDITURES_ACCOUNTANT>();
+            receipt = Database.GetRepository<RECEIPTS>();
+            orders = Database.GetRepository<ORDERS>();
+            nomenclatures = Database.GetRepository<NOMENCLATURES>();
             units = Database.GetRepository<Units>();
 
             var config = new MapperConfiguration(cfg =>

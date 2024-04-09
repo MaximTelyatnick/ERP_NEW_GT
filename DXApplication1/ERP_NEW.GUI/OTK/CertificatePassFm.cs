@@ -30,7 +30,6 @@ namespace ERP_NEW.GUI.OTK
         private BindingSource ordersBS = new BindingSource();
         private ReceiptCertificatesDTO certificateDTO;
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
-        private object informationRow;
         private DateTime beginDate, endDate;
         private UserTasksDTO userTasksDTO;
 

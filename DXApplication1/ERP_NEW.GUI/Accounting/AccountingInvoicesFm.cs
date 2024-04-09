@@ -48,7 +48,7 @@ namespace ERP_NEW.GUI.Accounting
         private BindingSource dateBS = new BindingSource();
 
         private DateTime curDate;
-        private DateTime nullDate;
+        //private DateTime nullDate;
         private List<InvoicesDTO> invoicesInfoList = new List<InvoicesDTO>();
         private List<InvoicesSortDTO> invoicesSortList = new List<InvoicesSortDTO>();
 
@@ -120,7 +120,7 @@ namespace ERP_NEW.GUI.Accounting
             repositoryItemGridLookUpEdit.DataSource = monthInSortedFilter;
             repositoryItemGridLookUpEdit.ValueMember = "Id";
             repositoryItemGridLookUpEdit.DisplayMember = "NumberMonth";
-            repositoryItemGridLookUpEdit.Properties.NullText = "Немає данних";
+            repositoryItemGridLookUpEdit.NullText = "Немає данних";
 
             accountingInvoicesBS.DataSource = invoicesInfoList;
             accountingInvoicesGrid.DataSource = accountingInvoicesBS;
@@ -307,7 +307,7 @@ namespace ERP_NEW.GUI.Accounting
                     }
                 }
             }
-            curDate = nullDate;
+            //curDate = nullDate;
             ShowInGridByFilter();        
         }
 
@@ -651,7 +651,7 @@ namespace ERP_NEW.GUI.Accounting
         private void accountingInvoicesGridView_ColumnFilterChanged(object sender, EventArgs e)
         {
             CriteriaOperator op = accountingInvoicesGridView.ActiveFilterCriteria;
-            if (op == null)
+            if (ReferenceEquals(op, null))
             {
                 ShowInGridByFilter();
             }

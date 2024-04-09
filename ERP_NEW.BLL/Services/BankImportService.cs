@@ -217,7 +217,7 @@ namespace ERP_NEW.BLL.Services
 
                 bool result = DateTime.TryParse(cells["A" + currentRow].Value.ToString(), out docDate);
 
-                NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+                //NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
 
                 string value = cells["E" + currentRow].Value.ToString().Replace('.', ',');
                 string formatString = Regex.Replace(value, @"[^0-9$,]", "");
@@ -797,7 +797,7 @@ namespace ERP_NEW.BLL.Services
 
                 bool result = DateTime.TryParse(cells["M" + currentRow].Value.ToString(), out docDate);
 
-                NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
+                //NumberStyles style = NumberStyles.AllowDecimalPoint | NumberStyles.AllowThousands;
 
                 if (cells["N" + currentRow].Value.ToString() != "")
                 {

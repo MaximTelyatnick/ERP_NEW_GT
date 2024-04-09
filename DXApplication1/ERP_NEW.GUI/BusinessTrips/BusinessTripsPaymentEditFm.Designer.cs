@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BusinessTripsPaymentEditFm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -84,7 +83,7 @@
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.codeCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.businessTripsPaymentValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.businessTripsPaymentValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             this.row6 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.row7 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
@@ -387,7 +386,7 @@
             this.vatCheck.Properties.Appearance.Options.UseForeColor = true;
             this.vatCheck.Properties.AutoWidth = true;
             this.vatCheck.Properties.Caption = "ПДВ";
-            this.vatCheck.Size = new System.Drawing.Size(47, 19);
+            this.vatCheck.Size = new System.Drawing.Size(46, 19);
             this.vatCheck.TabIndex = 11;
             this.vatCheck.CheckedChanged += new System.EventHandler(this.vatCheck_CheckedChanged);
             // 
@@ -470,7 +469,7 @@
             this.currencyCheck.Properties.Appearance.Options.UseForeColor = true;
             this.currencyCheck.Properties.AutoWidth = true;
             this.currencyCheck.Properties.Caption = "Валюта";
-            this.currencyCheck.Size = new System.Drawing.Size(68, 19);
+            this.currencyCheck.Size = new System.Drawing.Size(67, 19);
             this.currencyCheck.TabIndex = 8;
             this.currencyCheck.CheckedChanged += new System.EventHandler(this.currencyCheck_CheckedChanged);
             // 
@@ -675,7 +674,6 @@
             this.nameCol});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
-            this.gridLookUpEdit1View.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;

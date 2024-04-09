@@ -193,7 +193,7 @@ namespace ERP_NEW.BLL.Marketing
 
             if (e.Column == transportListScanCol)
             {
-                if (item.ScanComplStatus != null)
+                if (item.ScanComplStatus != -1)
                 {
                     if (item.ScanComplStatus == 1)
                         e.Value = columnCollection.Images[0];
@@ -204,7 +204,7 @@ namespace ERP_NEW.BLL.Marketing
 
             if (e.Column == scanStatusCol)
             {
-                if (item.ScanStatus != null)
+                if (item.ScanStatus != -1)
                 {
                     if (item.ScanStatus == 1)
                         e.Value = columnCollection.Images[0];

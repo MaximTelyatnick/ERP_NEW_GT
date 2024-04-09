@@ -36,8 +36,8 @@ namespace ERP_NEW.GUI.Tools
 
         private void openFileBtn_Click(object sender, EventArgs e)
         {
-            string folderPath = "";
-            string fileName = "";
+            //string folderPath = "";
+            //string fileName = "";
 
             FolderBrowserDialog fbd = new FolderBrowserDialog();
             if (fbd.ShowDialog() == DialogResult.OK)

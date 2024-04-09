@@ -1085,11 +1085,6 @@ namespace ERP_NEW.GUI.BusinessTrips
 
                 else { MessageBox.Show("Не обрано відрядження!"); }
 
-
-                
-
-                decimal d = 0;
-
                 businessTripsGridView.EndDataUpdate();
             }
             else

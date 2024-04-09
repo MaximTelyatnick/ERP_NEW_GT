@@ -250,8 +250,6 @@ namespace ERP_NEW.BLL.Services
                     }
                 }
             }
-
-            return "1";
         }
 
         public string GetLatestRecordDocumentNumber(DateTime pageDate, Utils.CurencyOperationType recordCurencyOperation)
@@ -288,8 +286,6 @@ namespace ERP_NEW.BLL.Services
                     }
                
             }
-
-            return "1";
         }
         #endregion
 

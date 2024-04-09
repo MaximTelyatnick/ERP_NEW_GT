@@ -171,7 +171,7 @@ namespace ERP_NEW.GUI.Classifiers
             //var timeStartWork = new TimeSpan(8,00,00);
             //var timeEndWork = new TimeSpan(17, 00, 00);
             var timeRez = new TimeSpan(8,00,00);
-            TimeSpan correctlyTime;
+            //TimeSpan correctlyTime;
 
 
 

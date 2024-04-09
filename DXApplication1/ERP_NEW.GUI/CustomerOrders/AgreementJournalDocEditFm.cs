@@ -126,7 +126,7 @@ namespace ERP_NEW.GUI.CustomerOrders
 
             try
             {                
-                if (renameFileTextEdit.EditValue != "")
+                if (renameFileTextEdit.Text != "")
                 {
                     dInfo.GetDirectories();
                     if (Directory.Exists(sourcePath + "\\" + rezJournalDTO))
@@ -143,7 +143,7 @@ namespace ERP_NEW.GUI.CustomerOrders
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("У вас немає доступу до мережевої папки! Зверніться будь-ласка у відділ АСУП", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);//+ex.ToString());               
                 checkAccessToDirectory = 1;

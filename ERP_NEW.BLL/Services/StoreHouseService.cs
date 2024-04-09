@@ -1167,7 +1167,7 @@ namespace ERP_NEW.BLL.Services
                              BalanceAccountId = acc.ID,
                              BalanceAccountNum = acc.NUM,
                              CustomerOrderId = esh.CustomerOrderId,
-                             CustomerOrderNumber = esh.CustomerOrderId != null ? cus.OrderNumber : e.EmployeeID != null ? "0 (" + ed.LastName + " " + ed.FirstName.Substring(0, 1) + ". " + ed.MiddleName.Substring(0, 1) + "." + ")" : "0",
+                             CustomerOrderNumber = esh.CustomerOrderId != null ? cus.OrderNumber : esh.EmployeeId != null ? "0 (" + ed.LastName + " " + ed.FirstName.Substring(0, 1) + ". " + ed.MiddleName.Substring(0, 1) + "." + ")" : "0",
                              ExpDate = esh.ExpDate,
                              NomenclatureId = nom.ID,
                              Nomenclature = nom.NOMENCLATURE,

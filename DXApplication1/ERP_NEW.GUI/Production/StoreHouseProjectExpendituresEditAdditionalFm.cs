@@ -44,7 +44,7 @@ namespace ERP_NEW.GUI.Production
         private decimal expPrice = 0.00m;
 
         private decimal expQuantityGeneral = 0.000000m;
-        private decimal expPriceGeneral = 0.00m;
+        //private decimal expPriceGeneral = 0.00m;
 
         private DateTime beginDate, endDate;
 
@@ -71,6 +71,7 @@ namespace ERP_NEW.GUI.Production
             this.userTasksDTO = userTasksDTO;
             this.beginDate = beginDate;
             this.endDate = endDate;
+            this.operation = operation;
 
             expenditureBS.DataSource = Item = model;
             searchDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
