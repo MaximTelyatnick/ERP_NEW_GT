@@ -74,8 +74,7 @@ namespace ERP_NEW.BLL.Services
                                "\"Info\" VARCHAR(255), " +
                                "\"FormName\" VARCHAR(255), " +
                                "\"UserId\" INT, " +
-                               "\"LogTime\" TIMESTAMP " +
-                               ")\";";
+                               "\"LogTime\" TIMESTAMP);";
 
                 log.SQLExecute(procName);
 

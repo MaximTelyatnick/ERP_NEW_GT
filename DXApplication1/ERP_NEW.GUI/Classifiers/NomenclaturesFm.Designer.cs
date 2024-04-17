@@ -74,6 +74,7 @@
             this.storeHouseNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.vendorNameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dateCol = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.printNomenclatureBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.receiptHistoryOrdersDTOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -115,10 +116,11 @@
             this.addGroupBtn,
             this.editGroupBtn,
             this.deleteGroupBtn,
-            this.addSubGroupBtn});
+            this.addSubGroupBtn,
+            this.printNomenclatureBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -229,6 +231,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
+            this.ribbonPageGroup2.ItemLinks.Add(this.printNomenclatureBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
@@ -320,7 +323,6 @@
             this.numCol});
             this.nomenclaturesMaterialGridView.GridControl = this.nomenclaturesMaterialGrid;
             this.nomenclaturesMaterialGridView.Name = "nomenclaturesMaterialGridView";
-            this.nomenclaturesMaterialGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.nomenclaturesMaterialGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclaturesMaterialGridView.OptionsView.ShowGroupedColumns = true;
             this.nomenclaturesMaterialGridView.OptionsView.ShowGroupPanel = false;
@@ -514,7 +516,6 @@
             this.dateCol});
             this.recieptArchibeGridView.GridControl = this.recieptArchiveGrid;
             this.recieptArchibeGridView.Name = "recieptArchibeGridView";
-            this.recieptArchibeGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.recieptArchibeGridView.OptionsView.ShowGroupPanel = false;
             // 
             // nomenclatureArchivCol
@@ -613,6 +614,16 @@
             this.dateCol.Visible = true;
             this.dateCol.VisibleIndex = 7;
             // 
+            // printNomenclatureBtn
+            // 
+            this.printNomenclatureBtn.Caption = "Друк номенклатури";
+            this.printNomenclatureBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("printNomenclatureBtn.Glyph")));
+            this.printNomenclatureBtn.Id = 10;
+            this.printNomenclatureBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printNomenclatureBtn.LargeGlyph")));
+            this.printNomenclatureBtn.Name = "printNomenclatureBtn";
+            this.printNomenclatureBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printNomenclatureBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printNomenclatureBtn_ItemClick);
+            // 
             // NomenclaturesFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -692,5 +703,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn unitPriceCol;
         private DevExpress.XtraGrid.Columns.GridColumn quantityCol;
         private DevExpress.XtraCharts.ChartControl chartControl;
+        private DevExpress.XtraBars.BarButtonItem printNomenclatureBtn;
     }
 }

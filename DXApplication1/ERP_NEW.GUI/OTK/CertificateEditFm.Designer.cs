@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CertificateEditFm));
             this.certificateNumberTbox = new DevExpress.XtraEditors.TextEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -50,7 +51,7 @@
             this.openFileBtn = new DevExpress.XtraEditors.SimpleButton();
             this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.closeBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.clearTwoBtn = new DevExpress.XtraEditors.SimpleButton();
             this.fileNameTwoTBox = new DevExpress.XtraEditors.TextEdit();

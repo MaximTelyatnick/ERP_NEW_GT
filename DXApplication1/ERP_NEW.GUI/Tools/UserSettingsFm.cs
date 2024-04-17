@@ -27,11 +27,13 @@ namespace ERP_NEW.GUI.Tools
         {
             InitializeComponent();
             logService = Program.kernel.Get<ILogService>();
-            //SkinHelper.InitSkinGallery(galleryControl1);
+
             UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
             useSimpleEmmloyeeSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "UserUsedSimpleEmployeeForm", true, DataSourceUpdateMode.OnPropertyChanged);
             userRouteFolderEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "UserFolderRoute", true, DataSourceUpdateMode.OnPropertyChanged);
             appSkinEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "ApplicationSkinName", true, DataSourceUpdateMode.OnPropertyChanged);
+
+
         }
 
         private void openFileBtn_Click(object sender, EventArgs e)
@@ -50,8 +52,6 @@ namespace ERP_NEW.GUI.Tools
             
             SkinHelper.InitSkinPopupMenu(SkinsLink);
         }
-
-
 
         private void UserSettingsFm_FormClosing(object sender, FormClosingEventArgs e)
         {

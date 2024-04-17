@@ -16,6 +16,8 @@ using ERP_NEW.BLL.Infrastructure;
 using ERP_NEW.BLL.DTO.SelectedDTO;
 using DevExpress.Charts.Model;
 using DevExpress.XtraCharts;
+using DevExpress.XtraPrinting;
+using System.IO;
 
 namespace ERP_NEW.GUI.Classifiers
 {
@@ -25,31 +27,23 @@ namespace ERP_NEW.GUI.Classifiers
 
         private List<NomenclaturesDTO> nomenclaturesList = new List<NomenclaturesDTO>();
         private IEnumerable<ReceiptHistoryOrdersDTO> receiptsByNomenclaturesId;
-
-        
+ 
         private BindingSource nomenclaturesGroupTreeBS = new BindingSource();
         private BindingSource nomenclaturesMaterialsBS = new BindingSource();
         private BindingSource receiptByNomenclatureBS = new BindingSource();
 
         private bool checkNomenclature;
 
-
         private UserTasksDTO _userTasksDTO;
 
         public NomenclaturesFm(UserTasksDTO userTasksDTO, bool checkNomenclature = false)
         {
             InitializeComponent();
-
             splashScreenManager.ShowWaitForm();
-
             this.checkNomenclature = checkNomenclature;
-
             _userTasksDTO = userTasksDTO;
-
             LoadGroupsData();
-
             AuthorizatedUserAccess();
-
             splashScreenManager.CloseWaitForm();
         }
 
@@ -72,20 +66,27 @@ namespace ERP_NEW.GUI.Classifiers
         private void LoadNomenclatureMaterials(int Id)
         {
             nomenclaturesMaterialGridView.BeginDataUpdate();
-
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
             nomenclaturesList = storeHouseService.GetAllNomenclaturesMaterials(Id).ToList();
             nomenclaturesMaterialsBS.DataSource = nomenclaturesList;
             nomenclaturesMaterialGrid.DataSource = nomenclaturesMaterialsBS;
-
             nomenclaturesMaterialGridView.EndDataUpdate();
         }
 
         private void LoadGroupsData()
         {
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
-            nomenclaturesGroupTreeBS.DataSource = storeHouseService.GetAllNomenclaturesGroups();
+
+            List<NomenclatureGroupsDTO> nomenclatureGroupList = storeHouseService.GetAllNomenclaturesGroups().ToList();
+            nomenclatureGroupList.Insert(0,new NomenclatureGroupsDTO
+            {
+                Id = -1,
+                Name = "Усі"
+            });
+
+            nomenclaturesGroupTreeBS.DataSource = nomenclatureGroupList;
             nomenclatureGroupTree.DataSource = nomenclaturesGroupTreeBS;
+            nomenclatureGroupTree.RootValue = -1;
             nomenclatureGroupTree.KeyFieldName = "Id";
             nomenclatureGroupTree.ParentFieldName = "Parent_Id";
             nomenclatureGroupTree.ExpandAll();
@@ -103,11 +104,8 @@ namespace ERP_NEW.GUI.Classifiers
                 {
                     NomenclatureGroupsDTO return_Id = nomenclaturesGroupEditFm.Return();
                     nomenclatureGroupTree.BeginUpdate();
-
                     LoadGroupsData();
-
                     nomenclatureGroupTree.EndUpdate();
-
                     nomenclatureGroupTree.SetFocusedNode(nomenclatureGroupTree.FindNodeByKeyID(return_Id));
                 }
             }   
@@ -121,12 +119,8 @@ namespace ERP_NEW.GUI.Classifiers
                 {
                     NomenclaturesDTO return_Id = nomenclaturesMaterialsEditFm.Return();
                     nomenclaturesMaterialGrid.BeginUpdate();
-
                     LoadNomenclatureMaterials((int)nomenclatureGroupTree.FocusedNode[nomenclatureGroupTree.KeyFieldName]);
-
-                    nomenclaturesMaterialGrid.EndUpdate();
-
-                    
+                    nomenclaturesMaterialGrid.EndUpdate();      
                 }
             }
         }
@@ -139,9 +133,7 @@ namespace ERP_NEW.GUI.Classifiers
                 if (MessageBox.Show("Видалити групу?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     storeHouseService = Program.kernel.Get<IStoreHouseService>();
-
                     nomenclatureGroupTree.BeginUpdate();
-
                     if (storeHouseService.NomenclatureGroupDelete(((NomenclatureGroupsDTO)nomenclaturesGroupTreeBS.Current).Id))
                     {
                         LoadGroupsData();
@@ -161,14 +153,9 @@ namespace ERP_NEW.GUI.Classifiers
                     storeHouseService = Program.kernel.Get<IStoreHouseService>();
                     int rowHandle = nomenclaturesMaterialGridView.FocusedRowHandle - 1;
                     nomenclaturesMaterialGridView.BeginDataUpdate();
-
                     storeHouseService.NomenclatureMaterialsDelete(((NomenclaturesDTO)nomenclaturesMaterialsBS.Current).ID);
-
                     LoadNomenclatureMaterials((int)nomenclatureGroupTree.FocusedNode[nomenclatureGroupTree.KeyFieldName]);
-
-
                     nomenclaturesMaterialGridView.EndDataUpdate();
-
                     nomenclaturesMaterialGridView.FocusedRowHandle = (nomenclaturesMaterialGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
                 }
             }
@@ -280,15 +267,35 @@ namespace ERP_NEW.GUI.Classifiers
 
         }
 
-        //private void NomenclaturesFm_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    //DialogResult = DialogResult.Cancel;
-        //}
+        private void printNomenclatureBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            using (SaveFileDialog saveDialog = new SaveFileDialog())
+            {
+                    string exportFilePath = Utils.HomePath + @"\Temp\" + "Список номенклатур за " + DateTime.Now.ToShortDateString()+".xls";
+                    var optionXls = new XlsExportOptions();
+                    optionXls.ExportMode = XlsExportMode.SingleFilePageByPage;
+                    optionXls.SheetName = "Залишки за надходженнями";
+                    optionXls.TextExportMode = DevExpress.XtraPrinting.TextExportMode.Text;
+                    nomenclaturesMaterialGrid.ExportToXls(exportFilePath, optionXls);
 
-        //private void NomenclaturesFm_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    DialogResult = DialogResult.Cancel;
-        //}
-
+                    if (File.Exists(exportFilePath))
+                    {
+                        try
+                        {
+                            System.Diagnostics.Process.Start(exportFilePath);
+                        }
+                        catch
+                        {
+                            String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Шлях: " + exportFilePath;
+                            MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Шлях: " + exportFilePath;
+                        MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+            }
+        }
     }
 }
