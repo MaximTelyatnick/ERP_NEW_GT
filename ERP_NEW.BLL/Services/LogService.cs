@@ -1,16 +1,15 @@
 ﻿using AutoMapper;
 using ERP_NEW.BLL.DTO.ModelsDTO;
 using ERP_NEW.BLL.DTO.SelectedDTO;
+using ERP_NEW.BLL.Infrastructure;
 using ERP_NEW.BLL.Interfaces;
 using ERP_NEW.DAL.Entities.Models;
 using ERP_NEW.DAL.Entities.QueryModels;
 using ERP_NEW.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ERP_NEW.BLL.Services
 {
@@ -71,10 +70,11 @@ namespace ERP_NEW.BLL.Services
             {
                 string procName = "CREATE TABLE \"Log\" ( " +
                                "\"Id\" INT NOT NULL PRIMARY KEY, " +
-                               "\"Info\" VARCHAR(255), " +
-                               "\"FormName\" VARCHAR(255), " +
+                               "\"Level\" VARCHAR(10), " +
+                               "\"Info\" VARCHAR(1024), " +
+                               "\"FormName\" VARCHAR(50), " +
                                "\"UserId\" INT, " +
-                               "\"LogTime\" TIMESTAMP);";
+                               "\"LogTime\" DATE);";
 
                 log.SQLExecute(procName);
 
@@ -109,6 +109,32 @@ namespace ERP_NEW.BLL.Services
                 return true;
             else
                 return false;
+        }
+
+        public int CreateLogRecord(string message, Utils.Level level, UserTasksDTO user, string formName)
+        {
+            LogDTO logRecord = new LogDTO();
+
+            switch (level)
+            {
+                case Utils.Level.Error:
+                    logRecord.Level = "Error";
+                    break;
+                case Utils.Level.Info:
+                    logRecord.Level = "Info";
+                    break;
+                case Utils.Level.Warning:
+                    logRecord.Level = "Warning";
+                    break;
+                default:
+                    break;
+            }
+
+            logRecord.FormName = formName;
+            logRecord.Info = message;
+            logRecord.LogTime = DateTime.Now;
+            logRecord.UserId = user.UserId;
+            return LogCreate(logRecord);
         }
 
         #region Log CRUD method's

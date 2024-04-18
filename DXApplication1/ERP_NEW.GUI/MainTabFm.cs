@@ -931,6 +931,19 @@ namespace ERP_NEW.GUI
 
         private void userFotoEdit_Click(object sender, EventArgs e)
         {
+            UserTasksDTO userTasksDTO = userAccess
+                .Select(s => new UserTasksDTO
+                {
+                    UserTaskId = s.UserTaskId,
+                    UserRoleId = s.UserRoleId,
+                    UserId = s.UserId,
+                    PriceAttribute = s.PriceAttribute,
+                    AccessRightId = s.AccessRightId
+                })
+                .FirstOrDefault();
+
+            string path = Utils.HomePath;
+
             UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO);
             userSettingsFm.ShowDialog();
         }

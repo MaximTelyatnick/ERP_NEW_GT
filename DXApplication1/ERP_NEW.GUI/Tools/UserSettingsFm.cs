@@ -23,15 +23,19 @@ namespace ERP_NEW.GUI.Tools
     public partial class UserSettingsFm : DevExpress.XtraEditors.XtraForm
     {
         private ILogService logService;
+        public UserTasksDTO userTasksDTO;
         public UserSettingsFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
             logService = Program.kernel.Get<ILogService>();
+            this.userTasksDTO = userTasksDTO;
 
             UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
             useSimpleEmmloyeeSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "UserUsedSimpleEmployeeForm", true, DataSourceUpdateMode.OnPropertyChanged);
             userRouteFolderEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "UserFolderRoute", true, DataSourceUpdateMode.OnPropertyChanged);
             appSkinEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "ApplicationSkinName", true, DataSourceUpdateMode.OnPropertyChanged);
+            if (logService.CheckTable("Log"))
+                logerTableCheck.EditValue = true;
 
 
         }
@@ -79,9 +83,16 @@ namespace ERP_NEW.GUI.Tools
         {
             logService.CreateTable();
             if (logService.CheckTable("Log"))
+            {
                 MessageBox.Show("Таблицю \"Log\" створено");
+                logerTableCheck.EditValue = true;
+                logService.CreateLogRecord("Створено таблицю Log", BLL.Infrastructure.Utils.Level.Info, userTasksDTO, "UserSettingsFm");
+            }
             else
+            {
                 MessageBox.Show("Таблицю \"Log\" не створено");
+                logerTableCheck.EditValue = false;
+            }
         }
 
         private void clearBtn_Click(object sender, EventArgs e)

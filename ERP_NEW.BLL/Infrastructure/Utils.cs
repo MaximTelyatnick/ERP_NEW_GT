@@ -21,6 +21,14 @@ namespace ERP_NEW.BLL.Infrastructure
             Info
         };
 
+
+        public enum Level
+        {
+            Info,
+            Error,
+            Warning
+        };
+
         public enum MouseEvent
         {
             MOUSEEVENTF_LEFTDOWN = 0x02,

@@ -57,6 +57,7 @@
             this.logerTabPage = new DevExpress.XtraTab.XtraTabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.createLogerTableBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.logerTableCheck = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).BeginInit();
@@ -67,6 +68,7 @@
             this.mainTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).BeginInit();
             this.logerTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logerTableCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // useSimpleEmmloyeeSwitch
@@ -271,6 +273,7 @@
             // 
             // logerTabPage
             // 
+            this.logerTabPage.Controls.Add(this.logerTableCheck);
             this.logerTabPage.Controls.Add(this.label5);
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
@@ -296,6 +299,16 @@
             this.createLogerTableBtn.TabIndex = 0;
             this.createLogerTableBtn.Text = "Create";
             this.createLogerTableBtn.Click += new System.EventHandler(this.createLogerTableBtn_Click);
+            // 
+            // logerTableCheck
+            // 
+            this.logerTableCheck.Location = new System.Drawing.Point(446, 17);
+            this.logerTableCheck.MenuManager = this.barManager1;
+            this.logerTableCheck.Name = "logerTableCheck";
+            this.logerTableCheck.Properties.Caption = "";
+            this.logerTableCheck.Properties.ReadOnly = true;
+            this.logerTableCheck.Size = new System.Drawing.Size(17, 19);
+            this.logerTableCheck.TabIndex = 88;
             // 
             // UserSettingsFm
             // 
@@ -328,6 +341,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).EndInit();
             this.logerTabPage.ResumeLayout(false);
             this.logerTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logerTableCheck.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,5 +376,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.SimpleButton createLogerTableBtn;
+        private DevExpress.XtraEditors.CheckEdit logerTableCheck;
     }
 }
