@@ -462,7 +462,7 @@ namespace ERP_NEW.GUI.Accounting
 
             if (e.Column == flagImageCol && e.IsGetData)
             {
-                if (item.Id != null)
+                if (item.Id != -1)
                 {
                     if (item.Flag == 0)
                         e.Value = imageCollection.Images[0];

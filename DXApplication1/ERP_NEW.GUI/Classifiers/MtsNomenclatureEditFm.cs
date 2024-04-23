@@ -97,7 +97,7 @@ namespace ERP_NEW.GUI.Classifiers
         private void LoadData()
         {
             mtsNomenclaturesService = Program.kernel.Get<IMtsNomenclaturesService>();
-
+            unitsService = Program.kernel.Get<IUnitsService>();
             gostsBS.DataSource = mtsNomenclaturesService.GetGosts();
             nomenclatureGroupsBS.DataSource = mtsNomenclaturesService.GetNomenclatureGroups();
             unitsBS.DataSource = mtsNomenclaturesService.GetUnits();

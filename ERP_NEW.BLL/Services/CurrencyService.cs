@@ -72,7 +72,7 @@ namespace ERP_NEW.BLL.Services
 
         public decimal GetCurrencyRateByDate(string currencyName, DateTime rateDate)
         {
-            decimal currencyRate = 0.00m;
+            //decimal currencyRate = 0.00m;
             List<CurencyJSONDTO> account = new List<CurencyJSONDTO>();
             try
             {

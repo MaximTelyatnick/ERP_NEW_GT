@@ -100,6 +100,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
                 saveDialog.Filter = "Excel (2010)(.xlsx)|*.xlsx|Excel (2003) (.xls)|*.xls";
+
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
                     string exportFilePath = saveDialog.FileName;

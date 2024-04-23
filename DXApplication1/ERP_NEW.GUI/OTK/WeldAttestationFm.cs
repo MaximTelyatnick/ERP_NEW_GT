@@ -218,7 +218,7 @@ namespace ERP_NEW.GUI.OTK
 
                     attestationTree.BeginUpdate();
 
-                    if (weldStampsService.RemoveWeldAttestationsById(((WeldAttestationTreeInfoDTO)weldTreeBS.Current).Id));
+                    if (weldStampsService.RemoveWeldAttestationsById(((WeldAttestationTreeInfoDTO)weldTreeBS.Current).Id))
                         LoadAttestationData();
 
                     attestationTree.EndUpdate();

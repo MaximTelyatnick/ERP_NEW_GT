@@ -112,7 +112,7 @@ namespace ERP_NEW.GUI.Classifiers
                     int rowHandle = basisJournalGridView.FocusedRowHandle - 1;
                     basisJournalGridView.BeginDataUpdate();
 
-                    if ((((CashBookBasisTypeDTO)basisBS.Current).Id) != null)
+                    if ((((CashBookBasisTypeDTO)basisBS.Current).Id) != -1)
                     {
                         cashBookService.CashBookBasisDelete(((CashBookBasisTypeDTO)basisBS.Current).Id);
                     }

@@ -721,25 +721,50 @@ namespace ERP_NEW.BLL.Services
 
         public IEnumerable<NomenclaturesDTO> GetAllNomenclaturesMaterials(int id)
         {
-            var query = (from nom in nomenclatures.GetAll()
-                         join unt in units.GetAll() on nom.UnitId equals unt.UnitId into untt
-                         from unt in untt.DefaultIfEmpty()
-                         join ac in accounts.GetAll() on nom.BALANCE_ACCOUNT_ID equals ac.ID
-                         where nom.Nomencl_Group_Id == id
-                         select new NomenclaturesDTO()
-                         {
-                             ID = nom.ID,
-                             BALANCE_ACCOUNT_ID = ac.ID,
-                             Num = ac.NUM,
-                             UnitId = unt.UnitId,
-                             UnitLocalName = unt.UnitLocalName,
-                             Nomenclature = nom.NOMENCLATURE,
-                             Nomencl_Group_Id = nom.Nomencl_Group_Id,
-                             Name = nom.NAME
+            if (id == -1)
+            {
 
-                         });
+                var query = (from nom in nomenclatures.GetAll()
+                             join unt in units.GetAll() on nom.UnitId equals unt.UnitId into untt
+                             from unt in untt.DefaultIfEmpty()
+                             join ac in accounts.GetAll() on nom.BALANCE_ACCOUNT_ID equals ac.ID
+                             select new NomenclaturesDTO()
+                             {
+                                 ID = nom.ID,
+                                 BALANCE_ACCOUNT_ID = ac.ID,
+                                 Num = ac.NUM,
+                                 UnitId = unt.UnitId,
+                                 UnitLocalName = unt.UnitLocalName,
+                                 Nomenclature = nom.NOMENCLATURE,
+                                 Nomencl_Group_Id = nom.Nomencl_Group_Id,
+                                 Name = nom.NAME
 
-            return query.ToList();
+                             });
+
+                return query.ToList();
+            }
+            else
+            {
+                var query = (from nom in nomenclatures.GetAll()
+                             join unt in units.GetAll() on nom.UnitId equals unt.UnitId into untt
+                             from unt in untt.DefaultIfEmpty()
+                             join ac in accounts.GetAll() on nom.BALANCE_ACCOUNT_ID equals ac.ID
+                             where nom.Nomencl_Group_Id == id
+                             select new NomenclaturesDTO()
+                             {
+                                 ID = nom.ID,
+                                 BALANCE_ACCOUNT_ID = ac.ID,
+                                 Num = ac.NUM,
+                                 UnitId = unt.UnitId,
+                                 UnitLocalName = unt.UnitLocalName,
+                                 Nomenclature = nom.NOMENCLATURE,
+                                 Nomencl_Group_Id = nom.Nomencl_Group_Id,
+                                 Name = nom.NAME
+
+                             });
+
+                return query.ToList();
+            }
         }
 
 
@@ -1167,7 +1192,7 @@ namespace ERP_NEW.BLL.Services
                              BalanceAccountId = acc.ID,
                              BalanceAccountNum = acc.NUM,
                              CustomerOrderId = esh.CustomerOrderId,
-                             CustomerOrderNumber = esh.CustomerOrderId != null ? cus.OrderNumber : e.EmployeeID != null ? "0 (" + ed.LastName + " " + ed.FirstName.Substring(0, 1) + ". " + ed.MiddleName.Substring(0, 1) + "." + ")" : "0",
+                             CustomerOrderNumber = esh.CustomerOrderId != null ? cus.OrderNumber : esh.EmployeeId != null ? "0 (" + ed.LastName + " " + ed.FirstName.Substring(0, 1) + ". " + ed.MiddleName.Substring(0, 1) + "." + ")" : "0",
                              ExpDate = esh.ExpDate,
                              NomenclatureId = nom.ID,
                              Nomenclature = nom.NOMENCLATURE,

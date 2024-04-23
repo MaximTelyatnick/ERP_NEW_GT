@@ -49,10 +49,10 @@ namespace ERP_NEW.GUI.Production
             beginDateItem.EditValue = firstDay;
             endDateItem.EditValue = lastDay.AddMonths(1).AddDays(-1);
 
-            Load();
+            LoadData();
             
         }
-        private void Load()
+        private void LoadData()
         {
             paintingWorksGridView.BeginDataUpdate();
             projectDetailsService = Program.kernel.Get<IProjectDetailsService>();
@@ -70,7 +70,7 @@ namespace ERP_NEW.GUI.Production
                 if (paintingWorksEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     int return_Id = paintingWorksEditFm.Return();
-                    Load();                    
+                    LoadData();                    
                     int rowHandle = paintingWorksGridView.LocateByValue("Id", return_Id);
                     paintingWorksGridView.FocusedRowHandle = rowHandle;
                 }
@@ -89,7 +89,7 @@ namespace ERP_NEW.GUI.Production
                     {
                         int rowHandle = paintingWorksGridView.FocusedRowHandle - 1;
                         paintingWorksGridView.BeginDataUpdate();
-                        Load();
+                        LoadData();
                         paintingWorksGridView.EndDataUpdate();
                         paintingWorksGridView.FocusedRowHandle = (paintingWorksGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
                     }

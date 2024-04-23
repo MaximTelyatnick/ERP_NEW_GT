@@ -1754,7 +1754,7 @@ namespace ERP_NEW.BLL.Services
             var Worksheet = Workbook.Worksheets[0];
             var Сells = Worksheet.Cells;
             IRange cells = Worksheet.Cells;
-            string strInn = "";
+            //string strInn = "";
            
             Dictionary<string, byte> HeaderColumn = new Dictionary<string, byte>();
  
@@ -1765,9 +1765,6 @@ namespace ERP_NEW.BLL.Services
             Сells["H20"].Value = source.PurposeName;
             Сells["J35"].Value = source.DecreeDate;
             Сells["O35"].Value = source.DecreeNumber;
-            
-            
-            char sym;
 
             //if (source.IdentNumber != "" && source.IdentNumber != null)
             //{
@@ -3009,11 +3006,11 @@ namespace ERP_NEW.BLL.Services
             int recCount = source.Count();
             Dictionary<string, byte> HeaderColumn = new Dictionary<string, byte>();
             int startPosition = 4, currentPosition = startPosition + 2;
-            byte startHeaderPosition = 1;
+            //byte startHeaderPosition = 1;
 
             
 
-            int currentColumn = 2;
+            //int currentColumn = 2;
 
             Сells["A" + 4].Value = "за " + statementDate + " року";
             Сells["A" + 4].HorizontalAlignment = HAlign.Center;
@@ -3388,8 +3385,8 @@ namespace ERP_NEW.BLL.Services
             var Сells = Worksheet.Cells;
 
 
-            decimal SumDebit = 0;
-            decimal SumCredit = 0;
+            //decimal SumDebit = 0;
+            //decimal SumCredit = 0;
 
             Сells["C" + 2].Value = RuDateAndMoneyConverter.DateToTextLong(cashBookPageDTO.PageDate);
             Сells["C" + 2].HorizontalAlignment = HAlign.Center;
@@ -5758,9 +5755,9 @@ namespace ERP_NEW.BLL.Services
 
             int contractorId = 0;
             int employeesId = 0;
-            string account = "";
+            //string account = "";
             int startContractor = currentPosition;
-            int sumPosition = 0;
+            //int sumPosition = 0;
 
             decimal startDebit = 0, startDebitCurrencyRUB = 0, startDebitCurrencyEUR = 0, startDebitCurrencyUSD = 0,
                     startCredit = 0, startCreditCurrencyRUB = 0, startCreditCurrencyEUR = 0, startCreditCurrencyUSD = 0,
@@ -6029,9 +6026,9 @@ namespace ERP_NEW.BLL.Services
 
             int contractorId = 0;
             int employeesId = 0;
-            string account = "";
+            //string account = "";
             int startContractor = currentPosition;
-            int sumPosition = 0;
+            //int sumPosition = 0;
 
             decimal startDebit = 0, startCredit = 0, endDebit = 0, endCredit = 0, debitPeriod = 0, creditPeriod = 0;
 
@@ -10875,7 +10872,7 @@ namespace ERP_NEW.BLL.Services
   
         public IEnumerable<MSTrialBalanceByAccountsDTO> GetCreditDebit63ForChess(DateTime startDate, DateTime endDate, string PFlag1, string Flag3, string Flag4, string PFlag3, string PFlag4)
         {
-            decimal credit63;
+            //decimal credit63;
             FbParameter[] Parameters =
                 {
                     new FbParameter("Start_Date", startDate),
@@ -11552,7 +11549,7 @@ namespace ERP_NEW.BLL.Services
             int captionPosition = 6;
             int startPosition = captionPosition + 2;
             int startSaldoPosition = 7;
-            int endSaldoPosition = 0;
+            //int endSaldoPosition = 0;
             int currentPosition = startPosition + 3;
             byte startHeaderPosition = 1;
 
@@ -14122,7 +14119,6 @@ namespace ERP_NEW.BLL.Services
         public void PrintFixedAssetsOderNew(FixedAssetsOrderJournalDTO model, List<FixedAssetsMaterialsDTO> materialsListSource, DateTime endDate, DateTime firstDay)
         {
             List<FixedAssetsMaterialsDTO> materialsList = new List<FixedAssetsMaterialsDTO>();
-            string typeMaterial = "";
             string templateName = " ";
             templateName = @"\Templates\FixedAssetsInventoryCartTemplate.xls";
 
@@ -14133,7 +14129,7 @@ namespace ERP_NEW.BLL.Services
             
             string indexRowStr;
 
-            if (model.Id == null)
+            if (model.Id == 0)
             {
                 MessageBox.Show("За обраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -14361,7 +14357,7 @@ namespace ERP_NEW.BLL.Services
             int indexRow = startRow + 1;
             string indexRowStr;
 
-            if (model.Id == null)
+            if (model.Id == -1)
             {
                 MessageBox.Show("За обраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -14672,7 +14668,7 @@ namespace ERP_NEW.BLL.Services
             IRange cellsSecond = WorksheetSecond.Cells;
 
             List<FixedAssetsMaterialsDTO> newMaterialsList = new List<FixedAssetsMaterialsDTO>();
-            decimal sumPrice = 0;
+            //decimal sumPrice = 0;
             float percentUsefullMonth = (100 / (Convert.ToInt16(model.UsefulMonth) / 12));
 
             int rows = 120;
@@ -14865,8 +14861,8 @@ namespace ERP_NEW.BLL.Services
             SpreadsheetGear.IWorksheet worksheet = workbook.Worksheets[0];
             SpreadsheetGear.IRange cells = worksheet.Cells;
 
-            int rows = 120;
-            int cols = 31;
+            //int rows = 120;
+            //int cols = 31;
             DateTime dt = DateTime.Now;
             DateTime amortizationDate = new DateTime(((DateTime)model.DateOrder).Year, ((DateTime)model.DateOrder).Month, 1);
             amortizationDate = amortizationDate.AddMonths(1);

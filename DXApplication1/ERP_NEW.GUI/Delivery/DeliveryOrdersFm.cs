@@ -60,7 +60,7 @@ namespace ERP_NEW.GUI.Delivery
             repositoryItemLookUpEdit.DataSource = ordersBS;
             repositoryItemLookUpEdit.ValueMember = "RecId";
             repositoryItemLookUpEdit.DisplayMember = "ReceiptNum";
-            repositoryItemLookUpEdit.Properties.NullText = "";
+            repositoryItemLookUpEdit.NullText = "";
 
 
 

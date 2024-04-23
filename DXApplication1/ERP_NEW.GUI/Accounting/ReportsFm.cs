@@ -1393,7 +1393,7 @@ namespace ERP_NEW.GUI.Accounting
                 //    return;
                 //}
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

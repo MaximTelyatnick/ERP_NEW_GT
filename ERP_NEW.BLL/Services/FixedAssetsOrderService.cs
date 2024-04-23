@@ -313,7 +313,7 @@ namespace ERP_NEW.BLL.Services
         }
         public bool GetContainFixedAssetsMaterials(int idItem)
         {
-            if (idItem != null && idItem != 0)
+            if (idItem != 0)
             {
                 var list = fixedAssetsMaterials.GetAll().Where(c => c.Expenditures_Id == idItem);
                 if (list.Count() > 0)
@@ -350,7 +350,6 @@ namespace ERP_NEW.BLL.Services
                 });
 
             return rezult.ToList();
-            //return mapper.Map<IEnumerable<FixedAssetsNoAmort>, List<FixedAssetsNoAmortDTO>>(fixedAssetsNoAmort.GetAll().Where(srt => srt.FixedAssetId == fixedAssetsOrderId));
         }
 
 

@@ -44,6 +44,7 @@
             this.editGroupBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteGroupBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addSubGroupBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.printNomenclatureBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -115,10 +116,11 @@
             this.addGroupBtn,
             this.editGroupBtn,
             this.deleteGroupBtn,
-            this.addSubGroupBtn});
+            this.addSubGroupBtn,
+            this.printNomenclatureBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbonControl1.MaxItemId = 10;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -198,6 +200,16 @@
             this.addSubGroupBtn.Name = "addSubGroupBtn";
             this.addSubGroupBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addSubGroupBtn_ItemClick);
             // 
+            // printNomenclatureBtn
+            // 
+            this.printNomenclatureBtn.Caption = "Друк номенклатури";
+            this.printNomenclatureBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("printNomenclatureBtn.Glyph")));
+            this.printNomenclatureBtn.Id = 10;
+            this.printNomenclatureBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("printNomenclatureBtn.LargeGlyph")));
+            this.printNomenclatureBtn.Name = "printNomenclatureBtn";
+            this.printNomenclatureBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.printNomenclatureBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.printNomenclatureBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -229,6 +241,7 @@
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
+            this.ribbonPageGroup2.ItemLinks.Add(this.printNomenclatureBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
@@ -291,7 +304,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.xtraTabControl1);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(854, 473);
+            this.splitContainerControl2.Size = new System.Drawing.Size(853, 473);
             this.splitContainerControl2.SplitterPosition = 264;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -305,7 +318,7 @@
             this.nomenclaturesMaterialGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nomenclaturesMaterialGrid.MenuManager = this.ribbonControl1;
             this.nomenclaturesMaterialGrid.Name = "nomenclaturesMaterialGrid";
-            this.nomenclaturesMaterialGrid.Size = new System.Drawing.Size(854, 264);
+            this.nomenclaturesMaterialGrid.Size = new System.Drawing.Size(853, 264);
             this.nomenclaturesMaterialGrid.TabIndex = 0;
             this.nomenclaturesMaterialGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.nomenclaturesMaterialGridView});
@@ -320,7 +333,6 @@
             this.numCol});
             this.nomenclaturesMaterialGridView.GridControl = this.nomenclaturesMaterialGrid;
             this.nomenclaturesMaterialGridView.Name = "nomenclaturesMaterialGridView";
-            this.nomenclaturesMaterialGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.nomenclaturesMaterialGridView.OptionsView.ShowAutoFilterRow = true;
             this.nomenclaturesMaterialGridView.OptionsView.ShowGroupedColumns = true;
             this.nomenclaturesMaterialGridView.OptionsView.ShowGroupPanel = false;
@@ -388,7 +400,7 @@
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
             this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControl1.Size = new System.Drawing.Size(854, 204);
+            this.xtraTabControl1.Size = new System.Drawing.Size(853, 203);
             this.xtraTabControl1.TabIndex = 1;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -400,7 +412,7 @@
             this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.xtraTabPage1.Size = new System.Drawing.Size(848, 176);
+            this.xtraTabPage1.Size = new System.Drawing.Size(847, 175);
             this.xtraTabPage1.Text = "Графік цін ";
             // 
             // chartControl
@@ -474,7 +486,7 @@
             this.chartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
             this.chartControl.SeriesTemplate.ArgumentDataMember = "OrderDate";
-            this.chartControl.Size = new System.Drawing.Size(840, 168);
+            this.chartControl.Size = new System.Drawing.Size(839, 167);
             this.chartControl.TabIndex = 0;
             // 
             // xtraTabPage2
@@ -514,7 +526,6 @@
             this.dateCol});
             this.recieptArchibeGridView.GridControl = this.recieptArchiveGrid;
             this.recieptArchibeGridView.Name = "recieptArchibeGridView";
-            this.recieptArchibeGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.recieptArchibeGridView.OptionsView.ShowGroupPanel = false;
             // 
             // nomenclatureArchivCol
@@ -692,5 +703,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn unitPriceCol;
         private DevExpress.XtraGrid.Columns.GridColumn quantityCol;
         private DevExpress.XtraCharts.ChartControl chartControl;
+        private DevExpress.XtraBars.BarButtonItem printNomenclatureBtn;
     }
 }

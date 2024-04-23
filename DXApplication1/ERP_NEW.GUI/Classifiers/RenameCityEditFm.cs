@@ -69,7 +69,7 @@ namespace ERP_NEW.GUI.Classifiers
                 };
                 newModel.Id = cityService.CityCreate(newModel);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return false;
             }

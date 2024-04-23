@@ -143,12 +143,12 @@ namespace ERP_NEW.GUI.Production
             repositoryCustomerOrderEdit.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             repositoryCustomerOrderEdit.ValueMember = "Id";
             repositoryCustomerOrderEdit.DisplayMember = "OrderNumber";
-            repositoryCustomerOrderEdit.Properties.NullText = "Немає данних";
+            repositoryCustomerOrderEdit.NullText = "Немає данних";
 
             repositoryItemGridLookUpEdit1.DataSource = customerOrderService.GetCustomerOrdersFull().OrderByDescending(sort => sort.OrderDate).ToList();
             repositoryItemGridLookUpEdit1.ValueMember = "Id";
             repositoryItemGridLookUpEdit1.DisplayMember = "OrderNumber";
-            repositoryItemGridLookUpEdit1.Properties.NullText = "Немає данних";
+            repositoryItemGridLookUpEdit1.NullText = "Немає данних";
 
             splashScreenManager.CloseWaitForm();
         }
@@ -538,7 +538,7 @@ namespace ERP_NEW.GUI.Production
 
         private void customerOrderChangeBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (customerOrderSetEdit.EditValue != null && customerOrderSetEdit.EditValue != "")
+            if (customerOrderSetEdit.EditValue != null && (String)customerOrderSetEdit.EditValue != String.Empty)
             {
                 var expenditureCustomerOrderUpdate = expedinturesAccountantList.Where(srch => (bool)srch.Selected);
 

@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ninject;
-using System;
-using System.Collections;
-
 using ERP_NEW.BLL.Interfaces;
-using ERP_NEW.BLL.Services;
-
 using System.Collections.Generic;
 using ERP_NEW.BLL.DTO.ModelsDTO;
 using ERP_NEW.BLL.DTO.SelectedDTO;

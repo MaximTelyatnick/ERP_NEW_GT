@@ -1120,9 +1120,9 @@ namespace ERP_NEW.GUI.Accounting
             sumEdit.EditValue = 0;
             quantityEdit.EditValue = 0;
 
-            if ((projectEdit.EditValue == "") && (nomenclatureEdit.Text.Contains("22")))
+            if ((projectEdit.Text == "") && (nomenclatureEdit.Text.Contains("22")))
                 creditEdit.EditValue = 19;
-            else if(projectEdit.EditValue == "")
+            else if(projectEdit.Text == "")
                 creditEdit.EditValue = null;
         }
 

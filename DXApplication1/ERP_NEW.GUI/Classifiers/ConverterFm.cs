@@ -58,7 +58,7 @@ namespace ERP_NEW.GUI.Classifiers
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
                 obj = null;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 obj = null;
             }
@@ -150,7 +150,7 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
         excel.Visible = true;
         excel.DisplayAlerts = true;  
     }
-    catch (Exception ex)
+    catch (Exception)
     {
         throw;
     }
@@ -185,7 +185,7 @@ private void ExportDataTableToExcel(System.Data.DataTable table, string Xlfile, 
                 }
                 Dt = ds.Tables[indexTableMaxRow];
              }  
-            catch (Exception ex)  
+            catch (Exception)  
             {  
 
             }  
