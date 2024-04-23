@@ -370,7 +370,7 @@ namespace ERP_NEW.DAL.EF
             //};
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
+                DataSource = "10.0.0.50",
                 //Database = "TVM_DB",
                 //UserID = "sysdba",
                 //Password = "masterkey",
