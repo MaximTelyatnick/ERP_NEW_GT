@@ -54,7 +54,7 @@ namespace ERP_NEW.GUI
 
             try
             {
-                TelegramMessage.SendMessageToTelegram();
+                //TelegramMessage.SendMessageToTelegram();
                 Application.Run(new MainTabFm());
             }
             catch (Exception ex)

@@ -77,25 +77,39 @@ namespace ERP_NEW.BLL.Services
                                "\"LogTime\" DATE);";
 
                 log.SQLExecute(procName);
+            }
+            catch (Exception ex)
+            {
 
+            }
 
-                string generatorCreate = "CREATE GENERATOR \"Seq_LogId\"";
+            string generatorCreate = "CREATE GENERATOR \"Seq_LogId\"";
 
+            try
+            {
                 log.SQLExecute(generatorCreate);
+            }
+            catch (Exception ex)
+            {
 
-                string trgiCreate = "CREATE OR ALTER TRIGGER \"Log_BI0\" FOR \"Log\"" +
+            }
+
+            string trgiCreate = "CREATE OR ALTER TRIGGER \"Log_BI0\" FOR \"Log\"" +
                                         "ACTIVE BEFORE INSERT POSITION 0 " +
                                         "AS " +
                                         "begin " +
                                         "NEW.\"Id\" = NEXT VALUE FOR \"Seq_LogId\";" +
                                         "end";
-
+            try
+            {
                 log.SQLExecute(trgiCreate);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return -1;
+
             }
+            
+            
            
             return 0;
             //return mapper.Map<IEnumerable<MtsAssembliesInfo>, List<MtsAssembliesInfoDTO>>(mtsAssembliesInfo.SQLExecuteProc(procName, Parameters));

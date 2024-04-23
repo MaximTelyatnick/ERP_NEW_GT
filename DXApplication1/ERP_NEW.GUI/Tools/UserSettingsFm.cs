@@ -92,6 +92,7 @@ namespace ERP_NEW.GUI.Tools
             {
                 MessageBox.Show("Таблицю \"Log\" не створено");
                 logerTableCheck.EditValue = false;
+                logService.CreateLogRecord("Створено таблицю Log не створено", BLL.Infrastructure.Utils.Level.Info, userTasksDTO, "UserSettingsFm");
             }
         }
 
