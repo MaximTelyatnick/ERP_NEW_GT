@@ -74,7 +74,8 @@ namespace ERP_NEW.BLL.Services
                                "\"Info\" VARCHAR(1024), " +
                                "\"FormName\" VARCHAR(50), " +
                                "\"UserId\" INT, " +
-                               "\"LogTime\" DATE);";
+                               "\"LogTime\" TIME, " +
+                               "\"LogDate\" DATE);";
 
                 log.SQLExecute(procName);
             }
@@ -147,6 +148,7 @@ namespace ERP_NEW.BLL.Services
             logRecord.FormName = formName;
             logRecord.Info = message;
             logRecord.LogTime = DateTime.Now;
+            logRecord.LogDate = DateTime.Now;
             logRecord.UserId = user.UserId;
             return LogCreate(logRecord);
         }

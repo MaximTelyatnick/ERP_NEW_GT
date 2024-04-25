@@ -14,5 +14,6 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public string FormName { get; set; }
         public int UserId { get; set; }
         public DateTime LogTime { get; set; }
+        public DateTime LogDate { get; set; }
     }
 }
