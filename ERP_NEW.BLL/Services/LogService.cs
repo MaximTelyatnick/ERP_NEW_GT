@@ -79,7 +79,7 @@ namespace ERP_NEW.BLL.Services
 
                 log.SQLExecute(procName);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -90,7 +90,7 @@ namespace ERP_NEW.BLL.Services
             {
                 log.SQLExecute(generatorCreate);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -105,7 +105,7 @@ namespace ERP_NEW.BLL.Services
             {
                 log.SQLExecute(trgiCreate);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

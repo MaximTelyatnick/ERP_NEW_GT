@@ -38,11 +38,13 @@ namespace ERP_NEW.GUI.Accounting
 
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
         private List<MonthDetailsDTO> monthInSortedFilter = new List<MonthDetailsDTO>();
+        private const string NameForm = "AccountingInvoicesFm";
 
         private IAccountingInvoicesService accountingInvoicesService;
         private IBusinessTripsService businessTripsService;
         private IReportService reportService;
         private IPeriodService periodService;
+        private ILogService logService;
 
         private BindingSource accountingInvoicesBS = new BindingSource();
         private BindingSource dateBS = new BindingSource();
@@ -87,6 +89,7 @@ namespace ERP_NEW.GUI.Accounting
             splashScreenManager.ShowWaitForm();
 
             accountingInvoicesService = Program.kernel.Get<IAccountingInvoicesService>();
+            logService = Program.kernel.Get<ILogService>();
             invoicesInfoList = accountingInvoicesService.GetInvoices(beginDate, endDate).OrderByDescending(sort => sort.Month_Current).ToList();
             
             List<DateTime> monthList = new List<DateTime>();
@@ -276,7 +279,7 @@ namespace ERP_NEW.GUI.Accounting
        
         private void AddAccountingInvoices(Utils.Operation operation, InvoicesDTO model)
         {
-            using (AccountingInvoicesEditFm accountingInvoicesEditFm = new AccountingInvoicesEditFm(operation, model))
+            using (AccountingInvoicesEditFm accountingInvoicesEditFm = new AccountingInvoicesEditFm(operation, model, userTasksDTO))
             {
                 if (accountingInvoicesEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -294,7 +297,7 @@ namespace ERP_NEW.GUI.Accounting
         {
             if (accountingInvoicesBS.Count != 0)
             {
-                using (AccountingInvoicesEditFm accountingInvoicesEditFm = new AccountingInvoicesEditFm(operation, model))
+                using (AccountingInvoicesEditFm accountingInvoicesEditFm = new AccountingInvoicesEditFm(operation, model, userTasksDTO))
                 {
                     if (accountingInvoicesEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
@@ -706,6 +709,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord(ex.Message, BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                     return;
                 }
             }
@@ -732,10 +736,11 @@ namespace ERP_NEW.GUI.Accounting
                 {
                     currentMonth = ((MonthDetailsDTO)repositoryItemGridLookUpEdit.GetRowByKeyValue((int?)monthFilterGridEdit.EditValue)).NumberMonth;
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Не обрано номер місяця", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     splashScreenManager.CloseWaitForm();
+                    logService.CreateLogRecord(ex.Message, BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                     return;
                 }
                

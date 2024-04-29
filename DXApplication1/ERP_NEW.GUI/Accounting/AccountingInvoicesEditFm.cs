@@ -28,6 +28,9 @@ namespace ERP_NEW.GUI.Accounting
         private IAccountingInvoicesService accountingInvoicesService;
         private IAccountsService accountsService;
         private IPeriodService periodService;
+        private ILogService logService;
+        private UserTasksDTO userTasksDTO;
+        private const string NameForm = "AccountingInvoicesEditFm";
         
         private Utils.Operation operation;
 
@@ -50,13 +53,14 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        public AccountingInvoicesEditFm(Utils.Operation operation, InvoicesDTO model)
+        public AccountingInvoicesEditFm(Utils.Operation operation, InvoicesDTO model, UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
 
             splashScreenManager.ShowWaitForm();
 
             this.operation = operation;
+            this.userTasksDTO = userTasksDTO;
 
             accountInvoicesBS.DataSource = Item = model;
             LoadData();
@@ -130,6 +134,7 @@ namespace ERP_NEW.GUI.Accounting
             accountingInvoicesService = Program.kernel.Get<IAccountingInvoicesService>();
             accountsService = Program.kernel.Get<IAccountsService>();
             periodService = Program.kernel.Get<IPeriodService>();
+            logService = Program.kernel.Get<ILogService>();
         }
 
         public InvoicesDTO Return()
@@ -216,7 +221,8 @@ namespace ERP_NEW.GUI.Accounting
                 }
                 catch (Exception ex)
                 { 
-                    MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("error" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                 }
             }
         }

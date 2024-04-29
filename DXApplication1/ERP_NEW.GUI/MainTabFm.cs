@@ -887,15 +887,15 @@ namespace ERP_NEW.GUI
         private void MainTabFm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserOffline();
-            foreach (string FileName in Directory.GetFiles(Utils.HomePath + @"\Temp\"))
-            {
-                try
-                {
-                   if (Path.GetFileName(FileName) != "Dummy.txt")
-                        File.Delete(FileName);
-                }
-                catch { }
-            }
+            //foreach (string FileName in Directory.GetFiles(Utils.HomePath + @"\Temp\"))
+            //{
+            //    try
+            //    {
+            //       if (Path.GetFileName(FileName) != "Dummy.txt")
+            //            File.Delete(FileName);
+            //    }
+            //    catch { }
+            //}
             Application.Exit();
         }
 
