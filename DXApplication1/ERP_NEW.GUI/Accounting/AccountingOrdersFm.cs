@@ -30,9 +30,12 @@ namespace ERP_NEW.GUI.Accounting
         private BindingSource ordersBS = new BindingSource();
         private BindingSource receiptsBS = new BindingSource();
 
+        private const string NameForm = "AccountingOrdersFm";
+
         private IStoreHouseService storeHouseService;
         private IPeriodService periodService;
         private IBusinessTripsService businessTripsService;
+        private ILogService logService;
 
         private List<AccountOrdersDTO> orderJournalList = new List<AccountOrdersDTO>();
         private List<ReceiptJournalDTO> receiptsJournalList = new List<ReceiptJournalDTO>();
@@ -140,6 +143,7 @@ namespace ERP_NEW.GUI.Accounting
             splashScreenManager.ShowWaitForm();
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
             periodService = Program.kernel.Get<IPeriodService>();
+            logService = Program.kernel.Get<ILogService>();
 
             short? fl1 = Properties.Settings.Default.Flag1 ? Convert.ToInt16(Properties.Settings.Default.Flag1) : (short?)null;
             short? fl2 = Properties.Settings.Default.Flag2 ? Convert.ToInt16(Properties.Settings.Default.Flag2) : (short?)null;
@@ -493,6 +497,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                     return;
                 }
             }
@@ -662,6 +667,7 @@ namespace ERP_NEW.GUI.Accounting
                     catch
                     {
                         String msg = "Не можливо відкрити файл." + Environment.NewLine + Environment.NewLine + "Шлях: " + exportFilePath;
+                        logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                         MessageBox.Show(msg, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
@@ -675,6 +681,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception)
             {
                 MessageBox.Show("Файл вже відкрито! Закрийте файл!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
             }
         }
 

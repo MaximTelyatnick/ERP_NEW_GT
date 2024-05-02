@@ -30,12 +30,16 @@ namespace ERP_NEW.GUI.Accounting
         private IPeriodService periodService;
         private IAccountingOperationService accountingOperationService;
         private ICalcWithBuyersService calcWithBuyersService;
+        private ILogService logService;
+
+        private const string NameForm = "BankPaymentEditFm";
 
         private BindingSource bankPaymentsBS = new BindingSource();
         private BindingSource currencyRatesBS = new BindingSource();
         private BindingSource accountsBS = new BindingSource();
         
         private Utils.Operation _operation;
+        private UserTasksDTO userTasksDTO;
 
         private ObjectBase Item
         {
@@ -47,13 +51,14 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        public BankPaymentEditFm(Utils.Operation operation, Bank_PaymentsDTO model)
+        public BankPaymentEditFm(Utils.Operation operation, Bank_PaymentsDTO model, UserTasksDTO userTaskDTO)
         {
             InitializeComponent();
 
             splashScreenManager.ShowWaitForm();
 
             _operation = operation;
+            this.userTasksDTO = userTaskDTO;
             
             bankPaymentsBS.DataSource = Item = model;
 
@@ -63,6 +68,7 @@ namespace ERP_NEW.GUI.Accounting
             currencyService = Program.kernel.Get<ICurrencyService>();
             accountingOperationService = Program.kernel.Get<IAccountingOperationService>();
             calcWithBuyersService = Program.kernel.Get<ICalcWithBuyersService>();
+            logService = Program.kernel.Get<ILogService>();
 
             currencyRatesBS.DataSource = ((Bank_PaymentsDTO)Item).CurrencyRatesConvertId == null ?
                 new Currency_RatesDTO() { Currency_Id = 1, Multiplicity = 1, CurrencyPayment = 0.00m, Rate = 0.000000m } :
@@ -296,6 +302,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                 return;
             }
         }
@@ -490,6 +497,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні виникла помилка. " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                 }
             }
         }
