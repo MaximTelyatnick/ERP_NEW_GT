@@ -887,15 +887,15 @@ namespace ERP_NEW.GUI
         private void MainTabFm_FormClosing(object sender, FormClosingEventArgs e)
         {
             UserOffline();
-            foreach (string FileName in Directory.GetFiles(Utils.HomePath + @"\Temp\"))
-            {
-                try
-                {
-                   if (Path.GetFileName(FileName) != "Dummy.txt")
-                        File.Delete(FileName);
-                }
-                catch { }
-            }
+            //foreach (string FileName in Directory.GetFiles(Utils.HomePath + @"\Temp\"))
+            //{
+            //    try
+            //    {
+            //       if (Path.GetFileName(FileName) != "Dummy.txt")
+            //            File.Delete(FileName);
+            //    }
+            //    catch { }
+            //}
             Application.Exit();
         }
 
@@ -931,6 +931,19 @@ namespace ERP_NEW.GUI
 
         private void userFotoEdit_Click(object sender, EventArgs e)
         {
+            UserTasksDTO userTasksDTO = userAccess
+                .Select(s => new UserTasksDTO
+                {
+                    UserTaskId = s.UserTaskId,
+                    UserRoleId = s.UserRoleId,
+                    UserId = s.UserId,
+                    PriceAttribute = s.PriceAttribute,
+                    AccessRightId = s.AccessRightId
+                })
+                .FirstOrDefault();
+
+            string path = Utils.HomePath;
+
             UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO);
             userSettingsFm.ShowDialog();
         }

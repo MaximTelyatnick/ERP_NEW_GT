@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashBookRecordEditFm));
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -62,7 +63,7 @@
             this.cashBookBasisEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.cashBookOperationEdit = new DevExpress.XtraEditors.LookUpEdit();
-            this.cashBookRecordValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
+            this.cashBookRecordValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.cashBookAdditionalEdit = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();

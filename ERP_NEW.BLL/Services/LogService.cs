@@ -1,16 +1,15 @@
 ﻿using AutoMapper;
 using ERP_NEW.BLL.DTO.ModelsDTO;
 using ERP_NEW.BLL.DTO.SelectedDTO;
+using ERP_NEW.BLL.Infrastructure;
 using ERP_NEW.BLL.Interfaces;
 using ERP_NEW.DAL.Entities.Models;
 using ERP_NEW.DAL.Entities.QueryModels;
 using ERP_NEW.DAL.Interfaces;
-using FirebirdSql.Data.FirebirdClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ERP_NEW.BLL.Services
 {
@@ -71,31 +70,47 @@ namespace ERP_NEW.BLL.Services
             {
                 string procName = "CREATE TABLE \"Log\" ( " +
                                "\"Id\" INT NOT NULL PRIMARY KEY, " +
-                               "\"Info\" VARCHAR(255), " +
-                               "\"FormName\" VARCHAR(255), " +
+                               "\"Level\" VARCHAR(10), " +
+                               "\"Info\" VARCHAR(1024), " +
+                               "\"FormName\" VARCHAR(50), " +
                                "\"UserId\" INT, " +
-                               "\"LogTime\" TIMESTAMP);";
+                               "\"LogTime\" TIME, " +
+                               "\"LogDate\" DATE);";
 
                 log.SQLExecute(procName);
+            }
+            catch (Exception)
+            {
 
+            }
 
-                string generatorCreate = "CREATE GENERATOR \"Seq_LogId\"";
+            string generatorCreate = "CREATE GENERATOR \"Seq_LogId\"";
 
+            try
+            {
                 log.SQLExecute(generatorCreate);
+            }
+            catch (Exception)
+            {
 
-                string trgiCreate = "CREATE OR ALTER TRIGGER \"Log_BI0\" FOR \"Log\"" +
+            }
+
+            string trgiCreate = "CREATE OR ALTER TRIGGER \"Log_BI0\" FOR \"Log\"" +
                                         "ACTIVE BEFORE INSERT POSITION 0 " +
                                         "AS " +
                                         "begin " +
                                         "NEW.\"Id\" = NEXT VALUE FOR \"Seq_LogId\";" +
                                         "end";
-
+            try
+            {
                 log.SQLExecute(trgiCreate);
             }
             catch (Exception)
             {
-                return -1;
+
             }
+            
+            
            
             return 0;
             //return mapper.Map<IEnumerable<MtsAssembliesInfo>, List<MtsAssembliesInfoDTO>>(mtsAssembliesInfo.SQLExecuteProc(procName, Parameters));
@@ -109,6 +124,33 @@ namespace ERP_NEW.BLL.Services
                 return true;
             else
                 return false;
+        }
+
+        public int CreateLogRecord(string message, Utils.Level level, UserTasksDTO user, string formName)
+        {
+            LogDTO logRecord = new LogDTO();
+
+            switch (level)
+            {
+                case Utils.Level.Error:
+                    logRecord.Level = "Error";
+                    break;
+                case Utils.Level.Info:
+                    logRecord.Level = "Info";
+                    break;
+                case Utils.Level.Warning:
+                    logRecord.Level = "Warning";
+                    break;
+                default:
+                    break;
+            }
+
+            logRecord.FormName = formName;
+            logRecord.Info = message;
+            logRecord.LogTime = DateTime.Now;
+            logRecord.LogDate = DateTime.Now;
+            logRecord.UserId = user.UserId;
+            return LogCreate(logRecord);
         }
 
         #region Log CRUD method's
