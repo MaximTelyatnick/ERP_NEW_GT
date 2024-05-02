@@ -371,7 +371,7 @@ namespace ERP_NEW.GUI.Accounting
                     Flag1 = "-1"; Flag3 = "-1"; Flag4 = "1";
                     PFlag3 = "16"; PFlag4 = "16";
                     break;
-                case "631, 63":
+                case "631+63":
                     Flag1 = "1"; Flag3 = "1"; Flag4 = "1";
                     PFlag3 = "15"; PFlag4 = "16";
                     break;
@@ -387,7 +387,7 @@ namespace ERP_NEW.GUI.Accounting
                     Flag1 = "1"; Flag3 = "1"; Flag4 = "-1";
                     PFlag3 = "128"; PFlag4 = "128";
                     break;
-                case "362,681":
+                case "362+681":
                     Flag1 = "1"; Flag3 = "1"; Flag4 = "-1";
                     PFlag3 = "101"; PFlag4 = "96";
                     break;
