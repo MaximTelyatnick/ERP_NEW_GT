@@ -25,6 +25,9 @@ namespace ERP_NEW.GUI.Accounting
         private IPeriodService periodService;
         private IReportService reportService;
         private IAccountsService accountsService;
+        private ILogService logService;
+
+        private const string NameForm = "CalcWithBuyersJournalFm";
 
         private BindingSource calcWithBuyersBS = new BindingSource();
         private BindingSource calcWithBuyersSpecBS = new BindingSource();
@@ -84,6 +87,7 @@ namespace ERP_NEW.GUI.Accounting
             splashScreenManager.ShowWaitForm();
 
             calcWithBuyersService = Program.kernel.Get<ICalcWithBuyersService>();
+            logService = Program.kernel.Get<ILogService>();
 
             calcWithBuyersBS.DataSource = calcWithBuyersService.GetCalcWithBuyersJournal(_beginDate, _endDate);
             calcWithBuyersGrid.DataSource = calcWithBuyersBS;
@@ -110,9 +114,9 @@ namespace ERP_NEW.GUI.Accounting
             calcWithBuyersSpecGrid.DataSource = calcWithBuyersSpecBS;
         }
 
-        private void EditCalcWithBuyers(Utils.Operation operation, CalcWithBuyersDTO model, List<CalcWithBuyersSpecDTO> source)
+        private void EditCalcWithBuyers(Utils.Operation operation, CalcWithBuyersDTO model, List<CalcWithBuyersSpecDTO> source, UserTasksDTO userTasksDTO)
         {
-            using (CalcWithBuyersEditFm calcWithBuyersEditFm = new CalcWithBuyersEditFm(operation, model, source))
+            using (CalcWithBuyersEditFm calcWithBuyersEditFm = new CalcWithBuyersEditFm(operation, model, source, userTasksDTO))
             {
                 if (calcWithBuyersEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -175,7 +179,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void addBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditCalcWithBuyers(Utils.Operation.Add, new CalcWithBuyersDTO() { UserId = _userTasksDTO.UserId }, new List<CalcWithBuyersSpecDTO>());
+            EditCalcWithBuyers(Utils.Operation.Add, new CalcWithBuyersDTO() { UserId = _userTasksDTO.UserId }, new List<CalcWithBuyersSpecDTO>(), _userTasksDTO);
         }
 
         private void editBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -198,7 +202,7 @@ namespace ERP_NEW.GUI.Accounting
                     UserId = _userTasksDTO.UserId
                 };
 
-                EditCalcWithBuyers(Utils.Operation.Update, model, (List<CalcWithBuyersSpecDTO>)calcWithBuyersSpecBS.DataSource);
+                EditCalcWithBuyers(Utils.Operation.Update, model, (List<CalcWithBuyersSpecDTO>)calcWithBuyersSpecBS.DataSource, _userTasksDTO);
             }
         }
 
@@ -255,7 +259,7 @@ namespace ERP_NEW.GUI.Accounting
                     UserId = _userTasksDTO.UserId
                 };
 
-                EditCalcWithBuyers(Utils.Operation.Update, model, (List<CalcWithBuyersSpecDTO>)calcWithBuyersSpecBS.DataSource);
+                EditCalcWithBuyers(Utils.Operation.Update, model, (List<CalcWithBuyersSpecDTO>)calcWithBuyersSpecBS.DataSource, _userTasksDTO);
             }
         }
 
@@ -304,6 +308,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                     return;
                 }
             }
@@ -333,7 +338,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -364,7 +369,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
