@@ -26,9 +26,12 @@ namespace ERP_NEW.GUI.Accounting
         private IContractorsService contractorsService;
         private IAccountsService accountService;
         private IUnitsService unitsService;
+        private ILogService logService;
         //private IPeriodService periodService;
         private ICurrencyService currencyService;
-        
+
+        private const string NameForm = "AccountingOrdersEditFm";
+
         private BindingSource ordersBS = new BindingSource();
         private BindingSource receiptsBS = new BindingSource();
         private BindingSource suppliersBS = new BindingSource();
@@ -160,6 +163,7 @@ namespace ERP_NEW.GUI.Accounting
             employeesService = Program.kernel.Get<IEmployeesService>();
             storeHouseService = Program.kernel.Get<IStoreHouseService>();
             unitsService = Program.kernel.Get<IUnitsService>();
+            logService = Program.kernel.Get<ILogService>();
 
             
 
@@ -637,6 +641,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("" + ex.Message, "Збереження заявки", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTaskDTO, NameForm);
                 }
             }
         }
@@ -727,6 +732,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("Виникла помилка при записі ПДВ! Помилка " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTaskDTO, NameForm);
                 return false;
             }
 
@@ -754,6 +760,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("Виникла помилка при записі матеріалу! Помилка " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTaskDTO, NameForm);
                 return false;
             }
             
@@ -777,7 +784,8 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("Виникла помилка при записі матеріалу! Помилка " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;;
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTaskDTO, NameForm);
+                return false;
             }
 
             return true;
@@ -1023,6 +1031,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При збереженні виникла помилка. " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTaskDTO, NameForm);
                 return false;
             }
 

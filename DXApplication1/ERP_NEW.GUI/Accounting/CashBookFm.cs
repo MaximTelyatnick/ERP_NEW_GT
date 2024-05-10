@@ -237,6 +237,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (System.Exception ex)
                 {
                     MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm); 
                 }
             }
         }

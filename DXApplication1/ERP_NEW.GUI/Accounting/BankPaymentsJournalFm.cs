@@ -38,11 +38,14 @@ namespace ERP_NEW.GUI.Accounting
         //public static extern void mouse_event(ERP_NEW.BLL.Infrastructure.Utils.MouseEvent dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
         private List<ColorsDTO> colorsPallete = new List<ColorsDTO>();
 
+        private const string NameForm = "BankPaymentsJournalFm";
+
         private IBankPaymentsService bankPaymentsService;
         private IPeriodService periodService;
         private IReportService reportService;
         private IAccountsService accountsService;
         private IBusinessTripsService businessTripsService;
+        private ILogService logService;
 
         private BindingSource bankPaymentsBS = new BindingSource();
         
@@ -104,6 +107,7 @@ namespace ERP_NEW.GUI.Accounting
             splashScreenManager.ShowWaitForm();
 
             bankPaymentsService = Program.kernel.Get<IBankPaymentsService>();
+            logService = Program.kernel.Get<ILogService>();
 
             bankPaymentsBS.DataSource = bankPaymentsService.GetBankPaymentsJournal(_beginDate, _endDate);
             bankPaymentsGrid.DataSource = bankPaymentsBS;
@@ -146,7 +150,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void EditBankPayment(Utils.Operation operation, Bank_PaymentsDTO model)
         {
-            using (BankPaymentEditFm bankPaymentEditFm = new BankPaymentEditFm(operation, model))
+            using (BankPaymentEditFm bankPaymentEditFm = new BankPaymentEditFm(operation, model, _userTasksDTO))
             {
                 if (bankPaymentEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -404,6 +408,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                     return;
                 }
             }
@@ -411,7 +416,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void importBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            using (BankPaymentsImportFm bankPaymentsImportFm = new BankPaymentsImportFm())
+            using (BankPaymentsImportFm bankPaymentsImportFm = new BankPaymentsImportFm(_userTasksDTO))
             {
                 if (bankPaymentsImportFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -770,7 +775,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -820,7 +825,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -843,7 +848,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -866,7 +871,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -897,7 +902,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -920,7 +925,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
@@ -963,7 +968,7 @@ namespace ERP_NEW.GUI.Accounting
             catch (Exception ex)
             {
                 MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm);
                 splashScreenManager.CloseWaitForm();
 
                 return;
