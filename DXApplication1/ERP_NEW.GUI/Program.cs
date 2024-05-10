@@ -9,7 +9,7 @@ using Ninject;
 using ERP_NEW.BLL.Infrastructure;
 using DevExpress.XtraEditors.Controls;
 using System.Globalization;
-using Telegram.Bot;
+//using Telegram.Bot;
 using System.Net.Http;
 using System.Threading.Tasks;
 
