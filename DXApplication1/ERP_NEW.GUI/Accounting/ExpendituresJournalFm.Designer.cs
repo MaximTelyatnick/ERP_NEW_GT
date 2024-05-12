@@ -166,7 +166,6 @@
             this.remainsCol});
             this.expenditureBandedGridView.GridControl = this.expendituresGrid;
             this.expenditureBandedGridView.Name = "expenditureBandedGridView";
-            this.expenditureBandedGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.expenditureBandedGridView.OptionsView.ShowAutoFilterRow = true;
             this.expenditureBandedGridView.OptionsView.ShowFooter = true;
             // 

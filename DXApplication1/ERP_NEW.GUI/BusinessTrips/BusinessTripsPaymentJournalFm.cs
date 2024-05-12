@@ -106,6 +106,11 @@ namespace ERP_NEW.GUI.BusinessTrips
             editPaymentBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             deletePaymentBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             addTemplatePaymentBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            periodBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            customerOrderEditBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            markedBusinessTripsBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            customerOrderAtachEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
+            editPaymantAccountBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
         }
 
         private void LoadDataByPeriod(DateTime beginDate, DateTime endDate)

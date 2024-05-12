@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsFm));
             this.useSimpleEmmloyeeSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,8 +35,8 @@
             this.openFileBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.appSkinEdit = new DevExpress.XtraEditors.PopupContainerEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
-            this.styleMenu = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.styleMenu = new DevExpress.XtraBars.PopupMenu();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -47,7 +46,7 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
             this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.mainTabPage = new DevExpress.XtraTab.XtraTabPage();
@@ -55,9 +54,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.logerTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.logerTableCheck = new DevExpress.XtraEditors.CheckEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.createLogerTableBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.logerTableCheck = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).BeginInit();
@@ -238,7 +237,7 @@
             this.mainTabPage.Controls.Add(this.label2);
             this.mainTabPage.Image = ((System.Drawing.Image)(resources.GetObject("mainTabPage.Image")));
             this.mainTabPage.Name = "mainTabPage";
-            this.mainTabPage.Size = new System.Drawing.Size(588, 385);
+            this.mainTabPage.Size = new System.Drawing.Size(589, 387);
             this.mainTabPage.Text = "Налаштування додатку";
             // 
             // useHolidaySwitch
@@ -278,8 +277,18 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
-            this.logerTabPage.Size = new System.Drawing.Size(588, 385);
+            this.logerTabPage.Size = new System.Drawing.Size(589, 387);
             this.logerTabPage.Text = "Налаштування логеру";
+            // 
+            // logerTableCheck
+            // 
+            this.logerTableCheck.Location = new System.Drawing.Point(446, 17);
+            this.logerTableCheck.MenuManager = this.barManager1;
+            this.logerTableCheck.Name = "logerTableCheck";
+            this.logerTableCheck.Properties.Caption = "";
+            this.logerTableCheck.Properties.ReadOnly = true;
+            this.logerTableCheck.Size = new System.Drawing.Size(17, 19);
+            this.logerTableCheck.TabIndex = 88;
             // 
             // label5
             // 
@@ -299,16 +308,6 @@
             this.createLogerTableBtn.TabIndex = 0;
             this.createLogerTableBtn.Text = "Create";
             this.createLogerTableBtn.Click += new System.EventHandler(this.createLogerTableBtn_Click);
-            // 
-            // logerTableCheck
-            // 
-            this.logerTableCheck.Location = new System.Drawing.Point(446, 17);
-            this.logerTableCheck.MenuManager = this.barManager1;
-            this.logerTableCheck.Name = "logerTableCheck";
-            this.logerTableCheck.Properties.Caption = "";
-            this.logerTableCheck.Properties.ReadOnly = true;
-            this.logerTableCheck.Size = new System.Drawing.Size(17, 19);
-            this.logerTableCheck.TabIndex = 88;
             // 
             // UserSettingsFm
             // 

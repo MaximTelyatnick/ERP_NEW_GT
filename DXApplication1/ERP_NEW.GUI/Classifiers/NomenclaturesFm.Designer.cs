@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NomenclaturesFm));
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.LineSeriesView lineSeriesView1 = new DevExpress.XtraCharts.LineSeriesView();
-            this.receiptHistoryOrdersDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.receiptHistoryOrdersDTOBindingSource = new System.Windows.Forms.BindingSource();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addMaterialsBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -495,7 +494,7 @@
             this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.xtraTabPage2.Name = "xtraTabPage2";
             this.xtraTabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.xtraTabPage2.Size = new System.Drawing.Size(848, 176);
+            this.xtraTabPage2.Size = new System.Drawing.Size(847, 175);
             this.xtraTabPage2.Text = "Надходження";
             // 
             // recieptArchiveGrid
@@ -507,7 +506,7 @@
             this.recieptArchiveGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.recieptArchiveGrid.MenuManager = this.ribbonControl1;
             this.recieptArchiveGrid.Name = "recieptArchiveGrid";
-            this.recieptArchiveGrid.Size = new System.Drawing.Size(840, 168);
+            this.recieptArchiveGrid.Size = new System.Drawing.Size(839, 167);
             this.recieptArchiveGrid.TabIndex = 0;
             this.recieptArchiveGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.recieptArchibeGridView});

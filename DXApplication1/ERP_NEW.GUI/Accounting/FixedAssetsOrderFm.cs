@@ -92,13 +92,41 @@ namespace ERP_NEW.GUI.Accounting
 
             LoadFixedAssetsOrder();
             LoadFixedAssetsOrderArchive((DateTime)beginDateArchiveEdit.EditValue, (DateTime)endDateArchiveEdit.EditValue);
+            AuthorizatedUserAccess();
 
-            
+
         }
 
         #region Method's
+
+        private void AuthorizatedUserAccess()
+        {
+            
+            addBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            actWriteOffBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteFromArchiveBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            expFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            fixedAssesOrderShowBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            journalOrderBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            materialsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            printActExpenditureBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            printArchiceBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            printBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            printInventoryCardBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            printInventoryCardNewBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            regArchiveBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            regJournalOrderBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            showArchivBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            soldFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            transferFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+
+
+        }
+
         #region FixedAssetsOrder
-        
+
         private void LoadFixedAssetsOrder()
         {
             splashScreenManager.ShowWaitForm();
@@ -355,11 +383,11 @@ namespace ERP_NEW.GUI.Accounting
             }
             else
             {
-                deleteBtn.Enabled = true;
-                editBtn.Enabled = true;
-                soldFixeAssetsBtn.Enabled = true;
-                expFixeAssetsBtn.Enabled = true;
-                transferFixeAssetsBtn.Enabled = true;
+                deleteBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+                editBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+                soldFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+                expFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+                transferFixeAssetsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
             }
             
 
