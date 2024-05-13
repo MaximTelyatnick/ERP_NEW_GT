@@ -86,8 +86,8 @@ namespace ERP_NEW.GUI.StoreHouse
 
         private void AuthorizatedUserAccess()
         {
-            selectDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
-            startDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //selectDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //startDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
             showBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             writeAccountClothesBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             writeActWriteOffMaterialsBtn.Enabled = (_userTasksDTO.AccessRightId == 2);

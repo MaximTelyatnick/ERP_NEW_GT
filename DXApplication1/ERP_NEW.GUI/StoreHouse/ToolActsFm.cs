@@ -73,14 +73,14 @@ namespace ERP_NEW.GUI.StoreHouse
 
         private void AuthorizatedUserAccess()
         {
-            startDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
-            endDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
-            showBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //startDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //endDateEdit.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //showBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             addBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             editBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             deleteBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            updateBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            writeActWriteOffMaterialsBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //updateBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //writeActWriteOffMaterialsBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
         }
 
         private void DeleteToolAct()
