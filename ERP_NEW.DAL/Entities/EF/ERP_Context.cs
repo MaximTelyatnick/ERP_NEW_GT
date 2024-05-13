@@ -340,14 +340,14 @@ namespace ERP_NEW.DAL.EF
 
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
+                //DataSource = "localhost",
                 //Database = "TVM_DB",
                 //UserID = "sysdba",
                 //Password = "masterkey",
                 //Charset = "UTF8",
                 //Pooling = true,
                 //ConnectionLifeTime = 900,
-                //DataSource = "10.0.0.50",
+                DataSource = "10.0.0.50",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
@@ -370,14 +370,14 @@ namespace ERP_NEW.DAL.EF
             //};
             csb = new FbConnectionStringBuilder()
             {
-                DataSource = "localhost",
+                //DataSource = "localhost",
                 //Database = "TVM_DB",
                 //UserID = "sysdba",
                 //Password = "masterkey",
                 //Charset = "UTF8",
                 //Pooling = true,
                 //ConnectionLifeTime = 900,
-                //DataSource = "10.0.0.50",
+                DataSource = "10.0.0.50",
                 Database = "TVM_DB",
                 UserID = "sysdba",
                 Password = "masterkey",
