@@ -20,6 +20,8 @@ namespace ERP_NEW.GUI.Accounting
     {
         private ICashBookService cashBookService;
         private IReportService reportService;
+        private ILogService logService;
+        private string NameForm = "CashBookFm";
 
         private BindingSource cashBookBS = new BindingSource();
         private BindingSource cashBookRecordsBS = new BindingSource();
@@ -183,7 +185,7 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        private void EditCashBookPages(Utils.Operation operation, CashBookPageDTO model, List<CashBookRecordJournalDTO> cashBookrecordsList)
+        private void EditCashBookPages(Utils.Operation operation, CashBookPageDTO model, List<CashBookRecordJournalDTO> cashBookrecordsList, UserTasksDTO userTasksDTO)
         {
             using (CashBookEditFm cashBookEditFm = new CashBookEditFm(operation, model, cashBookrecordsList, userTasksDTO))
             {
@@ -218,12 +220,12 @@ namespace ERP_NEW.GUI.Accounting
 
         private void addBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditCashBookPages(Utils.Operation.Add, new CashBookPageDTO() {  CashBookId = cashBooksDTO.Id}, new List<CashBookRecordJournalDTO>());
+            EditCashBookPages(Utils.Operation.Add, new CashBookPageDTO() {  CashBookId = cashBooksDTO.Id}, new List<CashBookRecordJournalDTO>(), userTasksDTO);
         }
 
         private void editBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            EditCashBookPages(Utils.Operation.Update, (CashBookPageDTO)cashBookBS.Current, (List<CashBookRecordJournalDTO>)cashBookRecordsBS.DataSource);
+            EditCashBookPages(Utils.Operation.Update, (CashBookPageDTO)cashBookBS.Current, (List<CashBookRecordJournalDTO>)cashBookRecordsBS.DataSource, userTasksDTO);
         }
 
         private void deleteBtn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -237,7 +239,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (System.Exception ex)
                 {
                     MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm); 
+                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm); 
 
                 }
             }

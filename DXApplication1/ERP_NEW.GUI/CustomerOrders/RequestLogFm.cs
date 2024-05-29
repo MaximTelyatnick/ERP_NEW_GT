@@ -55,10 +55,21 @@ namespace ERP_NEW.GUI.CustomerOrders
             endDateItem.EditValue = lastDay;
             LoadData();
             LoadColorsPallete();
-            
+            AuthorizatedUserAccess();
+
+
         }
 
         #region Method's
+
+        private void AuthorizatedUserAccess()
+        {
+            addBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            sendDataToExcel.Enabled = (userTasksDTO.AccessRightId == 2);
+            colorDetalsBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+        }
 
         private void LoadData()
         {

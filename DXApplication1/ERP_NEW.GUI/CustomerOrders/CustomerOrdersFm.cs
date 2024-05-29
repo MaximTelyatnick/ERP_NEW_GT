@@ -150,14 +150,18 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void AuthorizatedUserAccess()
         {
-           // addItem.Enabled = (userTasksDTO.AccessRightId == 2);
-          //  editItem.Enabled = (userTasksDTO.AccessRightId == 2);
-         //   deleteItem.Enabled = (userTasksDTO.AccessRightId == 2);
+            addItem.Enabled = (userTasksDTO.AccessRightId == 2);
+            editItem.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteItem.Enabled = (userTasksDTO.AccessRightId == 2);
 
-          //  addPaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
-          //  deletePaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
-         //   addPrepaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
-          //  deletePrepaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            addPaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deletePaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            addPrepaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deletePrepaymentBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+
+            addAssBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editAssBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteAssBtn.Enabled = (userTasksDTO.AccessRightId == 2);
 
             orderPriceCol.Visible = (userTasksDTO.PriceAttribute == 1);
             orderPriceCol.Visible = (userTasksDTO.PriceAttribute == 1);
@@ -428,10 +432,11 @@ namespace ERP_NEW.GUI.CustomerOrders
             }
             else
             {
-                editItem.Enabled = true;
-                deleteItem.Enabled = true;
-                editAssBtn.Enabled = true;
-                addAssBtn.Enabled = true;
+
+                editItem.Enabled = (userTasksDTO.AccessRightId == 2);
+                deleteItem.Enabled = (userTasksDTO.AccessRightId == 2);
+                editAssBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+                addAssBtn.Enabled = (userTasksDTO.AccessRightId == 2);
               //  addPaymentBtn.Enabled = true;
               //  deletePaymentBtn.Enabled = true;
 

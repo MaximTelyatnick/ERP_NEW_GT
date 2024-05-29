@@ -68,13 +68,16 @@ namespace ERP_NEW.GUI.BusinessTrips
 
         private void AuthorizatedUserAccess()
         {
-            addDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //addDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
             editDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            prolongationDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //prolongationDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
             deleteDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             showDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            avoidanceDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
+            //avoidanceDecreeBtn1.Enabled = (_userTasksDTO.AccessRightId == 2);
             reportBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            addDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            prolongationDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            avoidanceDecreeBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
         }
 
         private void LoadDecreeData(DateTime beginDate, DateTime endDate)

@@ -100,6 +100,7 @@ namespace ERP_NEW.GUI.Accounting
             editBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             deleteBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
             periodBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            addTemplateMenuBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
         }
 
         private void LoadDataByPeriod(DateTime beginDate, DateTime endDate)

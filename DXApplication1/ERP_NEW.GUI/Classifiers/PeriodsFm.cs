@@ -31,6 +31,7 @@ namespace ERP_NEW.GUI.Classifiers
             LoadDataPeriod();
 
             _userTasksDTO = userTasksDTO;
+            AuthorizatedUserAccess();
 
         }
 

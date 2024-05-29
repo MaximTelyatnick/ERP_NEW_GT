@@ -25,6 +25,7 @@ namespace ERP_NEW.GUI.StoreHouse
             InitializeComponent();
             LoadDataAccountClothes();
             _userTasksDTO = userTasksDTO;
+            AuthorizatedUserAccess();
         }
 
         #region Method's                                     

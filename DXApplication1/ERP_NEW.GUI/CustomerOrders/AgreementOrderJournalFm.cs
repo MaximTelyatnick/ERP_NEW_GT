@@ -24,13 +24,13 @@ namespace ERP_NEW.GUI.CustomerOrders
         private IContractorsService contractorService;
 
         private BindingSource agreementOrdersBS = new BindingSource();
-        private UserTasksDTO _userTaskDTO;
+        private UserTasksDTO userTaskDTO;
 
         public AgreementOrderJournalFm(UserTasksDTO userTaskDTO)
         {
             InitializeComponent();
 
-            _userTaskDTO = userTaskDTO;
+            this.userTaskDTO = userTaskDTO;
 
             DateTime firstDay = new DateTime(DateTime.Now.Year, 1, 1);
             DateTime lastDay = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
@@ -47,7 +47,7 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void EditAgreementOrder(Utils.Operation operation, AgreementOrderDTO model)
         {
-            using (AgreementOrderEditFm agreementOrderEditFm = new AgreementOrderEditFm(operation, model, _userTaskDTO))
+            using (AgreementOrderEditFm agreementOrderEditFm = new AgreementOrderEditFm(operation, model, userTaskDTO))
             {
                 if (agreementOrderEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -89,7 +89,9 @@ namespace ERP_NEW.GUI.CustomerOrders
 
         private void AuthorizatedUserAccess()
         {
-
+            addBtn.Enabled = (userTaskDTO.AccessRightId == 2);
+            editBtn.Enabled = (userTaskDTO.AccessRightId == 2);
+            deleteBtn.Enabled = (userTaskDTO.AccessRightId == 2);
         }
         #endregion
 

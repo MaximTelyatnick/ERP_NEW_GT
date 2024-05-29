@@ -809,7 +809,10 @@ namespace ERP_NEW.GUI
         {
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
-            return 690;
+
+            //return 690;
+            //return 1000;
+            //return 457;
             var currentDomain = ADUser.CurrentDC();
 
             if (currentDomain != null)
@@ -849,6 +852,8 @@ namespace ERP_NEW.GUI
                         return 723;
                     if (ulogin == "asup")
                         return 690;
+                    if (ulogin == "shehovets_a")
+                        return 1000;
 
 
                     int userNumber;

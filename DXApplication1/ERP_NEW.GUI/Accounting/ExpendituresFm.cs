@@ -54,9 +54,19 @@ namespace ERP_NEW.GUI.Accounting
             this.endDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1).AddMonths(1).AddDays(-1);
 
             LoadExpendituresjournalByPeriod(beginDate, endDate);
+            AuthorizatedUserAccess();
         }
 
         #region Method's
+
+        private void AuthorizatedUserAccess()
+        {
+            addBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editOrderBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            periodBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+        }
 
         private void LoadExpendituresjournalByPeriod(DateTime beginDate, DateTime endDate)
         {
