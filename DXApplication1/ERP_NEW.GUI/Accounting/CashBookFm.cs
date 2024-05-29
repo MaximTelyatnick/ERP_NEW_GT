@@ -185,7 +185,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void EditCashBookPages(Utils.Operation operation, CashBookPageDTO model, List<CashBookRecordJournalDTO> cashBookrecordsList)
         {
-            using (CashBookEditFm cashBookEditFm = new CashBookEditFm(operation, model, cashBookrecordsList))
+            using (CashBookEditFm cashBookEditFm = new CashBookEditFm(operation, model, cashBookrecordsList, userTasksDTO))
             {
                 if (cashBookEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
@@ -237,7 +237,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (System.Exception ex)
                 {
                     MessageBox.Show("При видаленні виникла помилка. " + ex.Message, "Видалення", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm); 
+                    //logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, _userTasksDTO, NameForm); 
 
                 }
             }
