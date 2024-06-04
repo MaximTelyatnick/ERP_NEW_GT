@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 
 using ERP_NEW.BLL.Interfaces;
@@ -21,12 +20,11 @@ using ERP_NEW.BLL.DTO.SelectedDTO;
 using Words = Microsoft.Office.Interop.Word;
 using System.Globalization;
 using ERP_NEW.BLL.NameCaseLib;
-using System.Text.RegularExpressions;
 using Nager.Date;
 using AutoMapper;
 using ERP_NEW.DAL.Entities.Models;
 using ERP_NEW.DAL.Entities.QueryModels;
-using ERP_NEW.BLL.DTO; 
+using ERP_NEW.BLL.DTO;
 
 
 
