@@ -77,6 +77,7 @@ namespace ERP_NEW.BLL.Services
         
         private IRepository<MsTrialBalanceCurrency> msTrialBalanceCurrency;
         private IRepository<MsTrialBalance> msTrialBalance;
+        private IRepository<MsDebitCredit> msDebitCredit;
         private IRepository<MsTrialBalanceByAccountsCurrency> msTrialBalanceByAccountsCurrency;
         private IRepository<MsReconciliation> msReconciliation;
         private IRepository<MsReconciliation681_36> msReconciliation681_36;
@@ -141,6 +142,7 @@ namespace ERP_NEW.BLL.Services
             msPaymentWithoutVat = Database.GetRepository<MSPaymentsWithoutVat>();
             msTrialBalanceCurrency = Database.GetRepository<MsTrialBalanceCurrency>();
             msTrialBalance = Database.GetRepository<MsTrialBalance>();
+            msDebitCredit = Database.GetRepository<MsDebitCredit>();
             msTrialBalanceByAccountsCurrency = Database.GetRepository<MsTrialBalanceByAccountsCurrency>();
             msReconciliation = Database.GetRepository<MsReconciliation>();
             msReconciliation681_36 = Database.GetRepository<MsReconciliation681_36>();
@@ -200,6 +202,7 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<ExpenditureForProjectReportByContractor, ExpenditureForProjectReportByContractorDTO>();
                 cfg.CreateMap<MsTrialBalanceCurrency, MsTrialBalanceCurrencyDTO>();
                 cfg.CreateMap<MsTrialBalance, MsTrialBalanceDTO>();
+                cfg.CreateMap<MsDebitCredit, MsDebitCreditDTO>();
                 cfg.CreateMap<MsReconciliation, MsReconciliationDTO>();
                 cfg.CreateMap<MsTrialBalanceByAccountsCurrency, MsTrialBalanceByAccountsCurrencyDTO>();
                 cfg.CreateMap<MsReconciliation681_36, MsReconciliation681_36DTO>();
@@ -9274,6 +9277,25 @@ namespace ERP_NEW.BLL.Services
             }
         }
 
+        public bool GetMSDebitCredit(DateTime endDate, string flag1, string flag3, string flag4, string pflag3, string pflag4)
+        {
+            FbParameter[] Parameters =
+                {
+                    new FbParameter("EndDate", endDate),
+                    new FbParameter("Flag1", flag1),
+                    new FbParameter("Flag3", flag3),
+                    new FbParameter("Flag4", flag4),
+                    new FbParameter("PFlag3", pflag3),
+                    new FbParameter("PFlag4", pflag4)
+                };
+
+            string procName = @"select * from ""ReportDebitCredit""(@EndDate, @Flag1, @Flag3, @Flag4, @PFlag3, @FPlag4)";
+
+            var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
+
+            return PrintMSPaymentsWithoutVat(dataSource, startDate, endDate, accountNum);
+        }
+
         public bool GetContractorVat(DateTime startDate, DateTime endDate)
         {
             FbParameter[] Parameters =
@@ -12955,19 +12977,29 @@ namespace ERP_NEW.BLL.Services
 
             int currentColumn = 2;
 
+            //for (int i = 1; i <= days; i++)
+            //{
+            //    if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, i), CountryCode.UA) || DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, i), CountryCode.UA))
+            //    {
+            //        weekendDays++;
+            //        cells[vsS[currentColumn + i] + "5" + ":" + vsS[currentColumn + i] + "8"].Interior.Color = Color.DodgerBlue;
+
+            //    }
+            //}
+
             for (int i = 1; i <= days; i++)
             {
-                if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, i), CountryCode.UA) || DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, i), CountryCode.UA))
+                if (DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, i), CountryCode.UA))
                 {
                     weekendDays++;
                     cells[vsS[currentColumn + i] + "5" + ":" + vsS[currentColumn + i] + "8"].Interior.Color = Color.DodgerBlue;
-                
+
                 }
             }
 
             //===========================================================
             //корректировка октября
-            weekendDays--;
+            //weekendDays--;
             //weekendDays--;
             //===========================================================
 
@@ -12993,7 +13025,7 @@ namespace ERP_NEW.BLL.Services
                         Сells[source.Count + 15, 2].Value = "Пархоменко Н. М.";
                         break;
                     case 14://технический
-                        Сells[source.Count + 15, 2].Value = "Мамутов О. Р.";
+                        Сells[source.Count + 15, 2].Value = "Маслов В.В.";
                         break;
                     case 17://плановый
                         Сells[source.Count + 15, 2].Value = "Пінчук М. М. ";
@@ -13080,37 +13112,37 @@ namespace ERP_NEW.BLL.Services
 
                     // Использовать если нужно какой-то день сделать "особенным", где j - число месяца
 
-                    if (j == 5)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "8";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
+                    //if (j == 5)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
 
-                        continue;
-                    }
+                    //    continue;
+                    //}
 
-                    if (j == 25)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "8";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
+                    //if (j == 25)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "8";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.White;
 
-                        continue;
-                    }
+                    //    continue;
+                    //}
 
-                    if (j == 31)
-                    {
-                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
-                        cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
-                        //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
-                        //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
-                        cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
-                        //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
-                        continue;
-                    }
+                    //if (j == 31)
+                    //{
+                    //    cells[vsS[currentColumn + j] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + j] + startWith].Font.Bold = true;
+                    //    //cells[vsS[currentColumn + j] + "5" + ":" + vsS[currentColumn + j] + "8"].Interior.Color = Color.Transparent;
+                    //    //cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    cells[vsS[currentColumn + j] + 5 + ":" + vsS[currentColumn + j] + 8].Interior.Color = Color.DodgerBlue;
+                    //    cells[vsS[currentColumn + j] + startWith].Borders.LineStyle = LineStyle.Continous;
+                    //    //cells[vsS[currentColumn + j + 1] + "5" + ":" + vsS[currentColumn + j + 1] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    continue;
+                    //}
 
                     //if (j == 9)
                     //{
@@ -13194,7 +13226,8 @@ namespace ERP_NEW.BLL.Services
                             cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
                             // cells[vsS[currentColumn + j-1] + startWith].Value = "вMon-1";
                         }
-                      //  else { cells[vsS[currentColumn + j] + startWith].Value = 100; }
+                        else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
+                        //  else { cells[vsS[currentColumn + j] + startWith].Value = 100; }
                     }
                    // if (daysOfWeek.DayOfWeek == DayOfWeek.Monday && !(DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA)) && (daysOfWeek.DayOfWeek == DayOfWeek.Sunday) && (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA)))
                       //  else   { cells[vsS[currentColumn + j] + startWith].Value = 100; }
@@ -13235,12 +13268,13 @@ namespace ERP_NEW.BLL.Services
                     }
                     if (daysOfWeek.DayOfWeek == DayOfWeek.Friday)
                     {
-                        if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
-                        {
-                            cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
-                            //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
-                        }
-                        else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
+                        //if (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
+                        //{
+                        //    cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
+                        //    //cells[vsS[currentColumn + j - 1] + startWith].Value = 7;
+                        //}
+                        //else { cells[vsS[currentColumn + j] + startWith].Value = 8; }
+                        cells[vsS[currentColumn + j] + startWith].Value = 8;
 
                     }
 
@@ -13268,23 +13302,23 @@ namespace ERP_NEW.BLL.Services
                         int curcolSund = 1;
 
 
-                        if (((daysOfWeek.DayOfWeek == DayOfWeek.Saturday)||(daysOfWeek.DayOfWeek == DayOfWeek.Sunday) )&& (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA)))
-                        {
-                            dopWeekend += curcolSund;
+                    //    if (((daysOfWeek.DayOfWeek == DayOfWeek.Saturday)||(daysOfWeek.DayOfWeek == DayOfWeek.Sunday) )&& (DateSystem.IsPublicHoliday(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA)))
+                    //    {
+                    //        dopWeekend += curcolSund;
 
-                            cells[vsS[currentColumn + j + curcolSund] + startWith].Value = "BC";
+                    //        cells[vsS[currentColumn + j + curcolSund] + startWith].Value = "BC";
 
-                            cells[vsS[currentColumn + j + 1] + startWith].Value = "BC";
-                            cells[vsS[currentColumn + j + curcolSund] + "5" + ":" + vsS[currentColumn + j + curcolSund] + "8"].Interior.Color = Color.DodgerBlue;
+                    //        cells[vsS[currentColumn + j + 1] + startWith].Value = "BC";
+                    //        cells[vsS[currentColumn + j + curcolSund] + "5" + ":" + vsS[currentColumn + j + curcolSund] + "8"].Interior.Color = Color.DodgerBlue;
 
-                        }
-                        else
-                        {
-                            //if (j < days - 1)
-                            //{
-                            //  cells[vsS[currentColumn + j + curcolSund] + startWith].Value = 8;
-                            //}
-                        }
+                    //    }
+                    //    else
+                    //    {
+                    //    if (j < days - 1)
+                    //    {
+                    //        cells[vsS[currentColumn + j + curcolSund] + startWith].Value = 8;
+                    //    }
+                    //}
 
 
 
@@ -13299,27 +13333,27 @@ namespace ERP_NEW.BLL.Services
                         if ((dtw == 2) && (daysOfWeek.DayOfWeek == DayOfWeek.Monday) || (dayH = false))
                             cells[vsS[currentColumn + j] + startWith].Value = 8;
 
-                            //2024 year won't work    
-                        //For december 2019 if need special weeked
-                        //if (currentDate.Month == 12)
-                        //{
-                        //    cells[vsS[currentColumn + 21] + startWith].Value = 8;
-                        //    cells[vsS[currentColumn + 21] + "5" + ":" + vsS[currentColumn + 21] + "8"].Interior.Color = Color.White;
-                        //    cells[vsS[currentColumn + 28] + startWith].Value = 8;
-                        //    cells[vsS[currentColumn + 28] + "5" + ":" + vsS[currentColumn + 28] + "8"].Interior.Color = Color.White;
+                    //2024 year won't work    
+                    //For december 2019 if need special weeked
+                    //if (currentDate.Month == 12)
+                    //{
+                    //    cells[vsS[currentColumn + 21] + startWith].Value = 8;
+                    //    cells[vsS[currentColumn + 21] + "5" + ":" + vsS[currentColumn + 21] + "8"].Interior.Color = Color.White;
+                    //    cells[vsS[currentColumn + 28] + startWith].Value = 8;
+                    //    cells[vsS[currentColumn + 28] + "5" + ":" + vsS[currentColumn + 28] + "8"].Interior.Color = Color.White;
 
-                        //    cells[vsS[currentColumn + 30] + startWith].Value = "ВС";
-                        //    cells[vsS[currentColumn + 30] + "5" + ":" + vsS[currentColumn + 30] + "8"].Interior.Color = Color.DodgerBlue;
+                    //    cells[vsS[currentColumn + 30] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + 30] + "5" + ":" + vsS[currentColumn + 30] + "8"].Interior.Color = Color.DodgerBlue;
 
-                        //    cells[vsS[currentColumn + 31] + startWith].Value = "ВС";
-                        //    cells[vsS[currentColumn + 31] + "5" + ":" + vsS[currentColumn + 31] + "8"].Interior.Color = Color.DodgerBlue;
-                        //}
+                    //    cells[vsS[currentColumn + 31] + startWith].Value = "ВС";
+                    //    cells[vsS[currentColumn + 31] + "5" + ":" + vsS[currentColumn + 31] + "8"].Interior.Color = Color.DodgerBlue;
+                    //}
 
-                        if (DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
-                            cells[vsS[currentColumn + j] + startWith].Value =  "ВС";
+                    if (DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, j), CountryCode.UA))
+                        cells[vsS[currentColumn + j] + startWith].Value = "ВС";
 
-                        //if (DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, 28), CountryCode.UA))//ВРЕМЕННО!
-                        //    cells[vsS[currentColumn + 28] + startWith].Value = "НА";//ВРЕМЕННО!
+                    //if (DateSystem.IsWeekend(new DateTime(currentDate.Year, currentDate.Month, 28), CountryCode.UA))//ВРЕМЕННО!
+                    //    cells[vsS[currentColumn + 28] + startWith].Value = "НА";//ВРЕМЕННО!
 
                     Сells["A" + startWith].EntireRow.AutoFit();
                     Сells["A:BB"].Style.Font.Size = 11;
