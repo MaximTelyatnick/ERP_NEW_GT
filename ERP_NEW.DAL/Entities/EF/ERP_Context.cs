@@ -248,6 +248,7 @@ namespace ERP_NEW.DAL.EF
 
         public DbSet<MsTrialBalanceCurrency> MsTrialBalanceCurrency { get; set; }
         public DbSet<MsTrialBalance> MsTrialBalance { get; set; }
+        public DbSet<MsDebitCredit> MsDebitCredit { get; set; }
         public DbSet<MsTrialBalanceByAccountsCurrency> MsTrialBalanceByAccountsCurrency { get; set; }
         public DbSet<MsReconciliation> MsReconciliation { get; set; }
         public DbSet<MsReconciliation681_36> MsReconciliation681_36 { get; set; }

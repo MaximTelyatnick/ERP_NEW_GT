@@ -389,6 +389,7 @@
     <Compile Include="Entities\ReportModel\FixedAssetsOrderByGroupShortReport.cs" />
     <Compile Include="Entities\ReportModel\FixedAssetsOrderReportStrait.cs" />
     <Compile Include="Entities\ReportModel\GetBPDetalsReportByCon.cs" />
+    <Compile Include="Entities\ReportModel\MsDebitCredit.cs" />
     <Compile Include="Entities\ReportModel\MSPaymentsWithoutVat.cs" />
     <Compile Include="Entities\ReportModel\MsReconciliation.cs" />
     <Compile Include="Entities\ReportModel\MsReconciliation681_36.cs" />
