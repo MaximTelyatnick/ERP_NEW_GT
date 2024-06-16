@@ -9289,11 +9289,130 @@ namespace ERP_NEW.BLL.Services
                     new FbParameter("PFlag4", pflag4)
                 };
 
-            string procName = @"select * from ""ReportDebitCredit""(@EndDate, @Flag1, @Flag3, @Flag4, @PFlag3, @FPlag4)";
+            string procName = @"select * from ""ReportDebitCredit""(@EndDate, @Flag1, @Flag3, @Flag4, @PFlag3, @PFlag4)";
 
             var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
 
-            return PrintMSPaymentsWithoutVat(dataSource, startDate, endDate, accountNum);
+            return PrintMSDebitCredit(dataSource, endDate);
+        }
+
+        public bool PrintMSDebitCredit(List<MsDebitCreditDTO> reportTable, DateTime EndDate)
+        {
+            //if (reportTable.Count == 0)
+            //{
+            //    MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
+
+            //var workbook = Factory.GetWorkbook(TemplatesDir + "MSDebtorsCreditors.xls");
+
+            if (reportTable.Count() == 0)
+            {
+                MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
+            var worksheet = workbook.Worksheets[0];
+            var cells = worksheet.Cells;
+
+            int captionPosition = 6;
+            int startPosition = captionPosition + 4;
+            int currentPosition;
+
+            cells["A:A"].ColumnWidth = 15;
+            cells["B:B"].ColumnWidth = 70;
+            cells["C:C"].ColumnWidth = 70;
+
+            cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].Merge();
+            cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].HorizontalAlignment = HAlign.Center;
+            cells["A" + (captionPosition + 2)].Value = "Кредитори";
+            cells["A" + (captionPosition + 2)].Font.Bold = true;
+
+            cells["A" + (captionPosition + 3)].Value = "Едрпоу";
+            cells["A" + (captionPosition + 3)].Font.Bold = true;
+            cells["B" + (captionPosition + 3)].Value = "Найменування контрагента";
+            cells["B" + (captionPosition + 3)].Font.Bold = true;
+            cells["C" + (captionPosition + 3)].Value = "Сума";
+            cells["C" + (captionPosition + 3)].Font.Bold = true;
+
+            string name = string.Format("Дебіторсько-кредиторська заборгованість на кінець {0}", EndDate);
+
+            var DebCred = reportTable.AsEnumerable().Select(c => new { DebCred = c.DebitCredit}).Distinct();
+            foreach (var debCred in DebCred)
+            {
+                currentPosition = startPosition;
+
+                cells["A" + captionPosition].Value = name;
+
+                var Debit = reportTable.AsEnumerable().Where(c => c.DebitCredit.ToString() == debCred.DebCred.ToString()).OrderBy(c => (decimal)c.Price);
+                foreach (var debit in Debit)
+                {
+                    cells["A" + currentPosition].Value = debit.ContractorSrn;
+                    cells["B" + currentPosition].Value = debit.ContractorName;
+                    cells["C" + currentPosition].Value = debit.Price;
+                    currentPosition++;
+                }
+
+                cells["B" + startPosition + ":" + "B" + currentPosition].WrapText = true;
+
+                cells["A" + startPosition + ":" + "A" + currentPosition].NumberFormat = "############";
+                cells["A" + startPosition + ":" + "B" + currentPosition].HorizontalAlignment = HAlign.Left;
+                cells["C" + startPosition + ":" + "C" + currentPosition].HorizontalAlignment = HAlign.Right;
+                cells["C" + startPosition + ":" + "C" + currentPosition].NumberFormat = "### ### ##0.00";
+                cells["A" + startPosition + ":" + "C" + currentPosition].Borders.LineStyle = LineStyle.Continous;
+
+                cells["A" + currentPosition + ":" + "B" + currentPosition].Merge();
+                cells["A" + currentPosition + ":" + "B" + currentPosition].HorizontalAlignment = HAlign.Center;
+                cells["A" + currentPosition + ":" + "C" + currentPosition].Font.Bold = true;
+                cells["A" + currentPosition].Value = "Разом";
+                cells["C" + currentPosition].Formula = SetFormula("C", startPosition, "C", currentPosition - 1, "SUM");
+                cells["C" + currentPosition].Interior.Color = Color.LightGreen;
+
+                PrintSignatures(cells, currentPosition + 3);
+            }
+
+            try
+            {
+                workbook.SaveAs(GeneratedReportsDir + "ДКЗ на кінець " + EndDate.ToShortDateString() + ".xls", FileFormat.Excel8);
+
+                Process process = new Process();
+                process.StartInfo.Arguments = "\"" + GeneratedReportsDir + "ДКЗ на кінець " + EndDate.ToShortDateString() + ".xls" + "\"";
+                process.StartInfo.FileName = "Excel.exe";
+                process.Start();
+                return true;
+            }
+            catch (System.IO.IOException)
+            {
+                MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            catch (System.ComponentModel.Win32Exception)
+            {
+                MessageBox.Show("Не знайдена програма Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+
+
+            //try
+            //{
+            //    workbook.SaveAs(GeneratedReportsDir + string.Format("ДКЗ на кінець {0}", EndDate) + ".xls", FileFormat.Excel8);
+
+            //    Process process = new Process();
+            //    process.StartInfo.Arguments = "\"" + GeneratedReportsDir + string.Format("ДКЗ на кінець {0}", EndDate) + ".xls" + "\"";
+            //    process.StartInfo.FileName = "Excel.exe";
+            //    process.Start();
+            //    return true;
+            //}
+            //catch (System.IO.IOException)
+            //{ MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
+            //catch (System.ComponentModel.Win32Exception)
+            //{
+            //    MessageBox.Show("Не знайдена програма Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return false;
+            //}
         }
 
         public bool GetContractorVat(DateTime startDate, DateTime endDate)

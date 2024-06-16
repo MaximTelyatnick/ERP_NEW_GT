@@ -406,7 +406,26 @@ namespace ERP_NEW.GUI.Accounting
 
         private void debtorsCreditorsBtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                splashScreenManager.ShowWaitForm();
 
+                reportService = Program.kernel.Get<IReportService>();
+
+                if (!reportService.GetMSDebitCredit(_endDate, "1", "1", "1", "15", "16"))
+                    MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("При формуванні звіту виникла помилка: " + ex.Message, "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                splashScreenManager.CloseWaitForm();
+
+                return;
+            }
         }
 
         private void paymentsWithoutVatBtn_Click(object sender, EventArgs e)

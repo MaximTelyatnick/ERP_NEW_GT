@@ -174,6 +174,9 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<ContractorVatDTO> GetContractorVatForChess(DateTime startDate, DateTime endDate);
         IEnumerable<CashPaymentsPeriodBalanceDTO> GetEconomicsNeeds_ForChess(DateTime startDate, DateTime endDate);
         IEnumerable<GetOSVkvartal_ForChessDTO> GetOSVkvartal_ForChess(DateTime startDate, DateTime endDate, int accountId);
+
+        bool GetMSDebitCredit(DateTime endDate, string flag1, string flag3, string flag4, string pflag3, string pflag4);
+        bool PrintMSDebitCredit(List<MsDebitCreditDTO> reportTable, DateTime EndDate);
         void Dispose();
 
 
