@@ -9293,56 +9293,69 @@ namespace ERP_NEW.BLL.Services
 
             var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
 
+            MsDebitCreditDTO deleteItem = dataSource.Where(srch => srch.ContractorName == "Нет").Last();
+            dataSource.Remove(deleteItem);
+
             return PrintMSDebitCredit(dataSource, endDate);
         }
 
         public bool PrintMSDebitCredit(List<MsDebitCreditDTO> reportTable, DateTime EndDate)
         {
-            //if (reportTable.Count == 0)
-            //{
-            //    MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
-
-            //var workbook = Factory.GetWorkbook(TemplatesDir + "MSDebtorsCreditors.xls");
-
             if (reportTable.Count() == 0)
             {
                 MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
-            var worksheet = workbook.Worksheets[0];
-            var cells = worksheet.Cells;
+            IWorksheet worksheet = workbook.Worksheets[0];
+            IRange cells = worksheet.Cells;
+
+            workbook.Worksheets[0].Name = "Debitor";
+            workbook.Worksheets.Add();
+            workbook.Worksheets[1].Name = "Creditor";
 
             int captionPosition = 6;
             int startPosition = captionPosition + 4;
             int currentPosition;
 
-            cells["A:A"].ColumnWidth = 15;
-            cells["B:B"].ColumnWidth = 70;
-            cells["C:C"].ColumnWidth = 70;
-
-            cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].Merge();
-            cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].HorizontalAlignment = HAlign.Center;
-            cells["A" + (captionPosition + 2)].Value = "Кредитори";
-            cells["A" + (captionPosition + 2)].Font.Bold = true;
-
-            cells["A" + (captionPosition + 3)].Value = "Едрпоу";
-            cells["A" + (captionPosition + 3)].Font.Bold = true;
-            cells["B" + (captionPosition + 3)].Value = "Найменування контрагента";
-            cells["B" + (captionPosition + 3)].Font.Bold = true;
-            cells["C" + (captionPosition + 3)].Value = "Сума";
-            cells["C" + (captionPosition + 3)].Font.Bold = true;
-
-            string name = string.Format("Дебіторсько-кредиторська заборгованість на кінець {0}", EndDate);
+            
 
             var DebCred = reportTable.AsEnumerable().Select(c => new { DebCred = c.DebitCredit}).Distinct();
             foreach (var debCred in DebCred)
             {
                 currentPosition = startPosition;
 
-                cells["A" + captionPosition].Value = name;
+                worksheet = workbook.Worksheets[debCred.DebCred.ToString()];
+                cells = worksheet.Cells;
+
+                cells["A:A"].ColumnWidth = 15;
+                cells["B:B"].ColumnWidth = 70;
+                cells["C:C"].ColumnWidth = 70;
+
+                cells["A" + (captionPosition + 1) + ":" + "C" + (captionPosition + 3)].Font.Bold = true;
+                cells["A" + (captionPosition + 1) + ":" + "C" + (captionPosition + 1)].Merge();
+                cells["A" + (captionPosition + 1) + ":" + "C" + (captionPosition + 1)].HorizontalAlignment = HAlign.Center;
+                cells["A" + (captionPosition + 1)].Value = string.Format("Дебіторсько-кредиторська заборгованість на {0}", EndDate.ToShortDateString());
+
+
+                cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].Merge();
+                cells["A" + (captionPosition + 2) + ":" + "C" + (captionPosition + 2)].HorizontalAlignment = HAlign.Center;
+                if (debCred.DebCred.ToString() == "Debitor")
+                    cells["A" + (captionPosition + 2)].Value = "Дебітори";
+                else
+                    cells["A" + (captionPosition + 2)].Value = "Кредитори";
+
+                cells["A" + (captionPosition + 3)].Value = "Едрпоу";
+                //cells["A" + (captionPosition + 3)].Font.Bold = true;
+                cells["B" + (captionPosition + 3)].Value = "Найменування контрагента";
+                //cells["B" + (captionPosition + 3)].Font.Bold = true;
+                cells["C" + (captionPosition + 3)].Value = "Сума";
+
+                
+                //cells["A" + (captionPosition + 2)].Font.Bold = true;
+                
+
+                
 
                 var Debit = reportTable.AsEnumerable().Where(c => c.DebitCredit.ToString() == debCred.DebCred.ToString()).OrderBy(c => (decimal)c.Price);
                 foreach (var debit in Debit)
@@ -9359,7 +9372,7 @@ namespace ERP_NEW.BLL.Services
                 cells["A" + startPosition + ":" + "B" + currentPosition].HorizontalAlignment = HAlign.Left;
                 cells["C" + startPosition + ":" + "C" + currentPosition].HorizontalAlignment = HAlign.Right;
                 cells["C" + startPosition + ":" + "C" + currentPosition].NumberFormat = "### ### ##0.00";
-                cells["A" + startPosition + ":" + "C" + currentPosition].Borders.LineStyle = LineStyle.Continous;
+                cells["A" + (startPosition-2) + ":" + "C" + currentPosition].Borders.LineStyle = LineStyle.Continous;
 
                 cells["A" + currentPosition + ":" + "B" + currentPosition].Merge();
                 cells["A" + currentPosition + ":" + "B" + currentPosition].HorizontalAlignment = HAlign.Center;
@@ -20723,4 +20736,3 @@ namespace ERP_NEW.BLL.Services
         }
     }
 }
-
