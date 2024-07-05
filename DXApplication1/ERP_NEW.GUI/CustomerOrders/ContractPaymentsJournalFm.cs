@@ -48,8 +48,18 @@ namespace ERP_NEW.GUI.CustomerOrders
             splashScreenManager.ShowWaitForm();
 
             customerOrdersService = Program.kernel.Get<ICustomerOrdersService>();
-            paymentsBS.DataSource = customerOrdersService.GetContractPaymentsByPeriod(beginDate, endDate).OrderBy(bdsm =>bdsm.PaymentDate).ThenBy(bd => bd.PaymentDocument).ToList();
-            paymentsGrid.DataSource = paymentsBS;
+            try
+            {
+                paymentsBS.DataSource = customerOrdersService.GetContractPaymentsByPeriod(beginDate, endDate).OrderBy(bdsm => bdsm.PaymentDate).ThenBy(bd => bd.PaymentDocument).ToList();
+                paymentsGrid.DataSource = paymentsBS;
+            }
+            catch (Exception ex)
+            {
+                if(beginDate.Year <= 2015|| endDate.Year <= 2015)
+                    MessageBox.Show("Помилка отримання даних. Оберіть рік більший за 2015.", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    MessageBox.Show("Помилка отримання даних " + ex.Message, "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             
             splashScreenManager.CloseWaitForm();
         }

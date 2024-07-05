@@ -653,7 +653,7 @@ namespace ERP_NEW.BLL.Services
             var cells = worksheet.Cells;
             var reportname = "ОСВ № 372";
 
-            string name = "Обігово-сальдова відомість по рахунку № 372";
+            string name = "Обігово-сальдова відомість по рахунку № 372 (Журнал авансів і звітів)";
             var nameperiod = "";
             if (start != DateTime.MinValue && end != DateTime.MaxValue)
             {
@@ -3598,7 +3598,7 @@ namespace ERP_NEW.BLL.Services
             var cells = worksheet.Cells;
             var reportname = "ОСВ господарських потреб";
 
-            string name = "Оборотно-сальдова відомість господарських потреб";
+            string name = "Оборотно-сальдова відомість господарських потреб (Журнал господарських потреб)";
             var nameperiod = "";
             if (start != DateTime.MinValue && end != DateTime.MaxValue)
             {
@@ -6619,7 +6619,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         #endregion
-
+         
         #region AccountClothes report's
 
         public void PrintAccountClothesCard(AccountClothesInfoDTO model, List<AccountClothesMaterialsDTO> source)
@@ -7103,7 +7103,7 @@ namespace ERP_NEW.BLL.Services
         }
 
         #endregion
-
+        
         #region Production report's
 
         public bool ExpendituresForProject(List<ExpedinturesAccountantDTO> source, DateTime startDate, DateTime endDate)
@@ -9293,7 +9293,7 @@ namespace ERP_NEW.BLL.Services
 
             var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
 
-            MsDebitCreditDTO deleteItem = dataSource.Where(srch => srch.ContractorName == "Нет").Last();
+            MsDebitCreditDTO deleteItem = dataSource.Where(srch => srch.ContractorName == "Нет").FirstOrDefault();
             dataSource.Remove(deleteItem);
 
             return PrintMSDebitCredit(dataSource, endDate);
