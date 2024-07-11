@@ -9277,24 +9277,77 @@ namespace ERP_NEW.BLL.Services
             }
         }
 
-        public bool GetMSDebitCredit(DateTime endDate, string flag1, string flag3, string flag4, string pflag3, string pflag4)
+        public bool GetMSDebitCredit(DateTime startDate, DateTime endDate, string flag1, string flag3, string flag4, string pflag3, string pflag4)
         {
+            //FbParameter[] Parameters =
+            //    {
+            //        new FbParameter("EndDate", endDate),
+            //        new FbParameter("Flag1", flag1),
+            //        new FbParameter("Flag3", flag3),
+            //        new FbParameter("Flag4", flag4),
+            //        new FbParameter("PFlag3", pflag3),
+            //        new FbParameter("PFlag4", pflag4)
+            //    };
+
+            //string procName = @"select * from ""ReportDebitCredit""(@EndDate, @Flag1, @Flag3, @Flag4, @PFlag3, @PFlag4)";
+
+            //var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
+
+            //MsDebitCreditDTO deleteItem = dataSource.Where(srch => srch.ContractorName == "Нет").FirstOrDefault();
+            //dataSource.Remove(deleteItem);
+
             FbParameter[] Parameters =
                 {
-                    new FbParameter("EndDate", endDate),
-                    new FbParameter("Flag1", flag1),
-                    new FbParameter("Flag3", flag3),
-                    new FbParameter("Flag4", flag4),
-                    new FbParameter("PFlag3", pflag3),
-                    new FbParameter("PFlag4", pflag4)
+                    new FbParameter("Start_Date", startDate),
+                    new FbParameter("End_Date", endDate),
+                    new FbParameter("PFlag1", flag1),
+                    new FbParameter("Flag3", pflag3),
+                    new FbParameter("Flag4", pflag4),
+                    new FbParameter("PFlag3", flag3),
+                    new FbParameter("PFlag4", flag4)
                 };
 
-            string procName = @"select * from ""ReportDebitCredit""(@EndDate, @Flag1, @Flag3, @Flag4, @PFlag3, @PFlag4)";
+            string procName = @"select * from ""ReportMSTrialBalanceByAccounts""(@Start_Date, @End_Date, @PFlag1, @Flag3, @Flag4,@PFlag3,@PFlag4)"; ;
 
-            var dataSource = mapper.Map<IEnumerable<MsDebitCredit>, List<MsDebitCreditDTO>>(msDebitCredit.SQLExecuteProc(procName, Parameters));
+            // procName =
 
-            MsDebitCreditDTO deleteItem = dataSource.Where(srch => srch.ContractorName == "Нет").FirstOrDefault();
-            dataSource.Remove(deleteItem);
+          
+            var model = mapper.Map<IEnumerable<MSTrialBalanceByAccounts>, List<MSTrialBalanceByAccountsDTO>>(msTrialBalanceByAccount.SQLExecuteProc(procName, Parameters));
+
+            //  return PrintMSTrialBalanceByAccounts(dataSource, startDate, endDate);//, accountNum.Replace('/', '.'), contractorName, contractorSrnCode);
+            if (model.Count() == 0)
+            {
+                MessageBox.Show("За вибраний період немає даних!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+
+
+
+
+            // если тут проблема со строкой, то скорее всего засунули контрагента с null єдрпо
+            var orderSource = model.AsEnumerable()
+                                .OrderBy(s => s.ContractorSrn)
+                                .ThenBy(i => i.Contractor_Id)
+                                .ThenBy(w => w.FlagDebitCredit).ToList();
+            // .CopyToDataTable();
+
+            var workbook = Factory.GetWorkbook(GeneratedReportsDir + @"Templates\TemplateWithStamp.xls");
+            var worksheet = workbook.Worksheets[0];
+            var cells = worksheet.Cells;
+
+            List<MsDebitCreditDTO> dataSource = new List<MsDebitCreditDTO>();
+            orderSource = orderSource.Where(flt => flt.FlagDebitCredit == 0).ToList();
+            foreach (var item in orderSource)
+            {
+                if (item.EndCredit > item.EndDebit)
+                {
+                    dataSource.Add( new MsDebitCreditDTO() {
+                         ContractorName = item.ContractorName,
+                         )
+                }
+            }
+
+
 
             return PrintMSDebitCredit(dataSource, endDate);
         }
