@@ -406,7 +406,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void debtorsCreditorsBtn_Click(object sender, EventArgs e)
         {
-            reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4);
+            //reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4);
 
 
             try
@@ -415,10 +415,10 @@ namespace ERP_NEW.GUI.Accounting
 
                 reportService = Program.kernel.Get<IReportService>();
 
-                if(!reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4))
+                //if(!reportService.GetMSTrialBalanceByAccounts(_beginDate, _endDate, Flag1, Flag3, Flag4, PFlag3, PFlag4))
+                //    MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (!reportService.GetMSDebitCredit(_beginDate, _endDate, "1", "1", "1", "15", "16"))
                     MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //if (!reportService.GetMSDebitCredit(_endDate, "1", "1", "1", "15", "16"))
-                //   MessageBox.Show("За вибраний період немає даних.", "Формування звіту", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 splashScreenManager.CloseWaitForm();
 

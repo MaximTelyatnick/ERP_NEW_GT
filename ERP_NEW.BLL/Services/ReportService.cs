@@ -9300,18 +9300,14 @@ namespace ERP_NEW.BLL.Services
                 {
                     new FbParameter("Start_Date", startDate),
                     new FbParameter("End_Date", endDate),
-                    new FbParameter("PFlag1", flag1),
-                    new FbParameter("Flag3", pflag3),
-                    new FbParameter("Flag4", pflag4),
-                    new FbParameter("PFlag3", flag3),
-                    new FbParameter("PFlag4", flag4)
+                    new FbParameter("Flag1", flag1),
+                    new FbParameter("Flag3", flag3),
+                    new FbParameter("Flag4", flag4),
+                    new FbParameter("PFlag3", pflag3),
+                    new FbParameter("PFlag4", pflag4)
                 };
 
-            string procName = @"select * from ""ReportMSTrialBalanceByAccounts""(@Start_Date, @End_Date, @PFlag1, @Flag3, @Flag4,@PFlag3,@PFlag4)"; ;
-
-            // procName =
-
-          
+            string procName = @"select * from ""ReportMSTrialBalanceByAccounts""(@Start_Date, @End_Date, @Flag1, @Flag3, @Flag4,@PFlag3,@PFlag4)"; ;
             var model = mapper.Map<IEnumerable<MSTrialBalanceByAccounts>, List<MSTrialBalanceByAccountsDTO>>(msTrialBalanceByAccount.SQLExecuteProc(procName, Parameters));
 
             //  return PrintMSTrialBalanceByAccounts(dataSource, startDate, endDate);//, accountNum.Replace('/', '.'), contractorName, contractorSrnCode);
@@ -9341,13 +9337,29 @@ namespace ERP_NEW.BLL.Services
             {
                 if (item.EndCredit > item.EndDebit)
                 {
-                    dataSource.Add( new MsDebitCreditDTO() {
-                         ContractorName = item.ContractorName,
-                         )
+                    dataSource.Add(new MsDebitCreditDTO()
+                    {
+                        ContractorName = item.ContractorName,
+                        ContractorSrn = item.ContractorSrn,
+                        DebitCredit = "Creditor",
+                        Price = item.EndCredit
+                    });
                 }
+                else if (item.EndCredit < item.EndDebit)
+                {
+                    dataSource.Add(new MsDebitCreditDTO()
+                    {
+                        ContractorName = item.ContractorName,
+                        ContractorSrn = item.ContractorSrn,
+                        DebitCredit = "Debitor",
+                        Price = item.EndDebit
+                    });
+                }
+                else
+                {
+                    continue;
+                }  
             }
-
-
 
             return PrintMSDebitCredit(dataSource, endDate);
         }
@@ -9457,28 +9469,6 @@ namespace ERP_NEW.BLL.Services
                 MessageBox.Show("Не знайдена програма Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-
-
-            //try
-            //{
-            //    workbook.SaveAs(GeneratedReportsDir + string.Format("ДКЗ на кінець {0}", EndDate) + ".xls", FileFormat.Excel8);
-
-            //    Process process = new Process();
-            //    process.StartInfo.Arguments = "\"" + GeneratedReportsDir + string.Format("ДКЗ на кінець {0}", EndDate) + ".xls" + "\"";
-            //    process.StartInfo.FileName = "Excel.exe";
-            //    process.Start();
-            //    return true;
-            //}
-            //catch (System.IO.IOException)
-            //{ MessageBox.Show("Документ вже відкритий!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return false;
-            //}
-            //catch (System.ComponentModel.Win32Exception)
-            //{
-            //    MessageBox.Show("Не знайдена програма Microsoft Excel!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return false;
-            //}
         }
 
         public bool GetContractorVat(DateTime startDate, DateTime endDate)
