@@ -32,8 +32,10 @@ namespace ERP_NEW.GUI.Tools
 
             UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
             useSimpleEmmloyeeSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "UserUsedSimpleEmployeeForm", true, DataSourceUpdateMode.OnPropertyChanged);
+            useSuperUserSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "SuperUser", true, DataSourceUpdateMode.OnPropertyChanged);
             userRouteFolderEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "UserFolderRoute", true, DataSourceUpdateMode.OnPropertyChanged);
             appSkinEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "ApplicationSkinName", true, DataSourceUpdateMode.OnPropertyChanged);
+            changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
             if (logService.CheckTable("Log"))
                 logerTableCheck.EditValue = true;
 
@@ -99,6 +101,21 @@ namespace ERP_NEW.GUI.Tools
         private void clearBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void useSuperUserSwitch_EditValueChanged(object sender, EventArgs e)
+        {
+                using (UserAuthFm userAuthFm = new UserAuthFm("SuperUser"))
+                {
+                    if (userAuthFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+                    }
+                }
+            
+
+
+            changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
         }
     }
 }

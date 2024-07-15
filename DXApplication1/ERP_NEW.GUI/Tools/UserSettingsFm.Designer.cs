@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsFm));
             this.useSimpleEmmloyeeSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label1 = new System.Windows.Forms.Label();
@@ -35,8 +36,8 @@
             this.openFileBtn = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.appSkinEdit = new DevExpress.XtraEditors.PopupContainerEdit();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
-            this.styleMenu = new DevExpress.XtraBars.PopupMenu();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.styleMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -46,10 +47,12 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.mainTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.useSuperUserSwitch = new DevExpress.XtraEditors.ToggleSwitch();
+            this.label6 = new System.Windows.Forms.Label();
             this.useHolidaySwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,6 +60,7 @@
             this.logerTableCheck = new DevExpress.XtraEditors.CheckEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.createLogerTableBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.changeUserBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).BeginInit();
@@ -65,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.mainTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.useSuperUserSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).BeginInit();
             this.logerTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logerTableCheck.Properties)).BeginInit();
@@ -225,6 +230,9 @@
             // 
             // mainTabPage
             // 
+            this.mainTabPage.Controls.Add(this.changeUserBtn);
+            this.mainTabPage.Controls.Add(this.useSuperUserSwitch);
+            this.mainTabPage.Controls.Add(this.label6);
             this.mainTabPage.Controls.Add(this.useHolidaySwitch);
             this.mainTabPage.Controls.Add(this.label4);
             this.mainTabPage.Controls.Add(this.label3);
@@ -237,8 +245,30 @@
             this.mainTabPage.Controls.Add(this.label2);
             this.mainTabPage.Image = ((System.Drawing.Image)(resources.GetObject("mainTabPage.Image")));
             this.mainTabPage.Name = "mainTabPage";
-            this.mainTabPage.Size = new System.Drawing.Size(589, 387);
+            this.mainTabPage.Size = new System.Drawing.Size(588, 385);
             this.mainTabPage.Text = "Налаштування додатку";
+            // 
+            // useSuperUserSwitch
+            // 
+            this.useSuperUserSwitch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.useSuperUserSwitch.Location = new System.Drawing.Point(486, 130);
+            this.useSuperUserSwitch.Name = "useSuperUserSwitch";
+            this.useSuperUserSwitch.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.useSuperUserSwitch.Properties.OffText = "Викл";
+            this.useSuperUserSwitch.Properties.OnText = "Вкл";
+            this.useSuperUserSwitch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.useSuperUserSwitch.Size = new System.Drawing.Size(95, 24);
+            this.useSuperUserSwitch.TabIndex = 87;
+            this.useSuperUserSwitch.EditValueChanged += new System.EventHandler(this.useSuperUserSwitch_EditValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 135);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(136, 13);
+            this.label6.TabIndex = 88;
+            this.label6.Text = "Режим суперкористувача";
             // 
             // useHolidaySwitch
             // 
@@ -277,7 +307,7 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
-            this.logerTabPage.Size = new System.Drawing.Size(589, 387);
+            this.logerTabPage.Size = new System.Drawing.Size(588, 385);
             this.logerTabPage.Text = "Налаштування логеру";
             // 
             // logerTableCheck
@@ -309,6 +339,15 @@
             this.createLogerTableBtn.Text = "Create";
             this.createLogerTableBtn.Click += new System.EventHandler(this.createLogerTableBtn_Click);
             // 
+            // changeUserBtn
+            // 
+            this.changeUserBtn.Location = new System.Drawing.Point(331, 130);
+            this.changeUserBtn.Name = "changeUserBtn";
+            this.changeUserBtn.Size = new System.Drawing.Size(149, 24);
+            this.changeUserBtn.TabIndex = 90;
+            this.changeUserBtn.Text = "Змінити користувача";
+            this.changeUserBtn.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            // 
             // UserSettingsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -337,6 +376,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.mainTabPage.ResumeLayout(false);
             this.mainTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.useSuperUserSwitch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).EndInit();
             this.logerTabPage.ResumeLayout(false);
             this.logerTabPage.PerformLayout();
@@ -376,5 +416,8 @@
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.SimpleButton createLogerTableBtn;
         private DevExpress.XtraEditors.CheckEdit logerTableCheck;
+        private DevExpress.XtraEditors.ToggleSwitch useSuperUserSwitch;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.SimpleButton changeUserBtn;
     }
 }

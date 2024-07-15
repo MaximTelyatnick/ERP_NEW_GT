@@ -65,5 +65,11 @@
     <Setting Name="ReportFmEndYear" Type="System.DateTime" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SuperUser" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="SuperUserPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">12345678</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -29,6 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
             DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
@@ -79,12 +80,12 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement46 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement47 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement55 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement49 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement50 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement51 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement52 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement53 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement54 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement49 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement63 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement56 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement57 = new DevExpress.XtraEditors.TileItemElement();
@@ -180,12 +181,12 @@
             this.deliveryStoreRemainsReceiptItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.deliveryOrderTTNItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.otkCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
+            this.certificatePassItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.expenditureOrdersItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.defectActsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.weldAttestationItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.weldAttestationPersonItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.controlCheckJournalItem = new DevExpress.XtraBars.Navigation.TileNavItem();
-            this.certificatePassItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.storeHouseCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
             this.receiptOrdersItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.invoiceRequirementItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -241,8 +242,8 @@
             this.professionLabel = new DevExpress.XtraEditors.LabelControl();
             this.fioLabel = new DevExpress.XtraEditors.LabelControl();
             this.userFotoEdit = new DevExpress.XtraEditors.PictureEdit();
-            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
+            this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView2 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.tileNavSubItem3 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.tileNavSubItem4 = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -1426,6 +1427,30 @@
             this.otkCategory.Tile.Elements.Add(tileItemElement55);
             this.otkCategory.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             // 
+            // certificatePassItem
+            // 
+            this.certificatePassItem.Caption = "Сертифікати та паспорти";
+            this.certificatePassItem.Name = "certificatePassItem";
+            this.certificatePassItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.certificatePassItem.OwnerCollection = this.otkCategory.Items;
+            // 
+            // 
+            // 
+            this.certificatePassItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.certificatePassItem.Tile.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseForeColor = true;
+            this.certificatePassItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement49.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement49.Image")));
+            tileItemElement49.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement49.Text = "Сертифікати та паспорти";
+            this.certificatePassItem.Tile.Elements.Add(tileItemElement49);
+            this.certificatePassItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.certificatePassItem.Tile.Name = "tileBarItem1";
+            // 
             // expenditureOrdersItem
             // 
             this.expenditureOrdersItem.Caption = "";
@@ -1536,30 +1561,6 @@
             this.controlCheckJournalItem.Tile.Elements.Add(tileItemElement54);
             this.controlCheckJournalItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.controlCheckJournalItem.Tile.Name = "tileBarItem1";
-            // 
-            // certificatePassItem
-            // 
-            this.certificatePassItem.Caption = "Сертифікати та паспорти";
-            this.certificatePassItem.Name = "certificatePassItem";
-            this.certificatePassItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.certificatePassItem.OwnerCollection = this.otkCategory.Items;
-            // 
-            // 
-            // 
-            this.certificatePassItem.Tile.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.False;
-            this.certificatePassItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.certificatePassItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.certificatePassItem.Tile.AppearanceItem.Normal.ForeColor = System.Drawing.Color.White;
-            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.certificatePassItem.Tile.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.certificatePassItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement49.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement49.Image")));
-            tileItemElement49.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement49.Text = "Сертифікати та паспорти";
-            this.certificatePassItem.Tile.Elements.Add(tileItemElement49);
-            this.certificatePassItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.certificatePassItem.Tile.Name = "tileBarItem1";
             // 
             // storeHouseCategory
             // 
@@ -2675,7 +2676,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainTabFm";
             this.ShowMdiChildCaptionInParentTitle = true;
-            this.Text = "а";
+            this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainTabFm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

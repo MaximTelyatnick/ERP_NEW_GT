@@ -1766,6 +1766,12 @@
     <Compile Include="Tools\TasksEditFm.Designer.cs">
       <DependentUpon>TasksEditFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\UserAuthFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\UserAuthFm.Designer.cs">
+      <DependentUpon>UserAuthFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tools\UserRoleEditFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2490,6 +2496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\TasksEditFm.resx">
       <DependentUpon>TasksEditFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools\UserAuthFm.resx">
+      <DependentUpon>UserAuthFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tools\UserRoleEditFm.resx">
       <DependentUpon>UserRoleEditFm.cs</DependentUpon>
