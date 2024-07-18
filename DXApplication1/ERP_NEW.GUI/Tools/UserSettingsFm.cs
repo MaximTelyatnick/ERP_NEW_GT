@@ -36,6 +36,7 @@ namespace ERP_NEW.GUI.Tools
             userRouteFolderEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "UserFolderRoute", true, DataSourceUpdateMode.OnPropertyChanged);
             appSkinEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "ApplicationSkinName", true, DataSourceUpdateMode.OnPropertyChanged);
             changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+
             if (logService.CheckTable("Log"))
                 logerTableCheck.EditValue = true;
 
@@ -105,17 +106,74 @@ namespace ERP_NEW.GUI.Tools
 
         private void useSuperUserSwitch_EditValueChanged(object sender, EventArgs e)
         {
-                using (UserAuthFm userAuthFm = new UserAuthFm("SuperUser"))
+           
+        }
+
+        private void activeSuperUserBtn_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.SuperUser)
+            {
+                try
                 {
-                    if (userAuthFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    using (UserAuthFm userAuthFm = new UserAuthFm("SuperUser"))
                     {
-                        changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+                        if (userAuthFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+
+                        }
                     }
                 }
-            
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Виникла помилка під час авторизації", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
+                changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+            }
+            else if(Properties.Settings.Default.SuperUser)
+            {
+                Properties.Settings.Default.SuperUser = false;
+                //changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
 
+            }
+        }
+
+        private void useSuperUserSwitch_EditValueChanged_1(object sender, EventArgs e)
+        {
+            if ((bool)useSuperUserSwitch.EditValue)
+            {
+                activeSuperUserBtn.Text = "Деактивувати";
+            }
+            else
+            {
+                activeSuperUserBtn.Text = "Активувати";
+            }
             changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+        }
+
+        private void changeUserBtn_Click(object sender, EventArgs e)
+        {
+            if (!Properties.Settings.Default.SuperUser)
+            {
+                try
+                {
+                    using (UserAuthFm userAuthFm = new UserAuthFm("SuperUser"))
+                    {
+                        if (userAuthFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Виникла помилка під час авторизації", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
+            }
         }
     }
 }

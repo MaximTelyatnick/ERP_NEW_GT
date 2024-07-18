@@ -16,7 +16,8 @@ namespace ERP_NEW.GUI.Tools
         public UserAuthFm(string login)
         {
             InitializeComponent();
-            loginEdit.DataBindings.Add("EditValue", login, "Text", true, DataSourceUpdateMode.OnPropertyChanged);
+            loginEdit.Text = login;
+            //loginEdit.DataBindings.Add("EditValue", login, "Text", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
@@ -52,6 +53,10 @@ namespace ERP_NEW.GUI.Tools
                 Properties.Settings.Default.SuperUser = true;
                 DialogResult = DialogResult.OK;
             }
+            else
+            {
+                MessageBox.Show("Не вірний логін або пароль!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             return;
         }
 
@@ -59,6 +64,19 @@ namespace ERP_NEW.GUI.Tools
         {
             DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void UserAuthFm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                authBtn.PerformClick();
+
+        }
+
+        private void passEdit_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                authBtn.PerformClick();
         }
     }
 }

@@ -51,6 +51,8 @@
             this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.mainTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.activeSuperUserBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.changeUserBtn = new DevExpress.XtraEditors.SimpleButton();
             this.useSuperUserSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label6 = new System.Windows.Forms.Label();
             this.useHolidaySwitch = new DevExpress.XtraEditors.ToggleSwitch();
@@ -60,7 +62,6 @@
             this.logerTableCheck = new DevExpress.XtraEditors.CheckEdit();
             this.label5 = new System.Windows.Forms.Label();
             this.createLogerTableBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.changeUserBtn = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.useSimpleEmmloyeeSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userRouteFolderEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appSkinEdit.Properties)).BeginInit();
@@ -230,6 +231,7 @@
             // 
             // mainTabPage
             // 
+            this.mainTabPage.Controls.Add(this.activeSuperUserBtn);
             this.mainTabPage.Controls.Add(this.changeUserBtn);
             this.mainTabPage.Controls.Add(this.useSuperUserSwitch);
             this.mainTabPage.Controls.Add(this.label6);
@@ -248,6 +250,26 @@
             this.mainTabPage.Size = new System.Drawing.Size(588, 385);
             this.mainTabPage.Text = "Налаштування додатку";
             // 
+            // activeSuperUserBtn
+            // 
+            this.activeSuperUserBtn.Location = new System.Drawing.Point(350, 130);
+            this.activeSuperUserBtn.Name = "activeSuperUserBtn";
+            this.activeSuperUserBtn.Size = new System.Drawing.Size(130, 24);
+            this.activeSuperUserBtn.TabIndex = 91;
+            this.activeSuperUserBtn.Text = "Активувати ";
+            this.activeSuperUserBtn.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            this.activeSuperUserBtn.Click += new System.EventHandler(this.activeSuperUserBtn_Click);
+            // 
+            // changeUserBtn
+            // 
+            this.changeUserBtn.Location = new System.Drawing.Point(214, 130);
+            this.changeUserBtn.Name = "changeUserBtn";
+            this.changeUserBtn.Size = new System.Drawing.Size(130, 24);
+            this.changeUserBtn.TabIndex = 90;
+            this.changeUserBtn.Text = "Змінити користувача";
+            this.changeUserBtn.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            this.changeUserBtn.Click += new System.EventHandler(this.changeUserBtn_Click);
+            // 
             // useSuperUserSwitch
             // 
             this.useSuperUserSwitch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -256,10 +278,11 @@
             this.useSuperUserSwitch.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
             this.useSuperUserSwitch.Properties.OffText = "Викл";
             this.useSuperUserSwitch.Properties.OnText = "Вкл";
+            this.useSuperUserSwitch.Properties.ReadOnly = true;
             this.useSuperUserSwitch.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.useSuperUserSwitch.Size = new System.Drawing.Size(95, 24);
             this.useSuperUserSwitch.TabIndex = 87;
-            this.useSuperUserSwitch.EditValueChanged += new System.EventHandler(this.useSuperUserSwitch_EditValueChanged);
+            this.useSuperUserSwitch.EditValueChanged += new System.EventHandler(this.useSuperUserSwitch_EditValueChanged_1);
             // 
             // label6
             // 
@@ -339,15 +362,6 @@
             this.createLogerTableBtn.Text = "Create";
             this.createLogerTableBtn.Click += new System.EventHandler(this.createLogerTableBtn_Click);
             // 
-            // changeUserBtn
-            // 
-            this.changeUserBtn.Location = new System.Drawing.Point(331, 130);
-            this.changeUserBtn.Name = "changeUserBtn";
-            this.changeUserBtn.Size = new System.Drawing.Size(149, 24);
-            this.changeUserBtn.TabIndex = 90;
-            this.changeUserBtn.Text = "Змінити користувача";
-            this.changeUserBtn.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
-            // 
             // UserSettingsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,5 +433,6 @@
         private DevExpress.XtraEditors.ToggleSwitch useSuperUserSwitch;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton changeUserBtn;
+        private DevExpress.XtraEditors.SimpleButton activeSuperUserBtn;
     }
 }

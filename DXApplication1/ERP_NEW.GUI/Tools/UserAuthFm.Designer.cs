@@ -61,6 +61,7 @@
             this.passEdit.Size = new System.Drawing.Size(128, 20);
             this.passEdit.TabIndex = 1;
             this.passEdit.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.passEdit.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passEdit_KeyDown);
             // 
             // labelControl1
             // 
@@ -114,12 +115,14 @@
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.passEdit);
             this.Controls.Add(this.loginEdit);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UserAuthFm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизація";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UserAuthFm_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.loginEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();

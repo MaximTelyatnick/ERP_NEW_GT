@@ -15,6 +15,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public string RightName { get; set; }
         public string RightAttribute { get; set; }
         public int PriceAttribute { get; set; }
+        public int AccountNumber { get; set; }
 
 
     }
