@@ -48,6 +48,7 @@ namespace ERP_NEW.GUI
     {
         private IUserService userService;
         private UserDetailsDTO userInfo;
+
         private IEnumerable<UserTasksDTO> userAccess;
 
         public MainTabFm(int accountNumber = 0)
