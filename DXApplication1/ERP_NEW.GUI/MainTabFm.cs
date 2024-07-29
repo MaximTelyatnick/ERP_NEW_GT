@@ -50,7 +50,7 @@ namespace ERP_NEW.GUI
         private UserDetailsDTO userInfo;
         private IEnumerable<UserTasksDTO> userAccess;
 
-        public MainTabFm()
+        public MainTabFm(int accountNumber = 0)
         {
            
             InitializeComponent();
@@ -81,12 +81,16 @@ namespace ERP_NEW.GUI
 
             if (ApplicationDeployment.IsNetworkDeployed)
             myVersion = ApplicationDeployment.CurrentDeployment.CurrentVersion;
-
             programVersionLbl.Text += myVersion.ToString();
+            //programVersionLbl.Text += myVersion.ToString() + "\nMode:" + Utils.isDebugging();
+
+
+
             //programVersionLbl.Text += (FileVersionInfo.GetVersionInfo(Assembly.GetCallingAssembly().Location).ProductVersion).ToString();
             //programVersionLbl.Text += Application.ProductVersion.ToString();
 
-            if (!CheckAccess())
+
+           if (!CheckAccess(accountNumber))
                 return;
 
             userInfo = UserService.AuthorizatedUser;
@@ -762,24 +766,30 @@ namespace ERP_NEW.GUI
             menuNavPane.HideDropDownWindow();
         }
            
-        private bool CheckAccess()
+        private bool CheckAccess(int accountNumber = 0)
         {
-            int num = GetActiveDirectoryUser();
-            
+            int num = accountNumber;
+
+            if (accountNumber == 0)
+            {
+                num = GetActiveDirectoryUser();
+            }
+
+
             switch (num)
             {
                 case -1:
-                    
+
                     Load += (s, e) => Close();
                     return false;
                 case 0:
                     MessageBox.Show("Інформація про користувача відсутня на сервері підприємства. \nЗверніться у відділ АСУВ", "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    
+
                     Load += (s, e) => Close();
                     return false;
                 default:
                     userService = Program.kernel.Get<IUserService>();
-             
+
                     SplashScreenManager.ShowForm(typeof(StartScreenFm));
                     SplashScreenManager.Default.SendCommand(StartScreenFm.SplashScreenCommand.SetLabel, "Авторизація користувача...");
                     Thread.Sleep(200);
@@ -797,12 +807,13 @@ namespace ERP_NEW.GUI
                     else
                     {
                         SplashScreenManager.CloseForm();
-                        MessageBox.Show("Вам не дозволено працювати в системі. \nЗверніться у відділ АСУВ. \nВаш ідентифікатор "+ num, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Вам не дозволено працювати в системі. \nЗверніться у відділ АСУВ. \nВаш ідентифікатор " + num, "Авторизація користувача", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         Load += (s, e) => Close();
                         return false;
                     }
             }
+
         }
    
         private int GetActiveDirectoryUser()
@@ -810,7 +821,7 @@ namespace ERP_NEW.GUI
             // если нужно отключить систему авторизации через табельный номер подвязанный к домену
             // указываем табельный номер который нужно вернуть
 
-            //return 690;
+            return 690;
             //return 1000;
             //return 457;
             var currentDomain = ADUser.CurrentDC();
@@ -948,9 +959,33 @@ namespace ERP_NEW.GUI
                 .FirstOrDefault();
 
             string path = Utils.HomePath;
-            ref Int32 v
-            UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO);
-            userSettingsFm.ShowDialog();
+            //ref Int32 v
+            using (UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO))
+            {
+                //DialogResult ret = userSettingsFm.ShowDialog();
+                if (userSettingsFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    if (Properties.Settings.Default.AccountNumber != 0)
+                    {
+                        MainTabFm oReadWindow = new MainTabFm(Properties.Settings.Default.AccountNumber);
+                        oReadWindow.ShowDialog(this);
+
+                    }
+                }
+                //else if (ret == System.Windows.Forms.DialogResult.Retry)
+                //{
+                //    if (Properties.Settings.Default.AccountNumber != 0)
+                //    {
+                //        MainTabFm oReadWindow = new MainTabFm(Properties.Settings.Default.AccountNumber);
+
+                //    }
+                //}
+            }
+
+
+
+            //UserSettingsFm userSettingsFm = new UserSettingsFm(userTasksDTO);
+            //userSettingsFm.ShowDialog();
         }
 
         private void userFotoEdit_EditValueChanged(object sender, EventArgs e)

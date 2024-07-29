@@ -31,6 +31,7 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<ProfessionsDTO> GetProfessions();
         IEnumerable<EmployeesInfoDTO> GetEmployeesWorkingByDeparmentId(int departmentId);
         IEnumerable<EmployeeVisitScheduleDTO> GetEmployeeVisitScheduleProc(int employeeId, DateTime startDate, DateTime endDate);
+        bool CheckAccountNumber(int accountNumber);
         //IEnumerable<EmployeesDetailsDTO> GetEmployesDetals();
 
 

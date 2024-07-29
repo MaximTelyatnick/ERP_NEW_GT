@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using System.IO;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ERP_NEW.BLL.Infrastructure
 {
@@ -198,9 +199,32 @@ namespace ERP_NEW.BLL.Infrastructure
             Expenditure
         };
 
+        public static bool isDebugging()
+        {
+            bool debugging = false;
+
+            WellAreWe(ref debugging);
+
+            return debugging;
+        }
 
 
 
+        [Conditional("DEBUG")]
+        private static void WellAreWe(ref bool debugging)
+        {
+            debugging = true;
+        }
+
+        public static bool StringIsDigits(string s)
+        {
+            foreach (var item in s)
+            {
+                if (!char.IsDigit(item))
+                    return false; //если хоть один символ не число, то выкидываешь "ложь"
+            }
+            return true; //если ни разу не выбило в цикле, значит, все символы - это цифры
+        }
 
     }
 }

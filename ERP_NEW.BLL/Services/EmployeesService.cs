@@ -206,7 +206,8 @@ namespace ERP_NEW.BLL.Services
         {
             return mapper.Map<IEnumerable<Professions>, List<ProfessionsDTO>>(professions.GetAll());
         }
-        
+
+
 
 
         public IEnumerable<EmployeeVisitScheduleDTO> GetEmployeeVisitScheduleProc(int employeeId, DateTime startDate, DateTime endDate)
@@ -221,6 +222,11 @@ namespace ERP_NEW.BLL.Services
             string procName = @"select * from ""GetEmployeeVisitScheduleProc""(@Id, @StartDate, @EndDate)";
 
             return mapper.Map<IEnumerable<EmployeeVisitSchedule>, List<EmployeeVisitScheduleDTO>>(employeeVisitSchedule.SQLExecuteProc(procName,Parametrs));
+        }
+
+        public bool CheckAccountNumber(int accountNumber)
+        {
+            return mapper.Map<IEnumerable<Employees>, List<EmployeesDTO>>(employees.GetAll()).Any(bdsm => bdsm.AccountNumber == accountNumber);
         }
 
 

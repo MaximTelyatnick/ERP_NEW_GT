@@ -8,15 +8,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using ERP_NEW.BLL.Interfaces;
+using ERP_NEW.BLL.Infrastructure;
+using Ninject;
 
 namespace ERP_NEW.GUI.Tools
 {
     public partial class UserAuthFm : DevExpress.XtraEditors.XtraForm
     {
+        private IEmployeesService employeesService;
         public UserAuthFm(string login)
         {
             InitializeComponent();
             loginEdit.Text = login;
+            if(Properties.Settings.Default.SuperUser)
+            {
+                loginLbl.Text = "Табельний номер";
+                passEdit.Visible = false;
+                passLbl.Visible = false;
+                authBtn.Text = "Змінити користувача";
+            }
+
+
             //loginEdit.DataBindings.Add("EditValue", login, "Text", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
@@ -48,16 +61,46 @@ namespace ERP_NEW.GUI.Tools
 
         private void authBtn_Click(object sender, EventArgs e)
         {
-            if ((loginEdit.Text == "SuperUser") && (passEdit.Text == Properties.Settings.Default.SuperUserPass))
+            if (!Properties.Settings.Default.SuperUser)
             {
-                Properties.Settings.Default.SuperUser = true;
-                DialogResult = DialogResult.OK;
+                if ((loginEdit.Text == "SuperUser") && (passEdit.Text == Properties.Settings.Default.SuperUserPass))
+                {
+                    Properties.Settings.Default.SuperUser = true;
+                    DialogResult = DialogResult.Retry;
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Не вірний логін або пароль!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                return;
             }
             else
             {
-                MessageBox.Show("Не вірний логін або пароль!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                if(!Utils.StringIsDigits(loginEdit.Text))
+                {
+                    MessageBox.Show("Не вірний табельний номер!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult = DialogResult.Cancel;
+                    return;
+                }
+
+                employeesService = Program.kernel.Get<IEmployeesService>();
+                if(employeesService.CheckAccountNumber(Convert.ToInt16(loginEdit.Text)))
+                {
+                    Properties.Settings.Default.AccountNumber = Convert.ToInt16(loginEdit.Text);
+                    DialogResult = DialogResult.Cancel;
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Такий номер відсутній!", "Підтвердження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //DialogResult = DialogResult.Cancel;
+                    return;
+                }
+
+                return;
             }
-            return;
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

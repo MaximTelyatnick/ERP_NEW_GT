@@ -287,5 +287,17 @@ namespace ERP_NEW.GUI.Properties {
                 this["SuperUserPass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AccountNumber {
+            get {
+                return ((int)(this["AccountNumber"]));
+            }
+            set {
+                this["AccountNumber"] = value;
+            }
+        }
     }
 }

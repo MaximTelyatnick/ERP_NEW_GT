@@ -64,23 +64,6 @@ namespace ERP_NEW.DAL.Repositories
                 }
             }
 
-
-
-
-
-            //try
-            //{
-            //    db.Database.BeginTransaction();
-            //    db.Database.ExecuteSqlCommand(str);
-            //    db.SaveChanges();
-
-            //    //db.Database.
-            //}
-            //catch (Exception ex)
-            //{
-            //    return false;
-            //}
-
             return true;
         }
 

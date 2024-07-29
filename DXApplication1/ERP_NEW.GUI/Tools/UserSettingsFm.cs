@@ -154,16 +154,21 @@ namespace ERP_NEW.GUI.Tools
 
         private void changeUserBtn_Click(object sender, EventArgs e)
         {
-            if (!Properties.Settings.Default.SuperUser)
+            if (Properties.Settings.Default.SuperUser)
             {
                 try
                 {
-                    using (UserAuthFm userAuthFm = new UserAuthFm("SuperUser"))
+                    using (UserAuthFm userAuthFm = new UserAuthFm(""))
                     {
-                        if (userAuthFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        DialogResult ret = userAuthFm.ShowDialog();
+                        if (ret == System.Windows.Forms.DialogResult.OK)
                         {
                             changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
 
+                        }
+                        else if(ret == System.Windows.Forms.DialogResult.Cancel)
+                        {
+                            DialogResult = DialogResult.OK;
                         }
                     }
                 }
