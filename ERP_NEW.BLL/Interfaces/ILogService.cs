@@ -16,7 +16,9 @@ namespace ERP_NEW.BLL.Interfaces
         int CreateLogRecord(string message, Utils.Level level, UserTasksDTO user, string formName);
         int LogCreate(LogDTO logDTO);
         bool CheckTable(string tableName);
+        bool CheckDatabase();
         void LogUpdate(LogDTO logDTO);
         bool LogDelete(int id);
+
     }
 }

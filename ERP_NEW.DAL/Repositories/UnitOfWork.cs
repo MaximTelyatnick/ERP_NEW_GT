@@ -67,6 +67,14 @@ namespace ERP_NEW.DAL.Repositories
             return true;
         }
 
+        public bool CheckDB()
+        {
+            if (db.CheckConnect())
+                return true;
+            else
+                return false;
+        }
+
         public void Dispose()
         {
             Dispose(true);

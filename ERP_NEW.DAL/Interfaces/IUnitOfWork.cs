@@ -11,5 +11,6 @@ namespace ERP_NEW.DAL.Interfaces
         IRepository<TEntity> GetRepository<TEntity>() where TEntity : class;
 
         bool GetExecuteSqlCommand(string str);
+        bool CheckDB();
     }
 }

@@ -200,6 +200,7 @@ namespace ERP_NEW.GUI.Accounting
 
                 if (item.Contractor_Id == null)
                 {
+                    // тут нужно разработать проверку
                     List<ContractorsDTO> contractorsList = contractorsService.GetContractors(1).ToList();
 
                     var tempContractorModel = contractorsList.FirstOrDefault(c => (c.Srn ?? "").Trim() == item.ContractorName.Trim());

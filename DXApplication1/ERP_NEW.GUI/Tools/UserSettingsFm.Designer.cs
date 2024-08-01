@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserSettingsFm));
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
             this.useSimpleEmmloyeeSwitch = new DevExpress.XtraEditors.ToggleSwitch();
             this.label1 = new System.Windows.Forms.Label();
             this.userRouteFolderEdit = new DevExpress.XtraEditors.TextEdit();
@@ -51,6 +52,9 @@
             this.clearBtn = new DevExpress.XtraEditors.SimpleButton();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.mainTabPage = new DevExpress.XtraTab.XtraTabPage();
+            this.testBdBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.connectDbSwitch = new DevExpress.XtraEditors.ToggleSwitch();
+            this.label7 = new System.Windows.Forms.Label();
             this.activeSuperUserBtn = new DevExpress.XtraEditors.SimpleButton();
             this.changeUserBtn = new DevExpress.XtraEditors.SimpleButton();
             this.useSuperUserSwitch = new DevExpress.XtraEditors.ToggleSwitch();
@@ -70,11 +74,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.mainTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.connectDbSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.useSuperUserSwitch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).BeginInit();
             this.logerTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logerTableCheck.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
             // 
             // useSimpleEmmloyeeSwitch
             // 
@@ -231,6 +240,9 @@
             // 
             // mainTabPage
             // 
+            this.mainTabPage.Controls.Add(this.testBdBtn);
+            this.mainTabPage.Controls.Add(this.connectDbSwitch);
+            this.mainTabPage.Controls.Add(this.label7);
             this.mainTabPage.Controls.Add(this.activeSuperUserBtn);
             this.mainTabPage.Controls.Add(this.changeUserBtn);
             this.mainTabPage.Controls.Add(this.useSuperUserSwitch);
@@ -249,6 +261,38 @@
             this.mainTabPage.Name = "mainTabPage";
             this.mainTabPage.Size = new System.Drawing.Size(588, 385);
             this.mainTabPage.Text = "Налаштування додатку";
+            // 
+            // testBdBtn
+            // 
+            this.testBdBtn.Location = new System.Drawing.Point(350, 160);
+            this.testBdBtn.Name = "testBdBtn";
+            this.testBdBtn.Size = new System.Drawing.Size(130, 24);
+            this.testBdBtn.TabIndex = 94;
+            this.testBdBtn.Text = "Test";
+            this.testBdBtn.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Application;
+            this.testBdBtn.Click += new System.EventHandler(this.testBdBtn_Click);
+            // 
+            // connectDbSwitch
+            // 
+            this.connectDbSwitch.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.connectDbSwitch.Location = new System.Drawing.Point(486, 160);
+            this.connectDbSwitch.Name = "connectDbSwitch";
+            this.connectDbSwitch.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.connectDbSwitch.Properties.OffText = "Викл";
+            this.connectDbSwitch.Properties.OnText = "Вкл";
+            this.connectDbSwitch.Properties.ReadOnly = true;
+            this.connectDbSwitch.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.connectDbSwitch.Size = new System.Drawing.Size(95, 24);
+            this.connectDbSwitch.TabIndex = 93;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(17, 165);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(107, 13);
+            this.label7.TabIndex = 92;
+            this.label7.Text = "Підключення до БД";
             // 
             // activeSuperUserBtn
             // 
@@ -330,6 +374,7 @@
             this.logerTabPage.Controls.Add(this.createLogerTableBtn);
             this.logerTabPage.Image = ((System.Drawing.Image)(resources.GetObject("logerTabPage.Image")));
             this.logerTabPage.Name = "logerTabPage";
+            this.logerTabPage.PageVisible = false;
             this.logerTabPage.Size = new System.Drawing.Size(588, 385);
             this.logerTabPage.Text = "Налаштування логеру";
             // 
@@ -390,6 +435,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.mainTabPage.ResumeLayout(false);
             this.mainTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.connectDbSwitch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.useSuperUserSwitch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.useHolidaySwitch.Properties)).EndInit();
             this.logerTabPage.ResumeLayout(false);
@@ -434,5 +480,9 @@
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton changeUserBtn;
         private DevExpress.XtraEditors.SimpleButton activeSuperUserBtn;
+        private DevExpress.XtraEditors.SimpleButton testBdBtn;
+        private DevExpress.XtraEditors.ToggleSwitch connectDbSwitch;
+        private System.Windows.Forms.Label label7;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }

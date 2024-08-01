@@ -1797,6 +1797,12 @@
     <Compile Include="Tools\UserSettingsFm.Designer.cs">
       <DependentUpon>UserSettingsFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools\WaitForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\WaitForm2.Designer.cs">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
+    </Compile>
     <Compile Include="WaitForm1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2514,6 +2520,9 @@
     <EmbeddedResource Include="Tools\UserSettingsFm.resx">
       <DependentUpon>UserSettingsFm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Tools\WaitForm2.resx">
+      <DependentUpon>WaitForm2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WaitForm1.resx">
       <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
@@ -2524,12 +2533,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ERP_NEW.GUI_1_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_2_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_3_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_4_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_5_TemporaryKey.pfx" />
-    <None Include="ERP_NEW.GUI_6_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_7_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />

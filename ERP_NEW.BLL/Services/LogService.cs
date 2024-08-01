@@ -153,6 +153,15 @@ namespace ERP_NEW.BLL.Services
             return LogCreate(logRecord);
         }
 
+
+        public bool CheckDatabase()
+        {
+            if (Database.CheckDB())
+                return true;
+            else
+                return false;
+        }
+
         #region Log CRUD method's
 
         public int LogCreate(LogDTO logDTO)

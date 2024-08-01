@@ -24,21 +24,31 @@ namespace ERP_NEW.GUI.Tools
     {
         private ILogService logService;
         public UserTasksDTO userTasksDTO;
-        public UserSettingsFm(UserTasksDTO userTasksDTO)
+        public UserSettingsFm(UserTasksDTO userTasksDTO = null)
         {
             InitializeComponent();
             logService = Program.kernel.Get<ILogService>();
             this.userTasksDTO = userTasksDTO;
+
+            Properties.Settings.Default.BdConnectOnline = logService.CheckDatabase();
 
             UserLookAndFeel.Default.SkinName = Settings.Default["ApplicationSkinName"].ToString();
             useSimpleEmmloyeeSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "UserUsedSimpleEmployeeForm", true, DataSourceUpdateMode.OnPropertyChanged);
             useSuperUserSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "SuperUser", true, DataSourceUpdateMode.OnPropertyChanged);
             userRouteFolderEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "UserFolderRoute", true, DataSourceUpdateMode.OnPropertyChanged);
             appSkinEdit.DataBindings.Add("EditValue", Properties.Settings.Default, "ApplicationSkinName", true, DataSourceUpdateMode.OnPropertyChanged);
+            useHolidaySwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "UsedHolidayDay", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            
+            connectDbSwitch.DataBindings.Add("EditValue", Properties.Settings.Default, "BdConnectOnline", true, DataSourceUpdateMode.OnPropertyChanged);
             changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
 
-            if (logService.CheckTable("Log"))
-                logerTableCheck.EditValue = true;
+            if (userTasksDTO != null && Properties.Settings.Default.SuperUser)
+            {
+                logerTabPage.PageVisible = true;
+                if (logService.CheckTable("Log"))
+                    logerTableCheck.EditValue = true;
+            }
 
 
         }
@@ -134,6 +144,9 @@ namespace ERP_NEW.GUI.Tools
             else if(Properties.Settings.Default.SuperUser)
             {
                 Properties.Settings.Default.SuperUser = false;
+                Properties.Settings.Default.AccountNumber = 0;
+                DialogResult = DialogResult.Abort;
+                this.Close();
                 //changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
 
             }
@@ -179,6 +192,23 @@ namespace ERP_NEW.GUI.Tools
 
                 changeUserBtn.Visible = Properties.Settings.Default.SuperUser;
             }
+        }
+
+        private void testBdBtn_Click(object sender, EventArgs e)
+        {
+            splashScreenManager.ShowWaitForm();
+            if (logService.CheckDatabase())
+            {
+                splashScreenManager.CloseWaitForm();
+                MessageBox.Show("Тест підключення до БД успішний!", "Інормація", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
+            else
+            {
+                splashScreenManager.CloseWaitForm();
+                MessageBox.Show("Підключення до БД не відбулося!\nПеревірте адресу підкючення до БД та працездатність служби на сервері!", "Інормація", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+               
+            Properties.Settings.Default.BdConnectOnline = logService.CheckDatabase();
         }
     }
 }

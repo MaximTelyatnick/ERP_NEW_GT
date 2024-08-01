@@ -55,7 +55,7 @@ namespace ERP_NEW.GUI
             try
             {
                 //TelegramMessage.SendMessageToTelegram();
-                Application.Run(new MainTabFm());
+                Application.Run(new MainTabFm(Properties.Settings.Default.AccountNumber));
             }
             catch (Exception ex)
             {

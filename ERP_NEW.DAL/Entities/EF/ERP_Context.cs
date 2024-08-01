@@ -4,6 +4,7 @@ using FirebirdSql.Data.FirebirdClient;
 using ERP_NEW.DAL.Entities.QueryModels;
 using ERP_NEW.DAL.Entities.Models;
 using ERP_NEW.DAL.Entities.ReportModel;
+using System;
 
 namespace ERP_NEW.DAL.EF
 {
@@ -332,8 +333,9 @@ namespace ERP_NEW.DAL.EF
         public DbSet<WeldAttestationPersonsInfo> WeldAttestationPersonsInfo { get; set; }
         public DbSet<WeldAttestationTreeInfo> WeldAttestationTreeInfo { get; set; }
         public DbSet<WeldCertificates> WeldCertificates { get; set; }
-        
+
         #endregion
+
 
         static ERP_Context()
         {
@@ -391,13 +393,46 @@ namespace ERP_NEW.DAL.EF
 #endif
 
             Connection.ConnectionString = csb.ConnectionString;
+
+            //using (var connection = new FbConnection(csb.ConnectionString))
+            //{
+            //    try
+            //    {
+            //        connection.Open();
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        throw new InvalidOperationException("Unable to connect to the database. Please check the connection string and ensure the database server is running.", ex);
+            //    }
+            //}
+
             Database.SetInitializer<ERP_Context>(null); 
         }
 
-        public ERP_Context()
-            : base(new FbConnection(Connection.ConnectionString), true)
+        public ERP_Context(): base(new FbConnection(Connection.ConnectionString), true)
         {
+ 
+
+
+
             Configuration.LazyLoadingEnabled = false;
+        }
+
+        public bool CheckConnect()
+        {
+            using (var connection = new FbConnection(Connection.ConnectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    //throw new InvalidOperationException("Unable to connect to the database. Please check the connection string and ensure the database server is running.", ex);
+                    return false;
+                }
+            }
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

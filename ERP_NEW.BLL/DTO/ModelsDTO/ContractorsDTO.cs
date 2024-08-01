@@ -14,6 +14,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int? ContractorTypeId { get; set; }
 
         public bool Active { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
         public string CategoryName { get; set; }
         public string OwnName { get; set; }

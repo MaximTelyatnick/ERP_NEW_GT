@@ -299,5 +299,29 @@ namespace ERP_NEW.GUI.Properties {
                 this["AccountNumber"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool BdConnectOnline {
+            get {
+                return ((bool)(this["BdConnectOnline"]));
+            }
+            set {
+                this["BdConnectOnline"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool UsedHolidayDay {
+            get {
+                return ((bool)(this["UsedHolidayDay"]));
+            }
+            set {
+                this["UsedHolidayDay"] = value;
+            }
+        }
     }
 }
