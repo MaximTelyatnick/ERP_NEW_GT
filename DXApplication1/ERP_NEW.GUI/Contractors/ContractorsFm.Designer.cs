@@ -40,8 +40,12 @@
             this.refreshBtn = new DevExpress.XtraBars.BarButtonItem();
             this.orderCheckItem = new DevExpress.XtraBars.BarCheckItem();
             this.dublicateSearchBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.addAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.editAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.deleteAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -130,9 +134,12 @@
             this.deleteBtn,
             this.refreshBtn,
             this.orderCheckItem,
-            this.dublicateSearchBtn});
+            this.dublicateSearchBtn,
+            this.addAgreementBtn,
+            this.editAgreementBtn,
+            this.deleteAgreementBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 7;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -208,10 +215,39 @@
             this.dublicateSearchBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.dublicateSearchBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.dublicateSearchBtn_ItemClick);
             // 
+            // addAgreementBtn
+            // 
+            this.addAgreementBtn.Caption = "Додати";
+            this.addAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addAgreementBtn.Glyph")));
+            this.addAgreementBtn.Id = 7;
+            this.addAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addAgreementBtn.LargeGlyph")));
+            this.addAgreementBtn.Name = "addAgreementBtn";
+            this.addAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.addAgreementBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.addAgreementBtn_ItemClick);
+            // 
+            // editAgreementBtn
+            // 
+            this.editAgreementBtn.Caption = "Редагувати";
+            this.editAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editAgreementBtn.Glyph")));
+            this.editAgreementBtn.Id = 8;
+            this.editAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editAgreementBtn.LargeGlyph")));
+            this.editAgreementBtn.Name = "editAgreementBtn";
+            this.editAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // deleteAgreementBtn
+            // 
+            this.deleteAgreementBtn.Caption = "Видалити";
+            this.deleteAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteAgreementBtn.Glyph")));
+            this.deleteAgreementBtn.Id = 9;
+            this.deleteAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteAgreementBtn.LargeGlyph")));
+            this.deleteAgreementBtn.Name = "deleteAgreementBtn";
+            this.deleteAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
+            this.ribbonPageGroup3,
             this.ribbonPageGroup2});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
@@ -223,7 +259,15 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.editBtn);
             this.ribbonPageGroup1.ItemLinks.Add(this.deleteBtn);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Контрагенти";
+            this.ribbonPageGroup1.Text = "Контрагент";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.addAgreementBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.editAgreementBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.deleteAgreementBtn);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Договір";
             // 
             // ribbonPageGroup2
             // 
@@ -262,12 +306,12 @@
             // contractorsGrid
             // 
             this.contractorsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractorsGrid.Location = new System.Drawing.Point(2, 22);
+            this.contractorsGrid.Location = new System.Drawing.Point(2, 20);
             this.contractorsGrid.MainView = this.contractorsGridView;
             this.contractorsGrid.Name = "contractorsGrid";
             this.contractorsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.contractorsGrid.Size = new System.Drawing.Size(1039, 526);
+            this.contractorsGrid.Size = new System.Drawing.Size(1039, 528);
             this.contractorsGrid.TabIndex = 6;
             this.contractorsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorsGridView});
@@ -407,7 +451,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(373, 550);
+            this.splitContainerControl2.Size = new System.Drawing.Size(374, 550);
             this.splitContainerControl2.SplitterPosition = 294;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -422,19 +466,19 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(373, 294);
+            this.groupControl1.Size = new System.Drawing.Size(374, 294);
             this.groupControl1.TabIndex = 7;
             this.groupControl1.Text = "Детальна інформація";
             // 
             // contractorContactAddressGrid
             // 
             this.contractorContactAddressGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contractorContactAddressGrid.Location = new System.Drawing.Point(2, 22);
+            this.contractorContactAddressGrid.Location = new System.Drawing.Point(2, 20);
             this.contractorContactAddressGrid.MainView = this.contractorContactAddressGridView;
             this.contractorContactAddressGrid.Name = "contractorContactAddressGrid";
             this.contractorContactAddressGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.contractorContactAddressGrid.Size = new System.Drawing.Size(369, 270);
+            this.contractorContactAddressGrid.Size = new System.Drawing.Size(370, 272);
             this.contractorContactAddressGrid.TabIndex = 1;
             this.contractorContactAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorContactAddressGridView});
@@ -506,17 +550,17 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(373, 250);
+            this.groupControl2.Size = new System.Drawing.Size(374, 251);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Контактні особи";
             // 
             // contactPersonAddressGrid
             // 
             this.contactPersonAddressGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contactPersonAddressGrid.Location = new System.Drawing.Point(2, 22);
+            this.contactPersonAddressGrid.Location = new System.Drawing.Point(2, 20);
             this.contactPersonAddressGrid.MainView = this.contactPersonAddressGridView;
             this.contactPersonAddressGrid.Name = "contactPersonAddressGrid";
-            this.contactPersonAddressGrid.Size = new System.Drawing.Size(369, 226);
+            this.contactPersonAddressGrid.Size = new System.Drawing.Size(370, 229);
             this.contactPersonAddressGrid.TabIndex = 1;
             this.contactPersonAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contactPersonAddressGridView});
@@ -720,5 +764,9 @@
         private DevExpress.XtraBars.BarButtonItem dublicateSearchBtn;
         private DevExpress.XtraGrid.Columns.GridColumn activeCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraBars.BarButtonItem addAgreementBtn;
+        private DevExpress.XtraBars.BarButtonItem editAgreementBtn;
+        private DevExpress.XtraBars.BarButtonItem deleteAgreementBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
     }
 }

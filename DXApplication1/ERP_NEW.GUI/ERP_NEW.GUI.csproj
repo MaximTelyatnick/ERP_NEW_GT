@@ -1092,6 +1092,12 @@
     <Compile Include="Contractors\ContactPersonEditFm.Designer.cs">
       <DependentUpon>ContactPersonEditFm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contractors\ContractorAgreementEditFm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractors\ContractorAgreementEditFm.Designer.cs">
+      <DependentUpon>ContractorAgreementEditFm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Contractors\ContractorContactAddressEditFm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -2154,6 +2160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Contractors\ContactPersonEditFm.resx">
       <DependentUpon>ContactPersonEditFm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractors\ContractorAgreementEditFm.resx">
+      <DependentUpon>ContractorAgreementEditFm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Contractors\ContractorContactAddressEditFm.resx">
       <DependentUpon>ContractorContactAddressEditFm.cs</DependentUpon>

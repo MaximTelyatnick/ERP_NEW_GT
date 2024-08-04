@@ -29,13 +29,13 @@ namespace ERP_NEW.GUI.Contractors
         public BindingSource contractorContactAddressBS = new BindingSource();
         public BindingSource contactPersonAddressBS = new BindingSource();
 
-        public UserTasksDTO _userTasksDTO;
+        public UserTasksDTO userTasksDTO;
 
         public ContractorsFm(UserTasksDTO userTasksDTO)
         {
             InitializeComponent();
 
-            _userTasksDTO = userTasksDTO;
+            this.userTasksDTO = userTasksDTO;
 
             AuthorizatedUserAccess();
             LoadData();
@@ -51,9 +51,9 @@ namespace ERP_NEW.GUI.Contractors
 
         public void AuthorizatedUserAccess()
         {
-            addBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            editBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
-            deleteBtn.Enabled = (_userTasksDTO.AccessRightId == 2);
+            addBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            editBtn.Enabled = (userTasksDTO.AccessRightId == 2);
+            deleteBtn.Enabled = (userTasksDTO.AccessRightId == 2);
         }
 
         private void LoadData()
@@ -168,13 +168,13 @@ namespace ERP_NEW.GUI.Contractors
         
         private void contractorsGridView_DoubleClick(object sender, System.EventArgs e)
         {
-            if (_userTasksDTO.AccessRightId == 2) //1 - доступ чтение (2- запись, 3 - просмотр цен)
+            if (userTasksDTO.AccessRightId == 2) //1 - доступ чтение (2- запись, 3 - просмотр цен)
                  EditContractor();
         }
 
         private void contractorsGridView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (_userTasksDTO.AccessRightId == 2) //1 - доступ чтение (2- запись, 3 - просмотр цен)
+            if (userTasksDTO.AccessRightId == 2) //1 - доступ чтение (2- запись, 3 - просмотр цен)
             {
                 if (e.KeyCode == Keys.Delete && ((DevExpress.XtraGrid.Views.Grid.GridView)sender).RowCount > 0)
                 {
@@ -224,13 +224,57 @@ namespace ERP_NEW.GUI.Contractors
 
         private void dublicateSearchBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
-            using (ContractorFindDuplicateFm contractorFindDuplicateFm = new ContractorFindDuplicateFm(_userTasksDTO))
+            using (ContractorFindDuplicateFm contractorFindDuplicateFm = new ContractorFindDuplicateFm(userTasksDTO))
             {
                 if (contractorFindDuplicateFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
 
                 }
             }
+        }
+
+
+        private void contractorAgreementsEdit(Utils.Operation operation, ContractorsDTO model, UserTasksDTO userTasksDTO)
+        {
+            using (ContractorAgreementEditFm contractorAgreementEditFm = new ContractorAgreementEditFm(operation, model, userTasksDTO))
+            {
+                if (contractorAgreementEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    //AgreementsDTO return_Id = agreementJournalEditFm.Return();
+                    //contractorGridView.BeginDataUpdate();
+                    //LoadData();
+                    //contractorGridView.EndDataUpdate();
+                }
+            }
+        }
+
+        private void DeleteAgreementsJournal()
+        {
+            if (contractorsBS.Count != 0)
+            {
+                if (MessageBox.Show("Видалити запис?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //contractorsService = Program.kernel.Get<IContractorsService>();
+
+                    //DeleteFileJournal();
+                    //if (checkDeleteFileJournal == 0)
+                    //{
+                    //    if (contractorsService.AgreementsDelete(((AgreementJournalDTO)agreementJournalBS.Current).AgreementId))
+                    //    {
+                    //        int rowHandle = contractorGridView.FocusedRowHandle - 1;
+                    //        contractorGridView.BeginDataUpdate();
+                    //        LoadData();
+                    //        contractorGridView.EndDataUpdate();
+                    //        contractorGridView.FocusedRowHandle = (contractorGridView.IsValidRowHandle(rowHandle)) ? rowHandle : -1;
+                    //    }
+                    //}
+                }
+            }
+        }
+
+        private void addAgreementBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            contractorAgreementsEdit(Utils.Operation.Add, new ContractorsDTO(), userTasksDTO);
         }
     }
 }
