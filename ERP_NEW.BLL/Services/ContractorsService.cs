@@ -34,6 +34,7 @@ namespace ERP_NEW.BLL.Services
         private IRepository<EmployeesDetails> employeesDetails;
         private IRepository<AgreementsType> agreementType;
         private IRepository<Agreements> agreements;
+        private IRepository<AgreementsScan> agreementsScan;
         private IRepository<AgreementTypeDocuments> agreementTypeDocuments;
         private IRepository<AgreementOrder> agreementOrder;
         private IRepository<AgreementOrderJournal> agreementOrderJournal;
@@ -49,6 +50,7 @@ namespace ERP_NEW.BLL.Services
             Database = uow;
 
             agreements = Database.GetRepository<Agreements>();
+            agreementsScan = Database.GetRepository<AgreementsScan>();
             agreementJournal = Database.GetRepository<AgreementJournal>();
             agreementType = Database.GetRepository<AgreementsType>();
             agreementDocuments = Database.GetRepository<AgreementDocuments>();
@@ -79,6 +81,8 @@ namespace ERP_NEW.BLL.Services
                  cfg.CreateMap<AgreementTypeDocumentsDTO, AgreementTypeDocuments>();
                  cfg.CreateMap<Agreements, AgreementsDTO>();
                  cfg.CreateMap<AgreementsDTO, Agreements>();
+                 cfg.CreateMap<AgreementsScan, AgreementsScanDTO>();
+                 cfg.CreateMap<AgreementsScanDTO, AgreementsScan>();
                  cfg.CreateMap<AgreementsType, AgreementsTypeDTO>();
                  cfg.CreateMap<AgreementsTypeDTO, AgreementsType>();
                  cfg.CreateMap<AgreementJournal, AgreementJournalDTO>();
@@ -312,6 +316,7 @@ namespace ERP_NEW.BLL.Services
                               NameDocument = ad.NameDocument,
                               AgreementTypeDocumentsName = atd.TypeDocuments,
                               DateCreateFile =ad.DateCreateFile,
+                              Scan = ad.Scan,
                               ResponsiblePersonId = ad.ResponsiblePersonId,
                               ResponsiblePerson = emd.LastName +" "+ emd.FirstName + " "+ emd.MiddleName                             
                           });
@@ -705,7 +710,37 @@ namespace ERP_NEW.BLL.Services
                 return false;
             }
         }
-        
+
+        #endregion
+
+        #region AgreementsScan CRUD method`s
+
+        public long CreateAgreementsScan(AgreementsScanDTO dtomodel)
+        {
+            var record = agreementsScan.Create(mapper.Map<AgreementsScan>(dtomodel));
+            return record.Id;
+        }
+
+        public void UpdateAgreementsScan(AgreementsScanDTO dtomodel)
+        {
+            var entity = agreementsScan.GetAll().SingleOrDefault(c => c.Id == dtomodel.Id);
+            agreementsScan.Update(mapper.Map<AgreementsScanDTO, AgreementsScan>(dtomodel, entity));
+        }
+
+        public bool RemoveCertificateById(long id)
+        {
+            try
+            {
+                var delEntity = agreementsScan.GetAll().SingleOrDefault(c => c.Id == id);
+                agreementsScan.Delete(delEntity);
+                return true;
+
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
         #endregion
 
         #region AgreementOrder CRUD method's

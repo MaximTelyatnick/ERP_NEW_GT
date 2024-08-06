@@ -159,6 +159,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\ModelsDTO\AgreementsScanDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CalculationDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CalculationMaterialsDTO.cs" />
     <Compile Include="DTO\ModelsDTO\CashBooksDTO.cs" />

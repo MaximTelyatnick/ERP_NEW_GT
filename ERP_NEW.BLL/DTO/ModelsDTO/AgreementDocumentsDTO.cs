@@ -17,6 +17,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public string AgreementTypeDocumentsName { get; set; }
         public string ResponsiblePerson { get; set; }
         public DateTime? DateCreateFile { get; set; }
+        public byte[] Scan { get; set; }
         public int ResponsiblePersonId { get; set; }
     }
 }

@@ -138,6 +138,7 @@
     <Compile Include="Entities\Models\AgreementOrderPurpose.cs" />
     <Compile Include="Entities\Models\AgreementOrderScan.cs" />
     <Compile Include="Entities\Models\Agreements.cs" />
+    <Compile Include="Entities\Models\AgreementsScan.cs" />
     <Compile Include="Entities\Models\AgreementsType.cs" />
     <Compile Include="Entities\Models\Calculation.cs" />
     <Compile Include="Entities\Models\CalculationMaterials.cs" />

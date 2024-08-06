@@ -308,7 +308,6 @@
             this.responsiblePersonCol});
             this.documentGridView.GridControl = this.documentGrid;
             this.documentGridView.Name = "documentGridView";
-            this.documentGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.documentGridView.OptionsView.ShowAutoFilterRow = true;
             this.documentGridView.OptionsView.ShowGroupPanel = false;
             this.documentGridView.DoubleClick += new System.EventHandler(this.documentGridView_DoubleClick);
@@ -428,7 +427,6 @@
             this.currencyCol});
             this.contractorGridView.GridControl = this.contractorGrid;
             this.contractorGridView.Name = "contractorGridView";
-            this.contractorGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.contractorGridView.OptionsView.ShowAutoFilterRow = true;
             this.contractorGridView.OptionsView.ShowGroupPanel = false;
             this.contractorGridView.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.contractorGridView_FocusedRowChanged);
@@ -611,7 +609,6 @@
             this.deliveryOrdersGridView.GridControl = this.gridControl2;
             this.deliveryOrdersGridView.GroupCount = 1;
             this.deliveryOrdersGridView.Name = "deliveryOrdersGridView";
-            this.deliveryOrdersGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.deliveryOrdersGridView.OptionsView.ShowAutoFilterRow = true;
             this.deliveryOrdersGridView.OptionsView.ShowFooter = true;
             this.deliveryOrdersGridView.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {

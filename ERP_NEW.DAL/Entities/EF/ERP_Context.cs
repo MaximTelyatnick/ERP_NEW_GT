@@ -31,6 +31,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<AgreementsType> AgreementsType { get; set; }
         public DbSet<AgreementDocuments> AgreementDocuments { get; set; }
         public DbSet<Agreements> Agreements { get; set; }
+        //public DbSet<Agreements> AgreementsScan{ get; set; }
         public DbSet<AgreementTypeDocuments> AgreementTypeDocuments { get; set; }
         public DbSet<AgreementOrder> AgreementOrder { get; set; }
         public DbSet<AgreementOrderScan> AgreementOrderScan { get; set; }
