@@ -19,5 +19,9 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public DateTime? DateCreateFile { get; set; }
         public byte[] Scan { get; set; }
         public int ResponsiblePersonId { get; set; }
+
+        public int? RealAgreementId { get; set; }
+        public string OldURL { get; set; }
+        public DateTime? DateChange { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace ERP_NEW.GUI.CustomerOrders
     {
         private IContractorsService contractorsService;
         private BindingSource agreementJournalBS = new BindingSource();
+        private BindingSource agreementBS = new BindingSource();
         private Utils.Operation operation;
         private IAccountsService accountsService;
         public AgreementDocumentsDTO agreementDocumentsDTO = new AgreementDocumentsDTO();
@@ -60,25 +61,50 @@ namespace ERP_NEW.GUI.CustomerOrders
             this.operation = operation;
             this.agrementJournalModelDTO = agrementJournalModelDTO;
 
+            documentModelDTO.RealAgreementId = agrementJournalModelDTO.AgreementIdFromContractors;
             agreementJournalBS.DataSource = Item = documentModelDTO;
             LoadData();
             nameFileDocEdit.Enabled = false;
-            //if (operation == Utils.Operation.Update)
-            //{              
-            //    addFileBut.Enabled = false;
-            //    deleteFileBut.Enabled = false;
-            //    pictureEdit.Enabled = false;
-            //    renameFileTextEdit.Enabled = false;               
-            //    pictureEdit.Properties.NullText = " ";
-            //}
+            if (operation == Utils.Operation.Update)
+            {
+                if (documentModelDTO != null)
+                {
+                    int stratIndex = documentModelDTO.URL.IndexOf('.');
+                    string typeFile = documentModelDTO.URL.Substring(stratIndex);
 
-            nameTypeDocumentLookUp.DataBindings.Add("EditValue", documentModelDTO, "AgreementTypeDocumentsId", true, DataSourceUpdateMode.OnPropertyChanged); // same AgreementDocumentsDTO
+                    switch (typeFile)
+                    {
+                        case ".pdf":
+                            pictureEdit.Image = imageCollection.Images[1];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                        default:
+                            pictureEdit.Image = imageCollection.Images[0];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                    }
+
+                    nameFileDocEdit.EditValue = documentModelDTO.URL;
+                }
+            }
+
+            nameTypeDocumentLookUp.DataBindings.Add("EditValue", agreementJournalBS, "AgreementTypeDocumentsId", true, DataSourceUpdateMode.OnPropertyChanged); // same AgreementDocumentsDTO
 
             List<AgreementTypeDocumentsDTO> numbersList = contractorsService.GetAgreementsTypeDocuments().ToList();
             nameTypeDocumentLookUp.Properties.DataSource = numbersList;
             nameTypeDocumentLookUp.Properties.ValueMember = "Id";
             nameTypeDocumentLookUp.Properties.DisplayMember = "TypeDocuments";
             nameTypeDocumentLookUp.Properties.NullText = "Немає данних";
+
+            List<ContractorsDTO> numberList1 = contractorsService.GetContractors(3).ToList();
+            agreementEdit.DataBindings.Add("EditValue", agreementJournalBS, "RealAgreementId", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            agreementEdit.Properties.DataSource = numberList1;
+            agreementEdit.Properties.ValueMember = "Id";
+            agreementEdit.Properties.DisplayMember = "Name";
+            agreementEdit.Properties.NullText = "Немає данних";
+
+
 
             nameFileDocEdit.DataBindings.Add("EditValue", agreementJournalBS, "URL", true, DataSourceUpdateMode.OnPropertyChanged);
             renameFileTextEdit.DataBindings.Add("EditValue", agreementJournalBS, "NameDocument", true, DataSourceUpdateMode.OnPropertyChanged);
@@ -100,6 +126,9 @@ namespace ERP_NEW.GUI.CustomerOrders
         {
             contractorsService = Program.kernel.Get<IContractorsService>();
             accountsService = Program.kernel.Get<IAccountsService>();
+
+            //agreementBS.DataSource = contractorsService.GetContractors(3).ToList();
+
             sourcePath = DefinitionPathToServer.DefinitionPath();
             if (sourcePath == "SBD1")
                 sourcePath = @"\\SBD1\Data\Journal\";
@@ -160,14 +189,16 @@ namespace ERP_NEW.GUI.CustomerOrders
             if (operation == Utils.Operation.Add)
             {
 
-                    ((AgreementDocumentsDTO)Item).NameDocument = System.IO.Path.GetFileName(renameFileTextEdit.Text);
+                   // ((AgreementDocumentsDTO)Item).NameDocument = System.IO.Path.GetFileName(renameFileTextEdit.Text);
                     ((AgreementDocumentsDTO)Item).AgreementId = agrementJournalModelDTO.AgreementId;
                     ((AgreementDocumentsDTO)Item).Id = agrementJournalModelDTO.AgreementId;
-                    ((AgreementDocumentsDTO)Item).URL = sourcePath + rezJournalDTO + "\\" + System.IO.Path.GetFileName(renameFileTextEdit.Text) + "_" + dateNow.ToShortDateString() + ".pdf";// +"\\" + System.IO.Path.GetFileName(renameFileTextEdit.Text);
+                    //((AgreementDocumentsDTO)Item).URL = System.IO.Path.GetFileName(renameFileTextEdit.Text);
+                    //((AgreementDocumentsDTO)Item).URL = sourcePath + rezJournalDTO + "\\" + System.IO.Path.GetFileName(renameFileTextEdit.Text) + "_" + dateNow.ToShortDateString() + ".pdf";// +"\\" + System.IO.Path.GetFileName(renameFileTextEdit.Text);
                     ((AgreementDocumentsDTO)Item).ResponsiblePersonId = userTaskDTO.UserId;
                     ((AgreementDocumentsDTO)Item).DateCreateFile = DateTime.Now;
+                    ((AgreementDocumentsDTO)Item).DateChange = DateTime.Now;
 
-                    contractorsService.AgreementsDocumentsCreate((AgreementDocumentsDTO)Item);
+                contractorsService.AgreementsDocumentsCreate((AgreementDocumentsDTO)Item);
 
                     //open file after add document
                     //System.Diagnostics.Process.Start(((AgreementDocumentsDTO)Item).URL);
@@ -175,7 +206,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             }
             else
             {
-                //((AgreementDocumentsDTO)Item).DateCreateFile = dateNow;
+                ((AgreementDocumentsDTO)Item).DateChange = DateTime.Now;
                 contractorsService.AgreementsDocumentsUpdate((AgreementDocumentsDTO)Item);
             }
             return true;
@@ -189,7 +220,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             contractorsService = Program.kernel.Get<IContractorsService>();
 
 
-            RenameFileInDirectory();
+            //RenameFileInDirectory();
 
             if (checkAccessToDirectory == 0)
             {
@@ -256,9 +287,9 @@ namespace ERP_NEW.GUI.CustomerOrders
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 nameFileDocEdit.EditValue = ofd.FileName;
-                pictureEdit.Image = imageCollection.Images[1];
+                //pictureEdit.Image = imageCollection.Images[1];
                 dbf_File = System.IO.Path.GetFileName(ofd.FileName);
-                renameFileTextEdit.EditValue = System.IO.Path.GetFileNameWithoutExtension(ofd.SafeFileName);
+                renameFileTextEdit.EditValue = System.IO.Path.GetFileName(ofd.SafeFileName);
 
                 if (ofd.FileName.Length > 0)
                 {
@@ -271,18 +302,83 @@ namespace ERP_NEW.GUI.CustomerOrders
                         return;
                     }
 
+                    int stratIndex = System.IO.Path.GetFileName(ofd.FileName).IndexOf('.');
+                    string typeFile = System.IO.Path.GetFileName(ofd.FileName).Substring(stratIndex);
+
+                    switch (typeFile)
+                    {
+                        case ".pdf":
+                            pictureEdit.Image = imageCollection.Images[1];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                        default:
+                            pictureEdit.Image = imageCollection.Images[0];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                    }
+
                     ((AgreementDocumentsDTO)Item).Scan = scan;
-                    ((AgreementDocumentsDTO)Item).NameDocument = ofd.FileName;
+                    ((AgreementDocumentsDTO)Item).NameDocument = System.IO.Path.GetFileNameWithoutExtension(ofd.FileName);
+                    ((AgreementDocumentsDTO)Item).URL = System.IO.Path.GetFileName(ofd.FileName);
+                }
+            }  
+        }
+
+        private void pictureEdit_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        private void pictureEdit_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            foreach (string file in files)
+            {
+                string result = Path.GetFullPath(file);
+                nameFileDocEdit.EditValue = Path.GetFileName(file);
+                pictureEdit.Image = imageCollection.Images[1];
+
+
+                dbf_File = System.IO.Path.GetFileName(result);
+                renameFileTextEdit.EditValue = System.IO.Path.GetFileName(result);
+
+                if (result.Length > 0)
+                {
+                    byte[] scan = System.IO.File.ReadAllBytes(@result);
+                    FileInfo info = new FileInfo(@result);
+
+                    if (Utils.ToSize(info.Length, Utils.SizeUnits.GB) > Properties.Settings.Default.MaxFileSizeMb)
+                    {
+                        MessageBox.Show("Перевищено максимальний розмір файлу (" + Properties.Settings.Default.MaxFileSizeMb.ToString() + " мегабайт) !!!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    int stratIndex = System.IO.Path.GetFileName(result).IndexOf('.');
+                    string typeFile = System.IO.Path.GetFileName(result).Substring(stratIndex);
+
+                    switch (typeFile)
+                    {
+                        case ".pdf":
+                            pictureEdit.Image = imageCollection.Images[1];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                        default:
+                            pictureEdit.Image = imageCollection.Images[0];
+                            pictureEdit.Properties.SizeMode = PictureSizeMode.Clip;
+                            break;
+                    }
+
+                    ((AgreementDocumentsDTO)Item).Scan = scan;
+                    ((AgreementDocumentsDTO)Item).NameDocument = System.IO.Path.GetFileNameWithoutExtension(result);
+                    ((AgreementDocumentsDTO)Item).URL = System.IO.Path.GetFileName(result);
                 }
             }
-
-
-            
         }
 
         private void deleteFileBut_Click(object sender, EventArgs e)
         {
             pictureEdit.EditValue = null;
+            renameFileTextEdit.EditValue = null;
             nameFileDocEdit.EditValue = null;
         }
         private void nameTypeDocumentLookUp_ButtonClick(object sender, ButtonPressedEventArgs e)
@@ -382,61 +478,31 @@ namespace ERP_NEW.GUI.CustomerOrders
         }
         #endregion
 
-        private void pictureEdit_DragEnter(object sender, DragEventArgs e)
+        private void pictureEdit_EditValueChanged(object sender, EventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+           // byte[] scan = ((AgreementDocumentsDTO)documentsBS.Current).Scan;
+            //string path = Utils.HomePath + @"\Temp\";
+            //System.IO.File.WriteAllBytes(path + ((AgreementDocumentsDTO)documentsBS.Current).NameDocument, scan);
+            //System.Diagnostics.Process.Start(path + ((AgreementDocumentsDTO)documentsBS.Current).NameDocument);
+
+            //if (((AgreementDocumentsDTO)Item).Scan != null)
+            //{
+            //    byte[] scan = ((AgreementDocumentsDTO)Item).Scan;
+            //    string path = Utils.HomePath + @"\Temp\";
+            //    System.IO.File.WriteAllBytes(path + ((AgreementDocumentsDTO)Item).URL, scan);
+            //    System.Diagnostics.Process.Start(path + ((AgreementDocumentsDTO)Item).URL);
+            //}
         }
 
-        private void pictureEdit_DragDrop(object sender, DragEventArgs e)
+        private void pictureEdit_DoubleClick(object sender, EventArgs e)
         {
-            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-            foreach (string file in files)
+            if (((AgreementDocumentsDTO)Item).Scan != null)
             {
-                string result = Path.GetFullPath(file);
-                nameFileDocEdit.EditValue = Path.GetFileName(file);
-                pictureEdit.Image = imageCollection.Images[1];
-
-
-                dbf_File = System.IO.Path.GetFileName(result);
-                renameFileTextEdit.EditValue = System.IO.Path.GetFileNameWithoutExtension(result);
-
-                if(result.Length > 0)
-            {
-                    byte[] scan = System.IO.File.ReadAllBytes(@result);
-                    FileInfo info = new FileInfo(@result);
-
-                    if (Utils.ToSize(info.Length, Utils.SizeUnits.GB) > Properties.Settings.Default.MaxFileSizeMb)
-                    {
-                        MessageBox.Show("Перевищено максимальний розмір файлу (" + Properties.Settings.Default.MaxFileSizeMb.ToString() + " мегабайт) !!!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
-
-                    ((AgreementDocumentsDTO)Item).Scan = scan;
-                    ((AgreementDocumentsDTO)Item).NameDocument = (String)nameFileDocEdit.EditValue;
-                }
+                byte[] scan = ((AgreementDocumentsDTO)Item).Scan;
+                string path = Utils.HomePath + @"\Temp\";
+                System.IO.File.WriteAllBytes(path + ((AgreementDocumentsDTO)Item).URL, scan);
+                System.Diagnostics.Process.Start(path + ((AgreementDocumentsDTO)Item).URL);
             }
-
-
-
-
-
-
-            
-
-            //if (ofd.FileName.Length > 0)
-            //{
-            //    byte[] scan = System.IO.File.ReadAllBytes(@ofd.FileName);
-            //    FileInfo info = new FileInfo(@ofd.FileName);
-
-            //    if (Utils.ToSize(info.Length, Utils.SizeUnits.GB) > Properties.Settings.Default.MaxFileSizeMb)
-            //    {
-            //        MessageBox.Show("Перевищено максимальний розмір файлу (" + Properties.Settings.Default.MaxFileSizeMb.ToString() + " мегабайт) !!!", "Увага", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        return;
-            //    }
-
-            //    ((AgreementDocumentsDTO)Item).Scan = scan;
-            //    ((AgreementDocumentsDTO)Item).NameDocument = ofd.FileName;
-            //}
         }
     }
 }

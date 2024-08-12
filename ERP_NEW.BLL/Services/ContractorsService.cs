@@ -305,6 +305,8 @@ namespace ERP_NEW.BLL.Services
                           from usr in usrr.DefaultIfEmpty()
                           join emd in employeesDetails.GetAll() on usr.EmployeeId equals emd.EmployeeID into emdd
                           from emd in emdd.DefaultIfEmpty()
+                          join agr in agreements.GetAll() on ad.AgreementId equals agr.Id into agrr
+                          from agr in agrr.DefaultIfEmpty()
                           where ad.AgreementId == agrementId
                           
                           select new AgreementDocumentsDTO
@@ -318,7 +320,8 @@ namespace ERP_NEW.BLL.Services
                               DateCreateFile =ad.DateCreateFile,
                               Scan = ad.Scan,
                               ResponsiblePersonId = ad.ResponsiblePersonId,
-                              ResponsiblePerson = emd.LastName +" "+ emd.FirstName + " "+ emd.MiddleName                             
+                              ResponsiblePerson = emd.LastName +" "+ emd.FirstName + " "+ emd.MiddleName,
+                               RealAgreementId = agr.AgreementsIdFromContractor                             
                           });
 
             return result.ToList();
@@ -342,7 +345,7 @@ namespace ERP_NEW.BLL.Services
         {
             return mapper.Map<IEnumerable<AgreementsType>, List<AgreementsTypeDTO>>(agreementType.GetAll());
         }
-
+         
         public IEnumerable<CurrencyDTO> GetAgreementsCurrency()
         {
             return mapper.Map<IEnumerable<Currency>, List<CurrencyDTO>>(agreementCurrency.GetAll());

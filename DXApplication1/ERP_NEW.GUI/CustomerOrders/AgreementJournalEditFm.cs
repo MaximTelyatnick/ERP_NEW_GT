@@ -52,21 +52,24 @@ namespace ERP_NEW.GUI.CustomerOrders
             agreementJournalBS.DataSource = Item = model;
             LoadData();          
 
-            numberLookUpEdit.DataBindings.Add("EditValue", agreementJournalBS, "AgreementsIdFromContractor", true, DataSourceUpdateMode.OnPropertyChanged); // same AgreementsDTO
-            List<ContractorsDTO> numberList = contractorsService.GetContractors(3).ToList();     
-            List<AgreementsDTO> contractorList = contractorsService.GetAgreements().ToList();
+            // same AgreementsDTO
+            List<ContractorsDTO> numberList = contractorsService.GetContractors(5).ToList();
 
-            numberList.RemoveAll(el => contractorList.Exists(el2 => el2.AgreementsIdFromContractor == el.Id));
+            //List<AgreementsDTO> contractorList = contractorsService.GetAgreements().ToList();
+
+            //numberList.RemoveAll(el => contractorList.Exists(el2 => el2.AgreementsIdFromContractor == el.Id));
+
+            numberLookUpEdit.DataBindings.Add("EditValue", agreementJournalBS, "AgreementsIdFromContractor", true, DataSourceUpdateMode.OnPropertyChanged);
 
             numberLookUpEdit.Properties.DataSource = numberList;
             numberLookUpEdit.Properties.ValueMember = "Id";
             numberLookUpEdit.Properties.DisplayMember = "Name";
             numberLookUpEdit.Properties.NullText = "Немає данних";
 
-            if (operation == Utils.Operation.Update)
-            {
-               numberLookUpEdit.Enabled = false;
-            }
+            //if (operation == Utils.Operation.Update)
+            //{
+            //   numberLookUpEdit.Enabled = false;
+            //}
             nameContractorLookUpEdit.DataBindings.Add("EditValue", agreementJournalBS, "ContractorId", true, DataSourceUpdateMode.OnPropertyChanged);
 
             List<ContractorsDTO> nameContractroList = contractorsService.GetContractors(1).ToList();
@@ -90,6 +93,8 @@ namespace ERP_NEW.GUI.CustomerOrders
             typeLookUpEdit.Properties.ValueMember = "Id";
             typeLookUpEdit.Properties.DisplayMember = "TypeName";
             typeLookUpEdit.Properties.NullText = "Немає данних";
+
+            
 
             dateEdit.DataBindings.Add("EditValue", agreementJournalBS, "Date", true, DataSourceUpdateMode.OnPropertyChanged);
             totalSumEdit.DataBindings.Add("EditValue", agreementJournalBS, "Price", true, DataSourceUpdateMode.OnPropertyChanged);

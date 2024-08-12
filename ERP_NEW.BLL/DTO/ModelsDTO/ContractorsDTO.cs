@@ -21,6 +21,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public DateTime? ChangeDate { get; set; }
         public string AgreementNumber { get; set; }
         public DateTime? AgreementDate { get; set; }
+        public int? UserId { get; set; }
 
         public string CategoryName { get; set; }
         public string OwnName { get; set; }

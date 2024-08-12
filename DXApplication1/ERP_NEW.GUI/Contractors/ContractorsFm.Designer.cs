@@ -78,6 +78,7 @@
             this.typeNameTCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.kindNameCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.detailsTCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.contractorViewDetailInfoCheck = new DevExpress.XtraBars.BarCheckItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -137,9 +138,10 @@
             this.dublicateSearchBtn,
             this.addAgreementBtn,
             this.editAgreementBtn,
-            this.deleteAgreementBtn});
+            this.deleteAgreementBtn,
+            this.contractorViewDetailInfoCheck});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -275,6 +277,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.orderCheckItem);
             this.ribbonPageGroup2.ItemLinks.Add(this.dublicateSearchBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.contractorViewDetailInfoCheck);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Функції";
             // 
@@ -683,6 +686,14 @@
             this.detailsTCol.Visible = true;
             this.detailsTCol.Width = 158;
             // 
+            // contractorViewDetailInfoCheck
+            // 
+            this.contractorViewDetailInfoCheck.Caption = "Відобразити детальну інформацію";
+            this.contractorViewDetailInfoCheck.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.AfterText;
+            this.contractorViewDetailInfoCheck.Id = 11;
+            this.contractorViewDetailInfoCheck.Name = "contractorViewDetailInfoCheck";
+            this.contractorViewDetailInfoCheck.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
             // ContractorsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -768,5 +779,6 @@
         private DevExpress.XtraBars.BarButtonItem editAgreementBtn;
         private DevExpress.XtraBars.BarButtonItem deleteAgreementBtn;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarCheckItem contractorViewDetailInfoCheck;
     }
 }

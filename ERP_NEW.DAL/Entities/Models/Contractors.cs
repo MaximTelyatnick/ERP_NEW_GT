@@ -21,6 +21,7 @@ namespace ERP_NEW.DAL.Entities.Models
         public DateTime? ChangeDate { get; set; }
         public string AgreementNumber { get; set; }
         public DateTime? AgreementDate { get; set; }
+        public int? UserId { get; set; }
 
     }
 }
