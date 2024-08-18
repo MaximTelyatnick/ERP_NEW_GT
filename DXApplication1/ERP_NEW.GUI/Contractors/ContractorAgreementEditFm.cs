@@ -21,6 +21,7 @@ namespace ERP_NEW.GUI.Contractors
         //private BindingSource contactPersonAddressBS = new BindingSource();
         private Utils.Operation operation;
         private UserTasksDTO userTasksDTO;
+        private string OldName;
         private ObjectBase Item
         {
             get { return agreementBS.Current as ObjectBase; }
@@ -35,23 +36,37 @@ namespace ERP_NEW.GUI.Contractors
         {
             InitializeComponent();
 
+            if (Properties.Settings.Default.SuperUser)
+                fixedBtn.Visible = true;
+            else
+                fixedBtn.Visible = false;
+
+
             this.operation = operation;
             this.userTasksDTO = userTaskDTO;
+            model.AutoAgreement = true;
             agreementBS.DataSource = Item = model;
 
             LoadData();
 
+            this.OldName = model.Name;
             this.operation = operation;
 
             //contractorsEdit.DataBindings.Add("EditValue", agreementBS, "Branch", true, DataSourceUpdateMode.OnPropertyChanged);
 
             agreementNumberEdit.DataBindings.Add("EditValue", agreementBS, "AgreementNumber", true, DataSourceUpdateMode.OnPropertyChanged);
+
             agreementDateEdit.DataBindings.Add("EditValue", agreementBS, "AgreementDate", true, DataSourceUpdateMode.OnPropertyChanged);
+
             contractorsEdit.DataBindings.Add("EditValue", agreementBS, "ParentId", true, DataSourceUpdateMode.OnPropertyChanged);
             contractorsEdit.Properties.DataSource = contractorBS;
             contractorsEdit.Properties.ValueMember = "Id";
             contractorsEdit.Properties.DisplayMember = "Name";
             contractorsEdit.Properties.NullText = "Немає данних";
+
+            autoGenerateAgreementNameCheck.DataBindings.Add("EditValue", agreementBS, "AutoAgreement", true, DataSourceUpdateMode.OnPropertyChanged);
+
+            
 
 
 
@@ -94,19 +109,38 @@ namespace ERP_NEW.GUI.Contractors
 
         private void contractorsEdit_EditValueChanged(object sender, System.EventArgs e)
         {
-            agreementFinalNameEdit.Text = "Дог. " + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+            if (autoGenerateAgreementNameCheck.Checked)
+            {
+                if (agreementDateEdit.DateTime.Year > 2000)
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+                else
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " " + contractorsEdit.Text;
+
+            }
             dxValidationProvider.Validate((Control)sender);
         }
 
         private void agreementNumberEdit_EditValueChanged(object sender, System.EventArgs e)
         {
-            agreementFinalNameEdit.Text = "Дог. " + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+            if (autoGenerateAgreementNameCheck.Checked)
+            {
+                if (agreementDateEdit.DateTime.Year > 2000)
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+                else
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " " + contractorsEdit.Text;
+            }
             dxValidationProvider.Validate((Control)sender);
         }
 
         private void agreementDateEdit_EditValueChanged(object sender, System.EventArgs e)
         {
-            agreementFinalNameEdit.Text = "Дог. " + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+            if (autoGenerateAgreementNameCheck.Checked)
+            {
+                if (agreementDateEdit.DateTime.Year > 2000)
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " від. " + agreementDateEdit.DateTime.ToShortDateString() + " " + contractorsEdit.Text;
+                else
+                    agreementFinalNameEdit.Text = "Дог. №" + agreementNumberEdit.Text + " " + contractorsEdit.Text;
+            }
             dxValidationProvider.Validate((Control)sender);
         }
 
@@ -149,13 +183,14 @@ namespace ERP_NEW.GUI.Contractors
             ((ContractorsDTO)agreementBS.Current).Srn = ((ContractorsDTO)contractorBS.Current).Srn;
             ((ContractorsDTO)agreementBS.Current).Tin = ((ContractorsDTO)contractorBS.Current).Tin;
             ((ContractorsDTO)agreementBS.Current).Name = agreementFinalNameEdit.Text;
+            ((ContractorsDTO)agreementBS.Current).UserId = userTasksDTO.UserId;
 
             if (this.operation == Utils.Operation.Add)
             {
                 ((ContractorsDTO)agreementBS.Current).RegistrationDate = DateTime.Now;
                 contractorsService.ContractorCreate(((ContractorsDTO)agreementBS.Current));
             }
-            else
+            else 
             {
                 contractorsService.ContractorUpdate(((ContractorsDTO)agreementBS.Current));
             }
@@ -163,6 +198,55 @@ namespace ERP_NEW.GUI.Contractors
 
 
             return true;
+        }
+
+        private void autoGenerateAgreementNameCheck_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!autoGenerateAgreementNameCheck.Checked)
+            {
+                agreementFinalNameEdit.ReadOnly = false;
+            }
+            else
+            {
+                agreementFinalNameEdit.ReadOnly = true;
+            }
+        }
+
+        private void fixedBtn_Click(object sender, EventArgs e)
+        {
+            string oldName = OldName;
+
+            string searchNumber = "";
+
+            // Поиск позиции символа №
+            int startIndex = oldName.IndexOf("№");
+            if (startIndex == -1)
+            {
+                MessageBox.Show("Символ № не найден", "Пошук номера", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Сдвигаем индекс для начала подстроки сразу после символа №
+            startIndex += 1;
+
+            // Поиск позиции слов "від" или "от"
+            int endIndex = oldName.IndexOf(" від", startIndex);
+            if (endIndex == -1) endIndex = oldName.IndexOf(" от", startIndex);
+            if (endIndex == -1)
+            {
+                MessageBox.Show("Слова 'від' или 'от' не найдены", "Пошук номера", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Извлечение подстроки между символом № и словами "від" или "от"
+            string substring = oldName.Substring(startIndex, endIndex - startIndex).Trim();
+
+            // Вставка подстроки в str2
+            searchNumber += substring;
+
+            MessageBox.Show("Найден номер договора: "+ searchNumber, "Пошук номера", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
     }
 }

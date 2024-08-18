@@ -276,5 +276,18 @@ namespace ERP_NEW.GUI.Contractors
         {
             contractorAgreementsEdit(Utils.Operation.Add, new ContractorsDTO(), userTasksDTO);
         }
+
+        private void contractorViewDetailInfoCheck_CheckedChanged(object sender, ItemClickEventArgs e)
+        {
+            if (contractorViewDetailInfoCheck.Checked)
+                splitContainerControl1.SplitterPosition = splitContainerControl1.Size.Width;
+            else
+                splitContainerControl1.SplitterPosition = splitContainerControl1.Panel1.Width - 400;
+        }
+
+        private void editAgreementBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            contractorAgreementsEdit(Utils.Operation.Add, ((ContractorsDTO)contractorsBS.Current), userTasksDTO);
+        }
     }
 }

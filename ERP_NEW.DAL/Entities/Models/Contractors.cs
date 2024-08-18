@@ -22,6 +22,7 @@ namespace ERP_NEW.DAL.Entities.Models
         public string AgreementNumber { get; set; }
         public DateTime? AgreementDate { get; set; }
         public int? UserId { get; set; }
+        public bool? AutoAgreement { get; set; }
 
     }
 }

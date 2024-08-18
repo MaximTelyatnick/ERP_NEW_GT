@@ -43,6 +43,7 @@
             this.addAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteAgreementBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.contractorViewDetailInfoCheck = new DevExpress.XtraBars.BarCheckItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -60,7 +61,7 @@
             this.activeCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.contractorDetailInfoGroup = new DevExpress.XtraEditors.GroupControl();
             this.contractorContactAddressGrid = new DevExpress.XtraGrid.GridControl();
             this.contractorContactAddressGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.imageCol = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -78,7 +79,6 @@
             this.typeNameTCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.kindNameCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.detailsTCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.contractorViewDetailInfoCheck = new DevExpress.XtraBars.BarCheckItem();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -90,8 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.contractorDetailInfoGroup)).BeginInit();
+            this.contractorDetailInfoGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
@@ -154,6 +154,12 @@
             this.addBtn.Caption = "Додати";
             this.addBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addBtn.Glyph")));
             this.addBtn.Id = 1;
+            this.addBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.addBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.addBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.addBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addBtn.LargeGlyph")));
             this.addBtn.Name = "addBtn";
             this.addBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -164,6 +170,12 @@
             this.editBtn.Caption = "Редагувати";
             this.editBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editBtn.Glyph")));
             this.editBtn.Id = 2;
+            this.editBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.editBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.editBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editBtn.LargeGlyph")));
             this.editBtn.Name = "editBtn";
             this.editBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -174,6 +186,12 @@
             this.deleteBtn.Caption = "Видалити";
             this.deleteBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteBtn.Glyph")));
             this.deleteBtn.Id = 3;
+            this.deleteBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.deleteBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.deleteBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.deleteBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteBtn.LargeGlyph")));
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -184,6 +202,12 @@
             this.refreshBtn.Caption = "Поновити";
             this.refreshBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Glyph")));
             this.refreshBtn.Id = 4;
+            this.refreshBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.refreshBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.refreshBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.refreshBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.refreshBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.refreshBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.refreshBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("refreshBtn.LargeGlyph")));
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -191,16 +215,21 @@
             // 
             // orderCheckItem
             // 
-            this.orderCheckItem.Caption = "Договори";
-            this.orderCheckItem.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.AfterText;
-            this.orderCheckItem.Glyph = ((System.Drawing.Image)(resources.GetObject("orderCheckItem.Glyph")));
+            this.orderCheckItem.Caption = "Відобразити договори";
+            this.orderCheckItem.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
             this.orderCheckItem.Id = 5;
-            this.orderCheckItem.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.DarkGreen;
+            this.orderCheckItem.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderCheckItem.ItemAppearance.Disabled.Options.UseFont = true;
+            this.orderCheckItem.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderCheckItem.ItemAppearance.Hovered.ForeColor = System.Drawing.Color.Black;
+            this.orderCheckItem.ItemAppearance.Hovered.Options.UseFont = true;
             this.orderCheckItem.ItemAppearance.Hovered.Options.UseForeColor = true;
-            this.orderCheckItem.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.orderCheckItem.ItemAppearance.Normal.ForeColor = System.Drawing.Color.DarkGreen;
+            this.orderCheckItem.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderCheckItem.ItemAppearance.Normal.ForeColor = System.Drawing.Color.Black;
             this.orderCheckItem.ItemAppearance.Normal.Options.UseFont = true;
             this.orderCheckItem.ItemAppearance.Normal.Options.UseForeColor = true;
+            this.orderCheckItem.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.orderCheckItem.ItemAppearance.Pressed.Options.UseFont = true;
             this.orderCheckItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("orderCheckItem.LargeGlyph")));
             this.orderCheckItem.Name = "orderCheckItem";
             this.orderCheckItem.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
@@ -212,6 +241,12 @@
             this.dublicateSearchBtn.Caption = "Пошук дублів";
             this.dublicateSearchBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("dublicateSearchBtn.Glyph")));
             this.dublicateSearchBtn.Id = 6;
+            this.dublicateSearchBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dublicateSearchBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.dublicateSearchBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dublicateSearchBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.dublicateSearchBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dublicateSearchBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.dublicateSearchBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("dublicateSearchBtn.LargeGlyph")));
             this.dublicateSearchBtn.Name = "dublicateSearchBtn";
             this.dublicateSearchBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -222,6 +257,12 @@
             this.addAgreementBtn.Caption = "Додати";
             this.addAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("addAgreementBtn.Glyph")));
             this.addAgreementBtn.Id = 7;
+            this.addAgreementBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addAgreementBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.addAgreementBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addAgreementBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.addAgreementBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.addAgreementBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.addAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("addAgreementBtn.LargeGlyph")));
             this.addAgreementBtn.Name = "addAgreementBtn";
             this.addAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
@@ -232,18 +273,48 @@
             this.editAgreementBtn.Caption = "Редагувати";
             this.editAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("editAgreementBtn.Glyph")));
             this.editAgreementBtn.Id = 8;
+            this.editAgreementBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editAgreementBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.editAgreementBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editAgreementBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.editAgreementBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.editAgreementBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.editAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("editAgreementBtn.LargeGlyph")));
             this.editAgreementBtn.Name = "editAgreementBtn";
             this.editAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.editAgreementBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.editAgreementBtn_ItemClick);
             // 
             // deleteAgreementBtn
             // 
             this.deleteAgreementBtn.Caption = "Видалити";
             this.deleteAgreementBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("deleteAgreementBtn.Glyph")));
             this.deleteAgreementBtn.Id = 9;
+            this.deleteAgreementBtn.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteAgreementBtn.ItemAppearance.Disabled.Options.UseFont = true;
+            this.deleteAgreementBtn.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteAgreementBtn.ItemAppearance.Hovered.Options.UseFont = true;
+            this.deleteAgreementBtn.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteAgreementBtn.ItemAppearance.Normal.Options.UseFont = true;
             this.deleteAgreementBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteAgreementBtn.LargeGlyph")));
             this.deleteAgreementBtn.Name = "deleteAgreementBtn";
             this.deleteAgreementBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // contractorViewDetailInfoCheck
+            // 
+            this.contractorViewDetailInfoCheck.Caption = "Відобразити детальну інформацію";
+            this.contractorViewDetailInfoCheck.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.BeforeText;
+            this.contractorViewDetailInfoCheck.Id = 11;
+            this.contractorViewDetailInfoCheck.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contractorViewDetailInfoCheck.ItemAppearance.Disabled.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.contractorViewDetailInfoCheck.ItemAppearance.Disabled.Options.UseFont = true;
+            this.contractorViewDetailInfoCheck.ItemAppearance.Disabled.Options.UseForeColor = true;
+            this.contractorViewDetailInfoCheck.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contractorViewDetailInfoCheck.ItemAppearance.Hovered.Options.UseFont = true;
+            this.contractorViewDetailInfoCheck.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.contractorViewDetailInfoCheck.ItemAppearance.Normal.Options.UseFont = true;
+            this.contractorViewDetailInfoCheck.Name = "contractorViewDetailInfoCheck";
+            this.contractorViewDetailInfoCheck.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.contractorViewDetailInfoCheck.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.contractorViewDetailInfoCheck_CheckedChanged);
             // 
             // ribbonPage1
             // 
@@ -275,8 +346,8 @@
             // 
             this.ribbonPageGroup2.AllowTextClipping = false;
             this.ribbonPageGroup2.ItemLinks.Add(this.refreshBtn);
-            this.ribbonPageGroup2.ItemLinks.Add(this.orderCheckItem);
             this.ribbonPageGroup2.ItemLinks.Add(this.dublicateSearchBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.orderCheckItem);
             this.ribbonPageGroup2.ItemLinks.Add(this.contractorViewDetailInfoCheck);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Функції";
@@ -289,7 +360,7 @@
             this.splitContainerControl1.Panel1.Controls.Add(this.groupControl3);
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Size = new System.Drawing.Size(1422, 550);
-            this.splitContainerControl1.SplitterPosition = 1043;
+            this.splitContainerControl1.SplitterPosition = 1258;
             this.splitContainerControl1.TabIndex = 1;
             // 
             // groupControl3
@@ -302,7 +373,7 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(1043, 550);
+            this.groupControl3.Size = new System.Drawing.Size(1258, 550);
             this.groupControl3.TabIndex = 8;
             this.groupControl3.Text = "Контрагенти";
             // 
@@ -314,7 +385,7 @@
             this.contractorsGrid.Name = "contractorsGrid";
             this.contractorsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.contractorsGrid.Size = new System.Drawing.Size(1039, 528);
+            this.contractorsGrid.Size = new System.Drawing.Size(1254, 528);
             this.contractorsGrid.TabIndex = 6;
             this.contractorsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorsGridView});
@@ -450,28 +521,28 @@
             this.splitContainerControl2.Horizontal = false;
             this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
             this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.groupControl1);
+            this.splitContainerControl2.Panel1.Controls.Add(this.contractorDetailInfoGroup);
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(374, 550);
+            this.splitContainerControl2.Size = new System.Drawing.Size(159, 550);
             this.splitContainerControl2.SplitterPosition = 294;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
             // 
-            // groupControl1
+            // contractorDetailInfoGroup
             // 
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.groupControl1.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
-            this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.AppearanceCaption.Options.UseForeColor = true;
-            this.groupControl1.Controls.Add(this.contractorContactAddressGrid);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(374, 294);
-            this.groupControl1.TabIndex = 7;
-            this.groupControl1.Text = "Детальна інформація";
+            this.contractorDetailInfoGroup.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.contractorDetailInfoGroup.AppearanceCaption.ForeColor = System.Drawing.Color.Navy;
+            this.contractorDetailInfoGroup.AppearanceCaption.Options.UseFont = true;
+            this.contractorDetailInfoGroup.AppearanceCaption.Options.UseForeColor = true;
+            this.contractorDetailInfoGroup.Controls.Add(this.contractorContactAddressGrid);
+            this.contractorDetailInfoGroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contractorDetailInfoGroup.Location = new System.Drawing.Point(0, 0);
+            this.contractorDetailInfoGroup.Name = "contractorDetailInfoGroup";
+            this.contractorDetailInfoGroup.Size = new System.Drawing.Size(159, 294);
+            this.contractorDetailInfoGroup.TabIndex = 7;
+            this.contractorDetailInfoGroup.Text = "Детальна інформація";
             // 
             // contractorContactAddressGrid
             // 
@@ -481,7 +552,7 @@
             this.contractorContactAddressGrid.Name = "contractorContactAddressGrid";
             this.contractorContactAddressGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemPictureEdit1});
-            this.contractorContactAddressGrid.Size = new System.Drawing.Size(370, 272);
+            this.contractorContactAddressGrid.Size = new System.Drawing.Size(155, 272);
             this.contractorContactAddressGrid.TabIndex = 1;
             this.contractorContactAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contractorContactAddressGridView});
@@ -553,7 +624,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(374, 251);
+            this.groupControl2.Size = new System.Drawing.Size(159, 251);
             this.groupControl2.TabIndex = 9;
             this.groupControl2.Text = "Контактні особи";
             // 
@@ -563,7 +634,7 @@
             this.contactPersonAddressGrid.Location = new System.Drawing.Point(2, 20);
             this.contactPersonAddressGrid.MainView = this.contactPersonAddressGridView;
             this.contactPersonAddressGrid.Name = "contactPersonAddressGrid";
-            this.contactPersonAddressGrid.Size = new System.Drawing.Size(370, 229);
+            this.contactPersonAddressGrid.Size = new System.Drawing.Size(155, 229);
             this.contactPersonAddressGrid.TabIndex = 1;
             this.contactPersonAddressGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.contactPersonAddressGridView});
@@ -686,14 +757,6 @@
             this.detailsTCol.Visible = true;
             this.detailsTCol.Width = 158;
             // 
-            // contractorViewDetailInfoCheck
-            // 
-            this.contractorViewDetailInfoCheck.Caption = "Відобразити детальну інформацію";
-            this.contractorViewDetailInfoCheck.CheckBoxVisibility = DevExpress.XtraBars.CheckBoxVisibility.AfterText;
-            this.contractorViewDetailInfoCheck.Id = 11;
-            this.contractorViewDetailInfoCheck.Name = "contractorViewDetailInfoCheck";
-            this.contractorViewDetailInfoCheck.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
             // ContractorsFm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -715,8 +778,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.contractorDetailInfoGroup)).EndInit();
+            this.contractorDetailInfoGroup.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.contractorContactAddressGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
@@ -748,7 +811,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn сategoryNameCol;
         private DevExpress.XtraGrid.Columns.GridColumn ownNameCol;
         private DevExpress.XtraGrid.Columns.GridColumn TypeNameCol;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.GroupControl contractorDetailInfoGroup;
         private DevExpress.XtraGrid.GridControl contractorContactAddressGrid;
         private DevExpress.XtraGrid.Views.Grid.GridView contractorContactAddressGridView;
         private DevExpress.XtraGrid.Columns.GridColumn imageCol;

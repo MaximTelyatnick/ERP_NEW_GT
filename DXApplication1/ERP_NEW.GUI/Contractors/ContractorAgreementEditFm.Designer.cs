@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorAgreementEditFm));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.contractorsEdit = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -47,6 +47,8 @@
             this.dxValidationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.agreementFinalNameEdit = new DevExpress.XtraEditors.MemoEdit();
+            this.autoGenerateAgreementNameCheck = new DevExpress.XtraEditors.CheckEdit();
+            this.fixedBtn = new DevExpress.XtraEditors.SimpleButton();
             this.nameCol = new DevExpress.XtraGrid.Columns.GridColumn();
             this.srnCol = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsEdit.Properties)).BeginInit();
@@ -56,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.agreementDateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.agreementFinalNameEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoGenerateAgreementNameCheck.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // contractorsEdit
@@ -65,7 +68,7 @@
             this.contractorsEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Очистити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("contractorsEdit.Properties.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Очистити", null, null, true)});
             this.contractorsEdit.Properties.ImmediatePopup = true;
             this.contractorsEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsEdit.Properties.PopupFormSize = new System.Drawing.Size(553, 0);
@@ -73,10 +76,10 @@
             this.contractorsEdit.Properties.View = this.gridLookUpEdit1View;
             this.contractorsEdit.Size = new System.Drawing.Size(572, 22);
             this.contractorsEdit.TabIndex = 18;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Не обрано контрагент";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.contractorsEdit, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Не обрано контрагент";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.contractorsEdit, conditionValidationRule1);
             this.contractorsEdit.EditValueChanged += new System.EventHandler(this.contractorsEdit_EditValueChanged);
             // 
             // gridLookUpEdit1View
@@ -96,11 +99,11 @@
             // labelControl3
             // 
             this.labelControl3.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelControl3.Appearance.ForeColor = System.Drawing.Color.Navy;
-            this.labelControl3.Location = new System.Drawing.Point(12, 14);
+            this.labelControl3.Location = new System.Drawing.Point(10, 13);
             this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(63, 15);
+            this.labelControl3.Size = new System.Drawing.Size(59, 14);
             this.labelControl3.TabIndex = 19;
             this.labelControl3.Text = "Контрагент";
             // 
@@ -108,19 +111,21 @@
             // 
             this.agreementNumberEdit.Location = new System.Drawing.Point(12, 81);
             this.agreementNumberEdit.Name = "agreementNumberEdit";
-            this.agreementNumberEdit.Size = new System.Drawing.Size(348, 20);
+            this.agreementNumberEdit.Size = new System.Drawing.Size(360, 20);
             this.agreementNumberEdit.TabIndex = 20;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Не вказано номер договору";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.agreementNumberEdit, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Не вказано номер договору";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.agreementNumberEdit, conditionValidationRule2);
             this.agreementNumberEdit.EditValueChanged += new System.EventHandler(this.agreementNumberEdit_EditValueChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 62);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl1.Location = new System.Drawing.Point(10, 62);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(82, 13);
+            this.labelControl1.Size = new System.Drawing.Size(85, 14);
             this.labelControl1.TabIndex = 21;
             this.labelControl1.Text = "Номер договору";
             // 
@@ -139,17 +144,19 @@
             this.agreementDateEdit.Size = new System.Drawing.Size(206, 20);
             this.agreementDateEdit.TabIndex = 22;
             this.agreementDateEdit.ToolTip = "Дата створення заявки";
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Не вказана дата";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxValidationProvider.SetValidationRule(this.agreementDateEdit, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Не вказана дата";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxValidationProvider.SetValidationRule(this.agreementDateEdit, conditionValidationRule3);
             this.agreementDateEdit.EditValueChanged += new System.EventHandler(this.agreementDateEdit_EditValueChanged);
             // 
             // labelControl2
             // 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Navy;
             this.labelControl2.Location = new System.Drawing.Point(378, 62);
             this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(77, 13);
+            this.labelControl2.Size = new System.Drawing.Size(75, 14);
             this.labelControl2.TabIndex = 23;
             this.labelControl2.Text = "Дата договору";
             // 
@@ -157,7 +164,7 @@
             // 
             this.validateLbl.Appearance.BackColor = System.Drawing.SystemColors.Info;
             this.validateLbl.Appearance.ForeColor = System.Drawing.Color.OrangeRed;
-            this.validateLbl.Location = new System.Drawing.Point(12, 182);
+            this.validateLbl.Location = new System.Drawing.Point(10, 196);
             this.validateLbl.Name = "validateLbl";
             this.validateLbl.Size = new System.Drawing.Size(249, 13);
             this.validateLbl.TabIndex = 51;
@@ -166,7 +173,7 @@
             // cancelBtn
             // 
             this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBtn.Location = new System.Drawing.Point(509, 177);
+            this.cancelBtn.Location = new System.Drawing.Point(507, 191);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 50;
@@ -175,7 +182,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(428, 177);
+            this.saveBtn.Location = new System.Drawing.Point(426, 191);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 49;
@@ -189,20 +196,45 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 107);
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.labelControl4.Location = new System.Drawing.Point(10, 121);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(114, 13);
+            this.labelControl4.Size = new System.Drawing.Size(279, 14);
             this.labelControl4.TabIndex = 53;
-            this.labelControl4.Text = "Повна назва договору";
+            this.labelControl4.Text = "Повна назва договору при автоматичному створенні";
             // 
             // agreementFinalNameEdit
             // 
-            this.agreementFinalNameEdit.Location = new System.Drawing.Point(12, 126);
+            this.agreementFinalNameEdit.Location = new System.Drawing.Point(12, 140);
             this.agreementFinalNameEdit.Name = "agreementFinalNameEdit";
             this.agreementFinalNameEdit.Properties.ReadOnly = true;
             this.agreementFinalNameEdit.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.agreementFinalNameEdit.Size = new System.Drawing.Size(572, 45);
             this.agreementFinalNameEdit.TabIndex = 52;
+            // 
+            // autoGenerateAgreementNameCheck
+            // 
+            this.autoGenerateAgreementNameCheck.EditValue = true;
+            this.autoGenerateAgreementNameCheck.Location = new System.Drawing.Point(378, 115);
+            this.autoGenerateAgreementNameCheck.Name = "autoGenerateAgreementNameCheck";
+            this.autoGenerateAgreementNameCheck.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.autoGenerateAgreementNameCheck.Properties.Appearance.ForeColor = System.Drawing.Color.Navy;
+            this.autoGenerateAgreementNameCheck.Properties.Appearance.Options.UseFont = true;
+            this.autoGenerateAgreementNameCheck.Properties.Appearance.Options.UseForeColor = true;
+            this.autoGenerateAgreementNameCheck.Properties.Caption = "автоматично генерувати назву";
+            this.autoGenerateAgreementNameCheck.Size = new System.Drawing.Size(188, 19);
+            this.autoGenerateAgreementNameCheck.TabIndex = 54;
+            this.autoGenerateAgreementNameCheck.CheckedChanged += new System.EventHandler(this.autoGenerateAgreementNameCheck_CheckedChanged);
+            // 
+            // fixedBtn
+            // 
+            this.fixedBtn.Location = new System.Drawing.Point(345, 191);
+            this.fixedBtn.Name = "fixedBtn";
+            this.fixedBtn.Size = new System.Drawing.Size(75, 23);
+            this.fixedBtn.TabIndex = 55;
+            this.fixedBtn.Text = "Fix";
+            this.fixedBtn.Click += new System.EventHandler(this.fixedBtn_Click);
             // 
             // nameCol
             // 
@@ -231,7 +263,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 212);
+            this.ClientSize = new System.Drawing.Size(596, 226);
+            this.Controls.Add(this.fixedBtn);
+            this.Controls.Add(this.autoGenerateAgreementNameCheck);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.cancelBtn);
@@ -257,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.agreementDateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dxValidationProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.agreementFinalNameEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.autoGenerateAgreementNameCheck.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,5 +314,7 @@
         private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxValidationProvider;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.MemoEdit agreementFinalNameEdit;
+        private DevExpress.XtraEditors.CheckEdit autoGenerateAgreementNameCheck;
+        private DevExpress.XtraEditors.SimpleButton fixedBtn;
     }
 }
