@@ -153,13 +153,13 @@ namespace ERP_NEW.BLL.Services
                               ProductCategoryId = u.ProductCategoryId,
                               TypeName = c.TypeName,
                               Active = u.Active,
-                              AgreementDate = u.AgreementDate,
-                              AgreementNumber = u.AgreementNumber,
-                              ChangeDate = u.ChangeDate,
-                              ParentId = u.ParentId,
-                              RegistrationDate = u.RegistrationDate,
-                              UserId = u.UserId,
-                              AutoAgreement = u.AutoAgreement
+                              //AgreementDate = u.AgreementDate,
+                              //AgreementNumber = u.AgreementNumber,
+                              //ChangeDate = u.ChangeDate,
+                              //ParentId = u.ParentId,
+                              //RegistrationDate = u.RegistrationDate,
+                              //UserId = u.UserId,
+                              //AutoAgreement = u.AutoAgreement
                           });
 
             return result.ToList();

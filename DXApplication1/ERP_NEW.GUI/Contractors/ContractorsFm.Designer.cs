@@ -336,6 +336,7 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.Enabled = false;
             this.ribbonPageGroup3.ItemLinks.Add(this.addAgreementBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.editAgreementBtn);
             this.ribbonPageGroup3.ItemLinks.Add(this.deleteAgreementBtn);
