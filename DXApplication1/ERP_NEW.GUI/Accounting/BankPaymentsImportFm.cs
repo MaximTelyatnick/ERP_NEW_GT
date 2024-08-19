@@ -320,6 +320,11 @@ namespace ERP_NEW.GUI.Accounting
 
         private void poltavaBankItem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //string str =  "078999980313191206084016719";
+            //string str1 = "0000026006031206245";
+
+            //ulong test = ulong.Parse(str1);
+            //Int64 test1 = Int64.Parse(str);
             openDialog.Filter = "Текстовые файлы(*.txt)|*.txt";
 
             if (openDialog.ShowDialog() == DialogResult.OK)
