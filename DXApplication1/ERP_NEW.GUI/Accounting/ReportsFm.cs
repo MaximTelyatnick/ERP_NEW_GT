@@ -1400,8 +1400,11 @@ namespace ERP_NEW.GUI.Accounting
                 calcWithBuyersService = Program.kernel.Get<ICalcWithBuyersService>();
 
                 List<CalcWithBuyersInfoDTO> calcWithBayersInfoList36_1 = new List<CalcWithBuyersInfoDTO>();
-                calcWithBayersInfoList36_1 = calcWithBuyersService.GetCalcWithBuyersJournal(_beginDate, _endDate).Where(a => a.BalanceNum == "712" && a.PurposeNum == "36/1").ToList();
 
+                splashScreenManager.CloseWaitForm();
+
+                calcWithBayersInfoList36_1 = calcWithBuyersService.GetCalcWithBuyersJournal(_beginDate, _endDate).Where(a => a.BalanceNum == "712" && a.PurposeNum == "36/1").ToList();
+                
 
                 //try
                 //{

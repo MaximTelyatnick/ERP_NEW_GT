@@ -127,7 +127,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Models\ERP_Context.cs" />
+    <Compile Include="Entities\EF\ERP_Context.cs" />
     <Compile Include="Entities\Models\AccessRights.cs" />
     <Compile Include="Entities\Models\AccessScheduleEntity.cs" />
     <Compile Include="Entities\Models\AccountClothes.cs" />
@@ -418,9 +418,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\EF\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

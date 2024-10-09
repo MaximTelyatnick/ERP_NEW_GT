@@ -17007,11 +17007,16 @@ namespace ERP_NEW.BLL.Services
 
         public bool  PrintTrialBalanceAccounts(List<TrialBalanceByAccountsReportDTO> reportList, string StartDate, string EndDate)
         {
+            //for (int i = 0; i < reportList.Count; i++)
+            //{
+            //    reportList[i].FlagDebitCredit = Math.Abs(reportList[i].FlagDebitCredit);
+            //}
 
             var balanceSource = reportList
                                 .OrderBy(s => s.BalanceAccountNum)
                                 .ThenBy(w => w.FlagDebitCredit)
                                 .ToList();
+
             SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\TemplateWithStamp.xls");
             //var workbook = Factory.GetWorkbook(TemplatesDir + "TemplateWithStamp.xls");
             var worksheet = workbook.Worksheets[0];
