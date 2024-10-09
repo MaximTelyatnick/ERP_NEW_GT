@@ -446,8 +446,22 @@ namespace ERP_NEW.BLL.Services
                         {
                             bankAccount = NumberCrop(bankAccount);
                         }
+                        try
+                        {
+                            paymentRow.RecipientBankAccountNum = ulong.Parse(bankAccount);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Помилка " + ex.Message +"\nПри спробі обробити номер "+ bankAccount +"\nЗменшили номер до 14 символів", "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            string trimmedString = bankAccount.Length > 14
+                                                   ? bankAccount.Substring(bankAccount.Length - 14)
+                                                   : bankAccount;
 
-                        paymentRow.RecipientBankAccountNum = ulong.Parse(bankAccount);
+                            MessageBox.Show("Номер після редагування"+ trimmedString, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            bankAccount = trimmedString;
+                            paymentRow.RecipientBankAccountNum = ulong.Parse(bankAccount);
+                        }
+
                         paymentRow.RecipientSrn = SearchString(srn, srnPos + 5, allData[i]);
                         paymentRow.RecipientName = allData[++i].Trim();
 
