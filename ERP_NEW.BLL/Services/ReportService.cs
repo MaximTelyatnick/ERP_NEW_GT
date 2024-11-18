@@ -9546,25 +9546,33 @@ namespace ERP_NEW.BLL.Services
 
                 cells["N" + currentPosition].Value = contractorVatList[i].CreditPeriod;
                 cells["O" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
+                cells["P" + currentPosition].Value = contractorVatList[i].CreditPeriod949;
 
-                cells["P" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("O" + (currentPosition)) + ")";
+                //cells["P" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("O" + (currentPosition)) + ")";
+                cells["Q" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("P" + (currentPosition)) + ")";
 
-                cells["Q" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
-                cells["R" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
+                //cells["Q" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
+                //cells["R" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
+                cells["R" + currentPosition].Value = contractorVatList[i].SaldoDebitEnd;
+                cells["S" + currentPosition].Value = contractorVatList[i].SaldoCreditEnd;
 
                 currentPosition++;
                 n++;
             }
 
-            cells["A" + startPosition + ":" + ("R" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
+            //cells["A" + startPosition + ":" + ("R" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
+            cells["A" + startPosition + ":" + ("S" + currentPosition)].Borders.LineStyle = LineStyle.Continous;
 
             cells["C" + currentPosition].Value = "Разом:";
             cells["C" + currentPosition].VerticalAlignment = VAlign.Distributed;
             cells["C" + currentPosition].Font.Bold = true;
-            cells["A" + currentPosition + ":" + "R" + currentPosition].Font.Size = 14;
-            cells["A" + currentPosition + ":" + "R" + currentPosition].Interior.Color = Color.Bisque;
+            //cells["A" + currentPosition + ":" + "R" + currentPosition].Font.Size = 14;
+            //cells["A" + currentPosition + ":" + "R" + currentPosition].Interior.Color = Color.Bisque;
 
-            
+            cells["A" + currentPosition + ":" + "S" + currentPosition].Font.Size = 14;
+            cells["A" + currentPosition + ":" + "S" + currentPosition].Interior.Color = Color.Bisque;
+
+
             cells["E" + currentPosition].Value = "=SUM(E" + 10 + ":" + ("E" + (currentPosition - 1)) + ")";
             cells["F" + currentPosition].Value = "=SUM(F" + 10 + ":" + ("F" + (currentPosition - 1)) + ")";
             cells["G" + currentPosition].Value = "=SUM(G" + 10 + ":" + ("G" + (currentPosition - 1)) + ")";
@@ -9579,6 +9587,7 @@ namespace ERP_NEW.BLL.Services
             cells["P" + currentPosition].Value = "=SUM(P" + 10 + ":" + ("P" + (currentPosition - 1)) + ")";
             cells["Q" + currentPosition].Value = "=SUM(Q" + 10 + ":" + ("Q" + (currentPosition - 1)) + ")";
             cells["R" + currentPosition].Value = "=SUM(R" + 10 + ":" + ("R" + (currentPosition - 1)) + ")";
+            cells["S" + currentPosition].Value = "=SUM(S" + 10 + ":" + ("S" + (currentPosition - 1)) + ")";
             //cells["M" + currentPosition].Value = "=SUM(M" + 4 + ":" + ("M" + (currentPosition - 1)) + ")";
 
             PrintSignatures(cells, currentPosition + 3);
