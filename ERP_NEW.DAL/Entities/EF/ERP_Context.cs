@@ -25,6 +25,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<AccountClothesMaterials> AccountClothesMaterials { get; set; }
         public DbSet<AccountClothesJournal> AccountClothesJournal { get; set; }
         public DbSet<AccessRights> AccessRights { get; set; }
+        public DbSet<AccountingOperations> AccountingOperations { get; set; }
         public DbSet<AccountingOperation> AccountingOperation { get; set; }
         public DbSet<AccountOrders> AccountOrders { get; set; }
         public DbSet<AgreementJournal> AgreementJournal { get; set; }

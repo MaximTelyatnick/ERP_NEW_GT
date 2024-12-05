@@ -121,7 +121,7 @@
             this.repositoryItemDateEdit1,
             this.repositoryItemDateEdit2});
             this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
-            this.ribbonControl1.Size = new System.Drawing.Size(1314, 93);
+            this.ribbonControl1.Size = new System.Drawing.Size(1314, 95);
             this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
             // firstDateBusinessTripEdit
@@ -306,14 +306,14 @@
             gridLevelNode1.RelationName = "Level1";
             this.businessTripsGrid.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.businessTripsGrid.Location = new System.Drawing.Point(0, 93);
+            this.businessTripsGrid.Location = new System.Drawing.Point(0, 95);
             this.businessTripsGrid.MainView = this.businessTripsGridView;
             this.businessTripsGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.businessTripsGrid.Name = "businessTripsGrid";
             this.businessTripsGrid.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.decreeStatusRepository,
             this.paymentStatusRepository});
-            this.businessTripsGrid.Size = new System.Drawing.Size(1314, 537);
+            this.businessTripsGrid.Size = new System.Drawing.Size(1314, 535);
             this.businessTripsGrid.TabIndex = 1;
             this.businessTripsGrid.ToolTipController = this.toolTipController;
             this.businessTripsGrid.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -351,7 +351,6 @@
             this.identNumberCol});
             this.businessTripsGridView.GridControl = this.businessTripsGrid;
             this.businessTripsGridView.Name = "businessTripsGridView";
-            this.businessTripsGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.businessTripsGridView.OptionsView.ShowAutoFilterRow = true;
             this.businessTripsGridView.OptionsView.ShowFooter = true;
             this.businessTripsGridView.OptionsView.ShowGroupPanel = false;
@@ -705,7 +704,7 @@
             this.Name = "BusinessTripsFm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "`";
+            this.Text = " ";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.BusinessTripsFm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();

@@ -781,6 +781,12 @@ namespace ERP_NEW.GUI
                     logFm.Show();
 
                     break;
+                case "accountingTransferItem":
+                    AccountingTransferFm accountingTransferFm = new AccountingTransferFm(userTasksDTO);
+                    accountingTransferFm.Text = "Грошові операції";
+                    accountingTransferFm.MdiParent = this;
+                    accountingTransferFm.Show();
+                    break;
 
 
 

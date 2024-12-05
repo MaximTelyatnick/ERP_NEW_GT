@@ -133,6 +133,7 @@
     <Compile Include="Entities\Models\AccountClothes.cs" />
     <Compile Include="Entities\Models\AccountClothesMaterials.cs" />
     <Compile Include="Entities\Models\AccountingOperation.cs" />
+    <Compile Include="Entities\Models\AccountingOperations.cs" />
     <Compile Include="Entities\Models\AccountsType.cs" />
     <Compile Include="Entities\Models\AgreementOrder.cs" />
     <Compile Include="Entities\Models\AgreementOrderPurpose.cs" />
