@@ -794,7 +794,9 @@ namespace ERP_NEW.GUI
            
         private bool CheckAccess(int accountNumber = 0)
         {
+            
             int num = accountNumber;
+            //num = GetActiveDirectoryUser();
 
             if (accountNumber == 0)
             {

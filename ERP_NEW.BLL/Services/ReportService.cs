@@ -13215,7 +13215,7 @@ namespace ERP_NEW.BLL.Services
                         Сells[source.Count + 15, 2].Value = "Пінчук М. М. ";
                         break;
                     case 18://маркетинг
-                        Сells[source.Count + 15, 2].Value = "Шалаєвський І. М.";
+                        Сells[source.Count + 15, 2].Value = "Качан Т. Л.";
                         break;
                     case 20://материально технический
                         Сells[source.Count + 15, 2].Value = "Уманець О. О. ";
