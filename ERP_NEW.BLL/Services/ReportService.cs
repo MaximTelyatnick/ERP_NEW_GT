@@ -9547,6 +9547,9 @@ namespace ERP_NEW.BLL.Services
                 cells["N" + currentPosition].Value = contractorVatList[i].CreditPeriod;
                 cells["O" + currentPosition].Value = contractorVatList[i].CreditPeriod644;
                 cells["P" + currentPosition].Value = contractorVatList[i].CreditPeriod949;
+                if(contractorVatList[i].CreditPeriod949>0)
+                    cells["D" + captionPosition].Font.Bold = true;
+
 
                 //cells["P" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("O" + (currentPosition)) + ")";
                 cells["Q" + currentPosition].Value = "=SUM(M" + (currentPosition) + ":" + ("P" + (currentPosition)) + ")";

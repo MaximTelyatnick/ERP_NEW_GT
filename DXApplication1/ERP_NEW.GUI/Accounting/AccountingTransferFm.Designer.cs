@@ -46,9 +46,11 @@
             this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.periodBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -132,9 +134,10 @@
             this.showBtn,
             this.addBtn,
             this.editBtn,
-            this.deleteBtn});
+            this.deleteBtn,
+            this.periodBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 14;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -197,6 +200,7 @@
             this.beginYearEdit.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.beginYearEdit.ItemAppearance.Pressed.Options.UseFont = true;
             this.beginYearEdit.Name = "beginYearEdit";
+            this.beginYearEdit.EditValueChanged += new System.EventHandler(this.beginYearEdit_EditValueChanged);
             // 
             // beginMonthEdit
             // 
@@ -211,6 +215,7 @@
             this.beginMonthEdit.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.beginMonthEdit.ItemAppearance.Pressed.Options.UseFont = true;
             this.beginMonthEdit.Name = "beginMonthEdit";
+            this.beginMonthEdit.EditValueChanged += new System.EventHandler(this.beginMonthEdit_EditValueChanged);
             // 
             // barStaticItem4
             // 
@@ -237,6 +242,7 @@
             this.endYearEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endYearEdit.ItemAppearance.Normal.Options.UseFont = true;
             this.endYearEdit.Name = "endYearEdit";
+            this.endYearEdit.EditValueChanged += new System.EventHandler(this.endYearEdit_EditValueChanged);
             // 
             // endMonthEdit
             // 
@@ -249,6 +255,7 @@
             this.endMonthEdit.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.endMonthEdit.ItemAppearance.Normal.Options.UseFont = true;
             this.endMonthEdit.Name = "endMonthEdit";
+            this.endMonthEdit.EditValueChanged += new System.EventHandler(this.endMonthEdit_EditValueChanged);
             this.endMonthEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barEditItem4_ItemClick);
             // 
             // showBtn
@@ -291,11 +298,20 @@
             this.deleteBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.deleteBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteBtn_ItemClick);
             // 
+            // periodBtn
+            // 
+            this.periodBtn.Caption = "Закрити період";
+            this.periodBtn.Id = 13;
+            this.periodBtn.Name = "periodBtn";
+            this.periodBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.periodBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.periodBtn_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -318,6 +334,12 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.deleteBtn);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Документ";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.periodBtn);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Період";
             // 
             // barStaticItem1
             // 
@@ -473,7 +495,7 @@
             this.gridBand1.Columns.Add(this.partnerNameCol);
             this.gridBand1.Name = "gridBand1";
             this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 246;
+            this.gridBand1.Width = 385;
             // 
             // partnerSrnCol
             // 
@@ -487,7 +509,7 @@
             this.partnerSrnCol.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "PartnerSrn", "Всього: {0}")});
             this.partnerSrnCol.Visible = true;
-            this.partnerSrnCol.Width = 98;
+            this.partnerSrnCol.Width = 153;
             // 
             // partnerNameCol
             // 
@@ -499,7 +521,7 @@
             this.partnerNameCol.OptionsColumn.AllowEdit = false;
             this.partnerNameCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.partnerNameCol.Visible = true;
-            this.partnerNameCol.Width = 148;
+            this.partnerNameCol.Width = 232;
             // 
             // gridBand2
             // 
@@ -512,7 +534,7 @@
             this.gridBand2.Columns.Add(this.paymentDocumentCol);
             this.gridBand2.Name = "gridBand2";
             this.gridBand2.VisibleIndex = 1;
-            this.gridBand2.Width = 111;
+            this.gridBand2.Width = 229;
             // 
             // paymentDateCol
             // 
@@ -525,7 +547,7 @@
             this.paymentDateCol.Name = "paymentDateCol";
             this.paymentDateCol.OptionsColumn.AllowEdit = false;
             this.paymentDateCol.Visible = true;
-            this.paymentDateCol.Width = 45;
+            this.paymentDateCol.Width = 172;
             // 
             // paymentDocumentCol
             // 
@@ -536,7 +558,7 @@
             this.paymentDocumentCol.Name = "paymentDocumentCol";
             this.paymentDocumentCol.OptionsColumn.AllowEdit = false;
             this.paymentDocumentCol.Visible = true;
-            this.paymentDocumentCol.Width = 66;
+            this.paymentDocumentCol.Width = 57;
             // 
             // gridBand3
             // 
@@ -549,7 +571,7 @@
             this.gridBand3.Columns.Add(this.purposeAccountNum);
             this.gridBand3.Name = "gridBand3";
             this.gridBand3.VisibleIndex = 2;
-            this.gridBand3.Width = 136;
+            this.gridBand3.Width = 193;
             // 
             // bankAccountNumCol
             // 
@@ -560,7 +582,7 @@
             this.bankAccountNumCol.Name = "bankAccountNumCol";
             this.bankAccountNumCol.OptionsColumn.AllowEdit = false;
             this.bankAccountNumCol.Visible = true;
-            this.bankAccountNumCol.Width = 69;
+            this.bankAccountNumCol.Width = 95;
             // 
             // purposeAccountNum
             // 
@@ -571,7 +593,7 @@
             this.purposeAccountNum.Name = "purposeAccountNum";
             this.purposeAccountNum.OptionsColumn.AllowEdit = false;
             this.purposeAccountNum.Visible = true;
-            this.purposeAccountNum.Width = 67;
+            this.purposeAccountNum.Width = 98;
             // 
             // gridBand4
             // 
@@ -583,7 +605,7 @@
             this.gridBand4.Columns.Add(this.debitPriceCol);
             this.gridBand4.Name = "gridBand4";
             this.gridBand4.VisibleIndex = 3;
-            this.gridBand4.Width = 59;
+            this.gridBand4.Width = 106;
             // 
             // debitPriceCol
             // 
@@ -599,7 +621,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "DebitPrice", "{0:### ### ##0.00}")});
             this.debitPriceCol.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.debitPriceCol.Visible = true;
-            this.debitPriceCol.Width = 59;
+            this.debitPriceCol.Width = 106;
             // 
             // gridBand5
             // 
@@ -611,7 +633,7 @@
             this.gridBand5.Columns.Add(this.creditPriceCol);
             this.gridBand5.Name = "gridBand5";
             this.gridBand5.VisibleIndex = 4;
-            this.gridBand5.Width = 59;
+            this.gridBand5.Width = 115;
             // 
             // creditPriceCol
             // 
@@ -627,7 +649,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, "CreditPrice", "{0:### ### ##0.00}")});
             this.creditPriceCol.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.creditPriceCol.Visible = true;
-            this.creditPriceCol.Width = 59;
+            this.creditPriceCol.Width = 115;
             // 
             // gridBand7
             // 
@@ -639,7 +661,7 @@
             this.gridBand7.Columns.Add(this.purposeCol);
             this.gridBand7.Name = "gridBand7";
             this.gridBand7.VisibleIndex = 5;
-            this.gridBand7.Width = 204;
+            this.gridBand7.Width = 248;
             // 
             // purposeCol
             // 
@@ -651,7 +673,7 @@
             this.purposeCol.OptionsColumn.AllowEdit = false;
             this.purposeCol.OptionsFilter.AutoFilterCondition = DevExpress.XtraGrid.Columns.AutoFilterCondition.Contains;
             this.purposeCol.Visible = true;
-            this.purposeCol.Width = 204;
+            this.purposeCol.Width = 248;
             // 
             // AccountingTransferFm
             // 
@@ -728,5 +750,7 @@
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn purposeCol;
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
         private DevExpress.XtraScheduler.UI.RepositoryItemMonth repositoryItemMonth1;
+        private DevExpress.XtraBars.BarButtonItem periodBtn;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }

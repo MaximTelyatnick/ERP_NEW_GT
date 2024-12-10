@@ -31,7 +31,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -45,10 +45,10 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement17 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement19 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement20 = new DevExpress.XtraEditors.TileItemElement();
@@ -325,18 +325,18 @@
             this.accountingTransferItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
             this.accountingTransferItem.OwnerCollection = this.accountingCategory.Items;
             // 
-            // tileBarItem1
+            // 
             // 
             this.accountingTransferItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
             this.accountingTransferItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingTransferItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement17.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement17.Image")));
-            tileItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement17.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement17.Text = "Операції між рахунками";
-            this.accountingTransferItem.Tile.Elements.Add(tileItemElement17);
+            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
+            tileItemElement13.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement13.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement13.Text = "Операції між рахунками";
+            this.accountingTransferItem.Tile.Elements.Add(tileItemElement13);
             this.accountingTransferItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingTransferItem.Tile.Name = "tileBarItem1";
             this.accountingCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
@@ -348,9 +348,9 @@
             this.taxAccountingItem,
             this.calcWithBuyersItem,
             this.bankPaymentsItem,
+            this.accountingTransferItem,
             this.cashBookItem,
-            this.accountingReportItem,
-            this.accountingTransferItem});
+            this.accountingReportItem});
             this.accountingCategory.Name = "accountingCategory";
             this.accountingCategory.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
             this.accountingCategory.OptionsDropDown.ShowItemShadow = DevExpress.Utils.DefaultBoolean.True;
@@ -609,11 +609,11 @@
             this.cashBookItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.cashBookItem.Tile.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
             this.cashBookItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement15.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement15.Image")));
-            tileItemElement15.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileItemElement15.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement15.Text = "Касова книга";
-            this.cashBookItem.Tile.Elements.Add(tileItemElement15);
+            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
+            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileItemElement16.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement16.Text = "Касова книга";
+            this.cashBookItem.Tile.Elements.Add(tileItemElement16);
             this.cashBookItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookItem.Tile.Name = "tileBarItem1";
             // 
@@ -626,8 +626,8 @@
             // 
             // 
             this.cashBookBusinessTripsSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement13.Text = "Касова книга (відрядження)";
-            this.cashBookBusinessTripsSubItem.Tile.Elements.Add(tileItemElement13);
+            tileItemElement14.Text = "Касова книга (відрядження)";
+            this.cashBookBusinessTripsSubItem.Tile.Elements.Add(tileItemElement14);
             this.cashBookBusinessTripsSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookBusinessTripsSubItem.Tile.Name = "tileBarItem1";
             // 
@@ -640,8 +640,8 @@
             // 
             // 
             this.cashBookCookShopSubItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement14.Text = "Касова книга (їдальня)";
-            this.cashBookCookShopSubItem.Tile.Elements.Add(tileItemElement14);
+            tileItemElement15.Text = "Касова книга (їдальня)";
+            this.cashBookCookShopSubItem.Tile.Elements.Add(tileItemElement15);
             this.cashBookCookShopSubItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.cashBookCookShopSubItem.Tile.Name = "tileBarItem2";
             // 
@@ -660,11 +660,11 @@
             this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
             this.accountingReportItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
             this.accountingReportItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement16.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement16.Image")));
-            tileItemElement16.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement16.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement16.Text = "Звіти";
-            this.accountingReportItem.Tile.Elements.Add(tileItemElement16);
+            tileItemElement17.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement17.Image")));
+            tileItemElement17.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement17.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement17.Text = "Звіти";
+            this.accountingReportItem.Tile.Elements.Add(tileItemElement17);
             this.accountingReportItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.accountingReportItem.Tile.Name = "tileBarItem1";
             // 

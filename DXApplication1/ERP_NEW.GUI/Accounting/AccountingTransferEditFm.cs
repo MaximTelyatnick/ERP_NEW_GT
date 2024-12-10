@@ -30,6 +30,8 @@ namespace ERP_NEW.GUI.Accounting
         private Utils.Operation operation;
         private UserTasksDTO userTasksDTO;
 
+        private const string NameForm = "AccountingTransferEditFm";
+
         private ObjectBase Item
         {
             get { return accountOperationsBS.Current as ObjectBase; }
@@ -187,7 +189,7 @@ namespace ERP_NEW.GUI.Accounting
 
         private void paymentDocumentTBox_EditValueChanged(object sender, EventArgs e)
         {
-            accountTransferValidationProvider.Validate((Control)sender);
+            
         }
 
         private void accountEdit_EditValueChanged(object sender, EventArgs e)
@@ -205,6 +207,65 @@ namespace ERP_NEW.GUI.Accounting
             accountTransferValidationProvider.Validate((Control)sender);
         }
 
+        private bool CheckPeriodAccess(DateTime currentDate)
+        {
+            periodService = Program.kernel.Get<IPeriodService>();
+
+            return periodService.GetAllPeriods().Any(p => p.Year == currentDate.Year && p.Month == currentDate.Month && p.StateBank);
+        }
+
+        private bool CheckPeriodExist(DateTime currentDate)
+        {
+            periodService = Program.kernel.Get<IPeriodService>();
+
+            return periodService.GetAllPeriods().Any(p => p.Year == currentDate.Year && p.Month == currentDate.Month);
+        }
+
+        private void OpenPeriodAccess(DateTime periodDate)
+        {
+            try
+            {
+                periodService = Program.kernel.Get<IPeriodService>();
+
+                if (CheckPeriodAccess(periodDate))
+                {
+                    PeriodsDTO model = periodService.GetPeriodByKey(periodDate.Year, periodDate.Month);
+                    model.StateBank = false;
+
+                    periodService.PeriodsUpdate(model);
+                }
+                else
+                {
+                    if (CheckPeriodExist(periodDate))
+                    {
+                        PeriodsDTO model = periodService.GetPeriodByKey(periodDate.Year, periodDate.Month);
+                        model.StateBank = true;
+
+                        periodService.PeriodsUpdate(model);
+                    }
+                    else
+                    {
+                        PeriodsDTO model = new PeriodsDTO()
+                        {
+                            Year = periodDate.Year,
+                            Month = periodDate.Month,
+                            State = false,
+                            StateBank = true,
+                            StateBusinesTrip = false
+                        };
+
+                        periodService.PeriodsCreate(model);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("При збереженні періоду виникла помилка. " + ex.Message, "Збереження періоду", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
+                return;
+            }
+        }
+
         private void saveBtn_Click(object sender, EventArgs e)
         {
             this.Item.EndEdit();
@@ -213,6 +274,19 @@ namespace ERP_NEW.GUI.Accounting
             {
                 try
                 {
+
+                    if (!CheckPeriodAccess(((AccountingOperationsDTO)Item).PaymentDate ?? DateTime.Now))
+                    {
+                        if (MessageBox.Show("Період закритий або не існує! Відкрити період?", "Редагування", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            OpenPeriodAccess(((AccountingOperationsDTO)Item).PaymentDate ?? DateTime.Now);
+                        }
+                        else
+                        {
+                            return;
+                        }
+                    }
+
                     if (SaveItem())
                     {
                         DialogResult = DialogResult.OK;
@@ -222,7 +296,7 @@ namespace ERP_NEW.GUI.Accounting
                 catch (Exception ex)
                 {
                     MessageBox.Show("При збереженні виникла помилка. " + ex.Message, "Збереження", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //logService.CreateLogRecord("Error", BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
+                    logService.CreateLogRecord(ex.Message, BLL.Infrastructure.Utils.Level.Error, userTasksDTO, NameForm);
                 }
             }
         }
@@ -260,6 +334,11 @@ namespace ERP_NEW.GUI.Accounting
                 default:
                     return false;
             }
+        }
+
+        private void contractorsEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            accountTransferValidationProvider.Validate((Control)sender);
         }
     }
 }

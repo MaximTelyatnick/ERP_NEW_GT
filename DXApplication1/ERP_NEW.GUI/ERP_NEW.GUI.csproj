@@ -73,10 +73,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>6A84A53E76AEC553745C546D1098966C778F5F7F</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E5116148340C2076670004E29512D708EBCF3A26</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_6_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_7_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -258,13 +258,12 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ERP_NEW.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ERP_NEW.BLL\bin\Release\ERP_NEW.BLL.dll</HintPath>
+    <Reference Include="ERP_NEW.BLL">
+      <HintPath>..\..\ERP_NEW.BLL\bin\Debug\ERP_NEW.BLL.dll</HintPath>
     </Reference>
     <Reference Include="ERP_NEW.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ERP_NEW.DAL\bin\Release\ERP_NEW.DAL.dll</HintPath>
+      <HintPath>..\..\ERP_NEW.DAL\bin\Debug\ERP_NEW.DAL.dll</HintPath>
     </Reference>
     <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.7.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FirebirdSql.Data.FirebirdClient.5.7.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>

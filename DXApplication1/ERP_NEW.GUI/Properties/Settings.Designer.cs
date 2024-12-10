@@ -323,5 +323,51 @@ namespace ERP_NEW.GUI.Properties {
                 this["UsedHolidayDay"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AccountingOperationsFmBeginMonth {
+            get {
+                return ((int)(this["AccountingOperationsFmBeginMonth"]));
+            }
+            set {
+                this["AccountingOperationsFmBeginMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AccountingOperationsFmEndMonth {
+            get {
+                return ((int)(this["AccountingOperationsFmEndMonth"]));
+            }
+            set {
+                this["AccountingOperationsFmEndMonth"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime AccountingOperationsFmBeginYear {
+            get {
+                return ((global::System.DateTime)(this["AccountingOperationsFmBeginYear"]));
+            }
+            set {
+                this["AccountingOperationsFmBeginYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime AccountingOperationsFmEndYear {
+            get {
+                return ((global::System.DateTime)(this["AccountingOperationsFmEndYear"]));
+            }
+            set {
+                this["AccountingOperationsFmEndYear"] = value;
+            }
+        }
     }
 }

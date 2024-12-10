@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BankPaymentsJournalFm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barStaticItem1 = new DevExpress.XtraBars.BarStaticItem();
@@ -53,7 +54,7 @@
             this.bankAccountEdit = new DevExpress.XtraBars.BarEditItem();
             this.bankAccountRepository = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.reportBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.reportMenu = new DevExpress.XtraBars.PopupMenu();
+            this.reportMenu = new DevExpress.XtraBars.PopupMenu(this.components);
             this.bankTrialBalanceReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bankTrialBalance334ReportBtn = new DevExpress.XtraBars.BarButtonItem();
             this.bankTrialBalance373ReportBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -79,7 +80,7 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.bankPaymentsGrid = new DevExpress.XtraGrid.GridControl();
-            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip();
+            this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bankPaymentsGridView = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
@@ -110,9 +111,9 @@
             this.vatAccountNumCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridBand7 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.purposeCol = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.imageCollection = new DevExpress.Utils.ImageCollection();
+            this.imageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
-            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu();
+            this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();

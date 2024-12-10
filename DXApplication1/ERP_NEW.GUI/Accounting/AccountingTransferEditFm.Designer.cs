@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
@@ -47,7 +44,6 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contractorCheckEdit = new DevExpress.XtraEditors.CheckEdit();
             this.purposeAccountEdit = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.accountEdit = new DevExpress.XtraEditors.LookUpEdit();
@@ -71,7 +67,6 @@
             this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contractorsEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractorCheckEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeAccountEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDocumentTBox.Properties)).BeginInit();
@@ -129,7 +124,6 @@
             this.groupControl3.AppearanceCaption.ForeColor = System.Drawing.Color.Maroon;
             this.groupControl3.AppearanceCaption.Options.UseForeColor = true;
             this.groupControl3.Controls.Add(this.contractorsEdit);
-            this.groupControl3.Controls.Add(this.contractorCheckEdit);
             this.groupControl3.Location = new System.Drawing.Point(9, 117);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(506, 52);
@@ -138,14 +132,11 @@
             // 
             // contractorsEdit
             // 
-            this.contractorsEdit.Location = new System.Drawing.Point(29, 22);
+            this.contractorsEdit.Location = new System.Drawing.Point(5, 22);
             this.contractorsEdit.Name = "contractorsEdit";
             this.contractorsEdit.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.contractorsEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "Додати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "Редагувати", null, null, true),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "Поновити", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.SpinDown)});
             this.contractorsEdit.Properties.ImmediatePopup = true;
             this.contractorsEdit.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.contractorsEdit.Properties.PopupFormSize = new System.Drawing.Size(667, 0);
@@ -153,9 +144,15 @@
             this.contractorsEdit.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.contractorsEdit.Properties.View = this.gridView3;
             this.contractorsEdit.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.contractorsEdit_Properties_ButtonClick);
-            this.contractorsEdit.Size = new System.Drawing.Size(465, 20);
+            this.contractorsEdit.Size = new System.Drawing.Size(496, 20);
             this.contractorsEdit.TabIndex = 14;
             this.contractorsEdit.ToolTipTitle = "Назва організації";
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule2.ErrorText = "Не обрано контрагента";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule2.Value1 = 0;
+            this.accountTransferValidationProvider.SetValidationRule(this.contractorsEdit, conditionValidationRule2);
+            this.contractorsEdit.EditValueChanged += new System.EventHandler(this.contractorsEdit_EditValueChanged);
             // 
             // gridView3
             // 
@@ -205,14 +202,6 @@
             this.gridColumn6.VisibleIndex = 1;
             this.gridColumn6.Width = 50;
             // 
-            // contractorCheckEdit
-            // 
-            this.contractorCheckEdit.Location = new System.Drawing.Point(5, 23);
-            this.contractorCheckEdit.Name = "contractorCheckEdit";
-            this.contractorCheckEdit.Properties.Caption = "";
-            this.contractorCheckEdit.Size = new System.Drawing.Size(21, 19);
-            this.contractorCheckEdit.TabIndex = 13;
-            // 
             // purposeAccountEdit
             // 
             this.purposeAccountEdit.Location = new System.Drawing.Point(185, 72);
@@ -230,10 +219,10 @@
             this.purposeAccountEdit.Properties.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.purposeAccountEdit_Properties_QueryPopUp);
             this.purposeAccountEdit.Size = new System.Drawing.Size(182, 20);
             this.purposeAccountEdit.TabIndex = 114;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Не вказано рахунок призначення";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.accountTransferValidationProvider.SetValidationRule(this.purposeAccountEdit, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Не вказано рахунок призначення";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.accountTransferValidationProvider.SetValidationRule(this.purposeAccountEdit, conditionValidationRule3);
             this.purposeAccountEdit.EditValueChanged += new System.EventHandler(this.purposeAccountEdit_EditValueChanged);
             // 
             // labelControl4
@@ -261,11 +250,11 @@
             this.accountEdit.Properties.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.bankAccountEdit_Properties_QueryPopUp);
             this.accountEdit.Size = new System.Drawing.Size(167, 20);
             this.accountEdit.TabIndex = 113;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
-            conditionValidationRule3.ErrorText = "не вказано рахунок";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            conditionValidationRule3.Value1 = ((short)(0));
-            this.accountTransferValidationProvider.SetValidationRule(this.accountEdit, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.Greater;
+            conditionValidationRule4.ErrorText = "не вказано рахунок";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            conditionValidationRule4.Value1 = ((short)(0));
+            this.accountTransferValidationProvider.SetValidationRule(this.accountEdit, conditionValidationRule4);
             this.accountEdit.EditValueChanged += new System.EventHandler(this.accountEdit_EditValueChanged);
             // 
             // labelControl13
@@ -289,10 +278,6 @@
             this.paymentDocumentTBox.Properties.AppearanceReadOnly.Options.UseForeColor = true;
             this.paymentDocumentTBox.Size = new System.Drawing.Size(182, 20);
             this.paymentDocumentTBox.TabIndex = 112;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Не вказано номер платіжного документу";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.accountTransferValidationProvider.SetValidationRule(this.paymentDocumentTBox, conditionValidationRule4);
             this.paymentDocumentTBox.EditValueChanged += new System.EventHandler(this.paymentDocumentTBox_EditValueChanged);
             // 
             // labelControl11
@@ -431,7 +416,6 @@
             this.groupControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.contractorsEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contractorCheckEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purposeAccountEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDocumentTBox.Properties)).EndInit();
@@ -454,7 +438,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraEditors.CheckEdit contractorCheckEdit;
         private DevExpress.XtraEditors.LookUpEdit purposeAccountEdit;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LookUpEdit accountEdit;
