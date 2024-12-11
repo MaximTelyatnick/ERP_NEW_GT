@@ -9498,9 +9498,11 @@ namespace ERP_NEW.BLL.Services
             //List<ContractorVatDTO> contractorVatList = contractorVatData.ToList();
 
 
-            List<ContractorVatDTO> contractorVatList = contractorVatData.Where(srch => srch.DebitVat644 !=0 || srch.SaldoCreditEnd !=0 
+            List<ContractorVatDTO> contractorVatList1 = contractorVatData.Where(srch => srch.DebitVat644 !=0 || srch.SaldoCreditEnd !=0 
                 || srch.SaldoCreditStart!=0 || srch.SaldoDebitEnd!=0 || srch.SaldoDebitStart!=0 || srch.CreditPeriod != 0 || srch.CreditPeriod644 != 0 
                 || srch.DebitVat63 != 0 || srch.DebitVat631 != 0 || srch.DebitVat632 != 0).OrderBy(ord=> ord.Srn).ToList();
+
+            List<ContractorVatDTO> contractorVatList = contractorVatList1.Where(srch => srch.Tin!=null).ToList();
 
 
             SpreadsheetGear.IWorkbook workbook = Factory.GetWorkbook(GeneratedReportsDir + @"\Templates\ContractorsVat.xls");
