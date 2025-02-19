@@ -1699,7 +1699,7 @@ namespace ERP_NEW.BLL.Services
 
                 InsertLines(4);
                 const string boss = "Іван Шалаєвський";
-                str.TypeText("Перший заступник директора                                                                  " + boss);
+                str.TypeText("Директор виконавчий                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
@@ -1916,7 +1916,7 @@ namespace ERP_NEW.BLL.Services
 
                 InsertLines(4);
                 const string boss = "Іван Шалаєвський";
-                str.TypeText("Перший заступник директора                                                                  " + boss);
+                str.TypeText("Директор виконавчий                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
@@ -2021,7 +2021,7 @@ namespace ERP_NEW.BLL.Services
 
                 InsertLines(4);
                 const string boss = "Іван Шалаєвський";
-                str.TypeText("Перший заступник директора                                                                  " + boss);
+                str.TypeText("Директор виконавчий                                                                  " + boss);
                 str.ParagraphFormat.Alignment = alignCenter;
 
                 if (SaveAsDoc(@"\Приказы о командировках\" + source[0].DecreeDate.Value.Year + @"\", reportname))
