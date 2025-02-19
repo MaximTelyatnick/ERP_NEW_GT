@@ -13917,7 +13917,54 @@ namespace ERP_NEW.BLL.Services
         }
         public string ToMonthName( DateTime dateTime)
         {
-            return CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTime.Month);
+
+            CultureInfo culture = CultureInfo.CreateSpecificCulture("uk-UA");
+            string month = CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dateTime.Month);
+
+            switch (month)
+            {
+                case "январь":
+                    month = "січень";
+                    break;
+                case "февраль":
+                    month = "лютий";
+                    break;
+                case "март":
+                    month = "березень";
+                    break;
+                case "апрель":
+                    month = "квітень";
+                    break;
+                case "май":
+                    month = "травень";
+                    break;
+                case "июнь":
+                    month = "червень";
+                    break;
+                case "июль":
+                    month = "липень";
+                    break;
+                case "август":
+                    month = "серпень";
+                    break;
+                case "сентябрь":
+                    month = "вересень";
+                    break;
+                case "октябрь":
+                    month = "жовтень";
+                    break;
+                case "ноябрь":
+                    month = "листопад";
+                    break;
+                case "декабрь":
+                    month = "грудень";
+                    break;
+                default:
+                    break;
+            }
+
+
+            return month;
         }
 
 
