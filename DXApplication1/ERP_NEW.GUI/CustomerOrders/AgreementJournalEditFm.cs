@@ -144,13 +144,11 @@ namespace ERP_NEW.GUI.CustomerOrders
                     if ((rezNumber != "") && (rezNumber != "Немає данних"))
                     {
                         
-                        CreteDirectoryAgreement();
+                        //CreteDirectoryAgreement();
                         if (checkAccessToDirectory == 0)
                         {
-                            if (nameJournalWithTilda != "")
-                            {
 
-                                if (checkCreateDirectory == 0)
+                               if (checkCreateDirectory == 0)
                                 {
                                     ((AgreementsDTO)Item).Number = rezNumber;
                                     ((AgreementsDTO)Item).NumberWithTilda = nameJournalWithTilda;
@@ -162,12 +160,6 @@ namespace ERP_NEW.GUI.CustomerOrders
                                     MessageBox.Show("Папка з ім'ям Номер договору вже існує!", "Помилка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     return false;
                                 }
-                            }
-                            else
-                            {
-                                MessageBox.Show("Поле Номер договору не створено!");
-                                return false;
-                            }
                             return true;
                         }
                         else return false;
