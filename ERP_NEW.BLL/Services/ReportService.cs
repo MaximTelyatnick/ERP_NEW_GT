@@ -17738,7 +17738,8 @@ namespace ERP_NEW.BLL.Services
 
                     var bankPaymantByContractor = bankPaymantData.Where(srt => srt.Contractor_Id == item.Id && srt.Payment_Date.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.Payment_Date).ToList();
                     var invoiceDataByContractor = invoicesData.Where(srt => srt.Contractor_Id == item.Id && (((DateTime)srt.Month_Invoice).Month == itemMonth.Date.Month || srt.Month_Current.Month == itemMonth.Date.Month)).OrderBy(ord => ord.Month_Invoice).ToList();
-                    var ordersDataByContractor = ordersData.Where(srt => srt.VendorId == item.Id && srt.InvoiceDate.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.InvoiceDate).ToList();
+                    //var ordersDataByContractor = ordersData.Where(srt => srt.VendorId == item.Id && srt.InvoiceDate.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.InvoiceDate).ToList();
+                    var ordersDataByContractor = ordersData.Where(srt => srt.VendorId == item.Id && srt.OrderDate.Value.Month == itemMonth.Date.Month).OrderBy(ord => ord.InvoiceDate).ToList();
 
                     decimal? invoiceTotalPrice = 0m;
                     decimal? invoicePrice = 0m;
