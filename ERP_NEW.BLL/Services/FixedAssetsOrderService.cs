@@ -562,7 +562,31 @@ namespace ERP_NEW.BLL.Services
         }
         #endregion
 
+        #region FixedAssestsOrderGroup CRUD method's
 
+        public int FixedAssetsOrderGroupCreate(FixedAssetsGroupDTO fixedAssetsOrderGroupDTO)
+        {
+            var createFixedAssetsGroupOrder = fixedAssetsGroup.Create(mapper.Map<FixedAssetsGroup>(fixedAssetsOrderGroupDTO));
+            return (int)createFixedAssetsGroupOrder.Id;
+        }
+        public void FixedAssetsOrderGroupUpdate(FixedAssetsGroupDTO fixedAssetsOrderGroupDTO)
+        {
+            var updateFixedAssetsGroupOrder = fixedAssetsGroup.GetAll().SingleOrDefault(c => c.Id == fixedAssetsOrderGroupDTO.Id);
+            fixedAssetsGroup.Update((mapper.Map<FixedAssetsGroupDTO, FixedAssetsGroup>(fixedAssetsOrderGroupDTO, updateFixedAssetsGroupOrder)));
+        }
+        public bool FixedAssetsOrderGroupDelete(int id)
+        {
+            try
+            {
+                fixedAssetsGroup.Delete(fixedAssetsGroup.GetAll().FirstOrDefault(c => c.Id == id));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
         public void Dispose()
         {
             Database.Dispose();

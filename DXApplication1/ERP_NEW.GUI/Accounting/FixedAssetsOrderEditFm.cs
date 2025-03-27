@@ -565,10 +565,56 @@ namespace ERP_NEW.GUI.Accounting
             fixedAssetsOrderValidationProvider.Validate((Control)sender);
         }
 
+
+
+
         #endregion
 
+        private void fixedAssetsGroupLookUp_Properties_ButtonClick(object sender, ButtonPressedEventArgs e)
+        {
+            fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+            switch (e.Button.Index)
+            {
+                case 1: //Додати
+                    {
+                        using (FixedAssetsOrderGroupEditFm fixedAssetsOrderGroupEditFm = new FixedAssetsOrderGroupEditFm(Utils.Operation.Add, new FixedAssetsGroupDTO()))
+                        {
+                            if (fixedAssetsOrderGroupEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            {
+                                long return_Id = fixedAssetsOrderGroupEditFm.Return();
+                                fixedAssetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
+                                //List<FixedAssetsGroupDTO> groupList = fixedAssetsOrderService.GetFixedAssestGroup().ToList();
+                                fixedAssetsGroupLookUp.Properties.DataSource = fixedAssetsOrderService.GetFixedAssestGroup().ToList();
 
-
-
+                                //contractorsEdit.Properties.DataSource = contractorsService.GetContractors(1);
+                                fixedAssetsGroupLookUp.EditValue = return_Id;
+                            }
+                        }
+                        break;
+                    }
+                //case 2: //Редагувати
+                //    {
+                //        using (ContractorEditFm contractorEditFm = new ContractorEditFm(Utils.Operation.Update, (ContractorsDTO)contractorsEdit.GetSelectedDataRow()))
+                //        {
+                //            if (contractorEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                //            {
+                //                long return_Id = contractorEditFm.Return();
+                //                contractorsService = Program.kernel.Get<IContractorsService>();
+                //                contractorsEdit.Properties.DataSource = contractorsService.GetContractors(1);
+                //                contractorsEdit.EditValue = return_Id;
+                //            }
+                //        }
+                //        break;
+                //    }
+                //case 3: //Поновити
+                //    {
+                //        long? currentId = ((ContractorsDTO)contractorsEdit.GetSelectedDataRow()).Id;
+                //        contractorsService = Program.kernel.Get<IContractorsService>();
+                //        contractorsEdit.Properties.DataSource = contractorsService.GetContractors(1);
+                //        contractorsEdit.EditValue = currentId;
+                //        break;
+                //    }
+            }
+        }
     }
 }
