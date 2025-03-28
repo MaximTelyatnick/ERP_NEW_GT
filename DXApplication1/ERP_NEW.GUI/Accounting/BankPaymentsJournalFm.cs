@@ -658,7 +658,7 @@ namespace ERP_NEW.GUI.Accounting
                 Payment_Price = 0.00m,
                 Payment_PriceCurrency = 0.00m,
                 Purpose = "Послуга їдальні",
-                Purpose_Account_Id = 86,
+                Purpose_Account_Id = 247,
                 Rate = 0.00m,
                 UserId = _userTasksDTO.UserId,
                 VatAccountId = 38,

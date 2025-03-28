@@ -56,6 +56,10 @@ namespace ERP_NEW.BLL.Interfaces
         void FixedAssetsNoAmortUpdate(FixedAssetsNoAmortDTO fixedAssetsNoAmortDTO);
         bool FixedAssetsNoAmortDelete(int id);
 
+        int FixedAssetsOrderGroupCreate(FixedAssetsGroupDTO fixedAssetsOrderGroupDTO);
+        void FixedAssetsOrderGroupUpdate(FixedAssetsGroupDTO fixedAssetsOrderGroupDTO);
+        bool FixedAssetsOrderGroupDelete(int id);
+
         IEnumerable<ResponsibleDTO> GetResponsible();
 
         void Dispose();
