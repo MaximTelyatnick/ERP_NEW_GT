@@ -15,50 +15,35 @@ using Ninject;
 
 namespace ERP_NEW.GUI.Accounting
 {
-    public partial class FixedAssetsOrderGroupEditFm : DevExpress.XtraEditors.XtraForm
+    public partial class FixedAssetsOrderRegionEditFm : DevExpress.XtraEditors.XtraForm
     {
-
         private IFixedAssetsOrderService fixedassetsOrderService;
-        private BindingSource groupBS = new BindingSource();
+        private BindingSource regionBS = new BindingSource();
         private Utils.Operation operation;
 
         private ObjectBase Item
         {
-            get { return groupBS.Current as ObjectBase; }
+            get { return regionBS.Current as ObjectBase; }
             set
             {
-                groupBS.DataSource = value;
+                regionBS.DataSource = value;
                 value.BeginEdit();
             }
         }
-
-        public FixedAssetsOrderGroupEditFm(Utils.Operation operation, FixedAssetsGroupDTO model)
+        public FixedAssetsOrderRegionEditFm(Utils.Operation operation, RegionDTO model)
         {
             InitializeComponent();
 
             this.operation = operation;
-            groupBS.DataSource = Item = model;
+            regionBS.DataSource = Item = model;
 
-            fixedAssetsGroupNameEdit.DataBindings.Add("EditValue", groupBS, "Name");
+            nameEdit.DataBindings.Add("EditValue", regionBS, "Name");
+            typeEdit.DataBindings.Add("EditValue", regionBS, "Type");
+            descriptionEdit.DataBindings.Add("EditValue", regionBS, "Description");
             //fixedAssetsGroupNameEdit.DataBindings.Add("EditValue", groupBS, "AmortizationFactor");
             //fixedAssetsGroupNameEdit.DataBindings.Add("EditValue", groupBS, "UsefulPeriod");
-
-            fixedAssetsGroupValidationProvider.Validate();
-        }
-
-
-
-        #region Method's
-
-        private void LoadData()
-        {
-            fixedassetsOrderService = Program.kernel.Get<IFixedAssetsOrderService>();
-            //contractorBS.DataSource = contractorService.GetContractors();
-        }
-         
-        public long Return()
-        {
-            return ((FixedAssetsGroupDTO)Item).Id;
+            dxValidationProvider.Validate();
+            //fixedAssetsGroupValidationProvider.Validate();
         }
 
         private bool SaveItem()
@@ -69,28 +54,18 @@ namespace ERP_NEW.GUI.Accounting
 
             if (operation == Utils.Operation.Add)
             {
-                ((FixedAssetsGroupDTO)Item).Id = fixedassetsOrderService.FixedAssetsOrderGroupCreate((FixedAssetsGroupDTO)Item);
+                ((RegionDTO)Item).Id = fixedassetsOrderService.RegionCreate((RegionDTO)Item);
             }
             else
             {
-                fixedassetsOrderService.FixedAssetsOrderGroupUpdate((FixedAssetsGroupDTO)Item);
+                fixedassetsOrderService.RegionUpdate((RegionDTO)Item);
             }
             return true;
         }
-        #endregion
 
-        private void fixedAssetsGroupValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
+        public long Return()
         {
-            bool isValidate = (fixedAssetsGroupValidationProvider.GetInvalidControls().Count == 0);
-
-            this.validateLbl.Visible = !isValidate;
-            this.saveBtn.Enabled = isValidate;
-        }
-
-        private void fixedAssetsGroupValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
-        {
-            this.saveBtn.Enabled = false;
-            this.validateLbl.Visible = true;
+            return ((RegionDTO)Item).Id;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -118,16 +93,23 @@ namespace ERP_NEW.GUI.Accounting
             }
         }
 
-        private void fixedAssetsGroupNameEdit_EditValueChanged(object sender, EventArgs e)
+        private void dxValidationProvider_ValidationSucceeded(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationSucceededEventArgs e)
         {
-            fixedAssetsGroupValidationProvider.Validate((Control)sender);
+            bool isValidate = (dxValidationProvider.GetInvalidControls().Count == 0);
+
+            this.validateLbl.Visible = !isValidate;
+            this.saveBtn.Enabled = isValidate;
         }
 
-        private void cancelBtn_Click(object sender, EventArgs e)
+        private void dxValidationProvider_ValidationFailed(object sender, DevExpress.XtraEditors.DXErrorProvider.ValidationFailedEventArgs e)
         {
-            this.Item.EndEdit();
-            DialogResult = DialogResult.Cancel;
-            this.Close();
+            this.saveBtn.Enabled = false;
+            this.validateLbl.Visible = true;
+        }
+
+        private void nameEdit_EditValueChanged(object sender, EventArgs e)
+        {
+            dxValidationProvider.Validate((Control)sender);
         }
     }
 }

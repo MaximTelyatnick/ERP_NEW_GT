@@ -60,6 +60,11 @@ namespace ERP_NEW.BLL.Interfaces
         void FixedAssetsOrderGroupUpdate(FixedAssetsGroupDTO fixedAssetsOrderGroupDTO);
         bool FixedAssetsOrderGroupDelete(int id);
 
+        int RegionCreate(RegionDTO regionDTO);
+        void RegionUpdate(RegionDTO regionDTO);
+        bool RegionDelete(int id);
+
+
         IEnumerable<ResponsibleDTO> GetResponsible();
 
         void Dispose();

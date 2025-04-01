@@ -493,8 +493,21 @@ namespace ERP_NEW.GUI.CustomerOrders
         private void addPaymentBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
             if (customerOrdersBS.Count > 0)
-                AddCustomerOrderPayments(2, ((CustomerOrdersDTO)customerOrdersBS.Current).Id);
+            {
+                if (((CustomerOrdersDTO)customerOrdersBS.Current).Enable == 1)
+                {
+                    if (MessageBox.Show("Заказ знаходиться на складі готової продукції!\nВи впевнені, що бажаєте додати нову виплату? ", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        AddCustomerOrderPayments(2, ((CustomerOrdersDTO)customerOrdersBS.Current).Id);
+                    }
+                }
+                else
+                {
+                    AddCustomerOrderPayments(2, ((CustomerOrdersDTO)customerOrdersBS.Current).Id);
+                }    
+            }
         }
+        
 
         private void deletePaymentBtn_ItemClick(object sender, ItemClickEventArgs e)
         {

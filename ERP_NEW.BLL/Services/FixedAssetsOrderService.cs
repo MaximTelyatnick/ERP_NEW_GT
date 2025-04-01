@@ -93,7 +93,9 @@ namespace ERP_NEW.BLL.Services
                 cfg.CreateMap<FixedAssetsOrder, FixedAssetsOrderDTO>();
                 cfg.CreateMap<FixedAssetsOrderDTO, FixedAssetsOrder>();
                 cfg.CreateMap<FixedAssetsGroup, FixedAssetsGroupDTO>();
+                cfg.CreateMap<FixedAssetsGroupDTO, FixedAssetsGroup>();
                 cfg.CreateMap<Region, RegionDTO>();
+                cfg.CreateMap<RegionDTO, Region>();
                 cfg.CreateMap<FixedAssetsOrderJournal, FixedAssetsOrderJournalDTO>();
                 cfg.CreateMap<FixedAssetsOrderJournalDTO, FixedAssetsOrderJournal>();
                 cfg.CreateMap<FixedAssetsMaterialsDTO, FixedAssetsMaterials>();
@@ -579,6 +581,35 @@ namespace ERP_NEW.BLL.Services
             try
             {
                 fixedAssetsGroup.Delete(fixedAssetsGroup.GetAll().FirstOrDefault(c => c.Id == id));
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        #endregion
+
+        #region Region CRUD method's
+
+        public int RegionCreate(RegionDTO regionDTO)
+        {
+            var createregion = region.Create(mapper.Map<Region>(regionDTO));
+            return (int)createregion.Id;
+        }
+
+
+        public void RegionUpdate(RegionDTO regionDTO)
+        {
+            var updateRegion = region.GetAll().SingleOrDefault(c => c.Id == regionDTO.Id);
+            region.Update((mapper.Map<RegionDTO, Region>(regionDTO, updateRegion)));
+        }
+
+        public bool RegionDelete(int id)
+        {
+            try
+            {
+                region.Delete(region.GetAll().FirstOrDefault(c => c.Id == id));
                 return true;
             }
             catch (Exception)

@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            this.deleteCashBookContractorBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.saveCashBookContractorBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.cancelBtn = new DevExpress.XtraEditors.SimpleButton();
+            this.saveBtn = new DevExpress.XtraEditors.SimpleButton();
             this.validateLbl = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.fixedAssetsGroupNameEdit = new DevExpress.XtraEditors.TextEdit();
@@ -46,21 +46,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.fixedAssetsGroupValidationProvider)).BeginInit();
             this.SuspendLayout();
             // 
-            // deleteCashBookContractorBtn
+            // cancelBtn
             // 
-            this.deleteCashBookContractorBtn.Location = new System.Drawing.Point(434, 148);
-            this.deleteCashBookContractorBtn.Name = "deleteCashBookContractorBtn";
-            this.deleteCashBookContractorBtn.Size = new System.Drawing.Size(80, 23);
-            this.deleteCashBookContractorBtn.TabIndex = 48;
-            this.deleteCashBookContractorBtn.Text = "Відміна";
+            this.cancelBtn.Location = new System.Drawing.Point(434, 148);
+            this.cancelBtn.Name = "cancelBtn";
+            this.cancelBtn.Size = new System.Drawing.Size(80, 23);
+            this.cancelBtn.TabIndex = 48;
+            this.cancelBtn.Text = "Відміна";
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // saveCashBookContractorBtn
+            // saveBtn
             // 
-            this.saveCashBookContractorBtn.Location = new System.Drawing.Point(343, 148);
-            this.saveCashBookContractorBtn.Name = "saveCashBookContractorBtn";
-            this.saveCashBookContractorBtn.Size = new System.Drawing.Size(80, 23);
-            this.saveCashBookContractorBtn.TabIndex = 47;
-            this.saveCashBookContractorBtn.Text = "Зберегти";
+            this.saveBtn.Location = new System.Drawing.Point(343, 148);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(80, 23);
+            this.saveBtn.TabIndex = 47;
+            this.saveBtn.Text = "Зберегти";
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // validateLbl
             // 
@@ -90,6 +92,7 @@
             conditionValidationRule2.ErrorText = "Не вказано назву групи";
             conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
             this.fixedAssetsGroupValidationProvider.SetValidationRule(this.fixedAssetsGroupNameEdit, conditionValidationRule2);
+            this.fixedAssetsGroupNameEdit.EditValueChanged += new System.EventHandler(this.fixedAssetsGroupNameEdit_EditValueChanged);
             // 
             // labelControl2
             // 
@@ -135,8 +138,8 @@
             this.Controls.Add(this.fixedAssetsGroupAmortEdit);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.deleteCashBookContractorBtn);
-            this.Controls.Add(this.saveCashBookContractorBtn);
+            this.Controls.Add(this.cancelBtn);
+            this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.validateLbl);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.fixedAssetsGroupNameEdit);
@@ -158,8 +161,8 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton deleteCashBookContractorBtn;
-        private DevExpress.XtraEditors.SimpleButton saveCashBookContractorBtn;
+        private DevExpress.XtraEditors.SimpleButton cancelBtn;
+        private DevExpress.XtraEditors.SimpleButton saveBtn;
         private DevExpress.XtraEditors.LabelControl validateLbl;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit fixedAssetsGroupNameEdit;
