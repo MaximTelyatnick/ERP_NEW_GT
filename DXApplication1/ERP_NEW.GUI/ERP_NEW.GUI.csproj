@@ -33,8 +33,8 @@
     <ProductName>ERP Techvagonmash</ProductName>
     <PublisherName>IT</PublisherName>
     <SuiteName>Корпоративна інформаційна система</SuiteName>
-    <MinimumRequiredVersion>1.0.0.564</MinimumRequiredVersion>
-    <ApplicationRevision>565</ApplicationRevision>
+    <MinimumRequiredVersion>1.0.0.565</MinimumRequiredVersion>
+    <ApplicationRevision>566</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,10 +73,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E5116148340C2076670004E29512D708EBCF3A26</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6A84A53E76AEC553745C546D1098966C778F5F7F</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_7_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -260,7 +260,7 @@
     </Reference>
     <Reference Include="ERP_NEW.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ERP_NEW.BLL\bin\Debug\ERP_NEW.BLL.dll</HintPath>
+      <HintPath>..\..\ERP_NEW.BLL\bin\Release\ERP_NEW.BLL.dll</HintPath>
     </Reference>
     <Reference Include="ERP_NEW.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
