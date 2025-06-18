@@ -39,6 +39,7 @@ namespace ERP_NEW.GUI.Production
         private UserTasksDTO userTasksDTO;
 
         private bool limitActive = false;
+        private bool enableOrderActive = false;
 
         private decimal expQuantity = 0.000000m;
         private decimal expPrice = 0.00m;
@@ -455,6 +456,22 @@ namespace ERP_NEW.GUI.Production
             }
         }
 
+        private void CheckCustomerOrderEnable(int? customerOrderId)
+        {
+            if (customerOrdersService.CheckCustomerOrderEnable((int?)orderNumberEdit.EditValue))
+            {
+                ShowCustomerOrderEnablePanel(true);
+                saveBtn.Enabled = false;
+
+            }
+            else
+            {
+                ShowCustomerOrderEnablePanel(false);
+                saveBtn.Enabled = true;
+            }
+          
+        }
+
         void ShowLimitPanel(bool showLimitPanel)
         {
             if (showLimitPanel)
@@ -469,6 +486,19 @@ namespace ERP_NEW.GUI.Production
             }
         }
 
+        void ShowCustomerOrderEnablePanel(bool customerOrdersEnablePanel)
+        {
+            if (customerOrdersEnablePanel)
+            {
+                enableOrderTimer.Start();
+                customerOrderEnablePanel.Visible = true;
+            }
+            else
+            {
+                enableOrderTimer.Stop();
+                customerOrderEnablePanel.Visible = false;
+            }
+        }
         private void Calculate()
         {
             if (remainsBS.Count != 0)
@@ -744,6 +774,22 @@ namespace ERP_NEW.GUI.Production
             }
         }
 
+        private void enableOrderTimer_Tick(object sender, EventArgs e)
+        {
+            if (enableOrderActive)
+            {
+                enableOrderPicture.Visible = true;
+                enableOrderActive = false;
+                return;
+            }
+            else
+            {
+                enableOrderPicture.Visible = false;
+                enableOrderActive = true;
+                return;
+            }
+        }
+
         private void expenditureFullGridView_RowCellStyle(object sender, DevExpress.XtraGrid.Views.Grid.RowCellStyleEventArgs e)
         {
             ////if (e.RowHandle >= 0 && ((e.Column.Name == "expAccountantOrderCol") || (e.Column.Name == "expAccountCol") || (e.Column.Name == "expAccountQuantityCol")))
@@ -796,9 +842,10 @@ namespace ERP_NEW.GUI.Production
             }
             else
             {
-
                 LoadDetaExpenditureByCustomerOrder(beginDate, endDate, (int?)orderNumberEdit.EditValue);
                 LoadDataExpenditureTotalPrice((int?)orderNumberEdit.EditValue);
+                CheckCustomerOrderEnable((int?)orderNumberEdit.EditValue);
+
                 employeesEdit.Visible = false;
                 employeesLbl.Visible = false;
                 ((ExpedinturesAccountantDTO)Item).PROJECT_NUM = orderNumberEdit.Text.Replace(".", "");
@@ -838,6 +885,8 @@ namespace ERP_NEW.GUI.Production
             expQuantityGeneral = (decimal)0;
             expQuantityGeneralEdit.EditValue = expQuantityGeneral;
         }
+
+        
 
         private void storeHouseProjectGrid_DoubleClick(object sender, EventArgs e)
         {

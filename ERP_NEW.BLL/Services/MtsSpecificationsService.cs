@@ -822,6 +822,13 @@ namespace ERP_NEW.BLL.Services
             mtsAssemblies.Update((mapper.Map<MtsAssembliesDTO, MtsAssemblies>(mtsAssembly, eGroup)));
         }
 
+        public void UpdateAssemblyDesignerCompany(int mtsAssemblyId, int designerCompanyId)
+        {
+            var eGroup = mtsAssemblies.GetAll().SingleOrDefault(c => c.Id == mtsAssemblyId);
+            eGroup.DesignerCompanyId = designerCompanyId;
+            mtsAssemblies.Update(eGroup);
+        }
+
         public bool DeleteAssembly(long id)
         {
             try

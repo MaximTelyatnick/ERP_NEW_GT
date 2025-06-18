@@ -31,7 +31,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTabFm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement18 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -45,6 +44,7 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement16 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
@@ -136,7 +136,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement103 = new DevExpress.XtraEditors.TileItemElement();
             this.menuNavPane = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.accountingCategory = new DevExpress.XtraBars.Navigation.TileNavCategory();
-            this.accountingTransferItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.accountingOrderCurrencyItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.expendituresItem = new DevExpress.XtraBars.Navigation.TileNavItem();
@@ -147,6 +146,7 @@
             this.taxAccountingItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.calcWithBuyersItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.bankPaymentsItem = new DevExpress.XtraBars.Navigation.TileNavItem();
+            this.accountingTransferItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.cashBookItem = new DevExpress.XtraBars.Navigation.TileNavItem();
             this.cashBookBusinessTripsSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
             this.cashBookCookShopSubItem = new DevExpress.XtraBars.Navigation.TileNavSubItem();
@@ -316,29 +316,6 @@
             this.accountingCategory.AppearanceSelected.Options.UseBackColor = true;
             this.accountingCategory.Caption = "Бухгалтерський облік";
             this.accountingCategory.Glyph = ((System.Drawing.Image)(resources.GetObject("accountingCategory.Glyph")));
-            // 
-            // accountingTransferItem
-            // 
-            this.accountingTransferItem.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right;
-            this.accountingTransferItem.Caption = "Операції між рахунками";
-            this.accountingTransferItem.Name = "accountingTransferItem";
-            this.accountingTransferItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
-            this.accountingTransferItem.OwnerCollection = this.accountingCategory.Items;
-            // 
-            // 
-            // 
-            this.accountingTransferItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
-            this.accountingTransferItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
-            this.accountingTransferItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
-            tileItemElement13.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileItemElement13.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
-            tileItemElement13.Text = "Операції між рахунками";
-            this.accountingTransferItem.Tile.Elements.Add(tileItemElement13);
-            this.accountingTransferItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
-            this.accountingTransferItem.Tile.Name = "tileBarItem1";
             this.accountingCategory.Items.AddRange(new DevExpress.XtraBars.Navigation.TileNavItem[] {
             this.accountingOrderItem,
             this.accountingOrderCurrencyItem,
@@ -587,6 +564,29 @@
             this.bankPaymentsItem.Tile.Elements.Add(tileItemElement12);
             this.bankPaymentsItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
             this.bankPaymentsItem.Tile.Name = "tileBarItem1";
+            // 
+            // accountingTransferItem
+            // 
+            this.accountingTransferItem.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right;
+            this.accountingTransferItem.Caption = "Операції між рахунками";
+            this.accountingTransferItem.Name = "accountingTransferItem";
+            this.accountingTransferItem.OptionsDropDown.BackColor = System.Drawing.Color.Empty;
+            this.accountingTransferItem.OwnerCollection = this.accountingCategory.Items;
+            // 
+            // 
+            // 
+            this.accountingTransferItem.Tile.AppearanceItem.Normal.BackColor = System.Drawing.Color.Teal;
+            this.accountingTransferItem.Tile.AppearanceItem.Normal.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.accountingTransferItem.Tile.AppearanceItem.Normal.Options.UseFont = true;
+            this.accountingTransferItem.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement13.Image = ((System.Drawing.Image)(resources.GetObject("tileItemElement13.Image")));
+            tileItemElement13.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
+            tileItemElement13.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Left;
+            tileItemElement13.Text = "Операції між рахунками";
+            this.accountingTransferItem.Tile.Elements.Add(tileItemElement13);
+            this.accountingTransferItem.Tile.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Default;
+            this.accountingTransferItem.Tile.Name = "tileBarItem1";
             // 
             // cashBookItem
             // 

@@ -44,6 +44,7 @@ namespace ERP_NEW.BLL.Interfaces
 
         long CreateAssembly(MtsAssembliesDTO mtsAssembly);
         void UpdateAssembly(MtsAssembliesDTO mtsAssembly);
+        void UpdateAssemblyDesignerCompany(int mtsAssemblyId, int designerCompanyId);
         bool DeleteAssembly(long id);
         
         long CreateSpecification(MtsSpecificationsDTO mtsSpecification);
@@ -52,6 +53,7 @@ namespace ERP_NEW.BLL.Interfaces
 
         int MTSSpecificationCreate(MTSSpecificationssDTO mtsSpecificationDTO);
         void MTSSpecificationUpdate(MTSSpecificationssDTO mtsSpecificationDTO);
+
         bool MTSSpecificationDelete(int id);
 
         int MTSCreateDetailsCreate(MTSCreateDetalsDTO mtsCreateDetalsDTO);

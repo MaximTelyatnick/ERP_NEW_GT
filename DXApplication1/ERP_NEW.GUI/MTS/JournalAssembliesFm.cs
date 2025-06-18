@@ -112,7 +112,8 @@ namespace ERP_NEW.GUI.MTS
                     DateCreated = item.DateCreated,
                     AssemblyStatus = item.AssemblyStatus,
                     CityId = item.CityId,
-                    ContractorId = item.ContractorId
+                    ContractorId = item.ContractorId,
+                     DesignerCompanyId = item.DesignerCompanyId
                 }))
                 {
                     if (mtsAssemblyEditFm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -149,10 +150,15 @@ namespace ERP_NEW.GUI.MTS
                 }
             }
         }
-
+        private void UpdateAssembly()
+        {
+            journalAssembliesGridView.BeginDataUpdate();
+            LoadData((DateTime)beginDateEdit.EditValue, (DateTime)endDateEdit.EditValue);
+            journalAssembliesGridView.EndDataUpdate();
+        }
         #endregion
 
-        #region Event's
+            #region Event's
 
         private void showBtn_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -188,8 +194,31 @@ namespace ERP_NEW.GUI.MTS
                 EditAssembly();
             }
         }
-        #endregion
-  
 
+        #endregion
+
+        private void changeAssemblyBtn_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (journalAssembliesBS.Count != 0)
+            {
+                if (ourProjects)
+                {
+
+                    if (MessageBox.Show("Перемістити проєкт до журналу виробів (креслення замовників)?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        mtsSpecificationsService.UpdateAssemblyDesignerCompany((int)((MtsAssembliesInfoDTO)journalAssembliesBS.Current).AssemblyId, 2);
+                        UpdateAssembly();
+                    }
+                }
+                else
+                {
+                    if (MessageBox.Show("Перемістити проєкт до журналу виробів (креслення наші)?", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        mtsSpecificationsService.UpdateAssemblyDesignerCompany((int)((MtsAssembliesInfoDTO)journalAssembliesBS.Current).AssemblyId, 1);
+                        UpdateAssembly();
+                    }
+                }
+            }
+        }
     }
 }

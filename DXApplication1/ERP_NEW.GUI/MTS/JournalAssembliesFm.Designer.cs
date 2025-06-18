@@ -51,13 +51,14 @@
             this.addBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.refreshBtn = new DevExpress.XtraBars.BarButtonItem();
             this.addOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteOrderBtn = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.refreshBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::ERP_NEW.GUI.WaitForm1), true, true);
+            this.changeAssemblyBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.journalAssembliesGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.journalAssembliesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -96,7 +97,6 @@
             this.cityNameCol});
             this.journalAssembliesGridView.GridControl = this.journalAssembliesGrid;
             this.journalAssembliesGridView.Name = "journalAssembliesGridView";
-            this.journalAssembliesGridView.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
             this.journalAssembliesGridView.OptionsView.ShowAutoFilterRow = true;
             this.journalAssembliesGridView.OptionsView.ShowFooter = true;
             this.journalAssembliesGridView.OptionsView.ShowGroupPanel = false;
@@ -339,6 +339,24 @@
             this.deleteBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.deleteBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.deleteBtn_ItemClick);
             // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.AllowTextClipping = false;
+            this.ribbonPageGroup3.ItemLinks.Add(this.refreshBtn);
+            this.ribbonPageGroup3.ItemLinks.Add(this.changeAssemblyBtn);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.ShowCaptionButton = false;
+            this.ribbonPageGroup3.Text = "Функції";
+            // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Caption = "Поновити";
+            this.refreshBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Glyph")));
+            this.refreshBtn.Id = 7;
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.refreshBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshBtn_ItemClick);
+            // 
             // addOrderBtn
             // 
             this.addOrderBtn.Caption = "Додати";
@@ -363,23 +381,6 @@
             this.deleteOrderBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("deleteOrderBtn.LargeGlyph")));
             this.deleteOrderBtn.Name = "deleteOrderBtn";
             // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.AllowTextClipping = false;
-            this.ribbonPageGroup3.ItemLinks.Add(this.refreshBtn);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.ShowCaptionButton = false;
-            this.ribbonPageGroup3.Text = "Функції";
-            // 
-            // refreshBtn
-            // 
-            this.refreshBtn.Caption = "Поновити";
-            this.refreshBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("refreshBtn.Glyph")));
-            this.refreshBtn.Id = 7;
-            this.refreshBtn.Name = "refreshBtn";
-            this.refreshBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.refreshBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.refreshBtn_ItemClick);
-            // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
@@ -394,9 +395,10 @@
             this.refreshBtn,
             this.addOrderBtn,
             this.editOrderBtn,
-            this.deleteOrderBtn});
+            this.deleteOrderBtn,
+            this.changeAssemblyBtn});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 11;
+            this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -410,6 +412,16 @@
             // splashScreenManager
             // 
             this.splashScreenManager.ClosingDelay = 500;
+            // 
+            // changeAssemblyBtn
+            // 
+            this.changeAssemblyBtn.Caption = "Перемістити виріб";
+            this.changeAssemblyBtn.Glyph = ((System.Drawing.Image)(resources.GetObject("changeAssemblyBtn.Glyph")));
+            this.changeAssemblyBtn.Id = 11;
+            this.changeAssemblyBtn.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("changeAssemblyBtn.LargeGlyph")));
+            this.changeAssemblyBtn.Name = "changeAssemblyBtn";
+            this.changeAssemblyBtn.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.changeAssemblyBtn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.changeAssemblyBtn_ItemClick);
             // 
             // JournalAssembliesFm
             // 
@@ -465,5 +477,6 @@
         private DevExpress.XtraBars.BarButtonItem addOrderBtn;
         private DevExpress.XtraBars.BarButtonItem editOrderBtn;
         private DevExpress.XtraBars.BarButtonItem deleteOrderBtn;
+        private DevExpress.XtraBars.BarButtonItem changeAssemblyBtn;
     }
 }
