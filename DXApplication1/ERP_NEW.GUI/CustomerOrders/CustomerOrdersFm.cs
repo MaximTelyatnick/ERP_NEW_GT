@@ -496,7 +496,7 @@ namespace ERP_NEW.GUI.CustomerOrders
             {
                 if (((CustomerOrdersDTO)customerOrdersBS.Current).Enable == 1)
                 {
-                    if (MessageBox.Show("Заказ знаходиться на складі готової продукції!\nВи впевнені, що бажаєте додати нову виплату? ", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (MessageBox.Show("Заказ на складі!\nВи впевнені, що бажаєте додати нову виплату? ", "Підтвердження", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         AddCustomerOrderPayments(2, ((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                     }
