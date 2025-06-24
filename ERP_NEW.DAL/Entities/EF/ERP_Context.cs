@@ -247,7 +247,14 @@ namespace ERP_NEW.DAL.EF
         public DbSet<MTSMeasure> MTSMeasure { get; set; }
         public DbSet<MTSPurchasedProducts> MTSPurchasedProducts { get; set; }
         public DbSet<MTSNomenclatureGroupsOld> MTSNomenclatureGroupsOld { get; set; }
-        
+
+        public DbSet<MTS_DETAILS> MTS_DETAILS { get; set; }
+        public DbSet<MTS_MATERIALS> MTS_MATERIALS { get; set; }
+        public DbSet<MTS_PURCHASED_PRODUCTS> MTS_PURCHASED_PRODUCTS { get; set; }
+        public DbSet<MTS_CUSTOMERORDERS> MTSCustomerOrders { get; set; }
+        public DbSet<MTS_SPECIFICATIONS> MTSSpecifications { get; set; }
+
+
 
         public DbSet<MsTrialBalanceCurrency> MsTrialBalanceCurrency { get; set; }
         public DbSet<MsTrialBalance> MsTrialBalance { get; set; }
