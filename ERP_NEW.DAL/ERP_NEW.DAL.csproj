@@ -168,6 +168,11 @@
     <Compile Include="Entities\Models\MTSNomenclaturesOld.cs" />
     <Compile Include="Entities\Models\MTSPurchasedProducts.cs" />
     <Compile Include="Entities\Models\MTSSpecificationss.cs" />
+    <Compile Include="Entities\Models\MTS_CUSTOMERORDERS.cs" />
+    <Compile Include="Entities\Models\MTS_DETAILS.cs" />
+    <Compile Include="Entities\Models\MTS_MATERIALS.cs" />
+    <Compile Include="Entities\Models\MTS_PURCHASED_PRODUCTS.cs" />
+    <Compile Include="Entities\Models\MTS_SPECIFICATIONS.cs" />
     <Compile Include="Entities\Models\PaintingWorks.cs" />
     <Compile Include="Entities\Models\ReceiptCertificateDetail.cs" />
     <Compile Include="Entities\Models\ReceiptDetails.cs" />

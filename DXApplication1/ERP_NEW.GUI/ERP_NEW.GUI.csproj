@@ -73,10 +73,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>AF400EE837E7C1AB7A4237A52665DA64CEE93968</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>E5116148340C2076670004E29512D708EBCF3A26</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>ERP_NEW.GUI_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>ERP_NEW.GUI_7_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -258,9 +258,9 @@
       <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ERP_NEW.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+    <Reference Include="ERP_NEW.BLL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\ERP_NEW.BLL\bin\Release\ERP_NEW.BLL.dll</HintPath>
+      <HintPath>..\..\ERP_NEW.BLL\bin\Debug\ERP_NEW.BLL.dll</HintPath>
     </Reference>
     <Reference Include="ERP_NEW.DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -2578,6 +2578,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="ERP_NEW.GUI_6_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_7_TemporaryKey.pfx" />
     <None Include="ERP_NEW.GUI_TemporaryKey.pfx" />
     <None Include="packages.config" />

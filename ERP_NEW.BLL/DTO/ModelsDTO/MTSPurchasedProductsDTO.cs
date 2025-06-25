@@ -31,5 +31,7 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
 
         public string MEASURENAME { get; set; }
         public decimal? WEIGHT { get; set; }
+
+        public bool lastFocusedRov { get; set; }
     }
 }

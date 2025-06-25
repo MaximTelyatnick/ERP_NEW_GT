@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ERP_NEW.BLL.Infrastructure;
 
-namespace ERP_NEW.BLL.DTO.ModelsDTO
+namespace ERP_NEW.DAL.Entities.Models
 {
-    public class MTSSpecificationssDTO : ObjectBase
+    public class MTS_SPECIFICATIONS
     {
+        [Key]
         public int ID { get; set; }
         public string NAME { get; set; }
         public int? DEVICE_ID { get; set; }
@@ -23,14 +24,8 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public int? CODIZD { get; set; }
         public string COMPILATION_QUANTITIES { get; set; }
         public int QUANTITY { get; set; }
-        public int? SET_COLOR { get; set; }
+
         public int? ASSEMBLY { get; set; }
-        public string AUTHORIZATION_USERS_NAME { get; set; }
-        //public int test { get; set; }
-        public bool Selected { get; set; }
-
-        public string CustomerOrders { get; set; }
-
-
+        public int? SET_COLOR { get; set; }
     }
 }
