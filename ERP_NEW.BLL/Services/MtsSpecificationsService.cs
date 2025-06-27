@@ -89,7 +89,8 @@ namespace ERP_NEW.BLL.Services
 
 
 
-            var config = new MapperConfiguration(cfg =>
+
+        var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<MtsAssembliesInfo, MtsAssembliesInfoDTO>();
                 cfg.CreateMap<MtsSpecificationTreeInfo, MtsSpecificationTreeInfoDTO>();
@@ -506,12 +507,44 @@ namespace ERP_NEW.BLL.Services
 
         public IEnumerable<MTSPurchasedProductsDTO> GetBuysDetalSpecificShort(int specificId)
         {
-            return mapper.Map<IEnumerable<MTSPurchasedProducts>, List<MTSPurchasedProductsDTO>>(mtsPurchasedProducts.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
+            return mapper.Map<IEnumerable<MTSPurchasedProducts>, List<MTSPurchasedProductsDTO>>(mtsPurchasedProductss.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
         }
 
         public IEnumerable<MTSMaterialsDTO> GetMaterialsSpecificShort(int specificId)
         {
-            return mapper.Map<IEnumerable<MTSMaterials>, List<MTSMaterialsDTO>>(mtsMaterials.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
+            return mapper.Map<IEnumerable<MTSMaterials>, List<MTSMaterialsDTO>>(mtsMaterialss.GetAll().Where(srch => srch.SPECIFICATIONS_ID == specificId));
+        }
+
+        public IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFullBySpecificationId(int customerOrderId)
+        {
+            var result = (from mco in mtsCustomerOrders.GetAll()
+                          join co in customerOrders.GetAll() on mco.CustomerOrderId equals co.Id into coc
+                          from co in coc.DefaultIfEmpty()
+                          join mso in mtsSpecifications.GetAll() on mco.SpecificationId equals mso.ID into msoo
+                          from mso in msoo.DefaultIfEmpty()
+                          join con in contractors.GetAll() on co.ContractorId equals con.Id into conn
+                          from con in conn.DefaultIfEmpty()
+
+                          where mco.CustomerOrderId == customerOrderId
+                          //orderby co.OrderDate, co.OrderNumber
+
+                          select new MTSCustomerOrdersDTO
+                          {
+                              Id = mco.Id,
+                              OrderNumber = co.OrderNumber,
+                              CustomerOrderId = co.Id,
+                              SpecificationId = mso.ID,
+                               Assembly = mso.ASSEMBLY,
+                                Quantity = mso.QUANTITY,
+                                  SpecificationName = mso.NAME,
+                                  
+                              DataCreateCustomerOrder = co.DateCreate,
+                              ContractorName = con.Name,
+                              DateCreate = mco.DateCreate,
+                              DateUpdate = mco.DateUpdate
+                          });
+
+            return result.ToList();
         }
 
         public IEnumerable<MTSDetailsDTO> GetAllDetailsSpecific(int spesificId)

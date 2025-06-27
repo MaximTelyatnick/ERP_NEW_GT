@@ -15,6 +15,10 @@ namespace ERP_NEW.BLL.DTO.ModelsDTO
         public DateTime? DateUpdate { get; set; }
 
         public string OrderNumber { get; set; }
+        public string SpecificationName { get; set; }
+        public int Quantity { get; set; }
+        public string Drawing { get; set; }
+        public int? Assembly { get; set; }
         public string ContractorName { get; set; }
         public DateTime? DataCreateCustomerOrder { get; set; }
         public bool Check { get; set; }

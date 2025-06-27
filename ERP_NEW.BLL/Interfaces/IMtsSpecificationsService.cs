@@ -23,7 +23,7 @@ namespace ERP_NEW.BLL.Interfaces
         IEnumerable<MtsAssembliesInfoDTO> GetMtsAssembliesAll(DateTime beginDate, DateTime endDate);
         IEnumerable<MtsAssembliesCustomerInfoDTO> GetJournalAssembliesWithCustomerOrders();
 
-
+        IEnumerable<MTSCustomerOrdersDTO> GetMTSCustomerOrdersFullBySpecificationId(int customerOrderId);
         IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOld();
         IEnumerable<MTSSpecificationssDTO> GetAllSpecificationOldByPeriod(DateTime startDate, DateTime endDate);
         //IEnumerable<MTSCreateDetalsDTO> GetAllDetailsSpecific(int spesificId);

@@ -31,6 +31,7 @@ namespace ERP_NEW.GUI.CustomerOrders
         private IStoreHouseService storeHouseService;
         private IReportService reportService;
         private ICurrencyService currencyService;
+        private IMtsSpecificationsService mtsSpecificationsService;
 
         private BindingSource customerOrdersBS = new BindingSource();
         private BindingSource customerOrdersSpecBS = new BindingSource();
@@ -39,6 +40,7 @@ namespace ERP_NEW.GUI.CustomerOrders
         private BindingSource customerOrderPaymentsBS = new BindingSource();
         private BindingSource expenditureMaterialBS = new BindingSource();
         private BindingSource paymentsInfoBS = new BindingSource();
+        private BindingSource customerOrderMtsBS = new BindingSource();
 
         private CustomerOrderPaymentsInfoDTO paymentsInfo = new CustomerOrderPaymentsInfoDTO();
 
@@ -81,6 +83,7 @@ namespace ERP_NEW.GUI.CustomerOrders
                 LoadCustomerOrderPaymentsData(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCustomerOrderPrepaymentsData(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCustomerOrderMaterialExpenditure(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
+                LoadCustomerOrderMtsSpecification(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCurrencyInformation();
 
                 SetCustomerOrderSummary();
@@ -123,6 +126,15 @@ namespace ERP_NEW.GUI.CustomerOrders
             customerOrderPrepaymentsBS.DataSource = customerOrdersService.GetCustomerOrderPrepaymentsById(customerOrderId);
             prepaymentsGrid.DataSource = customerOrderPrepaymentsBS;
         }
+
+        private void LoadCustomerOrderMtsSpecification(int customerOrderId)
+        {
+            mtsSpecificationsService = Program.kernel.Get<IMtsSpecificationsService>();
+            customerOrderMtsBS.DataSource = mtsSpecificationsService.GetMTSCustomerOrdersFullBySpecificationId(customerOrderId);
+            specificGrid.DataSource = customerOrderMtsBS;
+        }
+
+
 
         private void LoadCustomerOrderPaymentsData(int customerOrderId)
         {
@@ -451,6 +463,7 @@ namespace ERP_NEW.GUI.CustomerOrders
                 LoadCustomerOrderPaymentsData(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCustomerOrderPrepaymentsData(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCustomerOrderMaterialExpenditure(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
+                LoadCustomerOrderMtsSpecification(((CustomerOrdersDTO)customerOrdersBS.Current).Id);
                 LoadCurrencyInformation();
 
 
@@ -463,6 +476,7 @@ namespace ERP_NEW.GUI.CustomerOrders
                 paymentsGrid.DataSource = null;
                 prepaymentsGrid.DataSource = null;
                 expendituresGrid.DataSource = null;
+                specificGrid.DataSource = null;
             }
         }
 

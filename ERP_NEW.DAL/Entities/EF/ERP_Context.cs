@@ -252,7 +252,7 @@ namespace ERP_NEW.DAL.EF
         public DbSet<MTS_MATERIALS> MTS_MATERIALS { get; set; }
         public DbSet<MTS_PURCHASED_PRODUCTS> MTS_PURCHASED_PRODUCTS { get; set; }
         public DbSet<MTS_CUSTOMERORDERS> MTSCustomerOrders { get; set; }
-        public DbSet<MTS_SPECIFICATIONS> MTSSpecifications { get; set; }
+        public DbSet<MTS_SPECIFICATIONS> MTS_SPECIFICATIONS { get; set; }
 
 
 
